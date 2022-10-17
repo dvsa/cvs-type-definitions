@@ -1,3 +1,5 @@
+import {schemas} from './schemas';
+
 const json2ts = require('json-schema-to-typescript');
 const fs = require('fs');
 const derefSchema = require('json-schema-deref-sync');
@@ -55,12 +57,7 @@ function generateInterfaces(typeNames: string[]): void {
 /**
  * Generate typescript files from json definitions
  */
-generateInterfaces([
-  'test',
-  'atf-visit',
-  'test-station',
-  'defect-category-reference-data'
-  ]);
+generateInterfaces(schemas);
 
 
 
