@@ -1,0 +1,24 @@
+{
+  "title": "Tank Statement Schema",
+  "properties": {
+    "substancesPermitted": {
+      "type": "string"
+    },
+    "statement": {
+      "type": "string"
+    },
+    "productList": {
+      "type": "string"
+    },
+    "productListRefNo": {
+      "type": "string"
+    },
+    "productListUnNo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "title": "TC2 Details Schema",
+  "properties": {
+    "tc2Type": {
+      "type": "string"
+    },
+    "tc2IntermediateApprovalNo": {
+      "type": "string"
+    },
+    "tc2IntermediateExpiryDate": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

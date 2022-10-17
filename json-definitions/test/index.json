@@ -1,0 +1,40 @@
+{
+  "title": "Commercial Vehicle Test Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+
+  },
+  "properties": {
+    "testResultId": {
+      "type": "string"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    },
+    "status": {
+      "enum": ["submitted", "cancelled", null],
+      "type": "string"
+    },
+    "reasonForCancellation": {
+      "type": "string"
+    },
+    "vehicles": {
+      "type": "array",
+      "items": {
+        "$ref": "../vehicle/index.json#"
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "startTime",
+    "endTime",
+    "status",
+    "reasonForCancellation",
+    "vehicles"
+  ]
+}

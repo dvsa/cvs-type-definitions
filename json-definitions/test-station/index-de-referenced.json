@@ -1,0 +1,67 @@
+{
+	"title": "Test Station Schema",
+	"properties": {
+		"testStationId": {
+			"type": "string"
+		},
+		"testStationPNumber": {
+			"type": "string"
+		},
+		"testStationName": {
+			"type": "string"
+		},
+		"testStationContactNumber": {
+			"type": "string"
+		},
+		"testStationAccessNotes": {
+			"type": "string"
+		},
+		"testStationGeneralNotes": {
+			"type": "string"
+		},
+		"testStationTown": {
+			"type": "string"
+		},
+		"testStationAddress": {
+			"type": "string"
+		},
+		"testStationPostcode": {
+			"type": "string"
+		},
+		"testStationLongitude": {
+			"type": "string"
+		},
+		"testStationLatitude": {
+			"type": "string"
+		},
+		"testStationType": {
+			"type": "string"
+		},
+		"testStationEmails": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"searchProperty": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"testStationId",
+		"testStationPNumber",
+		"testStationName",
+		"testStationContactNumber",
+		"testStationAccessNotes",
+		"testStationGeneralNotes",
+		"testStationTown",
+		"testStationAddress",
+		"testStationPostcode",
+		"testStationLongitude",
+		"testStationLatitude",
+		"testStationType",
+		"testStationEmails",
+		"searchProperty"
+	],
+	"additionalProperties": false
+}

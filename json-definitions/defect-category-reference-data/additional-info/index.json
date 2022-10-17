@@ -1,0 +1,44 @@
+{
+  "title": "Additional Info Schema",
+  "properties": {
+    "psv": {
+      "properties": {
+        "location": {
+          "$ref": "../../defect-location/index.json#"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hgv": {
+      "properties": {
+        "location": {
+          "$ref": "../../defect-location/index.json#"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "trl": {
+      "properties": {
+        "location": {
+          "$ref": "../../defect-location/index.json#"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "hgv",
+    "psv",
+    "trl"
+  ]
+}

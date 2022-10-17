@@ -1,0 +1,69 @@
+{
+  "title": "ADR Details Schema",
+  "properties": {
+    "vehicleDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "approvalDate": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "listStatementApplicable": {
+      "type": "boolean"
+    },
+    "batteryListNumber": {
+      "type": "string"
+    },
+    "permittedDangerousGoods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additionalExaminerNotes": {
+      "type": "string"
+    },
+    "applicantDetails": {
+      "$ref": "../applicant-details/index.json#"
+    },
+    "memosApply": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additionalNotes": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "guidanceNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "adrTypeApprovalNo": {
+      "type": "string"
+    },
+    "compatibilityGroupJ": {
+      "type": "boolean"
+    },
+    "tank": {
+      "$ref": "../tank/index.json#"
+    }
+  },
+  "additionalProperties": false
+}

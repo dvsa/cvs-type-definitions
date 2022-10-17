@@ -1,0 +1,37 @@
+{
+  "title": "Defect Deficiency Reference Data Schema",
+  "properties": {
+    "ref": {
+      "type": "string"
+    },
+    "deficiencyId": {
+      "type": ["string", "null"]
+    },
+    "deficiencySubId": {
+      "type": "string"
+    },
+    "deficiencyCategory": {
+      "type": "string"
+    },
+    "deficiencyText": {
+      "type": "string"
+    },
+    "stdForProhibition": {
+      "type": "string"
+    },
+    "forVehicleType": {
+      "type": "string"
+    }
+
+  },
+  "additionalProperties": false,
+  "required": [
+    "ref",
+    "deficiencyId",
+    "deficiencySubId",
+    "deficiencyCategory",
+    "deficiencyText",
+    "stdForProhibition",
+    "forVehicleType"
+  ]
+}

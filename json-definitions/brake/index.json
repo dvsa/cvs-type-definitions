@@ -1,0 +1,42 @@
+{
+  "title": "Brake",
+  "properties": {
+    "brakeCode": {
+      "type": "string"
+    },
+    "dataTrBrakeOne": {
+      "type": "string"
+    },
+    "dataTrBrakeTwo": {
+      "type": "string"
+    },
+    "dataTrBrakeThree": {
+      "type": "string"
+    },
+    "retarderBrakeOne": {
+      "type": "string"
+    },
+    "retarderBrakeTwo": {
+      "type": "string"
+    },
+    "brakeCodeOriginal": {
+      "type": "string"
+    },
+    "brakeForceWheelsNotLocked": {
+      "$ref": "../brake-force-wheel/index.json#"
+    },
+    "brakeForceWheelsUpToHalfLocked": {
+      "$ref": "../brake-force-wheel/index.json#"
+    },
+    "dtpNumber": {
+      "type": "string"
+    },
+    "loadSensingValve": {
+      "type": "boolean"
+    },
+    "antilockBrakingSystem": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

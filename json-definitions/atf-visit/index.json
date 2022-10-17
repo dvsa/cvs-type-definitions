@@ -1,0 +1,54 @@
+{
+  "title": "ATF Visit Schema",
+  "properties": {
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    },
+    "testStationName": {
+      "type": "string"
+    },
+    "testStationPNumber": {
+      "type": "string"
+    },
+    "testStationEmail": {
+      "type": "string"
+    },
+    "testStationType": {
+      "type": "string"
+    },
+    "testerName": {
+      "type": "string"
+    },
+    "testerId": {
+      "type": "string"
+    },
+    "testerEmail": {
+      "type": "string"
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "$ref": "../test/index.json#"
+      }
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "startTime",
+    "endTime",
+    "testStationName",
+    "testStationPNumber",
+    "testStationEmail",
+    "testStationType",
+    "testerName",
+    "testerId",
+    "testerEmail",
+    "tests"
+  ]
+}

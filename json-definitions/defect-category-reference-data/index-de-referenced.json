@@ -1,0 +1,246 @@
+{
+	"title": "Defect Category Reference Data Schema",
+	"properties": {
+		"imNumber": {
+			"type": "integer"
+		},
+		"imDescription": {
+			"type": "string"
+		},
+		"forVehicleType": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"additionalInfo": {
+			"title": "Additional Info Schema",
+			"properties": {
+				"psv": {
+					"properties": {
+						"location": {
+							"title": "Defect Location Schema",
+							"type": "object",
+							"properties": {
+								"vertical": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"horizontal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"lateral": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"longitudinal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"rowNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"seatNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"axleNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								}
+							},
+							"additionalProperties": false
+						},
+						"notes": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"hgv": {
+					"properties": {
+						"location": {
+							"title": "Defect Location Schema",
+							"type": "object",
+							"properties": {
+								"vertical": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"horizontal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"lateral": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"longitudinal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"rowNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"seatNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"axleNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								}
+							},
+							"additionalProperties": false
+						},
+						"notes": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"trl": {
+					"properties": {
+						"location": {
+							"title": "Defect Location Schema",
+							"type": "object",
+							"properties": {
+								"vertical": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"horizontal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"lateral": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"longitudinal": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"rowNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"seatNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"axleNumber": {
+									"type": [
+										"integer",
+										"null"
+									]
+								}
+							},
+							"additionalProperties": false
+						},
+						"notes": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"hgv",
+				"psv",
+				"trl"
+			]
+		},
+		"items": {
+			"title": "Defect Deficiency Reference Data Schema",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"deficiencyId": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"deficiencySubId": {
+					"type": "string"
+				},
+				"deficiencyCategory": {
+					"type": "string"
+				},
+				"deficiencyText": {
+					"type": "string"
+				},
+				"stdForProhibition": {
+					"type": "string"
+				},
+				"forVehicleType": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"ref",
+				"deficiencyId",
+				"deficiencySubId",
+				"deficiencyCategory",
+				"deficiencyText",
+				"stdForProhibition",
+				"forVehicleType"
+			]
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"imNumber",
+		"imDescription",
+		"forVehicleType",
+		"additionalInfo",
+		"items"
+	]
+}

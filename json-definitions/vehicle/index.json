@@ -1,0 +1,53 @@
+{
+  "title": "Vehicle Schema",
+  "type": "object",
+  "properties": {
+    "systemNumber": {
+      "type": "string"
+    },
+    "vrm": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord": {
+      "$ref": "../tech-record/index.json#"
+    },
+    "countryOfRegistration": {
+      "type": "string"
+    },
+    "euVehicleCategory": {
+      "type": "string"
+    },
+    "odometerReading": {
+      "type": "string"
+    },
+    "odometerMetric": {
+      "type": "string"
+    },
+    "preparerId": {
+      "type": "string"
+    },
+    "preparerName": {
+      "type": "string"
+    },
+    "testTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "../test-type/index.json#"
+      }
+    },
+    "trailerId": {
+      "description": "trailer only",
+      "type": "string"
+    }
+    },
+  "additionalProperties": false,
+  "required": [
+    "systemNumber",
+    "vrm",
+    "vin",
+    "techRecord"
+  ]
+}

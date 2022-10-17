@@ -1,0 +1,21 @@
+{
+  "title": "Applicant Details Schema",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "town": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

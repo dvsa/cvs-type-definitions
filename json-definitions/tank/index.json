@@ -1,0 +1,12 @@
+{
+  "title": "Tank Schema",
+  "properties": {
+    "tankDetails": {
+      "$ref": "./tank-details/index.json#"
+    },
+    "tankStatement": {
+      "$ref": "./tank-statement/index.json#"
+    }
+  },
+  "additionalProperties": false
+}

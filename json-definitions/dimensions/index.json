@@ -1,0 +1,35 @@
+{
+  "title": "Dimensions Schema",
+  "properties": {
+    "length": {
+      "type": "integer"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "axleSpacing":{
+      "type": "array",
+      "items": {
+        "properties": {
+          "axles": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "axles",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "length",
+    "width",
+    "axleSpacing"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "title": "TC3 Details Schema",
+  "properties": {
+    "tc3Type": {
+      "type": "string"
+    },
+    "tc3IntermediateApprovalNo": {
+      "type": "string"
+    },
+    "tc3IntermediateExpiryDate": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

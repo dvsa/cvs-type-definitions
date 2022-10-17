@@ -1,0 +1,16 @@
+{
+  "title": "Axle Brake Properties Schema",
+  "type": "object",
+  "properties": {
+    "brakeActuator": {
+      "type": "integer"
+    },
+    "leverLength": {
+      "type": "integer"
+    },
+    "springBrakeParking": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

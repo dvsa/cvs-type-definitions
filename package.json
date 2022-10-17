@@ -1,0 +1,21 @@
+{
+  "name": "cvs-type-definitions",
+  "version": "1.0.0",
+  "description": "type definitions for cvs vta application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "generate": "ts-node generateSchemas.ts"
+  },
+  "author": "dvsa",
+  "license": "ISC",
+  "devDependencies": {
+    "json-schema-to-typescript": "^11.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "json-schema-deref-sync": "^0.14.0",
+    "pretty-js": "^0.2.2"
+  }
+}

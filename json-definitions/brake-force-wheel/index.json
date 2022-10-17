@@ -1,0 +1,20 @@
+{
+  "title": "Brake Force Wheel",
+  "properties": {
+    "serviceBrakeForce": {
+      "type": "integer"
+    },
+    "secondaryBrakeForce": {
+      "type": "integer"
+    },
+    "parkingBrakeForce": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "serviceBrakeForce",
+    "secondaryBrakeForce",
+    "parkingBrakeForce"
+  ],
+  "additionalProperties": false
+}
