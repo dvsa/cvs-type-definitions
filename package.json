@@ -1,8 +1,11 @@
 {
-  "name": "cvs-type-definitions",
-  "version": "1.0.0",
+  "name": "@dvsa/cvs-type-definitions",
+  "version": "1.0.1",
   "description": "type definitions for cvs vta application",
   "main": "index.js",
+  "repository": {
+    "url": "git://github.com/dvsa/cvs-type-definitions.git"
+  },
   "scripts": {
     "test": "test",
     "generate": "ts-node generateSchemas.ts"
