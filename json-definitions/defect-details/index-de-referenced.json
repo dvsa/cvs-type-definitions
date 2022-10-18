@@ -1,0 +1,15 @@
+{
+	"description": "Defect Details Schema",
+	"type": "object",
+	"properties": {
+		"imNumber": {
+			"type": "integer"
+		},
+		"imDescription": {
+			"type": "string"
+		},
+		"additionalInformation": {
+			"type": "string"
+		}
+	}
+}

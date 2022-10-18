@@ -5,14 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface CommercialVehicleTestSchema {
-  testResultId?: string;
-  startTime: string;
-  endTime: string;
-  status: "submitted" | "cancelled" | null;
-  reasonForCancellation: string;
-  vehicles: VehicleSchema[];
-}
 export interface VehicleSchema {
   systemNumber: string;
   vrm: string;

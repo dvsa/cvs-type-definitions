@@ -219,6 +219,24 @@
   },
   "additionalProperties": false,
   "required": [
-    "bodyType"
+    "bodyType",
+    "regnDate",
+    "manufactureYear",
+    "ntaNumber",
+    "conversionRefNo",
+    "speedLimiterMrk",
+    "tachoExemptMrk",
+    "reasonForCreation",
+    "statusCode",
+    "grossKerbWeight",
+    "grossLadenWeight",
+    "noOfAxles",
+    "brakeCode",
+    "vehicleType",
+    "euVehicleCategory",
+    "axles",
+    "vehicleClass",
+    "vehicleSubclass",
+    "vehicleConfiguration"
   ]
 }

@@ -5,31 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface CommercialVehicleTestSchema {
-  testResultId?: string;
-  startTime: string;
-  endTime: string;
-  status: "submitted" | "cancelled" | null;
-  reasonForCancellation: string;
-  vehicles: VehicleSchema[];
-}
-export interface VehicleSchema {
-  systemNumber: string;
-  vrm: string;
-  vin: string;
-  techRecord: TechRecordSchema;
-  countryOfRegistration?: string;
-  euVehicleCategory?: string;
-  odometerReading?: string;
-  odometerMetric?: string;
-  preparerId?: string;
-  preparerName?: string;
-  testTypes?: TestTypeSchema[];
-  /**
-   * trailer only
-   */
-  trailerId?: string;
-}
 export interface TechRecordSchema {
   bodyType: {
     code: string;
@@ -217,43 +192,4 @@ export interface TankStatementSchema {
   productList?: string;
   productListRefNo?: string;
   productListUnNo?: string[];
-}
-export interface TestTypeSchema {
-  testTypeName: string;
-  name: string;
-  testTypeId: string;
-  certificateNumber: string | null;
-  secondaryCertificateNumber: string | null;
-  testTypeStartTimestamp: string | null;
-  testTypeEndTimestamp: string | null;
-  testResult: string | null;
-  prohibitionIssued: boolean | null;
-  reasonForAbandoning: string | null;
-  additionalNotesRecorded: string | null;
-  additionalCommentsForAbandon: string | null;
-  numberOfSeatbeltsFitted?: number | null;
-  lastSeatbeltInstallationCheckDate?: string | null;
-  seatbeltInstallationCheckDate?: string | null;
-  testExpiryDate?: string;
-  modType?: Index | string | null;
-  emissionStandard?: string;
-  fuelType?: string;
-  modificationTypeUsed?: string;
-  smokeTestKLimitApplied?: string;
-  particulateTrapFitted?: string;
-  particulateTrapSerialNumber?: string;
-  defects: string[];
-  customDefects?: string[];
-  completionStatus?: string;
-  testTypeCategoryName?: string;
-  reasons?: string[];
-  testNumber?: string;
-  linkedIds?: string[] | null;
-}
-/**
- * Mod Type Schema
- */
-export interface Index {
-  code: string;
-  description: string;
 }
