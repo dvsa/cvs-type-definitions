@@ -45,7 +45,7 @@
       "type": ["string", "null"]
     },
     "seatbeltInstallationCheckDate": {
-      "type": ["string", "null"]
+      "type": ["boolean", "null"]
     },
     "testExpiryDate": {
       "type": "string"
@@ -84,13 +84,13 @@
     "defects": {
       "type": ["array"],
       "items": {
-        "type": "string"
+        "$ref": "../defect-details/index.json#"
       }
     },
     "customDefects": {
       "type": ["array"],
       "items": {
-        "type": "string"
+        "$ref": "../specialist-custom-defects/index.json#"
       }
     },
     "completionStatus": {

@@ -17,7 +17,7 @@
         "description"
       ]
     },
-    "manufacturerYear": {
+    "manufactureYear": {
       "type": "integer"
     },
     "regnDate": {
@@ -69,7 +69,7 @@
     "vehicleClass": {
       "$ref": "../vehicle-class/index.json#"
     },
-    "vehicleSubClass": {
+    "vehicleSubclass": {
       "type": "array",
       "items": {
         "type": "string"
@@ -237,6 +237,7 @@
     "axles",
     "vehicleClass",
     "vehicleSubclass",
-    "vehicleConfiguration"
+    "vehicleConfiguration",
+    "notes"
   ]
 }

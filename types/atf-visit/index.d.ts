@@ -48,7 +48,7 @@ export interface TechRecordSchema {
     code: string;
     description: string;
   };
-  manufacturerYear?: number;
+  manufactureYear: number;
   regnDate: string;
   ntaNumber: string;
   conversionRefNo: string;
@@ -64,7 +64,7 @@ export interface TechRecordSchema {
   euVehicleCategory: string;
   axles: AxleSchema[];
   vehicleClass: VehicleClassSchema;
-  vehicleSubClass?: string[];
+  vehicleSubclass: string[];
   vehicleConfiguration: string;
   recordCompleteness?: string;
   chassisMake?: string;
@@ -90,7 +90,7 @@ export interface TechRecordSchema {
   roadFriendly?: boolean;
   drawbarCouplingFitted?: boolean;
   dimensions?: DimensionsSchema;
-  notes?: string;
+  notes: string;
   adrDetails?: ADRDetailsSchema;
   trainGbWeight?: number;
   trainDesignWeight?: number;
@@ -139,9 +139,9 @@ export interface TyresSchema {
   speedCategorySymbol?: string;
 }
 export interface AxleBrakePropertiesSchema {
-  brakeActuator?: number;
-  leverLength?: number;
-  springBrakeParking?: boolean;
+  brakeActuator: number;
+  leverLength: number;
+  springBrakeParking: boolean;
 }
 export interface VehicleClassSchema {
   code: string;
@@ -169,10 +169,16 @@ export interface BrakeForceWheel {
 export interface DimensionsSchema {
   length: number;
   width: number;
-  axleSpacing: {
-    axles: string;
-    value: number;
-  }[];
+  /**
+   * @minItems 1
+   * @maxItems 1
+   */
+  axleSpacing: [
+    {
+      axles: string;
+      value: number;
+    }
+  ];
 }
 export interface ADRDetailsSchema {
   vehicleDetails?: {
@@ -246,7 +252,7 @@ export interface TestTypeSchema {
   additionalCommentsForAbandon: string | null;
   numberOfSeatbeltsFitted?: number | null;
   lastSeatbeltInstallationCheckDate?: string | null;
-  seatbeltInstallationCheckDate?: string | null;
+  seatbeltInstallationCheckDate?: boolean | null;
   testExpiryDate?: string;
   modType?: Index | string | null;
   emissionStandard?: string;
@@ -255,8 +261,8 @@ export interface TestTypeSchema {
   smokeTestKLimitApplied?: string;
   particulateTrapFitted?: string;
   particulateTrapSerialNumber?: string;
-  defects: string[];
-  customDefects?: string[];
+  defects: DefectDetailsSchema[];
+  customDefects?: SpecialistCustomDefectsSchema[];
   completionStatus?: string;
   testTypeCategoryName?: string;
   reasons?: string[];
@@ -269,4 +275,57 @@ export interface TestTypeSchema {
 export interface Index {
   code: string;
   description: string;
+}
+export interface DefectDetailsSchema {
+  imNumber: number;
+  imDescription: string;
+  additionalInformation: {
+    location: DefectLocationSchema;
+    notes: string;
+  };
+  itemNumber: number;
+  itemDescription: string;
+  deficiencyRef: string;
+  deficiencyId: string | null;
+  deficiencySubId: string | null;
+  deficiencyCategory: string;
+  deficiencyText: string | null;
+  stdForProhibition: boolean | null;
+  prs: boolean | null;
+  prohibitionIssued: boolean | null;
+  metadata: {
+    category: {
+      additionalInfo?: {
+        location: DefectLocationMetadataSchema;
+        notes: boolean;
+      };
+    };
+  };
+}
+export interface DefectLocationSchema {
+  vertical?: string | null;
+  horizontal?: string | null;
+  lateral?: string | null;
+  longitudinal?: string | null;
+  rowNumber?: number | null;
+  seatNumber?: number | null;
+  axleNumber?: number | null;
+}
+export interface DefectLocationMetadataSchema {
+  vertical?: string[] | null;
+  horizontal?: string[] | null;
+  lateral?: string[] | null;
+  longitudinal?: string[] | null;
+  rowNumber?: number[] | null;
+  seatNumber?: number[] | null;
+  axleNumber?: number[] | null;
+}
+export interface SpecialistCustomDefectsSchema {
+  referenceNumber: string;
+  defectName: string;
+  defectNotes: string;
+  /**
+   * FE only
+   */
+  hasAllMandatoryFields?: boolean;
 }

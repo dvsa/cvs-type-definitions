@@ -5,7 +5,9 @@ json schema definitions and .ts type definitions for cvs vta application
 
 ## Install GitHub package:
 
-TBC
+- Ensure consuming repo is set up to install private DVSA packages by adding the following to the `.npmrc` file:
+  `@dvsa:registry=https://npm.pkg.github.com`
+- install GitHub package: `npm install @dvsa/cvs-type-definitions@latest`
 
 ## Example usage:
 

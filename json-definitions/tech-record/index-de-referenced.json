@@ -17,7 +17,7 @@
 				"description"
 			]
 		},
-		"manufacturerYear": {
+		"manufactureYear": {
 			"type": "integer"
 		},
 		"regnDate": {
@@ -143,6 +143,11 @@
 								"type": "boolean"
 							}
 						},
+						"required": [
+							"brakeActuator",
+							"leverLength",
+							"springBrakeParking"
+						],
 						"additionalProperties": false
 					}
 				},
@@ -170,7 +175,7 @@
 				"description"
 			]
 		},
-		"vehicleSubClass": {
+		"vehicleSubclass": {
 			"type": "array",
 			"items": {
 				"type": "string"
@@ -346,7 +351,9 @@
 							"value"
 						],
 						"additionalProperties": false
-					}
+					},
+					"minItems": 1,
+					"maxItems": 1
 				}
 			},
 			"required": [
@@ -611,6 +618,7 @@
 		"axles",
 		"vehicleClass",
 		"vehicleSubclass",
-		"vehicleConfiguration"
+		"vehicleConfiguration",
+		"notes"
 	]
 }

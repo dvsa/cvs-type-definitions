@@ -12,5 +12,10 @@
       "type": "boolean"
     }
   },
+  "required": [
+    "brakeActuator",
+    "leverLength",
+    "springBrakeParking"
+  ],
   "additionalProperties": false
 }

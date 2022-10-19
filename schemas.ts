@@ -6,5 +6,6 @@ export const schemas = [
   'tech-record',
   'vehicle',
   'defect-details',
-  'defect-location'
+  'defect-location',
+  'test-result'
 ];

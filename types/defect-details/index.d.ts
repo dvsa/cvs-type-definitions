@@ -5,12 +5,47 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-/**
- * Defect Details Schema
- */
-export interface Index {
-  imNumber?: number;
-  imDescription?: string;
-  additionalInformation?: string;
-  [k: string]: unknown;
+export interface DefectDetailsSchema {
+  imNumber: number;
+  imDescription: string;
+  additionalInformation: {
+    location: DefectLocationSchema;
+    notes: string;
+  };
+  itemNumber: number;
+  itemDescription: string;
+  deficiencyRef: string;
+  deficiencyId: string | null;
+  deficiencySubId: string | null;
+  deficiencyCategory: string;
+  deficiencyText: string | null;
+  stdForProhibition: boolean | null;
+  prs: boolean | null;
+  prohibitionIssued: boolean | null;
+  metadata: {
+    category: {
+      additionalInfo?: {
+        location: DefectLocationMetadataSchema;
+        notes: boolean;
+      };
+    };
+  };
+}
+export interface DefectLocationSchema {
+  vertical?: string | null;
+  horizontal?: string | null;
+  lateral?: string | null;
+  longitudinal?: string | null;
+  rowNumber?: number | null;
+  seatNumber?: number | null;
+  axleNumber?: number | null;
+}
+export interface DefectLocationMetadataSchema {
+  vertical?: string[] | null;
+  horizontal?: string[] | null;
+  lateral?: string[] | null;
+  longitudinal?: string[] | null;
+  rowNumber?: number[] | null;
+  seatNumber?: number[] | null;
+  axleNumber?: number[] | null;
 }

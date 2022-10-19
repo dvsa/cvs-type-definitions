@@ -10,7 +10,7 @@ export interface TechRecordSchema {
     code: string;
     description: string;
   };
-  manufacturerYear?: number;
+  manufactureYear: number;
   regnDate: string;
   ntaNumber: string;
   conversionRefNo: string;
@@ -26,7 +26,7 @@ export interface TechRecordSchema {
   euVehicleCategory: string;
   axles: AxleSchema[];
   vehicleClass: VehicleClassSchema;
-  vehicleSubClass?: string[];
+  vehicleSubclass: string[];
   vehicleConfiguration: string;
   recordCompleteness?: string;
   chassisMake?: string;
@@ -52,7 +52,7 @@ export interface TechRecordSchema {
   roadFriendly?: boolean;
   drawbarCouplingFitted?: boolean;
   dimensions?: DimensionsSchema;
-  notes?: string;
+  notes: string;
   adrDetails?: ADRDetailsSchema;
   trainGbWeight?: number;
   trainDesignWeight?: number;
@@ -101,9 +101,9 @@ export interface TyresSchema {
   speedCategorySymbol?: string;
 }
 export interface AxleBrakePropertiesSchema {
-  brakeActuator?: number;
-  leverLength?: number;
-  springBrakeParking?: boolean;
+  brakeActuator: number;
+  leverLength: number;
+  springBrakeParking: boolean;
 }
 export interface VehicleClassSchema {
   code: string;
@@ -131,10 +131,16 @@ export interface BrakeForceWheel {
 export interface DimensionsSchema {
   length: number;
   width: number;
-  axleSpacing: {
-    axles: string;
-    value: number;
-  }[];
+  /**
+   * @minItems 1
+   * @maxItems 1
+   */
+  axleSpacing: [
+    {
+      axles: string;
+      value: number;
+    }
+  ];
 }
 export interface ADRDetailsSchema {
   vehicleDetails?: {
