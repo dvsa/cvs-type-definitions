@@ -1,0 +1,46 @@
+{
+  "title": "Vehicle Tech record Schema",
+  "properties": {
+    "systemNumber": {
+      "type": "string"
+    },
+    "vrms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "vrm": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "vrm",
+          "value"
+        ]
+      }
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord": {
+      "type": "array",
+      "items": {
+        "$ref": "../tech-record/index.json#"
+      }
+    },
+    "trailerId": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "systemNumber",
+    "vrms",
+    "vin",
+    "techRecord"
+  ]
+}

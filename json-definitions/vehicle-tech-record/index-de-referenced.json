@@ -1,0 +1,667 @@
+{
+	"title": "Vehicle Tech record Schema",
+	"properties": {
+		"systemNumber": {
+			"type": "string"
+		},
+		"vrms": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"vrm": {
+						"type": "string"
+					},
+					"value": {
+						"type": "integer"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"vrm",
+					"value"
+				]
+			}
+		},
+		"vin": {
+			"type": "string"
+		},
+		"techRecord": {
+			"type": "array",
+			"items": {
+				"title": "Tech Record Schema",
+				"type": "object",
+				"properties": {
+					"bodyType": {
+						"properties": {
+							"code": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"code",
+							"description"
+						]
+					},
+					"manufactureYear": {
+						"type": "integer"
+					},
+					"regnDate": {
+						"type": "string"
+					},
+					"ntaNumber": {
+						"type": "string"
+					},
+					"conversionRefNo": {
+						"type": "string"
+					},
+					"speedLimiterMrk": {
+						"type": "boolean"
+					},
+					"tachoExemptMrk": {
+						"type": "boolean"
+					},
+					"reasonForCreation": {
+						"type": "string"
+					},
+					"statusCode": {
+						"type": "string"
+					},
+					"grossKerbWeight": {
+						"type": "integer"
+					},
+					"grossLadenWeight": {
+						"type": "integer"
+					},
+					"noOfAxles": {
+						"type": "integer"
+					},
+					"brakeCode": {
+						"type": "string"
+					},
+					"vehicleType": {
+						"type": "string"
+					},
+					"euVehicleCategory": {
+						"type": "string"
+					},
+					"axles": {
+						"type": "array",
+						"items": {
+							"title": "Axle Schema",
+							"type": "object",
+							"properties": {
+								"parkingBrakeMrk": {
+									"type": "boolean"
+								},
+								"axleNumber": {
+									"type": "integer"
+								},
+								"weights": {
+									"title": "Weights Schema",
+									"type": "object",
+									"properties": {
+										"kerbWeight": {
+											"type": "integer"
+										},
+										"ladenWeight": {
+											"type": "integer"
+										},
+										"gbWeight": {
+											"type": "integer"
+										},
+										"designWeight": {
+											"type": "integer"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"gbWeight",
+										"designWeight"
+									]
+								},
+								"tyres": {
+									"title": "Tyres Schema",
+									"type": "object",
+									"properties": {
+										"tyreSize": {
+											"type": "string"
+										},
+										"plyRating": {
+											"type": "string"
+										},
+										"fitmentCode": {
+											"type": "string"
+										},
+										"dataTrPsvAxles": {
+											"type": "integer"
+										},
+										"tyreCode": {
+											"type": "number"
+										},
+										"dataTrAxles": {
+											"type": "number"
+										},
+										"speedCategorySymbol": {
+											"description": "PSV only",
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"tyreSize",
+										"plyRating",
+										"fitmentCode",
+										"tyreCode"
+									]
+								},
+								"brakes": {
+									"title": "Axle Brake Properties Schema",
+									"type": "object",
+									"properties": {
+										"brakeActuator": {
+											"type": "integer"
+										},
+										"leverLength": {
+											"type": "integer"
+										},
+										"springBrakeParking": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"brakeActuator",
+										"leverLength",
+										"springBrakeParking"
+									],
+									"additionalProperties": false
+								}
+							},
+							"required": [
+								"axleNumber",
+								"tyres"
+							],
+							"additionalProperties": false
+						},
+						"additionalProperties": false
+					},
+					"vehicleClass": {
+						"title": "Vehicle Class Schema",
+						"properties": {
+							"code": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"code",
+							"description"
+						]
+					},
+					"vehicleSubclass": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"vehicleConfiguration": {
+						"type": "string"
+					},
+					"recordCompleteness": {
+						"type": "string"
+					},
+					"chassisMake": {
+						"type": "string"
+					},
+					"chassisModel": {
+						"type": "string"
+					},
+					"bodyMake": {
+						"type": "string"
+					},
+					"bodyModel": {
+						"type": "string"
+					},
+					"vehicleSize": {
+						"type": "string"
+					},
+					"coifDate": {
+						"type": "string"
+					},
+					"unladenWeight": {
+						"type": "integer"
+					},
+					"grossGbWeight": {
+						"type": "integer"
+					},
+					"grossUnladenWeight": {
+						"type": "integer"
+					},
+					"seatsLowerDeck": {
+						"type": "integer"
+					},
+					"seatsUpperDeck": {
+						"type": "integer"
+					},
+					"standingCapacity": {
+						"type": "integer"
+					},
+					"speedRestriction": {
+						"type": "integer"
+					},
+					"dispensations": {
+						"type": "string"
+					},
+					"remarks": {
+						"type": "string"
+					},
+					"brakes": {
+						"title": "Brake",
+						"properties": {
+							"brakeCode": {
+								"type": "string"
+							},
+							"dataTrBrakeOne": {
+								"type": "string"
+							},
+							"dataTrBrakeTwo": {
+								"type": "string"
+							},
+							"dataTrBrakeThree": {
+								"type": "string"
+							},
+							"retarderBrakeOne": {
+								"type": "string"
+							},
+							"retarderBrakeTwo": {
+								"type": "string"
+							},
+							"brakeCodeOriginal": {
+								"type": "string"
+							},
+							"brakeForceWheelsNotLocked": {
+								"title": "Brake Force Wheel",
+								"properties": {
+									"serviceBrakeForce": {
+										"type": "integer"
+									},
+									"secondaryBrakeForce": {
+										"type": "integer"
+									},
+									"parkingBrakeForce": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"serviceBrakeForce",
+									"secondaryBrakeForce",
+									"parkingBrakeForce"
+								],
+								"additionalProperties": false
+							},
+							"brakeForceWheelsUpToHalfLocked": {
+								"title": "Brake Force Wheel",
+								"properties": {
+									"serviceBrakeForce": {
+										"type": "integer"
+									},
+									"secondaryBrakeForce": {
+										"type": "integer"
+									},
+									"parkingBrakeForce": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"serviceBrakeForce",
+									"secondaryBrakeForce",
+									"parkingBrakeForce"
+								],
+								"additionalProperties": false
+							},
+							"dtpNumber": {
+								"type": "string"
+							},
+							"loadSensingValve": {
+								"type": "boolean"
+							},
+							"antilockBrakingSystem": {
+								"type": "boolean"
+							}
+						},
+						"additionalProperties": false
+					},
+					"make": {
+						"type": "string"
+					},
+					"model": {
+						"type": "string"
+					},
+					"functionCode": {
+						"type": "string"
+					},
+					"typeUseCode": {
+						"type": "string"
+					},
+					"roadFriendly": {
+						"type": "boolean"
+					},
+					"drawbarCouplingFitted": {
+						"type": "boolean"
+					},
+					"dimensions": {
+						"title": "Dimensions Schema",
+						"properties": {
+							"length": {
+								"type": "integer"
+							},
+							"width": {
+								"type": "integer"
+							},
+							"axleSpacing": {
+								"type": "array",
+								"items": {
+									"properties": {
+										"axles": {
+											"type": "string"
+										},
+										"value": {
+											"type": "integer"
+										}
+									},
+									"required": [
+										"axles",
+										"value"
+									],
+									"additionalProperties": false
+								},
+								"minItems": 1,
+								"maxItems": 1
+							}
+						},
+						"required": [
+							"length",
+							"width",
+							"axleSpacing"
+						],
+						"additionalProperties": false
+					},
+					"notes": {
+						"type": "string"
+					},
+					"adrDetails": {
+						"title": "ADR Details Schema",
+						"properties": {
+							"vehicleDetails": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string"
+									},
+									"approvalDate": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false
+							},
+							"listStatementApplicable": {
+								"type": "boolean"
+							},
+							"batteryListNumber": {
+								"type": "string"
+							},
+							"permittedDangerousGoods": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"additionalExaminerNotes": {
+								"type": "string"
+							},
+							"applicantDetails": {
+								"title": "Applicant Details Schema",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"street": {
+										"type": "string"
+									},
+									"town": {
+										"type": "string"
+									},
+									"city": {
+										"type": "string"
+									},
+									"postcode": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false
+							},
+							"memosApply": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"additionalNotes": {
+								"type": "object",
+								"properties": {
+									"number": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"guidanceNotes": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								},
+								"additionalProperties": false
+							},
+							"adrTypeApprovalNo": {
+								"type": "string"
+							},
+							"compatibilityGroupJ": {
+								"type": "boolean"
+							},
+							"tank": {
+								"title": "Tank Schema",
+								"properties": {
+									"tankDetails": {
+										"title": "Tank Details Schema",
+										"properties": {
+											"tankManufacturer": {
+												"type": "string"
+											},
+											"tc2Details": {
+												"title": "TC2 Details Schema",
+												"properties": {
+													"tc2Type": {
+														"type": "string"
+													},
+													"tc2IntermediateApprovalNo": {
+														"type": "string"
+													},
+													"tc2IntermediateExpiryDate": {
+														"type": "string"
+													}
+												},
+												"additionalProperties": false
+											},
+											"tc3Details": {
+												"type": "array",
+												"items": {
+													"title": "TC3 Details Schema",
+													"properties": {
+														"tc3Type": {
+															"type": "string"
+														},
+														"tc3IntermediateApprovalNo": {
+															"type": "string"
+														},
+														"tc3IntermediateExpiryDate": {
+															"type": "string"
+														}
+													},
+													"additionalProperties": false
+												}
+											},
+											"yearOfManufacture": {
+												"type": "string"
+											},
+											"tankCode": {
+												"type": "string"
+											},
+											"specialProvisions": {
+												"type": "string"
+											},
+											"tankManufacturerSerialNo": {
+												"type": "string"
+											},
+											"tankTypeAppNo": {
+												"type": "string"
+											}
+										},
+										"additionalProperties": false
+									},
+									"tankStatement": {
+										"title": "Tank Statement Schema",
+										"properties": {
+											"substancesPermitted": {
+												"type": "string"
+											},
+											"statement": {
+												"type": "string"
+											},
+											"productList": {
+												"type": "string"
+											},
+											"productListRefNo": {
+												"type": "string"
+											},
+											"productListUnNo": {
+												"type": "array",
+												"items": {
+													"type": "string"
+												}
+											}
+										},
+										"additionalProperties": false
+									}
+								},
+								"additionalProperties": false
+							}
+						},
+						"additionalProperties": false
+					},
+					"trainGbWeight": {
+						"type": "integer"
+					},
+					"trainDesignWeight": {
+						"type": "integer"
+					},
+					"maxTrainGbWeight": {
+						"type": "integer"
+					},
+					"maxTrainDesignWeight": {
+						"type": "integer"
+					},
+					"euroStandard": {
+						"type": "integer"
+					},
+					"frontAxleTo5thWheelMin": {
+						"type": "integer"
+					},
+					"frontAxleTo5thWheelMax": {
+						"type": "integer"
+					},
+					"frontAxleTo5thWheelCouplingMin": {
+						"type": "integer"
+					},
+					"frontAxleTo5thWheelCouplingMax": {
+						"type": "integer"
+					},
+					"firstUseDate": {
+						"type": "string"
+					},
+					"maxLoadOnCoupling": {
+						"type": "integer"
+					},
+					"suspensionType": {
+						"type": "string"
+					},
+					"couplingType": {
+						"type": "string"
+					},
+					"frontAxleToRearAxle": {
+						"type": "integer"
+					},
+					"rearAxleToRearTrl": {
+						"type": "integer"
+					},
+					"couplingCenterToRearAxleMin": {
+						"type": "integer"
+					},
+					"couplingCenterToRearAxleMax": {
+						"type": "integer"
+					},
+					"couplingCenterToRearTrlMin": {
+						"type": "integer"
+					},
+					"couplingCenterToRearTrlMax": {
+						"type": "integer"
+					},
+					"numberOfWheelsDriven": {
+						"type": "integer"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"bodyType",
+					"regnDate",
+					"manufactureYear",
+					"ntaNumber",
+					"conversionRefNo",
+					"speedLimiterMrk",
+					"tachoExemptMrk",
+					"reasonForCreation",
+					"statusCode",
+					"grossKerbWeight",
+					"grossLadenWeight",
+					"noOfAxles",
+					"brakeCode",
+					"vehicleType",
+					"euVehicleCategory",
+					"axles",
+					"vehicleClass",
+					"vehicleSubclass",
+					"vehicleConfiguration",
+					"notes"
+				]
+			}
+		},
+		"trailerId": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"systemNumber",
+		"vrms",
+		"vin",
+		"techRecord"
+	]
+}
