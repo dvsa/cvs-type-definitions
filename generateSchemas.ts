@@ -5,6 +5,10 @@ const fs = require('fs');
 const derefSchema = require('json-schema-deref-sync');
 const prettyJs = require('pretty-js');
 
+const jsonSchemaDirName = 'json-schemas';
+const typesDirName = 'types';
+const definitionsDirName = 'json-definitions';
+
 const options = {
   indent: "\t",
   newline: "\r\n",
@@ -12,9 +16,10 @@ const options = {
 };
 
 async function generateTypescriptInterface(schemaLocation: string) {
-  const derefSchemaPath = schemaLocation.replace('.json', '-de-referenced.json');
+  const derefSchemaPath = schemaLocation
+    .replace(definitionsDirName, jsonSchemaDirName)
   const saveToLocation = schemaLocation
-    .replace('json-definitions', 'types')
+    .replace(definitionsDirName, typesDirName)
     .replace('.json', '.d.ts')
   deReferenceJsonSchema(schemaLocation, derefSchemaPath);
   const types = await json2ts.compileFromFile(schemaLocation, {
@@ -39,17 +44,22 @@ function deReferenceJsonSchema(sourcePath: string, targetPath: string): void {
 }
 
 function deleteTypes() {
-  fs.rmdirSync('types', {recursive: true}, (err:any) => {
+  fs.rmdirSync(typesDirName, {recursive: true}, (err:any) => {
     console.error(err)
-  })
+  });
+  fs.rmdirSync(jsonSchemaDirName, {recursive: true}, (err:any) => {
+    console.error(err)
+  });
 }
 
 function generateInterfaces(typeNames: string[]): void {
   deleteTypes();
-  fs.mkdirSync('types');
+  fs.mkdirSync(typesDirName);
+  fs.mkdirSync(jsonSchemaDirName);
   typeNames.forEach((typeName) => {
-    fs.mkdirSync(`types/${typeName}`)
-    generateTypescriptInterface(`./json-definitions/${typeName}/index.json`);
+    fs.mkdirSync(`${typesDirName}/${typeName}`)
+    fs.mkdirSync(`${jsonSchemaDirName}/${typeName}`)
+    generateTypescriptInterface(`./${definitionsDirName}/${typeName}/index.json`);
   });
 
 }

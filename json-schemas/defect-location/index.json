@@ -1,0 +1,49 @@
+{
+	"title": "Defect Location Schema",
+	"type": "object",
+	"properties": {
+		"vertical": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"horizontal": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"lateral": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"longitudinal": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"rowNumber": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"seatNumber": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"axleNumber": {
+			"type": [
+				"integer",
+				"null"
+			]
+		}
+	},
+	"additionalProperties": false
+}
