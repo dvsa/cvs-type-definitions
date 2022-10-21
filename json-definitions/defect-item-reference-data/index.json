@@ -14,7 +14,10 @@
       }
     },
     "deficiencies": {
-      "$ref": "../defect-deficiency-reference-data/index.json#"
+      "type": "array",
+      "items": {
+        "$ref": "../defect-deficiency-reference-data/index.json#"
+      }
     }
   },
   "additionalProperties": false,

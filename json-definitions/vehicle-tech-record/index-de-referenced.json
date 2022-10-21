@@ -12,8 +12,8 @@
 					"vrm": {
 						"type": "string"
 					},
-					"value": {
-						"type": "integer"
+					"isPrimary": {
+						"type": "boolean"
 					}
 				},
 				"additionalProperties": false,
@@ -239,6 +239,9 @@
 						"type": "integer"
 					},
 					"grossGbWeight": {
+						"type": "integer"
+					},
+					"grossDesignWeight": {
 						"type": "integer"
 					},
 					"grossUnladenWeight": {

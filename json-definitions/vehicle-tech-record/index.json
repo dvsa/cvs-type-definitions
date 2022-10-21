@@ -12,8 +12,8 @@
           "vrm": {
             "type": "string"
           },
-          "value": {
-            "type": "integer"
+          "isPrimary": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false,

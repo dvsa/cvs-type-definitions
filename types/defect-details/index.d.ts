@@ -22,14 +22,7 @@ export interface DefectDetailsSchema {
   stdForProhibition: boolean | null;
   prs: boolean | null;
   prohibitionIssued: boolean | null;
-  metadata: {
-    category: {
-      additionalInfo?: {
-        location: DefectLocationMetadataSchema;
-        notes: boolean;
-      };
-    };
-  };
+  metadata: DefectMetadataSchema;
 }
 export interface DefectLocationSchema {
   vertical?: string | null;
@@ -39,6 +32,15 @@ export interface DefectLocationSchema {
   rowNumber?: number | null;
   seatNumber?: number | null;
   axleNumber?: number | null;
+}
+export interface DefectMetadataSchema {
+  category: {
+    additionalInfo?: DefectAdditionalDetailsMetadataSchema;
+  };
+}
+export interface DefectAdditionalDetailsMetadataSchema {
+  location: DefectLocationMetadataSchema;
+  notes: boolean;
 }
 export interface DefectLocationMetadataSchema {
   vertical?: string[] | null;

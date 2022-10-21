@@ -1,12 +1,15 @@
 export const schemas = [
   'test',
-  'atf-visit',
+  'visit',
   'test-station',
   'defect-category-reference-data',
-  'tech-record',
-  'vehicle',
   'defect-details',
   'defect-location',
+  'tech-record',
+  'vehicle',
   'test-result',
-  'vehicle-tech-record'
+  'vehicle-tech-record',
+  'activity',
+  'test-type',
+  'reason-item'
 ];

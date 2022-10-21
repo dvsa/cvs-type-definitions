@@ -10,30 +10,36 @@ export interface DefectCategoryReferenceDataSchema {
   imDescription: string;
   forVehicleType: string[];
   additionalInfo: AdditionalInfoSchema;
-  items: DefectDeficiencyReferenceDataSchema;
+  items: DefectItemReferenceDataSchema[];
 }
 export interface AdditionalInfoSchema {
   psv: {
-    location?: DefectLocationSchema;
-    notes?: string;
+    location?: DefectLocationMetadataSchema;
+    notes?: boolean;
   };
   hgv: {
-    location?: DefectLocationSchema;
-    notes?: string;
+    location?: DefectLocationMetadataSchema;
+    notes?: boolean;
   };
   trl: {
-    location?: DefectLocationSchema;
-    notes?: string;
+    location?: DefectLocationMetadataSchema;
+    notes?: boolean;
   };
 }
-export interface DefectLocationSchema {
-  vertical?: string | null;
-  horizontal?: string | null;
-  lateral?: string | null;
-  longitudinal?: string | null;
-  rowNumber?: number | null;
-  seatNumber?: number | null;
-  axleNumber?: number | null;
+export interface DefectLocationMetadataSchema {
+  vertical?: string[] | null;
+  horizontal?: string[] | null;
+  lateral?: string[] | null;
+  longitudinal?: string[] | null;
+  rowNumber?: number[] | null;
+  seatNumber?: number[] | null;
+  axleNumber?: number[] | null;
+}
+export interface DefectItemReferenceDataSchema {
+  itemNumber?: number;
+  itemDescription?: string;
+  forVehicleType?: string[];
+  deficiencies?: DefectDeficiencyReferenceDataSchema[];
 }
 export interface DefectDeficiencyReferenceDataSchema {
   ref: string;
@@ -41,6 +47,6 @@ export interface DefectDeficiencyReferenceDataSchema {
   deficiencySubId: string;
   deficiencyCategory: string;
   deficiencyText: string;
-  stdForProhibition: string;
-  forVehicleType: string;
+  stdForProhibition: boolean;
+  forVehicleType: string[] | ("psv" | "hgv" | "trl" | "car" | "lgv" | "motorcycle");
 }

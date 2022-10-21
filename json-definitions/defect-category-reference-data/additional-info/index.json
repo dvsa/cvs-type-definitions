@@ -4,10 +4,10 @@
     "psv": {
       "properties": {
         "location": {
-          "$ref": "../../defect-location/index.json#"
+          "$ref": "../../defect-location-metadata/index.json#"
         },
         "notes": {
-          "type": "string"
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -15,10 +15,10 @@
     "hgv": {
       "properties": {
         "location": {
-          "$ref": "../../defect-location/index.json#"
+          "$ref": "../../defect-location-metadata/index.json#"
         },
         "notes": {
-          "type": "string"
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -26,10 +26,10 @@
     "trl": {
       "properties": {
         "location": {
-          "$ref": "../../defect-location/index.json#"
+          "$ref": "../../defect-location-metadata/index.json#"
         },
         "notes": {
-          "type": "string"
+          "type": "boolean"
         }
       },
       "additionalProperties": false

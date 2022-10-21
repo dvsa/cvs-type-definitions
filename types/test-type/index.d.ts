@@ -5,44 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface TestResultSchema {
-  testResultId: string;
-  testStationName: string;
-  testStationPNumber: string;
-  testStationType: string;
-  testerName: string;
-  testerStaffId: string;
-  testerEmailAddress: string;
-  testStartTimestamp: string;
-  testEndTimestamp: string;
-  testStatus: string;
-  reasonForCancellation: string | null;
-  systemNumber: string;
-  vrm?: string;
-  trailerId?: string;
-  vin: string;
-  vehicleClass: VehicleClassSchema;
-  vehicleSubclass?: string[];
-  vehicleType: string;
-  vehicleConfiguration: string;
-  odometerReading?: number | null;
-  odometerReadingUnits?: string | null;
-  preparerId: string;
-  preparerName: string;
-  euVehicleCategory: string;
-  countryOfRegistration: string | null;
-  noOfAxles: number;
-  numberOfWheelsDriven: number;
-  vehicleSize?: string;
-  numberOfSeats?: number;
-  regnDate?: string;
-  firstUseDate?: string;
-  testTypes: TestTypeSchema[];
-}
-export interface VehicleClassSchema {
-  code: string;
-  description: string;
-}
 export interface TestTypeSchema {
   testTypeName: string;
   name: string;

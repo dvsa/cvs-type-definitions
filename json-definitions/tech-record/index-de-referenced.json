@@ -211,6 +211,9 @@
 		"grossGbWeight": {
 			"type": "integer"
 		},
+		"grossDesignWeight": {
+			"type": "integer"
+		},
 		"grossUnladenWeight": {
 			"type": "integer"
 		},

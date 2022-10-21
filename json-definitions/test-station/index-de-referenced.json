@@ -60,8 +60,7 @@
 		"testStationLongitude",
 		"testStationLatitude",
 		"testStationType",
-		"testStationEmails",
-		"searchProperty"
+		"testStationEmails"
 	],
 	"additionalProperties": false
 }

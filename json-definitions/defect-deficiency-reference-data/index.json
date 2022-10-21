@@ -17,10 +17,28 @@
       "type": "string"
     },
     "stdForProhibition": {
-      "type": "string"
+      "type": "boolean"
     },
     "forVehicleType": {
-      "type": "string"
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "string",
+          "enum": [
+            "psv",
+            "hgv",
+            "trl",
+            "car",
+            "lgv",
+            "motorcycle"
+          ]
+        }
+      ]
     }
 
   },

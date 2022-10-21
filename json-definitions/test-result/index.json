@@ -47,7 +47,7 @@
       "type": "string"
     },
     "vehicleClass": {
-      "type": "string"
+      "$ref": "../vehicle-class/index.json#"
     },
     "vehicleSubclass": {
       "type": "array",
@@ -62,7 +62,7 @@
       "type": "string"
     },
     "odometerReading": {
-      "type": ["string", "null"]
+      "type": ["number", "null"]
     },
     "odometerReadingUnits": {
       "type": ["string", "null"]

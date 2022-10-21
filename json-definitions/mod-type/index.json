@@ -1,5 +1,5 @@
 {
-  "description": "Mod Type Schema",
+  "title": "Mod Type Schema",
   "type": "object",
   "properties": {
     "code": {

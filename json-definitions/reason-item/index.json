@@ -1,0 +1,16 @@
+{
+  "title": "Reason Item Schema",
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "isChecked": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "text",
+    "isChecked"
+  ]
+}

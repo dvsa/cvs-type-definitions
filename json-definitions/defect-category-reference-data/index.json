@@ -17,7 +17,10 @@
       "$ref": "./additional-info/index.json#"
     },
     "items": {
-      "$ref": "../defect-deficiency-reference-data/index.json#"
+      "type": "array",
+      "items": {
+        "$ref": "../defect-item-reference-data/index.json#"
+      }
     }
   },
   "additionalProperties": false,

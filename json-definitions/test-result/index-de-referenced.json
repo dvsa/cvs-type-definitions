@@ -50,7 +50,20 @@
 			"type": "string"
 		},
 		"vehicleClass": {
-			"type": "string"
+			"title": "Vehicle Class Schema",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"code",
+				"description"
+			]
 		},
 		"vehicleSubclass": {
 			"type": "array",
@@ -66,7 +79,7 @@
 		},
 		"odometerReading": {
 			"type": [
-				"string",
+				"number",
 				"null"
 			]
 		},
@@ -202,7 +215,7 @@
 					"modType": {
 						"anyOf": [
 							{
-								"description": "Mod Type Schema",
+								"title": "Mod Type Schema",
 								"type": "object",
 								"properties": {
 									"code": {
@@ -368,10 +381,12 @@
 									]
 								},
 								"metadata": {
+									"title": "Defect Metadata Schema",
 									"properties": {
 										"category": {
 											"properties": {
 												"additionalInfo": {
+													"title": "Defect Additional Details Metadata Schema",
 													"properties": {
 														"location": {
 															"title": "Defect Location Metadata Schema",

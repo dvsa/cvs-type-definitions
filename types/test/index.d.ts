@@ -18,6 +18,7 @@ export interface VehicleSchema {
   vrm: string;
   vin: string;
   techRecord: TechRecordSchema;
+  testResultsHistory?: TestResultSchema[];
   countryOfRegistration?: string;
   euVehicleCategory?: string;
   odometerReading?: string;
@@ -62,6 +63,7 @@ export interface TechRecordSchema {
   coifDate?: string;
   unladenWeight?: number;
   grossGbWeight?: number;
+  grossDesignWeight?: number;
   grossUnladenWeight?: number;
   seatsLowerDeck?: number;
   seatsUpperDeck?: number;
@@ -224,6 +226,40 @@ export interface TankStatementSchema {
   productListRefNo?: string;
   productListUnNo?: string[];
 }
+export interface TestResultSchema {
+  testResultId: string;
+  testStationName: string;
+  testStationPNumber: string;
+  testStationType: string;
+  testerName: string;
+  testerStaffId: string;
+  testerEmailAddress: string;
+  testStartTimestamp: string;
+  testEndTimestamp: string;
+  testStatus: string;
+  reasonForCancellation: string | null;
+  systemNumber: string;
+  vrm?: string;
+  trailerId?: string;
+  vin: string;
+  vehicleClass: VehicleClassSchema;
+  vehicleSubclass?: string[];
+  vehicleType: string;
+  vehicleConfiguration: string;
+  odometerReading?: number | null;
+  odometerReadingUnits?: string | null;
+  preparerId: string;
+  preparerName: string;
+  euVehicleCategory: string;
+  countryOfRegistration: string | null;
+  noOfAxles: number;
+  numberOfWheelsDriven: number;
+  vehicleSize?: string;
+  numberOfSeats?: number;
+  regnDate?: string;
+  firstUseDate?: string;
+  testTypes: TestTypeSchema[];
+}
 export interface TestTypeSchema {
   testTypeName: string;
   name: string;
@@ -241,7 +277,7 @@ export interface TestTypeSchema {
   lastSeatbeltInstallationCheckDate?: string | null;
   seatbeltInstallationCheckDate?: boolean | null;
   testExpiryDate?: string;
-  modType?: Index | string | null;
+  modType?: ModTypeSchema | string | null;
   emissionStandard?: string;
   fuelType?: string;
   modificationTypeUsed?: string;
@@ -256,10 +292,7 @@ export interface TestTypeSchema {
   testNumber?: string;
   linkedIds?: string[] | null;
 }
-/**
- * Mod Type Schema
- */
-export interface Index {
+export interface ModTypeSchema {
   code: string;
   description: string;
 }
@@ -280,14 +313,7 @@ export interface DefectDetailsSchema {
   stdForProhibition: boolean | null;
   prs: boolean | null;
   prohibitionIssued: boolean | null;
-  metadata: {
-    category: {
-      additionalInfo?: {
-        location: DefectLocationMetadataSchema;
-        notes: boolean;
-      };
-    };
-  };
+  metadata: DefectMetadataSchema;
 }
 export interface DefectLocationSchema {
   vertical?: string | null;
@@ -297,6 +323,15 @@ export interface DefectLocationSchema {
   rowNumber?: number | null;
   seatNumber?: number | null;
   axleNumber?: number | null;
+}
+export interface DefectMetadataSchema {
+  category: {
+    additionalInfo?: DefectAdditionalDetailsMetadataSchema;
+  };
+}
+export interface DefectAdditionalDetailsMetadataSchema {
+  location: DefectLocationMetadataSchema;
+  notes: boolean;
 }
 export interface DefectLocationMetadataSchema {
   vertical?: string[] | null;

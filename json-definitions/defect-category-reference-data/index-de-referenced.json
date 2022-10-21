@@ -19,56 +19,105 @@
 				"psv": {
 					"properties": {
 						"location": {
-							"title": "Defect Location Schema",
+							"title": "Defect Location Metadata Schema",
 							"type": "object",
 							"properties": {
 								"vertical": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"horizontal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"lateral": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"longitudinal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"rowNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"seatNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "integer"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"axleNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								}
 							},
 							"additionalProperties": false
 						},
 						"notes": {
-							"type": "string"
+							"type": "boolean"
 						}
 					},
 					"additionalProperties": false
@@ -76,56 +125,105 @@
 				"hgv": {
 					"properties": {
 						"location": {
-							"title": "Defect Location Schema",
+							"title": "Defect Location Metadata Schema",
 							"type": "object",
 							"properties": {
 								"vertical": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"horizontal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"lateral": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"longitudinal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"rowNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"seatNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "integer"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"axleNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								}
 							},
 							"additionalProperties": false
 						},
 						"notes": {
-							"type": "string"
+							"type": "boolean"
 						}
 					},
 					"additionalProperties": false
@@ -133,56 +231,105 @@
 				"trl": {
 					"properties": {
 						"location": {
-							"title": "Defect Location Schema",
+							"title": "Defect Location Metadata Schema",
 							"type": "object",
 							"properties": {
 								"vertical": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"horizontal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"lateral": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"longitudinal": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"rowNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"seatNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "integer"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"axleNumber": {
-									"type": [
-										"integer",
-										"null"
+									"anyOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "number"
+											}
+										},
+										{
+											"type": "null"
+										}
 									]
 								}
 							},
 							"additionalProperties": false
 						},
 						"notes": {
-							"type": "string"
+							"type": "boolean"
 						}
 					},
 					"additionalProperties": false
@@ -196,43 +343,86 @@
 			]
 		},
 		"items": {
-			"title": "Defect Deficiency Reference Data Schema",
-			"properties": {
-				"ref": {
-					"type": "string"
+			"type": "array",
+			"items": {
+				"title": "Defect Item Reference Data Schema",
+				"properties": {
+					"itemNumber": {
+						"type": "integer"
+					},
+					"itemDescription": {
+						"type": "string"
+					},
+					"forVehicleType": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"deficiencies": {
+						"type": "array",
+						"items": {
+							"title": "Defect Deficiency Reference Data Schema",
+							"properties": {
+								"ref": {
+									"type": "string"
+								},
+								"deficiencyId": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"deficiencySubId": {
+									"type": "string"
+								},
+								"deficiencyCategory": {
+									"type": "string"
+								},
+								"deficiencyText": {
+									"type": "string"
+								},
+								"stdForProhibition": {
+									"type": "boolean"
+								},
+								"forVehicleType": {
+									"oneOf": [
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										{
+											"type": "string",
+											"enum": [
+												"psv",
+												"hgv",
+												"trl",
+												"car",
+												"lgv",
+												"motorcycle"
+											]
+										}
+									]
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"ref",
+								"deficiencyId",
+								"deficiencySubId",
+								"deficiencyCategory",
+								"deficiencyText",
+								"stdForProhibition",
+								"forVehicleType"
+							]
+						}
+					}
 				},
-				"deficiencyId": {
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"deficiencySubId": {
-					"type": "string"
-				},
-				"deficiencyCategory": {
-					"type": "string"
-				},
-				"deficiencyText": {
-					"type": "string"
-				},
-				"stdForProhibition": {
-					"type": "string"
-				},
-				"forVehicleType": {
-					"type": "string"
-				}
-			},
-			"additionalProperties": false,
-			"required": [
-				"ref",
-				"deficiencyId",
-				"deficiencySubId",
-				"deficiencyCategory",
-				"deficiencyText",
-				"stdForProhibition",
-				"forVehicleType"
-			]
+				"additionalProperties": false,
+				"required": []
+			}
 		}
 	},
 	"additionalProperties": false,

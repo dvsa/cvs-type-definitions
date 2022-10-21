@@ -54,33 +54,7 @@
       "type": ["boolean", "null"]
     },
     "metadata": {
-      "properties": {
-        "category": {
-          "properties": {
-            "additionalInfo": {
-              "properties": {
-                "location": {
-                  "$ref": "../defect-location-metadata/index.json#"
-                },
-                "notes": {
-                  "type": "boolean"
-                }
-
-              },
-              "additionalProperties": false,
-              "required": [
-                "location",
-                "notes"
-              ]
-            }
-          },
-          "additionalProperties": false
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "category"
-      ]
+      "$ref": "../defect-metadata/index.json#"
     }
   },
   "additionalProperties": false,

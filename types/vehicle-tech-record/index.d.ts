@@ -9,7 +9,7 @@ export interface VehicleTechRecordSchema {
   systemNumber: string;
   vrms: {
     vrm: string;
-    value: number;
+    isPrimary?: boolean;
   }[];
   vin: string;
   techRecord: TechRecordSchema[];
@@ -47,6 +47,7 @@ export interface TechRecordSchema {
   coifDate?: string;
   unladenWeight?: number;
   grossGbWeight?: number;
+  grossDesignWeight?: number;
   grossUnladenWeight?: number;
   seatsLowerDeck?: number;
   seatsUpperDeck?: number;

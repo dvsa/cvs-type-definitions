@@ -37,6 +37,7 @@ export interface TechRecordSchema {
   coifDate?: string;
   unladenWeight?: number;
   grossGbWeight?: number;
+  grossDesignWeight?: number;
   grossUnladenWeight?: number;
   seatsLowerDeck?: number;
   seatsUpperDeck?: number;

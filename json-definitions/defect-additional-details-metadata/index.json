@@ -1,0 +1,17 @@
+{
+  "title": "Defect Additional Details Metadata Schema",
+  "properties": {
+    "location": {
+      "$ref": "../defect-location-metadata/index.json#"
+    },
+    "notes": {
+      "type": "boolean"
+    }
+
+  },
+  "additionalProperties": false,
+  "required": [
+    "location",
+    "notes"
+  ]
+}
