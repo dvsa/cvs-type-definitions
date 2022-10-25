@@ -1,5 +1,6 @@
 {
 	"title": "Defect Category Reference Data Schema",
+	"type": "object",
 	"properties": {
 		"imNumber": {
 			"type": "integer"
@@ -15,6 +16,7 @@
 		},
 		"additionalInfo": {
 			"title": "Additional Info Schema",
+			"type": "object",
 			"properties": {
 				"psv": {
 					"properties": {
@@ -346,6 +348,7 @@
 			"type": "array",
 			"items": {
 				"title": "Defect Item Reference Data Schema",
+				"type": "object",
 				"properties": {
 					"itemNumber": {
 						"type": "integer"
@@ -363,6 +366,7 @@
 						"type": "array",
 						"items": {
 							"title": "Defect Deficiency Reference Data Schema",
+							"type": "object",
 							"properties": {
 								"ref": {
 									"type": "string"

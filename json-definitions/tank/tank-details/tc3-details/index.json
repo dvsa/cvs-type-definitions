@@ -1,5 +1,6 @@
 {
   "title": "TC3 Details Schema",
+  "type": "object",
   "properties": {
     "tc3Type": {
       "type": "string"

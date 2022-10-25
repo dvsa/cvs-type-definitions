@@ -1,5 +1,6 @@
 {
   "title": "Additional Info Schema",
+  "type": "object",
   "properties": {
     "psv": {
       "properties": {

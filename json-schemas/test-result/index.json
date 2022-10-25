@@ -1,5 +1,6 @@
 {
 	"title": "Test Result Schema",
+	"type": "object",
 	"properties": {
 		"testResultId": {
 			"type": "string"
@@ -51,6 +52,7 @@
 		},
 		"vehicleClass": {
 			"title": "Vehicle Class Schema",
+			"type": "object",
 			"properties": {
 				"code": {
 					"type": "string"
@@ -382,11 +384,13 @@
 								},
 								"metadata": {
 									"title": "Defect Metadata Schema",
+									"type": "object",
 									"properties": {
 										"category": {
 											"properties": {
 												"additionalInfo": {
 													"title": "Defect Additional Details Metadata Schema",
+													"type": "object",
 													"properties": {
 														"location": {
 															"title": "Defect Location Metadata Schema",
@@ -531,6 +535,7 @@
 						],
 						"items": {
 							"title": "Specialist Custom Defects Schema",
+							"type": "object",
 							"properties": {
 								"referenceNumber": {
 									"type": "string"

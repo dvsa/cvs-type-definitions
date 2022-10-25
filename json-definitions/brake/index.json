@@ -1,5 +1,6 @@
 {
   "title": "Brake",
+  "type": "object",
   "properties": {
     "brakeCode": {
       "type": "string"

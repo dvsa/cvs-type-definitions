@@ -1,5 +1,6 @@
 {
   "title": "Brake Force Wheel",
+  "type": "object",
   "properties": {
     "serviceBrakeForce": {
       "type": "integer"

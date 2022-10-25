@@ -1,5 +1,6 @@
 {
   "title": "Test Result Schema",
+  "type": "object",
   "properties": {
     "testResultId": {
       "type": "string"

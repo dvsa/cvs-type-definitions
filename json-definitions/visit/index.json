@@ -1,5 +1,6 @@
 {
   "title": "Visit Schema",
+  "type": "object",
   "properties": {
     "startTime": {
       "type": "string"

@@ -1,5 +1,6 @@
 {
   "title": "Specialist Custom Defects Schema",
+  "type": "object",
   "properties": {
     "referenceNumber": {
       "type": "string"

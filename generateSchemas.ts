@@ -67,6 +67,7 @@ function generateInterfaces(typeNames: string[]): void {
 /**
  * Generate typescript files from json definitions
  */
+// @ts-ignore
 generateInterfaces(schemas);
 
 

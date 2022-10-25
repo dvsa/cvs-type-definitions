@@ -1,5 +1,6 @@
 {
   "title": "Defect Category Reference Data Schema",
+  "type": "object",
   "properties": {
     "imNumber": {
       "type": "integer"

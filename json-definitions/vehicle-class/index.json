@@ -1,5 +1,6 @@
 {
   "title": "Vehicle Class Schema",
+  "type": "object",
   "properties": {
     "code": {
       "type": "string"

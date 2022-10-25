@@ -1,5 +1,6 @@
 {
   "title": "Tank Schema",
+  "type": "object",
   "properties": {
     "tankDetails": {
       "$ref": "./tank-details/index.json#"

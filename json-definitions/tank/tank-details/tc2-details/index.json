@@ -1,5 +1,6 @@
 {
   "title": "TC2 Details Schema",
+  "type": "object",
   "properties": {
     "tc2Type": {
       "type": "string"

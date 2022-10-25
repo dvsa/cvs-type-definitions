@@ -1,5 +1,6 @@
 {
   "title": "Vehicle Tech record Schema",
+  "type": "object",
   "properties": {
     "systemNumber": {
       "type": "string"

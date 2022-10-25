@@ -12,4 +12,4 @@ export const schemas = [
   'activity',
   'test-type',
   'reason-item'
-];
+] as const;

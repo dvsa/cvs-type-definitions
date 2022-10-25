@@ -202,6 +202,7 @@
 							},
 							"vehicleClass": {
 								"title": "Vehicle Class Schema",
+								"type": "object",
 								"properties": {
 									"code": {
 										"type": "string"
@@ -278,6 +279,7 @@
 							},
 							"brakes": {
 								"title": "Brake",
+								"type": "object",
 								"properties": {
 									"brakeCode": {
 										"type": "string"
@@ -302,6 +304,7 @@
 									},
 									"brakeForceWheelsNotLocked": {
 										"title": "Brake Force Wheel",
+										"type": "object",
 										"properties": {
 											"serviceBrakeForce": {
 												"type": "integer"
@@ -322,6 +325,7 @@
 									},
 									"brakeForceWheelsUpToHalfLocked": {
 										"title": "Brake Force Wheel",
+										"type": "object",
 										"properties": {
 											"serviceBrakeForce": {
 												"type": "integer"
@@ -372,6 +376,7 @@
 							},
 							"dimensions": {
 								"title": "Dimensions Schema",
+								"type": "object",
 								"properties": {
 									"length": {
 										"type": "integer"
@@ -412,6 +417,7 @@
 							},
 							"adrDetails": {
 								"title": "ADR Details Schema",
+								"type": "object",
 								"properties": {
 									"vehicleDetails": {
 										"type": "object",
@@ -442,6 +448,7 @@
 									},
 									"applicantDetails": {
 										"title": "Applicant Details Schema",
+										"type": "object",
 										"properties": {
 											"name": {
 												"type": "string"
@@ -493,15 +500,18 @@
 									},
 									"tank": {
 										"title": "Tank Schema",
+										"type": "object",
 										"properties": {
 											"tankDetails": {
 												"title": "Tank Details Schema",
+												"type": "object",
 												"properties": {
 													"tankManufacturer": {
 														"type": "string"
 													},
 													"tc2Details": {
 														"title": "TC2 Details Schema",
+														"type": "object",
 														"properties": {
 															"tc2Type": {
 																"type": "string"
@@ -519,6 +529,7 @@
 														"type": "array",
 														"items": {
 															"title": "TC3 Details Schema",
+															"type": "object",
 															"properties": {
 																"tc3Type": {
 																	"type": "string"
@@ -553,6 +564,7 @@
 											},
 											"tankStatement": {
 												"title": "Tank Statement Schema",
+												"type": "object",
 												"properties": {
 													"substancesPermitted": {
 														"type": "string"
@@ -670,6 +682,7 @@
 						"type": "array",
 						"items": {
 							"title": "Test Result Schema",
+							"type": "object",
 							"properties": {
 								"testResultId": {
 									"type": "string"
@@ -721,6 +734,7 @@
 								},
 								"vehicleClass": {
 									"title": "Vehicle Class Schema",
+									"type": "object",
 									"properties": {
 										"code": {
 											"type": "string"
@@ -1052,11 +1066,13 @@
 														},
 														"metadata": {
 															"title": "Defect Metadata Schema",
+															"type": "object",
 															"properties": {
 																"category": {
 																	"properties": {
 																		"additionalInfo": {
 																			"title": "Defect Additional Details Metadata Schema",
+																			"type": "object",
 																			"properties": {
 																				"location": {
 																					"title": "Defect Location Metadata Schema",
@@ -1201,6 +1217,7 @@
 												],
 												"items": {
 													"title": "Specialist Custom Defects Schema",
+													"type": "object",
 													"properties": {
 														"referenceNumber": {
 															"type": "string"
@@ -1578,11 +1595,13 @@
 											},
 											"metadata": {
 												"title": "Defect Metadata Schema",
+												"type": "object",
 												"properties": {
 													"category": {
 														"properties": {
 															"additionalInfo": {
 																"title": "Defect Additional Details Metadata Schema",
+																"type": "object",
 																"properties": {
 																	"location": {
 																		"title": "Defect Location Metadata Schema",
@@ -1727,6 +1746,7 @@
 									],
 									"items": {
 										"title": "Specialist Custom Defects Schema",
+										"type": "object",
 										"properties": {
 											"referenceNumber": {
 												"type": "string"

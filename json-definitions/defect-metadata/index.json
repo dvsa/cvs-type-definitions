@@ -1,5 +1,6 @@
 {
   "title": "Defect Metadata Schema",
+  "type": "object",
   "properties": {
     "category": {
       "properties": {

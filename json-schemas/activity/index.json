@@ -1,5 +1,6 @@
 {
 	"title": "Activity Schema",
+	"type": "object",
 	"properties": {
 		"activityType": {
 			"type": "string"

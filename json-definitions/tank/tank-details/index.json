@@ -1,5 +1,6 @@
 {
   "title": "Tank Details Schema",
+  "type": "object",
   "properties": {
     "tankManufacturer": {
       "type": "string"

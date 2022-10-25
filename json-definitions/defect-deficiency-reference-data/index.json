@@ -1,5 +1,6 @@
 {
   "title": "Defect Deficiency Reference Data Schema",
+  "type": "object",
   "properties": {
     "ref": {
       "type": "string"

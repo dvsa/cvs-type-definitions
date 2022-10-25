@@ -1,5 +1,6 @@
 {
   "title": "Tank Statement Schema",
+  "type": "object",
   "properties": {
     "substancesPermitted": {
       "type": "string"

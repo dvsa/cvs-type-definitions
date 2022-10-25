@@ -119,11 +119,13 @@
 		},
 		"metadata": {
 			"title": "Defect Metadata Schema",
+			"type": "object",
 			"properties": {
 				"category": {
 					"properties": {
 						"additionalInfo": {
 							"title": "Defect Additional Details Metadata Schema",
+							"type": "object",
 							"properties": {
 								"location": {
 									"title": "Defect Location Metadata Schema",

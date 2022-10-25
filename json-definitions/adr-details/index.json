@@ -1,5 +1,6 @@
 {
   "title": "ADR Details Schema",
+  "type": "object",
   "properties": {
     "vehicleDetails": {
       "type": "object",

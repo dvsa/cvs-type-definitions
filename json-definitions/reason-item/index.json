@@ -1,5 +1,6 @@
 {
   "title": "Reason Item Schema",
+  "type": "object",
   "properties": {
     "text": {
       "type": "string"

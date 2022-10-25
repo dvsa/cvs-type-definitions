@@ -1,5 +1,6 @@
 {
   "title": "Dimensions Schema",
+  "type": "object",
   "properties": {
     "length": {
       "type": "integer"

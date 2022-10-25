@@ -1,5 +1,6 @@
 {
   "title": "Test Station Schema",
+  "type": "object",
   "properties": {
     "testStationId": {
       "type": "string"
