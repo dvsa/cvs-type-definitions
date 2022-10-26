@@ -7,6 +7,8 @@
 
 - Ensure consuming repo is set up to install private DVSA packages by adding the following to the `.npmrc` file:
   `@dvsa:registry=https://npm.pkg.github.com`
+- **NOTE:** in order to install private DVSA packages you will need a `.npmrc` file in your `$PATH` containing a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) linked to the DVSA org. You should add the token to your `.npmrc` file as follows:
+  - `//npm.pkg.github.com/:_authToken=<AUTH_TOKEN_HERE>`
 - install GitHub package: `npm install @dvsa/cvs-type-definitions@latest`
 
 ## Example usage:
