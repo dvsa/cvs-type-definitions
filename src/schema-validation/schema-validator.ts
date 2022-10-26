@@ -1,10 +1,12 @@
-import { schemas } from '../schemas';
+import { schemas } from '../../schemas';
 const Enjoi = require('enjoi');
+declare var require: any
 
 export type Schema = typeof schemas[number];
 
 export const isValidObject = (schemaName: Schema, objectToValidate: object): boolean => {
-  const schemaFile = require(`../json-definitions/${schemaName}/index.json`);
+  const schemaPath = `json-schemas/${schemaName}/index.json`
+  const schemaFile = require(schemaPath);
   const schema = Enjoi.schema(schemaFile)
   const { error } = schema.validate(<ArrayBufferView | ArrayBuffer>objectToValidate);
   if (error) {
@@ -18,3 +20,5 @@ export const isValidObject = (schemaName: Schema, objectToValidate: object): boo
   }
   return !error
 }
+
+isValidObject('test-result', {});

@@ -1,0 +1,21 @@
+{
+  "ts-node": {
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@matty/*": [
+        "json-schemas/*"
+      ]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true
+  },
+  "include": ["src", "types", "json-schemas"],
+  "exclude": ["node_modules"]
+}

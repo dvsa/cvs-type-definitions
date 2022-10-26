@@ -11,17 +11,25 @@
   - `//npm.pkg.github.com/:_authToken=<AUTH_TOKEN_HERE>`
 - install GitHub package: `npm install @dvsa/cvs-type-definitions@latest`
 
-## Example usage:
+## Example usage (TS types):
 
 `import { CommercialVehicleTestSchema } from @dvsa/cvs-type-definitions/types/test`
 
+## Example usage (json schemas)
+
+The package exports an `isValidObject()` function which can be used to validate an object against a specified schema. E.g:
+
+
+
 # Updating a schema
 
-Edits should only be made to `json` schema definitions within `json-definitions` directory. TypeScript interfaces will be generated from these files
+Edits should only be made to `json` schema definitions within `json-definitions` directory. 
 
-1. Navigate into the relevant schema (ie. mes-test-schema)
+TypeScript interfaces will be generated from these files and saved to `types` directory. De-referenced json schema definitions will be saved to `json-schemas` directory. Only these two directories are published in the npm package.
+
+1. Navigate into the relevant schema (e.g. `./json-definitions/test/index.json`)
 2. Edit file
-3. Generate the new TypeScript definitions using `npm run generate`
+3. Generate the new TypeScript and de-referenced json schema definitions using `npm run generate`
 4. Bump the version of the package using `npm version {major|minor|patch}`
 5. Publish updates
 

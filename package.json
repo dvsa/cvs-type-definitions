@@ -1,26 +1,35 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "1.0.7",
+  "version": "1.0.11",
   "description": "type definitions for cvs vta application",
   "main": "index.js",
+  "files": [
+    "lib/**/*",
+    "json-schemas/**/*",
+    "types/**/*"
+  ],
   "repository": {
     "url": "git://github.com/dvsa/cvs-type-definitions.git"
   },
   "scripts": {
+    "build": "tsc",
     "test": "test",
     "generate": "ts-node generateSchemas.ts"
   },
   "author": "dvsa",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.11.5",
     "json-schema-to-typescript": "^11.0.2",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "enjoi": "^9.0.1",
     "joi": "^17.6.4",
     "json-schema-deref-sync": "^0.14.0",
-    "pretty-js": "^0.2.2"
+    "pretty-js": "^0.2.2",
+    "util": "^0.12.5"
   }
 }

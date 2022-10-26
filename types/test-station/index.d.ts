@@ -15,8 +15,8 @@ export interface TestStationSchema {
   testStationTown: string;
   testStationAddress: string;
   testStationPostcode: string;
-  testStationLongitude: string;
-  testStationLatitude: string;
+  testStationLongitude: number;
+  testStationLatitude: number;
   testStationType: string;
   testStationEmails: string[];
   searchProperty?: string;
