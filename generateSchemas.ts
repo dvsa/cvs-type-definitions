@@ -1,78 +1,81 @@
-import {schemas} from './schemas';
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from "fs";
 
-const json2ts = require('json-schema-to-typescript');
-const fs = require('fs');
-const derefSchema = require('json-schema-deref-sync');
-const prettyJs = require('pretty-js');
+const json2ts = require("json-schema-to-typescript");
+const derefSchema = require("json-schema-deref-sync");
+const prettyJs = require("pretty-js");
 
-const jsonSchemaDirName = 'json-schemas';
-const typesDirName = 'types';
-const definitionsDirName = 'json-definitions';
+const jsonSchemaDirName = "json-schemas";
+const typesDirName = "types";
+const definitionsDirName = "json-definitions";
 
 const options = {
   indent: "\t",
   newline: "\r\n",
-  quoteProperties: "true"
+  quoteProperties: "true",
 };
 
 async function generateTypescriptInterface(schemaLocation: string) {
-  const derefSchemaPath = schemaLocation
-    .replace(definitionsDirName, jsonSchemaDirName)
   const saveToLocation = schemaLocation
     .replace(definitionsDirName, typesDirName)
-    .replace('.json', '.d.ts')
-  deReferenceJsonSchema(schemaLocation, derefSchemaPath);
+    .replace(".json", ".d.ts");
   const types = await json2ts.compileFromFile(schemaLocation, {
-    unreachableDefinitions: true
+    unreachableDefinitions: true,
   });
-  fs.writeFileSync(saveToLocation, types);
-  console.log(`********** types generated for ${schemaLocation} and saved to ${saveToLocation} **********`);
+  writeFile(saveToLocation, types);
+  console.log(
+    `********** types generated for ${schemaLocation} and saved to ${saveToLocation} **********`
+  );
 }
 
-function deReferenceJsonSchema(sourcePath: string, targetPath: string): void {
-  const originalSchema = require(sourcePath);
-  const baseFolder = sourcePath.substring(0, sourcePath.lastIndexOf("/"));
-  let deReferencedJsonSchema = derefSchema(originalSchema, {
+function deReferenceJsonSchema(schemaLocation: string): void {
+  const derefSchemaPath = schemaLocation.replace(
+    definitionsDirName,
+    jsonSchemaDirName
+  );
+  const originalSchema = require(schemaLocation);
+  const baseFolder = schemaLocation.substring(
+    0,
+    schemaLocation.lastIndexOf("/")
+  );
+  const deReferencedJsonSchema = derefSchema(originalSchema, {
     baseFolder: baseFolder,
   });
-  let deReferencedSchema = prettyJs(JSON.stringify(deReferencedJsonSchema), options);
-  fs.writeFileSync(targetPath, deReferencedSchema, 'utf8', (err: any) => {
-    if (err) {
-      console.error(`unable to write to file ${targetPath}`);
+  const deReferencedSchema = prettyJs(
+    JSON.stringify(deReferencedJsonSchema),
+    options
+  );
+  writeFile(derefSchemaPath, deReferencedSchema);
+}
+
+function writeFile(path: string, data: string) {
+  const baseFolder = path.substring(0, path.lastIndexOf("/"));
+  mkdirSync(baseFolder, { recursive: true });
+  writeFileSync(path, data, "utf8");
+}
+
+function sanitiseFolders(): void {
+  try {
+    rmSync(typesDirName, { recursive: true });
+    rmSync(jsonSchemaDirName, { recursive: true });
+  } catch {}
+}
+
+const isFolder = (name: string) => !name.includes(".");
+
+function generateTypesAndSchemaInFolder(path: string) {
+  sanitiseFolders();
+  const folderContents = readdirSync(path, "utf-8");
+  folderContents.forEach((item) => {
+    const definitionFullPath = `${path}/${item}`;
+    if (isFolder(item)) {
+      generateTypesAndSchemaInFolder(definitionFullPath);
+    } else {
+      deReferenceJsonSchema(definitionFullPath);
+      generateTypescriptInterface(definitionFullPath);
     }
-  })
-}
-
-function deleteTypes() {
-  fs.rmdirSync(typesDirName, {recursive: true}, (err:any) => {
-    console.error(err)
-  });
-  fs.rmdirSync(jsonSchemaDirName, {recursive: true}, (err:any) => {
-    console.error(err)
   });
 }
-
-function generateInterfaces(typeNames: string[]): void {
-  deleteTypes();
-  fs.mkdirSync(typesDirName);
-  fs.mkdirSync(jsonSchemaDirName);
-  typeNames.forEach((typeName) => {
-    fs.mkdirSync(`${typesDirName}/${typeName}`)
-    fs.mkdirSync(`${jsonSchemaDirName}/${typeName}`)
-    generateTypescriptInterface(`./${definitionsDirName}/${typeName}/index.json`);
-  });
-
-}
-
 /**
  * Generate typescript files from json definitions
  */
-// @ts-ignore
-generateInterfaces(schemas);
-
-
-
-
-
-
-
+generateTypesAndSchemaInFolder(definitionsDirName);

@@ -1,0 +1,79 @@
+{
+	"title": "Brake",
+	"type": "object",
+	"properties": {
+		"brakeCode": {
+			"type": "string"
+		},
+		"dataTrBrakeOne": {
+			"type": "string"
+		},
+		"dataTrBrakeTwo": {
+			"type": "string"
+		},
+		"dataTrBrakeThree": {
+			"type": "string"
+		},
+		"retarderBrakeOne": {
+			"type": "string"
+		},
+		"retarderBrakeTwo": {
+			"type": "string"
+		},
+		"brakeCodeOriginal": {
+			"type": "string"
+		},
+		"brakeForceWheelsNotLocked": {
+			"title": "Brake Force Wheel",
+			"type": "object",
+			"properties": {
+				"serviceBrakeForce": {
+					"type": "integer"
+				},
+				"secondaryBrakeForce": {
+					"type": "integer"
+				},
+				"parkingBrakeForce": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"serviceBrakeForce",
+				"secondaryBrakeForce",
+				"parkingBrakeForce"
+			],
+			"additionalProperties": false
+		},
+		"brakeForceWheelsUpToHalfLocked": {
+			"title": "Brake Force Wheel",
+			"type": "object",
+			"properties": {
+				"serviceBrakeForce": {
+					"type": "integer"
+				},
+				"secondaryBrakeForce": {
+					"type": "integer"
+				},
+				"parkingBrakeForce": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"serviceBrakeForce",
+				"secondaryBrakeForce",
+				"parkingBrakeForce"
+			],
+			"additionalProperties": false
+		},
+		"dtpNumber": {
+			"type": "string"
+		},
+		"loadSensingValve": {
+			"type": "boolean"
+		},
+		"antilockBrakingSystem": {
+			"type": "boolean"
+		}
+	},
+	"additionalProperties": false
+}

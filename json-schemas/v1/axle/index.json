@@ -1,0 +1,96 @@
+{
+	"title": "Axle Schema",
+	"type": "object",
+	"properties": {
+		"parkingBrakeMrk": {
+			"type": "boolean"
+		},
+		"axleNumber": {
+			"type": "integer"
+		},
+		"weights": {
+			"title": "Weights Schema",
+			"type": "object",
+			"properties": {
+				"kerbWeight": {
+					"type": "integer"
+				},
+				"ladenWeight": {
+					"type": "integer"
+				},
+				"gbWeight": {
+					"type": "integer"
+				},
+				"designWeight": {
+					"type": "integer"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"gbWeight",
+				"designWeight"
+			]
+		},
+		"tyres": {
+			"title": "Tyres Schema",
+			"type": "object",
+			"properties": {
+				"tyreSize": {
+					"type": "string"
+				},
+				"plyRating": {
+					"type": "string"
+				},
+				"fitmentCode": {
+					"type": "string"
+				},
+				"dataTrPsvAxles": {
+					"type": "integer"
+				},
+				"tyreCode": {
+					"type": "number"
+				},
+				"dataTrAxles": {
+					"type": "number"
+				},
+				"speedCategorySymbol": {
+					"description": "PSV only",
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"tyreSize",
+				"plyRating",
+				"fitmentCode",
+				"tyreCode"
+			]
+		},
+		"brakes": {
+			"title": "Axle Brake Properties Schema",
+			"type": "object",
+			"properties": {
+				"brakeActuator": {
+					"type": "integer"
+				},
+				"leverLength": {
+					"type": "integer"
+				},
+				"springBrakeParking": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"brakeActuator",
+				"leverLength",
+				"springBrakeParking"
+			],
+			"additionalProperties": false
+		}
+	},
+	"required": [
+		"axleNumber",
+		"tyres"
+	],
+	"additionalProperties": false
+}

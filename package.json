@@ -19,7 +19,7 @@
   "author": "dvsa",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.11.5",
+    "@types/node": "^18.16.7",
     "json-schema-to-typescript": "^11.0.2",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",

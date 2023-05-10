@@ -1,0 +1,25 @@
+{
+	"title": "Specialist Custom Defects Schema",
+	"type": "object",
+	"properties": {
+		"referenceNumber": {
+			"type": "string"
+		},
+		"defectName": {
+			"type": "string"
+		},
+		"defectNotes": {
+			"type": "string"
+		},
+		"hasAllMandatoryFields": {
+			"type": "boolean",
+			"description": "FE only"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"referenceNumber",
+		"defectName",
+		"defectNotes"
+	]
+}
