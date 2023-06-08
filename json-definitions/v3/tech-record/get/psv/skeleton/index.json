@@ -1,0 +1,60 @@
+{
+  "title": "PSV Technical Record V3 Skeleton",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vin",
+    "systemNumber",
+    "primaryVrm",
+    "vehicleType",
+    "techRecord_vehicleConfiguration",
+    "techRecord_vehicleSize",
+    "techRecord_seatsLowerDeck",
+    "techRecord_seatsUpperDeck",
+    "techRecord_numberOfWheelsDriven"
+  ],
+  "properties": {
+    "vin": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "vehicleType": {
+      "const": "psv"
+    },
+    "techRecord_vehicleConfiguration": {
+      "type": "string",
+      "enum": [
+        "rigid",
+        "articulated",
+        "centre axle drawbar",
+        "semi-car transporter",
+        "semi-trailer",
+        "long semi-trailer",
+        "low loader",
+        "other",
+        "drawbar",
+        "four-in-line",
+        "dolly",
+        "full drawbar"
+      ]
+    },
+    "techRecord_vehicleSize": {
+      "type": "string",
+      "enum": ["small", "large"]
+    },
+    "techRecord_seatsLowerDeck": {
+      "type": "number"
+    },
+    "techRecord_seatsUpperDeck": {
+      "type": "number"
+    },
+    "techRecord_numberOfWheelsDriven": {
+      "type": ["string", "null"]
+    }
+  }
+}
