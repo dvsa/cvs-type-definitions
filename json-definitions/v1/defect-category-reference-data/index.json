@@ -15,12 +15,12 @@
       }
     },
     "additionalInfo": {
-      "$ref": "./additional-info/index.json#"
+      "$ref": "./additional-info/index.ignore.json#"
     },
     "items": {
       "type": "array",
       "items": {
-        "$ref": "../defect-item-reference-data/index.json#"
+        "$ref": "../defect-item-reference-data/index.ignore.json#"
       }
     }
   },

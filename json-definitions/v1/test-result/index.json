@@ -48,7 +48,7 @@
       "type": "string"
     },
     "vehicleClass": {
-      "$ref": "../vehicle-class/index.json#"
+      "$ref": "../vehicle-class/index.ignore.json#"
     },
     "vehicleSubclass": {
       "type": "array",

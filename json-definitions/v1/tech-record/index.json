@@ -12,10 +12,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "code",
-        "description"
-      ]
+      "required": ["code", "description"]
     },
     "manufactureYear": {
       "type": "integer"
@@ -62,12 +59,12 @@
     "axles": {
       "type": "array",
       "items": {
-        "$ref": "../axle/index.json#"
+        "$ref": "../axle/index.ignore.json#"
       },
       "additionalProperties": false
     },
     "vehicleClass": {
-      "$ref": "../vehicle-class/index.json#"
+      "$ref": "../vehicle-class/index.ignore.json#"
     },
     "vehicleSubclass": {
       "type": "array",
@@ -130,7 +127,7 @@
       "type": "string"
     },
     "brakes": {
-      "$ref": "../brake/index.json"
+      "$ref": "../brake/index.ignore.json"
     },
     "make": {
       "type": "string"
@@ -151,13 +148,13 @@
       "type": "boolean"
     },
     "dimensions": {
-      "$ref": "../dimensions/index.json"
+      "$ref": "../dimensions/index.ignore.json"
     },
     "notes": {
       "type": "string"
     },
     "adrDetails": {
-      "$ref": "../adr-details/index.json#"
+      "$ref": "../adr-details/index.ignore.json#"
     },
     "trainGbWeight": {
       "type": "integer"

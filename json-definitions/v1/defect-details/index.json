@@ -18,10 +18,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "location",
-        "notes"
-      ]
+      "required": ["location", "notes"]
     },
     "itemNumber": {
       "type": "integer"
@@ -54,7 +51,7 @@
       "type": ["boolean", "null"]
     },
     "metadata": {
-      "$ref": "../defect-metadata/index.json#"
+      "$ref": "../defect-metadata/index.ignore.json#"
     }
   },
   "additionalProperties": false,

@@ -53,7 +53,7 @@
     "modType": {
       "anyOf": [
         {
-          "$ref": "../mod-type/index.json#"
+          "$ref": "../mod-type/index.ignore.json#"
         },
         {
           "type": "string"
@@ -90,7 +90,7 @@
     "customDefects": {
       "type": ["array"],
       "items": {
-        "$ref": "../specialist-custom-defects/index.json#"
+        "$ref": "../specialist-custom-defects/index.ignore.json#"
       }
     },
     "completionStatus": {
