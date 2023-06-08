@@ -71,7 +71,9 @@ function generateTypesAndSchemaInFolder(path: string) {
       generateTypesAndSchemaInFolder(definitionFullPath);
     } else {
       deReferenceJsonSchema(definitionFullPath);
-      generateTypescriptInterface(definitionFullPath);
+      if (!item.includes(".ignore")) {
+        generateTypescriptInterface(definitionFullPath);
+      }
     }
   });
 }

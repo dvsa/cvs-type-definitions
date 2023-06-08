@@ -5,25 +5,28 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type VehicleConfiguration =
+  | "rigid"
+  | "articulated"
+  | "centre axle drawbar"
+  | "semi-car transporter"
+  | "semi-trailer"
+  | "long semi-trailer"
+  | "low loader"
+  | "other"
+  | "drawbar"
+  | "four-in-line"
+  | "dolly"
+  | "full drawbar";
+export type VehicleSize = "small" | "large";
+
 export interface PSVTechnicalRecordV3Skeleton {
   vin: string;
   systemNumber: string;
   primaryVrm: string;
   vehicleType: "psv";
-  techRecord_vehicleConfiguration:
-    | "rigid"
-    | "articulated"
-    | "centre axle drawbar"
-    | "semi-car transporter"
-    | "semi-trailer"
-    | "long semi-trailer"
-    | "low loader"
-    | "other"
-    | "drawbar"
-    | "four-in-line"
-    | "dolly"
-    | "full drawbar";
-  techRecord_vehicleSize: "small" | "large";
+  techRecord_vehicleConfiguration: VehicleConfiguration;
+  techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
   techRecord_numberOfWheelsDriven: string | null;

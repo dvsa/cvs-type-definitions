@@ -27,25 +27,10 @@
       "const": "psv"
     },
     "techRecord_vehicleConfiguration": {
-      "type": "string",
-      "enum": [
-        "rigid",
-        "articulated",
-        "centre axle drawbar",
-        "semi-car transporter",
-        "semi-trailer",
-        "long semi-trailer",
-        "low loader",
-        "other",
-        "drawbar",
-        "four-in-line",
-        "dolly",
-        "full drawbar"
-      ]
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_vehicleSize": {
-      "type": "string",
-      "enum": ["small", "large"]
+      "$ref": "../../../enums/vehicleSize.ignore.json"
     },
     "techRecord_seatsLowerDeck": {
       "type": "number"

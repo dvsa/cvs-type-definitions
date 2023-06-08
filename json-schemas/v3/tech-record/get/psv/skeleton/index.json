@@ -27,6 +27,7 @@
 			"const": "psv"
 		},
 		"techRecord_vehicleConfiguration": {
+			"title": "Vehicle Configuration",
 			"type": "string",
 			"enum": [
 				"rigid",
@@ -44,6 +45,7 @@
 			]
 		},
 		"techRecord_vehicleSize": {
+			"title": "Vehicle Size",
 			"type": "string",
 			"enum": [
 				"small",
