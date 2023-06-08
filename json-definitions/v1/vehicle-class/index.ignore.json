@@ -1,0 +1,17 @@
+{
+  "title": "Vehicle Class Schema",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "code",
+    "description"
+  ]
+}

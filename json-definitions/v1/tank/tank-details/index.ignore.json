@@ -1,0 +1,34 @@
+{
+  "title": "Tank Details Schema",
+  "type": "object",
+  "properties": {
+    "tankManufacturer": {
+      "type": "string"
+    },
+    "tc2Details": {
+      "$ref": "./tc2-details/index.ignore.json#"
+    },
+    "tc3Details": {
+      "type": "array",
+      "items": {
+        "$ref": "./tc3-details/index.ignore.json#"
+      }
+    },
+    "yearOfManufacture": {
+      "type": "string"
+    },
+    "tankCode": {
+      "type": "string"
+    },
+    "specialProvisions": {
+      "type": "string"
+    },
+    "tankManufacturerSerialNo": {
+      "type": "string"
+    },
+    "tankTypeAppNo": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

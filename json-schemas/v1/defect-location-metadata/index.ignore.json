@@ -1,0 +1,98 @@
+{
+	"title": "Defect Location Metadata Schema",
+	"type": "object",
+	"properties": {
+		"vertical": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"horizontal": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"lateral": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"longitudinal": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"rowNumber": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"seatNumber": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"axleNumber": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				},
+				{
+					"type": "null"
+				}
+			]
+		}
+	},
+	"additionalProperties": false
+}

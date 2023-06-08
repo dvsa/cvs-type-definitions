@@ -1,0 +1,16 @@
+{
+  "title": "Defect Metadata Schema",
+  "type": "object",
+  "properties": {
+    "category": {
+      "properties": {
+        "additionalInfo": {
+          "$ref": "../defect-additional-details-metadata/index.ignore.json#"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": ["category"]
+}

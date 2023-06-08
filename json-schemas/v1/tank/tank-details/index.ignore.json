@@ -1,0 +1,60 @@
+{
+	"title": "Tank Details Schema",
+	"type": "object",
+	"properties": {
+		"tankManufacturer": {
+			"type": "string"
+		},
+		"tc2Details": {
+			"title": "TC2 Details Schema",
+			"type": "object",
+			"properties": {
+				"tc2Type": {
+					"type": "string"
+				},
+				"tc2IntermediateApprovalNo": {
+					"type": "string"
+				},
+				"tc2IntermediateExpiryDate": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"tc3Details": {
+			"type": "array",
+			"items": {
+				"title": "TC3 Details Schema",
+				"type": "object",
+				"properties": {
+					"tc3Type": {
+						"type": "string"
+					},
+					"tc3IntermediateApprovalNo": {
+						"type": "string"
+					},
+					"tc3IntermediateExpiryDate": {
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"yearOfManufacture": {
+			"type": "string"
+		},
+		"tankCode": {
+			"type": "string"
+		},
+		"specialProvisions": {
+			"type": "string"
+		},
+		"tankManufacturerSerialNo": {
+			"type": "string"
+		},
+		"tankTypeAppNo": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
