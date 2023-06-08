@@ -1,0 +1,37 @@
+{
+  "title": "Tech Record GET Complete Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        null
+      ]
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "techRecord_make": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord_statusCode": {
+      "type": "string"
+    },
+    "techRecord_vehicleType": {
+      "type": "string"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "techRecord_model": {
+      "type": "string"
+    }
+  }
+}

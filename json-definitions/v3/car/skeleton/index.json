@@ -1,0 +1,28 @@
+{
+  "title": "Tech Record GET Skeleton Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "techRecord_manufactureYear": {
+      "type": ["integer", null]
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord_statusCode": {
+      "type": "string"
+    },
+    "techRecord_vehicleType": {
+      "type": "string"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    }
+  }
+}
