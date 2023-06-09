@@ -62,22 +62,34 @@ function sanitiseFolders(): void {
 
 const isFolder = (name: string) => !name.includes(".");
 
-function generateTypesAndSchemaInFolder(path: string) {
+function generateTypesAndSchemaInFolder(path: string, schemasPath: string[]) {
   sanitiseFolders();
   const folderContents = readdirSync(path, "utf-8");
   folderContents.forEach((item) => {
     const definitionFullPath = `${path}/${item}`;
     if (isFolder(item)) {
-      generateTypesAndSchemaInFolder(definitionFullPath);
+      generateTypesAndSchemaInFolder(definitionFullPath, schemasPath);
     } else {
       deReferenceJsonSchema(definitionFullPath);
       if (!item.includes(".ignore")) {
         generateTypescriptInterface(definitionFullPath);
+        const removedRootFolder = definitionFullPath.substring(
+          definitionFullPath.indexOf("/") + 1
+        );
+        schemasPath.push(removedRootFolder);
       }
     }
   });
 }
+
+// Defines and maintains an array of valid json schemas for type-safe runtime validation
+function generateSchemasArray(paths: string[]) {
+  const schemas = `export const schemas = ${JSON.stringify(paths)} as const`;
+  writeFileSync("./schemas.ts", schemas);
+}
 /**
  * Generate typescript files from json definitions
  */
-generateTypesAndSchemaInFolder(definitionsDirName);
+const schemas: string[] = [];
+generateTypesAndSchemaInFolder(definitionsDirName, schemas);
+generateSchemasArray(schemas);
