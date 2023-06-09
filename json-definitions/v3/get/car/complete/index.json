@@ -12,7 +12,7 @@
     "techRecord_manufactureYear": {
       "type": [
         "integer",
-        null
+        "null"
       ]
     },
     "primaryVrm": {
@@ -34,7 +34,9 @@
     },
     "techRecord_vehicleType": {
       "type": "string",
-      "contains": "car"
+      "enum": [
+        "car"
+      ]
     },
     "createdTimestamp": {
       "type": "string"

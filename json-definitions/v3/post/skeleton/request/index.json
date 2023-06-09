@@ -41,18 +41,18 @@
     "trailerId": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_reasonForCreation": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_vehicleType": {
       "type": "string",
-      "contains": "car"
+      "enum": ["car"]
     },
     "techRecord_statusCode": {
       "type": "string",
@@ -65,19 +65,19 @@
     "techRecord_regnDate": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_manufactureYear": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_noOfAxles": {
       "type": [
         "integer",
-        null
+        "null"
       ]
     },
     "techRecord_vehicleConfiguration": {
@@ -111,49 +111,49 @@
         "name": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "address1": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "address2": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "address3": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "postTown": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "postCode": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "telephoneNumber": {
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "emailAddress": {
           "type": [
             "string",
-            null
+            "null"
           ]
         }
       }
@@ -161,37 +161,37 @@
     "techRecord_createdAt": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_createdByName": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_createdById": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_lastUpdatedAt": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_lastUpdatedByName": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_lastUpdatedById": {
       "type": [
         "string",
-        null
+        "null"
       ]
     }
   }

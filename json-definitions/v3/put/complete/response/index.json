@@ -39,16 +39,45 @@
       "type": "string"
     },
     "techRecord_euVehicleCategory": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "m1",
+        "m2",
+        "m3",
+        "n1",
+        "n2",
+        "n3",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "l1e-a",
+        "l1e",
+        "l2e",
+        "l3e",
+        "l4e",
+        "l5e",
+        "l6e",
+        "l7e"
+      ]
     },
     "techRecord_lastUpdatedAt": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_lastUpdatedByName": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_lastUpdatedById": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_recordCompleteness": {
       "type": "string",
@@ -61,28 +90,52 @@
     "techRecord_applicantDetails": {
       "properties": {
         "name": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "address1": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "address2": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "address3": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "postTown": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "postCode": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "telephoneNumber": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "emailAddress": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
@@ -96,28 +149,42 @@
       }
     },
     "techRecord_noOfAxles": {
-      "type": "integer"
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "techRecord_manufactureYear": {
       "type": [
         "integer",
-        null
+        "null"
       ]
     },
     "techRecord_regnDate": {
       "type": [
         "string",
-        null
+        "null"
       ]
     },
     "techRecord_statusCode": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "current",
+        "provisional",
+        "archived"
+      ]
     },
     "techRecord_vehicleType": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "car"
+      ]
     },
     "techRecord_reasonForCreation": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_bodyType_code": {
       "type": "string"
