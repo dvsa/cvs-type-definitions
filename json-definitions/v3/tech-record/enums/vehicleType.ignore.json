@@ -1,0 +1,12 @@
+{
+  "title": "Vehicle Type",
+  "type": "string",
+  "enum":[
+    "psv",
+    "trl",
+    "hgv",
+    "car",
+    "lgv",
+    "motorcycle"
+  ]
+}

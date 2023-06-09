@@ -25,12 +25,7 @@
       "type": "string"
     },
     "techRecord_statusCode": {
-      "type": "string",
-      "enum": [
-        "current",
-        "provisional",
-        "archived"
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_vehicleType": {
       "type": "string",

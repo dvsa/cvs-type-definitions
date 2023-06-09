@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record POST Request Complete Car Schema",
+  "title": "Tech Record POST Response Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,7 +13,6 @@
     "techRecord_regnDate",
     "techRecord_manufactureYear",
     "techRecord_noOfAxles",
-    "techRecord_vehicleSubclass",
     "techRecord_vehicleConfiguration",
     "techRecord_euVehicleCategory",
     "techRecord_applicantDetails",
@@ -22,7 +21,8 @@
     "techRecord_createdById",
     "techRecord_lastUpdatedAt",
     "techRecord_lastUpdatedByName",
-    "techRecord_lastUpdatedById"
+    "techRecord_lastUpdatedById",
+    "techRecord_recordCompleteness"
   ],
   "properties": {
     "msUserDetails": {
@@ -33,17 +33,11 @@
         "msUser": {
           "type": "string"
         }
-      }
+      },
+      "type": "string"
     },
     "primaryVrm": {
-      "type":
-        "string"
-    },
-    "trailerId": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_reasonForCreation": {
       "type": [
@@ -52,16 +46,10 @@
       ]
     },
     "techRecord_vehicleType": {
-      "type": "string",
-      "enum": ["car"]
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "techRecord_statusCode": {
-      "type": "string",
-      "enum": [
-        "current",
-        "provisional",
-        "archived"
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
       "type": [
@@ -81,50 +69,11 @@
         "null"
       ]
     },
-    "techRecord_vehicleSubclass": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "n",
-          "p",
-          "a",
-          "s",
-          "c",
-          "l",
-          "t",
-          "e",
-          "m",
-          "r",
-          "w"
-        ]
-      }
-    },
     "techRecord_vehicleConfiguration": {
       "type": "string"
     },
     "techRecord_euVehicleCategory": {
-      "type": "string",
-      "enum": [
-        "m1",
-        "m2",
-        "m3",
-        "n1",
-        "n2",
-        "n3",
-        "o1",
-        "o2",
-        "o3",
-        "o4",
-        "l1e-a",
-        "l1e",
-        "l2e",
-        "l3e",
-        "l4e",
-        "l5e",
-        "l6e",
-        "l7e"
-      ]
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
     "techRecord_applicantDetails": {
       "properties": {
@@ -213,6 +162,9 @@
         "string",
         "null"
       ]
+    },
+    "techRecord_recordCompleteness": {
+      "$ref": "../../../enums/recordCompleteness.ignore.json"
     }
   }
 }

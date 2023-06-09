@@ -1,23 +1,27 @@
 {
-  "title": "Tech Record PUT Request Complete Car Schema",
+  "title": "Tech Record POST Request Skeleton Car Schema",
   "type": "object",
-  "additionalProperties": true,
+  "additionalProperties": false,
   "required": [
     "msUserDetails",
     "vin",
-    "systemNumber",
     "primaryVrm",
-    "vehicleSubclass",
-    "techRecord_recordCompleteness",
-    "techRecord_euVehicleCategory",
+    "trailerId",
+    "techRecord_reasonForCreation",
     "techRecord_vehicleType",
+    "techRecord_statusCode",
+    "techRecord_regnDate",
     "techRecord_manufactureYear",
     "techRecord_noOfAxles",
+    "techRecord_vehicleConfiguration",
+    "techRecord_euVehicleCategory",
     "techRecord_applicantDetails",
-    "techRecord_reasonForCreation",
     "techRecord_createdAt",
+    "techRecord_createdByName",
+    "techRecord_createdById",
     "techRecord_lastUpdatedAt",
-    "techRecord_statusCode"
+    "techRecord_lastUpdatedByName",
+    "techRecord_lastUpdatedById"
   ],
   "properties": {
     "msUserDetails": {
@@ -31,14 +35,8 @@
       },
       "type": "string"
     },
-    "vin": {
-      "type": "string"
-    },
     "primaryVrm": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "trailerId": {
       "type": [
@@ -53,8 +51,7 @@
       ]
     },
     "techRecord_vehicleType": {
-      "type": "string",
-      "enum": ["car"]
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "techRecord_statusCode": {
       "type": "string",
@@ -82,53 +79,11 @@
         "null"
       ]
     },
-    "techRecord_vehicleSubclass": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "n",
-          "p",
-          "a",
-          "s",
-          "c",
-          "l",
-          "t",
-          "e",
-          "m",
-          "r",
-          "w"
-        ]
-      }
-    },
     "techRecord_vehicleConfiguration": {
       "type": "string"
     },
     "techRecord_euVehicleCategory": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "enum": [
-        "m1",
-        "m2",
-        "m3",
-        "n1",
-        "n2",
-        "n3",
-        "o1",
-        "o2",
-        "o3",
-        "o4",
-        "l1e-a",
-        "l1e",
-        "l2e",
-        "l3e",
-        "l4e",
-        "l5e",
-        "l6e",
-        "l7e"
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_applicantDetails": {
       "properties": {
@@ -217,20 +172,6 @@
         "string",
         "null"
       ]
-    },
-    "techRecord_recordCompleteness": {
-      "type": "string",
-      "enum": [
-        "complete",
-        "testable",
-        "skeleton"
-      ]
-    },
-    "secondaryVrms": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   }
 }
