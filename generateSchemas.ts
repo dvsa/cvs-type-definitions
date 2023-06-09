@@ -69,15 +69,13 @@ function generateTypesAndSchemaInFolder(path: string, schemasPath: string[]) {
     const definitionFullPath = `${path}/${item}`;
     if (isFolder(item)) {
       generateTypesAndSchemaInFolder(definitionFullPath, schemasPath);
-    } else {
+    } else if (!item.includes(".ignore")) {
       deReferenceJsonSchema(definitionFullPath);
-      if (!item.includes(".ignore")) {
-        generateTypescriptInterface(definitionFullPath);
-        const removedRootFolder = definitionFullPath.substring(
-          definitionFullPath.indexOf("/") + 1
-        );
-        schemasPath.push(removedRootFolder);
-      }
+      generateTypescriptInterface(definitionFullPath);
+      const removedRootFolder = definitionFullPath.substring(
+        definitionFullPath.indexOf("/") + 1
+      );
+      schemasPath.push(removedRootFolder);
     }
   });
 }
