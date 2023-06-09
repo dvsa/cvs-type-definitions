@@ -1,0 +1,218 @@
+{
+  "title": "Tech Record POST Response Complete Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vin",
+    "primaryVrm",
+    "trailerId",
+    "techRecord_reasonForCreation",
+    "techRecord_vehicleType",
+    "techRecord_statusCode",
+    "techRecord_regnDate",
+    "techRecord_manufactureYear",
+    "techRecord_noOfAxles",
+    "techRecord_vehicleSubclass",
+    "techRecord_vehicleConfiguration",
+    "techRecord_euVehicleCategory",
+    "techRecord_applicantDetails",
+    "techRecord_createdAt",
+    "techRecord_createdByName",
+    "techRecord_createdById",
+    "techRecord_lastUpdatedAt",
+    "techRecord_lastUpdatedByName",
+    "techRecord_lastUpdatedById",
+    "techRecord_recordCompleteness"
+  ],
+  "properties": {
+    "primaryVrm": {
+      "type": "string"
+    },
+    "trailerId": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_reasonForCreation": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_vehicleType": {
+      "type": "string",
+      "contains": "car"
+    },
+    "techRecord_statusCode": {
+      "type": "string",
+      "enum": [
+        "current",
+        "provisional",
+        "archived"
+      ]
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_noOfAxles": {
+      "type": [
+        "integer",
+        null
+      ]
+    },
+    "techRecord_vehicleSubclass": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "n",
+          "p",
+          "a",
+          "s",
+          "c",
+          "l",
+          "t",
+          "e",
+          "m",
+          "r",
+          "w"
+        ]
+      }
+    },
+    "techRecord_vehicleConfiguration": {
+      "type": "string"
+    },
+    "techRecord_euVehicleCategory": {
+      "type": [
+        "string",
+        null
+      ],
+      "enum": [
+        "m1",
+        "m2",
+        "m3",
+        "n1",
+        "n2",
+        "n3",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "l1e-a",
+        "l1e",
+        "l2e",
+        "l3e",
+        "l4e",
+        "l5e",
+        "l6e",
+        "l7e"
+      ]
+    },
+    "techRecord_applicantDetails": {
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "address1": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "address2": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "address3": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "postTown": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "postCode": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "telephoneNumber": {
+          "type": [
+            "string",
+            null
+          ]
+        },
+        "emailAddress": {
+          "type": [
+            "string",
+            null
+          ]
+        }
+      }
+    },
+    "techRecord_createdAt": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_createdByName": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_createdById": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_lastUpdatedAt": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_lastUpdatedById": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_recordCompleteness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "testable",
+        "skeleton"
+      ]
+    }
+  }
+}

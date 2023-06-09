@@ -1,0 +1,132 @@
+{
+  "title": "Tech Record PUT Response Complete Car Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "vin",
+    "systemNumber",
+    "primaryVrm",
+    "vehicleSubclass",
+    "techRecord_recordCompleteness",
+    "techRecord_euVehicleCategory",
+    "techRecord_vehicleType",
+    "techRecord_manufactureYear",
+    "techRecord_noOfAxles",
+    "techRecord_applicantDetails",
+    "techRecord_reasonForCreation",
+    "techRecord_createdAt",
+    "techRecord_lastUpdatedAt",
+    "techRecord_statusCode",
+    "techRecord_vehicleSubclass"
+  ],
+  "properties": {
+    "vin": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "partialVin": {
+      "type": "string"
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_euVehicleCategory": {
+      "type": "string"
+    },
+    "techRecord_lastUpdatedAt": {
+      "type": "string"
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": "string"
+    },
+    "techRecord_lastUpdatedById": {
+      "type": "string"
+    },
+    "techRecord_recordCompleteness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "testable",
+        "skeleton"
+      ]
+    },
+    "techRecord_applicantDetails": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "address3": {
+          "type": "string"
+        },
+        "postTown": {
+          "type": "string"
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "telephoneNumber": {
+          "type": "string"
+        },
+        "emailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "techRecord_vehicleConfiguration": {
+      "type": "string"
+    },
+    "techRecord_vehicleSubclass": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "techRecord_noOfAxles": {
+      "type": "integer"
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        null
+      ]
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        null
+      ]
+    },
+    "techRecord_statusCode": {
+      "type": "string"
+    },
+    "techRecord_vehicleType": {
+      "type": "string"
+    },
+    "techRecord_reasonForCreation": {
+      "type": "string"
+    },
+    "techRecord_bodyType_code": {
+      "type": "string"
+    },
+    "techRecord_bodyType_description": {
+      "type": "string"
+    },
+    "techRecord_model": {
+      "type": "string"
+    }
+  }
+}
