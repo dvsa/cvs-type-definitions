@@ -5,6 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type GETPSVTechnicalRecordV3Complete = GETPSVTechnicalRecordV3Skeleton;
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleConfiguration =
   | "rigid"
@@ -90,26 +91,26 @@ export type BodyTypeDescription =
   | "tractor";
 
 export interface GETPSVTechnicalRecordV3Skeleton {
-  vin: string;
-  systemNumber: string;
-  primaryVrm: string;
-  techRecord_vehicleType: "psv";
-  techRecord_statusCode: StatusCode;
-  techRecord_reasonForCreation: string;
-  techRecord_createdAt: string;
-  techRecord_vehicleConfiguration: VehicleConfiguration;
-  techRecord_vehicleSize: VehicleSize;
-  techRecord_seatsLowerDeck: number;
-  techRecord_seatsUpperDeck: number;
-  techRecord_numberOfWheelsDriven: string | null;
-  techRecord_vehicleClass_code: string;
-  techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_recordCompleteness?: string;
+  vin?: string;
+  systemNumber?: string;
+  primaryVrm?: string;
+  techRecord_vehicleType?: "psv";
+  techRecord_statusCode?: StatusCode;
+  techRecord_reasonForCreation?: string;
+  techRecord_createdAt?: string;
+  techRecord_vehicleConfiguration?: VehicleConfiguration;
+  techRecord_vehicleSize?: VehicleSize;
+  techRecord_seatsLowerDeck?: number;
+  techRecord_seatsUpperDeck?: number;
+  techRecord_numberOfWheelsDriven?: string | null;
+  techRecord_vehicleClass_code?: string;
+  techRecord_vehicleClass_description?: VehicleClassDescription;
+  techRecord_hiddenInVta: boolean;
+  techRecord_recordCompleteness: string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles?: number | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_alterationMarker?: boolean | null;
   techRecord_approvalType?: ApprovalType | null;

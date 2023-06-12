@@ -1,0 +1,11 @@
+{
+  "title": "GET PSV Technical Record V3 Complete",
+  "type": "object",
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "$ref": "../skeleton/index.json",
+      "required": ["techRecord_hiddenInVta", "techRecord_recordCompleteness"]
+    }
+  ]
+}

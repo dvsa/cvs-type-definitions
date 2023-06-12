@@ -1,0 +1,27 @@
+{
+  "title": "Body Type Description",
+  "type": "string",
+  "enum": [
+    "artic",
+    "articulated",
+    "box",
+    "car transporter",
+    "concrete mixer",
+    "curtainsider",
+    "double decker",
+    "flat",
+    "livestock carrier",
+    "low loader",
+    "mini bus",
+    "other",
+    "other tanker",
+    "petrol/oil tanker",
+    "refrigerated",
+    "refuse",
+    "single decker",
+    "skeletal",
+    "skip loader",
+    "tipper",
+    "tractor"
+  ]
+}
