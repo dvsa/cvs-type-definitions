@@ -5,6 +5,9 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type GETPSVTechnicalRecordV3Skeleton = GETPSVTechnicalRecordV3Skeleton1 & GETPSVTechnicalRecordV3Skeleton2;
+export type GETPSVTechnicalRecordV3Skeleton1 = PSVBrakes;
+export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleConfiguration =
   | "rigid"
@@ -88,8 +91,34 @@ export type BodyTypeDescription =
   | "skip loader"
   | "tipper"
   | "tractor";
+export type FuelPropulsionSystem =
+  | "DieselPetrol"
+  | "Diesel"
+  | "Petrol"
+  | "Hybrid"
+  | "Electric"
+  | "CNG"
+  | "Fuel cell"
+  | "LNG"
+  | "Other";
 
-export interface GETPSVTechnicalRecordV3Skeleton {
+export interface PSVBrakes {
+  techRecord_brakes_dtpNumber?: string | null;
+  techRecord_brakes_brakeCode?: string | null;
+  techRecord_brakes_brakeCodeOriginal?: string | null;
+  techRecord_brakes_dataTrBrakeOne?: string | null;
+  techRecord_brakes_dataTrBrakeTwo?: string | null;
+  techRecord_brakes_dataTrBrakeThree?: string | null;
+  techRecord_brakes_retarderBrakeOne?: RetarderBrake | null;
+  techRecord_brakes_retarderBrakeTwo?: RetarderBrake | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
+}
+export interface GETPSVTechnicalRecordV3Skeleton2 {
   vin: string;
   systemNumber: string;
   primaryVrm: string;
@@ -98,7 +127,7 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_reasonForCreation: string;
   techRecord_createdAt: string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
-  techRecord_vehicleSize: VehicleSize;
+  techRecord_vehicleSize: VehicleSize | null;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
   techRecord_numberOfWheelsDriven: string | null;
@@ -127,4 +156,46 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_createdById?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
+  techRecord_dda_certificateIssued?: boolean | null;
+  techRecord_dda_wheelchairCapacity?: number | null;
+  techRecord_dda_wheelchairFittings?: number | null;
+  techRecord_dda_wheelchairLiftPresent?: boolean | null;
+  techRecord_dda_wheelchairLiftInformation?: string | null;
+  techRecord_dda_wheelchairRampPresent?: boolean | null;
+  techRecord_dda_wheelchairRampInformation?: string | null;
+  techRecord_dda_minEmergencyExits?: number | null;
+  techRecord_dda_outswing?: string | null;
+  techRecord_dda_ddaSchedules?: string | null;
+  techRecord_dda_seatbeltsFitted?: number | null;
+  techRecord_dda_ddaNotes?: string | null;
+  techRecord_dda?: null;
+  techRecord_standingCapacity?: number | null;
+  techRecord_speedLimiterMrk?: boolean | null;
+  techRecord_tachoExemptMrk?: boolean | null;
+  techRecord_euroStandard?: boolean | null;
+  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
+  techRecord_emissionsLimit?: null | number;
+  techRecord_trainDesignWeight?: number | null;
+  techRecord_numberOfSeatbelts?: string;
+  techRecord_seatbeltInstallationApprovalDate?: string | null;
+  techRecord_coifSerialNumber?: string | null;
+  techRecord_coifCertifierName?: string | null;
+  techRecord_coifDate?: string | null;
+  techRecord_bodyMake?: string | null;
+  techRecord_bodyModel?: string | null;
+  techRecord_chassisMake?: string | null;
+  techRecord_chassisModel?: string | null;
+  techRecord_modelLiteral?: string | null;
+  techRecord_speedRestriction?: number | null;
+  techRecord_grossKerbWeight?: number | null;
+  techRecord_grossLadenWeight?: number | null;
+  techRecord_unladenWeight?: number | null;
+  techRecord_maxTrainGbWeight?: number | null;
+  techRecord_dimensions?: null;
+  techRecord_dimensions_length?: number | null;
+  techRecord_dimensions_width?: number | null;
+  techRecord_dimensions_height?: number | null;
+  techRecord_frontAxleToRearAxle?: number | null;
+  techRecord_remarks?: string | null;
+  techRecord_dispensations?: string | null;
 }

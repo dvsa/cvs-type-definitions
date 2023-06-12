@@ -2,10 +2,15 @@
   "title": "GET PSV Technical Record V3 Complete",
   "type": "object",
   "additionalProperties": false,
-  "oneOf": [
+  "allOf": [
     {
       "$ref": "../skeleton/index.json",
-      "required": ["techRecord_hiddenInVta", "techRecord_recordCompleteness"]
+      "required": [
+        "techRecord_hiddenInVta",
+        "techRecord_recordCompleteness",
+        "techRecord_noOfAxles"
+      ],
+      "title": "foo"
     }
   ]
 }

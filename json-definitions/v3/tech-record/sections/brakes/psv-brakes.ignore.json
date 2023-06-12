@@ -1,0 +1,73 @@
+{
+  "title": "PSV Brakes",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "techRecord_brakes_dtpNumber": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCode": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCodeOriginal": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_dataTrBrakeOne": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeTwo": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeThree": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_retarderBrakeOne": {
+      "oneOf": [
+        { "$ref": "../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_retarderBrakeTwo": {
+      "oneOf": [
+        { "$ref": "../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+      "type": ["integer", "null"],
+      "max": 99999,
+      "min": 0
+    }
+  }
+}

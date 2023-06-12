@@ -5,127 +5,23 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type GETPSVTechnicalRecordV3Complete = GETPSVTechnicalRecordV3Skeleton;
-export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
-export type VehicleSize = "small" | "large";
-export type VehicleClassDescription =
-  | "motorbikes over 200cc or with a sidecar"
-  | "not applicable"
-  | "small psv (ie: less than or equal to 22 seats)"
-  | "motorbikes up to 200cc"
-  | "trailer"
-  | "large psv(ie: greater than 23 seats)"
-  | "3 wheelers"
-  | "heavy goods vehicle"
-  | "MOT class 4"
-  | "MOT class 7"
-  | "MOT class 5";
-export type EUVehicleCategory =
-  | "m1"
-  | "m2"
-  | "m3"
-  | "n1"
-  | "n2"
-  | "n3"
-  | "o1"
-  | "o2"
-  | "o3"
-  | "o4"
-  | "l1e-a"
-  | "l1e"
-  | "l2e"
-  | "l3e"
-  | "l4e"
-  | "l5e"
-  | "l6e"
-  | "l7e";
-export type ApprovalType =
-  | "NTA"
-  | "ECTA"
-  | "IVA"
-  | "NSSTA"
-  | "ECSSTA"
-  | "GB WVTA"
-  | "UKNI WVTA"
-  | "EU WVTA Pre 23"
-  | "EU WVTA 23 on"
-  | "QNIG"
-  | "Prov.GB WVTA"
-  | "Small series"
-  | "IVA - VCA"
-  | "IVA - DVSA/NI";
-export type BodyTypeDescription =
-  | "artic"
-  | "articulated"
-  | "box"
-  | "car transporter"
-  | "concrete mixer"
-  | "curtainsider"
-  | "double decker"
-  | "flat"
-  | "livestock carrier"
-  | "low loader"
-  | "mini bus"
-  | "other"
-  | "other tanker"
-  | "petrol/oil tanker"
-  | "refrigerated"
-  | "refuse"
-  | "single decker"
-  | "skeletal"
-  | "skip loader"
-  | "tipper"
-  | "tractor";
+export type GETPSVTechnicalRecordV3Complete = Foo;
+export type Foo = PSVBrakes;
+export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 
-export interface GETPSVTechnicalRecordV3Skeleton {
-  vin?: string;
-  systemNumber?: string;
-  primaryVrm?: string;
-  techRecord_vehicleType?: "psv";
-  techRecord_statusCode?: StatusCode;
-  techRecord_reasonForCreation?: string;
-  techRecord_createdAt?: string;
-  techRecord_vehicleConfiguration?: VehicleConfiguration;
-  techRecord_vehicleSize?: VehicleSize;
-  techRecord_seatsLowerDeck?: number;
-  techRecord_seatsUpperDeck?: number;
-  techRecord_numberOfWheelsDriven?: string | null;
-  techRecord_vehicleClass_code?: string;
-  techRecord_vehicleClass_description?: VehicleClassDescription;
-  techRecord_hiddenInVta: boolean;
-  techRecord_recordCompleteness: string;
-  techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_regnDate?: string | null;
-  techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles?: number | null;
-  techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_alterationMarker?: boolean | null;
-  techRecord_approvalType?: ApprovalType | null;
-  techRecord_approvalTypeNumber?: string | null;
-  techRecord_ntaNumber?: string | null;
-  techRecord_variantNumber?: string | null;
-  techRecord_variantVersionNumber?: string | null;
-  techRecord_bodyType_description?: BodyTypeDescription;
-  techRecord_bodyType_code?: string;
-  techRecord_functionCode?: string | null;
-  techRecord_conversionRefNumber?: string | null;
-  techRecord_grossGbWeight?: number | null;
-  techRecord_grossDesignWeight?: number | null;
-  techRecord_createdByName?: string | null;
-  techRecord_createdById?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
+export interface PSVBrakes {
+  techRecord_brakes_dtpNumber?: string | null;
+  techRecord_brakes_brakeCode?: string | null;
+  techRecord_brakes_brakeCodeOriginal?: string | null;
+  techRecord_brakes_dataTrBrakeOne?: string | null;
+  techRecord_brakes_dataTrBrakeTwo?: string | null;
+  techRecord_brakes_dataTrBrakeThree?: string | null;
+  techRecord_brakes_retarderBrakeOne?: RetarderBrake | null;
+  techRecord_brakes_retarderBrakeTwo?: RetarderBrake | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
 }

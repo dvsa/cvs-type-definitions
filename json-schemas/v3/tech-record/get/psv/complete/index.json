@@ -2,11 +2,148 @@
 	"title": "GET PSV Technical Record V3 Complete",
 	"type": "object",
 	"additionalProperties": false,
-	"oneOf": [
+	"allOf": [
 		{
 			"title": "GET PSV Technical Record V3 Skeleton",
 			"type": "object",
 			"additionalProperties": false,
+			"allOf": [
+				{
+					"title": "PSV Brakes",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"techRecord_brakes_dtpNumber": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 6
+						},
+						"techRecord_brakes_brakeCode": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 6
+						},
+						"techRecord_brakes_brakeCodeOriginal": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 6
+						},
+						"techRecord_brakes_dataTrBrakeOne": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 60
+						},
+						"techRecord_brakes_dataTrBrakeTwo": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 60
+						},
+						"techRecord_brakes_dataTrBrakeThree": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 60
+						},
+						"techRecord_brakes_retarderBrakeOne": {
+							"oneOf": [
+								{
+									"title": "Retarder Brake",
+									"type": "string",
+									"enum": [
+										"electric",
+										"exhaust",
+										"friction",
+										"hydraulic",
+										"other",
+										"none"
+									]
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"techRecord_brakes_retarderBrakeTwo": {
+							"oneOf": [
+								{
+									"title": "Retarder Brake",
+									"type": "string",
+									"enum": [
+										"electric",
+										"exhaust",
+										"friction",
+										"hydraulic",
+										"other",
+										"none"
+									]
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						},
+						"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						},
+						"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						},
+						"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						},
+						"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						},
+						"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"max": 99999,
+							"min": 0
+						}
+					}
+				}
+			],
 			"required": [
 				"vin",
 				"systemNumber",
@@ -72,11 +209,18 @@
 					]
 				},
 				"techRecord_vehicleSize": {
-					"title": "Vehicle Size",
-					"type": "string",
-					"enum": [
-						"small",
-						"large"
+					"oneOf": [
+						{
+							"title": "Vehicle Size",
+							"type": "string",
+							"enum": [
+								"small",
+								"large"
+							]
+						},
+						{
+							"type": "null"
+						}
 					]
 				},
 				"techRecord_seatsLowerDeck": {
@@ -337,6 +481,325 @@
 						"string",
 						"null"
 					]
+				},
+				"techRecord_dda_certificateIssued": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_dda_wheelchairCapacity": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"max": 99,
+					"min": 0
+				},
+				"techRecord_dda_wheelchairFittings": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 250
+				},
+				"techRecord_dda_wheelchairLiftPresent": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_dda_wheelchairLiftInformation": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 250
+				},
+				"techRecord_dda_wheelchairRampPresent": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_dda_wheelchairRampInformation": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 250
+				},
+				"techRecord_dda_minEmergencyExits": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99
+				},
+				"techRecord_dda_outswing": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 250
+				},
+				"techRecord_dda_ddaSchedules": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 250
+				},
+				"techRecord_dda_seatbeltsFitted": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 999
+				},
+				"techRecord_dda_ddaNotes": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 1024
+				},
+				"techRecord_dda": {
+					"type": "null"
+				},
+				"techRecord_standingCapacity": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 999
+				},
+				"techRecord_speedLimiterMrk": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_tachoExemptMrk": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_euroStandard": {
+					"type": [
+						"boolean",
+						"null"
+					]
+				},
+				"techRecord_fuelPropulsionSystem": {
+					"anyOf": [
+						{
+							"title": "Fuel Propulsion System",
+							"type": "string",
+							"enum": [
+								"DieselPetrol",
+								"Diesel",
+								"Petrol",
+								"Hybrid",
+								"Electric",
+								"CNG",
+								"Fuel cell",
+								"LNG",
+								"Other"
+							]
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"techRecord_emissionsLimit": {
+					"type": [
+						"null",
+						"integer"
+					],
+					"min": 0,
+					"max": 99
+				},
+				"techRecord_trainDesignWeight": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99999
+				},
+				"techRecord_numberOfSeatbelts": {
+					"type": [
+						"string"
+					],
+					"maxLength": 99
+				},
+				"techRecord_seatbeltInstallationApprovalDate": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"techRecord_coifSerialNumber": {
+					"type": [
+						"string",
+						"null"
+					],
+					"max": 8
+				},
+				"techRecord_coifCertifierName": {
+					"type": [
+						"string",
+						"null"
+					],
+					"max": 20
+				},
+				"techRecord_coifDate": {
+					"oneOf": [
+						{
+							"type": [
+								"string",
+								"null"
+							],
+							"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+						},
+						{
+							"type": [
+								"string",
+								"null"
+							],
+							"pattern": "^$"
+						}
+					]
+				},
+				"techRecord_bodyMake": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 20
+				},
+				"techRecord_bodyModel": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 20
+				},
+				"techRecord_chassisMake": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 20
+				},
+				"techRecord_chassisModel": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 20
+				},
+				"techRecord_modelLiteral": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 30
+				},
+				"techRecord_speedRestriction": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 99,
+					"min": 0
+				},
+				"techRecord_grossKerbWeight": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 99999,
+					"min": 0
+				},
+				"techRecord_grossLadenWeight": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 99999,
+					"min": 0
+				},
+				"techRecord_unladenWeight": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 99999,
+					"min": 0
+				},
+				"techRecord_maxTrainGbWeight": {
+					"type": [
+						"number",
+						"null"
+					],
+					"max": 99999,
+					"min": 0
+				},
+				"techRecord_dimensions": {
+					"type": "null"
+				},
+				"techRecord_dimensions_length": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99999
+				},
+				"techRecord_dimensions_width": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99999
+				},
+				"techRecord_dimensions_height": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99999
+				},
+				"techRecord_frontAxleToRearAxle": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"min": 0,
+					"max": 99999
+				},
+				"techRecord_remarks": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 1024
+				},
+				"techRecord_dispensations": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 160
 				}
 			}
 		}
