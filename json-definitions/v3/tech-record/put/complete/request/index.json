@@ -3,184 +3,32 @@
   "type": "object",
   "additionalProperties": true,
   "required": [
-    "msUserDetails",
-    "vin",
-    "systemNumber",
-    "primaryVrm",
-    "vehicleSubclass",
-    "techRecord_recordCompleteness",
-    "techRecord_euVehicleCategory",
-    "techRecord_vehicleType",
-    "techRecord_manufactureYear",
-    "techRecord_noOfAxles",
-    "techRecord_applicantDetails",
-    "techRecord_reasonForCreation",
-    "techRecord_createdAt",
-    "techRecord_lastUpdatedAt",
-    "techRecord_statusCode"
+    "techRecord_vehicleSubclass"
+  ],
+  "allOf": [
+    {
+      "$ref": "../response/index.json",
+      "required": [
+        "vin",
+        "primaryVrm",
+        "trailerId",
+        "techRecord_recordCompleteness",
+        "techRecord_euVehicleCategory",
+        "techRecord_vehicleType",
+        "techRecord_manufactureYear",
+        "techRecord_noOfAxles",
+        "techRecord_applicantDetails",
+        "techRecord_reasonForCreation",
+        "techRecord_createdAt",
+        "techRecord_lastUpdatedAt",
+        "techRecord_statusCode",
+        "techRecord_regnDate"
+      ]
+    }
   ],
   "properties": {
-    "msUserDetails": {
-      "properties": {
-        "msOid": {
-          "type": "string"
-        },
-        "msUser": {
-          "type": "string"
-        }
-      },
-      "type": "string"
-    },
-    "vin": {
-      "type": "string"
-    },
-    "primaryVrm": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "trailerId": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_reasonForCreation": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_vehicleType": {
-      "$ref": "../../../enums/vehicleType.ignore.json"
-    },
-    "techRecord_statusCode": {
-      "$ref": "../../../enums/statusCode.ignore.json"
-    },
-    "techRecord_regnDate": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_manufactureYear": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_noOfAxles": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
     "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
-    },
-    "techRecord_vehicleConfiguration": {
-      "type": "string"
-    },
-    "techRecord_euVehicleCategory": {
-      "$ref": "../../../enums/euVehicleCategory.ignore.json"
-    },
-    "techRecord_applicantDetails": {
-      "properties": {
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address1": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address2": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address3": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "postTown": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "postCode": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "telephoneNumber": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "emailAddress": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "techRecord_createdAt": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_createdByName": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_createdById": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_lastUpdatedAt": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_lastUpdatedByName": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_lastUpdatedById": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_recordCompleteness": {
-      "$ref": "../../../enums/recordCompleteness.ignore.json"
-    },
-    "secondaryVrms": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "title": "EU Vehicle Category",
-  "type": "string",
+  "type": ["string", "null"],
   "enum": [
     "m1",
     "m2",

@@ -1,46 +1,37 @@
 {
-  "title": "Tech Record GET Complete Car Schema",
+  "title": "Tech Record Complete Car Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "systemNumber",
-    "createdTimestamp",
-    "vin",
-    "techRecord_vehicleType"
+  "allOf": [
+    {
+      "$ref": "../skeleton/index.json",
+      "required": [
+        "createdTimestamp",
+        "partialVin",
+        "primaryVrm",
+        "systemNumber",
+        "techRecord_applicantDetails",
+        "techRecord_createdAt",
+        "techRecord_createdById",
+        "techRecord_createdByName",
+        "techRecord_euVehicleCategory",
+        "techRecord_lastUpdatedAt",
+        "techRecord_lastUpdatedById",
+        "techRecord_lastUpdatedByName",
+        "techRecord_manufactureYear",
+        "techRecord_noOfAxles",
+        "techRecord_reasonForCreation",
+        "techRecord_regnDate",
+        "techRecord_statusCode",
+        "techRecord_vehicleConfiguration",
+        "techRecord_vehicleType",
+        "vin"
+      ]
+    }
   ],
   "properties": {
-    "techRecord_manufactureYear": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "primaryVrm": {
-      "type": "string"
-    },
-    "techRecord_make": {
-      "type": "string"
-    },
-    "vin": {
-      "type": "string"
-    },
-    "techRecord_statusCode": {
-      "$ref": "../../../enums/statusCode.ignore.json"
-    },
-    "techRecord_vehicleType": {
-      "type": "string",
-      "enum": [
-        "car"
-      ]
-    },
-    "createdTimestamp": {
-      "type": "string"
-    },
-    "systemNumber": {
-      "type": "string"
-    },
-    "techRecord_model": {
-      "type": "string"
+    "techRecord_vehicleSubclass": {
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record GET Skeleton Car Schema",
+  "title": "Tech Record Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -9,29 +9,82 @@
     "techRecord_vehicleType"
   ],
   "properties": {
-    "techRecord_manufactureYear": {
+    "createdTimestamp": {
       "type": [
         "integer",
         "null"
       ]
     },
+    "partialVin": {
+      "type": "string"
+    },
     "primaryVrm": {
       "type": "string"
     },
-    "vin": {
+    "systemNumber": {
       "type": "string"
+    },
+    "techRecord_applicantDetails": {
+      "$ref": "../../../enums/applicantDetails.ignore.json"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_createdById": {
+      "type": "string"
+    },
+    "techRecord_createdByName": {
+      "type": "string"
+    },
+    "techRecord_euVehicleCategory": {
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
+    },
+    "techRecord_lastUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_noOfAxles": {
+      "type": "integer"
+    },
+    "techRecord_reasonForCreation": {
+      "type": "string"
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"
     },
+    "techRecord_vehicleConfiguration": {
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+    },
     "techRecord_vehicleType": {
-      "type": "string",
-      "enum": ["car"]
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
-    "createdTimestamp": {
-      "type": "string"
-    },
-    "systemNumber": {
+    "vin": {
       "type": "string"
     }
   }

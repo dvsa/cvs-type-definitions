@@ -6,7 +6,6 @@
     "vin",
     "systemNumber",
     "primaryVrm",
-    "vehicleSubclass",
     "techRecord_recordCompleteness",
     "techRecord_euVehicleCategory",
     "techRecord_vehicleType",
@@ -37,28 +36,20 @@
     "techRecord_createdAt": {
       "type": "string"
     },
-    "techRecord_euVehicleCategory": {
-      "type": "string",
-      "enum": [
-        "m1",
-        "m2",
-        "m3",
-        "n1",
-        "n2",
-        "n3",
-        "o1",
-        "o2",
-        "o3",
-        "o4",
-        "l1e-a",
-        "l1e",
-        "l2e",
-        "l3e",
-        "l4e",
-        "l5e",
-        "l6e",
-        "l7e"
+    "techRecord_createdByName": {
+      "type": [
+        "string",
+        "null"
       ]
+    },
+    "techRecord_createdById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_euVehicleCategory": {
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
     "techRecord_lastUpdatedAt": {
       "type": [
@@ -87,59 +78,10 @@
       ]
     },
     "techRecord_applicantDetails": {
-      "properties": {
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address1": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address2": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "address3": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "postTown": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "postCode": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "telephoneNumber": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "emailAddress": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
+      "$ref": "../../../enums/applicantDetails.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
-      "type": "string"
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_noOfAxles": {
       "type": [
@@ -160,18 +102,10 @@
       ]
     },
     "techRecord_statusCode": {
-      "type": "string",
-      "enum": [
-        "current",
-        "provisional",
-        "archived"
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_vehicleType": {
-      "type": "string",
-      "enum": [
-        "car"
-      ]
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "techRecord_reasonForCreation": {
       "type": [

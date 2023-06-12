@@ -1,0 +1,28 @@
+{
+  "title": "Tech Record Search Complete Car Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "techRecord_manufactureYear",
+    "primaryVrm",
+    "vin",
+    "techRecord_statusCode",
+    "techRecord_vehicleType",
+    "createdTimestamp",
+    "systemNumber"
+  ],
+  "allOf": [
+    {
+      "$ref": "../skeleton/index.json",
+      "required": [
+        "techRecord_manufactureYear",
+        "primaryVrm",
+        "vin",
+        "techRecord_statusCode",
+        "techRecord_vehicleType",
+        "createdTimestamp",
+        "systemNumber"
+      ]
+    }
+  ]
+}
