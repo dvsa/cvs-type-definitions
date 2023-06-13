@@ -259,11 +259,11 @@
     },
     "techRecord_coifSerialNumber": {
       "type": ["string", "null"],
-      "maximum": 8
+      "maxLength": 8
     },
     "techRecord_coifCertifierName": {
       "type": ["string", "null"],
-      "maximum": 20
+      "maxLength": 20
     },
     "techRecord_coifDate": {
       "anyOf": [

@@ -1,0 +1,85 @@
+{
+  "title": "PSV Brakes Complete",
+  "type": "object",
+  "required": [
+    "techRecord_brakes_brakeCode",
+    "techRecord_brakes_dataTrBrakeOne",
+    "techRecord_brakes_dataTrBrakeTwo",
+    "techRecord_brakes_dataTrBrakeThree",
+    "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA",
+    "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA",
+    "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA",
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB",
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB",
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "techRecord_brakes_dtpNumber": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCode": {
+      "type": "string",
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCodeOriginal": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_dataTrBrakeOne": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeTwo": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeThree": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_retarderBrakeOne": {
+      "anyOf": [
+        { "$ref": "../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_retarderBrakeTwo": {
+      "anyOf": [
+        { "$ref": "../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    }
+  }
+}

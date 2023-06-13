@@ -5,8 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type GETPSVTechnicalRecordV3Complete = GETPSVTechnicalRecordV3Complete1 & GETPSVTechnicalRecordV3Complete2;
-export type GETPSVTechnicalRecordV3Complete1 = PSVBrakesComplete & ApplicantDetails;
+export type GETPSVTechnicalRecordV3Testable = GETPSVTechnicalRecordV3Testable1 & GETPSVTechnicalRecordV3Testable2;
+export type GETPSVTechnicalRecordV3Testable1 = PSVBrakes & ApplicantDetails;
 export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleConfiguration =
@@ -103,21 +103,21 @@ export type FuelPropulsionSystem =
   | "Other";
 export type FitmentCode = "single" | "double";
 
-export interface PSVBrakesComplete {
+export interface PSVBrakes {
   techRecord_brakes_dtpNumber?: string | null;
-  techRecord_brakes_brakeCode: string;
+  techRecord_brakes_brakeCode?: string | null;
   techRecord_brakes_brakeCodeOriginal?: string | null;
-  techRecord_brakes_dataTrBrakeOne: string;
-  techRecord_brakes_dataTrBrakeTwo: string;
-  techRecord_brakes_dataTrBrakeThree: string;
+  techRecord_brakes_dataTrBrakeOne?: string | null;
+  techRecord_brakes_dataTrBrakeTwo?: string | null;
+  techRecord_brakes_dataTrBrakeThree?: string | null;
   techRecord_brakes_retarderBrakeOne?: RetarderBrake | null;
   techRecord_brakes_retarderBrakeTwo?: RetarderBrake | null;
-  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA: number;
-  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA: number;
-  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA: number;
-  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB: number;
-  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB: number;
-  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB: number;
+  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
 }
 export interface ApplicantDetails {
   techRecord_applicantDetails_name?: string | null;
@@ -129,7 +129,7 @@ export interface ApplicantDetails {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
 }
-export interface GETPSVTechnicalRecordV3Complete2 {
+export interface GETPSVTechnicalRecordV3Testable2 {
   vin: string;
   systemNumber: string;
   primaryVrm: string;
@@ -147,7 +147,7 @@ export interface GETPSVTechnicalRecordV3Complete2 {
   techRecord_hiddenInVta?: boolean;
   techRecord_recordCompleteness?: string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_regnDate?: string;
+  techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles: number | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
@@ -167,7 +167,7 @@ export interface GETPSVTechnicalRecordV3Complete2 {
   techRecord_createdById?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
-  techRecord_dda_certificateIssued: boolean;
+  techRecord_dda_certificateIssued?: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
   techRecord_dda_wheelchairFittings?: number | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
@@ -180,26 +180,26 @@ export interface GETPSVTechnicalRecordV3Complete2 {
   techRecord_dda_seatbeltsFitted?: number | null;
   techRecord_dda_ddaNotes?: string | null;
   techRecord_dda?: null;
-  techRecord_standingCapacity: number;
-  techRecord_speedLimiterMrk?: boolean;
-  techRecord_tachoExemptMrk?: boolean;
-  techRecord_euroStandard?: boolean;
-  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
+  techRecord_standingCapacity?: number | null;
+  techRecord_speedLimiterMrk?: boolean | null;
+  techRecord_tachoExemptMrk?: boolean | null;
+  techRecord_euroStandard?: boolean | null;
+  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
   techRecord_emissionsLimit?: null | number;
   techRecord_trainDesignWeight?: number | null;
-  techRecord_numberOfSeatbelts: string;
+  techRecord_numberOfSeatbelts?: string;
   techRecord_seatbeltInstallationApprovalDate?: string | null;
   techRecord_coifSerialNumber?: string | null;
   techRecord_coifCertifierName?: string | null;
   techRecord_coifDate?: string | null;
-  techRecord_bodyMake: string;
-  techRecord_bodyModel: string;
-  techRecord_chassisMake: string;
-  techRecord_chassisModel: string;
+  techRecord_bodyMake?: string | null;
+  techRecord_bodyModel?: string | null;
+  techRecord_chassisMake?: string | null;
+  techRecord_chassisModel?: string | null;
   techRecord_modelLiteral?: string | null;
   techRecord_speedRestriction?: number | null;
-  techRecord_grossKerbWeight: number;
-  techRecord_grossLadenWeight: number;
+  techRecord_grossKerbWeight?: number | null;
+  techRecord_grossLadenWeight?: number | null;
   techRecord_unladenWeight?: number | null;
   techRecord_maxTrainGbWeight?: number | null;
   techRecord_dimensions?: null;
@@ -209,22 +209,19 @@ export interface GETPSVTechnicalRecordV3Complete2 {
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
-  /**
-   * @minItems 1
-   */
-  techRecord_axles: [PSVAxlesComplete, ...PSVAxlesComplete[]];
+  techRecord_axles?: PSVAxles[];
 }
-export interface PSVAxlesComplete {
-  techRecord_parkingBrakeMrk: boolean;
-  techRecord_axleNumber: number;
-  techRecord_weights_gbWeight: number;
-  techRecord_weights_designWeight: number;
-  techRecord_weights_ladenWeight: number;
-  techRecord_weights_kerbWeight: number;
-  techRecord_tyres_tyreCode: number;
-  techRecord_tyres_tyreSize: string;
+export interface PSVAxles {
+  techRecord_parkingBrakeMrk?: boolean | null;
+  techRecord_axleNumber?: number | null;
+  techRecord_weights_gbWeight?: number | null;
+  techRecord_weights_designWeight?: number | null;
+  techRecord_weights_ladenWeight?: number | null;
+  techRecord_weights_kerbWeight?: number | null;
+  techRecord_tyres_tyreCode?: number | null;
+  techRecord_tyres_tyreSize?: string | null;
   techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode: FitmentCode;
+  techRecord_tyres_fitmentCode?: null | FitmentCode;
   techRecord_tyres_dataTrAxles?: null | number;
-  techRecord_tyres_speedCategorySymbol: FitmentCode;
+  techRecord_tyres_speedCategorySymbol?: FitmentCode | null;
 }
