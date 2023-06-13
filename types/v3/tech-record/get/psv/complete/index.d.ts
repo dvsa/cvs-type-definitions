@@ -6,7 +6,7 @@
  */
 
 export type GETPSVTechnicalRecordV3Complete = Foo;
-export type Foo = PSVBrakes;
+export type Foo = PSVBrakes & ApplicantDetails;
 export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 
 export interface PSVBrakes {
@@ -24,4 +24,14 @@ export interface PSVBrakes {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
+}
+export interface ApplicantDetails {
+  techRecord_applicantDetails_name?: string | null;
+  techRecord_applicantDetails_address1?: null | string;
+  techRecord_applicantDetails_address2?: null | string;
+  techRecord_applicantDetails_postTown?: null | string;
+  techRecord_applicantDetails_address3?: null | string;
+  techRecord_applicantDetails_postCode?: null | string;
+  techRecord_applicantDetails_telephoneNumber?: null | string;
+  techRecord_applicantDetails_emailAddress?: null | string;
 }

@@ -28,46 +28,46 @@
       "maxLength": 60
     },
     "techRecord_brakes_retarderBrakeOne": {
-      "oneOf": [
+      "anyOf": [
         { "$ref": "../../enums/retarderBrake.ignore.json" },
         { "type": "null" }
       ]
     },
     "techRecord_brakes_retarderBrakeTwo": {
-      "oneOf": [
+      "anyOf": [
         { "$ref": "../../enums/retarderBrake.ignore.json" },
         { "type": "null" }
       ]
     },
     "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     },
     "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     },
     "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     },
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     },
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     },
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
       "type": ["integer", "null"],
-      "max": 99999,
-      "min": 0
+      "maximum": 99999,
+      "minimum": 0
     }
   }
 }

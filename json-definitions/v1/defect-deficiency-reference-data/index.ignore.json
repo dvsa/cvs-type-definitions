@@ -21,7 +21,7 @@
       "type": "boolean"
     },
     "forVehicleType": {
-      "oneOf": [
+      "anyOf": [
         {
           "type": "array",
           "items": {
@@ -30,18 +30,10 @@
         },
         {
           "type": "string",
-          "enum": [
-            "psv",
-            "hgv",
-            "trl",
-            "car",
-            "lgv",
-            "motorcycle"
-          ]
+          "enum": ["psv", "hgv", "trl", "car", "lgv", "motorcycle"]
         }
       ]
     }
-
   },
   "additionalProperties": false,
   "required": [

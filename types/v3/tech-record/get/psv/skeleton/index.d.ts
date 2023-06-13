@@ -6,7 +6,7 @@
  */
 
 export type GETPSVTechnicalRecordV3Skeleton = GETPSVTechnicalRecordV3Skeleton1 & GETPSVTechnicalRecordV3Skeleton2;
-export type GETPSVTechnicalRecordV3Skeleton1 = PSVBrakes;
+export type GETPSVTechnicalRecordV3Skeleton1 = PSVBrakes & ApplicantDetails;
 export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleConfiguration =
@@ -101,6 +101,7 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
+export type FitmentCode = "single" | "double";
 
 export interface PSVBrakes {
   techRecord_brakes_dtpNumber?: string | null;
@@ -117,6 +118,16 @@ export interface PSVBrakes {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
+}
+export interface ApplicantDetails {
+  techRecord_applicantDetails_name?: string | null;
+  techRecord_applicantDetails_address1?: null | string;
+  techRecord_applicantDetails_address2?: null | string;
+  techRecord_applicantDetails_postTown?: null | string;
+  techRecord_applicantDetails_address3?: null | string;
+  techRecord_applicantDetails_postCode?: null | string;
+  techRecord_applicantDetails_telephoneNumber?: null | string;
+  techRecord_applicantDetails_emailAddress?: null | string;
 }
 export interface GETPSVTechnicalRecordV3Skeleton2 {
   vin: string;
@@ -198,4 +209,18 @@ export interface GETPSVTechnicalRecordV3Skeleton2 {
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
+  techRecord_axles?: PSVAxles[];
+}
+export interface PSVAxles {
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyre_plyRating?: string | null;
+  tyre_fitmentCode?: null | FitmentCode;
+  tyre_dataTrAxles?: null | number;
 }

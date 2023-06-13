@@ -1,5 +1,5 @@
 {
-  "title": "GET PSV Technical Record V3 Skeleton",
+  "title": "GET PSV Technical Record V3 Testable",
   "type": "object",
   "additionalProperties": false,
   "allOf": [

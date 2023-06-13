@@ -1,0 +1,62 @@
+{
+  "title": "PSV Axles",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "techRecord_weights_gbWeight",
+    "techRecord_weights_designWeight",
+    "techRecord_tyres_tyreCode",
+    "techRecord_tyres_tyreSize"
+  ],
+  "properties": {
+    "techRecord_parkingBrakeMrk": {
+      "type": ["boolean", "null"]
+    },
+    "techRecord_axleNumber": {
+      "type": ["integer", "null"]
+    },
+    "techRecord_weights_gbWeight": {
+      "type": ["integer"],
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "techRecord_weights_designWeight": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "techRecord_weights_ladenWeight": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "techRecord_weights_kerbWeight": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "techRecord_tyres_tyreCode": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "techRecord_tyres_tyreSize": {
+      "type": ["string", "null"],
+      "maxLength": 12
+    },
+    "techRecord_tyres_plyRating": {
+      "type": ["string", "null"]
+    },
+    "techRecord_tyres_fitmentCode": {
+      "anyOf": [
+        { "type": "null" },
+        { "$ref": "../../enums/fitmentCode.ignore.json" }
+      ]
+    },
+    "techRecord_tyre_dataTrAxles": {
+      "type": ["null", "integer"],
+      "minimum": 0,
+      "maximum": 999
+    }
+  }
+}
