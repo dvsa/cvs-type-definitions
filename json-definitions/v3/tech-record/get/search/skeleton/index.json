@@ -3,6 +3,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "techRecord_manufactureYear",
     "primaryVrm",
     "vin",
     "techRecord_statusCode",
@@ -24,10 +25,10 @@
       "type": "string"
     },
     "techRecord_statusCode": {
-      "$ref": "../../../../enums/statusCode.ignore.json"
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../../enums/vehicleType.ignore.json"
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "createdTimestamp": {
       "type": "string"

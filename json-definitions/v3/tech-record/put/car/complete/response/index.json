@@ -5,35 +5,110 @@
   "required": [
     "techRecord_vehicleSubclass"
   ],
-  "allOf": [
-    {
-      "$ref": "../response/index.json",
-      "required": [
-        "vin",
-        "primaryVrm",
-        "trailerId",
-        "techRecord_reasonForCreation",
-        "techRecord_vehicleType",
-        "techRecord_statusCode",
-        "techRecord_regnDate",
-        "techRecord_manufactureYear",
-        "techRecord_noOfAxles",
-        "techRecord_vehicleConfiguration",
-        "techRecord_euVehicleCategory",
-        "techRecord_applicantDetails",
-        "techRecord_createdAt",
-        "techRecord_createdByName",
-        "techRecord_createdById",
-        "techRecord_lastUpdatedAt",
-        "techRecord_lastUpdatedByName",
-        "techRecord_lastUpdatedById",
-        "techRecord_recordCompleteness"
-      ]
-    }
-  ],
   "properties": {
-    "techRecord_vehicleSubclass": {
-      "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    "vin": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "partialVin": {
+      "type": "string"
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_createdByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_createdById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_euVehicleCategory": {
+      "$ref": "../../../../enums/euVehicleCategory.ignore.json"
+    },
+    "techRecord_lastUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_recordCompleteness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "testable",
+        "skeleton"
+      ]
+    },
+    "techRecord_applicantDetails": {
+      "$ref": "../../../../enums/applicantDetails.ignore.json"
+    },
+    "techRecord_vehicleConfiguration": {
+      "$ref": "../../../../enums/vehicleConfiguration.ignore.json"
+    },
+    "techRecord_noOfAxles": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../../../enums/statusCode.ignore.json"
+    },
+    "techRecord_vehicleType": {
+      "$ref": "../../../../enums/vehicleType.ignore.json"
+    },
+    "techRecord_reasonForCreation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_bodyType_code": {
+      "type": "string"
+    },
+    "techRecord_bodyType_description": {
+      "type": "string"
     }
+  },
+  "techRecord_vehicleSubclass": {
+    "$ref": "../../../../enums/vehicleSubclass.ignore.json"
   }
 }

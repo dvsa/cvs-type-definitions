@@ -2,17 +2,10 @@
   "title": "Tech Record Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "systemNumber",
-    "createdTimestamp",
-    "vin",
-    "techRecord_vehicleType"
-  ],
   "properties": {
     "createdTimestamp": {
       "type": [
-        "integer",
-        "null"
+        "string"
       ]
     },
     "partialVin": {
