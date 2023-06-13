@@ -3,7 +3,7 @@ import { schemas } from '../../schemas';
 
 export type Schema = typeof schemas[number];
 
-const isValidObject = (schemaName: string, objectToValidate: object): boolean => {
+export const isValidObject = (schemaName: string, objectToValidate: object): boolean => {
 
   const ajv = new Ajv({removeAdditional: true})
   const schemaPath = `json-schemas/${schemaName}/index.json`
@@ -17,6 +17,3 @@ const isValidObject = (schemaName: string, objectToValidate: object): boolean =>
     throw err
   }
 }
-
-console.log(isValidObject('v3/tech-record/get/psv/skeleton', {}))
-
