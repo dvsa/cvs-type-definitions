@@ -3,7 +3,7 @@
   "type": "object",
   "additionalProperties": true,
   "required": [
-    "techRecord_vehicleSubclass"
+    "vehicleSubclass"
   ],
   "properties": {
     "vin": {
@@ -48,7 +48,7 @@
         "null"
       ]
     },
-    "techRecord_vehicleSubclass": {
+    "vehicleSubclass": {
       "$ref": "../../../../enums/vehicleSubclass.ignore.json"
     }
   }

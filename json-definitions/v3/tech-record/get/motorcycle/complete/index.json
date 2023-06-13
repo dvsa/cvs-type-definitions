@@ -1,7 +1,10 @@
 {
-  "title": "Tech Record Skeleton Car Schema",
+  "title": "Tech Record Complete Motorcycle Schema",
   "type": "object",
   "additionalProperties": false,
+  "required": [
+    "vehicleSubclass"
+  ],
   "properties": {
     "techRecord_applicantDetails_name": {
       "type": [
@@ -135,6 +138,12 @@
     },
     "vin": {
       "type": "string"
+    },
+    "vehicleSubclass": {
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    },
+    "numberOfWheelsDriven": {
+      "type": "integer"
     }
   }
 }

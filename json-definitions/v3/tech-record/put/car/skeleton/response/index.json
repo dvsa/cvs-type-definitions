@@ -3,6 +3,62 @@
   "type": "object",
   "additionalProperties": true,
   "properties": {
+    "techRecord_applicantDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150
+    },
+    "techRecord_applicantDetails_address1": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 12
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 25
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 255
+    },
     "vin": {
       "type": "string"
     },
@@ -61,9 +117,6 @@
         "testable",
         "skeleton"
       ]
-    },
-    "techRecord_applicantDetails": {
-      "$ref": "../../../../enums/applicantDetails.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
       "$ref": "../../../../enums/vehicleConfiguration.ignore.json"
