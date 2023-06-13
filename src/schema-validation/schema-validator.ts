@@ -3,11 +3,11 @@ import { schemas } from '../../schemas';
 
 export type Schema = typeof schemas[number];
 
-const isValidObject = async (schemaName: string, objectToValidate: object): Promise<boolean> => {
+const isValidObject = (schemaName: string, objectToValidate: object): boolean => {
 
   const ajv = new Ajv({removeAdditional: true})
   const schemaPath = `json-schemas/${schemaName}/index.json`
-  const schema = await import(schemaPath)
+  const schema = require(schemaPath)
 
   const validate = ajv.compile(schema)
 
@@ -18,5 +18,5 @@ const isValidObject = async (schemaName: string, objectToValidate: object): Prom
   }
 }
 
-isValidObject('v3/tech-record/get/psv/skeleton', {}).then((a) => console.log(a))
+console.log(isValidObject('v3/tech-record/get/psv/skeleton', {}))
 
