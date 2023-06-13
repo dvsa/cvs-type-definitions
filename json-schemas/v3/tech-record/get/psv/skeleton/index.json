@@ -2,206 +2,6 @@
 	"title": "GET PSV Technical Record V3 Skeleton",
 	"type": "object",
 	"additionalProperties": false,
-	"allOf": [
-		{
-			"title": "PSV Brakes",
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"techRecord_brakes_dtpNumber": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 6
-				},
-				"techRecord_brakes_brakeCode": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 6
-				},
-				"techRecord_brakes_brakeCodeOriginal": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 6
-				},
-				"techRecord_brakes_dataTrBrakeOne": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 60
-				},
-				"techRecord_brakes_dataTrBrakeTwo": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 60
-				},
-				"techRecord_brakes_dataTrBrakeThree": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 60
-				},
-				"techRecord_brakes_retarderBrakeOne": {
-					"anyOf": [
-						{
-							"title": "Retarder Brake",
-							"type": "string",
-							"enum": [
-								"electric",
-								"exhaust",
-								"friction",
-								"hydraulic",
-								"other",
-								"none"
-							]
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"techRecord_brakes_retarderBrakeTwo": {
-					"anyOf": [
-						{
-							"title": "Retarder Brake",
-							"type": "string",
-							"enum": [
-								"electric",
-								"exhaust",
-								"friction",
-								"hydraulic",
-								"other",
-								"none"
-							]
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				},
-				"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				},
-				"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				},
-				"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				},
-				"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				},
-				"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
-					"type": [
-						"integer",
-						"null"
-					],
-					"maximum": 99999,
-					"minimum": 0
-				}
-			}
-		},
-		{
-			"title": "Applicant Details",
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"techRecord_applicantDetails_name": {
-					"type": [
-						"string",
-						"null"
-					],
-					"maxLength": 150
-				},
-				"techRecord_applicantDetails_address1": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 60
-				},
-				"techRecord_applicantDetails_address2": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 60
-				},
-				"techRecord_applicantDetails_postTown": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 60
-				},
-				"techRecord_applicantDetails_address3": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 60
-				},
-				"techRecord_applicantDetails_postCode": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 12
-				},
-				"techRecord_applicantDetails_telephoneNumber": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 25
-				},
-				"techRecord_applicantDetails_emailAddress": {
-					"type": [
-						"null",
-						"string"
-					],
-					"maxLength": 255
-				}
-			}
-		}
-	],
 	"required": [
 		"vin",
 		"systemNumber",
@@ -862,8 +662,8 @@
 		"techRecord_axles": {
 			"type": "array",
 			"items": {
-				"title": "PSV Axles",
 				"type": "object",
+				"title": "PSV Axles",
 				"additionalProperties": false,
 				"properties": {
 					"techRecord_parkingBrakeMrk": {
@@ -957,11 +757,24 @@
 					"techRecord_tyres_speedCategorySymbol": {
 						"anyOf": [
 							{
-								"title": "Fitment Code",
+								"title": "Speed Category Symbol",
 								"type": "string",
 								"enum": [
-									"single",
-									"double"
+									"a7",
+									"a8",
+									"b",
+									"c",
+									"d",
+									"e",
+									"f",
+									"g",
+									"j",
+									"k",
+									"l",
+									"m",
+									"n",
+									"p",
+									"q"
 								]
 							},
 							{
@@ -971,6 +784,62 @@
 					}
 				}
 			}
+		},
+		"techRecord_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
 		}
 	}
 }

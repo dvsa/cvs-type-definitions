@@ -2,14 +2,6 @@
   "title": "GET PSV Technical Record V3 Testable",
   "type": "object",
   "additionalProperties": false,
-  "allOf": [
-    {
-      "$ref": "../../../sections/brakes/psv-brakes.ignore.json"
-    },
-    {
-      "$ref": "../../../sections/applicant-details/applicant-details.ignore.json"
-    }
-  ],
   "required": [
     "vin",
     "systemNumber",
@@ -353,8 +345,99 @@
     "techRecord_axles": {
       "type": "array",
       "items": {
-        "$ref": "../../../sections/axles/psv-axles.ignore.json"
+        "type": "object",
+        "title": "PSV Axles",
+        "additionalProperties": false,
+        "properties": {
+          "techRecord_parkingBrakeMrk": {
+            "type": ["boolean", "null"]
+          },
+          "techRecord_axleNumber": {
+            "type": ["integer", "null"]
+          },
+          "techRecord_weights_gbWeight": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "techRecord_weights_designWeight": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "techRecord_weights_ladenWeight": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "techRecord_weights_kerbWeight": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "techRecord_tyres_tyreCode": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "techRecord_tyres_tyreSize": {
+            "type": ["string", "null"],
+            "maxLength": 12
+          },
+          "techRecord_tyres_plyRating": {
+            "type": ["string", "null"]
+          },
+          "techRecord_tyres_fitmentCode": {
+            "anyOf": [
+              { "type": "null" },
+              { "$ref": "../../../enums/fitmentCode.ignore.json" }
+            ]
+          },
+          "techRecord_tyres_dataTrAxles": {
+            "type": ["null", "integer"],
+            "minimum": 0,
+            "maximum": 999
+          },
+          "techRecord_tyres_speedCategorySymbol": {
+            "anyOf": [
+              { "$ref": "../../../enums/speedCategorySymbol.ignore.json" },
+              { "type": "null" }
+            ]
+          }
+        }
       }
+    },
+    "techRecord_applicantDetails_name": {
+      "type": ["string", "null"],
+      "maxLength": 150
+    },
+    "techRecord_applicantDetails_address1": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": ["null", "string"],
+      "maxLength": 12
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": ["null", "string"],
+      "maxLength": 25
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": ["null", "string"],
+      "maxLength": 255
     }
   }
 }
