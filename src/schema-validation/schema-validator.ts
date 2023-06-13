@@ -1,22 +1,22 @@
+import Ajv from "ajv"
 import { schemas } from '../../schemas';
-const Enjoi = require('enjoi');
-declare var require: any
 
 export type Schema = typeof schemas[number];
 
-export const isValidObject = (schemaName: Schema, objectToValidate: object): boolean => {
-  const schemaPath = `json-schemas/${schemaName}`
-  const schemaFile = require(schemaPath);
-  const schema = Enjoi.schema(schemaFile)
-  const { error } = schema.validate(<ArrayBufferView | ArrayBuffer>objectToValidate);
-  if (error) {
-    console.error(`Object failed validation against ${schemaName} Schema. Failures: `)
-    error.details.forEach((errorDetail: any) => {
-      console.log(errorDetail.message)
+const isValidObject = async (schemaName: string, objectToValidate: object): Promise<boolean> => {
 
-    })
-  } else {
-    console.log('*********schema passes validation********')
+  const ajv = new Ajv({removeAdditional: true})
+  const schemaPath = `json-schemas/${schemaName}/index.json`
+  const schema = await import(schemaPath)
+
+  const validate = ajv.compile(schema)
+
+  try {
+    return validate(objectToValidate)
+  } catch (err) {
+    throw err
   }
-  return !error
 }
+
+isValidObject('v3/tech-record/get/psv/skeleton', {}).then((a) => console.log(a))
+
