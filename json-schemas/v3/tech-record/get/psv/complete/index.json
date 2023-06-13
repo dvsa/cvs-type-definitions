@@ -299,7 +299,7 @@
 		},
 		"techRecord_numberOfWheelsDriven": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			]
 		},

@@ -141,7 +141,7 @@ export interface GETPSVTechnicalRecordV3Complete2 {
   techRecord_vehicleSize: VehicleSize | null;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
-  techRecord_numberOfWheelsDriven: string | null;
+  techRecord_numberOfWheelsDriven: number | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_hiddenInVta?: boolean;

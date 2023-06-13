@@ -5,8 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type GETPSVTechnicalRecordV3Testable = GETPSVTechnicalRecordV3Testable1 & GETPSVTechnicalRecordV3Testable2;
-export type GETPSVTechnicalRecordV3Testable1 = PSVBrakes & ApplicantDetails;
+export type POSTPSVTechnicalRecordV3Testable = POSTPSVTechnicalRecordV3Testable1 & POSTPSVTechnicalRecordV3Testable2;
+export type POSTPSVTechnicalRecordV3Testable1 = PSVBrakes & ApplicantDetails;
 export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleConfiguration =
@@ -129,7 +129,7 @@ export interface ApplicantDetails {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
 }
-export interface GETPSVTechnicalRecordV3Testable2 {
+export interface POSTPSVTechnicalRecordV3Testable2 {
   vin: string;
   systemNumber: string;
   primaryVrm: string;
