@@ -38,19 +38,25 @@
       "type": ["string", "null"],
       "maxLength": 12
     },
-    "techRecord_tyre_plyRating": {
+    "techRecord_tyres_plyRating": {
       "type": ["string", "null"]
     },
-    "techRecord_tyre_fitmentCode": {
+    "techRecord_tyres_fitmentCode": {
       "anyOf": [
         { "type": "null" },
         { "$ref": "../../enums/fitmentCode.ignore.json" }
       ]
     },
-    "techRecord_tyre_dataTrAxles": {
+    "techRecord_tyres_dataTrAxles": {
       "type": ["null", "integer"],
       "minimum": 0,
       "maximum": 999
+    },
+    "techRecord_tyres_speedCategorySymbol": {
+      "anyOf": [
+        { "$ref": "../../enums/fitmentCode.ignore.json" },
+        { "type": "null" }
+      ]
     }
   }
 }

@@ -1,22 +1,28 @@
 {
-  "title": "PSV Axles",
+  "title": "PSV Axles Complete",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "techRecord_weights_gbWeight",
     "techRecord_weights_designWeight",
     "techRecord_tyres_tyreCode",
-    "techRecord_tyres_tyreSize"
+    "techRecord_tyres_tyreSize",
+    "techRecord_tyres_fitmentCode",
+    "techRecord_tyres_speedCategorySymbol",
+    "techRecord_parkingBrakeMrk",
+    "techRecord_axleNumber",
+    "techRecord_weights_ladenWeight",
+    "techRecord_weights_kerbWeight"
   ],
   "properties": {
     "techRecord_parkingBrakeMrk": {
-      "type": ["boolean", "null"]
+      "type": "boolean"
     },
     "techRecord_axleNumber": {
-      "type": ["integer", "null"]
+      "type": "integer"
     },
     "techRecord_weights_gbWeight": {
-      "type": ["integer"],
+      "type": "integer",
       "minimum": 0,
       "maximum": 99999
     },
@@ -26,37 +32,37 @@
       "maximum": 99999
     },
     "techRecord_weights_ladenWeight": {
-      "type": ["integer", "null"],
+      "type": "integer",
       "minimum": 0,
       "maximum": 99999
     },
     "techRecord_weights_kerbWeight": {
-      "type": ["integer", "null"],
+      "type": "integer",
       "minimum": 0,
       "maximum": 99999
     },
     "techRecord_tyres_tyreCode": {
-      "type": ["integer", "null"],
+      "type": "integer",
       "minimum": 0,
       "maximum": 99999
     },
     "techRecord_tyres_tyreSize": {
-      "type": ["string", "null"],
+      "type": "string",
       "maxLength": 12
     },
     "techRecord_tyres_plyRating": {
       "type": ["string", "null"]
     },
     "techRecord_tyres_fitmentCode": {
-      "anyOf": [
-        { "type": "null" },
-        { "$ref": "../../enums/fitmentCode.ignore.json" }
-      ]
+      "$ref": "../../enums/fitmentCode.ignore.json"
     },
-    "techRecord_tyre_dataTrAxles": {
+    "techRecord_tyres_dataTrAxles": {
       "type": ["null", "integer"],
       "minimum": 0,
       "maximum": 999
+    },
+    "techRecord_tyres_speedCategorySymbol": {
+      "$ref": "../../enums/fitmentCode.ignore.json"
     }
   }
 }

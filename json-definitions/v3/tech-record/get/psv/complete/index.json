@@ -4,8 +4,7 @@
   "additionalProperties": false,
   "allOf": [
     {
-      "$ref": "../../../sections/brakes/psv-brakes.ignore.json",
-      "required": ["techRecord_brakes"]
+      "$ref": "../../../sections/brakes/psv-brakes-complete.ignore.json"
     },
     {
       "$ref": "../../../sections/applicant-details/applicant-details.ignore.json"
@@ -27,7 +26,17 @@
     "techRecord_reasonForCreation",
     "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
-    "techRecord_createdAt"
+    "techRecord_createdAt",
+    "techRecord_axles",
+    "techRecord_standingCapacity",
+    "techRecord_numberOfSeatbelts",
+    "techRecord_bodyMake",
+    "techRecord_bodyModel",
+    "techRecord_chassisMake",
+    "techRecord_chassisModel",
+    "techRecord_grossKerbWeight",
+    "techRecord_grossLadenWeight",
+    "techRecord_dda_certificateIssued"
   ],
   "properties": {
     "vin": {
@@ -254,11 +263,11 @@
     },
     "techRecord_coifSerialNumber": {
       "type": ["string", "null"],
-      "maximum": 8
+      "maxLength": 8
     },
     "techRecord_coifCertifierName": {
       "type": ["string", "null"],
-      "maximum": 20
+      "maxLength": 20
     },
     "techRecord_coifDate": {
       "anyOf": [
@@ -351,7 +360,7 @@
     "techRecord_axles": {
       "type": "array",
       "items": {
-        "$ref": "../../../sections/axles/psv-axles.ignore.json"
+        "$ref": "../../../sections/axles/psv-axles-complete.ignore.json"
       },
       "minItems": 1
     }
