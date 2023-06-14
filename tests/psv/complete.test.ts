@@ -9,23 +9,24 @@ describe('validate complete psv schema', () => {
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(true)
     })
-    xit('should pass and strip if an extra field is given', () => {
-        const data = {}
+    it('should pass and strip if an extra field is given', () => {
+        const data = psvData[1]
+        const res = isValidObject(schemaName, data)
+        expect(res).toEqual(true)
+        expect(data).toEqual(psvData[0])
+    })
+    it('should pass if missing a non required field, tachoExemptMark', () => {
+        const data = psvData[2]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(true)
     })
-    xit('should pass if missing a non required field', () => {
-        const data = {}
-        const res = isValidObject(schemaName, data)
-        expect(res).toEqual(true)
-    })
-    xit('should fail when missing a required field', () => {
-        const data = {}
+    it('should fail when missing a required field, systemNumber', () => {
+        const data = psvData[3]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(false)
     })
-    xit('should fail if there is a validator wrong', () => {
-        const data = {}
+    it('should fail if there is a validator wrong, noOfSeatbelts is wrong type', () => {
+        const data = psvData[4]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(false)
     })
