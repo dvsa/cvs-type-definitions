@@ -7,15 +7,11 @@ export const isValidObject = (
   schemaName: Schema,
   objectToValidate: object
 ): boolean => {
-  const ajv = new Ajv({ removeAdditional: true });
+  const ajv = new Ajv({ removeAdditional: true, allErrors: true });
   const schemaPath = `json-schemas/${schemaName}`;
   const schema = require(schemaPath);
 
   const validate = ajv.compile(schema);
 
-  try {
-    return validate(objectToValidate);
-  } catch (err) {
-    throw err;
-  }
+  return validate(objectToValidate);
 };
