@@ -224,7 +224,14 @@
       "type": ["boolean", "null"]
     },
     "techRecord_euroStandard": {
-      "type": ["boolean", "null"]
+      "anyOf": [
+        {
+          "$ref": "../../../enums/euroStandard.ignore.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "techRecord_fuelPropulsionSystem": {
       "anyOf": [

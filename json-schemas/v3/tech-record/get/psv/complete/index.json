@@ -434,7 +434,19 @@
 			"type": "boolean"
 		},
 		"techRecord_euroStandard": {
-			"type": "boolean"
+			"title": "Euro standard",
+			"type": "string",
+			"enum": [
+				"0.10 g/kWh Euro 3 PM",
+				"0.03 g/kWh Euro IV PM",
+				"Euro 3",
+				"Euro 4",
+				"Euro 5",
+				"Euro 6",
+				"Euro V",
+				"Euro VI",
+				"Full Electric"
+			]
 		},
 		"techRecord_fuelPropulsionSystem": {
 			"title": "Fuel Propulsion System",

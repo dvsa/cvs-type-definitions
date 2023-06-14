@@ -88,6 +88,16 @@ export type BodyTypeDescription =
   | "skip loader"
   | "tipper"
   | "tractor";
+export type EuroStandard =
+  | "0.10 g/kWh Euro 3 PM"
+  | "0.03 g/kWh Euro IV PM"
+  | "Euro 3"
+  | "Euro 4"
+  | "Euro 5"
+  | "Euro 6"
+  | "Euro V"
+  | "Euro VI"
+  | "Full Electric";
 export type FuelPropulsionSystem =
   | "DieselPetrol"
   | "Diesel"
@@ -170,7 +180,7 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_standingCapacity?: number | null;
   techRecord_speedLimiterMrk?: boolean | null;
   techRecord_tachoExemptMrk?: boolean | null;
-  techRecord_euroStandard?: boolean | null;
+  techRecord_euroStandard?: EuroStandard | null;
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
   techRecord_emissionsLimit?: null | number;
   techRecord_trainDesignWeight?: number | null;

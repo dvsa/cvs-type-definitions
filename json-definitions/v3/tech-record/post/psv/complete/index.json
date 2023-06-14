@@ -231,7 +231,7 @@
       "type": "boolean"
     },
     "techRecord_euroStandard": {
-      "type": "boolean"
+      "$ref": "../../../enums/euroStandard.ignore.json"
     },
     "techRecord_fuelPropulsionSystem": {
       "$ref": "../../../enums/fuelPropulsionSystem.ignore.json"
