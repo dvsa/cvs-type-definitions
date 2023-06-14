@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "test",
+    "test": "echo 'test'",
     "generate": "ts-node generateSchemas.ts"
   },
   "author": "dvsa",
