@@ -1,0 +1,13 @@
+{
+  "title": "Tech Record Complete Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vehicleSubclass"
+  ],
+  "allOf": [
+    {
+      "$ref": "../../../car/complete/request/index.json"
+    }
+  ]
+}

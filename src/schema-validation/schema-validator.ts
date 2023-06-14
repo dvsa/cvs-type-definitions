@@ -1,19 +1,21 @@
-import Ajv from "ajv"
-import { schemas } from '../../schemas';
+import Ajv from "ajv";
+import { schemas } from "../../schemas";
 
 export type Schema = typeof schemas[number];
 
-export const isValidObject = (schemaName: string, objectToValidate: object): boolean => {
+export const isValidObject = (
+  schemaName: Schema,
+  objectToValidate: object
+): boolean => {
+  const ajv = new Ajv({ removeAdditional: true });
+  const schemaPath = `json-schemas/${schemaName}`;
+  const schema = require(schemaPath);
 
-  const ajv = new Ajv({removeAdditional: true})
-  const schemaPath = `json-schemas/${schemaName}/index.json`
-  const schema = require(schemaPath)
-
-  const validate = ajv.compile(schema)
+  const validate = ajv.compile(schema);
 
   try {
-    return validate(objectToValidate)
+    return validate(objectToValidate);
   } catch (err) {
-    throw err
+    throw err;
   }
-}
+};
