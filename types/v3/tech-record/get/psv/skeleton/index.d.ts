@@ -125,6 +125,7 @@ export type SpeedCategorySymbol =
   | "n"
   | "p"
   | "q";
+export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
 
 export interface GETPSVTechnicalRecordV3Skeleton {
   vin: string;
@@ -216,6 +217,20 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
+  techRecord_brakes_dtpNumber?: string | null;
+  techRecord_brakes_brakeCode?: string | null;
+  techRecord_brakes_brakeCodeOriginal?: string | null;
+  techRecord_brakes_dataTrBrakeOne?: string | null;
+  techRecord_brakes_dataTrBrakeTwo?: string | null;
+  techRecord_brakes_dataTrBrakeThree?: string | null;
+  techRecord_brakes_retarderBrakeOne?: RetarderBrake | null;
+  techRecord_brakes_retarderBrakeTwo?: RetarderBrake | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
 }
 export interface PSVAxles {
   techRecord_parkingBrakeMrk?: boolean | null;

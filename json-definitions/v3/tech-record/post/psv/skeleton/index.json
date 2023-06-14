@@ -451,6 +451,72 @@
     "techRecord_applicantDetails_emailAddress": {
       "type": ["null", "string"],
       "maxLength": 255
+    },
+    "techRecord_brakes_dtpNumber": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCode": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCodeOriginal": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_dataTrBrakeOne": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeTwo": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeThree": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_retarderBrakeOne": {
+      "anyOf": [
+        { "$ref": "../../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_retarderBrakeTwo": {
+      "anyOf": [
+        { "$ref": "../../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+      "type": ["integer", "null"],
+      "maximum": 99999,
+      "minimum": 0
     }
   }
 }

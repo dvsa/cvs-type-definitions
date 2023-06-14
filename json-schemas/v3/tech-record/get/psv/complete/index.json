@@ -27,7 +27,17 @@
 		"techRecord_chassisModel",
 		"techRecord_grossKerbWeight",
 		"techRecord_grossLadenWeight",
-		"techRecord_dda_certificateIssued"
+		"techRecord_dda_certificateIssued",
+		"techRecord_brakes_brakeCode",
+		"techRecord_brakes_dataTrBrakeOne",
+		"techRecord_brakes_dataTrBrakeTwo",
+		"techRecord_brakes_dataTrBrakeThree",
+		"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA",
+		"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA",
+		"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA",
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB",
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB",
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB"
 	],
 	"properties": {
 		"vin": {
@@ -788,6 +798,122 @@
 				"string"
 			],
 			"maxLength": 255
+		},
+		"techRecord_brakes_dtpNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 6
+		},
+		"techRecord_brakes_brakeCode": {
+			"type": "string",
+			"maxLength": 6
+		},
+		"techRecord_brakes_brakeCodeOriginal": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 6
+		},
+		"techRecord_brakes_dataTrBrakeOne": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_dataTrBrakeTwo": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_dataTrBrakeThree": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_retarderBrakeOne": {
+			"anyOf": [
+				{
+					"title": "Retarder Brake",
+					"type": "string",
+					"enum": [
+						"electric",
+						"exhaust",
+						"friction",
+						"hydraulic",
+						"other",
+						"none"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_brakes_retarderBrakeTwo": {
+			"anyOf": [
+				{
+					"title": "Retarder Brake",
+					"type": "string",
+					"enum": [
+						"electric",
+						"exhaust",
+						"friction",
+						"hydraulic",
+						"other",
+						"none"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
 		}
 	}
 }
