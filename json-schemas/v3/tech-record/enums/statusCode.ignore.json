@@ -1,9 +1,0 @@
-{
-	"title": "Status Code",
-	"type": "string",
-	"enum": [
-		"current",
-		"provisional",
-		"archived"
-	]
-}
