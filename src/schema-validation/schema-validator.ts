@@ -3,10 +3,10 @@ import { schemas } from '../../schemas';
 
 export type Schema = typeof schemas[number];
 
-export const isValidObject = (schemaName: string, objectToValidate: object): boolean => {
+export const isValidObject = (schemaName: Schema, objectToValidate: object): boolean => {
 
   const ajv = new Ajv({removeAdditional: true})
-  const schemaPath = `json-schemas/${schemaName}/index.json`
+  const schemaPath = `json-schemas/${schemaName}`
   const schema = require(schemaPath)
 
   const validate = ajv.compile(schema)
