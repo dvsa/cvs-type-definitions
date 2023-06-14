@@ -31,3 +31,12 @@ jobs:
           npm run generate
           git add -N .
           git diff -s --exit-code || (echo -e "Found changes after generating files. Run \e[31mnpm run generate\e[0m, and push the changes to the branch." && exit 1)
+      - name: Check PR title
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const semVarVersions = ["patch", "minor", "major"]
+            const prTitleVersion = context.payload.pull_request.title.split("(")[0]
+            if (!semVarVersions.includes(prTitleVersion)) {
+              throw new Error("Rename PR in the format: path|minor|major(ticket-number): description")
+            }
