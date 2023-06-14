@@ -5,7 +5,7 @@ name: PR-checks
 
 on:
   pull_request:
-    branches: ["develop", "feature/CB2-8067"]
+    branches: ["develop"]
 
 jobs:
   test-and-generate-check:
@@ -30,7 +30,7 @@ jobs:
         run: |
           npm run generate
           git add -N .
-          git diff -s --exit-code || (echo -e "Found changes after generating files. Run \e[31mnpm run generate\e[0m, and push the changes to the branch." && exit 0)
+          git diff -s --exit-code || (echo -e "Found changes after generating files. Run \e[31mnpm run generate\e[0m, and push the changes to the branch." && exit 1)
       - name: Check PR title
         uses: actions/github-script@v6
         with:
