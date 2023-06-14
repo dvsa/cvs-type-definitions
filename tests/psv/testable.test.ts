@@ -1,10 +1,10 @@
 import { isValidObject } from "../../src/schema-validation/schema-validator"
-import * as psvData from "../resources/data/psvComplete.json"
+import * as psvData from "../resources/data/psvTestable.json"
 
-const schemaName = 'v3/tech-record/get/psv/complete/index.json'
+const schemaName = 'v3/tech-record/get/psv/testable/index.json'
 
-describe('validate complete psv schema', () => {
-    it('should validate when given full data', () => {
+describe('validate testable psv schema', () => {
+    it('should validate when given full data for complete', () => {
         const data = psvData[0]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(true)
@@ -15,7 +15,7 @@ describe('validate complete psv schema', () => {
         expect(res).toEqual(true)
         expect(data).not.toHaveProperty('foo')
     })
-    it('should pass if missing a non required field, tachoExemptMark', () => {
+    it('should pass validation when given just required fields', () => {
         const data = psvData[2]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(true)
@@ -25,7 +25,7 @@ describe('validate complete psv schema', () => {
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(false)
     })
-    it('should fail if there is a validator wrong, noOfSeatbelts is wrong type', () => {
+    it('should fail if there is a validator wrong, techRecord_noOfAxles is too high', () => {
         const data = psvData[4]
         const res = isValidObject(schemaName, data)
         expect(res).toEqual(false)
