@@ -83,7 +83,7 @@ function generateTypesAndSchemaInFolder(path: string, schemasPath: string[]) {
 // Defines and maintains an array of valid json schemas for type-safe runtime validation
 function generateSchemasArray(paths: string[]) {
   const schemas = `export const schemas = [
-  "${paths.join('",\n  "')}"\n] as const`;
+  "${paths.join('",\n  "')}",\n] as const;\n`;
   writeFileSync("./schemas.ts", schemas);
 }
 /**
