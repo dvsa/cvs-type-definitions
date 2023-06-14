@@ -1,0 +1,9 @@
+{
+	"title": "Record Completeness",
+	"type": "string",
+	"enum": [
+		"complete",
+		"testable",
+		"skeleton"
+	]
+}
