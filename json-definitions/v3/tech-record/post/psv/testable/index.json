@@ -167,8 +167,8 @@
       "min": 0
     },
     "techRecord_dda_wheelchairFittings": {
-      "type": ["number", "null"],
-      "max": 250
+      "type": ["string", "null"],
+      "maxLength": 250
     },
     "techRecord_dda_wheelchairLiftPresent": {
       "type": ["boolean", "null"]

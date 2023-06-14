@@ -166,7 +166,9 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued: boolean;
   techRecord_dda_wheelchairCapacity?: number | null;
-  techRecord_dda_wheelchairFittings?: number | null;
+  techRecord_dda_wheelchairFittings?: {
+    [k: string]: unknown;
+  } | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
   techRecord_dda_wheelchairLiftInformation?: string | null;
   techRecord_dda_wheelchairRampPresent?: boolean | null;
