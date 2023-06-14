@@ -53,6 +53,6 @@ jobs:
 
             github.rest.repos.createRelease({
               ...context.repo,
-              tag_name = githubTag.tag,
+              tag_name: githubTag.tag,
               body: releaseBody
             })
