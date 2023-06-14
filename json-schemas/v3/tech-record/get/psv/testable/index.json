@@ -23,6 +23,9 @@
 		"vin": {
 			"type": "string"
 		},
+		"partialVin": {
+			"type": "string"
+		},
 		"systemNumber": {
 			"type": "string"
 		},
@@ -348,10 +351,10 @@
 		},
 		"techRecord_dda_wheelchairFittings": {
 			"type": [
-				"number",
+				"string",
 				"null"
 			],
-			"maximum": 250
+			"maxLength": 250
 		},
 		"techRecord_dda_wheelchairLiftPresent": {
 			"type": [

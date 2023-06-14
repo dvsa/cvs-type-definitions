@@ -34,6 +34,9 @@
 		"vin": {
 			"type": "string"
 		},
+		"partialVin": {
+			"type": "string"
+		},
 		"systemNumber": {
 			"type": "string"
 		},

@@ -128,6 +128,7 @@ export type SpeedCategorySymbol =
 
 export interface GETPSVTechnicalRecordV3Complete {
   vin: string;
+  partialVin?: string;
   systemNumber: string;
   primaryVrm: string;
   techRecord_vehicleType: "psv";

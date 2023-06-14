@@ -128,6 +128,7 @@ export type SpeedCategorySymbol =
 
 export interface GETPSVTechnicalRecordV3Testable {
   vin: string;
+  partialVin?: string;
   systemNumber: string;
   primaryVrm: string;
   techRecord_vehicleType: "psv";
@@ -166,7 +167,7 @@ export interface GETPSVTechnicalRecordV3Testable {
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued?: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
-  techRecord_dda_wheelchairFittings?: number | null;
+  techRecord_dda_wheelchairFittings?: string | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
   techRecord_dda_wheelchairLiftInformation?: string | null;
   techRecord_dda_wheelchairRampPresent?: boolean | null;
