@@ -560,6 +560,23 @@
       "type": ["integer", "null"],
       "maximum": 99999,
       "minimum": 0
+    },
+    "techRecord_microfilm": {
+      "type": "null"
+    },
+    "techRecord_microfilmDocumentType": {
+      "anyOf": [
+        { "$ref": "../../../enums/microFilmDocumentType.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_microfilmRollNumber": {
+      "type": ["string", "null"],
+      "maxLength": 5
+    },
+    "techRecord_microfilmSerialNumber": {
+      "type": ["string", "null"],
+      "maxLength": 4
     }
   }
 }

@@ -125,6 +125,63 @@ export type SpeedCategorySymbol =
   | "n"
   | "p"
   | "q";
+export type RetarderBrake = "electric" | "exhaust" | "friction" | "hydraulic" | "other" | "none";
+export type MicrofilmDocumentType =
+  | "PSV Miscellaneous"
+  | "AAT - Trailer Annual Test"
+  | "AIV - HGV International App"
+  | "COIF Modification"
+  | "Trailer COC + Int Plate"
+  | "RCT - Trailer Test Cert paid"
+  | "HGV COC + Int Plate"
+  | "PSV Carry/Auth"
+  | "OMO Report"
+  | "AIT - Trailer International App"
+  | "IPV - HGV EEC Plate/Cert"
+  | "XCV - HGV Test Cert free"
+  | "AAV - HGV Annual Test"
+  | "COIF Master"
+  | "Tempo 100 Sp Ord"
+  | "Deleted"
+  | "PSV N/ALT"
+  | "XPT - Tr Plating Cert paid"
+  | "FFV - HGV First Test"
+  | "Repl Vitesse 100"
+  | "TCV - HGV Test Cert"
+  | "ZZZ -  Miscellaneous"
+  | "Test Certificate"
+  | "XCT - Trailer Test Cert free"
+  | "C52 - COC and VTG52A"
+  | "Tempo 100 Report"
+  | "Main File Amendment"
+  | "PSV Doc"
+  | "PSV COC"
+  | "PSV Repl COC"
+  | "TAV - COC"
+  | "NPT - Trailer Alteration"
+  | "OMO Certificate"
+  | "PSV Repl COIF"
+  | "PSV Repl COF"
+  | "COIF Application"
+  | "XPV - HGV Plating Cert Free"
+  | "TCT  - Trailer Test Cert"
+  | "Tempo 100 App"
+  | "PSV Decision on N/ALT"
+  | "Special Order PSV"
+  | "NPV - HGV Alteration"
+  | "No Description Found"
+  | "Vitesse 100 Sp Ord"
+  | "Brake Test Details"
+  | "COIF Productional"
+  | "RDT - Test Disc Paid"
+  | "RCV -  HGV Test Cert"
+  | "FFT -  Trailer First Test"
+  | "IPT - Trailer EEC Plate/Cert"
+  | "XDT - Test Disc Free"
+  | "PRV - HGV Plating Cert paid"
+  | "COF Cert"
+  | "PRT - Tr Plating Cert paid"
+  | "Tempo 100 Permit";
 
 export interface GETPSVTechnicalRecordV3Complete {
   vin: string;
@@ -167,9 +224,7 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued: boolean;
   techRecord_dda_wheelchairCapacity?: number | null;
-  techRecord_dda_wheelchairFittings?: {
-    [k: string]: unknown;
-  } | null;
+  techRecord_dda_wheelchairFittings?: string | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
   techRecord_dda_wheelchairLiftInformation?: string | null;
   techRecord_dda_wheelchairRampPresent?: boolean | null;
@@ -212,7 +267,33 @@ export interface GETPSVTechnicalRecordV3Complete {
   /**
    * @minItems 1
    */
-  techRecord_axles: [PSVAxlesComplete, ...PSVAxlesComplete[]];
+  axles: [PSVAxlesComplete, ...PSVAxlesComplete[]];
+  techRecord_applicantDetails_name?: string | null;
+  techRecord_applicantDetails_address1?: null | string;
+  techRecord_applicantDetails_address2?: null | string;
+  techRecord_applicantDetails_postTown?: null | string;
+  techRecord_applicantDetails_address3?: null | string;
+  techRecord_applicantDetails_postCode?: null | string;
+  techRecord_applicantDetails_telephoneNumber?: null | string;
+  techRecord_applicantDetails_emailAddress?: null | string;
+  techRecord_brakes_dtpNumber?: string | null;
+  techRecord_brakes_brakeCode: string;
+  techRecord_brakes_brakeCodeOriginal?: string | null;
+  techRecord_brakes_dataTrBrakeOne: string;
+  techRecord_brakes_dataTrBrakeTwo: string;
+  techRecord_brakes_dataTrBrakeThree: string;
+  techRecord_brakes_retarderBrakeOne?: RetarderBrake | null;
+  techRecord_brakes_retarderBrakeTwo?: RetarderBrake | null;
+  techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA: number;
+  techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA: number;
+  techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA: number;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB: number;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB: number;
+  techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB: number;
+  techRecord_microfilm?: null;
+  techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
+  techRecord_microfilmRollNumber?: string | null;
+  techRecord_microfilmSerialNumber?: string | null;
 }
 export interface PSVAxlesComplete {
   techRecord_parkingBrakeMrk: boolean;

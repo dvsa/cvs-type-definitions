@@ -6,7 +6,6 @@
     "vin",
     "systemNumber",
     "primaryVrm",
-    "vehicleType",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleSize",
     "techRecord_seatsLowerDeck",
@@ -19,7 +18,7 @@
     "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
     "techRecord_createdAt",
-    "techRecord_axles",
+    "axles",
     "techRecord_standingCapacity",
     "techRecord_numberOfSeatbelts",
     "techRecord_bodyMake",
@@ -70,8 +69,12 @@
     },
     "techRecord_vehicleSize": {
       "anyOf": [
-        { "$ref": "../../../enums/vehicleSize.ignore.json" },
-        { "type": "null" }
+        {
+          "$ref": "../../../enums/vehicleSize.ignore.json"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_seatsLowerDeck": {
@@ -97,8 +100,12 @@
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
-        { "$ref": "../../../enums/euVehicleCategory.ignore.json" },
-        { "type": "null" }
+        {
+          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_regnDate": {
@@ -107,14 +114,26 @@
     },
     "techRecord_manufactureYear": {
       "anyOf": [
-        { "type": "integer", "minimum": 0, "maximum": 9999 },
-        { "type": "null" }
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9999
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_noOfAxles": {
       "anyOf": [
-        { "type": "integer", "minimum": 0, "maximum": 99 },
-        { "type": "null" }
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_departmentalVehicleMarker": {
@@ -125,8 +144,12 @@
     },
     "techRecord_approvalType": {
       "anyOf": [
-        { "$ref": "../../../enums/approvalType.ignore.json" },
-        { "type": "null" }
+        {
+          "$ref": "../../../enums/approvalType.ignore.json"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_approvalTypeNumber": {
@@ -190,7 +213,7 @@
       "minimum": 0
     },
     "techRecord_dda_wheelchairFittings": {
-      "type": ["stirng", "null"],
+      "type": ["string", "null"],
       "maxLength": 250
     },
     "techRecord_dda_wheelchairLiftPresent": {
@@ -362,7 +385,7 @@
       "type": ["string", "null"],
       "maxLength": 160
     },
-    "techRecord_axles": {
+    "axles": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -432,105 +455,122 @@
             "$ref": "../../../enums/speedCategorySymbol.ignore.json"
           }
         }
-      },
-      "techRecord_applicantDetails_name": {
-        "type": ["string", "null"],
-        "maxLength": 150
-      },
-      "techRecord_applicantDetails_address1": {
-        "type": ["null", "string"],
-        "maxLength": 60
-      },
-      "techRecord_applicantDetails_address2": {
-        "type": ["null", "string"],
-        "maxLength": 60
-      },
-      "techRecord_applicantDetails_postTown": {
-        "type": ["null", "string"],
-        "maxLength": 60
-      },
-      "techRecord_applicantDetails_address3": {
-        "type": ["null", "string"],
-        "maxLength": 60
-      },
-      "techRecord_applicantDetails_postCode": {
-        "type": ["null", "string"],
-        "maxLength": 12
-      },
-      "techRecord_applicantDetails_telephoneNumber": {
-        "type": ["null", "string"],
-        "maxLength": 25
-      },
-      "techRecord_applicantDetails_emailAddress": {
-        "type": ["null", "string"],
-        "maxLength": 255
-      },
-      "techRecord_brakes_dtpNumber": {
-        "type": ["string", "null"],
-        "maxLength": 6
-      },
-      "techRecord_brakes_brakeCode": {
-        "type": "string",
-        "maxLength": 6
-      },
-      "techRecord_brakes_brakeCodeOriginal": {
-        "type": ["string", "null"],
-        "maxLength": 6
-      },
-      "techRecord_brakes_dataTrBrakeOne": {
-        "type": ["string"],
-        "maxLength": 60
-      },
-      "techRecord_brakes_dataTrBrakeTwo": {
-        "type": ["string"],
-        "maxLength": 60
-      },
-      "techRecord_brakes_dataTrBrakeThree": {
-        "type": ["string"],
-        "maxLength": 60
-      },
-      "techRecord_brakes_retarderBrakeOne": {
-        "anyOf": [
-          { "$ref": "../../../enums/retarderBrake.ignore.json" },
-          { "type": "null" }
-        ]
-      },
-      "techRecord_brakes_retarderBrakeTwo": {
-        "anyOf": [
-          { "$ref": "../../../enums/retarderBrake.ignore.json" },
-          { "type": "null" }
-        ]
-      },
-      "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
-      },
-      "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
-      },
-      "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
-      },
-      "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
-      },
-      "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
-      },
-      "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
-        "type": ["integer"],
-        "maximum": 99999,
-        "minimum": 0
       }
+    },
+    "techRecord_applicantDetails_name": {
+      "type": ["string", "null"],
+      "maxLength": 150
+    },
+    "techRecord_applicantDetails_address1": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": ["null", "string"],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": ["null", "string"],
+      "maxLength": 12
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": ["null", "string"],
+      "maxLength": 25
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": ["null", "string"],
+      "maxLength": 255
+    },
+    "techRecord_brakes_dtpNumber": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCode": {
+      "type": "string",
+      "maxLength": 6
+    },
+    "techRecord_brakes_brakeCodeOriginal": {
+      "type": ["string", "null"],
+      "maxLength": 6
+    },
+    "techRecord_brakes_dataTrBrakeOne": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeTwo": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_dataTrBrakeThree": {
+      "type": ["string"],
+      "maxLength": 60
+    },
+    "techRecord_brakes_retarderBrakeOne": {
+      "anyOf": [
+        { "$ref": "../../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_retarderBrakeTwo": {
+      "anyOf": [
+        { "$ref": "../../../enums/retarderBrake.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+      "type": ["integer"],
+      "maximum": 99999,
+      "minimum": 0
+    },
+    "techRecord_microfilm": {
+      "type": "null"
+    },
+    "techRecord_microfilmDocumentType": {
+      "anyOf": [
+        { "$ref": "../../../enums/microFilmDocumentType.ignore.json" },
+        { "type": "null" }
+      ]
+    },
+    "techRecord_microfilmRollNumber": {
+      "type": ["string", "null"],
+      "maxLength": 5
+    },
+    "techRecord_microfilmSerialNumber": {
+      "type": ["string", "null"],
+      "maxLength": 4
     }
   }
 }

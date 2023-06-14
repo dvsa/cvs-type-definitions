@@ -6,7 +6,6 @@
 		"vin",
 		"systemNumber",
 		"primaryVrm",
-		"vehicleType",
 		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleSize",
 		"techRecord_seatsLowerDeck",
@@ -19,7 +18,7 @@
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
 		"techRecord_createdAt",
-		"techRecord_axles",
+		"axles",
 		"techRecord_standingCapacity",
 		"techRecord_numberOfSeatbelts",
 		"techRecord_bodyMake",
@@ -365,7 +364,7 @@
 		},
 		"techRecord_dda_wheelchairFittings": {
 			"type": [
-				"stirng",
+				"string",
 				"null"
 			],
 			"maxLength": 250
@@ -643,7 +642,7 @@
 			],
 			"maxLength": 160
 		},
-		"techRecord_axles": {
+		"axles": {
 			"type": "array",
 			"minItems": 1,
 			"items": {
@@ -742,179 +741,264 @@
 						]
 					}
 				}
-			},
-			"techRecord_applicantDetails_name": {
-				"type": [
-					"string",
-					"null"
-				],
-				"maxLength": 150
-			},
-			"techRecord_applicantDetails_address1": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_applicantDetails_address2": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_applicantDetails_postTown": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_applicantDetails_address3": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_applicantDetails_postCode": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 12
-			},
-			"techRecord_applicantDetails_telephoneNumber": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 25
-			},
-			"techRecord_applicantDetails_emailAddress": {
-				"type": [
-					"null",
-					"string"
-				],
-				"maxLength": 255
-			},
-			"techRecord_brakes_dtpNumber": {
-				"type": [
-					"string",
-					"null"
-				],
-				"maxLength": 6
-			},
-			"techRecord_brakes_brakeCode": {
-				"type": "string",
-				"maxLength": 6
-			},
-			"techRecord_brakes_brakeCodeOriginal": {
-				"type": [
-					"string",
-					"null"
-				],
-				"maxLength": 6
-			},
-			"techRecord_brakes_dataTrBrakeOne": {
-				"type": [
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_brakes_dataTrBrakeTwo": {
-				"type": [
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_brakes_dataTrBrakeThree": {
-				"type": [
-					"string"
-				],
-				"maxLength": 60
-			},
-			"techRecord_brakes_retarderBrakeOne": {
-				"anyOf": [
-					{
-						"title": "Retarder Brake",
-						"type": "string",
-						"enum": [
-							"electric",
-							"exhaust",
-							"friction",
-							"hydraulic",
-							"other",
-							"none"
-						]
-					},
-					{
-						"type": "null"
-					}
-				]
-			},
-			"techRecord_brakes_retarderBrakeTwo": {
-				"anyOf": [
-					{
-						"title": "Retarder Brake",
-						"type": "string",
-						"enum": [
-							"electric",
-							"exhaust",
-							"friction",
-							"hydraulic",
-							"other",
-							"none"
-						]
-					},
-					{
-						"type": "null"
-					}
-				]
-			},
-			"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
-			},
-			"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
-			},
-			"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
-			},
-			"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
-			},
-			"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
-			},
-			"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
-				"type": [
-					"integer"
-				],
-				"maximum": 99999,
-				"minimum": 0
 			}
+		},
+		"techRecord_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
+		},
+		"techRecord_brakes_dtpNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 6
+		},
+		"techRecord_brakes_brakeCode": {
+			"type": "string",
+			"maxLength": 6
+		},
+		"techRecord_brakes_brakeCodeOriginal": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 6
+		},
+		"techRecord_brakes_dataTrBrakeOne": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_dataTrBrakeTwo": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_dataTrBrakeThree": {
+			"type": [
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_brakes_retarderBrakeOne": {
+			"anyOf": [
+				{
+					"title": "Retarder Brake",
+					"type": "string",
+					"enum": [
+						"electric",
+						"exhaust",
+						"friction",
+						"hydraulic",
+						"other",
+						"none"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_brakes_retarderBrakeTwo": {
+			"anyOf": [
+				{
+					"title": "Retarder Brake",
+					"type": "string",
+					"enum": [
+						"electric",
+						"exhaust",
+						"friction",
+						"hydraulic",
+						"other",
+						"none"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_parkingBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_secondaryBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB": {
+			"type": [
+				"integer"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_microfilm": {
+			"type": "null"
+		},
+		"techRecord_microfilmDocumentType": {
+			"anyOf": [
+				{
+					"title": "Microfilm Document Type",
+					"type": "string",
+					"enum": [
+						"PSV Miscellaneous",
+						"AAT - Trailer Annual Test",
+						"AIV - HGV International App",
+						"COIF Modification",
+						"Trailer COC + Int Plate",
+						"RCT - Trailer Test Cert paid",
+						"HGV COC + Int Plate",
+						"PSV Carry/Auth",
+						"OMO Report",
+						"AIT - Trailer International App",
+						"IPV - HGV EEC Plate/Cert",
+						"XCV - HGV Test Cert free",
+						"AAV - HGV Annual Test",
+						"COIF Master",
+						"Tempo 100 Sp Ord",
+						"Deleted",
+						"PSV N/ALT",
+						"XPT - Tr Plating Cert paid",
+						"FFV - HGV First Test",
+						"Repl Vitesse 100",
+						"TCV - HGV Test Cert",
+						"ZZZ -  Miscellaneous",
+						"Test Certificate",
+						"XCT - Trailer Test Cert free",
+						"C52 - COC and VTG52A",
+						"Tempo 100 Report",
+						"Main File Amendment",
+						"PSV Doc",
+						"PSV COC",
+						"PSV Repl COC",
+						"TAV - COC",
+						"NPT - Trailer Alteration",
+						"OMO Certificate",
+						"PSV Repl COIF",
+						"PSV Repl COF",
+						"COIF Application",
+						"XPV - HGV Plating Cert Free",
+						"TCT  - Trailer Test Cert",
+						"Tempo 100 App",
+						"PSV Decision on N/ALT",
+						"Special Order PSV",
+						"NPV - HGV Alteration",
+						"No Description Found",
+						"Vitesse 100 Sp Ord",
+						"Brake Test Details",
+						"COIF Productional",
+						"RDT - Test Disc Paid",
+						"RCV -  HGV Test Cert",
+						"FFT -  Trailer First Test",
+						"IPT - Trailer EEC Plate/Cert",
+						"XDT - Test Disc Free",
+						"PRV - HGV Plating Cert paid",
+						"COF Cert",
+						"PRT - Tr Plating Cert paid",
+						"Tempo 100 Permit"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_microfilmRollNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 5
+		},
+		"techRecord_microfilmSerialNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 4
 		}
 	}
 }
