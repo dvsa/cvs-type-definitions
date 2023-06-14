@@ -2,6 +2,10 @@
   "title": "Tech Record Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
+  "required": [
+    "createdTimestamp",
+    "systemNumber"
+  ],
   "properties": {
     "techRecord_applicantDetails_name": {
       "type": [

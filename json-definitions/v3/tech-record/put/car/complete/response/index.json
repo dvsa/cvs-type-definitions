@@ -3,7 +3,9 @@
   "type": "object",
   "additionalProperties": true,
   "required": [
-    "vehicleSubclass"
+    "vehicleSubclass",
+    "createdTimestamp",
+    "systemNumber"
   ],
   "properties": {
     "techRecord_applicantDetails_name": {

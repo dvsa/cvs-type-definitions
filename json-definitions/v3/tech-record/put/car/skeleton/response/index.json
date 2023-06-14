@@ -2,6 +2,10 @@
   "title": "Tech Record PUT Response Skeleton Car Schema",
   "type": "object",
   "additionalProperties": true,
+  "required": [
+    "createdTimestamp",
+    "systemNumber"
+  ],
   "properties": {
     "techRecord_applicantDetails_name": {
       "type": [
