@@ -192,10 +192,10 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
   techRecord_createdAt: string;
-  techRecord_vehicleConfiguration?: VehicleConfiguration;
+  techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_vehicleSize?: VehicleSize | null;
-  techRecord_seatsLowerDeck?: number;
-  techRecord_seatsUpperDeck?: number;
+  techRecord_seatsLowerDeck?: number | null;
+  techRecord_seatsUpperDeck?: number | null;
   techRecord_numberOfWheelsDriven?: number | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
@@ -215,7 +215,7 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_bodyType_description: BodyTypeDescription;
   techRecord_bodyType_code?: string;
   techRecord_functionCode?: string | null;
-  techRecord_conversionRefNoNumber?: string | null;
+  techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_createdByName: string | null;
@@ -243,7 +243,7 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
   techRecord_emissionsLimit?: null | number;
   techRecord_trainDesignWeight?: number | null;
-  techRecord_numberOfSeatbelts?: string;
+  techRecord_numberOfSeatbelts?: string | null;
   techRecord_seatbeltInstallationApprovalDate?: string | null;
   techRecord_coifSerialNumber?: string | null;
   techRecord_coifCertifierName?: string | null;
@@ -294,6 +294,8 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp: string;
+  techRecord_applicationId?: string;
+  secondaryVrms?: string[];
 }
 export interface PSVAxles {
   techRecord_parkingBrakeMrk?: boolean | null;

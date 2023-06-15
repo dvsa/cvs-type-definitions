@@ -215,7 +215,7 @@ export interface POSTPSVTechnicalRecordV3Complete {
   techRecord_bodyType_description?: BodyTypeDescription;
   techRecord_bodyType_code?: string;
   techRecord_functionCode?: string | null;
-  techRecord_conversionRefNoNumber?: string | null;
+  techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_createdByName?: string | null;
@@ -297,6 +297,7 @@ export interface POSTPSVTechnicalRecordV3Complete {
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp?: string;
+  secondaryVrms?: string[];
 }
 export interface PSVAxlesComplete {
   techRecord_parkingBrakeMrk: boolean;

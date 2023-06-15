@@ -301,7 +301,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNoNumber": {
+		"techRecord_conversionRefNo": {
 			"type": [
 				"string",
 				"null"
@@ -1013,6 +1013,12 @@
 			"type": [
 				"string"
 			]
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		}
 	}
 }

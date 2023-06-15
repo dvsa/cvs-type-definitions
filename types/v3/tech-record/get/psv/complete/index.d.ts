@@ -184,6 +184,7 @@ export type MicrofilmDocumentType =
   | "Tempo 100 Permit";
 
 export interface GETPSVTechnicalRecordV3Complete {
+  secondaryVrms?: string[];
   vin: string;
   partialVin?: string;
   systemNumber: string;
@@ -215,7 +216,7 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_bodyType_description?: BodyTypeDescription;
   techRecord_bodyType_code?: string;
   techRecord_functionCode?: string | null;
-  techRecord_conversionRefNoNumber?: string | null;
+  techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_createdByName?: string | null;

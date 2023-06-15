@@ -55,21 +55,28 @@
 			"type": "string"
 		},
 		"techRecord_vehicleConfiguration": {
-			"title": "Vehicle Configuration",
-			"type": "string",
-			"enum": [
-				"rigid",
-				"articulated",
-				"centre axle drawbar",
-				"semi-car transporter",
-				"semi-trailer",
-				"long semi-trailer",
-				"low loader",
-				"other",
-				"drawbar",
-				"four-in-line",
-				"dolly",
-				"full drawbar"
+			"anyOf": [
+				{
+					"title": "Vehicle Configuration",
+					"type": "string",
+					"enum": [
+						"rigid",
+						"articulated",
+						"centre axle drawbar",
+						"semi-car transporter",
+						"semi-trailer",
+						"long semi-trailer",
+						"low loader",
+						"other",
+						"drawbar",
+						"four-in-line",
+						"dolly",
+						"full drawbar"
+					]
+				},
+				{
+					"type": "null"
+				}
 			]
 		},
 		"techRecord_vehicleSize": {
@@ -88,10 +95,16 @@
 			]
 		},
 		"techRecord_seatsLowerDeck": {
-			"type": "integer"
+			"type": [
+				"integer",
+				"null"
+			]
 		},
 		"techRecord_seatsUpperDeck": {
-			"type": "integer"
+			"type": [
+				"integer",
+				"null"
+			]
 		},
 		"techRecord_numberOfWheelsDriven": {
 			"type": [
@@ -299,7 +312,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNoNumber": {
+		"techRecord_conversionRefNo": {
 			"type": [
 				"string",
 				"null"
@@ -521,7 +534,8 @@
 		},
 		"techRecord_numberOfSeatbelts": {
 			"type": [
-				"string"
+				"string",
+				"null"
 			],
 			"maxLength": 99
 		},
@@ -1092,6 +1106,15 @@
 			"type": [
 				"string"
 			]
+		},
+		"techRecord_applicationId": {
+			"type": "string"
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		}
 	}
 }

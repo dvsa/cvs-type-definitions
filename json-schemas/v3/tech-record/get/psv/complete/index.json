@@ -40,6 +40,12 @@
 		"techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB"
 	],
 	"properties": {
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
 		"vin": {
 			"type": "string"
 		},
@@ -304,7 +310,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNoNumber": {
+		"techRecord_conversionRefNo": {
 			"type": [
 				"string",
 				"null"
