@@ -13,21 +13,24 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "echo 'test'",
+    "test": "npm run generate && jest",
     "generate": "ts-node generateSchemas.ts"
   },
   "author": "dvsa",
   "license": "ISC",
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@types/jest": "^29.5.2",
     "@types/node": "^18.16.7",
+    "jest": "^29.5.0",
     "json-schema-to-typescript": "^11.0.2",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "enjoi": "^9.0.1",
-    "joi": "^17.6.4",
+    "ajv": "^8.12.0",
     "json-schema-deref-sync": "^0.14.0",
     "pretty-js": "^0.2.2",
     "util": "^0.12.5"

@@ -1,24 +1,25 @@
-import { schemas } from '../../schemas';
-const Enjoi = require('enjoi');
-declare var require: any
+import Ajv from "ajv";
+import { schemas } from "../../schemas";
 
 export type Schema = typeof schemas[number];
 
-export const isValidObject = (schemaName: Schema, objectToValidate: object): boolean => {
-  const schemaPath = `json-schemas/${schemaName}/index.json`
-  const schemaFile = require(schemaPath);
-  const schema = Enjoi.schema(schemaFile)
-  const { error } = schema.validate(<ArrayBufferView | ArrayBuffer>objectToValidate);
-  if (error) {
-    console.error(`Object failed validation against ${schemaName} Schema. Failures: `)
-    error.details.forEach((errorDetail: any) => {
-      console.log(errorDetail.message)
+export const isValidObject = (
+  schemaName: Schema,
+  objectToValidate: object,
+  logErrors = false
+): boolean => {
+  const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+  const schemaPath = `json-schemas/${schemaName}`;
+  const schema = require(schemaPath);
 
-    })
-  } else {
-    console.log('*********schema passes validation********')
+  const validateFunction = ajv.compile(schema);
+  const isValid = validateFunction(objectToValidate);
+
+  if(logErrors && validateFunction.errors){
+    console.error(validateFunction.errors)
   }
-  return !error
-}
 
-isValidObject('test-result', {});
+ return isValid
+
+
+};

@@ -390,7 +390,7 @@
 									"type": "boolean"
 								},
 								"forVehicleType": {
-									"oneOf": [
+									"anyOf": [
 										{
 											"type": "array",
 											"items": {

@@ -1,0 +1,21 @@
+{
+  "title": "Speed Category Symbol",
+  "type": "string",
+  "enum": [
+    "a7",
+    "a8",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "p",
+    "q"
+  ]
+}

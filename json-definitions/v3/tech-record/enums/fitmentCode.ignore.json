@@ -1,0 +1,5 @@
+{
+  "title": "Fitment Code",
+  "type": "string",
+  "enum": ["single", "double"]
+}
