@@ -215,11 +215,12 @@ export interface GETPSVTechnicalRecordV3Testable {
   techRecord_bodyType_description?: BodyTypeDescription;
   techRecord_bodyType_code?: string;
   techRecord_functionCode?: string | null;
-  techRecord_conversionRefNumber?: string | null;
+  techRecord_conversionRefNoNumber?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_createdByName?: string | null;
   techRecord_createdById?: string | null;
+  techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued?: boolean | null;
@@ -264,7 +265,7 @@ export interface GETPSVTechnicalRecordV3Testable {
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
-  techRecord_axles?: PSVAxles[];
+  axles?: PSVAxles[];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -291,6 +292,8 @@ export interface GETPSVTechnicalRecordV3Testable {
   techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
   techRecord_microfilmRollNumber?: string | null;
   techRecord_microfilmSerialNumber?: string | null;
+  techRecord_brakeCode?: string | null;
+  createdTimestamp?: string;
 }
 export interface PSVAxles {
   techRecord_parkingBrakeMrk?: boolean | null;

@@ -3,21 +3,25 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"vin",
-		"systemNumber",
+		"createdTimestamp",
+		"partialVin",
 		"primaryVrm",
-		"techRecord_vehicleConfiguration",
-		"techRecord_vehicleSize",
-		"techRecord_seatsLowerDeck",
-		"techRecord_seatsUpperDeck",
-		"techRecord_numberOfWheelsDriven",
-		"techRecord_vehicleType",
-		"techRecord_noOfAxles",
-		"techRecord_statusCode",
+		"systemNumber",
+		"techRecord_bodyMake",
+		"techRecord_bodyType_description",
+		"techRecord_brakes_dtpNumber",
+		"techRecord_chassisMake",
+		"techRecord_chassisModel",
+		"techRecord_createdAt",
+		"techRecord_createdById",
+		"techRecord_createdByName",
 		"techRecord_reasonForCreation",
+		"techRecord_recordCompleteness",
+		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_createdAt"
+		"techRecord_vehicleType",
+		"vin"
 	],
 	"properties": {
 		"vin": {
@@ -295,7 +299,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNumber": {
+		"techRecord_conversionRefNoNumber": {
 			"type": [
 				"string",
 				"null"
@@ -325,6 +329,12 @@
 			]
 		},
 		"techRecord_createdById": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_lastUpdatedAt": {
 			"type": [
 				"string",
 				"null"
@@ -677,7 +687,7 @@
 			],
 			"maxLength": 160
 		},
-		"techRecord_axles": {
+		"axles": {
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -1071,6 +1081,17 @@
 				"null"
 			],
 			"maxLength": 4
+		},
+		"techRecord_brakeCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"createdTimestamp": {
+			"type": [
+				"string"
+			]
 		}
 	}
 }

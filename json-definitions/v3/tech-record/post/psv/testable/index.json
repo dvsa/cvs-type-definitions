@@ -1,12 +1,10 @@
 {
-  "title": "GET PSV Technical Record V3 Testable",
+  "title": "POST PSV Technical Record V3 Testable",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "vin",
     "systemNumber",
-    "primaryVrm",
-    "vehicleType",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleSize",
     "techRecord_seatsLowerDeck",
@@ -16,9 +14,7 @@
     "techRecord_noOfAxles",
     "techRecord_statusCode",
     "techRecord_reasonForCreation",
-    "techRecord_vehicleClass_code",
-    "techRecord_vehicleClass_description",
-    "techRecord_createdAt"
+    "techRecord_vehicleClass_description"
   ],
   "properties": {
     "vin": {
@@ -135,7 +131,7 @@
       "type": ["string", "null"],
       "maxLength": 1
     },
-    "techRecord_conversionRefNumber": {
+    "techRecord_conversionRefNoNumber": {
       "type": ["string", "null"],
       "maxLength": 10
     },
@@ -153,6 +149,9 @@
       "type": ["string", "null"]
     },
     "techRecord_createdById": {
+      "type": ["string", "null"]
+    },
+    "techRecord_lastUpdatedAt": {
       "type": ["string", "null"]
     },
     "techRecord_lastUpdatedByName": {
@@ -352,7 +351,7 @@
       "type": ["string", "null"],
       "maxLength": 160
     },
-    "techRecord_axles": {
+    "axles": {
       "type": "array",
       "items": {
         "type": "object",
@@ -531,6 +530,12 @@
     "techRecord_microfilmSerialNumber": {
       "type": ["string", "null"],
       "maxLength": 4
+    },
+    "techRecord_brakeCode": {
+      "type": ["string", "null"]
+    },
+    "createdTimestamp": {
+      "type": ["string"]
     }
   }
 }

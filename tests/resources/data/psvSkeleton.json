@@ -7,6 +7,7 @@
     "systemNumber": "4233111",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
+    "techRecord_brakes_dtpNumber": "123456",
     "techRecord_ntaNumber": "12345",
     "techRecord_bodyMake": "SCANIA/OMNI",
     "techRecord_bodyModel": "OMNICITY",
@@ -139,7 +140,12 @@
     "techRecord_vehicleClass_code": "l",
     "techRecord_vehicleClass_description": "large psv(ie: greater than 23 seats)",
     "techRecord_createdAt": "2020-11-19T18:26:16.000000Z",
-    "foo": "bar"
+    "foo": "bar",
+    "techRecord_bodyMake": "SCANIA/OMNI",
+    "techRecord_bodyType_description": "single decker",
+    "techRecord_brakes_dtpNumber": "2112",
+    "techRecord_chassisMake": "foo",
+    "techRecord_chassisModel": "value"
   },
   {
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
@@ -159,7 +165,12 @@
     "techRecord_reasonForCreation": "COIF",
     "techRecord_vehicleClass_code": "l",
     "techRecord_vehicleClass_description": "large psv(ie: greater than 23 seats)",
-    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z"
+    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z",
+    "techRecord_bodyMake": "SCANIA/OMNI",
+    "techRecord_bodyType_description": "single decker",
+    "techRecord_brakes_dtpNumber": "2112",
+    "techRecord_chassisMake": "foo",
+    "techRecord_chassisModel": "value"
   },
   {
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
@@ -178,7 +189,12 @@
     "techRecord_reasonForCreation": "COIF",
     "techRecord_vehicleClass_code": "l",
     "techRecord_vehicleClass_description": "large psv(ie: greater than 23 seats)",
-    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z"
+    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z",
+    "techRecord_bodyMake": "SCANIA/OMNI",
+    "techRecord_bodyType_description": "single decker",
+    "techRecord_brakes_dtpNumber": "2112",
+    "techRecord_chassisMake": "foo",
+    "techRecord_chassisModel": "value"
   },
   {
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
@@ -198,6 +214,11 @@
     "techRecord_reasonForCreation": "COIF",
     "techRecord_vehicleClass_code": "l",
     "techRecord_vehicleClass_description": "large psv(ie: greater than 23 seats)",
-    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z"
+    "techRecord_createdAt": "2020-11-19T18:26:16.000000Z",
+    "techRecord_bodyMake": "SCANIA/OMNI",
+    "techRecord_bodyType_description": "single decker",
+    "techRecord_brakes_dtpNumber": "2112",
+    "techRecord_chassisMake": "foo",
+    "techRecord_chassisModel": "value"
   }
 ]

@@ -1,11 +1,10 @@
 {
-	"title": "GET PSV Technical Record V3 Complete",
+	"title": "POST PSV Technical Record V3 Complete",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
 		"vin",
 		"systemNumber",
-		"primaryVrm",
 		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleSize",
 		"techRecord_seatsLowerDeck",
@@ -15,9 +14,7 @@
 		"techRecord_noOfAxles",
 		"techRecord_statusCode",
 		"techRecord_reasonForCreation",
-		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_createdAt",
 		"axles",
 		"techRecord_standingCapacity",
 		"techRecord_numberOfSeatbelts",
@@ -304,7 +301,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNumber": {
+		"techRecord_conversionRefNoNumber": {
 			"type": [
 				"string",
 				"null"
@@ -334,6 +331,12 @@
 			]
 		},
 		"techRecord_createdById": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_lastUpdatedAt": {
 			"type": [
 				"string",
 				"null"
@@ -999,6 +1002,17 @@
 				"null"
 			],
 			"maxLength": 4
+		},
+		"techRecord_brakeCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"createdTimestamp": {
+			"type": [
+				"string"
+			]
 		}
 	}
 }

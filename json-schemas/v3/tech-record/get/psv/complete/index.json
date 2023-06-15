@@ -304,7 +304,7 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_conversionRefNumber": {
+		"techRecord_conversionRefNoNumber": {
 			"type": [
 				"string",
 				"null"
@@ -334,6 +334,12 @@
 			]
 		},
 		"techRecord_createdById": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_lastUpdatedAt": {
 			"type": [
 				"string",
 				"null"
@@ -999,6 +1005,17 @@
 				"null"
 			],
 			"maxLength": 4
+		},
+		"techRecord_brakeCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"createdTimestamp": {
+			"type": [
+				"string"
+			]
 		}
 	}
 }

@@ -1,7 +1,7 @@
 import { isValidObject } from "../../src/schema-validation/schema-validator"
 import * as psvData from "../resources/data/psvSkeleton.json"
 
-const schemaName = 'v3/tech-record/get/psv/skeleton/index.json'
+const schemaName = 'v3/tech-record/post/psv/skeleton/index.json'
 
 describe('validate skeleton psv schema', () => {
     it('should validate when given full data for complete', () => {
@@ -17,7 +17,7 @@ describe('validate skeleton psv schema', () => {
     })
     it('should pass validation when given just required fields', () => {
         const data = psvData[2]
-        const res = isValidObject(schemaName, data)
+        const res = isValidObject(schemaName, data, true)
         expect(res).toEqual(true)
     })
     it('should fail when missing a required field, systemNumber', () => {

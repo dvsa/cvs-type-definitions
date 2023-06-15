@@ -183,21 +183,21 @@ export type MicrofilmDocumentType =
   | "PRT - Tr Plating Cert paid"
   | "Tempo 100 Permit";
 
-export interface GETPSVTechnicalRecordV3Complete {
+export interface POSTPSVTechnicalRecordV3Complete {
   vin: string;
   partialVin?: string;
   systemNumber: string;
-  primaryVrm: string;
+  primaryVrm?: string;
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt: string;
+  techRecord_createdAt?: string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleSize: VehicleSize | null;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
   techRecord_numberOfWheelsDriven: number | null;
-  techRecord_vehicleClass_code: string;
+  techRecord_vehicleClass_code?: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_hiddenInVta?: boolean;
   techRecord_recordCompleteness?: string;
@@ -215,11 +215,12 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_bodyType_description?: BodyTypeDescription;
   techRecord_bodyType_code?: string;
   techRecord_functionCode?: string | null;
-  techRecord_conversionRefNumber?: string | null;
+  techRecord_conversionRefNoNumber?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_createdByName?: string | null;
   techRecord_createdById?: string | null;
+  techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued: boolean;
@@ -294,6 +295,8 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
   techRecord_microfilmRollNumber?: string | null;
   techRecord_microfilmSerialNumber?: string | null;
+  techRecord_brakeCode?: string | null;
+  createdTimestamp?: string;
 }
 export interface PSVAxlesComplete {
   techRecord_parkingBrakeMrk: boolean;
