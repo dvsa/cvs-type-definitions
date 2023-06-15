@@ -162,7 +162,7 @@
       "type": ["string", "null"],
       "maxLength": 1
     },
-    "techRecord_conversionRefNoNumber": {
+    "techRecord_conversionRefNo": {
       "type": ["string", "null"],
       "maxLength": 10
     },
@@ -579,6 +579,15 @@
     },
     "createdTimestamp": {
       "type": ["string"]
+    },
+    "techRecord_applicationId": {
+      "type": ["string"]
+    },
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

@@ -41,7 +41,10 @@
       "type": "string"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "anyOf": [
+        {"$ref": "../../../enums/vehicleConfiguration.ignore.json"},
+        {"type": "null"}
+      ]
     },
     "techRecord_vehicleSize": {
       "anyOf": [
@@ -50,10 +53,10 @@
       ]
     },
     "techRecord_seatsLowerDeck": {
-      "type": "integer"
+      "type": ["integer", "null"]
     },
     "techRecord_seatsUpperDeck": {
-      "type": "integer"
+      "type": ["integer", "null"]
     },
     "techRecord_numberOfWheelsDriven": {
       "type": ["integer", "null"]
@@ -133,7 +136,7 @@
       "type": ["string", "null"],
       "maxLength": 1
     },
-    "techRecord_conversionRefNoNumber": {
+    "techRecord_conversionRefNo": {
       "type": ["string", "null"],
       "maxLength": 10
     },
@@ -251,7 +254,7 @@
       "maximum": 99999
     },
     "techRecord_numberOfSeatbelts": {
-      "type": ["string"],
+      "type": ["string", "null"],
       "maxLength": 99
     },
     "techRecord_seatbeltInstallationApprovalDate": {
@@ -538,6 +541,15 @@
     },
     "createdTimestamp": {
       "type": ["string"]
+    },
+    "techRecord_applicationId": {
+      "type": "string"
+    },
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }
