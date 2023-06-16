@@ -1,0 +1,15 @@
+{
+  "title": "Frame Description",
+  "type": "string",
+  "enum": [
+    "Channel section",
+    "Space frame",
+    "I section",
+    "Tubular",
+    "Frame section",
+    "Other",
+    "integral",
+    "Box section",
+    "U section"
+  ]
+}
