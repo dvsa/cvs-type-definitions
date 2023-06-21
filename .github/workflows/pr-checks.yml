@@ -38,6 +38,6 @@ jobs:
             const semVarVersions = ["patch", "minor", "major"]
             const prTitleVersion = context.payload.pull_request.title.split("(")[0]
             if (!semVarVersions.includes(prTitleVersion)) {
-              console.error("Rename PR in the format: path|minor|major(ticket-number): description")
+              console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
               process.exitCode = 1
             }
