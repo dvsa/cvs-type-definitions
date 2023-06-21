@@ -43,6 +43,6 @@ TypeScript interfaces will be generated from these files and saved to `types` di
 # Publishing a new version
 
 - Raise a PR
-- The PR title should start with `major`, `minor` or `patch` and be followed by the character `(`. Doing this ensure the correct version of the package is published to npm
+- The PR title should start with `major`, `minor` or `patch` and be followed by the character `(`. Doing this ensure the correct version of the package is published to npm. A Github action should enforce the PR title format.
 - Add a description of the changes in the `Changelog` section of the PR description
 - Once merged to develop, a github action should create a release and publish a new version of that release on npm
