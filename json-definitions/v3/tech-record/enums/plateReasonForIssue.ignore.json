@@ -1,0 +1,12 @@
+{
+    "title": "Plate Reason For Issue",
+    "type": "string",
+    "enum": [
+        "Free replacement",
+        "Replacement",
+        "Destroyed",
+        "Provisional",
+        "Original",
+        "Manual"
+    ]
+}

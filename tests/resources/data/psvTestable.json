@@ -3,7 +3,9 @@
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
     "partialVin": "867036",
     "primaryVrm": "YR10AZA",
-    "secondaryVrms": ["675590Z"],
+    "secondaryVrms": [
+      "675590Z"
+    ],
     "systemNumber": "4233111",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
@@ -124,7 +126,9 @@
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
     "partialVin": "867036",
     "primaryVrm": "YR10AZA",
-    "secondaryVrms": ["675590Z"],
+    "secondaryVrms": [
+      "675590Z"
+    ],
     "systemNumber": "4233111",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
@@ -145,7 +149,9 @@
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
     "partialVin": "867036",
     "primaryVrm": "YR10AZA",
-    "secondaryVrms": ["675590Z"],
+    "secondaryVrms": [
+      "675590Z"
+    ],
     "systemNumber": "4233111",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
@@ -165,7 +171,9 @@
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
     "partialVin": "867036",
     "primaryVrm": "YR10AZA",
-    "secondaryVrms": ["675590Z"],
+    "secondaryVrms": [
+      "675590Z"
+    ],
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleSize": "large",
@@ -184,7 +192,9 @@
     "createdTimestamp": "2020-11-19T18:26:16.000000Z",
     "partialVin": "867036",
     "primaryVrm": "YR10AZA",
-    "secondaryVrms": ["675590Z"],
+    "secondaryVrms": [
+      "675590Z"
+    ],
     "systemNumber": "4233111",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
