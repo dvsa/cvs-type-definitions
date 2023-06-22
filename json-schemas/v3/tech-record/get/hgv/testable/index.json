@@ -54,7 +54,7 @@
 		"techRecord_adrDetails_compatibilityGroupJ": {
 			"type": [
 				"boolean",
-				null
+				"null"
 			]
 		},
 		"techRecord_adrDetails_additionalExaminerNotes": {
@@ -102,7 +102,7 @@
 		"techRecord_adrDetails_memosApply": {
 			"type": [
 				"array",
-				null
+				"null"
 			],
 			"items": {
 				"type": [
@@ -113,7 +113,7 @@
 		"techRecord_adrDetails_documents": {
 			"type": [
 				"array",
-				null
+				"null"
 			],
 			"items": {
 				"type": [
@@ -333,7 +333,7 @@
 		},
 		"techRecord_alterationMarker": {
 			"type": [
-				"string",
+				"boolean",
 				"null"
 			]
 		},
@@ -576,7 +576,7 @@
 		},
 		"techRecord_euroStandard": {
 			"type": [
-				"boolean",
+				"string",
 				"null"
 			]
 		},
@@ -916,7 +916,7 @@
 			"type": "string"
 		},
 		"techRecord_recordCompleteness": {
-			"const": "skeleton"
+			"const": "testable"
 		},
 		"techRecord_regnDate": {
 			"anyOf": [
@@ -935,7 +935,7 @@
 		},
 		"techRecord_roadFriendly": {
 			"type": [
-				"string",
+				"boolean",
 				"null"
 			]
 		},
@@ -1107,7 +1107,7 @@
 			]
 		},
 		"techRecord_vehicleType": {
-			"const": "trl"
+			"const": "hgv"
 		},
 		"primaryVrm": {
 			"type": "string"

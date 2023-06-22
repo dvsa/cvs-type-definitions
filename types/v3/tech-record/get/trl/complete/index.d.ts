@@ -5,9 +5,21 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type TC2Types = "initial";
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
-export type FitmentCode = "single" | "double";
+export type ApprovalType =
+  | "NTA"
+  | "ECTA"
+  | "IVA"
+  | "NSSTA"
+  | "ECSSTA"
+  | "GB WVTA"
+  | "UKNI WVTA"
+  | "EU WVTA Pre 23"
+  | "EU WVTA 23 on"
+  | "QNIG"
+  | "Prov.GB WVTA"
+  | "Small series"
+  | "IVA - VCA"
+  | "IVA - DVSA/NI";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -27,6 +39,26 @@ export type EUVehicleCategory =
   | "l5e"
   | "l6e"
   | "l7e";
+export type EuroStandard =
+  | "0.10 g/kWh Euro 3 PM"
+  | "0.03 g/kWh Euro IV PM"
+  | "Euro 3"
+  | "Euro 4"
+  | "Euro 5"
+  | "Euro 6"
+  | "Euro V"
+  | "Euro VI"
+  | "Full Electric";
+export type FrameDescription =
+  | "Channel section"
+  | "Space frame"
+  | "I section"
+  | "Tubular"
+  | "Frame section"
+  | "Other"
+  | "integral"
+  | "Box section"
+  | "U section";
 export type FuelPropulsionSystem =
   | "DieselPetrol"
   | "Diesel"
@@ -37,69 +69,6 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
-export type MicrofilmDocumentTypes =
-  | "PSV Miscellaneous"
-  | "AAT - Trailer Annual Test"
-  | "AIV - HGV International App"
-  | "COIF Modification"
-  | "Trailer COC + Int Plate"
-  | "RCT - Trailer Test Cert paid"
-  | "HGV COC + Int Plate"
-  | "PSV Carry/Auth"
-  | "OMO Report"
-  | "AIT - Trailer International App"
-  | "IPV - HGV EEC Plate/Cert"
-  | "XCV - HGV Test Cert free"
-  | "AAV - HGV Annual Test"
-  | "COIF Master"
-  | "Tempo 100 Sp Ord"
-  | "Deleted"
-  | "PSV N/ALT"
-  | "XPT - Tr Plating Cert paid"
-  | "FFV - HGV First Test"
-  | "Repl Vitesse 100"
-  | "TCV - HGV Test Cert"
-  | "ZZZ -  Miscellaneous"
-  | "Test Certificate"
-  | "XCT - Trailer Test Cert free"
-  | "C52 - COC and VTG52A"
-  | "Tempo 100 Report"
-  | "Main File Amendment"
-  | "PSV Doc"
-  | "PSV COC"
-  | "PSV Repl COC"
-  | "TAV - COC"
-  | "NPT - Trailer Alteration"
-  | "OMO Certificate"
-  | "PSV Repl COIF"
-  | "PSV Repl COF"
-  | "COIF Application"
-  | "XPV - HGV Plating Cert Free"
-  | "TCT  - Trailer Test Cert"
-  | "Tempo 100 App"
-  | "PSV Decision on N/ALT"
-  | "Special Order PSV"
-  | "NPV - HGV Alteration"
-  | "No Description Found"
-  | "Vitesse 100 Sp Ord"
-  | "Brake Test Details"
-  | "COIF Productional"
-  | "RDT - Test Disc Paid"
-  | "RCV -  HGV Test Cert"
-  | "FFT -  Trailer First Test"
-  | "IPT - Trailer EEC Plate/Cert"
-  | "XDT - Test Disc Free"
-  | "PRV - HGV Plating Cert paid"
-  | "COF Cert"
-  | "PRT - Tr Plating Cert paid"
-  | "Tempo 100 Permit";
-export type PlateReasonForIssue =
-  | "Free replacement"
-  | "Replacement"
-  | "Destroyed"
-  | "Provisional"
-  | "Original"
-  | "Manual";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleClassDescription =
   | "motorbikes over 200cc or with a sidecar"
@@ -126,164 +95,137 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type ApprovalType =
-  | "NTA"
-  | "ECTA"
-  | "IVA"
-  | "NSSTA"
-  | "ECSSTA"
-  | "GB WVTA"
-  | "UKNI WVTA"
-  | "EU WVTA Pre 23"
-  | "EU WVTA 23 on"
-  | "QNIG"
-  | "Prov.GB WVTA"
-  | "Small series"
-  | "IVA - VCA"
-  | "IVA - DVSA/NI";
+export type FitmentCode = "single" | "double";
+export type SpeedCategorySymbol =
+  | "a7"
+  | "a8"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "g"
+  | "j"
+  | "k"
+  | "l"
+  | "m"
+  | "n"
+  | "p"
+  | "q";
 
-export interface GETHGVTechnicalRecordV3Testable {
+export interface GETTRLTechnicalRecordV3Complete {
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;
-  techRecord_adrDetails_vehicleDetails_type?: string | null;
-  techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
-  techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
-  techRecord_adrDetails_compatibilityGroupJ?:
-    | boolean
-    | {
-        [k: string]: unknown;
-      };
-  techRecord_adrDetails_additionalExaminerNotes?: string | null;
-  techRecord_adrDetails_applicantDetails_name?: string | null;
-  techRecord_adrDetails_applicantDetails_street?: string | null;
-  techRecord_adrDetails_applicantDetails_town?: string | null;
-  techRecord_adrDetails_applicantDetails_city?: string | null;
-  techRecord_adrDetails_applicantDetails_postcode?: string | null;
-  techRecord_adrDetails_memosApply?: string[];
-  techRecord_adrDetails_documents?: string[];
-  techRecord_adrDetails_listStatementApplicable?: boolean | null;
-  techRecord_adrDetails_batteryListNumber?: string | null;
-  techRecord_adrDetails_brakeDeclarationsSeen?: boolean | null;
-  techRecord_adrDetails_brakeDeclarationIssuer?: string | null;
-  techRecord_adrDetails_brakeEndurance?: boolean | null;
-  techRecord_adrDetails_weight?: string | null;
-  techRecord_adrDetails_declarationsSeen?: boolean | null;
-  techRecord_adrDetails_additionalNotes_guidanceNotes?: string[] | null;
-  techRecord_adrDetails_additionalNotes_number?: string[] | null;
-  techRecord_adrDetails_adrTypeApprovalNo?: string | null;
-  techRecord_adrDetails_adrCertificateNotes?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankManufacturer?: string | null;
-  techRecord_adrDetails_tank_tankDetails_yearOfManufacture?: number | null;
-  techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankTypeAppNo?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankCode?: string | null;
-  techRecord_adrDetails_tank_tankDetails_specialProvisions?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type?: null | TC2Types;
-  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type?: null | TC3Types;
-  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankStatement_statement?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
-  techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
   techRecord_alterationMarker?: string | null;
-  techRecord_applicantDetails_name: string;
-  techRecord_applicantDetails_address1: null;
-  techRecord_applicantDetails_address2: null;
-  techRecord_applicantDetails_postTown: string;
+  techRecord_applicantDetails_name?: string | null;
+  techRecord_applicantDetails_address1?: null | string;
+  techRecord_applicantDetails_address2?: null | string;
+  techRecord_applicantDetails_postTown?: null | string;
   techRecord_applicantDetails_address3?: null | string;
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
-  axles: HGVAxles[];
+  techRecord_applicationId?: string | null;
+  techRecord_approvalType?: ApprovalType | null;
+  techRecord_approvalTypeNumber?: string | null;
+  techRecord_authIntoService?: string | null;
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
-  techRecord_brakes_antilockBrakingSystem?: string | null;
-  techRecord_brakes_dtpNumber: string;
+  techRecord_brakes_antilockBrakingSystem?: boolean | null;
+  techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
+  techRecord_centreOfRearmostAxleToRearOfTrl?: number | null;
   techRecord_conversionRefNo?: string | null;
+  techRecord_couplingCenterToRearAxleMax: number | null;
+  techRecord_couplingCenterToRearAxleMin: number | null;
+  techRecord_couplingCenterToRearTrlMax: number | null;
+  techRecord_couplingCenterToRearTrlMin: number | null;
+  techRecord_couplingType: string | null;
   techRecord_createdAt: string;
   techRecord_createdById: string;
   techRecord_createdByName: string;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_axleSpacing_axles?: string;
-  techRecord_dimensions_axleSpacing_value?: number | null;
-  techRecord_dimensions_length: number;
-  techRecord_dimensions_width: number;
-  techRecord_drawbarCouplingFitted: boolean;
+  techRecord_dimensions_length: number | null;
+  techRecord_dimensions_width: number | null;
+  drawbarCouplingFitted?: string;
   techRecord_emissionsLimit?: null | number;
-  techRecord_euroStandard: boolean;
-  techRecord_euVehicleCategory: EUVehicleCategory;
-  techRecord_frontAxleToRearAxle: number;
-  techRecord_frontAxleTo5thWheelMin: number;
-  techRecord_frontAxleTo5thWheelMax: number;
-  techRecord_frontVehicleTo5thWheelCouplingMin?: number | null;
-  techRecord_frontVehicleTo5thWheelCouplingMax?: number | null;
-  techRecord_fuelPropulsionSystem: FuelPropulsionSystem;
+  techRecord_euVehicleCategory?: EUVehicleCategory | null;
+  techRecord_euroStandard?: EuroStandard;
+  frontAxleTo5thWheelMax?: number | null;
+  techRecord_frontAxleTo5thWheelMin?: number | null;
+  techRecord_firstUseDate: string | null;
+  techRecord_frameDescription?: FrameDescription | null;
+  techRecord_frontAxleToRearAxle: number | null;
+  techRecord_frontVehicleTo5thWheelCouplingMax?: string | null;
+  techRecord_frontVehicleTo5thWheelCouplingMin?: string | null;
+  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
   techRecord_functionCode?: string | null;
-  techRecord_grossDesignWeight: number;
+  techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
-  techRecord_grossGbWeight: number;
-  techRecord_make: string;
-  techRecord_maxTrainGbWeight: number;
-  techRecord_maxTrainEecWeight?: number | null;
-  techRecord_maxTrainDesignWeight?: number | null;
-  techRecord_manufactureYear: number;
-  techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentTypes;
-  techRecord_microfilm_microfilmRollNumber?: string | null;
-  techRecord_microfilm_microfilmSerialNumber?: string | null;
-  techRecord_model: string;
-  techRecord_numberOfWheelsDriven: number;
-  techRecord_noOfAxles?: number | null;
+  techRecord_grossGbWeight?: number | null;
+  techRecord_letterOfAuth?: string | null;
+  techRecord_make: string | null;
+  techRecord_manufactureYear?: number | null;
+  techRecord_maxTrainDesignWeight?: number;
+  techRecord_maxTrainEecWeight?: number;
+  techRecord_maxTrainGbWeight?: number;
+  techRecord_manufacturerDetails?: string | null;
+  techRecord_maxLoadOnCoupling: number | null;
+  techRecord_microfilm?: string | null;
+  techRecord_model: string | null;
+  techRecord_noOfAxles: number | null;
   techRecord_notes: string;
-  techRecord_offRoad: boolean;
-  plates?: HGVPlates[];
+  techRecord_ntaNumber?: string;
+  techRecord_numberOfWheelsDriven?: number | null;
+  techRecord_offRoad?: boolean;
+  techRecord_purchaserDetails_address1?: string | null;
+  techRecord_purchaserDetails_address2?: string | null;
+  techRecord_purchaserDetails_address3?: string | null;
+  techRecord_purchaserDetails_emailAddress?: string | null;
+  techRecord_purchaserDetails_faxNumber?: string | null;
+  techRecord_purchaserDetails_name?: string | null;
+  techRecord_purchaserDetails_postCode?: string | null;
+  techRecord_purchaserDetails_postTown?: string | null;
+  techRecord_purchaserDetails_purchaserNotes?: string | null;
+  techRecord_purchaserDetails_telephoneNumber?: string | null;
+  techRecord_rearAxleToRearTrl: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "skeleton";
-  techRecord_regnDate: string;
-  techRecord_roadFriendly: string;
+  techRecord_recordCompleteness: "complete";
+  techRecord_regnDate?: string | null;
+  techRecord_roadFriendly: boolean | null;
+  techRecord_speedLimiterMrk?: boolean;
   techRecord_statusCode: StatusCode;
-  techRecord_speedLimiterMrk: boolean;
-  techRecord_tachoExemptMrk: boolean;
-  techRecord_trainDesignWeight?: number | null;
-  techRecord_trainEecWeight?: number | null;
-  techRecord_trainGbWeight: number;
-  techRecord_tyreUseCode: string;
+  techRecord_tachoExemptMrk?: boolean;
+  techRecord_suspensionType: string | null;
+  techRecord_tyreUseCode: string | null;
+  techRecord_variantNumber?: string;
+  techRecord_variantVersionNumber?: string;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_vehicleConfiguration: VehicleConfiguration;
-  techRecord_approvalType: ApprovalType;
-  techRecord_approvalTypeNumber?: string | null;
-  techRecord_ntaNumber?: string | null;
-  techRecord_variantNumber?: string | null;
-  techRecord_variantVersionNumber?: string | null;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
+  techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
-  primaryVrm: string;
+  trailerId: string;
   vin: string;
+  axles?: PSVAxles[];
 }
-export interface HGVAxles {
-  techRecord_parkingBrakeMrk?: boolean;
-  techRecord_axleNumber?: number;
-  techRecord_weights_gbWeight?: number;
-  techRecord_weights_designWeight?: number;
-  techRecord_weights_eecWeight?: number | null;
-  techRecord_tyres_tyreCode?: number;
-  techRecord_tyres_tyreSize?: string;
+export interface PSVAxles {
+  techRecord_parkingBrakeMrk?: boolean | null;
+  techRecord_axleNumber?: number | null;
+  techRecord_brakes?: {
+    brakeActuator?: number;
+    leverLength?: number;
+    springBrakeParking?: boolean;
+    [k: string]: unknown;
+  }[];
+  techRecord_weights_gbWeight?: number | null;
+  techRecord_weights_designWeight?: number | null;
+  techRecord_weights_ladenWeight?: number | null;
+  techRecord_weights_kerbWeight?: number | null;
+  techRecord_tyres_tyreCode?: number | null;
+  techRecord_tyres_tyreSize?: string | null;
   techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode?: FitmentCode;
+  techRecord_tyres_fitmentCode?: null | FitmentCode;
   techRecord_tyres_dataTrAxles?: null | number;
-}
-export interface HGVPlates {
-  techRecord_plateSerialNumber?: string | null;
-  techRecord_plateIssueDate?: string | null;
-  techRecord_reasonForIssue?: null | PlateReasonForIssue;
-  techRecord_plateIssuer?: string | null;
+  techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

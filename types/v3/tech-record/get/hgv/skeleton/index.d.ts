@@ -149,19 +149,15 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
-  techRecord_adrDetails_compatibilityGroupJ?:
-    | boolean
-    | {
-        [k: string]: unknown;
-      };
+  techRecord_adrDetails_compatibilityGroupJ?: boolean | null;
   techRecord_adrDetails_additionalExaminerNotes?: string | null;
   techRecord_adrDetails_applicantDetails_name?: string | null;
   techRecord_adrDetails_applicantDetails_street?: string | null;
   techRecord_adrDetails_applicantDetails_town?: string | null;
   techRecord_adrDetails_applicantDetails_city?: string | null;
   techRecord_adrDetails_applicantDetails_postcode?: string | null;
-  techRecord_adrDetails_memosApply?: string[];
-  techRecord_adrDetails_documents?: string[];
+  techRecord_adrDetails_memosApply?: string[] | null;
+  techRecord_adrDetails_documents?: string[] | null;
   techRecord_adrDetails_listStatementApplicable?: boolean | null;
   techRecord_adrDetails_batteryListNumber?: string | null;
   techRecord_adrDetails_brakeDeclarationsSeen?: boolean | null;
@@ -190,7 +186,7 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
-  techRecord_alterationMarker?: string | null;
+  techRecord_alterationMarker?: boolean | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -199,7 +195,7 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: string | null;
   axles?: HGVAxles[];
   techRecord_bodyType_code?: string;
   techRecord_bodyType_description?: string;
@@ -217,7 +213,7 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_dimensions_width?: number | null;
   techRecord_drawbarCouplingFitted?: boolean | null;
   techRecord_emissionsLimit?: null | number;
-  techRecord_euroStandard?: boolean | null;
+  techRecord_euroStandard?: string | null;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_frontAxleTo5thWheelMin?: number | null;
@@ -246,7 +242,7 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "skeleton";
   techRecord_regnDate?: string | null;
-  techRecord_roadFriendly?: string | null;
+  techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_speedLimiterMrk?: boolean | null;
   techRecord_tachoExemptMrk?: boolean | null;
@@ -265,7 +261,7 @@ export interface GETHGVTechnicalRecordV3Skeleton {
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
-  techRecord_vehicleType: "trl";
+  techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
 }
