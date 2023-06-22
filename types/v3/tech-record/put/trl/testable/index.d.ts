@@ -125,11 +125,26 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
+export type FitmentCode = "single" | "double";
+export type SpeedCategorySymbol =
+  | "a7"
+  | "a8"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "g"
+  | "j"
+  | "k"
+  | "l"
+  | "m"
+  | "n"
+  | "p"
+  | "q";
 
-export interface GETTRLTechnicalRecordV3Skeleton {
-  createdTimestamp: string;
+export interface GETTRLTechnicalRecordV3Testable {
   partialVin: string;
-  systemNumber: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -179,12 +194,12 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: string | null;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
-  techRecord_bodyType_code?: string;
-  techRecord_bodyType_description?: string;
-  techRecord_brakes_antilockBrakingSystem?: string | null;
+  techRecord_bodyType_code: string;
+  techRecord_bodyType_description: string;
+  techRecord_brakes_antilockBrakingSystem?: boolean | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_centreOfRearmostAxleToRearOfTrl?: number | null;
@@ -194,9 +209,6 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_couplingCenterToRearTrlMax?: number | null;
   techRecord_couplingCenterToRearTrlMin?: number | null;
   techRecord_couplingType?: string | null;
-  techRecord_createdAt: string;
-  techRecord_createdById: string;
-  techRecord_createdByName: string;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
@@ -218,7 +230,7 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
-  techRecord_noOfAxles?: number | null;
+  techRecord_noOfAxles: number | null;
   plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -230,14 +242,10 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_purchaserDetails_postTown?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "skeleton";
   techRecord_regnDate?: string | null;
-  techRecord_roadFriendly?: string | null;
+  techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
   techRecord_tyreUseCode?: string | null;
@@ -247,10 +255,31 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
+  axles?: PSVAxles[];
+  techRecord_brakes?: {
+    brakeActuator?: number;
+    leverLength?: number;
+    springBrakeParking?: boolean;
+    [k: string]: unknown;
+  }[];
+  techRecord_weights_gbWeight?: number | null;
+  techRecord_weights_designWeight?: number | null;
+  techRecord_weights_ladenWeight?: number | null;
+  techRecord_weights_kerbWeight?: number | null;
+  techRecord_tyres_tyreCode?: number | null;
+  techRecord_tyres_tyreSize?: string | null;
+  techRecord_tyres_plyRating?: string | null;
+  techRecord_tyres_fitmentCode?: null | FitmentCode;
+  techRecord_tyres_dataTrAxles?: null | number;
+  techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 export interface TRLPlates {
   techRecord_plateSerialNumber?: string | null;
   techRecord_plateIssueDate?: string | null;
   techRecord_reasonForIssue?: null | PlateReasonForIssue;
   techRecord_plateIssuer?: string | null;
+}
+export interface PSVAxles {
+  techRecord_parkingBrakeMrk?: boolean | null;
+  techRecord_axleNumber?: number | null;
 }

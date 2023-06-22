@@ -142,7 +142,7 @@ export type ApprovalType =
   | "IVA - VCA"
   | "IVA - DVSA/NI";
 
-export interface GETHGVTechnicalRecordV3Skeleton {
+export interface PUTHGVTechnicalRecordV3Skeleton {
   partialVin: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;

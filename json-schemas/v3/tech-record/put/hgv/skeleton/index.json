@@ -1,5 +1,5 @@
 {
-	"title": "GET HGV Technical Record V3 Skeleton",
+	"title": "PUT HGV Technical Record V3 Skeleton",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

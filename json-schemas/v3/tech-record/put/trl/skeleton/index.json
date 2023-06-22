@@ -3,14 +3,8 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"createdTimestamp",
 		"partialVin",
-		"systemNumber",
-		"techRecord_createdAt",
-		"techRecord_createdById",
-		"techRecord_createdByName",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
@@ -20,13 +14,7 @@
 		"vin"
 	],
 	"properties": {
-		"createdTimestamp": {
-			"type": "string"
-		},
 		"partialVin": {
-			"type": "string"
-		},
-		"systemNumber": {
 			"type": "string"
 		},
 		"techRecord_adrDetails_vehicleDetails_type": {
@@ -484,15 +472,6 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_createdAt": {
-			"type": "string"
-		},
-		"techRecord_createdById": {
-			"type": "string"
-		},
-		"techRecord_createdByName": {
-			"type": "string"
-		},
 		"techRecord_departmentalVehicleMarker": {
 			"type": [
 				"boolean",
@@ -896,9 +875,6 @@
 		},
 		"techRecord_reasonForCreation": {
 			"type": "string"
-		},
-		"techRecord_recordCompleteness": {
-			"const": "skeleton"
 		},
 		"techRecord_regnDate": {
 			"anyOf": [

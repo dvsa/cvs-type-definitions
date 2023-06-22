@@ -1,32 +1,40 @@
 {
-	"title": "GET TRL Technical Record V3 Skeleton",
+	"title": "PUT TRL Technical Record V3 Complete",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"createdTimestamp",
 		"partialVin",
-		"systemNumber",
-		"techRecord_createdAt",
-		"techRecord_createdById",
-		"techRecord_createdByName",
+		"techRecord_noOfAxles",
+		"techRecord_make",
+		"techRecord_model",
+		"techRecord_firstUseDate",
+		"techRecord_maxLoadOnCoupling",
+		"techRecord_tyreUseCode",
+		"techRecord_suspensionType",
+		"techRecord_couplingType",
+		"techRecord_dimensions_length",
+		"techRecord_dimensions_width",
+		"techRecord_frontAxleToRearAxle",
+		"techRecord_rearAxleToRearTrl",
+		"techRecord_couplingCenterToRearAxleMin",
+		"techRecord_couplingCenterToRearAxleMax",
+		"techRecord_couplingCenterToRearTrlMax",
+		"techRecord_couplingCenterToRearTrlMin",
+		"techRecord_notes",
+		"techRecord_roadFriendly",
+		"trailerId",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleType",
-		"trailerId",
+		"techRecord_bodyType_description",
+		"techRecord_bodyType_code",
+		"techRecord_vehicleConfiguration",
 		"vin"
 	],
 	"properties": {
-		"createdTimestamp": {
-			"type": "string"
-		},
 		"partialVin": {
-			"type": "string"
-		},
-		"systemNumber": {
 			"type": "string"
 		},
 		"techRecord_adrDetails_vehicleDetails_type": {
@@ -393,7 +401,44 @@
 			"maxLength": 255
 		},
 		"techRecord_applicationId": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_approvalType": {
+			"anyOf": [
+				{
+					"title": "Approval Type",
+					"type": "string",
+					"enum": [
+						"NTA",
+						"ECTA",
+						"IVA",
+						"NSSTA",
+						"ECSSTA",
+						"GB WVTA",
+						"UKNI WVTA",
+						"EU WVTA Pre 23",
+						"EU WVTA 23 on",
+						"QNIG",
+						"Prov.GB WVTA",
+						"Small series",
+						"IVA - VCA",
+						"IVA - DVSA/NI"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_approvalTypeNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 25
 		},
 		"techRecord_authIntoService": {
 			"type": [
@@ -415,7 +460,7 @@
 		},
 		"techRecord_brakes_antilockBrakingSystem": {
 			"type": [
-				"string",
+				"boolean",
 				"null"
 			]
 		},
@@ -484,15 +529,6 @@
 			],
 			"maxLength": 1
 		},
-		"techRecord_createdAt": {
-			"type": "string"
-		},
-		"techRecord_createdById": {
-			"type": "string"
-		},
-		"techRecord_createdByName": {
-			"type": "string"
-		},
 		"techRecord_departmentalVehicleMarker": {
 			"type": [
 				"boolean",
@@ -514,6 +550,17 @@
 			],
 			"maximum": 99999,
 			"minimum": 0
+		},
+		"drawbarCouplingFitted": {
+			"type": "string"
+		},
+		"techRecord_emissionsLimit": {
+			"type": [
+				"null",
+				"integer"
+			],
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
@@ -544,6 +591,33 @@
 				{
 					"type": "null"
 				}
+			]
+		},
+		"techRecord_euroStandard": {
+			"title": "Euro standard",
+			"type": "string",
+			"enum": [
+				"0.10 g/kWh Euro 3 PM",
+				"0.03 g/kWh Euro IV PM",
+				"Euro 3",
+				"Euro 4",
+				"Euro 5",
+				"Euro 6",
+				"Euro V",
+				"Euro VI",
+				"Full Electric"
+			]
+		},
+		"frontAxleTo5thWheelMax": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_frontAxleTo5thWheelMin": {
+			"type": [
+				"integer",
+				"null"
 			]
 		},
 		"techRecord_firstUseDate": {
@@ -581,6 +655,33 @@
 			],
 			"maximum": 99999,
 			"minimum": 0
+		},
+		"techRecord_frontVehicleTo5thWheelCouplingMax": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_frontVehicleTo5thWheelCouplingMin": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_fuelPropulsionSystem": {
+			"title": "Fuel Propulsion System",
+			"type": "string",
+			"enum": [
+				"DieselPetrol",
+				"Diesel",
+				"Petrol",
+				"Hybrid",
+				"Electric",
+				"CNG",
+				"Fuel cell",
+				"LNG",
+				"Other"
+			]
 		},
 		"techRecord_functionCode": {
 			"type": [
@@ -637,6 +738,15 @@
 					"type": "null"
 				}
 			]
+		},
+		"techRecord_maxTrainDesignWeight": {
+			"type": "integer"
+		},
+		"techRecord_maxTrainEecWeight": {
+			"type": "integer"
+		},
+		"techRecord_maxTrainGbWeight": {
+			"type": "integer"
 		},
 		"techRecord_manufacturerDetails": {
 			"type": [
@@ -759,6 +869,21 @@
 				}
 			]
 		},
+		"techRecord_notes": {
+			"type": "string"
+		},
+		"techRecord_ntaNumber": {
+			"type": "string"
+		},
+		"techRecord_numberOfWheelsDriven": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_offRoad": {
+			"type": "boolean"
+		},
 		"plates": {
 			"type": "array",
 			"items": {
@@ -868,24 +993,6 @@
 				"null"
 			]
 		},
-		"techRecord_lastUpdatedAt": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedByName": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedById": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
 		"techRecord_rearAxleToRearTrl": {
 			"type": [
 				"integer",
@@ -896,9 +1003,6 @@
 		},
 		"techRecord_reasonForCreation": {
 			"type": "string"
-		},
-		"techRecord_recordCompleteness": {
-			"const": "skeleton"
 		},
 		"techRecord_regnDate": {
 			"anyOf": [
@@ -917,9 +1021,12 @@
 		},
 		"techRecord_roadFriendly": {
 			"type": [
-				"string",
+				"boolean",
 				"null"
 			]
+		},
+		"techRecord_speedLimiterMrk": {
+			"type": "boolean"
 		},
 		"techRecord_statusCode": {
 			"title": "Status Code",
@@ -929,6 +1036,9 @@
 				"current",
 				"archived"
 			]
+		},
+		"techRecord_tachoExemptMrk": {
+			"type": "boolean"
 		},
 		"techRecord_suspensionType": {
 			"type": [
@@ -943,6 +1053,12 @@
 				"null"
 			],
 			"maxLength": 2
+		},
+		"techRecord_variantNumber": {
+			"type": "string"
+		},
+		"techRecord_variantVersionNumber": {
+			"type": "string"
 		},
 		"techRecord_vehicleClass_code": {
 			"type": "string"
@@ -997,6 +1113,153 @@
 		},
 		"vin": {
 			"type": "string"
+		},
+		"axles": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "PSV Axles",
+				"additionalProperties": false,
+				"properties": {
+					"techRecord_parkingBrakeMrk": {
+						"type": [
+							"boolean",
+							"null"
+						]
+					},
+					"techRecord_axleNumber": {
+						"type": [
+							"integer",
+							"null"
+						]
+					},
+					"techRecord_brakes": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"brakeActuator": {
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 999
+								},
+								"leverLength": {
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 999
+								},
+								"springBrakeParking": {
+									"type": "boolean"
+								}
+							}
+						}
+					},
+					"techRecord_weights_gbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"techRecord_weights_designWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"techRecord_weights_ladenWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"techRecord_weights_kerbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"techRecord_tyres_tyreCode": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"techRecord_tyres_tyreSize": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 12
+					},
+					"techRecord_tyres_plyRating": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"techRecord_tyres_fitmentCode": {
+						"anyOf": [
+							{
+								"type": "null"
+							},
+							{
+								"title": "Fitment Code",
+								"type": "string",
+								"enum": [
+									"single",
+									"double"
+								]
+							}
+						]
+					},
+					"techRecord_tyres_dataTrAxles": {
+						"type": [
+							"null",
+							"integer"
+						],
+						"minimum": 0,
+						"maximum": 999
+					},
+					"techRecord_tyres_speedCategorySymbol": {
+						"anyOf": [
+							{
+								"title": "Speed Category Symbol",
+								"type": "string",
+								"enum": [
+									"a7",
+									"a8",
+									"b",
+									"c",
+									"d",
+									"e",
+									"f",
+									"g",
+									"j",
+									"k",
+									"l",
+									"m",
+									"n",
+									"p",
+									"q"
+								]
+							},
+							{
+								"type": "null"
+							}
+						]
+					}
+				}
+			}
 		}
 	}
 }

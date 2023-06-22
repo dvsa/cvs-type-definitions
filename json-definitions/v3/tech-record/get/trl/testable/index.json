@@ -764,6 +764,24 @@
         "null"
       ]
     },
+    "techRecord_lastUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "techRecord_rearAxleToRearTrl": {
       "type": [
         "integer",

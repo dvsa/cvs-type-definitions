@@ -127,9 +127,7 @@ export type VehicleConfiguration =
   | "full drawbar";
 
 export interface GETTRLTechnicalRecordV3Skeleton {
-  createdTimestamp: string;
   partialVin: string;
-  systemNumber: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -194,9 +192,6 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_couplingCenterToRearTrlMax?: number | null;
   techRecord_couplingCenterToRearTrlMin?: number | null;
   techRecord_couplingType?: string | null;
-  techRecord_createdAt: string;
-  techRecord_createdById: string;
-  techRecord_createdByName: string;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
@@ -235,7 +230,6 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "skeleton";
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly?: string | null;
   techRecord_statusCode: StatusCode;

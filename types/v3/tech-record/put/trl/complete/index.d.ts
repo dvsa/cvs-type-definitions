@@ -7,6 +7,21 @@
 
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
+export type ApprovalType =
+  | "NTA"
+  | "ECTA"
+  | "IVA"
+  | "NSSTA"
+  | "ECSSTA"
+  | "GB WVTA"
+  | "UKNI WVTA"
+  | "EU WVTA Pre 23"
+  | "EU WVTA 23 on"
+  | "QNIG"
+  | "Prov.GB WVTA"
+  | "Small series"
+  | "IVA - VCA"
+  | "IVA - DVSA/NI";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -26,6 +41,16 @@ export type EUVehicleCategory =
   | "l5e"
   | "l6e"
   | "l7e";
+export type EuroStandard =
+  | "0.10 g/kWh Euro 3 PM"
+  | "0.03 g/kWh Euro IV PM"
+  | "Euro 3"
+  | "Euro 4"
+  | "Euro 5"
+  | "Euro 6"
+  | "Euro V"
+  | "Euro VI"
+  | "Full Electric";
 export type FrameDescription =
   | "Channel section"
   | "Space frame"
@@ -36,6 +61,16 @@ export type FrameDescription =
   | "integral"
   | "Box section"
   | "U section";
+export type FuelPropulsionSystem =
+  | "DieselPetrol"
+  | "Diesel"
+  | "Petrol"
+  | "Hybrid"
+  | "Electric"
+  | "CNG"
+  | "Fuel cell"
+  | "LNG"
+  | "Other";
 export type MicrofilmDocumentTypes =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -125,11 +160,26 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
+export type FitmentCode = "single" | "double";
+export type SpeedCategorySymbol =
+  | "a7"
+  | "a8"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "g"
+  | "j"
+  | "k"
+  | "l"
+  | "m"
+  | "n"
+  | "p"
+  | "q";
 
-export interface GETTRLTechnicalRecordV3Skeleton {
-  createdTimestamp: string;
+export interface PUTTRLTechnicalRecordV3Complete {
   partialVin: string;
-  systemNumber: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -179,46 +229,60 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: string | null;
+  techRecord_approvalType?: ApprovalType | null;
+  techRecord_approvalTypeNumber?: string | null;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
-  techRecord_bodyType_code?: string;
-  techRecord_bodyType_description?: string;
-  techRecord_brakes_antilockBrakingSystem?: string | null;
+  techRecord_bodyType_code: string;
+  techRecord_bodyType_description: string;
+  techRecord_brakes_antilockBrakingSystem?: boolean | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_centreOfRearmostAxleToRearOfTrl?: number | null;
   techRecord_conversionRefNo?: string | null;
-  techRecord_couplingCenterToRearAxleMax?: number | null;
-  techRecord_couplingCenterToRearAxleMin?: number | null;
-  techRecord_couplingCenterToRearTrlMax?: number | null;
-  techRecord_couplingCenterToRearTrlMin?: number | null;
-  techRecord_couplingType?: string | null;
-  techRecord_createdAt: string;
-  techRecord_createdById: string;
-  techRecord_createdByName: string;
+  techRecord_couplingCenterToRearAxleMax: number | null;
+  techRecord_couplingCenterToRearAxleMin: number | null;
+  techRecord_couplingCenterToRearTrlMax: number | null;
+  techRecord_couplingCenterToRearTrlMin: number | null;
+  techRecord_couplingType: string | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_length?: number | null;
-  techRecord_dimensions_width?: number | null;
+  techRecord_dimensions_length: number | null;
+  techRecord_dimensions_width: number | null;
+  drawbarCouplingFitted?: string;
+  techRecord_emissionsLimit?: null | number;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_firstUseDate?: string | null;
+  techRecord_euroStandard?: EuroStandard;
+  frontAxleTo5thWheelMax?: number | null;
+  techRecord_frontAxleTo5thWheelMin?: number | null;
+  techRecord_firstUseDate: string | null;
   techRecord_frameDescription?: FrameDescription | null;
-  techRecord_frontAxleToRearAxle?: number | null;
+  techRecord_frontAxleToRearAxle: number | null;
+  techRecord_frontVehicleTo5thWheelCouplingMax?: string | null;
+  techRecord_frontVehicleTo5thWheelCouplingMin?: string | null;
+  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_letterOfAuth?: string | null;
-  techRecord_make?: string | null;
+  techRecord_make: string | null;
   techRecord_manufactureYear?: number | null;
+  techRecord_maxTrainDesignWeight?: number;
+  techRecord_maxTrainEecWeight?: number;
+  techRecord_maxTrainGbWeight?: number;
   techRecord_manufacturerDetails?: string | null;
-  techRecord_maxLoadOnCoupling?: number | null;
+  techRecord_maxLoadOnCoupling: number | null;
   techRecord_microfilm?: string | null;
   techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentTypes;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
-  techRecord_model?: string | null;
-  techRecord_noOfAxles?: number | null;
+  techRecord_model: string | null;
+  techRecord_noOfAxles: number | null;
+  techRecord_notes: string;
+  techRecord_ntaNumber?: string;
+  techRecord_numberOfWheelsDriven?: number | null;
+  techRecord_offRoad?: boolean;
   plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -230,27 +294,48 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_purchaserDetails_postTown?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
-  techRecord_rearAxleToRearTrl?: number | null;
+  techRecord_rearAxleToRearTrl: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "skeleton";
   techRecord_regnDate?: string | null;
-  techRecord_roadFriendly?: string | null;
+  techRecord_roadFriendly: boolean | null;
+  techRecord_speedLimiterMrk?: boolean;
   techRecord_statusCode: StatusCode;
-  techRecord_suspensionType?: string | null;
-  techRecord_tyreUseCode?: string | null;
+  techRecord_tachoExemptMrk?: boolean;
+  techRecord_suspensionType: string | null;
+  techRecord_tyreUseCode: string | null;
+  techRecord_variantNumber?: string;
+  techRecord_variantVersionNumber?: string;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
+  axles?: PSVAxles[];
 }
 export interface TRLPlates {
   techRecord_plateSerialNumber?: string | null;
   techRecord_plateIssueDate?: string | null;
   techRecord_reasonForIssue?: null | PlateReasonForIssue;
   techRecord_plateIssuer?: string | null;
+}
+export interface PSVAxles {
+  techRecord_parkingBrakeMrk?: boolean | null;
+  techRecord_axleNumber?: number | null;
+  techRecord_brakes?: {
+    brakeActuator?: number;
+    leverLength?: number;
+    springBrakeParking?: boolean;
+    [k: string]: unknown;
+  }[];
+  techRecord_weights_gbWeight?: number | null;
+  techRecord_weights_designWeight?: number | null;
+  techRecord_weights_ladenWeight?: number | null;
+  techRecord_weights_kerbWeight?: number | null;
+  techRecord_tyres_tyreCode?: number | null;
+  techRecord_tyres_tyreSize?: string | null;
+  techRecord_tyres_plyRating?: string | null;
+  techRecord_tyres_fitmentCode?: null | FitmentCode;
+  techRecord_tyres_dataTrAxles?: null | number;
+  techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

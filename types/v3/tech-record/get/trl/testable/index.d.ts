@@ -247,6 +247,9 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_purchaserDetails_postTown?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
+  techRecord_lastUpdatedAt?: string | null;
+  techRecord_lastUpdatedByName?: string | null;
+  techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "testable";
