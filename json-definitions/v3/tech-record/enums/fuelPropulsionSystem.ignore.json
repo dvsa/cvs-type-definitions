@@ -1,0 +1,15 @@
+{
+  "title": "Fuel Propulsion System",
+  "type": "string",
+  "enum": [
+    "DieselPetrol",
+    "Diesel",
+    "Petrol",
+    "Hybrid",
+    "Electric",
+    "CNG",
+    "Fuel cell",
+    "LNG",
+    "Other"
+  ]
+}

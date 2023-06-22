@@ -1,0 +1,7 @@
+{
+    "title": "TC2 Types",
+    "type": "string",
+    "enum": [
+        "initial"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Retarder Brake",
+  "type": "string",
+  "enum": ["electric", "exhaust", "friction", "hydraulic", "other", "none"]
+}

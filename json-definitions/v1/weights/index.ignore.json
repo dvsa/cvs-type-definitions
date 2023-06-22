@@ -1,0 +1,20 @@
+{
+  "title": "Weights Schema",
+  "type": "object",
+  "properties": {
+    "kerbWeight": {
+      "type": "integer"
+    },
+    "ladenWeight": {
+      "type": "integer"
+    },
+    "gbWeight": {
+      "type": "integer"
+    },
+    "designWeight": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["gbWeight", "designWeight"]
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Defect Category Reference Data Schema",
+  "type": "object",
+  "properties": {
+    "imNumber": {
+      "type": "integer"
+    },
+    "imDescription": {
+      "type": "string"
+    },
+    "forVehicleType": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additionalInfo": {
+      "$ref": "./additional-info/index.ignore.json#"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "../defect-item-reference-data/index.ignore.json#"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "imNumber",
+    "imDescription",
+    "forVehicleType",
+    "additionalInfo",
+    "items"
+  ]
+}

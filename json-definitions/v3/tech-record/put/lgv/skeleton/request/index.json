@@ -1,0 +1,10 @@
+{
+  "title": "Tech Record Complete Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "../../../car/skeleton/request/index.json"
+    }
+  ]
+}

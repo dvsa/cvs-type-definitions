@@ -1,0 +1,26 @@
+{
+  "title": "Defect Item Reference Data Schema",
+  "type": "object",
+  "properties": {
+    "itemNumber": {
+      "type": "integer"
+    },
+    "itemDescription": {
+      "type": "string"
+    },
+    "forVehicleType": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deficiencies": {
+      "type": "array",
+      "items": {
+        "$ref": "../defect-deficiency-reference-data/index.ignore.json#"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}

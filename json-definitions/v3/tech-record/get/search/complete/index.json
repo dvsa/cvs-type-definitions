@@ -1,0 +1,40 @@
+{
+  "title": "Tech Record Search Complete Car Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "techRecord_manufactureYear",
+    "primaryVrm",
+    "vin",
+    "techRecord_statusCode",
+    "techRecord_vehicleType",
+    "createdTimestamp",
+    "systemNumber"
+  ],
+  "properties": {
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../../enums/statusCode.ignore.json"
+    },
+    "techRecord_vehicleType": {
+      "$ref": "../../../enums/vehicleType.ignore.json"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    }
+  }
+}

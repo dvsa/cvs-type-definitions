@@ -1,0 +1,148 @@
+{
+  "title": "Tech Record Complete Car Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vehicleSubclass",
+    "createdTimestamp",
+    "systemNumber"
+  ],
+  "properties": {
+    "techRecord_applicantDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150
+    },
+    "techRecord_applicantDetails_address1": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 12
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 25
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 255
+    },
+    "createdTimestamp": {
+      "type": [
+        "string"
+      ]
+    },
+    "partialVin": {
+      "type": "string"
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_createdById": {
+      "type": "string"
+    },
+    "techRecord_createdByName": {
+      "type": "string"
+    },
+    "techRecord_euVehicleCategory": {
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
+    },
+    "techRecord_lastUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_lastUpdatedByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_recordCompleteness": {
+      "type": "string"
+    },
+    "techRecord_noOfAxles": {
+      "type": "integer"
+    },
+    "techRecord_reasonForCreation": {
+      "type": "string"
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../../enums/statusCode.ignore.json"
+    },
+    "techRecord_vehicleConfiguration": {
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+    },
+    "techRecord_vehicleType": {
+      "$ref": "../../../enums/vehicleType.ignore.json"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "vehicleSubclass": {
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    }
+  }
+}

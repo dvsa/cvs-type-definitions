@@ -1,0 +1,58 @@
+name: PR-checks
+
+on:
+  push:
+    branches: ["develop"]
+
+jobs:
+  test-and-generate-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const semVarVersions = ["major", "minor", "patch"]
+
+            // Should only be one if squash merging
+            const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              ...context.repo,
+              commit_sha: context.event.after
+            }))[0]
+
+            const prTitleVersion = prIntroducingCommit.title.split("(")[0]
+            if (!semVarVersions.includes(prTitleVersion)) {
+              console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
+              process.exitCode = 1
+            }
+
+            const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).tag_name
+            if (!lastTag.test(/^v{\d}+.{\d}+.{\d}+$/)) {
+              console.error("Last release tag does not match semVar format")
+              process.exitCode = 1
+            }
+
+            const bumpVersion = (previousVersion, bump) => {
+              const prev = previousVersion.substring(1)
+              const versionObject = Object.fromEntries(prev.split(".").map((v, i) => [semVarVersions[i], v]))
+              versionObject[bump]  = (+versionObject[bump] + 1).toString()
+              return "v" + Object.values(versionObject).join(".")
+            }
+            const newTag = bumpVersion(lastTag, prTitleVersion)
+
+            const githubTag = await github.rest.git.createTag({
+              ...context.repo,
+              object: context.event.after,
+              type: "commit",
+              tagger.email: context.event.pusher.email,
+              tagger.name: context.event.pusher.name,
+              tag: newTag
+            })
+
+            const releaseBody = prIntroducingCommit.body.substring(prIntroducingCommit.body.indexOf("## Changelog"), 
+              prIntroducingCommit.body.indexOf("<!--DO NOT REMOVE COMMENT. MARKS END OF CHANGES SECTION.-->"))
+
+            github.rest.repos.createRelease({
+              ...context.repo,
+              tag_name: githubTag.tag,
+              body: releaseBody
+            })

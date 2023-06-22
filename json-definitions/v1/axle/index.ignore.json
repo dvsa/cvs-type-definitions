@@ -1,0 +1,23 @@
+{
+  "title": "Axle Schema",
+  "type": "object",
+  "properties": {
+    "parkingBrakeMrk": {
+      "type": "boolean"
+    },
+    "axleNumber": {
+      "type": "integer"
+    },
+    "weights": {
+      "$ref": "../weights/index.ignore.json#"
+    },
+    "tyres": {
+      "$ref": "../tyres/index.ignore.json#"
+    },
+    "brakes": {
+      "$ref": "../axle-brake-properties/index.ignore.json#"
+    }
+  },
+  "required": ["axleNumber", "tyres"],
+  "additionalProperties": false
+}
