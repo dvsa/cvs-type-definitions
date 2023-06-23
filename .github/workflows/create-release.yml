@@ -13,7 +13,7 @@ jobs:
           script: |
             const semVarVersions = ["major", "minor", "patch"]
 
-            // Should only be one if squash merging
+            // Should only be one if squash merging PR
             const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
               commit_sha: context.event.after
