@@ -16,7 +16,7 @@ jobs:
             // Should only be one if squash merging PR
             const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
-              commit_sha: context.event.after
+              commit_sha: context.sha
             }))[0]
 
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
@@ -41,11 +41,10 @@ jobs:
 
             const githubTag = await github.rest.git.createTag({
               ...context.repo,
-              object: context.event.after,
+              object: context.sha,
               type: "commit",
               tagger : {
-                email: context.event.pusher.email,
-                name: context.event.pusher.name
+                username: context.actor,
               },
               tag: newTag
             })
