@@ -44,7 +44,7 @@ jobs:
               object: context.event.after,
               type: "commit",
               tagger : {
-                email: context.event.pusher.email
+                email: context.event.pusher.email,
                 name: context.event.pusher.name,
               }
               tag: newTag
