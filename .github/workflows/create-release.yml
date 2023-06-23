@@ -46,7 +46,7 @@ jobs:
               tagger : {
                 email: context.event.pusher.email,
                 name: context.event.pusher.name
-              }
+              },
               tag: newTag
             })
 
