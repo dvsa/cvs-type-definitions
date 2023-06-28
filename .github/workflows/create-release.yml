@@ -40,7 +40,7 @@ jobs:
               return "v" + Object.values(versionObject).join(".")
             }
             const newTag = bumpVersion(lastTag, prTitleVersion)
-            console.log(JSON.stringify(context.payload)
+            console.log(JSON.stringify(context.payload))
 
             const githubTag = await github.rest.git.createTag({
               ...context.repo,
