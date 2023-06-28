@@ -26,7 +26,7 @@ jobs:
               process.exitCode = 1
             }
 
-            const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).tag_name
+            const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).data.tag_name
             if (!lastTag.test(/^v{\d}+.{\d}+.{\d}+$/)) {
               console.error("Last release tag does not match semVar format")
               process.exitCode = 1
