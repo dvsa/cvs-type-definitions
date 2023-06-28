@@ -16,7 +16,7 @@ jobs:
             // Should only be one if squash merging PR
             const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
-              commit_sha: context.sha
+              commit_sha: github.sha
             }))[0]
 
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
