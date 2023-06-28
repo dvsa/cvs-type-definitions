@@ -8,6 +8,9 @@
     "json-schemas/**/*",
     "types/**/*"
   ],
+  "repository": {
+    "url": "git://github.com/dvsa/cvs-type-definitions.git"
+  },
   "scripts": {
     "build": "tsc",
     "test": "npm run generate && jest",
