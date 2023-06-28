@@ -21,6 +21,7 @@ jobs:
               ...context.repo,
               commit_sha: context.sha
             })).data[0]
+            console.log("Found pull request associated with commit... ✔️")
             
             // Should only be one if squash merging PR
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
@@ -30,6 +31,7 @@ jobs:
             }
 
             const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).data.tag_name
+            console.log("Found the latest release tag... ✔️")
 
             if (!/^v\d+.\d+.\d+$/.test(lastTag)) {
               console.error(`Last release tag does not match semVar format: ${lastTag}`)
@@ -49,6 +51,7 @@ jobs:
               sha: context.sha,
               ref: `refs/tags/${newTag}`
             })
+            console.log(`Created new git tag ${newTag}... ✔️`)
 
             const releaseBody = prIntroducingCommit.body.substring(prIntroducingCommit.body.indexOf("## Changelog"), 
               prIntroducingCommit.body.indexOf("<!--DO NOT REMOVE COMMENT. MARKS END OF CHANGES SECTION.-->"))
@@ -58,3 +61,4 @@ jobs:
               tag_name: newTag,
               body: releaseBody
             })
+            console.log(`Release ${newTag} created ✔️`)
