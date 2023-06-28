@@ -27,7 +27,7 @@ jobs:
             }
 
             const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).data.tag_name
-            if (!lastTag.test(/^v{\d}+.{\d}+.{\d}+$/)) {
+            if (!/^v{\d}+.{\d}+.{\d}+$/.test(lastTag)) {
               console.error("Last release tag does not match semVar format")
               process.exitCode = 1
             }
@@ -45,10 +45,13 @@ jobs:
               object: context.sha,
               type: "commit",
               tagger : {
-                username: context.actor,
+                username: context.pusher.name,
+                email: context.pusher.email
               },
               tag: newTag
             })
+            
+            console.log(JSON.stringify(githubTag))
 
             const releaseBody = prIntroducingCommit.body.substring(prIntroducingCommit.body.indexOf("## Changelog"), 
               prIntroducingCommit.body.indexOf("<!--DO NOT REMOVE COMMENT. MARKS END OF CHANGES SECTION.-->"))
