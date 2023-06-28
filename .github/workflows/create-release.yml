@@ -1,4 +1,4 @@
-name: Create-release
+name: Create Release
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
               ...context.repo,
               commit_sha: context.sha
             })).data[0]
-            console.log("Found pull request associated with commit... ✔️")
+            prIntroducingCommit && console.log("Found pull request associated with commit... ✔️")
             
             // Should only be one if squash merging PR
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
@@ -39,11 +39,11 @@ jobs:
             }
 
             const bumpVersion = (previousVersion, bump) => {
-              const prev = previousVersion.substring(1)
-              const versionObject = Object.fromEntries(prev.split(".").map((v, i) => [semVarVersions[i], v]))
-              versionObject[bump]  = (+versionObject[bump] + 1).toString()
-              return "v" + Object.values(versionObject).join(".")
-            }
+              const prev = previousVersion.substring(1);
+              const indexToChange = semVarVersions.indexOf(bump)
+              return "v" + prev.split(".")
+                .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
+            };
             const newTag = bumpVersion(lastTag, prTitleVersion)
 
             const githubTag = await github.rest.git.createRef({
