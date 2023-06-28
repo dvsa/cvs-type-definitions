@@ -13,14 +13,14 @@ jobs:
           script: |
             const semVarVersions = ["major", "minor", "patch"]
 
-            // Should only be one if squash merging PR
+            
             const prIntroducingCommit = await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
               commit_sha: context.sha
             })
-            console.log(JSON.stringify(prIntroducingCommit))
-
-            const prTitleVersion = prIntroducingCommit[0].title.split("(")[0]
+            
+            // Should only be one if squash merging PR
+            const prTitleVersion = prIntroducingCommit.data[0].title.split("(")[0]
             if (!semVarVersions.includes(prTitleVersion)) {
               console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
               process.exitCode = 1
