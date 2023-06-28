@@ -47,8 +47,8 @@ jobs:
               object: context.sha,
               type: "commit",
               tagger : {
-                username: context.pusher.name,
-                email: context.pusher.email
+                username: context.payload.pusher.name,
+                email: context.payload.pusher.email
               },
               tag: newTag
             })
