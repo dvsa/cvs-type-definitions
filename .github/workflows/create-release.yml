@@ -17,13 +17,13 @@ jobs:
             const semVarVersions = ["major", "minor", "patch"]
 
             
-            const prIntroducingCommit = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+            const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
               commit_sha: context.sha
-            })
+            })).data[0]
             
             // Should only be one if squash merging PR
-            const prTitleVersion = prIntroducingCommit.data[0].title.split("(")[0]
+            const prTitleVersion = prIntroducingCommit.title.split("(")[0]
             if (!semVarVersions.includes(prTitleVersion)) {
               console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
               process.exitCode = 1
@@ -49,14 +49,12 @@ jobs:
               sha: context.sha,
               ref: `refs/tags/${newTag}`
             })
-            
-            console.log(JSON.stringify(githubTag))
 
             const releaseBody = prIntroducingCommit.body.substring(prIntroducingCommit.body.indexOf("## Changelog"), 
               prIntroducingCommit.body.indexOf("<!--DO NOT REMOVE COMMENT. MARKS END OF CHANGES SECTION.-->"))
 
             github.rest.repos.createRelease({
               ...context.repo,
-              tag_name: githubTag.data.tag,
+              tag_name: newTag,
               body: releaseBody
             })
