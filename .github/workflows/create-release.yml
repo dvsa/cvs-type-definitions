@@ -1,4 +1,4 @@
-name: PR-checks
+name: Create-release
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
 
             if (!/^v{\d}+.{\d}+.{\d}+$/.test(lastTag)) {
               console.error("Last release tag does not match semVar format")
-              process.exitCode = 1
+              process.exit(1)
             }
 
             const bumpVersion = (previousVersion, bump) => {
