@@ -26,13 +26,13 @@ jobs:
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
             if (!semVarVersions.includes(prTitleVersion)) {
               console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
-              process.exitCode = 1
+              process.exit(1)
             }
 
             const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).data.tag_name
 
-            if (!/^v{\d}+.{\d}+.{\d}+$/.test(lastTag)) {
-              console.error("Last release tag does not match semVar format")
+            if (!/^v\d+.\d+.\d+$/.test(lastTag)) {
+              console.error(`Last release tag does not match semVar format: ${lastTag}`)
               process.exit(1)
             }
 
