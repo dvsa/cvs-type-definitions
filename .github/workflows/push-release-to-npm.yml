@@ -1,10 +1,13 @@
 name: Publish to NPM
 on:
-  release:
-    types: [created]
+  workflow_run:
+    workflows: ["Create Release"]
+    types: [completed]
+    
 jobs:
-  build:
+  push-to-npm:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3

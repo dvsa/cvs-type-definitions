@@ -1,4 +1,4 @@
-name: PR-checks
+name: Create Release
 
 on:
   push:
@@ -7,53 +7,58 @@ on:
 jobs:
   test-and-generate-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents:
+        write
     steps:
       - uses: actions/github-script@v6
         with:
           script: |
             const semVarVersions = ["major", "minor", "patch"]
 
-            // Should only be one if squash merging PR
+            
             const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
               ...context.repo,
               commit_sha: context.sha
-            }))[0]
-
+            })).data[0]
+            prIntroducingCommit && console.log("Found pull request associated with commit... ✔️")
+            
+            // Should only be one if squash merging PR
             const prTitleVersion = prIntroducingCommit.title.split("(")[0]
             if (!semVarVersions.includes(prTitleVersion)) {
               console.error("Rename PR in the format: patch|minor|major(ticket-number): description")
-              process.exitCode = 1
+              process.exit(1)
             }
 
-            const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).tag_name
-            if (!lastTag.test(/^v{\d}+.{\d}+.{\d}+$/)) {
-              console.error("Last release tag does not match semVar format")
-              process.exitCode = 1
+            const lastTag = (await github.rest.repos.getLatestRelease({...context.repo})).data.tag_name
+            console.log("Found the latest release tag... ✔️")
+
+            if (!/^v\d+.\d+.\d+$/.test(lastTag)) {
+              console.error(`Last release tag does not match semVar format: ${lastTag}`)
+              process.exit(1)
             }
 
             const bumpVersion = (previousVersion, bump) => {
-              const prev = previousVersion.substring(1)
-              const versionObject = Object.fromEntries(prev.split(".").map((v, i) => [semVarVersions[i], v]))
-              versionObject[bump]  = (+versionObject[bump] + 1).toString()
-              return "v" + Object.values(versionObject).join(".")
-            }
+              const prev = previousVersion.substring(1);
+              const indexToChange = semVarVersions.indexOf(bump)
+              return "v" + prev.split(".")
+                .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
+            };
             const newTag = bumpVersion(lastTag, prTitleVersion)
 
-            const githubTag = await github.rest.git.createTag({
+            const githubTag = await github.rest.git.createRef({
               ...context.repo,
-              object: context.sha,
-              type: "commit",
-              tagger : {
-                username: context.actor,
-              },
-              tag: newTag
+              sha: context.sha,
+              ref: `refs/tags/${newTag}`
             })
+            console.log(`Created new git tag ${newTag}... ✔️`)
 
             const releaseBody = prIntroducingCommit.body.substring(prIntroducingCommit.body.indexOf("## Changelog"), 
               prIntroducingCommit.body.indexOf("<!--DO NOT REMOVE COMMENT. MARKS END OF CHANGES SECTION.-->"))
 
             github.rest.repos.createRelease({
               ...context.repo,
-              tag_name: githubTag.tag,
+              tag_name: newTag,
               body: releaseBody
             })
+            console.log(`Release ${newTag} created ✔️`)
