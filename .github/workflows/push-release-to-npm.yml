@@ -22,9 +22,8 @@ jobs:
         run: npm run build
       - name: Package files
         run: |
-          cp -r package.json types README.md json-schemas lib
-          cd lib
+          cp -r types lib
       - name: Publish on npm
-        run: npm publish
+        run: cd lib && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

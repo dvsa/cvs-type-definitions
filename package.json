@@ -3,11 +3,6 @@
   "version": "2.0.16",
   "description": "type definitions for cvs vta application",
   "main": "index.js",
-  "files": [
-    "lib/**/*",
-    "json-schemas/**/*",
-    "types/**/*"
-  ],
   "repository": {
     "url": "git://github.com/dvsa/cvs-type-definitions.git"
   },
