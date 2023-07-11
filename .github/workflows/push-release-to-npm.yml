@@ -3,7 +3,7 @@ on:
   workflow_run:
     workflows: ["Create Release"]
     types: [completed]
-    
+
 jobs:
   push-to-npm:
     runs-on: ubuntu-latest
@@ -20,6 +20,12 @@ jobs:
         run: npm ci
       - name: Build package
         run: npm run build
+      - name: Package files
+        run: |
+          cp -r package.json types README.md json-schemas lib
+          cd lib
+          cp src/schema-validation/* .
+          rm -rf src
       - name: Publish on npm
         run: npm publish
         env:
