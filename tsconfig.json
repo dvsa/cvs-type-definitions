@@ -16,7 +16,7 @@
     "strict": true
   },
   "include": [
-    "types/**/*",
+    "./types/**/*",
     "json-schemas/**/*.json",
     "./*.ts",
     "README.md",
