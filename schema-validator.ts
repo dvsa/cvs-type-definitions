@@ -1,5 +1,6 @@
 import Ajv from "ajv";
-import { schemas } from "../../schemas";
+import { schemas } from "./schemas";
+import { readFileSync } from "fs";
 
 export type Schema = typeof schemas[number];
 
@@ -9,17 +10,15 @@ export const isValidObject = (
   logErrors = false
 ): boolean => {
   const ajv = new Ajv({ removeAdditional: true, allErrors: true });
-  const schemaPath = `json-schemas/${schemaName}`;
-  const schema = require(schemaPath);
-
+  const schema = JSON.parse(
+    readFileSync(`${__dirname}/json-schemas/${schemaName}`, "utf8")
+  );
   const validateFunction = ajv.compile(schema);
   const isValid = validateFunction(objectToValidate);
 
-  if(logErrors && validateFunction.errors){
-    console.error(validateFunction.errors)
+  if (logErrors && validateFunction.errors) {
+    console.error(validateFunction.errors);
   }
 
- return isValid
-
-
+  return isValid;
 };
