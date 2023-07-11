@@ -16,7 +16,7 @@
 
 The package exports an `isValidObject()` function which can be used to validate an object against a specified schema. E.g:
 
-`import { isValidObject } from '@dvsa/cvs-type-definitions/lib/src/schema-validation/schema-validator';`
+`import { isValidObject } from '@dvsa/cvs-type-definitions/lib/src/schema-validation../../schema-validator';`
 
 `const isValidVisit: boolean = isValidObject('visit', myVisitObject);`
 

@@ -1,4 +1,4 @@
-import { isValidObject } from "../src/schema-validation/schema-validator";
+import { isValidObject } from "../schema-validator";
 
 describe("test schema validation", () => {
   it("should return false when passed and empty object", () => {

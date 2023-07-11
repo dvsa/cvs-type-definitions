@@ -1,4 +1,4 @@
-import { isValidObject } from "../../src/schema-validation/schema-validator";
+import { isValidObject } from "../../schema-validator";
 import * as hgvData from "../resources/data/hgvTestable.json";
 
 const schemaName = "v3/tech-record/get/hgv/testable/index.json";

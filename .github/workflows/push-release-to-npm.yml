@@ -24,8 +24,6 @@ jobs:
         run: |
           cp -r package.json types README.md json-schemas lib
           cd lib
-          cp src/schema-validation/* .
-          rm -rf src
       - name: Publish on npm
         run: npm publish
         env:

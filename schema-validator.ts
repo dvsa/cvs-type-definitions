@@ -1,5 +1,5 @@
 import Ajv from "ajv";
-import { schemas } from "../../schemas";
+import { schemas } from "./schemas";
 import { readFileSync } from "fs";
 
 export type Schema = typeof schemas[number];
