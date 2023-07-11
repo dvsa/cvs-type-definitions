@@ -6,9 +6,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@matty/*": [
-        "json-schemas/*"
-      ]
+      "@matty/*": ["json-schemas/*"]
     },
     "resolveJsonModule": true,
     "target": "es5",
@@ -17,6 +15,12 @@
     "outDir": "./lib",
     "strict": true
   },
-  "include": ["src", "types", "json-schemas"],
+  "include": [
+    "types/**/*",
+    "json-schemas/**/*.json",
+    "./*.ts",
+    "README.md",
+    "package.json"
+  ],
   "exclude": ["node_modules"]
 }
