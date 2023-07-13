@@ -2,9 +2,7 @@
   "title": "Tech Record PUT Request Complete Car Schema",
   "type": "object",
   "additionalProperties": true,
-  "required": [
-    "vehicleSubclass"
-  ],
+  "required": ["vehicleSubclass", "vin"],
   "properties": {
     "vin": {
       "type": "string"
@@ -13,43 +11,28 @@
       "type": "string"
     },
     "trailerId": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "techRecord_reasonForCreation": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../../enums/vehicleType.ignore.json"
+      "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "techRecord_statusCode": {
-      "$ref": "../../../../enums/statusCode.ignore.json"
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "techRecord_manufactureYear": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "techRecord_noOfAxles": {
-      "type": [
-        "integer",
-        "null"
-      ]
+      "type": ["integer", "null"]
     },
     "vehicleSubclass": {
-      "$ref": "../../../../enums/vehicleSubclass.ignore.json"
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
     }
   }
 }

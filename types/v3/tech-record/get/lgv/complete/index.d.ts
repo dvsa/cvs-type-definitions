@@ -70,6 +70,6 @@ export interface TechRecordCompleteCarSchema1 {
   techRecord_statusCode?: StatusCode;
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
-  vin?: string;
+  vin: string;
   vehicleSubclass: VehicleSubclass;
 }

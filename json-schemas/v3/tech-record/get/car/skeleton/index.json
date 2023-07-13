@@ -4,7 +4,8 @@
 	"additionalProperties": false,
 	"required": [
 		"createdTimestamp",
-		"systemNumber"
+		"systemNumber",
+		"vin"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {
