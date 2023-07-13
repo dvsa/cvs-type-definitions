@@ -1,7 +1,7 @@
 import { isValidObject } from "../../schema-validator";
 import * as psvData from "../resources/data/psvSkeleton.json";
 
-const schemaName = "v3/tech-record/post/psv/skeleton/index.json";
+const schemaName = "v3/tech-record/put/psv/skeleton/index.json";
 
 describe("validate skeleton psv schema", () => {
   it("should validate when given full data for complete", () => {
