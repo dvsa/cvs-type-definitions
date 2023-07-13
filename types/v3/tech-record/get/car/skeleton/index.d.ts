@@ -68,5 +68,5 @@ export interface TechRecordSkeletonCarSchema {
   techRecord_statusCode?: StatusCode;
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
-  vin?: string;
+  vin: string;
 }

@@ -3,7 +3,8 @@
 	"type": "object",
 	"additionalProperties": true,
 	"required": [
-		"vehicleSubclass"
+		"vehicleSubclass",
+		"vin"
 	],
 	"properties": {
 		"vin": {
