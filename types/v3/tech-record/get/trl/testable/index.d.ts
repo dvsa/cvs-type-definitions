@@ -281,6 +281,8 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_tyres_fitmentCode?: null | FitmentCode;
   techRecord_tyres_dataTrAxles?: null | number;
   techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
 export interface TRLPlates {
   techRecord_plateSerialNumber?: string | null;

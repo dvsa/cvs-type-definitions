@@ -296,6 +296,7 @@ export interface POSTPSVTechnicalRecordV3Skeleton {
   createdTimestamp?: string;
   techRecord_applicationId?: string;
   secondaryVrms?: string[];
+  techRecord_updateType?: string;
 }
 export interface PSVAxles {
   techRecord_parkingBrakeMrk?: boolean | null;

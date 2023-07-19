@@ -20,5 +20,7 @@ export interface TechRecordPUTRequestCompleteCarSchema {
   techRecord_manufactureYear?: string | null;
   techRecord_noOfAxles?: number | null;
   vehicleSubclass: VehicleSubclass;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
   [k: string]: unknown;
 }

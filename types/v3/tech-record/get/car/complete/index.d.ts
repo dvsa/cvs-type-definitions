@@ -71,4 +71,6 @@ export interface TechRecordCompleteCarSchema {
   techRecord_vehicleType?: VehicleType;
   vin: string;
   vehicleSubclass: VehicleSubclass;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
