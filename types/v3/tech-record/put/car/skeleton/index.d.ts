@@ -18,5 +18,7 @@ export interface TechRecordPUTRequestSkeletonCarSchema {
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: string | null;
   techRecord_noOfAxles?: number | null;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
   [k: string]: unknown;
 }

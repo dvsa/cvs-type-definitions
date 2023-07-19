@@ -298,6 +298,7 @@ export interface GETPSVTechnicalRecordV3Complete {
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp?: string;
+  techRecord_updateType?: string;
 }
 export interface PSVAxlesComplete {
   techRecord_parkingBrakeMrk: boolean;
