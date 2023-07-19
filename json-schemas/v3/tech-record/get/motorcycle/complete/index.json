@@ -215,6 +215,12 @@
 		},
 		"numberOfWheelsDriven": {
 			"type": "integer"
+		},
+		"techRecord_hiddenInVta": {
+			"type": "boolean"
+		},
+		"techRecord_updateType": {
+			"type": "string"
 		}
 	}
 }
