@@ -264,6 +264,8 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
 export interface HGVAxles {
   techRecord_parkingBrakeMrk?: boolean;

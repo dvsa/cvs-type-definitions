@@ -95,6 +95,12 @@
     },
     "vin": {
       "type": "string"
+    },
+    "techRecord_hiddenInVta": {
+      "type": "boolean"
+    },
+    "techRecord_updateType": {
+      "type": "string"
     }
   }
 }

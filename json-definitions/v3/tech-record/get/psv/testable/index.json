@@ -588,6 +588,9 @@
       "items": {
         "type": "string"
       }
+    },
+    "techRecord_updateType": {
+      "type": "string"
     }
   }
 }

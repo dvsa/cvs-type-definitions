@@ -247,6 +247,8 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
 export interface TRLPlates {
   techRecord_plateSerialNumber?: string | null;

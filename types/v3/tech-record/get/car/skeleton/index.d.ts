@@ -69,4 +69,6 @@ export interface TechRecordSkeletonCarSchema {
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
   vin: string;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }

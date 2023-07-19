@@ -33,6 +33,12 @@
     },
     "vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    },
+    "techRecord_hiddenInVta": {
+      "type": "boolean"
+    },
+    "techRecord_updateType": {
+      "type": "string"
     }
   }
 }

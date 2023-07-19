@@ -298,6 +298,7 @@ export interface POSTPSVTechnicalRecordV3Complete {
   techRecord_brakeCode?: string | null;
   createdTimestamp?: string;
   secondaryVrms?: string[];
+  techRecord_updateType?: string;
 }
 export interface PSVAxlesComplete {
   techRecord_parkingBrakeMrk: boolean;

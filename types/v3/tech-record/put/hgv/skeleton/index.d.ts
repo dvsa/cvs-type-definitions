@@ -255,6 +255,8 @@ export interface PUTHGVTechnicalRecordV3Skeleton {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
 export interface HGVAxles {
   techRecord_parkingBrakeMrk?: boolean | null;
