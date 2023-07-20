@@ -72,4 +72,6 @@ export interface TechRecordCompleteMotorcycleSchema {
   vin: string;
   vehicleSubclass: VehicleSubclass;
   numberOfWheelsDriven?: number;
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
