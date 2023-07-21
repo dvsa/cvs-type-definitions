@@ -196,7 +196,7 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: string;
-  axles: HGVAxles[];
+  techRecord_axles: HGVAxles[];
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
@@ -238,7 +238,7 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_noOfAxles?: number | null;
   techRecord_notes: string;
   techRecord_offRoad: boolean;
-  plates?: HGVPlates[];
+  techRecord_plates?: HGVPlates[];
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "complete";
   techRecord_regnDate: string;
@@ -268,20 +268,20 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_updateType?: string;
 }
 export interface HGVAxles {
-  techRecord_parkingBrakeMrk?: boolean;
-  techRecord_axleNumber?: number;
-  techRecord_weights_gbWeight?: number;
-  techRecord_weights_designWeight?: number;
-  techRecord_weights_eecWeight?: number | null;
-  techRecord_tyres_tyreCode?: number;
-  techRecord_tyres_tyreSize?: string;
-  techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode?: FitmentCode;
+  parkingBrakeMrk?: boolean;
+  axleNumber?: number;
+  weights_gbWeight?: number;
+  weights_designWeight?: number;
+  weights_eecWeight?: number | null;
+  tyres_tyreCode?: number;
+  tyres_tyreSize?: string;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: FitmentCode;
   techRecord_tyres_dataTrAxles?: null | number;
 }
 export interface HGVPlates {
-  techRecord_plateSerialNumber?: string | null;
-  techRecord_plateIssueDate?: string | null;
-  techRecord_reasonForIssue?: null | PlateReasonForIssue;
-  techRecord_plateIssuer?: string | null;
+  plateSerialNumber?: string | null;
+  plateIssueDate?: string | null;
+  reasonForIssue?: null | PlateReasonForIssue;
+  plateIssuer?: string | null;
 }

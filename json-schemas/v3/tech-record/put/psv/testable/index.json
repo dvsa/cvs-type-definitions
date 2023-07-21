@@ -673,26 +673,26 @@
 			],
 			"maxLength": 160
 		},
-		"axles": {
+		"techRecord_axles": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "PSV Axles",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_parkingBrakeMrk": {
+					"parkingBrakeMrk": {
 						"type": [
 							"boolean",
 							"null"
 						]
 					},
-					"techRecord_axleNumber": {
+					"axleNumber": {
 						"type": [
 							"integer",
 							"null"
 						]
 					},
-					"techRecord_weights_gbWeight": {
+					"weights_gbWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -700,7 +700,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_designWeight": {
+					"weights_designWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -708,7 +708,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_ladenWeight": {
+					"weights_ladenWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -716,7 +716,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_kerbWeight": {
+					"weights_kerbWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -724,7 +724,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreCode": {
+					"tyres_tyreCode": {
 						"type": [
 							"integer",
 							"null"
@@ -732,20 +732,20 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreSize": {
+					"tyres_tyreSize": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 12
 					},
-					"techRecord_tyres_plyRating": {
+					"tyres_plyRating": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_tyres_fitmentCode": {
+					"tyres_fitmentCode": {
 						"anyOf": [
 							{
 								"type": "null"
@@ -760,7 +760,7 @@
 							}
 						]
 					},
-					"techRecord_tyres_dataTrAxles": {
+					"tyres_dataTrAxles": {
 						"type": [
 							"null",
 							"integer"
@@ -768,7 +768,7 @@
 						"minimum": 0,
 						"maximum": 999
 					},
-					"techRecord_tyres_speedCategorySymbol": {
+					"tyres_speedCategorySymbol": {
 						"anyOf": [
 							{
 								"title": "Speed Category Symbol",

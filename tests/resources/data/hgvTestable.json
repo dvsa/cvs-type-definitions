@@ -68,33 +68,33 @@
     "techRecord_vehicleConfiguration": "articulated",
     "techRecord_vehicleType": "hgv",
     "vin": "GB01DAN0000000001",
-    "axles": [
+    "techRecord_axles": [
       {
-        "techRecord_axleNumber": 1,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 156,
-        "techRecord_tyres_fitmentCode": "single",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 8000,
-        "techRecord_weights_eecWeight": 8000,
-        "techRecord_weights_gbWeight": 8000
+        "axleNumber": 1,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 156,
+        "tyres_fitmentCode": "single",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 8000,
+        "weights_eecWeight": 8000,
+        "weights_gbWeight": 8000
       },
       {
-        "techRecord_axleNumber": 2,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 150,
-        "techRecord_tyres_fitmentCode": "double",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 11500,
-        "techRecord_weights_eecWeight": 11500,
-        "techRecord_weights_gbWeight": 11500
+        "axleNumber": 2,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 150,
+        "tyres_fitmentCode": "double",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 11500,
+        "weights_eecWeight": 11500,
+        "weights_gbWeight": 11500
       },
       {
-        "techRecord_0_axles": "1-2"
+        "0_axles": "1-2"
       }
     ],
     "dimensions": [
@@ -176,33 +176,33 @@
     "techRecord_vehicleConfiguration": "articulated",
     "techRecord_vehicleType": "hgv",
     "vin": "GB01DAN0000000001",
-    "axles": [
+    "techRecord_axles": [
       {
-        "techRecord_axleNumber": 1,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 156,
-        "techRecord_tyres_fitmentCode": "single",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 8000,
-        "techRecord_weights_eecWeight": 8000,
-        "techRecord_weights_gbWeight": 8000
+        "axleNumber": 1,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 156,
+        "tyres_fitmentCode": "single",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 8000,
+        "weights_eecWeight": 8000,
+        "weights_gbWeight": 8000
       },
       {
-        "techRecord_axleNumber": 2,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 150,
-        "techRecord_tyres_fitmentCode": "double",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 11500,
-        "techRecord_weights_eecWeight": 11500,
-        "techRecord_weights_gbWeight": 11500
+        "axleNumber": 2,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 150,
+        "tyres_fitmentCode": "double",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 11500,
+        "weights_eecWeight": 11500,
+        "weights_gbWeight": 11500
       },
       {
-        "techRecord_0_axles": "1-2"
+        "0_axles": "1-2"
       }
     ],
     "dimensions": [
@@ -302,33 +302,33 @@
     "techRecord_vehicleConfiguration": "articulated",
     "techRecord_vehicleType": "hgv",
     "vin": "GB01DAN0000000001",
-    "axles": [
+    "techRecord_axles": [
       {
-        "techRecord_axleNumber": 1,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 156,
-        "techRecord_tyres_fitmentCode": "single",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 8000,
-        "techRecord_weights_eecWeight": 8000,
-        "techRecord_weights_gbWeight": 8000
+        "axleNumber": 1,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 156,
+        "tyres_fitmentCode": "single",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 8000,
+        "weights_eecWeight": 8000,
+        "weights_gbWeight": 8000
       },
       {
-        "techRecord_axleNumber": 2,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 150,
-        "techRecord_tyres_fitmentCode": "double",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 11500,
-        "techRecord_weights_eecWeight": 11500,
-        "techRecord_weights_gbWeight": 11500
+        "axleNumber": 2,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 150,
+        "tyres_fitmentCode": "double",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 11500,
+        "weights_eecWeight": 11500,
+        "weights_gbWeight": 11500
       },
       {
-        "techRecord_0_axles": "1-2"
+        "0_axles": "1-2"
       }
     ],
     "dimensions": [
@@ -410,33 +410,33 @@
     "techRecord_vehicleConfiguration": "articulated",
     "techRecord_vehicleType": "hgv",
     "vin": "GB01DAN0000000001",
-    "axles": [
+    "techRecord_axles": [
       {
-        "techRecord_axleNumber": 1,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 156,
-        "techRecord_tyres_fitmentCode": "single",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 8000,
-        "techRecord_weights_eecWeight": 8000,
-        "techRecord_weights_gbWeight": 8000
+        "axleNumber": 1,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 156,
+        "tyres_fitmentCode": "single",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 8000,
+        "weights_eecWeight": 8000,
+        "weights_gbWeight": 8000
       },
       {
-        "techRecord_axleNumber": 2,
-        "techRecord_parkingBrakeMrk": false,
-        "techRecord_tyres_dataTrAxles": 150,
-        "techRecord_tyres_fitmentCode": "double",
-        "techRecord_tyres_plyRating": null,
-        "techRecord_tyres_tyreCode": 428,
-        "techRecord_tyres_tyreSize": "315/80-22.5",
-        "techRecord_weights_designWeight": 11500,
-        "techRecord_weights_eecWeight": 11500,
-        "techRecord_weights_gbWeight": 11500
+        "axleNumber": 2,
+        "parkingBrakeMrk": false,
+        "tyres_dataTrAxles": 150,
+        "tyres_fitmentCode": "double",
+        "tyres_plyRating": null,
+        "tyres_tyreCode": 428,
+        "tyres_tyreSize": "315/80-22.5",
+        "weights_designWeight": 11500,
+        "weights_eecWeight": 11500,
+        "weights_gbWeight": 11500
       },
       {
-        "techRecord_0_axles": "1-2"
+        "0_axles": "1-2"
       }
     ],
     "dimensions": [

@@ -288,7 +288,7 @@ export interface GETTRLTechnicalRecordV3Complete {
   techRecord_ntaNumber?: string;
   techRecord_numberOfWheelsDriven?: number | null;
   techRecord_offRoad?: boolean;
-  plates?: TRLPlates[];
+  techRecord_plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
   techRecord_purchaserDetails_address3?: string | null;
@@ -320,33 +320,33 @@ export interface GETTRLTechnicalRecordV3Complete {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  axles?: PSVAxles[];
+  techRecord_axles?: TRLAxles[];
+  techRecord_hiddenInVta?: boolean;
+  techRecord_updateType?: string;
 }
 export interface TRLPlates {
-  techRecord_plateSerialNumber?: string | null;
-  techRecord_plateIssueDate?: string | null;
-  techRecord_reasonForIssue?: null | PlateReasonForIssue;
-  techRecord_plateIssuer?: string | null;
+  plateSerialNumber?: string | null;
+  plateIssueDate?: string | null;
+  reasonForIssue?: null | PlateReasonForIssue;
+  plateIssuer?: string | null;
 }
-export interface PSVAxles {
-  techRecord_parkingBrakeMrk?: boolean | null;
-  techRecord_axleNumber?: number | null;
-  techRecord_brakes?: {
+export interface TRLAxles {
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  brakes?: {
     brakeActuator?: number;
     leverLength?: number;
     springBrakeParking?: boolean;
     [k: string]: unknown;
   }[];
-  techRecord_weights_gbWeight?: number | null;
-  techRecord_weights_designWeight?: number | null;
-  techRecord_weights_ladenWeight?: number | null;
-  techRecord_weights_kerbWeight?: number | null;
-  techRecord_tyres_tyreCode?: number | null;
-  techRecord_tyres_tyreSize?: string | null;
-  techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode?: null | FitmentCode;
-  techRecord_tyres_dataTrAxles?: null | number;
-  techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

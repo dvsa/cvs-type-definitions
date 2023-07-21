@@ -738,27 +738,27 @@
 				}
 			]
 		},
-		"plates": {
+		"techRecord_plates": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "TRL Plates",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_plateSerialNumber": {
+					"plateSerialNumber": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 12
 					},
-					"techRecord_plateIssueDate": {
+					"plateIssueDate": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_reasonForIssue": {
+					"reasonForIssue": {
 						"anyOf": [
 							{
 								"type": "null"
@@ -777,7 +777,7 @@
 							}
 						]
 					},
-					"techRecord_plateIssuer": {
+					"plateIssuer": {
 						"type": [
 							"string",
 							"null"

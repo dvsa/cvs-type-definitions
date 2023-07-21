@@ -18,7 +18,7 @@
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
 		"techRecord_createdAt",
-		"axles",
+		"techRecord_axles",
 		"techRecord_standingCapacity",
 		"techRecord_numberOfSeatbelts",
 		"techRecord_bodyMake",
@@ -654,7 +654,7 @@
 			],
 			"maxLength": 160
 		},
-		"axles": {
+		"techRecord_axles": {
 			"type": "array",
 			"minItems": 1,
 			"items": {
@@ -662,60 +662,60 @@
 				"type": "object",
 				"additionalProperties": false,
 				"required": [
-					"techRecord_weights_gbWeight",
-					"techRecord_weights_designWeight",
-					"techRecord_tyres_tyreCode",
-					"techRecord_tyres_tyreSize",
-					"techRecord_tyres_fitmentCode",
-					"techRecord_tyres_speedCategorySymbol",
-					"techRecord_parkingBrakeMrk",
-					"techRecord_axleNumber",
-					"techRecord_weights_ladenWeight",
-					"techRecord_weights_kerbWeight"
+					"weights_gbWeight",
+					"weights_designWeight",
+					"tyres_tyreCode",
+					"tyres_tyreSize",
+					"tyres_fitmentCode",
+					"tyres_speedCategorySymbol",
+					"parkingBrakeMrk",
+					"axleNumber",
+					"weights_ladenWeight",
+					"weights_kerbWeight"
 				],
 				"properties": {
-					"techRecord_parkingBrakeMrk": {
+					"parkingBrakeMrk": {
 						"type": "boolean"
 					},
-					"techRecord_axleNumber": {
+					"axleNumber": {
 						"type": "integer"
 					},
-					"techRecord_weights_gbWeight": {
+					"weights_gbWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_designWeight": {
+					"weights_designWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_ladenWeight": {
+					"weights_ladenWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_kerbWeight": {
+					"weights_kerbWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreCode": {
+					"tyres_tyreCode": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreSize": {
+					"tyres_tyreSize": {
 						"type": "string",
 						"maxLength": 12
 					},
-					"techRecord_tyres_plyRating": {
+					"tyres_plyRating": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_tyres_fitmentCode": {
+					"tyres_fitmentCode": {
 						"title": "Fitment Code",
 						"type": "string",
 						"enum": [
@@ -723,7 +723,7 @@
 							"double"
 						]
 					},
-					"techRecord_tyres_dataTrAxles": {
+					"tyres_dataTrAxles": {
 						"type": [
 							"null",
 							"integer"
@@ -731,7 +731,7 @@
 						"minimum": 0,
 						"maximum": 999
 					},
-					"techRecord_tyres_speedCategorySymbol": {
+					"tyres_speedCategorySymbol": {
 						"title": "Speed Category Symbol",
 						"type": "string",
 						"enum": [

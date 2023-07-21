@@ -395,26 +395,26 @@
 				"null"
 			]
 		},
-		"axles": {
+		"techRecord_axles": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "HGV Axles",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_parkingBrakeMrk": {
+					"parkingBrakeMrk": {
 						"type": [
 							"boolean",
 							"null"
 						]
 					},
-					"techRecord_axleNumber": {
+					"axleNumber": {
 						"type": [
 							"integer",
 							"null"
 						]
 					},
-					"techRecord_weights_gbWeight": {
+					"weights_gbWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -422,7 +422,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_designWeight": {
+					"weights_designWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -430,7 +430,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_eecWeight": {
+					"weights_eecWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -438,7 +438,7 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreCode": {
+					"tyres_tyreCode": {
 						"type": [
 							"integer",
 							"null"
@@ -446,20 +446,20 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreSize": {
+					"tyres_tyreSize": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 12
 					},
-					"techRecord_tyres_plyRating": {
+					"tyres_plyRating": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_tyres_fitmentCode": {
+					"tyres_fitmentCode": {
 						"anyOf": [
 							{
 								"type": "null"
@@ -474,7 +474,7 @@
 							}
 						]
 					},
-					"techRecord_tyres_dataTrAxles": {
+					"tyres_dataTrAxles": {
 						"type": [
 							"null",
 							"integer"
@@ -865,27 +865,27 @@
 				"null"
 			]
 		},
-		"plates": {
+		"techRecord_plates": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "HGV Plates",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_plateSerialNumber": {
+					"plateSerialNumber": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 12
 					},
-					"techRecord_plateIssueDate": {
+					"plateIssueDate": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_reasonForIssue": {
+					"reasonForIssue": {
 						"anyOf": [
 							{
 								"type": "null"
@@ -904,7 +904,7 @@
 							}
 						]
 					},
-					"techRecord_plateIssuer": {
+					"plateIssuer": {
 						"type": [
 							"string",
 							"null"
