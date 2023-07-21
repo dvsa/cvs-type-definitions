@@ -15,120 +15,211 @@
       "type": "string"
     },
     "techRecord_adrDetails_vehicleDetails_type": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_vehicleDetails_approvalDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_permittedDangerousGoods": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "type": "string"
       }
     },
     "techRecord_adrDetails_compatibilityGroupJ": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_additionalExaminerNotes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1024
     },
     "techRecord_adrDetails_applicantDetails_name": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_adrDetails_applicantDetails_street": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_adrDetails_applicantDetails_town": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 100
     },
     "techRecord_adrDetails_applicantDetails_city": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 100
     },
     "techRecord_adrDetails_applicantDetails_postcode": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 25
     },
     "techRecord_adrDetails_memosApply": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
-        "type": ["string"]
+        "type": [
+          "string"
+        ]
       }
     },
     "techRecord_adrDetails_documents": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
-        "type": ["string"]
+        "type": [
+          "string"
+        ]
       }
     },
     "techRecord_adrDetails_listStatementApplicable": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_batteryListNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 8
     },
     "techRecord_adrDetails_brakeDeclarationsSeen": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_brakeDeclarationIssuer": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_brakeEndurance": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_weight": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 8
     },
     "techRecord_adrDetails_declarationsSeen": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_additionalNotes_guidanceNotes": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "type": "string"
       }
     },
     "techRecord_adrDetails_additionalNotes_number": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "type": "string"
       }
     },
     "techRecord_adrDetails_adrTypeApprovalNo": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_adrCertificateNotes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1500
     },
     "techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 70
     },
     "techRecord_adrDetails_tank_tankDetails_yearOfManufacture": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 9999
     },
     "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 50
     },
     "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 30
     },
     "techRecord_adrDetails_tank_tankDetails_tankCode": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 30
     },
     "techRecord_adrDetails_tank_tankDetails_specialProvisions": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1024
     },
     "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type": {
@@ -142,11 +233,17 @@
       ]
     },
     "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 70
     },
     "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type": {
       "anyOf": [
@@ -159,111 +256,188 @@
       ]
     },
     "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 75
     },
     "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1500
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
-        "type": ["string"]
+        "type": [
+          "string"
+        ]
       }
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_productList": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1500
     },
     "techRecord_alterationMarker": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_applicantDetails_name": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_applicantDetails_address1": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address2": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postTown": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address3": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postCode": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 12
     },
     "techRecord_applicantDetails_telephoneNumber": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 25
     },
     "techRecord_applicantDetails_emailAddress": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 255
     },
     "techRecord_applicationId": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
-    "axles": {
+    "techRecord_axles": {
       "type": "array",
       "items": {
         "type": "object",
         "title": "HGV Axles",
         "additionalProperties": false,
         "properties": {
-          "techRecord_parkingBrakeMrk": {
-            "type": ["boolean", "null"]
+          "parkingBrakeMrk": {
+            "type": [
+              "boolean",
+              "null"
+            ]
           },
-          "techRecord_axleNumber": {
-            "type": ["integer", "null"]
+          "axleNumber": {
+            "type": [
+              "integer",
+              "null"
+            ]
           },
-          "techRecord_weights_gbWeight": {
-            "type": ["integer", "null"],
+          "weights_gbWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 0,
             "maximum": 99999
           },
-          "techRecord_weights_designWeight": {
-            "type": ["integer", "null"],
+          "weights_designWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 0,
             "maximum": 99999
           },
-          "techRecord_weights_eecWeight": {
-            "type": ["integer", "null"],
+          "weights_eecWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 0,
             "maximum": 99999
           },
-          "techRecord_tyres_tyreCode": {
-            "type": ["integer", "null"],
+          "tyres_tyreCode": {
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 0,
             "maximum": 99999
           },
-          "techRecord_tyres_tyreSize": {
-            "type": ["string", "null"],
+          "tyres_tyreSize": {
+            "type": [
+              "string",
+              "null"
+            ],
             "maxLength": 12
           },
-          "techRecord_tyres_plyRating": {
-            "type": ["string", "null"]
+          "tyres_plyRating": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
-          "techRecord_tyres_fitmentCode": {
+          "tyres_fitmentCode": {
             "anyOf": [
               {
                 "type": "null"
@@ -273,8 +447,11 @@
               }
             ]
           },
-          "techRecord_tyres_dataTrAxles": {
-            "type": ["null", "integer"],
+          "tyres_dataTrAxles": {
+            "type": [
+              "null",
+              "integer"
+            ],
             "minimum": 0,
             "maximum": 999
           }
@@ -288,50 +465,83 @@
       "type": "string"
     },
     "techRecord_brakes_antilockBrakingSystem": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_brakes_dtpNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 6
     },
     "techRecord_brakes_loadSensingValve": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_conversionRefNo": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 10
     },
     "techRecord_departmentalVehicleMarker": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_dimensions_axleSpacing_axles": {
       "type": "string"
     },
     "techRecord_dimensions_axleSpacing_value": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_dimensions_length": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_dimensions_width": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_drawbarCouplingFitted": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_emissionsLimit": {
-      "type": ["null", "integer"],
+      "type": [
+        "null",
+        "integer"
+      ],
       "minimum": 0,
       "maximum": 99
     },
     "techRecord_euroStandard": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
@@ -344,27 +554,42 @@
       ]
     },
     "techRecord_frontAxleToRearAxle": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_frontAxleTo5thWheelMin": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_frontAxleTo5thWheelMax": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_frontVehicleTo5thWheelCouplingMin": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_frontVehicleTo5thWheelCouplingMax": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
@@ -379,40 +604,64 @@
       ]
     },
     "techRecord_functionCode": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 1
     },
     "techRecord_grossDesignWeight": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_grossEecWeight": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_grossGbWeight": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_make": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 30
     },
     "techRecord_maxTrainGbWeight": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_maxTrainEecWeight": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_maxTrainDesignWeight": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
@@ -439,19 +688,31 @@
       ]
     },
     "techRecord_microfilm_microfilmRollNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 5
     },
     "techRecord_microfilm_microfilmSerialNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 4
     },
     "techRecord_model": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 30
     },
     "techRecord_numberOfWheelsDriven": {
-      "type": ["integer", "null"]
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "techRecord_noOfAxles": {
       "anyOf": [
@@ -466,26 +727,38 @@
       ]
     },
     "techRecord_notes": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_offRoad": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
-    "plates": {
+    "techRecord_plates": {
       "type": "array",
       "items": {
         "type": "object",
         "title": "HGV Plates",
         "additionalProperties": false,
         "properties": {
-          "techRecord_plateSerialNumber": {
-            "type": ["string", "null"],
+          "plateSerialNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
             "maxLength": 12
           },
-          "techRecord_plateIssueDate": {
-            "type": ["string", "null"]
+          "plateIssueDate": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
-          "techRecord_reasonForIssue": {
+          "reasonForIssue": {
             "anyOf": [
               {
                 "type": "null"
@@ -495,8 +768,11 @@
               }
             ]
           },
-          "techRecord_plateIssuer": {
-            "type": ["string", "null"],
+          "plateIssuer": {
+            "type": [
+              "string",
+              "null"
+            ],
             "maxLength": 150
           }
         }
@@ -521,34 +797,55 @@
       ]
     },
     "techRecord_roadFriendly": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_speedLimiterMrk": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_tachoExemptMrk": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_trainDesignWeight": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "minimum": 0,
       "maximum": 99999
     },
     "techRecord_trainEecWeight": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_trainGbWeight": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_tyreUseCode": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 2
     },
     "techRecord_vehicleClass_code": {
@@ -578,19 +875,31 @@
       ]
     },
     "techRecord_approvalTypeNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 25
     },
     "techRecord_ntaNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 40
     },
     "techRecord_variantNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 25
     },
     "techRecord_variantVersionNumber": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 35
     },
     "techRecord_vehicleType": {
