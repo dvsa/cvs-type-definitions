@@ -23,5 +23,4 @@ export interface TechRecordPUTRequestCompleteCarSchema {
   vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
-  [k: string]: unknown;
 }
