@@ -21,7 +21,7 @@
 		"techRecord_grossDesignWeight",
 		"techRecord_brakes_dtpNumber",
 		"techRecord_euVehicleCategory",
-		"axles",
+		"techRecord_axles",
 		"techRecord_euroStandard",
 		"techRecord_regnDate",
 		"techRecord_speedLimiterMrk",

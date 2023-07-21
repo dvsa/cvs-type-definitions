@@ -18,7 +18,7 @@
     "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
     "techRecord_createdAt",
-    "axles",
+    "techRecord_axles",
     "techRecord_standingCapacity",
     "techRecord_numberOfSeatbelts",
     "techRecord_bodyMake",

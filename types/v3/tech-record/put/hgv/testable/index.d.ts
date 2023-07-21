@@ -233,7 +233,7 @@ export interface PUTHGVTechnicalRecordV3Testable {
   techRecord_noOfAxles?: number | null;
   techRecord_notes?: string | null;
   techRecord_offRoad?: boolean | null;
-  plates?: HGVPlates[];
+  techRecord_plates?: HGVPlates[];
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly?: boolean | null;
@@ -271,8 +271,8 @@ export interface HGVAxles {
   tyres_dataTrAxles?: null | number;
 }
 export interface HGVPlates {
-  techRecord_plateSerialNumber?: string | null;
-  techRecord_plateIssueDate?: string | null;
-  techRecord_reasonForIssue?: null | PlateReasonForIssue;
-  techRecord_plateIssuer?: string | null;
+  plateSerialNumber?: string | null;
+  plateIssueDate?: string | null;
+  reasonForIssue?: null | PlateReasonForIssue;
+  plateIssuer?: string | null;
 }

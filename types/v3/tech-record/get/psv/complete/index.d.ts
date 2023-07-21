@@ -269,7 +269,7 @@ export interface GETPSVTechnicalRecordV3Complete {
   /**
    * @minItems 1
    */
-  techRecord_axles?: [PSVAxlesComplete, ...PSVAxlesComplete[]];
+  techRecord_axles: [PSVAxlesComplete, ...PSVAxlesComplete[]];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;

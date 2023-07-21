@@ -194,7 +194,7 @@ export interface PUTHGVTechnicalRecordV3Complete {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: string;
-  techRecord_axles?: HGVAxles[];
+  techRecord_axles: HGVAxles[];
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
