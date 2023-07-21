@@ -9,7 +9,7 @@
 		{
 			"title": "Tech Record PUT Request Complete Car Schema",
 			"type": "object",
-			"additionalProperties": true,
+			"additionalProperties": false,
 			"required": [
 				"vehicleSubclass",
 				"vin"
