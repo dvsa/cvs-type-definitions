@@ -948,23 +948,21 @@
             ]
           },
           "brakes": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "brakeActuator": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 999
-                },
-                "leverLength": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 999
-                },
-                "springBrakeParking": {
-                  "type": "boolean"
-                }
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "brakeActuator": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 999
+              },
+              "leverLength": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 999
+              },
+              "springBrakeParking": {
+                "type": "boolean"
               }
             }
           },

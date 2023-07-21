@@ -269,8 +269,7 @@ export interface GETTRLTechnicalRecordV3Testable {
     brakeActuator?: number;
     leverLength?: number;
     springBrakeParking?: boolean;
-    [k: string]: unknown;
-  }[];
+  };
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;
