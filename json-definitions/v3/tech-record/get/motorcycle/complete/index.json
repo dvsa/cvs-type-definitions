@@ -2,42 +2,73 @@
   "title": "Tech Record Complete Motorcycle Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["vehicleSubclass", "createdTimestamp", "systemNumber", "vin"],
+  "required": [
+    "vehicleSubclass",
+    "createdTimestamp",
+    "systemNumber",
+    "vin"
+  ],
   "properties": {
     "techRecord_applicantDetails_name": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_applicantDetails_address1": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address2": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postTown": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address3": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postCode": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 12
     },
     "techRecord_applicantDetails_telephoneNumber": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 25
     },
     "techRecord_applicantDetails_emailAddress": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 255
     },
     "createdTimestamp": {
-      "type": ["string"]
+      "type": [
+        "string"
+      ]
     },
     "partialVin": {
       "type": "string"
@@ -61,16 +92,28 @@
       "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
     "techRecord_lastUpdatedAt": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_lastUpdatedById": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_lastUpdatedByName": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_manufactureYear": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_recordCompleteness": {
       "type": "string"
@@ -78,11 +121,17 @@
     "techRecord_noOfAxles": {
       "type": "integer"
     },
+    "techRecord_notes": {
+      "type": "string"
+    },
     "techRecord_reasonForCreation": {
       "type": "string"
     },
     "techRecord_regnDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"

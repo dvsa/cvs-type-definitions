@@ -64,6 +64,7 @@ export interface TechRecordCompleteCarSchema {
   techRecord_manufactureYear?: string | null;
   techRecord_recordCompleteness?: string;
   techRecord_noOfAxles?: number;
+  techRecord_notes?: string;
   techRecord_reasonForCreation?: string;
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: StatusCode;
