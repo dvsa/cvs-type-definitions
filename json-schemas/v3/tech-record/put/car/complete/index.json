@@ -64,6 +64,9 @@
 				"null"
 			]
 		},
+		"techRecord_notes": {
+			"type": "string"
+		},
 		"vehicleSubclass": {
 			"title": "Vehicle Subclass",
 			"type": "array",

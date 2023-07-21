@@ -150,6 +150,9 @@
 				"techRecord_noOfAxles": {
 					"type": "integer"
 				},
+				"techRecord_notes": {
+					"type": "string"
+				},
 				"techRecord_reasonForCreation": {
 					"type": "string"
 				},
