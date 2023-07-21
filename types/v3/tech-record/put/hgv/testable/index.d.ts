@@ -194,7 +194,7 @@ export interface PUTHGVTechnicalRecordV3Testable {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: string;
-  axles?: HGVAxles[];
+  techRecord_axles?: HGVAxles[];
   techRecord_bodyType_code?: string;
   techRecord_bodyType_description?: string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
@@ -259,16 +259,16 @@ export interface PUTHGVTechnicalRecordV3Testable {
   techRecord_updateType?: string;
 }
 export interface HGVAxles {
-  techRecord_parkingBrakeMrk?: boolean | null;
-  techRecord_axleNumber?: number | null;
-  techRecord_weights_gbWeight?: number | null;
-  techRecord_weights_designWeight?: number | null;
-  techRecord_weights_eecWeight?: number | null;
-  techRecord_tyres_tyreCode?: number | null;
-  techRecord_tyres_tyreSize?: string | null;
-  techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode?: null | FitmentCode;
-  techRecord_tyres_dataTrAxles?: null | number;
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_eecWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
 }
 export interface HGVPlates {
   techRecord_plateSerialNumber?: string | null;

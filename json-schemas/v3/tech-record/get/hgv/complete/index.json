@@ -422,30 +422,30 @@
 		"techRecord_applicationId": {
 			"type": "string"
 		},
-		"axles": {
+		"techRecord_axles": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "HGV Axles",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_parkingBrakeMrk": {
+					"parkingBrakeMrk": {
 						"type": "boolean"
 					},
-					"techRecord_axleNumber": {
+					"axleNumber": {
 						"type": "integer"
 					},
-					"techRecord_weights_gbWeight": {
+					"weights_gbWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_designWeight": {
+					"weights_designWeight": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_weights_eecWeight": {
+					"weights_eecWeight": {
 						"type": [
 							"integer",
 							"null"
@@ -453,22 +453,22 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreCode": {
+					"tyres_tyreCode": {
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
-					"techRecord_tyres_tyreSize": {
+					"tyres_tyreSize": {
 						"type": "string",
 						"maxLength": 12
 					},
-					"techRecord_tyres_plyRating": {
+					"tyres_plyRating": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_tyres_fitmentCode": {
+					"tyres_fitmentCode": {
 						"anyOf": [
 							{
 								"title": "Fitment Code",
@@ -816,27 +816,27 @@
 		"techRecord_offRoad": {
 			"type": "boolean"
 		},
-		"plates": {
+		"techRecord_plates": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"title": "HGV Plates",
 				"additionalProperties": false,
 				"properties": {
-					"techRecord_plateSerialNumber": {
+					"plateSerialNumber": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 12
 					},
-					"techRecord_plateIssueDate": {
+					"plateIssueDate": {
 						"type": [
 							"string",
 							"null"
 						]
 					},
-					"techRecord_reasonForIssue": {
+					"reasonForIssue": {
 						"anyOf": [
 							{
 								"type": "null"
@@ -855,7 +855,7 @@
 							}
 						]
 					},
-					"techRecord_plateIssuer": {
+					"plateIssuer": {
 						"type": [
 							"string",
 							"null"

@@ -268,7 +268,7 @@ export interface POSTPSVTechnicalRecordV3Complete {
   /**
    * @minItems 1
    */
-  axles: [PSVAxlesComplete, ...PSVAxlesComplete[]];
+  techRecord_axles?: [PSVAxlesComplete, ...PSVAxlesComplete[]];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -301,16 +301,16 @@ export interface POSTPSVTechnicalRecordV3Complete {
   techRecord_updateType?: string;
 }
 export interface PSVAxlesComplete {
-  techRecord_parkingBrakeMrk: boolean;
-  techRecord_axleNumber: number;
-  techRecord_weights_gbWeight: number;
-  techRecord_weights_designWeight: number;
-  techRecord_weights_ladenWeight: number;
-  techRecord_weights_kerbWeight: number;
-  techRecord_tyres_tyreCode: number;
-  techRecord_tyres_tyreSize: string;
-  techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode: FitmentCode;
-  techRecord_tyres_dataTrAxles?: null | number;
-  techRecord_tyres_speedCategorySymbol: SpeedCategorySymbol;
+  parkingBrakeMrk: boolean;
+  axleNumber: number;
+  weights_gbWeight: number;
+  weights_designWeight: number;
+  weights_ladenWeight: number;
+  weights_kerbWeight: number;
+  tyres_tyreCode: number;
+  tyres_tyreSize: string;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode: FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol: SpeedCategorySymbol;
 }

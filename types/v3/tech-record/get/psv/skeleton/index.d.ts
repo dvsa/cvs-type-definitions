@@ -265,7 +265,7 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
-  axles?: PSVAxles[];
+  techRecord_axles?: PSVAxles[];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -299,16 +299,16 @@ export interface GETPSVTechnicalRecordV3Skeleton {
   techRecord_updateType?: string;
 }
 export interface PSVAxles {
-  techRecord_parkingBrakeMrk?: boolean | null;
-  techRecord_axleNumber?: number | null;
-  techRecord_weights_gbWeight?: number | null;
-  techRecord_weights_designWeight?: number | null;
-  techRecord_weights_ladenWeight?: number | null;
-  techRecord_weights_kerbWeight?: number | null;
-  techRecord_tyres_tyreCode?: number | null;
-  techRecord_tyres_tyreSize?: string | null;
-  techRecord_tyres_plyRating?: string | null;
-  techRecord_tyres_fitmentCode?: null | FitmentCode;
-  techRecord_tyres_dataTrAxles?: null | number;
-  techRecord_tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

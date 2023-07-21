@@ -214,7 +214,7 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
   techRecord_noOfAxles?: number | null;
-  plates?: TRLPlates[];
+  techRecord_plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
   techRecord_purchaserDetails_address3?: string | null;
@@ -245,8 +245,8 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_updateType?: string;
 }
 export interface TRLPlates {
-  techRecord_plateSerialNumber?: string | null;
-  techRecord_plateIssueDate?: string | null;
-  techRecord_reasonForIssue?: null | PlateReasonForIssue;
-  techRecord_plateIssuer?: string | null;
+  plateSerialNumber?: string | null;
+  plateIssueDate?: string | null;
+  reasonForIssue?: null | PlateReasonForIssue;
+  plateIssuer?: string | null;
 }
