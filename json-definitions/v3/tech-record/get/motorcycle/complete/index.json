@@ -3,7 +3,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "vehicleSubclass",
+    "techRecord_vehicleSubclass",
     "createdTimestamp",
     "systemNumber",
     "vin"
@@ -145,7 +145,7 @@
     "vin": {
       "type": "string"
     },
-    "vehicleSubclass": {
+    "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
     },
     "numberOfWheelsDriven": {

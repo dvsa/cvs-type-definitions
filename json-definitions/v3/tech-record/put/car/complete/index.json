@@ -2,7 +2,7 @@
   "title": "Tech Record PUT Request Complete Car Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["vehicleSubclass", "vin"],
+  "required": ["techRecord_vehicleSubclass", "vin"],
   "properties": {
     "vin": {
       "type": "string"
@@ -34,7 +34,7 @@
     "techRecord_notes": {
       "type": "string"
     },
-    "vehicleSubclass": {
+    "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
     },
     "techRecord_hiddenInVta": {

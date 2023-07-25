@@ -1,8 +1,8 @@
 {
-  "title": "Tech Record Complete Car Schema",
+  "title": "Tech Record Complete LGV Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["vehicleSubclass"],
+  "required": ["techRecord_vehicleSubclass"],
   "allOf": [
     {
       "$ref": "../../car/complete/index.json"
