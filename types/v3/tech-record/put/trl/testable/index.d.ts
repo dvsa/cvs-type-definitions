@@ -145,6 +145,9 @@ export type SpeedCategorySymbol =
 
 export interface GETTRLTechnicalRecordV3Testable {
   partialVin: string;
+  techRecord_createdAt?: string;
+  techRecord_createdById?: string;
+  techRecord_createdByName?: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
