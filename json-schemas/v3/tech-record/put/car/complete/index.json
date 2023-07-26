@@ -3,7 +3,7 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"vehicleSubclass",
+		"techRecord_vehicleSubclass",
 		"vin"
 	],
 	"properties": {
@@ -67,7 +67,7 @@
 		"techRecord_notes": {
 			"type": "string"
 		},
-		"vehicleSubclass": {
+		"techRecord_vehicleSubclass": {
 			"title": "Vehicle Subclass",
 			"type": "array",
 			"items": {

@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type TechRecordCompleteCarSchema = TechRecordPUTRequestCompleteCarSchema;
+export type TechRecordCompleteLGVSchema = TechRecordPUTRequestCompleteCarSchema;
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
@@ -21,7 +21,7 @@ export interface TechRecordPUTRequestCompleteCarSchema {
   techRecord_manufactureYear?: string | null;
   techRecord_noOfAxles?: number | null;
   techRecord_notes?: string;
-  vehicleSubclass: VehicleSubclass;
+  techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
 }

@@ -9,7 +9,7 @@
 			"additionalProperties": false,
 			"required": [
 				"vin",
-				"vehicleType"
+				"techRecord_vehicleType"
 			],
 			"properties": {
 				"vin": {

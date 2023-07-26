@@ -37,7 +37,7 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
-export type MicrofilmDocumentTypes =
+export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
   | "AIV - HGV International App"
@@ -230,7 +230,7 @@ export interface GETHGVTechnicalRecordV3Testable {
   techRecord_maxTrainEecWeight?: number | null;
   techRecord_maxTrainDesignWeight?: number | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentTypes;
+  techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentType;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;

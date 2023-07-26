@@ -664,7 +664,7 @@
 					"type": "null"
 				},
 				{
-					"title": "Microfilm Document Types",
+					"title": "Microfilm Document Type",
 					"type": "string",
 					"enum": [
 						"PSV Miscellaneous",

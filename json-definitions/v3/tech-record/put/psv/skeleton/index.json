@@ -842,7 +842,7 @@
     "techRecord_microfilmDocumentType": {
       "anyOf": [
         {
-          "$ref": "../../../enums/microFilmDocumentType.ignore.json"
+          "$ref": "../../../enums/microfilmDocumentType.ignore.json"
         },
         {
           "type": "null"

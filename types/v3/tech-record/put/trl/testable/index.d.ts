@@ -36,7 +36,7 @@ export type FrameDescription =
   | "integral"
   | "Box section"
   | "U section";
-export type MicrofilmDocumentTypes =
+export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
   | "AIV - HGV International App"
@@ -226,7 +226,7 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling?: number | null;
   techRecord_microfilm?: string | null;
-  techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentTypes;
+  techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentType;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;

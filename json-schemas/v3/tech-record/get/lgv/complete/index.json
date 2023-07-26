@@ -1,9 +1,9 @@
 {
-	"title": "Tech Record Complete Car Schema",
+	"title": "Tech Record Complete LGV Schema",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"vehicleSubclass"
+		"techRecord_vehicleSubclass"
 	],
 	"allOf": [
 		{
@@ -11,7 +11,7 @@
 			"type": "object",
 			"additionalProperties": false,
 			"required": [
-				"vehicleSubclass",
+				"techRecord_vehicleSubclass",
 				"createdTimestamp",
 				"systemNumber",
 				"vin"
@@ -204,7 +204,7 @@
 				"vin": {
 					"type": "string"
 				},
-				"vehicleSubclass": {
+				"techRecord_vehicleSubclass": {
 					"title": "Vehicle Subclass",
 					"type": "array",
 					"items": {

@@ -2,7 +2,7 @@
   "title": "Tech Record PUT Request Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["vin", "vehicleType"],
+  "required": ["vin", "techRecord_vehicleType"],
   "properties": {
     "vin": {
       "type": "string"
