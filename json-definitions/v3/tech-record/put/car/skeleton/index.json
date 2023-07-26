@@ -39,6 +39,15 @@
     },
     "techRecord_updateType": {
       "type": "string"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_createdById": {
+      "type": "string"
+    },
+    "techRecord_createdByName": {
+      "type": "string"
     }
   }
 }

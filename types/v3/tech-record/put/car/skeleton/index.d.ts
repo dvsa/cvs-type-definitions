@@ -21,4 +21,7 @@ export interface TechRecordPUTRequestSkeletonCarSchema {
   techRecord_notes?: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  techRecord_createdAt?: string;
+  techRecord_createdById?: string;
+  techRecord_createdByName?: string;
 }
