@@ -1,9 +1,8 @@
 {
-  "title": "GET TRL Technical Record V3 Skeleton",
+  "title": "PUT TRL Technical Record V3 Skeleton",
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "partialVin",
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
     "techRecord_vehicleClass_code",
@@ -15,7 +14,10 @@
   ],
   "properties": {
     "partialVin": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_createdAt": {
       "type": "string"

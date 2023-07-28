@@ -144,7 +144,7 @@ export type SpeedCategorySymbol =
   | "q";
 
 export interface GETTRLTechnicalRecordV3Testable {
-  partialVin: string;
+  partialVin?: string | null;
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;

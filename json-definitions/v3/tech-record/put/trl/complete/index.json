@@ -3,7 +3,6 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "partialVin",
     "techRecord_noOfAxles",
     "techRecord_make",
     "techRecord_model",
@@ -35,7 +34,10 @@
   ],
   "properties": {
     "partialVin": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_createdAt": {
       "type": "string"
