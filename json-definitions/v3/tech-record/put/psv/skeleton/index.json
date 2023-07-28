@@ -20,7 +20,10 @@
       "type": "string"
     },
     "partialVin": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "systemNumber": {
       "type": "string"

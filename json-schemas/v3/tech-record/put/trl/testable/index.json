@@ -3,7 +3,6 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"partialVin",
 		"techRecord_noOfAxles",
 		"systemNumber",
 		"trailerId",
@@ -20,7 +19,10 @@
 	],
 	"properties": {
 		"partialVin": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"techRecord_createdAt": {
 			"type": "string"

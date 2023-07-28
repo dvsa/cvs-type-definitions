@@ -3,7 +3,6 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "partialVin",
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
     "techRecord_vehicleType",
@@ -48,7 +47,10 @@
   ],
   "properties": {
     "partialVin": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_createdAt": {
       "type": "string"
