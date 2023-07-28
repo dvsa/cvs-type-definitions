@@ -1,4 +1,4 @@
-import Ajv from "ajv";
+import Ajv, { ErrorObject } from "ajv";
 import { schemas } from "./schemas";
 import { readFileSync } from "fs";
 
@@ -9,7 +9,7 @@ export const isValidObject = (
   objectToValidate: object,
   logErrors = false,
   returnErrors = false,
-): unknown => {
+): (boolean | ErrorObject[]) => {
   const ajv = new Ajv({ removeAdditional: true, allErrors: true });
   const schema = JSON.parse(
     readFileSync(`${__dirname}/json-schemas/${schemaName}`, "utf8")
