@@ -185,7 +185,7 @@ export type MicrofilmDocumentType =
 
 export interface POSTPSVTechnicalRecordV3Skeleton {
   vin: string;
-  partialVin?: string;
+  partialVin?: string | null;
   systemNumber: string;
   primaryVrm?: string;
   techRecord_vehicleType: "psv";
