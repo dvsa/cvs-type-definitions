@@ -17,7 +17,7 @@ describe("test schema validation", () => {
   });
 
   it("should return errors when returnErrors is true", () => {
-    const result1 = isValidObject("v3/tech-record/put/car/skeleton/index.json", {vin: "testVIN", techRecord_vehicleType: "123"}, false, true);
+    const result1 = isValidObject("v3/tech-record/put/car/skeleton/index.json", {vin: "testVIN", techRecord_vehicleType: "123"}, true);
     
     expect(result1).toHaveLength(1);
     expect(result1).toEqual(expect.arrayContaining([
@@ -28,7 +28,7 @@ describe("test schema validation", () => {
       })]
     ));
 
-    const result2 = isValidObject("v3/tech-record/put/car/skeleton/index.json", {}, false, true);
+    const result2 = isValidObject("v3/tech-record/put/car/skeleton/index.json", {}, true);
     expect(result2).toHaveLength(2);
     expect(result2).toEqual(expect.arrayContaining([
       expect.objectContaining({instancePath: "", message: "must have required property 'vin'"}),

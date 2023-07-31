@@ -7,8 +7,8 @@ export type Schema = typeof schemas[number];
 export const isValidObject = (
   schemaName: Schema,
   objectToValidate: object,
-  logErrors = false,
   returnErrors = false,
+  logErrors = false,
 ): (boolean | ErrorObject[]) => {
   const ajv = new Ajv({ removeAdditional: true, allErrors: true });
   const schema = JSON.parse(
