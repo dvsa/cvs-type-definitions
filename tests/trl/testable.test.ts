@@ -18,7 +18,7 @@ describe("validate testable trl schema", () => {
   it("should pass validation when given just required fields", () => {
     const data: object = trlData[2];
     const res = isValidObject(schemaName, data, true);
-    expect(res).toEqual(true);
+    expect(res).toEqual([]);
   });
   it("should fail when missing a required field, systemNumber", () => {
     const data: object = trlData[3];
