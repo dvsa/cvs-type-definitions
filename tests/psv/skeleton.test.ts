@@ -18,7 +18,7 @@ describe("validate skeleton psv schema", () => {
   it("should pass validation when given just required fields", () => {
     const data = psvData[2];
     const res = isValidObject(schemaName, data, true);
-    expect(res).toEqual(true);
+    expect(res).toEqual([]);
   });
   it("should fail when missing a required field, systemNumber", () => {
     const data = psvData[3];
