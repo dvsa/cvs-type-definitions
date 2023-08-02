@@ -708,7 +708,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 30
+			"maxLength": 50
 		},
 		"techRecord_maxTrainGbWeight": {
 			"type": [

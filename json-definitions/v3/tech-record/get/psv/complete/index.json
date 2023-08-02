@@ -424,7 +424,7 @@
     },
     "techRecord_bodyMake": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_bodyModel": {
       "type": "string",
@@ -432,7 +432,7 @@
     },
     "techRecord_chassisMake": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_chassisModel": {
       "type": "string",
