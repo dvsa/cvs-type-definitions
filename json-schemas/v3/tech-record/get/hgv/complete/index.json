@@ -793,7 +793,7 @@
 		},
 		"techRecord_model": {
 			"type": "string",
-			"maxLength": 50
+			"maxLength": 30
 		},
 		"techRecord_numberOfWheelsDriven": {
 			"type": "integer"

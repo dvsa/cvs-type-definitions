@@ -743,7 +743,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 50
+			"maxLength": 30
 		},
 		"techRecord_noOfAxles": {
 			"anyOf": [
