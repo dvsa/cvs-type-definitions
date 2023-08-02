@@ -630,7 +630,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 30
+			"maxLength": 50
 		},
 		"techRecord_manufactureYear": {
 			"anyOf": [
@@ -751,7 +751,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 30
+			"maxLength": 50
 		},
 		"techRecord_noOfAxles": {
 			"anyOf": [

@@ -424,26 +424,26 @@
     },
     "techRecord_bodyMake": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_bodyModel": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_chassisMake": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_chassisModel": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "techRecord_modelLiteral": {
       "type": [
         "string",
         "null"
       ],
-      "maxLength": 30
+      "maxLength": 50
     },
     "techRecord_speedRestriction": {
       "type": [
