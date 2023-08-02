@@ -459,7 +459,7 @@
         "string",
         "null"
       ],
-      "maxLength": 50
+      "maxLength": 30
     },
     "techRecord_speedRestriction": {
       "type": [
