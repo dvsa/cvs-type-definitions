@@ -74,4 +74,5 @@ export interface TechRecordCompleteCarSchema {
   techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  secondaryVrms?: string[];
 }

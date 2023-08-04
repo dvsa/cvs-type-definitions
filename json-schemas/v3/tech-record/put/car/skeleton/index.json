@@ -81,6 +81,12 @@
 		},
 		"techRecord_createdByName": {
 			"type": "string"
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		}
 	}
 }

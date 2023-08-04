@@ -5,7 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type TechRecordSkeletonCarSchema = TechRecordSkeletonCarSchema1;
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -41,7 +40,7 @@ export type VehicleConfiguration =
   | "full drawbar";
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
-export interface TechRecordSkeletonCarSchema1 {
+export interface TechRecordSkeletonCarSchema {
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -73,4 +72,5 @@ export interface TechRecordSkeletonCarSchema1 {
   vin: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  secondaryVrms?: string[];
 }

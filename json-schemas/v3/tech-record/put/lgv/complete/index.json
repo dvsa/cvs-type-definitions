@@ -3,114 +3,110 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"techRecord_vehicleSubclass"
+		"techRecord_vehicleSubclass",
+		"vin"
 	],
-	"allOf": [
-		{
-			"title": "Tech Record PUT Request Complete Car Schema",
-			"type": "object",
-			"additionalProperties": false,
-			"required": [
-				"techRecord_vehicleSubclass",
-				"vin"
-			],
-			"properties": {
-				"vin": {
-					"type": "string"
-				},
-				"primaryVrm": {
-					"type": "string"
-				},
-				"trailerId": {
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"techRecord_reasonForCreation": {
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"techRecord_vehicleType": {
-					"title": "Vehicle Type",
-					"type": "string",
-					"enum": [
-						"psv",
-						"trl",
-						"hgv",
-						"car",
-						"lgv",
-						"motorcycle"
-					]
-				},
-				"techRecord_statusCode": {
-					"title": "Status Code",
-					"type": "string",
-					"enum": [
-						"provisional",
-						"current",
-						"archived"
-					]
-				},
-				"techRecord_regnDate": {
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"techRecord_manufactureYear": {
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"techRecord_noOfAxles": {
-					"type": [
-						"integer",
-						"null"
-					]
-				},
-				"techRecord_notes": {
-					"type": "string"
-				},
-				"techRecord_vehicleSubclass": {
-					"title": "Vehicle Subclass",
-					"type": "array",
-					"items": {
-						"type": "string",
-						"enum": [
-							"n",
-							"p",
-							"a",
-							"s",
-							"c",
-							"l",
-							"t",
-							"e",
-							"m",
-							"r",
-							"w"
-						]
-					}
-				},
-				"techRecord_hiddenInVta": {
-					"type": "boolean"
-				},
-				"techRecord_updateType": {
-					"type": "string"
-				},
-				"techRecord_createdAt": {
-					"type": "string"
-				},
-				"techRecord_createdById": {
-					"type": "string"
-				},
-				"techRecord_createdByName": {
-					"type": "string"
-				}
+	"properties": {
+		"vin": {
+			"type": "string"
+		},
+		"primaryVrm": {
+			"type": "string"
+		},
+		"trailerId": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_reasonForCreation": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_vehicleType": {
+			"title": "Vehicle Type",
+			"type": "string",
+			"enum": [
+				"psv",
+				"trl",
+				"hgv",
+				"car",
+				"lgv",
+				"motorcycle"
+			]
+		},
+		"techRecord_statusCode": {
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
+			]
+		},
+		"techRecord_regnDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufactureYear": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_noOfAxles": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_notes": {
+			"type": "string"
+		},
+		"techRecord_vehicleSubclass": {
+			"title": "Vehicle Subclass",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"n",
+					"p",
+					"a",
+					"s",
+					"c",
+					"l",
+					"t",
+					"e",
+					"m",
+					"r",
+					"w"
+				]
+			}
+		},
+		"techRecord_hiddenInVta": {
+			"type": "boolean"
+		},
+		"techRecord_updateType": {
+			"type": "string"
+		},
+		"techRecord_createdAt": {
+			"type": "string"
+		},
+		"techRecord_createdById": {
+			"type": "string"
+		},
+		"techRecord_createdByName": {
+			"type": "string"
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
 			}
 		}
-	]
+	}
 }

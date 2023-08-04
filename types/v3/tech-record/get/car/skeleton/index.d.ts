@@ -72,4 +72,5 @@ export interface TechRecordSkeletonCarSchema {
   vin: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  secondaryVrms?: string[];
 }

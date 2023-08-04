@@ -2,7 +2,10 @@
   "title": "Tech Record PUT Request Skeleton Car Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["vin", "techRecord_vehicleType"],
+  "required": [
+    "vin",
+    "techRecord_vehicleType"
+  ],
   "properties": {
     "vin": {
       "type": "string"
@@ -11,10 +14,16 @@
       "type": "string"
     },
     "trailerId": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_reasonForCreation": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_vehicleType": {
       "$ref": "../../../enums/vehicleType.ignore.json"
@@ -23,13 +32,22 @@
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_manufactureYear": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_noOfAxles": {
-      "type": ["integer", "null"]
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "techRecord_notes": {
       "type": "string"
@@ -48,6 +66,12 @@
     },
     "techRecord_createdByName": {
       "type": "string"
+    },
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

@@ -2,10 +2,79 @@
   "title": "Tech Record Complete LGV Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["techRecord_vehicleSubclass"],
-  "allOf": [
-    {
-      "$ref": "../../car/complete/index.json"
+  "required": [
+    "techRecord_vehicleSubclass",
+    "vin"
+  ],
+  "properties": {
+    "vin": {
+      "type": "string"
+    },
+    "primaryVrm": {
+      "type": "string"
+    },
+    "trailerId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_reasonForCreation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_vehicleType": {
+      "$ref": "../../../enums/vehicleType.ignore.json"
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../../enums/statusCode.ignore.json"
+    },
+    "techRecord_regnDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_noOfAxles": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "techRecord_notes": {
+      "type": "string"
+    },
+    "techRecord_vehicleSubclass": {
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    },
+    "techRecord_hiddenInVta": {
+      "type": "boolean"
+    },
+    "techRecord_updateType": {
+      "type": "string"
+    },
+    "techRecord_createdAt": {
+      "type": "string"
+    },
+    "techRecord_createdById": {
+      "type": "string"
+    },
+    "techRecord_createdByName": {
+      "type": "string"
+    },
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
-  ]
+  }
 }
