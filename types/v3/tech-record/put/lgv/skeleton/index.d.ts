@@ -9,11 +9,11 @@ export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 
 export interface TechRecordCompleteCarSchema {
-  vin?: string;
+  vin: string;
   primaryVrm?: string;
   trailerId?: string | null;
   techRecord_reasonForCreation?: string | null;
-  techRecord_vehicleType?: VehicleType;
+  techRecord_vehicleType: VehicleType;
   techRecord_statusCode?: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: string | null;

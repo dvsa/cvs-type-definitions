@@ -3,7 +3,8 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "techRecord_vehicleSubclass"
+    "techRecord_vehicleSubclass",
+    "vin"
   ],
   "properties": {
     "vin": {

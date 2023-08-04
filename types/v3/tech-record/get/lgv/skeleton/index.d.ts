@@ -49,10 +49,10 @@ export interface TechRecordSkeletonCarSchema {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  createdTimestamp?: string;
+  createdTimestamp: string;
   partialVin?: string;
   primaryVrm?: string;
-  systemNumber?: string;
+  systemNumber: string;
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
@@ -69,7 +69,7 @@ export interface TechRecordSkeletonCarSchema {
   techRecord_statusCode?: StatusCode;
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
-  vin?: string;
+  vin: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
   secondaryVrms?: string[];

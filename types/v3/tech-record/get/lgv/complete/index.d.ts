@@ -50,10 +50,10 @@ export interface TechRecordCompleteLGVSchema {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  createdTimestamp?: string;
+  createdTimestamp: string;
   partialVin?: string;
   primaryVrm?: string;
-  systemNumber?: string;
+  systemNumber: string;
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
@@ -70,7 +70,7 @@ export interface TechRecordCompleteLGVSchema {
   techRecord_statusCode?: StatusCode;
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
-  vin?: string;
+  vin: string;
   techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;

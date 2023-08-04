@@ -10,7 +10,7 @@ export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordCompleteLGVSchema {
-  vin?: string;
+  vin: string;
   primaryVrm?: string;
   trailerId?: string | null;
   techRecord_reasonForCreation?: string | null;

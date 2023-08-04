@@ -2,6 +2,10 @@
 	"title": "Tech Record Complete Car Schema",
 	"type": "object",
 	"additionalProperties": false,
+	"required": [
+		"vin",
+		"techRecord_vehicleType"
+	],
 	"properties": {
 		"vin": {
 			"type": "string"
