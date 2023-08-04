@@ -5,7 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type TechRecordCompleteLGVSchema = TechRecordCompleteCarSchema;
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -42,7 +41,7 @@ export type VehicleConfiguration =
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
-export interface TechRecordCompleteCarSchema {
+export interface TechRecordCompleteLGVSchema {
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -51,10 +50,10 @@ export interface TechRecordCompleteCarSchema {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  createdTimestamp: string;
+  createdTimestamp?: string;
   partialVin?: string;
   primaryVrm?: string;
-  systemNumber: string;
+  systemNumber?: string;
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
@@ -71,8 +70,9 @@ export interface TechRecordCompleteCarSchema {
   techRecord_statusCode?: StatusCode;
   techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType?: VehicleType;
-  vin: string;
+  vin?: string;
   techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  secondaryVrms?: string[];
 }

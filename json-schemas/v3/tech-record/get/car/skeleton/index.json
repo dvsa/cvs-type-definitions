@@ -200,6 +200,12 @@
 		},
 		"techRecord_updateType": {
 			"type": "string"
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		}
 	}
 }

@@ -26,4 +26,5 @@ export interface TechRecordPUTRequestCompleteCarSchema {
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
+  secondaryVrms?: string[];
 }
