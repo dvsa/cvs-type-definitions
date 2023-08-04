@@ -71,6 +71,8 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
+export type LetterTypes = "trailer accept" | "trailer rejection";
+export type ParagraphIds = "3" | "4" | "5" | "6" | "7";
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -268,7 +270,9 @@ export interface PUTTRLTechnicalRecordV3Complete {
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
   techRecord_grossGbWeight?: number | null;
-  techRecord_letterOfAuth?: string | null;
+  techRecord_letterOfAuth_letterType?: null | LetterTypes;
+  techRecord_letterOfAuth_letterDateRequested?: string | null;
+  techRecord_letterOfAuth_paragraphId?: null | ParagraphIds;
   techRecord_make: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_maxTrainDesignWeight?: number;

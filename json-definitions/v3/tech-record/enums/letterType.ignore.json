@@ -1,0 +1,8 @@
+{
+    "title": "letter types",
+    "type": "string",
+    "enum": [
+        "trailer accept",
+        "trailer rejection"
+    ]
+}
