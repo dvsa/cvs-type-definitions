@@ -560,10 +560,30 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "techRecord_letterOfAuth": {
+    "techRecord_letterOfAuth_letterType": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/letterType.ignore.json"
+        }
+      ]
+    },
+    "techRecord_letterOfAuth_letterDateRequested": {
       "type": [
         "string",
         "null"
+      ]
+    },
+    "techRecord_letterOfAuth_paragraphId": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/paragraphId.ignore.json"
+        }
       ]
     },
     "techRecord_make": {

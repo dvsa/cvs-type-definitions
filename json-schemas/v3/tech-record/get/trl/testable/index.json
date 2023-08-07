@@ -619,10 +619,43 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"techRecord_letterOfAuth": {
+		"techRecord_letterOfAuth_letterType": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "letter types",
+					"type": "string",
+					"enum": [
+						"trailer accept",
+						"trailer rejection"
+					]
+				}
+			]
+		},
+		"techRecord_letterOfAuth_letterDateRequested": {
 			"type": [
 				"string",
 				"null"
+			]
+		},
+		"techRecord_letterOfAuth_paragraphId": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Paragraph Ids",
+					"type": "string",
+					"enum": [
+						"3",
+						"4",
+						"5",
+						"6",
+						"7"
+					]
+				}
 			]
 		},
 		"techRecord_make": {
