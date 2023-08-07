@@ -213,6 +213,7 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_letterOfAuth_letterType?: null | LetterTypes;
   techRecord_letterOfAuth_letterDateRequested?: string | null;
   techRecord_letterOfAuth_paragraphId?: null | ParagraphIds;
+  techRecord_letterOfAuth_letterIssuer?: string | null;
   techRecord_make?: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_manufacturerDetails?: string | null;
