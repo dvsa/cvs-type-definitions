@@ -764,6 +764,12 @@
 				}
 			]
 		},
+		"techRecord_letterOfAuth_letterIssuer": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
 		"techRecord_make": {
 			"type": [
 				"string",
