@@ -9,6 +9,12 @@
 		"vin"
 	],
 	"properties": {
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
 		"techRecord_applicantDetails_name": {
 			"type": [
 				"string",
