@@ -46,6 +46,12 @@
     "techRecord_applicantDetails_postTown"
   ],
   "properties": {
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "partialVin": {
       "type": [
         "string",

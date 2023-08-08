@@ -143,6 +143,7 @@ export type ApprovalType =
   | "IVA - DVSA/NI";
 
 export interface GETHGVTechnicalRecordV3Complete {
+  secondaryVrms?: string[];
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;

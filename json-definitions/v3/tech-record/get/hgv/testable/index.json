@@ -21,6 +21,12 @@
     "techRecord_numberOfWheelsDriven"
   ],
   "properties": {
+    "secondaryVrms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "createdTimestamp": {
       "type": "string"
     },
