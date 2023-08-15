@@ -11,6 +11,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/github-script@v6
+        id: get-refs
         with:
           script: |
             const pullRequests = (await github.rest.pulls.list({
@@ -19,3 +20,7 @@ jobs:
 
             const refs = pullRequests.map(pr => pr.head.ref)
             console.log(refs)
+            return refs.join("\n")
+      - name: Echo refs
+        run: |
+          for line in "${{steps.get-refs.outputs.result}}"; do echo $line; done
