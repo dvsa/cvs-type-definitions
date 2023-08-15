@@ -17,4 +17,4 @@ jobs:
                 ...context.repo
             })).data
 
-            console.log(data)
+            console.log(pullRequests)
