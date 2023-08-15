@@ -1,14 +1,20 @@
 {
-	"title": "Tech Record Skeleton Car Schema",
+	"title": "PUT Tech Record Complete Motorcycle Schema",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"createdTimestamp",
-		"systemNumber",
-		"vin",
-		"techRecord_vehicleType"
+		"techRecord_numberOfWheelsDriven",
+		"techRecord_vehicleClass_description",
+		"techRecord_reasonForCreation",
+		"vin"
 	],
 	"properties": {
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
 		"techRecord_applicantDetails_name": {
 			"type": [
 				"string",
@@ -196,17 +202,34 @@
 		"vin": {
 			"type": "string"
 		},
+		"techRecord_vehicleSubclass": {
+			"title": "Vehicle Subclass",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"n",
+					"p",
+					"a",
+					"s",
+					"c",
+					"l",
+					"t",
+					"e",
+					"m",
+					"r",
+					"w"
+				]
+			}
+		},
+		"techRecord_numberOfWheelsDriven": {
+			"type": "integer"
+		},
 		"techRecord_hiddenInVta": {
 			"type": "boolean"
 		},
 		"techRecord_updateType": {
 			"type": "string"
-		},
-		"secondaryVrms": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
 		}
 	}
 }

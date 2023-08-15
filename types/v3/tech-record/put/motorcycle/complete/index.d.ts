@@ -41,7 +41,7 @@ export type VehicleConfiguration =
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
-export interface TechRecordCompleteMotorcycleSchema {
+export interface PUTTechRecordCompleteMotorcycleSchema {
   secondaryVrms?: string[];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
@@ -51,13 +51,13 @@ export interface TechRecordCompleteMotorcycleSchema {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  createdTimestamp: string;
-  partialVin: string;
-  primaryVrm: string;
-  systemNumber: string;
+  createdTimestamp?: string;
+  partialVin?: string;
+  primaryVrm?: string;
+  systemNumber?: string;
   techRecord_createdAt?: string;
-  techRecord_createdById: string;
-  techRecord_createdByName: string;
+  techRecord_createdById?: string;
+  techRecord_createdByName?: string;
   techRecord_euVehicleCategory?: EUVehicleCategory;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedById?: string | null;
