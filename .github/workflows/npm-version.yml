@@ -1,0 +1,20 @@
+name: Npm version PRs
+on:
+  push:
+    branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
+jobs:
+  merge-conflicts:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const pullRequests = (await github.rest.pulls.list({
+                ...context.repo
+            })).data
+
+            console.log(data)
