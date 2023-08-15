@@ -13,6 +13,14 @@ export interface TechRecordCompleteLGVSchema {
   vin: string;
   primaryVrm?: string;
   trailerId?: string | null;
+  techRecord_applicantDetails_name?: string | null;
+  techRecord_applicantDetails_address1?: null | string;
+  techRecord_applicantDetails_address2?: null | string;
+  techRecord_applicantDetails_postTown?: null | string;
+  techRecord_applicantDetails_address3?: null | string;
+  techRecord_applicantDetails_postCode?: null | string;
+  techRecord_applicantDetails_telephoneNumber?: null | string;
+  techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_reasonForCreation?: string | null;
   techRecord_vehicleType?: VehicleType;
   techRecord_statusCode?: StatusCode;
