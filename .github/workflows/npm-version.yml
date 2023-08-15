@@ -1,4 +1,4 @@
-name: Npm version PRs
+name: npm version PRs
 on:
   push:
     branches: ["develop"]
@@ -17,4 +17,5 @@ jobs:
                 ...context.repo
             })).data
 
-            console.log(pullRequests)
+            const refs = pullRequests.map(pr => pr.head.ref)
+            console.log(refs)
