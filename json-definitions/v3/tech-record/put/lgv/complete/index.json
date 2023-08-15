@@ -75,6 +75,13 @@
       ],
       "maxLength": 255
     },
+    "techRecord_euVehicleCategory": {
+      "anyOf": [
+        {
+          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        }
+      ]
+    },
     "techRecord_reasonForCreation": {
       "type": [
         "string",
