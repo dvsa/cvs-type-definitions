@@ -5,10 +5,12 @@ on:
   pull_request:
     branches: ["develop"]
 jobs:
-  merge-conflicts:
+  get-prs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+    outputs:
+      matrix-json: ${{steps.get-refs.outputs.result}}
     steps:
       - uses: actions/github-script@v6
         id: get-refs
@@ -20,7 +22,17 @@ jobs:
 
             const refs = pullRequests.map(pr => pr.head.ref)
             console.log(refs)
-            return refs.join("\n")
-      - name: Echo refs
-        run: |
-          for line in "${{steps.get-refs.outputs.result}}"; do echo $line; done
+            return refs
+
+  run-version:
+    needs: [get-prs]
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
+    name: "${{matrix.job_name}}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions.checkout@v3
+        with:
+          ref: ${{matrix.include}}
