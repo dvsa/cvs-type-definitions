@@ -5,6 +5,25 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type EUVehicleCategory =
+  | "m1"
+  | "m2"
+  | "m3"
+  | "n1"
+  | "n2"
+  | "n3"
+  | "o1"
+  | "o2"
+  | "o3"
+  | "o4"
+  | "l1e-a"
+  | "l1e"
+  | "l2e"
+  | "l3e"
+  | "l4e"
+  | "l5e"
+  | "l6e"
+  | "l7e";
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
@@ -21,6 +40,7 @@ export interface TechRecordCompleteLGVSchema {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
+  techRecord_euVehicleCategory?: EUVehicleCategory;
   techRecord_reasonForCreation?: string | null;
   techRecord_vehicleType: VehicleType;
   techRecord_statusCode?: StatusCode;
