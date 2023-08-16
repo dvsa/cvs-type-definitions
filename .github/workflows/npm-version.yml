@@ -20,19 +20,29 @@ jobs:
                 ...context.repo
             })).data
 
-            const refs = pullRequests.map(pr => pr.head.ref)
-            console.log(refs)
-            return refs
+            const res = pullRequests.map(pr => {refs: pr.head.ref, title: pr.title})
+            console.log(res)
+            return res
 
   run-version:
     needs: [get-prs]
     strategy:
       fail-fast: false
       matrix:
-        refs: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
-    name: "Version branch ${{matrix.refs}}"
+        include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
+    name: "Version branch ${{matrix.include.refs}}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
+          ref: develop
+      - uses: actions/checkout@v3
+        with:
           ref: ${{matrix.refs}}
+
+      - name: Get version bump
+        id: version-bump
+        run: |
+          prTitleSplit="$(${{matrix.title}})"
+          pattern="^(patch|minor|major)$"
+          if ! [[  ]]
