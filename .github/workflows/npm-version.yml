@@ -73,12 +73,12 @@ jobs:
 
       - name: Bump version
         run: |
-          if [[ "$VERSION_BUMP" == "$(jq -r .version package.json)" ]]; then
+          if [[ "$DEVELOP_VERSION" == "$(jq -r .version package.json)" ]]; then
             echo "Nothing to do. Already on the right version"
             exit 0
           fi
           # Set to develop version - workaround for jq editing in place
-          jq --arg V "$VERSION_BUMP" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
+          jq --arg V "$DEVELOP_VERSION" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "tmp"
