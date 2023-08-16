@@ -1,16 +1,10 @@
 {
-  "title": "Tech Record Skeleton Motorcycle Schema",
+  "title": "PUT Tech Record Skeleton Motorcycle Schema",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "techRecord_vehicleClass_description",
-    "systemNumber",
-    "primaryVrm",
-    "techRecord_createdByName",
-    "techRecord_createdById",
     "techRecord_reasonForCreation",
-    "createdTimestamp",
-    "partialVin",
     "vin"
   ],
   "properties": {
