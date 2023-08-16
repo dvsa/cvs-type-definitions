@@ -1,0 +1,127 @@
+name: npm version PRs
+on:
+  push:
+    branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
+jobs:
+  get-prs:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix-json: ${{ steps.get-refs.outputs.result }}
+    steps:
+      - uses: actions/github-script@v6
+        id: get-refs
+        with:
+          script: |
+            // If the event was triggered by a PR, we only need to update the current PR
+            if (context.eventName === "pull_request") {
+              return [{refs: context.payload.pull_request.head.ref, title: context.payload.pull_request.title, number: context.payload.pull_request.number}]
+            }
+
+            const pullRequests = (await github.rest.pulls.list({
+                ...context.repo
+            })).data
+
+            const res = pullRequests.map(pr => ({refs: pr.head.ref, title: pr.title, number: pr.number}))
+            return res
+
+  run-version:
+    needs: [get-prs]
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.get-prs.outputs.matrix-json) }}
+    name: "Update version on branch ${{ matrix.refs }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: develop
+
+      - name: Get develop version
+        id: develop-version
+        run: |
+          echo "DEVELOP_VERSION=$(
+            jq -r .version package.json
+          )" >> "$GITHUB_ENV"
+
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ matrix.refs }}
+
+      - name: Get version bump type
+        id: version-bump
+        env:
+          TITLE: ${{ matrix.title }}
+        run: |
+          prTitleSplit="$(echo $TITLE | cut -d '(' -f 1 )"
+          pattern="^(patch|minor|major)$"
+          if ! [[ $prTitleSplit =~ $pattern ]]; then
+            echo "PR title does not match pattern"
+            exit 1
+          fi
+          echo "VERSION_BUMP=$prTitleSplit" >> "$GITHUB_ENV"
+
+      - name: Get new version
+        uses: actions/github-script@v6
+        id: get-new-version
+        with:
+          script: |
+            const semVarVersions = ["major", "minor", "patch"]
+            const bumpVersion = (prev, bump) => {
+            const indexToChange = semVarVersions.indexOf(bump)
+            return prev.split(".")
+              .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
+            };
+            return bumpVersion(process.env.DEVELOP_VERSION, process.env.VERSION_BUMP)
+
+      - name: Bump version
+        run: |
+          if [[ ${{steps.get-new-version.outputs.result}} == "$(jq -r .version package.json)" ]]; then
+            echo "Nothing to do. Already on the right version"
+            exit 0
+          fi
+          # Set to develop version - workaround for jq editing in place
+          jq --arg V "$DEVELOP_VERSION" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -am "tmp"
+          npm version --no-git-tag-version "$VERSION_BUMP"
+          git commit --amend -am "[GHA] - bump to version $(jq -r .version package.json)"
+          git push
+          echo "BUMPED_VERSION=true" >> "$GITHUB_ENV"
+
+      - name: Add comment
+        if: env.BUMPED_VERSION == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const getMergeableStatus = async () => {
+              const mergeable = (await github.rest.pulls.get({
+                ...context.repo,
+                pull_number: "${{matrix.number}}"
+              })).data.mergeable
+              if (mergeable === null) {
+                await new Promise(resolve => setTimeout(resolve, 1000))
+                return await getMergeableStatus()
+              }
+              return mergeable
+            }
+
+            const isMergeable = await getMergeableStatus()
+
+            if (!isMergeable) {
+              const body = `I have just updated the \`package.json\` version to ${{steps.get-new-version.outputs.result}}.
+
+              This has caused a merge conflict.
+              
+              Resolve the merge conflict, and commit the result.`
+
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: "${{matrix.number}}",
+                body
+              });
+            }
