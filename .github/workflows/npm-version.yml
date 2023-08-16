@@ -30,7 +30,7 @@ jobs:
       fail-fast: false
       matrix:
         refs: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
-    name: "${{matrix.job_name}}"
+    name: "Version branch ${{matrix.refs}}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
