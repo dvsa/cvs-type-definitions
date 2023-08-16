@@ -14,7 +14,11 @@ jobs:
         id: get-refs
         with:
           script: |
-            console.log(context.event_name)
+            // If the event was triggered by a PR, we only need to update the current PR
+            if (context.eventName === "pull_request") {
+              return [{refs: context.ref, title: context.payload.pull_request.title}]
+            }
+
             const pullRequests = (await github.rest.pulls.list({
                 ...context.repo
             })).data
