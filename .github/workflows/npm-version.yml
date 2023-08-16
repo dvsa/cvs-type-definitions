@@ -71,7 +71,7 @@ jobs:
             return prev.split(".")
               .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
             };
-            return bumpVersion(${{ steps.develop-version.outputs.DEVELOP_VERSION }}, ${{ steps.version-bump.outputs.VERSION_BUMP }})
+            return bumpVersion("${{ steps.develop-version.outputs.DEVELOP_VERSION }}", "${{ steps.version-bump.outputs.VERSION_BUMP }}")
 
       - name: Bump version
         run: |
