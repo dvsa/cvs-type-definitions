@@ -29,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
+        include: ${{ toJson(needs.get-prs.outputs.matrix-json)}}
     name: "${{matrix.job_name}}"
     runs-on: ubuntu-latest
     steps:
