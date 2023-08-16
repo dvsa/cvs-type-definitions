@@ -22,14 +22,14 @@ jobs:
 
             const refs = pullRequests.map(pr => pr.head.ref)
             console.log(refs)
-            return JSON.stringify(refs)
+            return refs
 
   run-version:
     needs: [get-prs]
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ toJson(needs.get-prs.outputs.matrix-json)}}
+        include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
     name: "${{matrix.job_name}}"
     runs-on: ubuntu-latest
     steps:
