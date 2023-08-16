@@ -16,14 +16,14 @@ jobs:
           script: |
             // If the event was triggered by a PR, we only need to update the current PR
             if (context.eventName === "pull_request") {
-              return [{refs: context.payload.pull_request.head.ref, title: context.payload.pull_request.title}]
+              return [{refs: context.payload.pull_request.head.ref, title: context.payload.pull_request.title, number: context.payload.pull_request.number}]
             }
 
             const pullRequests = (await github.rest.pulls.list({
                 ...context.repo
             })).data
 
-            const res = pullRequests.map(pr => ({refs: pr.head.ref, title: pr.title}))
+            const res = pullRequests.map(pr => ({refs: pr.head.ref, title: pr.title, number: pr.number}))
             return res
 
   run-version:
@@ -103,8 +103,7 @@ jobs:
 
             If there is a merge conflict, resolve the merge conflict, and commit the result.`
             github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: context.payload.pull_request.number,
+              ...context.repo
+              issue_number: ${{matrix.number}},
               body,
             });
