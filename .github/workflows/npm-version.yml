@@ -97,14 +97,31 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const body = `I have just updated the \`package.json\` version to ${{steps.get-new-version.outputs.result}}.
+            const getMergeableStatus = async () => {
+              const mergeable = (await github.rest.pulls.get({
+                ...context.repo,
+                pull_number: "${{matrix.number}}"
+              })).data.mergeable
+              if (mergeable === null) {
+                await new Promise(resolve => setTimeout(resolve, 1000))
+                return await getMergeableStatus()
+              }
+              return mergeable
+            }
 
-            This is likely to cause a merge conflict.
+            const isMergeable = await getMergeableStatus()
 
-            If there is a merge conflict, resolve the merge conflict, and commit the result.`
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: "${{matrix.number}}",
-              body
-            });
+            if (!isMergeable) {
+              const body = `I have just updated the \`package.json\` version to ${{steps.get-new-version.outputs.result}}.
+
+              This has caused a merge conflict.
+              
+              Resolve the merge conflict, and commit the result.`
+
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: "${{matrix.number}}",
+                body
+              });
+            }
