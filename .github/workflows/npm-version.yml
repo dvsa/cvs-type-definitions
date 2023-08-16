@@ -93,7 +93,7 @@ jobs:
           echo "BUMPED_VERSION=true" >> "$GITHUB_ENV"
 
       - name: Add comment
-        # if: env.BUMPED_VERSION == 'true'
+        if: env.BUMPED_VERSION == 'true'
         uses: actions/github-script@v6
         with:
           script: |
