@@ -37,9 +37,9 @@ jobs:
       - name: Get develop version
         id: develop-version
         run: |
-          echo "::set-output name=DEVELOP_VERSION::$(
+          echo "DEVELOP_VERSION=$(
             jq -r .version package.json
-          )"
+          )" >> "$GITHUB_ENV"
 
       - uses: actions/checkout@v3
         with:
@@ -56,9 +56,7 @@ jobs:
             echo "PR title does not match pattern"
             exit 1
           fi
-          echo "::set-output name=VERSION_BUMP::$(
-            echo "$prTitleSplit"
-          )"
+          echo "VERSION_BUMP=$prTitleSplit" >> "$GITHUB_ENV"
 
       - name: Get new version
         uses: actions/github-script@v6
@@ -71,21 +69,19 @@ jobs:
             return prev.split(".")
               .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
             };
-            return bumpVersion("${{ steps.develop-version.outputs.DEVELOP_VERSION }}", "${{ steps.version-bump.outputs.VERSION_BUMP }}")
+            return bumpVersion(process.env.DEVELOP_VERSION, process.env.VERSION_BUMP)
 
       - name: Bump version
         run: |
-          echo "${{ steps.get-new-version.outputs.result }}"
-          echo "$(jq -r .version package.json)"
-          if [[ "${{ steps.get-new-version.outputs.result }}" == "$(jq -r .version package.json)" ]]; then
-            echo "Already the right version"
+          if [[ "$VERSION_BUMP" == "$(jq -r .version package.json)" ]]; then
+            echo "Nothing to do. Already on the right version"
             exit 0
           fi
           # Set to develop version - workaround for jq editing in place
-          jq --arg V "${{ steps.develop-version.outputs.DEVELOP_VERSION }}" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
+          jq --arg V "$VERSION_BUMP" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "tmp"
-          npm version --no-git-tag-version "${{ steps.version-bump.outputs.VERSION_BUMP }}"
+          npm version --no-git-tag-version $VERSION_BUMP
           git commit --amend -am "[GHA] - bump to version $(jq -r .version package.json)"
           git push
