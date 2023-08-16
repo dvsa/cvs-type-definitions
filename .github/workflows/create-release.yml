@@ -31,7 +31,7 @@ jobs:
 
             await github.rest.repos.createRelease({
               ...context.repo,
-              tag_name: newTag,
+              tag_name: process.env.VERSION,
               body: releaseBody
             })
-            console.log(`Release ${newTag} created ✔️`)
+            console.log(`Release ${process.env.VERSION} created ✔️`)
