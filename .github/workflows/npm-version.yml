@@ -20,7 +20,7 @@ jobs:
                 ...context.repo
             })).data
 
-            const res = pullRequests.map(pr => {refs: pr.head.ref, title: pr.title})
+            const res = pullRequests.map(pr => ({refs: pr.head.ref, title: pr.title}))
             console.log(res)
             return res
 
@@ -43,6 +43,9 @@ jobs:
       - name: Get version bump
         id: version-bump
         run: |
-          prTitleSplit="$(${{matrix.title}})"
+          prTitleSplit="$(${{matrix.title}} | cut -d '(' -f 1 )"
           pattern="^(patch|minor|major)$"
-          if ! [[  ]]
+          if ! [[ prTitleSplit ~= pattern ]]; then
+            echo "PR title does not match pattern"
+            exit 1
+          fi
