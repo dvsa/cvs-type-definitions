@@ -287,6 +287,11 @@ export interface GETTRLTechnicalRecordV3Testable {
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  techRecord_authIntoService_cocIssueDate?: string | null;
+  techRecord_authIntoService_dateReceived?: string | null;
+  techRecord_authIntoService_datePending?: string | null;
+  techRecord_authIntoService_dateAuthorised?: string | null;
+  techRecord_authIntoService_dateRejected?: string | null;
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
