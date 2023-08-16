@@ -73,7 +73,7 @@ jobs:
 
       - name: Bump version
         run: |
-          if [[ "$DEVELOP_VERSION" == "$(jq -r .version package.json)" ]]; then
+          if [[ "${{steps.get-new-version.outputs.result}}" == "$(jq -r .version package.json)" ]]; then
             echo "Nothing to do. Already on the right version"
             exit 0
           fi
