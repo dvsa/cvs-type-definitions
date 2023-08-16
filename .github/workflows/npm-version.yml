@@ -66,4 +66,7 @@ jobs:
         run: |
           # Set to develop version - workaround for jq editing in place
           jq --arg V "${{ steps.develop-version.outputs.DEVELOP_VERSION }}" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Bump to version ${{ steps.develop-version.outputs.DEVELOP_VERSION }}"
           npm version "${{ steps.version-bump.outputs.VERSION_BUMP }}"
