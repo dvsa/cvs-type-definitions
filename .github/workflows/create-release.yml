@@ -13,11 +13,16 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup version env var
         run: |
-          echo "VERSION='v$(jq -r .version package.json)'" >> "$GIHTUB_ENV"
+          echo "VERSION='v$(jq -r .version package.json)'" >> "$GITHUB_ENV"
       - uses: actions/github-script@v6
         with:
           script: |
-            const semVarVersions = ["major", "minor", "patch"]
+            const prIntroducingCommit = (await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              ...context.repo,
+              commit_sha: context.sha
+            })).data[0]
+
+            prIntroducingCommit && console.log("Found pull request associated with commit... ✔️")
 
             const githubTag = await github.rest.git.createRef({
               ...context.repo,
