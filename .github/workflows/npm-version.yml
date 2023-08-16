@@ -47,7 +47,7 @@ jobs:
         run: |
           prTitleSplit="$(echo $TITLE | cut -d '(' -f 1 )"
           pattern="^(patch|minor|major)$"
-          if ! [[ prTitleSplit ~= pattern ]]; then
+          if ! [[ prTitleSplit =~ pattern ]]; then
             echo "PR title does not match pattern"
             exit 1
           fi
