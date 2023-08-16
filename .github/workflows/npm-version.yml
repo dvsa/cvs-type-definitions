@@ -76,7 +76,9 @@ jobs:
 
       - name: Bump version
         run: |
-          if [[ ${{ steps.get-new-version.outputs.result }} == $(jq -r .version package.json) ]]; then
+          echo "${{ steps.get-new-version.outputs.result }}""
+          echo "$(jq -r .version package.json)""
+          if [[ "${{ steps.get-new-version.outputs.result }}" == "$(jq -r .version package.json)" ]]; then
             echo "Already the right version"
             exit 0
           fi
@@ -84,7 +86,7 @@ jobs:
           jq --arg V "${{ steps.develop-version.outputs.DEVELOP_VERSION }}" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -am "Bump to version ${{ steps.develop-version.outputs.DEVELOP_VERSION }}"
+          git commit -am "tmp"
           npm version --no-git-tag-version "${{ steps.version-bump.outputs.VERSION_BUMP }}"
-          git commit -am "Bump to version $(jq -r .version package.json)"
+          git commit --amend -am "[GHA] - bump to version $(jq -r .version package.json)"
           git push
