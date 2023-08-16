@@ -65,6 +65,7 @@ jobs:
         id: get-new-version
         with:
           script: |
+            const semVarVersions = ["major", "minor", "patch"]
             const bumpVersion = (previousVersion, bump) => {
             const prev = previousVersion.substring(1);
             const indexToChange = semVarVersions.indexOf(bump)
