@@ -14,6 +14,7 @@ jobs:
         id: get-refs
         with:
           script: |
+            console.log(context.event_name)
             const pullRequests = (await github.rest.pulls.list({
                 ...context.repo
             })).data
@@ -27,7 +28,7 @@ jobs:
       fail-fast: false
       matrix:
         include: ${{ fromJson(needs.get-prs.outputs.matrix-json) }}
-    name: "Version branch ${{ matrix.refs }}"
+    name: "Update version on branch ${{ matrix.refs }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -45,7 +46,7 @@ jobs:
         with:
           ref: ${{ matrix.refs }}
 
-      - name: Get version bump
+      - name: Get version bump type
         id: version-bump
         env:
           TITLE: ${{ matrix.title }}
