@@ -84,9 +84,27 @@ jobs:
           fi
           # Set to develop version - workaround for jq editing in place
           jq --arg V "$DEVELOP_VERSION" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit --allow-empty -am "tmp"
           npm version --no-git-tag-version "$VERSION_BUMP"
           git commit --amend -am "[GHA] - bump to version $(jq -r .version package.json)"
           git push
+          echo "BUMPED_VERSION=true" >> "$GITHUB_ENV"
+
+      - name: Add comment
+        # if: env.BUMPED_VERSION == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const body = `I have just updated the \`package.json\` version to ${{steps.get-new-version.outputs.result}}.
+
+            This is likely to cause a merge conflict.
+
+            If there is a merge conflict, resolve the merge conflict, and commit the result.`
+            github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: context.payload.pull_request.number,
+              body,
+            });
