@@ -22,7 +22,7 @@ jobs:
 
             const refs = pullRequests.map(pr => pr.head.ref)
             console.log(refs)
-            return JSON.stringify(refs)
+            return refs
 
   run-version:
     needs: [get-prs]
