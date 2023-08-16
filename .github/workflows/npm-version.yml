@@ -66,8 +66,7 @@ jobs:
         with:
           script: |
             const semVarVersions = ["major", "minor", "patch"]
-            const bumpVersion = (previousVersion, bump) => {
-            const prev = previousVersion.substring(1);
+            const bumpVersion = (prev, bump) => {
             const indexToChange = semVarVersions.indexOf(bump)
             return prev.split(".")
               .map((n, i) => i === indexToChange ? +n + 1 : i > indexToChange ? 0 : +n).join(".")
@@ -77,7 +76,7 @@ jobs:
       - name: Bump version
         run: |
           echo "${{ steps.get-new-version.outputs.result }}"
-          echo "$(jq -r .version package.json)""
+          echo "$(jq -r .version package.json)"
           if [[ "${{ steps.get-new-version.outputs.result }}" == "$(jq -r .version package.json)" ]]; then
             echo "Already the right version"
             exit 0
