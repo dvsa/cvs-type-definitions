@@ -10,7 +10,7 @@ jobs:
     permissions:
       pull-requests: write
     outputs:
-      matrix-json: ${{steps.get-refs.outputs.result}}
+      matrix-json: ${{ steps.get-refs.outputs.result }}
     steps:
       - uses: actions/github-script@v6
         id: get-refs
@@ -21,7 +21,6 @@ jobs:
             })).data
 
             const res = pullRequests.map(pr => ({refs: pr.head.ref, title: pr.title}))
-            console.log(res)
             return res
 
   run-version:
@@ -29,21 +28,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
-    name: "Version branch ${{matrix.refs}}"
+        include: ${{ fromJson(needs.get-prs.outputs.matrix-json) }}
+    name: "Version branch ${{ matrix.refs }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           ref: develop
+
+      - name: Get develop version
+        id: develop-version
+        run: |
+          echo "::set-output name=DEVELOP_VERSION::$(
+            jq -r .version package.json
+          )"
+
       - uses: actions/checkout@v3
         with:
-          ref: ${{matrix.refs}}
+          ref: ${{ matrix.refs }}
 
       - name: Get version bump
         id: version-bump
         env:
-          TITLE: ${{matrix.title}}
+          TITLE: ${{ matrix.title }}
         run: |
           prTitleSplit="$(echo $TITLE | cut -d '(' -f 1 )"
           pattern="^(patch|minor|major)$"
@@ -51,3 +58,12 @@ jobs:
             echo "PR title does not match pattern"
             exit 1
           fi
+          echo "::set-output name=VERSION_BUMP::$(
+            echo "$prTitleSplit"
+          )"
+
+      - name: Bump version
+        run: |
+          # Set to develop version - workaround for jq editing in place
+          jq --arg V "${{ steps.develop-version.outputs.DEVELOP_VERSION }}" '.version = $V' package.json > tmp.json && rm package.json && mv tmp.json package.json
+          npm version "${{ steps.version-bump.outputs.VERSION_BUMP }}"
