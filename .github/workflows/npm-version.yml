@@ -30,7 +30,7 @@ jobs:
       fail-fast: false
       matrix:
         include: ${{ fromJson(needs.get-prs.outputs.matrix-json)}}
-    name: "Version branch ${{matrix.include.refs}}"
+    name: "Version branch ${{matrix.refs}}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -42,8 +42,10 @@ jobs:
 
       - name: Get version bump
         id: version-bump
+        env:
+          TITLE: ${{matrix.title}}
         run: |
-          prTitleSplit="$(${{matrix.title}} | cut -d '(' -f 1 )"
+          prTitleSplit="$(echo $TITLE | cut -d '(' -f 1 )"
           pattern="^(patch|minor|major)$"
           if ! [[ prTitleSplit ~= pattern ]]; then
             echo "PR title does not match pattern"
