@@ -36,6 +36,8 @@ export const schemas = [
   "v3/tech-record/put/hgv/testable/index.json",
   "v3/tech-record/put/lgv/complete/index.json",
   "v3/tech-record/put/lgv/skeleton/index.json",
+  "v3/tech-record/put/motorcycle/complete/index.json",
+  "v3/tech-record/put/motorcycle/skeleton/index.json",
   "v3/tech-record/put/psv/complete/index.json",
   "v3/tech-record/put/psv/skeleton/index.json",
   "v3/tech-record/put/psv/testable/index.json",

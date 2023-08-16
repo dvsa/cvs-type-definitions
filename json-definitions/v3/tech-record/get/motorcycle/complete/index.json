@@ -3,9 +3,15 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "techRecord_vehicleSubclass",
-    "createdTimestamp",
+    "techRecord_numberOfWheelsDriven",
+    "techRecord_vehicleClass_description",
     "systemNumber",
+    "primaryVrm",
+    "techRecord_createdByName",
+    "techRecord_createdById",
+    "techRecord_reasonForCreation",
+    "createdTimestamp",
+    "partialVin",
     "vin"
   ],
   "properties": {
@@ -154,7 +160,7 @@
     "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
     },
-    "numberOfWheelsDriven": {
+    "techRecord_numberOfWheelsDriven": {
       "type": "integer"
     },
     "techRecord_hiddenInVta": {
