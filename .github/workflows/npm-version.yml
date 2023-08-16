@@ -15,6 +15,7 @@ jobs:
         with:
           script: |
             // If the event was triggered by a PR, we only need to update the current PR
+            console.log(context.payload.pull_request)
             if (context.eventName === "pull_request") {
               return [{refs: context.ref, title: context.payload.pull_request.title}]
             }
