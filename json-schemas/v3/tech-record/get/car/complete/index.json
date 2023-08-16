@@ -6,7 +6,8 @@
 		"techRecord_vehicleSubclass",
 		"createdTimestamp",
 		"systemNumber",
-		"vin"
+		"vin",
+		"techRecord_vehicleType"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {

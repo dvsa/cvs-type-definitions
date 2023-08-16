@@ -42,7 +42,7 @@ export interface TechRecordCompleteLGVSchema {
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory;
   techRecord_reasonForCreation?: string | null;
-  techRecord_vehicleType?: VehicleType;
+  techRecord_vehicleType: VehicleType;
   techRecord_statusCode?: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: string | null;

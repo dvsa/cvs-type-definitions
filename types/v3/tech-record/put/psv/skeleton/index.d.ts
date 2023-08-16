@@ -183,7 +183,7 @@ export type MicrofilmDocumentType =
   | "PRT - Tr Plating Cert paid"
   | "Tempo 100 Permit";
 
-export interface POSTPSVTechnicalRecordV3Skeleton {
+export interface PUTPSVTechnicalRecordV3Skeleton {
   vin: string;
   partialVin?: string | null;
   systemNumber: string;
