@@ -23,6 +23,7 @@ jobs:
       - name: Package files
         run: |
           cp -r types lib
+          rsync -a manual-types/ lib/types/
       - name: Publish on npm
         run: cd lib && npm publish
         env:

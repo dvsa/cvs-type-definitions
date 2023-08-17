@@ -20,7 +20,8 @@
     "json-schemas/**/*.json",
     "./*.ts",
     "README.md",
-    "package.json"
+    "package.json",
+    "manual-types"
   ],
   "exclude": ["node_modules"]
 }

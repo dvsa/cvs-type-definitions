@@ -8,7 +8,7 @@
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
-export interface TechRecordSearchCompleteCarSchema {
+export interface TechRecordSearchCompleteSchema {
   techRecord_manufactureYear: number | null;
   primaryVrm: string;
   vin: string;
