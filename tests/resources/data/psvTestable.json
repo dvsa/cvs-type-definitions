@@ -7,6 +7,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
@@ -130,6 +131,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleSize": "large",
@@ -153,6 +155,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleSize": "large",
@@ -175,6 +178,7 @@
       "675590Z"
     ],
     "vin": "SZAN4X20001867036",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleSize": "large",
     "techRecord_seatsLowerDeck": 39,
@@ -196,6 +200,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "vin": "SZAN4X20001867036",
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleSize": "large",

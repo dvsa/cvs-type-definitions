@@ -37,7 +37,8 @@
     "techRecord_brakes_brakeForceWheelsNotLocked_serviceBrakeForceA",
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB",
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB",
-    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB"
+    "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB",
+    "techRecord_brakes_dtpNumber"
   ],
   "properties": {
     "secondaryVrms": {
