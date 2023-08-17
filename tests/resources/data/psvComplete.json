@@ -7,6 +7,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
@@ -130,6 +131,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
@@ -254,6 +256,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
@@ -375,6 +378,7 @@
     "secondaryVrms": [
       "675590Z"
     ],
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
@@ -498,6 +502,7 @@
       "675590Z"
     ],
     "systemNumber": "4233111",
+    "techRecord_brakes_dtpNumber": "001",
     "techRecord_approvalType": "NTA",
     "techRecord_approvalTypeNumber": "12345",
     "techRecord_ntaNumber": "12345",
