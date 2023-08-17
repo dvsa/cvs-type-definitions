@@ -278,7 +278,7 @@ export interface HGVAxles {
   tyres_tyreSize?: string;
   tyres_plyRating?: string | null;
   tyres_fitmentCode?: FitmentCode;
-  techRecord_tyres_dataTrAxles?: null | number;
+  tyres_dataTrAxles?: null | number;
 }
 export interface HGVPlates {
   plateSerialNumber?: string | null;

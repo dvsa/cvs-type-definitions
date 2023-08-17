@@ -486,7 +486,7 @@
 							}
 						]
 					},
-					"techRecord_tyres_dataTrAxles": {
+					"tyres_dataTrAxles": {
 						"type": [
 							"null",
 							"integer"
