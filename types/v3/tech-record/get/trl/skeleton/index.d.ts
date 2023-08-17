@@ -254,6 +254,11 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   vin: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
+  techRecord_authIntoService_cocIssueDate?: string | null;
+  techRecord_authIntoService_dateReceived?: string | null;
+  techRecord_authIntoService_datePending?: string | null;
+  techRecord_authIntoService_dateAuthorised?: string | null;
+  techRecord_authIntoService_dateRejected?: string | null;
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;

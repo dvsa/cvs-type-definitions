@@ -1042,6 +1042,36 @@
 		},
 		"techRecord_updateType": {
 			"type": "string"
+		},
+		"techRecord_authIntoService_cocIssueDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateReceived": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_datePending": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateAuthorised": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateRejected": {
+			"type": [
+				"string",
+				"null"
+			]
 		}
 	}
 }
