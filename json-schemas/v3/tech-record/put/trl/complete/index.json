@@ -1,0 +1,1349 @@
+{
+	"title": "Tech Record PUT TRL Complete",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"techRecord_noOfAxles",
+		"techRecord_make",
+		"techRecord_model",
+		"techRecord_firstUseDate",
+		"techRecord_maxLoadOnCoupling",
+		"techRecord_tyreUseCode",
+		"techRecord_suspensionType",
+		"techRecord_couplingType",
+		"techRecord_dimensions_length",
+		"techRecord_dimensions_width",
+		"techRecord_frontAxleToRearAxle",
+		"techRecord_rearAxleToRearTrl",
+		"techRecord_couplingCenterToRearAxleMin",
+		"techRecord_couplingCenterToRearAxleMax",
+		"techRecord_couplingCenterToRearTrlMax",
+		"techRecord_couplingCenterToRearTrlMin",
+		"techRecord_notes",
+		"techRecord_roadFriendly",
+		"trailerId",
+		"techRecord_reasonForCreation",
+		"techRecord_statusCode",
+		"techRecord_vehicleClass_code",
+		"techRecord_vehicleClass_description",
+		"techRecord_vehicleType",
+		"techRecord_bodyType_description",
+		"techRecord_bodyType_code",
+		"techRecord_vehicleConfiguration",
+		"vin"
+	],
+	"properties": {
+		"partialVin": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_createdAt": {
+			"type": "string"
+		},
+		"techRecord_createdById": {
+			"type": "string"
+		},
+		"techRecord_createdByName": {
+			"type": "string"
+		},
+		"techRecord_adrDetails_vehicleDetails_type": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_vehicleDetails_approvalDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_permittedDangerousGoods": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_adrDetails_compatibilityGroupJ": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_additionalExaminerNotes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
+		"techRecord_adrDetails_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_adrDetails_applicantDetails_street": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_adrDetails_applicantDetails_town": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
+		},
+		"techRecord_adrDetails_applicantDetails_city": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
+		},
+		"techRecord_adrDetails_applicantDetails_postcode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 25
+		},
+		"techRecord_adrDetails_memosApply": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_documents": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_listStatementApplicable": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_batteryListNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 8
+		},
+		"techRecord_adrDetails_brakeDeclarationsSeen": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_brakeDeclarationIssuer": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_brakeEndurance": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_weight": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 8
+		},
+		"techRecord_adrDetails_declarationsSeen": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_additionalNotes_guidanceNotes": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_adrDetails_additionalNotes_number": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_adrDetails_adrTypeApprovalNo": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_adrCertificateNotes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 70
+		},
+		"techRecord_adrDetails_tank_tankDetails_yearOfManufacture": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 9999
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 50
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankTypeAppNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 30
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankCode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 30
+		},
+		"techRecord_adrDetails_tank_tankDetails_specialProvisions": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "TC2 Types",
+					"type": "string",
+					"enum": [
+						"initial"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 70
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "TC3 Types",
+					"type": "string",
+					"enum": [
+						"intermediate",
+						"periodic",
+						"exceptional"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 75
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productList": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_alterationMarker": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
+		},
+		"techRecord_applicationId": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_approvalType": {
+			"anyOf": [
+				{
+					"title": "Approval Type",
+					"type": "string",
+					"enum": [
+						"NTA",
+						"ECTA",
+						"IVA",
+						"NSSTA",
+						"ECSSTA",
+						"GB WVTA",
+						"UKNI WVTA",
+						"EU WVTA Pre 23",
+						"EU WVTA 23 on",
+						"QNIG",
+						"Prov.GB WVTA",
+						"Small series",
+						"IVA - VCA",
+						"IVA - DVSA/NI"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_approvalTypeNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 25
+		},
+		"techRecord_authIntoService": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_batchId": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_bodyType_code": {
+			"type": "string"
+		},
+		"techRecord_bodyType_description": {
+			"type": "string"
+		},
+		"techRecord_brakes_antilockBrakingSystem": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_brakes_dtpNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 6
+		},
+		"techRecord_brakes_loadSensingValve": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_centreOfRearmostAxleToRearOfTrl": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_conversionRefNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 10
+		},
+		"techRecord_couplingCenterToRearAxleMax": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_couplingCenterToRearAxleMin": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_couplingCenterToRearTrlMax": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_couplingCenterToRearTrlMin": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_couplingType": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1
+		},
+		"techRecord_departmentalVehicleMarker": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_dimensions_length": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_dimensions_width": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"drawbarCouplingFitted": {
+			"type": "string"
+		},
+		"techRecord_emissionsLimit": {
+			"type": [
+				"null",
+				"integer"
+			],
+			"minimum": 0,
+			"maximum": 99
+		},
+		"techRecord_euVehicleCategory": {
+			"anyOf": [
+				{
+					"title": "EU vehicle category",
+					"type": "string",
+					"enum": [
+						"m1",
+						"m2",
+						"m3",
+						"n1",
+						"n2",
+						"n3",
+						"o1",
+						"o2",
+						"o3",
+						"o4",
+						"l1e-a",
+						"l1e",
+						"l2e",
+						"l3e",
+						"l4e",
+						"l5e",
+						"l6e",
+						"l7e"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_euroStandard": {
+			"title": "Euro standard",
+			"type": "string",
+			"enum": [
+				"0.10 g/kWh Euro 3 PM",
+				"0.03 g/kWh Euro IV PM",
+				"Euro 3",
+				"Euro 4",
+				"Euro 5",
+				"Euro 6",
+				"Euro V",
+				"Euro VI",
+				"Full Electric"
+			]
+		},
+		"frontAxleTo5thWheelMax": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_frontAxleTo5thWheelMin": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_firstUseDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_frameDescription": {
+			"anyOf": [
+				{
+					"title": "Frame Description",
+					"type": "string",
+					"enum": [
+						"Channel section",
+						"Space frame",
+						"I section",
+						"Tubular",
+						"Frame section",
+						"Other",
+						"integral",
+						"Box section",
+						"U section"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_frontAxleToRearAxle": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_frontVehicleTo5thWheelCouplingMax": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_frontVehicleTo5thWheelCouplingMin": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_fuelPropulsionSystem": {
+			"title": "Fuel Propulsion System",
+			"type": "string",
+			"enum": [
+				"DieselPetrol",
+				"Diesel",
+				"Petrol",
+				"Hybrid",
+				"Electric",
+				"CNG",
+				"Fuel cell",
+				"LNG",
+				"Other"
+			]
+		},
+		"techRecord_functionCode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1
+		},
+		"techRecord_grossDesignWeight": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_grossEecWeight": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_grossGbWeight": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_letterOfAuth_letterType": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "letter types",
+					"type": "string",
+					"enum": [
+						"trailer accept",
+						"trailer rejection"
+					]
+				}
+			]
+		},
+		"techRecord_letterOfAuth_letterDateRequested": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_letterOfAuth_paragraphId": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Paragraph Ids",
+					"type": "string",
+					"enum": [
+						"3",
+						"4",
+						"5",
+						"6",
+						"7"
+					]
+				}
+			]
+		},
+		"techRecord_letterOfAuth_letterIssuer": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_make": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 50
+		},
+		"techRecord_manufactureYear": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 9999
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_maxTrainDesignWeight": {
+			"type": "integer"
+		},
+		"techRecord_maxTrainEecWeight": {
+			"type": "integer"
+		},
+		"techRecord_maxTrainGbWeight": {
+			"type": "integer"
+		},
+		"techRecord_manufacturerDetails": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_maxLoadOnCoupling": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"minimum": 0,
+			"maximum": 99999
+		},
+		"techRecord_microfilm": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_microfilm_microfilmDocumentType": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Microfilm Document Type",
+					"type": "string",
+					"enum": [
+						"PSV Miscellaneous",
+						"AAT - Trailer Annual Test",
+						"AIV - HGV International App",
+						"COIF Modification",
+						"Trailer COC + Int Plate",
+						"RCT - Trailer Test Cert paid",
+						"HGV COC + Int Plate",
+						"PSV Carry/Auth",
+						"OMO Report",
+						"AIT - Trailer International App",
+						"IPV - HGV EEC Plate/Cert",
+						"XCV - HGV Test Cert free",
+						"AAV - HGV Annual Test",
+						"COIF Master",
+						"Tempo 100 Sp Ord",
+						"Deleted",
+						"PSV N/ALT",
+						"XPT - Tr Plating Cert paid",
+						"FFV - HGV First Test",
+						"Repl Vitesse 100",
+						"TCV - HGV Test Cert",
+						"ZZZ -  Miscellaneous",
+						"Test Certificate",
+						"XCT - Trailer Test Cert free",
+						"C52 - COC and VTG52A",
+						"Tempo 100 Report",
+						"Main File Amendment",
+						"PSV Doc",
+						"PSV COC",
+						"PSV Repl COC",
+						"TAV - COC",
+						"NPT - Trailer Alteration",
+						"OMO Certificate",
+						"PSV Repl COIF",
+						"PSV Repl COF",
+						"COIF Application",
+						"XPV - HGV Plating Cert Free",
+						"TCT  - Trailer Test Cert",
+						"Tempo 100 App",
+						"PSV Decision on N/ALT",
+						"Special Order PSV",
+						"NPV - HGV Alteration",
+						"No Description Found",
+						"Vitesse 100 Sp Ord",
+						"Brake Test Details",
+						"COIF Productional",
+						"RDT - Test Disc Paid",
+						"RCV -  HGV Test Cert",
+						"FFT -  Trailer First Test",
+						"IPT - Trailer EEC Plate/Cert",
+						"XDT - Test Disc Free",
+						"PRV - HGV Plating Cert paid",
+						"COF Cert",
+						"PRT - Tr Plating Cert paid",
+						"Tempo 100 Permit"
+					]
+				}
+			]
+		},
+		"techRecord_microfilm_microfilmRollNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 5
+		},
+		"techRecord_microfilm_microfilmSerialNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 4
+		},
+		"techRecord_model": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 30
+		},
+		"techRecord_noOfAxles": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 99
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_notes": {
+			"type": "string"
+		},
+		"techRecord_ntaNumber": {
+			"type": "string"
+		},
+		"techRecord_numberOfWheelsDriven": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_offRoad": {
+			"type": "boolean"
+		},
+		"techRecord_plates": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "TRL Plates",
+				"additionalProperties": false,
+				"properties": {
+					"plateSerialNumber": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 12
+					},
+					"plateIssueDate": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"reasonForIssue": {
+						"anyOf": [
+							{
+								"type": "null"
+							},
+							{
+								"title": "Plate Reason For Issue",
+								"type": "string",
+								"enum": [
+									"Free replacement",
+									"Replacement",
+									"Destroyed",
+									"Provisional",
+									"Original",
+									"Manual"
+								]
+							}
+						]
+					},
+					"plateIssuer": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 150
+					}
+				}
+			}
+		},
+		"techRecord_purchaserDetails_address1": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_address2": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_address3": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_emailAddress": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_faxNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_name": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_postCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_postTown": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_purchaserNotes": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_purchaserDetails_telephoneNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_rearAxleToRearTrl": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 0
+		},
+		"techRecord_reasonForCreation": {
+			"type": "string"
+		},
+		"techRecord_regnDate": {
+			"anyOf": [
+				{
+					"type": "string",
+					"pattern": "^$"
+				},
+				{
+					"type": "string",
+					"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_roadFriendly": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_speedLimiterMrk": {
+			"type": "boolean"
+		},
+		"techRecord_statusCode": {
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
+			]
+		},
+		"techRecord_tachoExemptMrk": {
+			"type": "boolean"
+		},
+		"techRecord_suspensionType": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1
+		},
+		"techRecord_tyreUseCode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 2
+		},
+		"techRecord_variantNumber": {
+			"type": "string"
+		},
+		"techRecord_variantVersionNumber": {
+			"type": "string"
+		},
+		"techRecord_vehicleClass_code": {
+			"type": "string"
+		},
+		"techRecord_vehicleClass_description": {
+			"title": "Vehicle Class Description",
+			"type": "string",
+			"enum": [
+				"motorbikes over 200cc or with a sidecar",
+				"not applicable",
+				"small psv (ie: less than or equal to 22 seats)",
+				"motorbikes up to 200cc",
+				"trailer",
+				"large psv(ie: greater than 23 seats)",
+				"3 wheelers",
+				"heavy goods vehicle",
+				"MOT class 4",
+				"MOT class 7",
+				"MOT class 5"
+			]
+		},
+		"techRecord_vehicleConfiguration": {
+			"anyOf": [
+				{
+					"title": "Vehicle Configuration",
+					"type": "string",
+					"enum": [
+						"rigid",
+						"articulated",
+						"centre axle drawbar",
+						"semi-car transporter",
+						"semi-trailer",
+						"long semi-trailer",
+						"low loader",
+						"other",
+						"drawbar",
+						"four-in-line",
+						"dolly",
+						"full drawbar"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_vehicleType": {
+			"const": "trl"
+		},
+		"trailerId": {
+			"type": "string"
+		},
+		"vin": {
+			"type": "string"
+		},
+		"techRecord_axles": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "PSV Axles",
+				"additionalProperties": false,
+				"properties": {
+					"parkingBrakeMrk": {
+						"type": [
+							"boolean",
+							"null"
+						]
+					},
+					"axleNumber": {
+						"type": [
+							"integer",
+							"null"
+						]
+					},
+					"brakes": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"brakeActuator": {
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 999
+							},
+							"leverLength": {
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 999
+							},
+							"springBrakeParking": {
+								"type": "boolean"
+							}
+						}
+					},
+					"weights_gbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_designWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_ladenWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_kerbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"tyres_tyreCode": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"tyres_tyreSize": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 12
+					},
+					"tyres_plyRating": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"tyres_fitmentCode": {
+						"anyOf": [
+							{
+								"type": "null"
+							},
+							{
+								"title": "Fitment Code",
+								"type": "string",
+								"enum": [
+									"single",
+									"double"
+								]
+							}
+						]
+					},
+					"tyres_dataTrAxles": {
+						"type": [
+							"null",
+							"integer"
+						],
+						"minimum": 0,
+						"maximum": 999
+					},
+					"tyres_speedCategorySymbol": {
+						"anyOf": [
+							{
+								"title": "Speed Category Symbol",
+								"type": "string",
+								"enum": [
+									"a7",
+									"a8",
+									"b",
+									"c",
+									"d",
+									"e",
+									"f",
+									"g",
+									"j",
+									"k",
+									"l",
+									"m",
+									"n",
+									"p",
+									"q"
+								]
+							},
+							{
+								"type": "null"
+							}
+						]
+					}
+				}
+			}
+		},
+		"techRecord_hiddenInVta": {
+			"type": "boolean"
+		},
+		"techRecord_updateType": {
+			"type": "string"
+		},
+		"techRecord_authIntoService_cocIssueDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateReceived": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_datePending": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateAuthorised": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_authIntoService_dateRejected": {
+			"type": [
+				"string",
+				"null"
+			]
+		}
+	}
+}

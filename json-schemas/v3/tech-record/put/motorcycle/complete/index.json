@@ -1,0 +1,235 @@
+{
+	"title": "Tech Record PUT Motorcycle Complete",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"techRecord_numberOfWheelsDriven",
+		"techRecord_vehicleClass_description",
+		"techRecord_reasonForCreation",
+		"vin"
+	],
+	"properties": {
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
+		},
+		"createdTimestamp": {
+			"type": [
+				"string"
+			]
+		},
+		"partialVin": {
+			"type": "string"
+		},
+		"primaryVrm": {
+			"type": "string"
+		},
+		"systemNumber": {
+			"type": "string"
+		},
+		"techRecord_createdAt": {
+			"type": "string"
+		},
+		"techRecord_createdById": {
+			"type": "string"
+		},
+		"techRecord_createdByName": {
+			"type": "string"
+		},
+		"techRecord_euVehicleCategory": {
+			"title": "EU vehicle category",
+			"type": "string",
+			"enum": [
+				"m1",
+				"m2",
+				"m3",
+				"n1",
+				"n2",
+				"n3",
+				"o1",
+				"o2",
+				"o3",
+				"o4",
+				"l1e-a",
+				"l1e",
+				"l2e",
+				"l3e",
+				"l4e",
+				"l5e",
+				"l6e",
+				"l7e"
+			]
+		},
+		"techRecord_lastUpdatedAt": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_lastUpdatedById": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_lastUpdatedByName": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufactureYear": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_recordCompleteness": {
+			"type": "string"
+		},
+		"techRecord_noOfAxles": {
+			"type": "integer"
+		},
+		"techRecord_notes": {
+			"type": "string"
+		},
+		"techRecord_reasonForCreation": {
+			"type": "string"
+		},
+		"techRecord_regnDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_statusCode": {
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
+			]
+		},
+		"techRecord_vehicleConfiguration": {
+			"title": "Vehicle Configuration",
+			"type": "string",
+			"enum": [
+				"rigid",
+				"articulated",
+				"centre axle drawbar",
+				"semi-car transporter",
+				"semi-trailer",
+				"long semi-trailer",
+				"low loader",
+				"other",
+				"drawbar",
+				"four-in-line",
+				"dolly",
+				"full drawbar"
+			]
+		},
+		"techRecord_vehicleType": {
+			"title": "Vehicle Type",
+			"type": "string",
+			"enum": [
+				"psv",
+				"trl",
+				"hgv",
+				"car",
+				"lgv",
+				"motorcycle"
+			]
+		},
+		"vin": {
+			"type": "string"
+		},
+		"techRecord_vehicleSubclass": {
+			"title": "Vehicle Subclass",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"n",
+					"p",
+					"a",
+					"s",
+					"c",
+					"l",
+					"t",
+					"e",
+					"m",
+					"r",
+					"w"
+				]
+			}
+		},
+		"techRecord_numberOfWheelsDriven": {
+			"type": "integer"
+		},
+		"techRecord_hiddenInVta": {
+			"type": "boolean"
+		},
+		"techRecord_updateType": {
+			"type": "string"
+		}
+	}
+}
