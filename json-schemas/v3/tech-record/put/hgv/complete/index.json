@@ -1031,7 +1031,10 @@
 			"const": "hgv"
 		},
 		"primaryVrm": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"vin": {
 			"type": "string"
