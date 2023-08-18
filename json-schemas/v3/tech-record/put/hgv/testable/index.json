@@ -1,5 +1,5 @@
 {
-	"title": "PUT HGV Technical Record V3 Testable",
+	"title": "Tech Record PUT HGV Testable",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record PUT Request Skeleton Car Schema",
+  "title": "Tech Record PUT Car Skeleton",
   "type": "object",
   "additionalProperties": false,
   "required": [

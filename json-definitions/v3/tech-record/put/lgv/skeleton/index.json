@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record Complete Car Schema",
+  "title": "Tech Record PUT LGV Skeleton",
   "type": "object",
   "additionalProperties": false,
   "required": [

@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record Complete LGV Schema",
+  "title": "Tech Record PUT LGV Complete",
   "type": "object",
   "additionalProperties": false,
   "required": [

@@ -1,5 +1,5 @@
 {
-  "title": "GET PSV Technical Record V3 Skeleton",
+  "title": "Tech Record GET PSV Skeleton",
   "type": "object",
   "additionalProperties": false,
   "required": [

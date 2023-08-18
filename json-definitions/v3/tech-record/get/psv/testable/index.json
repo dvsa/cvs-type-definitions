@@ -1,5 +1,5 @@
 {
-  "title": "GET PSV Technical Record V3 Testable",
+  "title": "Tech Record GET PSV Testable",
   "type": "object",
   "additionalProperties": false,
   "required": [

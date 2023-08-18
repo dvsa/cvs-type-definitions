@@ -1,5 +1,5 @@
 {
-	"title": "PUT Tech Record Complete Motorcycle Schema",
+	"title": "Tech Record PUT Motorcycle Complete",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

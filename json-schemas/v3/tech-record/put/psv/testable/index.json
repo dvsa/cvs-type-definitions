@@ -1,5 +1,5 @@
 {
-	"title": "PUT PSV Technical Record V3 Testable",
+	"title": "Tech Record PUT PSV Testable",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

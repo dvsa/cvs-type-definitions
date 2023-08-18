@@ -1,5 +1,5 @@
 {
-	"title": "GET HGV Technical Record V3 Testable",
+	"title": "Tech Record GET HGV Testable",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

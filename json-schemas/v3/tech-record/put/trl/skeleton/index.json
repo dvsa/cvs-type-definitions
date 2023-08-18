@@ -1,5 +1,5 @@
 {
-	"title": "PUT TRL Technical Record V3 Skeleton",
+	"title": "Tech Record PUT TRL Skeleton",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

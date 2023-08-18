@@ -1,5 +1,5 @@
 {
-  "title": "PUT HGV Technical Record V3 Skeleton",
+  "title": "Tech Record PUT HGV Skeleton",
   "type": "object",
   "additionalProperties": false,
   "required": [

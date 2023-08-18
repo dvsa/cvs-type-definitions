@@ -183,7 +183,7 @@ export type MicrofilmDocumentType =
   | "PRT - Tr Plating Cert paid"
   | "Tempo 100 Permit";
 
-export interface PUTPSVTechnicalRecordV3Testable {
+export interface TechRecordPUTPSVTestable {
   vin: string;
   partialVin?: string | null;
   systemNumber: string;
