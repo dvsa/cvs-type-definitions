@@ -573,7 +573,10 @@
 			"minimum": 0
 		},
 		"drawbarCouplingFitted": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_emissionsLimit": {
 			"type": [
@@ -615,18 +618,25 @@
 			]
 		},
 		"techRecord_euroStandard": {
-			"title": "Euro standard",
-			"type": "string",
-			"enum": [
-				"0.10 g/kWh Euro 3 PM",
-				"0.03 g/kWh Euro IV PM",
-				"Euro 3",
-				"Euro 4",
-				"Euro 5",
-				"Euro 6",
-				"Euro V",
-				"Euro VI",
-				"Full Electric"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Euro standard",
+					"type": "string",
+					"enum": [
+						"0.10 g/kWh Euro 3 PM",
+						"0.03 g/kWh Euro IV PM",
+						"Euro 3",
+						"Euro 4",
+						"Euro 5",
+						"Euro 6",
+						"Euro V",
+						"Euro VI",
+						"Full Electric"
+					]
+				}
 			]
 		},
 		"frontAxleTo5thWheelMax": {
@@ -800,13 +810,22 @@
 			]
 		},
 		"techRecord_maxTrainDesignWeight": {
-			"type": "integer"
+			"type": [
+				"null",
+				"integer"
+			]
 		},
 		"techRecord_maxTrainEecWeight": {
-			"type": "integer"
+			"type": [
+				"null",
+				"integer"
+			]
 		},
 		"techRecord_maxTrainGbWeight": {
-			"type": "integer"
+			"type": [
+				"null",
+				"integer"
+			]
 		},
 		"techRecord_manufacturerDetails": {
 			"type": [
@@ -933,7 +952,10 @@
 			"type": "string"
 		},
 		"techRecord_ntaNumber": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_numberOfWheelsDriven": {
 			"type": [
@@ -942,10 +964,16 @@
 			]
 		},
 		"techRecord_offRoad": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_plates": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "object",
 				"title": "TRL Plates",
@@ -1107,7 +1135,10 @@
 			]
 		},
 		"techRecord_speedLimiterMrk": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_statusCode": {
 			"title": "Status Code",
@@ -1119,7 +1150,10 @@
 			]
 		},
 		"techRecord_tachoExemptMrk": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_suspensionType": {
 			"type": [
@@ -1136,10 +1170,16 @@
 			"maxLength": 2
 		},
 		"techRecord_variantNumber": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_variantVersionNumber": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_vehicleClass_code": {
 			"type": "string"
@@ -1196,9 +1236,15 @@
 			"type": "string"
 		},
 		"techRecord_axles": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
-				"type": "object",
+				"type": [
+					"null",
+					"object"
+				],
 				"title": "TRL Axles",
 				"additionalProperties": false,
 				"properties": {
@@ -1219,17 +1265,26 @@
 						"additionalProperties": false,
 						"properties": {
 							"brakeActuator": {
-								"type": "integer",
+								"type": [
+									"null",
+									"integer"
+								],
 								"minimum": 0,
 								"maximum": 999
 							},
 							"leverLength": {
-								"type": "integer",
+								"type": [
+									"null",
+									"integer"
+								],
 								"minimum": 0,
 								"maximum": 999
 							},
 							"springBrakeParking": {
-								"type": "boolean"
+								"type": [
+									"null",
+									"boolean"
+								]
 							}
 						}
 					},
@@ -1341,10 +1396,16 @@
 			}
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_authIntoService_cocIssueDate": {
 			"type": [

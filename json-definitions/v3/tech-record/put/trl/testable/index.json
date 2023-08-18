@@ -4,7 +4,6 @@
   "additionalProperties": false,
   "required": [
     "techRecord_noOfAxles",
-    "systemNumber",
     "trailerId",
     "techRecord_reasonForCreation",
     "techRecord_recordCompleteness",
@@ -857,10 +856,13 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
-        "title": "PSV Axles",
+        "title": "TRL Axles",
         "additionalProperties": false,
         "properties": {
           "parkingBrakeMrk": {
@@ -873,6 +875,115 @@
             "type": [
               "integer",
               "null"
+            ]
+          },
+          "brakes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "brakeActuator": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "minimum": 0,
+                "maximum": 999
+              },
+              "leverLength": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "minimum": 0,
+                "maximum": 999
+              },
+              "springBrakeParking": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            }
+          },
+          "weights_gbWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "weights_designWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "weights_ladenWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "weights_kerbWeight": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "tyres_tyreCode": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
+          "tyres_tyreSize": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 12
+          },
+          "tyres_plyRating": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tyres_fitmentCode": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "../../../enums/fitmentCode.ignore.json"
+              }
+            ]
+          },
+          "tyres_dataTrAxles": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          "tyres_speedCategorySymbol": {
+            "anyOf": [
+              {
+                "$ref": "../../../enums/speedCategorySymbol.ignore.json"
+              },
+              {
+                "type": "null"
+              }
             ]
           }
         }

@@ -389,7 +389,10 @@
       "maxLength": 255
     },
     "techRecord_applicationId": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_axles": {
       "type": "array",
@@ -515,7 +518,10 @@
       ]
     },
     "techRecord_dimensions_axleSpacing_axles": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_dimensions_axleSpacing_value": {
       "type": [
@@ -924,10 +930,16 @@
       "type": "string"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

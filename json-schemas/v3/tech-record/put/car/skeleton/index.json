@@ -11,7 +11,10 @@
 			"type": "string"
 		},
 		"primaryVrm": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"trailerId": {
 			"type": [
@@ -38,12 +41,19 @@
 			]
 		},
 		"techRecord_statusCode": {
-			"title": "Status Code",
-			"type": "string",
-			"enum": [
-				"provisional",
-				"current",
-				"archived"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Status Code",
+					"type": "string",
+					"enum": [
+						"provisional",
+						"current",
+						"archived"
+					]
+				}
 			]
 		},
 		"techRecord_regnDate": {
@@ -65,25 +75,46 @@
 			]
 		},
 		"techRecord_notes": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_createdAt": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_createdById": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_createdByName": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"secondaryVrms": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "string"
 			}

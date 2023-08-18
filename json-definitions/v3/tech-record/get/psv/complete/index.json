@@ -42,7 +42,10 @@
   ],
   "properties": {
     "secondaryVrms": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }
@@ -51,7 +54,10 @@
       "type": "string"
     },
     "partialVin": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "systemNumber": {
       "type": "string"
@@ -103,10 +109,16 @@
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_recordCompleteness": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
@@ -119,7 +131,10 @@
       ]
     },
     "techRecord_regnDate": {
-      "type": "string",
+      "type": [
+        "null",
+        "string"
+      ],
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "techRecord_manufactureYear": {
@@ -197,10 +212,20 @@
       "maxLength": 35
     },
     "techRecord_bodyType_description": {
-      "$ref": "../../../enums/bodyTypeDescription.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/bodyTypeDescription.ignore.json"
+        }
+      ]
     },
     "techRecord_bodyType_code": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_functionCode": {
       "type": [
@@ -343,25 +368,42 @@
       ],
       "maxLength": 1024
     },
-    "techRecord_dda": {
-      "type": "null"
-    },
     "techRecord_standingCapacity": {
       "type": "integer",
       "minimum": 0,
       "maximum": 999
     },
     "techRecord_speedLimiterMrk": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_tachoExemptMrk": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_euroStandard": {
-      "$ref": "../../../enums/euroStandard.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/euroStandard.ignore.json"
+        }
+      ]
     },
     "techRecord_fuelPropulsionSystem": {
-      "$ref": "../../../enums/fuelPropulsionSystem.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/fuelPropulsionSystem.ignore.json"
+        }
+      ]
     },
     "techRecord_emissionsLimit": {
       "type": [
@@ -479,9 +521,6 @@
       ],
       "maximum": 99999,
       "minimum": 0
-    },
-    "techRecord_dimensions": {
-      "type": "null"
     },
     "techRecord_dimensions_length": {
       "type": [
@@ -761,9 +800,6 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "techRecord_microfilm": {
-      "type": "null"
-    },
     "techRecord_microfilmDocumentType": {
       "anyOf": [
         {
@@ -796,11 +832,15 @@
     },
     "createdTimestamp": {
       "type": [
+        "null",
         "string"
       ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

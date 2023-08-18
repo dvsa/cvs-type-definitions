@@ -184,9 +184,9 @@ export type MicrofilmDocumentType =
   | "Tempo 100 Permit";
 
 export interface TechRecordGETPSVComplete {
-  secondaryVrms?: string[];
+  secondaryVrms?: null | string[];
   vin: string;
-  partialVin?: string;
+  partialVin?: null | string;
   systemNumber: string;
   primaryVrm: string;
   techRecord_vehicleType: "psv";
@@ -200,10 +200,10 @@ export interface TechRecordGETPSVComplete {
   techRecord_numberOfWheelsDriven: number | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_recordCompleteness?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_recordCompleteness?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_regnDate?: string;
+  techRecord_regnDate?: null | string;
   techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles: number | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
@@ -213,8 +213,8 @@ export interface TechRecordGETPSVComplete {
   techRecord_ntaNumber?: string | null;
   techRecord_variantNumber?: string | null;
   techRecord_variantVersionNumber?: string | null;
-  techRecord_bodyType_description?: BodyTypeDescription;
-  techRecord_bodyType_code?: string;
+  techRecord_bodyType_description?: null | BodyTypeDescription;
+  techRecord_bodyType_code?: null | string;
   techRecord_functionCode?: string | null;
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
@@ -236,12 +236,11 @@ export interface TechRecordGETPSVComplete {
   techRecord_dda_ddaSchedules?: string | null;
   techRecord_dda_seatbeltsFitted?: number | null;
   techRecord_dda_ddaNotes?: string | null;
-  techRecord_dda?: null;
   techRecord_standingCapacity: number;
-  techRecord_speedLimiterMrk?: boolean;
-  techRecord_tachoExemptMrk?: boolean;
-  techRecord_euroStandard?: EuroStandard;
-  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
+  techRecord_speedLimiterMrk?: null | boolean;
+  techRecord_tachoExemptMrk?: null | boolean;
+  techRecord_euroStandard?: null | EuroStandard;
+  techRecord_fuelPropulsionSystem?: null | FuelPropulsionSystem;
   techRecord_emissionsLimit?: null | number;
   techRecord_trainDesignWeight?: number | null;
   techRecord_numberOfSeatbelts: string;
@@ -259,7 +258,6 @@ export interface TechRecordGETPSVComplete {
   techRecord_grossLadenWeight: number;
   techRecord_unladenWeight?: number | null;
   techRecord_maxTrainGbWeight?: number | null;
-  techRecord_dimensions?: null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_dimensions_height?: number | null;
@@ -292,13 +290,12 @@ export interface TechRecordGETPSVComplete {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB: number;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB: number;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB: number;
-  techRecord_microfilm?: null;
   techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
   techRecord_microfilmRollNumber?: string | null;
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  createdTimestamp?: string;
-  techRecord_updateType?: string;
+  createdTimestamp?: null | string;
+  techRecord_updateType?: null | string;
 }
 export interface PSVAxlesComplete {
   parkingBrakeMrk: boolean;

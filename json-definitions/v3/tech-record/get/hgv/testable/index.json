@@ -22,7 +22,10 @@
   ],
   "properties": {
     "secondaryVrms": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }
@@ -393,7 +396,10 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "HGV Axles",
@@ -478,10 +484,16 @@
       }
     },
     "techRecord_bodyType_code": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_bodyType_description": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_brakes_antilockBrakingSystem": {
       "type": [
@@ -764,7 +776,10 @@
       ]
     },
     "techRecord_plates": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "HGV Plates",
@@ -955,10 +970,16 @@
       "type": "string"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

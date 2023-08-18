@@ -182,9 +182,9 @@ export type SpeedCategorySymbol =
 
 export interface TechRecordPUTTRLComplete {
   partialVin?: string | null;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
+  techRecord_createdAt?: null | string;
+  techRecord_createdById?: null | string;
+  techRecord_createdByName?: null | string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -254,10 +254,10 @@ export interface TechRecordPUTTRLComplete {
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_dimensions_length: number | null;
   techRecord_dimensions_width: number | null;
-  drawbarCouplingFitted?: string;
+  drawbarCouplingFitted?: null | string;
   techRecord_emissionsLimit?: null | number;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_euroStandard?: EuroStandard;
+  techRecord_euroStandard?: null | EuroStandard;
   frontAxleTo5thWheelMax?: number | null;
   techRecord_frontAxleTo5thWheelMin?: number | null;
   techRecord_firstUseDate: string | null;
@@ -276,22 +276,21 @@ export interface TechRecordPUTTRLComplete {
   techRecord_letterOfAuth_letterIssuer?: string | null;
   techRecord_make: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_maxTrainDesignWeight?: number;
-  techRecord_maxTrainEecWeight?: number;
-  techRecord_maxTrainGbWeight?: number;
+  techRecord_maxTrainDesignWeight?: null | number;
+  techRecord_maxTrainEecWeight?: null | number;
+  techRecord_maxTrainGbWeight?: null | number;
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling: number | null;
-  techRecord_microfilm?: string | null;
   techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentType;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model: string | null;
   techRecord_noOfAxles: number | null;
   techRecord_notes: string;
-  techRecord_ntaNumber?: string;
+  techRecord_ntaNumber?: null | string;
   techRecord_numberOfWheelsDriven?: number | null;
-  techRecord_offRoad?: boolean;
-  techRecord_plates?: TRLPlates[];
+  techRecord_offRoad?: null | boolean;
+  techRecord_plates?: null | TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
   techRecord_purchaserDetails_address3?: string | null;
@@ -306,22 +305,22 @@ export interface TechRecordPUTTRLComplete {
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly: boolean | null;
-  techRecord_speedLimiterMrk?: boolean;
+  techRecord_speedLimiterMrk?: null | boolean;
   techRecord_statusCode: StatusCode;
-  techRecord_tachoExemptMrk?: boolean;
+  techRecord_tachoExemptMrk?: null | boolean;
   techRecord_suspensionType: string | null;
   techRecord_tyreUseCode: string | null;
-  techRecord_variantNumber?: string;
-  techRecord_variantVersionNumber?: string;
+  techRecord_variantNumber?: null | string;
+  techRecord_variantVersionNumber?: null | string;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  techRecord_axles?: PSVAxles[];
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_axles?: null | PSVAxles[];
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;
   techRecord_authIntoService_dateReceived?: string | null;
   techRecord_authIntoService_datePending?: string | null;
@@ -337,10 +336,10 @@ export interface TRLPlates {
 export interface PSVAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
-  brakes?: {
-    brakeActuator?: number;
-    leverLength?: number;
-    springBrakeParking?: boolean;
+  brakes?: null | {
+    brakeActuator?: null | number;
+    leverLength?: null | number;
+    springBrakeParking?: null | boolean;
   };
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;

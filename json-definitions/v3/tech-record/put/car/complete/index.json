@@ -12,7 +12,10 @@
       "type": "string"
     },
     "primaryVrm": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "trailerId": {
       "type": [
@@ -30,7 +33,14 @@
       "$ref": "../../../enums/vehicleType.ignore.json"
     },
     "techRecord_statusCode": {
-      "$ref": "../../../enums/statusCode.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/statusCode.ignore.json"
+        }
+      ]
     },
     "techRecord_regnDate": {
       "type": [
@@ -57,22 +67,40 @@
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdAt": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdById": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdByName": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "secondaryVrms": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }

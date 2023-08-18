@@ -145,9 +145,9 @@ export type ApprovalType =
 export interface TechRecordPUTHGVComplete {
   secondaryVrms?: string[];
   partialVin?: string | null;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
+  techRecord_createdAt?: null | string;
+  techRecord_createdById?: null | string;
+  techRecord_createdByName?: null | string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -197,7 +197,7 @@ export interface TechRecordPUTHGVComplete {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   techRecord_axles: HGVAxles[];
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
@@ -237,7 +237,7 @@ export interface TechRecordPUTHGVComplete {
   techRecord_noOfAxles?: number | null;
   techRecord_notes: string;
   techRecord_offRoad: boolean;
-  techRecord_plates?: HGVPlates[];
+  techRecord_plates?: null | HGVPlates[];
   techRecord_reasonForCreation: string;
   techRecord_regnDate: string;
   techRecord_roadFriendly: boolean;
@@ -259,8 +259,8 @@ export interface TechRecordPUTHGVComplete {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
 }
 export interface HGVAxles {
   parkingBrakeMrk?: boolean;

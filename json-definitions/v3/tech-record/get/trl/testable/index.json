@@ -691,7 +691,10 @@
       ]
     },
     "techRecord_plates": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "TRL Plates",
@@ -886,10 +889,13 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
-        "title": "PSV Axles",
+        "title": "TRL Axles",
         "additionalProperties": false,
         "properties": {
           "parkingBrakeMrk": {
@@ -903,26 +909,38 @@
               "integer",
               "null"
             ]
+          },
+          "brakes": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "brakeActuator": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "minimum": 0,
+                "maximum": 999
+              },
+              "leverLength": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "minimum": 0,
+                "maximum": 999
+              },
+              "springBrakeParking": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            }
           }
-        }
-      }
-    },
-    "brakes": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "brakeActuator": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 999
-        },
-        "leverLength": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 999
-        },
-        "springBrakeParking": {
-          "type": "boolean"
         }
       }
     },
@@ -1008,10 +1026,16 @@
       ]
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_authIntoService_cocIssueDate": {
       "type": [

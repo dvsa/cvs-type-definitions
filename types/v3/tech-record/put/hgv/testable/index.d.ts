@@ -197,7 +197,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   techRecord_axles?: HGVAxles[];
   techRecord_bodyType_code?: string;
   techRecord_bodyType_description?: string;
@@ -206,7 +206,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_conversionRefNo?: string | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_axleSpacing_axles?: string;
+  techRecord_dimensions_axleSpacing_axles?: null | string;
   techRecord_dimensions_axleSpacing_value?: number | null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
@@ -259,8 +259,8 @@ export interface TechRecordPUTHGVTestable {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
 }
 export interface HGVAxles {
   parkingBrakeMrk?: boolean | null;

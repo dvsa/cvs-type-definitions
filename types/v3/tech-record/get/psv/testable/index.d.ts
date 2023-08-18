@@ -185,7 +185,7 @@ export type MicrofilmDocumentType =
 
 export interface TechRecordGETPSVTestable {
   vin: string;
-  partialVin?: string;
+  partialVin?: null | string;
   systemNumber: string;
   primaryVrm: string;
   techRecord_vehicleType: "psv";
@@ -199,8 +199,8 @@ export interface TechRecordGETPSVTestable {
   techRecord_numberOfWheelsDriven: number | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_recordCompleteness?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_recordCompleteness?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
@@ -213,7 +213,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_variantNumber?: string | null;
   techRecord_variantVersionNumber?: string | null;
   techRecord_bodyType_description?: BodyTypeDescription;
-  techRecord_bodyType_code?: string;
+  techRecord_bodyType_code?: null | string;
   techRecord_functionCode?: string | null;
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
@@ -235,7 +235,6 @@ export interface TechRecordGETPSVTestable {
   techRecord_dda_ddaSchedules?: string | null;
   techRecord_dda_seatbeltsFitted?: number | null;
   techRecord_dda_ddaNotes?: string | null;
-  techRecord_dda?: null;
   techRecord_standingCapacity?: number | null;
   techRecord_speedLimiterMrk?: boolean | null;
   techRecord_tachoExemptMrk?: boolean | null;
@@ -243,7 +242,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
   techRecord_emissionsLimit?: null | number;
   techRecord_trainDesignWeight?: number | null;
-  techRecord_numberOfSeatbelts?: string;
+  techRecord_numberOfSeatbelts?: null | string;
   techRecord_seatbeltInstallationApprovalDate?: string | null;
   techRecord_coifSerialNumber?: string | null;
   techRecord_coifCertifierName?: string | null;
@@ -258,14 +257,13 @@ export interface TechRecordGETPSVTestable {
   techRecord_grossLadenWeight?: number | null;
   techRecord_unladenWeight?: number | null;
   techRecord_maxTrainGbWeight?: number | null;
-  techRecord_dimensions?: null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_dimensions_height?: number | null;
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
-  techRecord_axles?: PSVAxles[];
+  techRecord_axles?: null | PSVAxles[];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -288,15 +286,14 @@ export interface TechRecordGETPSVTestable {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
-  techRecord_microfilm?: null;
   techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
   techRecord_microfilmRollNumber?: string | null;
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  createdTimestamp?: string;
-  techRecord_applicationId?: string;
-  secondaryVrms?: string[];
-  techRecord_updateType?: string;
+  createdTimestamp?: null | string;
+  techRecord_applicationId?: null | string;
+  secondaryVrms?: null | string[];
+  techRecord_updateType?: null | string;
 }
 export interface PSVAxles {
   parkingBrakeMrk?: boolean | null;

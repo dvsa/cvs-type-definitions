@@ -85,16 +85,32 @@
       "type": "string"
     },
     "techRecord_createdAt": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdById": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdByName": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_euVehicleCategory": {
-      "$ref": "../../../enums/euVehicleCategory.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        }
+      ]
     },
     "techRecord_lastUpdatedAt": {
       "type": [
@@ -121,13 +137,22 @@
       ]
     },
     "techRecord_recordCompleteness": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_noOfAxles": {
-      "type": "integer"
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_notes": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_reasonForCreation": {
       "type": "string"
@@ -139,25 +164,55 @@
       ]
     },
     "techRecord_statusCode": {
-      "$ref": "../../../enums/statusCode.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/statusCode.ignore.json"
+        }
+      ]
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+        }
+      ]
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../enums/vehicleType.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleType.ignore.json"
+        }
+      ]
     },
     "vin": {
       "type": "string"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "secondaryVrms": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }

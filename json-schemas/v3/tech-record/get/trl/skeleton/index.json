@@ -393,7 +393,10 @@
 			"maxLength": 255
 		},
 		"techRecord_applicationId": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_authIntoService": {
 			"type": [
@@ -408,10 +411,16 @@
 			]
 		},
 		"techRecord_bodyType_code": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_bodyType_description": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_brakes_antilockBrakingSystem": {
 			"type": [
@@ -786,6 +795,62 @@
 			],
 			"maxLength": 30
 		},
+		"techRecord_axles": {
+			"type": [
+				"null",
+				"array"
+			],
+			"items": {
+				"type": "object",
+				"title": "TRL Axles",
+				"additionalProperties": false,
+				"properties": {
+					"parkingBrakeMrk": {
+						"type": [
+							"boolean",
+							"null"
+						]
+					},
+					"axleNumber": {
+						"type": [
+							"integer",
+							"null"
+						]
+					},
+					"brakes": {
+						"type": [
+							"null",
+							"object"
+						],
+						"additionalProperties": false,
+						"properties": {
+							"brakeActuator": {
+								"type": [
+									"null",
+									"integer"
+								],
+								"minimum": 0,
+								"maximum": 999
+							},
+							"leverLength": {
+								"type": [
+									"null",
+									"integer"
+								],
+								"minimum": 0,
+								"maximum": 999
+							},
+							"springBrakeParking": {
+								"type": [
+									"null",
+									"boolean"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
 		"techRecord_noOfAxles": {
 			"anyOf": [
 				{
@@ -799,7 +864,10 @@
 			]
 		},
 		"techRecord_plates": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "object",
 				"title": "TRL Plates",
@@ -1038,10 +1106,16 @@
 			"type": "string"
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_authIntoService_cocIssueDate": {
 			"type": [
