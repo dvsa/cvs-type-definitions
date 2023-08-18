@@ -6,7 +6,6 @@
 		"techRecord_reasonForCreation",
 		"techRecord_statusCode",
 		"techRecord_vehicleType",
-		"primaryVrm",
 		"vin"
 	],
 	"properties": {
@@ -1121,7 +1120,10 @@
 			"const": "hgv"
 		},
 		"primaryVrm": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"vin": {
 			"type": "string"

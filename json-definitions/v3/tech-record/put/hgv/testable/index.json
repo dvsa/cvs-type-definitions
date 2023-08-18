@@ -6,7 +6,6 @@
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
     "techRecord_vehicleType",
-    "primaryVrm",
     "vin",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleClass_code",
@@ -924,7 +923,10 @@
       "const": "hgv"
     },
     "primaryVrm": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "vin": {
       "type": "string"
