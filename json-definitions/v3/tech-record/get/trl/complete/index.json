@@ -546,7 +546,7 @@
       "minimum": 0
     },
     "drawbarCouplingFitted": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "techRecord_emissionsLimit": {
       "type": [
@@ -566,9 +566,9 @@
         }
       ]
     },
-    "techRecord_euroStandard": {
+    "techRecord_euroStandard": {"anyOf": [{"type": "null"}, {
       "$ref": "../../../enums/euroStandard.ignore.json"
-    },
+    }]},
     "frontAxleTo5thWheelMax": {
       "type": [
         "integer",
@@ -703,13 +703,13 @@
       ]
     },
     "techRecord_maxTrainDesignWeight": {
-      "type": "integer"
+      "type": ["null", "integer"]
     },
     "techRecord_maxTrainEecWeight": {
-      "type": "integer"
+      "type": ["null", "integer"]
     },
     "techRecord_maxTrainGbWeight": {
-      "type": "integer"
+      "type": ["null", "integer"]
     },
     "techRecord_manufacturerDetails": {
       "type": [
@@ -778,7 +778,7 @@
       "type": "string"
     },
     "techRecord_ntaNumber": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "techRecord_numberOfWheelsDriven": {
       "type": [
@@ -787,10 +787,10 @@
       ]
     },
     "techRecord_offRoad": {
-      "type": "boolean"
+      "type": ["null", "boolean"]
     },
     "techRecord_plates": {
-      "type": "array",
+      "type": ["null", "array"],
       "items": {
         "type": "object",
         "title": "TRL Plates",
@@ -943,13 +943,13 @@
       ]
     },
     "techRecord_speedLimiterMrk": {
-      "type": "boolean"
+      "type": ["null", "boolean"]
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_tachoExemptMrk": {
-      "type": "boolean"
+      "type": ["null", "boolean"]
     },
     "techRecord_suspensionType": {
       "type": [
@@ -966,10 +966,10 @@
       "maxLength": 2
     },
     "techRecord_variantNumber": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "techRecord_variantVersionNumber": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "techRecord_vehicleClass_code": {
       "type": "string"
@@ -997,7 +997,7 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": "array",
+      "type": ["null", "array"],
       "items": {
         "type": "object",
         "title": "TRL Axles",
@@ -1119,10 +1119,10 @@
       }
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": ["null", "boolean"]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "techRecord_authIntoService_cocIssueDate": {
       "type": [

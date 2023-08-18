@@ -18,7 +18,10 @@
   ],
   "properties": {
     "secondaryVrms": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }
@@ -392,7 +395,10 @@
       ]
     },
     "techRecord_axles": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "HGV Axles",
@@ -477,10 +483,16 @@
       }
     },
     "techRecord_bodyType_code": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_bodyType_description": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_brakes_antilockBrakingSystem": {
       "type": [
@@ -524,7 +536,10 @@
       ]
     },
     "techRecord_dimensions_axleSpacing_axles": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_dimensions_axleSpacing_value": {
       "type": [
@@ -766,7 +781,10 @@
       ]
     },
     "techRecord_plates": {
-      "type": "array",
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "HGV Plates",
@@ -879,10 +897,20 @@
       "maxLength": 2
     },
     "techRecord_vehicleClass_code": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_vehicleClass_description": {
-      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+        }
+      ]
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [
@@ -960,10 +988,16 @@
       "type": "string"
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

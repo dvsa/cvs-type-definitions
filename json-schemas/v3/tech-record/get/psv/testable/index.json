@@ -24,7 +24,10 @@
 			"type": "string"
 		},
 		"partialVin": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"systemNumber": {
 			"type": "string"
@@ -109,10 +112,16 @@
 			]
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_recordCompleteness": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
@@ -279,7 +288,10 @@
 			]
 		},
 		"techRecord_bodyType_code": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_functionCode": {
 			"type": [
@@ -425,9 +437,6 @@
 			],
 			"maxLength": 1024
 		},
-		"techRecord_dda": {
-			"type": "null"
-		},
 		"techRecord_standingCapacity": {
 			"type": [
 				"integer",
@@ -510,6 +519,7 @@
 		},
 		"techRecord_numberOfSeatbelts": {
 			"type": [
+				"null",
 				"string"
 			],
 			"maxLength": 99
@@ -627,9 +637,6 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"techRecord_dimensions": {
-			"type": "null"
-		},
 		"techRecord_dimensions_length": {
 			"type": [
 				"integer",
@@ -677,7 +684,10 @@
 			"maxLength": 160
 		},
 		"techRecord_axles": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "object",
 				"title": "PSV Axles",
@@ -986,9 +996,6 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"techRecord_microfilm": {
-			"type": "null"
-		},
 		"techRecord_microfilmDocumentType": {
 			"anyOf": [
 				{
@@ -1079,22 +1086,30 @@
 		},
 		"createdTimestamp": {
 			"type": [
+				"null",
 				"string"
 			]
 		},
 		"techRecord_applicationId": {
 			"type": [
+				"null",
 				"string"
 			]
 		},
 		"secondaryVrms": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "string"
 			}
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		}
 	}
 }

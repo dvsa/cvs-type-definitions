@@ -92,17 +92,17 @@
       "type": "string"
     },
     "techRecord_createdAt": {
-      "type": "string"
+      "type":  ["null","string"]
     },
     "techRecord_createdById": {
-      "type": "string"
+      "type":  ["null","string"]
     },
     "techRecord_createdByName": {
-      "type": "string"
+      "type":  ["null","string"]
     },
-    "techRecord_euVehicleCategory": {
+    "techRecord_euVehicleCategory": {"anyOf": [{"type": "null"}, {
       "$ref": "../../../enums/euVehicleCategory.ignore.json"
-    },
+    }]},
     "techRecord_lastUpdatedAt": {
       "type": [
         "string",
@@ -128,13 +128,13 @@
       ]
     },
     "techRecord_recordCompleteness": {
-      "type": "string"
+      "type":  ["null","string"]
     },
     "techRecord_noOfAxles": {
-      "type": "integer"
+      "type": ["null", "integer"]
     },
     "techRecord_notes": {
-      "type": "string"
+      "type":  ["null","string"]
     },
     "techRecord_reasonForCreation": {
       "type": "string"
@@ -145,29 +145,29 @@
         "null"
       ]
     },
-    "techRecord_statusCode": {
+    "techRecord_statusCode": {"anyOf": [{"type": "null"},{
       "$ref": "../../../enums/statusCode.ignore.json"
-    },
-    "techRecord_vehicleConfiguration": {
+    }]},
+    "techRecord_vehicleConfiguration": {"anyOf": [{"type": "null"},{
       "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-    },
-    "techRecord_vehicleType": {
+    }]},
+    "techRecord_vehicleType": {"anyOf": [{"type": "null"}, {
       "$ref": "../../../enums/vehicleType.ignore.json"
-    },
+    }]},
     "vin": {
       "type": "string"
     },
-    "techRecord_vehicleSubclass": {
+    "techRecord_vehicleSubclass": {"anyOf": [{"type": "null"}, {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
-    },
+    }]},
     "techRecord_numberOfWheelsDriven": {
-      "type": "integer"
+      "type": ["null", "integer"]
     },
     "techRecord_hiddenInVta": {
-      "type": "boolean"
+      "type": ["null", "boolean"]
     },
     "techRecord_updateType": {
-      "type": "string"
+      "type":  ["null","string"]
     }
   }
 }

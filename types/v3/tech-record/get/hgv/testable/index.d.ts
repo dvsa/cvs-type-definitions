@@ -143,7 +143,7 @@ export type ApprovalType =
   | "IVA - DVSA/NI";
 
 export interface GETHGVTechnicalRecordV3Testable {
-  secondaryVrms?: string[];
+  secondaryVrms?: null | string[];
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;
@@ -197,9 +197,9 @@ export interface GETHGVTechnicalRecordV3Testable {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: string;
-  techRecord_axles?: HGVAxles[];
-  techRecord_bodyType_code?: string;
-  techRecord_bodyType_description?: string;
+  techRecord_axles?: null | HGVAxles[];
+  techRecord_bodyType_code?: null | string;
+  techRecord_bodyType_description?: null | string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
@@ -239,7 +239,7 @@ export interface GETHGVTechnicalRecordV3Testable {
   techRecord_noOfAxles?: number | null;
   techRecord_notes?: string | null;
   techRecord_offRoad?: boolean | null;
-  techRecord_plates?: HGVPlates[];
+  techRecord_plates?: null | HGVPlates[];
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "testable";
   techRecord_regnDate?: string | null;
@@ -265,8 +265,8 @@ export interface GETHGVTechnicalRecordV3Testable {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
 }
 export interface HGVAxles {
   parkingBrakeMrk?: boolean | null;

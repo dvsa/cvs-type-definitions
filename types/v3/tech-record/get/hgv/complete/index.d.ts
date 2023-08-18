@@ -196,7 +196,7 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   techRecord_axles: HGVAxles[];
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
@@ -208,7 +208,7 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_createdById: string;
   techRecord_createdByName: string;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_axleSpacing_axles?: string;
+  techRecord_dimensions_axleSpacing_axles?: null | string;
   techRecord_dimensions_axleSpacing_value?: number | null;
   techRecord_dimensions_length: number;
   techRecord_dimensions_width: number;
@@ -239,7 +239,7 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_noOfAxles?: number | null;
   techRecord_notes: string;
   techRecord_offRoad: boolean;
-  techRecord_plates?: HGVPlates[];
+  techRecord_plates?: null | HGVPlates[];
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "complete";
   techRecord_regnDate: string;
@@ -265,8 +265,8 @@ export interface GETHGVTechnicalRecordV3Complete {
   techRecord_vehicleType: "hgv";
   primaryVrm: string;
   vin: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
 }
 export interface HGVAxles {
   parkingBrakeMrk?: boolean;
