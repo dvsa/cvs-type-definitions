@@ -1241,7 +1241,10 @@
 				"array"
 			],
 			"items": {
-				"type": "object",
+				"type": [
+					"null",
+					"object"
+				],
 				"title": "TRL Axles",
 				"additionalProperties": false,
 				"properties": {
@@ -1262,17 +1265,26 @@
 						"additionalProperties": false,
 						"properties": {
 							"brakeActuator": {
-								"type": "integer",
+								"type": [
+									"null",
+									"integer"
+								],
 								"minimum": 0,
 								"maximum": 999
 							},
 							"leverLength": {
-								"type": "integer",
+								"type": [
+									"null",
+									"integer"
+								],
 								"minimum": 0,
 								"maximum": 999
 							},
 							"springBrakeParking": {
-								"type": "boolean"
+								"type": [
+									"null",
+									"boolean"
+								]
 							}
 						}
 					},

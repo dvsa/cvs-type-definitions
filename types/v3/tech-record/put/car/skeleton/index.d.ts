@@ -10,19 +10,19 @@ export type StatusCode = "provisional" | "current" | "archived";
 
 export interface TechRecordPUTRequestSkeletonCarSchema {
   vin: string;
-  primaryVrm?: string;
+  primaryVrm?: null | string;
   trailerId?: string | null;
   techRecord_reasonForCreation?: string | null;
   techRecord_vehicleType: VehicleType;
-  techRecord_statusCode?: StatusCode;
+  techRecord_statusCode?: null | StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: string | null;
   techRecord_noOfAxles?: number | null;
-  techRecord_notes?: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
-  secondaryVrms?: string[];
+  techRecord_notes?: null | string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
+  techRecord_createdAt?: null | string;
+  techRecord_createdById?: null | string;
+  techRecord_createdByName?: null | string;
+  secondaryVrms?: null | string[];
 }

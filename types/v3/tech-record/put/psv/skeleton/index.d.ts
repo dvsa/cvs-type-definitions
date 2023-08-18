@@ -187,20 +187,20 @@ export interface PUTPSVTechnicalRecordV3Skeleton {
   vin: string;
   partialVin?: string | null;
   systemNumber: string;
-  primaryVrm?: string;
+  primaryVrm?: null | string;
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt?: string;
+  techRecord_createdAt?: null | string;
   techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_vehicleSize?: VehicleSize | null;
   techRecord_seatsLowerDeck?: number | null;
   techRecord_seatsUpperDeck?: number | null;
   techRecord_numberOfWheelsDriven?: number | null;
-  techRecord_vehicleClass_code?: string;
+  techRecord_vehicleClass_code?: null | string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_recordCompleteness?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_recordCompleteness?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
@@ -213,7 +213,7 @@ export interface PUTPSVTechnicalRecordV3Skeleton {
   techRecord_variantNumber?: string | null;
   techRecord_variantVersionNumber?: string | null;
   techRecord_bodyType_description: BodyTypeDescription;
-  techRecord_bodyType_code?: string;
+  techRecord_bodyType_code?: null | string;
   techRecord_functionCode?: string | null;
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
@@ -235,7 +235,6 @@ export interface PUTPSVTechnicalRecordV3Skeleton {
   techRecord_dda_ddaSchedules?: string | null;
   techRecord_dda_seatbeltsFitted?: number | null;
   techRecord_dda_ddaNotes?: string | null;
-  techRecord_dda?: null;
   techRecord_standingCapacity?: number | null;
   techRecord_speedLimiterMrk?: boolean | null;
   techRecord_tachoExemptMrk?: boolean | null;
@@ -258,14 +257,13 @@ export interface PUTPSVTechnicalRecordV3Skeleton {
   techRecord_grossLadenWeight?: number | null;
   techRecord_unladenWeight?: number | null;
   techRecord_maxTrainGbWeight?: number | null;
-  techRecord_dimensions?: null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_dimensions_height?: number | null;
   techRecord_frontAxleToRearAxle?: number | null;
   techRecord_remarks?: string | null;
   techRecord_dispensations?: string | null;
-  techRecord_axles?: PSVAxles[];
+  techRecord_axles?: null | PSVAxles[];
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -288,15 +286,14 @@ export interface PUTPSVTechnicalRecordV3Skeleton {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
-  techRecord_microfilm?: null;
   techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
   techRecord_microfilmRollNumber?: string | null;
   techRecord_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  createdTimestamp?: string;
+  createdTimestamp?: null | string;
   techRecord_applicationId?: string;
   secondaryVrms?: string[];
-  techRecord_updateType?: string;
+  techRecord_updateType?: null | string;
 }
 export interface PSVAxles {
   parkingBrakeMrk?: boolean | null;

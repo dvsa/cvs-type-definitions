@@ -201,7 +201,10 @@
       "$ref": "../../../enums/bodyTypeDescription.ignore.json"
     },
     "techRecord_bodyType_code": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_functionCode": {
       "type": [
@@ -570,7 +573,10 @@
       "maxLength": 160
     },
     "techRecord_axles": {
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "PSV Axles",
@@ -877,13 +883,19 @@
       "type": "string"
     },
     "secondaryVrms": {
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
       }
     },
     "techRecord_updateType": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

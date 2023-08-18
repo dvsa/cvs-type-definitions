@@ -59,13 +59,22 @@
 			]
 		},
 		"techRecord_createdAt": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_createdById": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_createdByName": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_adrDetails_vehicleDetails_type": {
 			"type": [
@@ -425,7 +434,10 @@
 			"maxLength": 255
 		},
 		"techRecord_applicationId": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_axles": {
 			"type": "array",
@@ -813,7 +825,10 @@
 			"type": "boolean"
 		},
 		"techRecord_plates": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "object",
 				"title": "HGV Plates",
@@ -1023,10 +1038,16 @@
 			"type": "string"
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		}
 	}
 }

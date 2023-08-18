@@ -263,7 +263,7 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  techRecord_axles?: PSVAxles[];
+  techRecord_axles?: null | TRLAxles[];
   brakes?: {
     brakeActuator?: number;
     leverLength?: number;
@@ -293,7 +293,22 @@ export interface TRLPlates {
   reasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
 }
-export interface PSVAxles {
+export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
+  brakes?: {
+    brakeActuator?: null | number;
+    leverLength?: null | number;
+    springBrakeParking?: null | boolean;
+  };
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

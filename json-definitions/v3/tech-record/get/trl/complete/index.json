@@ -546,7 +546,10 @@
       "minimum": 0
     },
     "drawbarCouplingFitted": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_emissionsLimit": {
       "type": [
@@ -566,9 +569,16 @@
         }
       ]
     },
-    "techRecord_euroStandard": {"anyOf": [{"type": "null"}, {
-      "$ref": "../../../enums/euroStandard.ignore.json"
-    }]},
+    "techRecord_euroStandard": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/euroStandard.ignore.json"
+        }
+      ]
+    },
     "frontAxleTo5thWheelMax": {
       "type": [
         "integer",
@@ -703,13 +713,22 @@
       ]
     },
     "techRecord_maxTrainDesignWeight": {
-      "type": ["null", "integer"]
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_maxTrainEecWeight": {
-      "type": ["null", "integer"]
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_maxTrainGbWeight": {
-      "type": ["null", "integer"]
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_manufacturerDetails": {
       "type": [
@@ -778,7 +797,10 @@
       "type": "string"
     },
     "techRecord_ntaNumber": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_numberOfWheelsDriven": {
       "type": [
@@ -787,10 +809,16 @@
       ]
     },
     "techRecord_offRoad": {
-      "type": ["null", "boolean"]
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_plates": {
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "object",
         "title": "TRL Plates",
@@ -943,13 +971,19 @@
       ]
     },
     "techRecord_speedLimiterMrk": {
-      "type": ["null", "boolean"]
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_tachoExemptMrk": {
-      "type": ["null", "boolean"]
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_suspensionType": {
       "type": [
@@ -966,10 +1000,16 @@
       "maxLength": 2
     },
     "techRecord_variantNumber": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_variantVersionNumber": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_vehicleClass_code": {
       "type": "string"
@@ -997,9 +1037,15 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
-        "type": "object",
+        "type": [
+          "null",
+          "object"
+        ],
         "title": "TRL Axles",
         "additionalProperties": false,
         "properties": {
@@ -1020,17 +1066,26 @@
             "additionalProperties": false,
             "properties": {
               "brakeActuator": {
-                "type": "integer",
+                "type": [
+                  "null",
+                  "integer"
+                ],
                 "minimum": 0,
                 "maximum": 999
               },
               "leverLength": {
-                "type": "integer",
+                "type": [
+                  "null",
+                  "integer"
+                ],
                 "minimum": 0,
                 "maximum": 999
               },
               "springBrakeParking": {
-                "type": "boolean"
+                "type": [
+                  "null",
+                  "boolean"
+                ]
               }
             }
           },
@@ -1119,10 +1174,16 @@
       }
     },
     "techRecord_hiddenInVta": {
-      "type": ["null", "boolean"]
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_authIntoService_cocIssueDate": {
       "type": [

@@ -241,7 +241,7 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
   techRecord_noOfAxles: number | null;
-  techRecord_plates?: TRLPlates[];
+  techRecord_plates?: null | TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
   techRecord_purchaserDetails_address3?: string | null;
@@ -269,12 +269,7 @@ export interface GETTRLTechnicalRecordV3Testable {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  techRecord_axles?: PSVAxles[];
-  brakes?: {
-    brakeActuator?: number;
-    leverLength?: number;
-    springBrakeParking?: boolean;
-  };
+  techRecord_axles?: null | TRLAxles[];
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;
@@ -285,8 +280,8 @@ export interface GETTRLTechnicalRecordV3Testable {
   tyres_fitmentCode?: null | FitmentCode;
   tyres_dataTrAxles?: null | number;
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;
   techRecord_authIntoService_dateReceived?: string | null;
   techRecord_authIntoService_datePending?: string | null;
@@ -299,7 +294,12 @@ export interface TRLPlates {
   reasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
 }
-export interface PSVAxles {
+export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
+  brakes?: null | {
+    brakeActuator?: null | number;
+    leverLength?: null | number;
+    springBrakeParking?: null | boolean;
+  };
 }

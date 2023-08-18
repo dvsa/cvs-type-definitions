@@ -127,6 +127,23 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
+export type FitmentCode = "single" | "double";
+export type SpeedCategorySymbol =
+  | "a7"
+  | "a8"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "g"
+  | "j"
+  | "k"
+  | "l"
+  | "m"
+  | "n"
+  | "p"
+  | "q";
 
 export interface PUTTRLTechnicalRecordV3Skeleton {
   partialVin?: string | null;
@@ -256,10 +273,30 @@ export interface PUTTRLTechnicalRecordV3Skeleton {
   techRecord_authIntoService_datePending?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
+  techRecord_axles?: null | TRLAxles[];
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
   plateIssueDate?: string | null;
   reasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
+}
+export interface TRLAxles {
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  brakes?: {
+    brakeActuator?: null | number;
+    leverLength?: null | number;
+    springBrakeParking?: null | boolean;
+  };
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }

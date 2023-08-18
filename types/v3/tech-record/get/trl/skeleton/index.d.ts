@@ -181,11 +181,11 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
-  techRecord_bodyType_code?: string;
-  techRecord_bodyType_description?: string;
+  techRecord_bodyType_code?: null | string;
+  techRecord_bodyType_description?: null | string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
@@ -223,8 +223,9 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
+  techRecord_axles?: null | TRLAxles[];
   techRecord_noOfAxles?: number | null;
-  techRecord_plates?: TRLPlates[];
+  techRecord_plates?: null | TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
   techRecord_purchaserDetails_address3?: string | null;
@@ -252,13 +253,22 @@ export interface GETTRLTechnicalRecordV3Skeleton {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  techRecord_hiddenInVta?: boolean;
-  techRecord_updateType?: string;
+  techRecord_hiddenInVta?: null | boolean;
+  techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;
   techRecord_authIntoService_dateReceived?: string | null;
   techRecord_authIntoService_datePending?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
+}
+export interface TRLAxles {
+  parkingBrakeMrk?: boolean | null;
+  axleNumber?: number | null;
+  brakes?: null | {
+    brakeActuator?: null | number;
+    leverLength?: null | number;
+    springBrakeParking?: null | boolean;
+  };
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;

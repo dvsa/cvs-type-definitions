@@ -50,7 +50,10 @@
 			"type": "string"
 		},
 		"primaryVrm": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_vehicleType": {
 			"const": "psv"
@@ -68,7 +71,10 @@
 			"type": "string"
 		},
 		"techRecord_createdAt": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_vehicleConfiguration": {
 			"title": "Vehicle Configuration",
@@ -116,7 +122,10 @@
 			]
 		},
 		"techRecord_vehicleClass_code": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",
@@ -136,10 +145,16 @@
 			]
 		},
 		"techRecord_hiddenInVta": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_recordCompleteness": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
@@ -173,7 +188,10 @@
 			]
 		},
 		"techRecord_regnDate": {
-			"type": "string",
+			"type": [
+				"null",
+				"string"
+			],
 			"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
 		},
 		"techRecord_manufactureYear": {
@@ -268,34 +286,44 @@
 			"maxLength": 35
 		},
 		"techRecord_bodyType_description": {
-			"title": "Body Type Description",
-			"type": "string",
-			"enum": [
-				"artic",
-				"articulated",
-				"box",
-				"car transporter",
-				"concrete mixer",
-				"curtainsider",
-				"double decker",
-				"flat",
-				"livestock carrier",
-				"low loader",
-				"mini bus",
-				"other",
-				"other tanker",
-				"petrol/oil tanker",
-				"refrigerated",
-				"refuse",
-				"single decker",
-				"skeletal",
-				"skip loader",
-				"tipper",
-				"tractor"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Body Type Description",
+					"type": "string",
+					"enum": [
+						"artic",
+						"articulated",
+						"box",
+						"car transporter",
+						"concrete mixer",
+						"curtainsider",
+						"double decker",
+						"flat",
+						"livestock carrier",
+						"low loader",
+						"mini bus",
+						"other",
+						"other tanker",
+						"petrol/oil tanker",
+						"refrigerated",
+						"refuse",
+						"single decker",
+						"skeletal",
+						"skip loader",
+						"tipper",
+						"tractor"
+					]
+				}
 			]
 		},
 		"techRecord_bodyType_code": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_functionCode": {
 			"type": [
@@ -438,48 +466,65 @@
 			],
 			"maxLength": 1024
 		},
-		"techRecord_dda": {
-			"type": "null"
-		},
 		"techRecord_standingCapacity": {
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 999
 		},
 		"techRecord_speedLimiterMrk": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_tachoExemptMrk": {
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			]
 		},
 		"techRecord_euroStandard": {
-			"title": "Euro standard",
-			"type": "string",
-			"enum": [
-				"0.10 g/kWh Euro 3 PM",
-				"0.03 g/kWh Euro IV PM",
-				"Euro 3",
-				"Euro 4",
-				"Euro 5",
-				"Euro 6",
-				"Euro V",
-				"Euro VI",
-				"Full Electric"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Euro standard",
+					"type": "string",
+					"enum": [
+						"0.10 g/kWh Euro 3 PM",
+						"0.03 g/kWh Euro IV PM",
+						"Euro 3",
+						"Euro 4",
+						"Euro 5",
+						"Euro 6",
+						"Euro V",
+						"Euro VI",
+						"Full Electric"
+					]
+				}
 			]
 		},
 		"techRecord_fuelPropulsionSystem": {
-			"title": "Fuel Propulsion System",
-			"type": "string",
-			"enum": [
-				"DieselPetrol",
-				"Diesel",
-				"Petrol",
-				"Hybrid",
-				"Electric",
-				"CNG",
-				"Fuel cell",
-				"LNG",
-				"Other"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Fuel Propulsion System",
+					"type": "string",
+					"enum": [
+						"DieselPetrol",
+						"Diesel",
+						"Petrol",
+						"Hybrid",
+						"Electric",
+						"CNG",
+						"Fuel cell",
+						"LNG",
+						"Other"
+					]
+				}
 			]
 		},
 		"techRecord_emissionsLimit": {
@@ -598,9 +643,6 @@
 			],
 			"maximum": 99999,
 			"minimum": 0
-		},
-		"techRecord_dimensions": {
-			"type": "null"
 		},
 		"techRecord_dimensions_length": {
 			"type": [
@@ -921,9 +963,6 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"techRecord_microfilm": {
-			"type": "null"
-		},
 		"techRecord_microfilmDocumentType": {
 			"anyOf": [
 				{
@@ -1014,17 +1053,24 @@
 		},
 		"createdTimestamp": {
 			"type": [
+				"null",
 				"string"
 			]
 		},
 		"secondaryVrms": {
-			"type": "array",
+			"type": [
+				"null",
+				"array"
+			],
 			"items": {
 				"type": "string"
 			}
 		},
 		"techRecord_updateType": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		}
 	}
 }

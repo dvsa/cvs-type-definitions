@@ -92,17 +92,33 @@
       "type": "string"
     },
     "techRecord_createdAt": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdById": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_createdByName": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
-    "techRecord_euVehicleCategory": {"anyOf": [{"type": "null"}, {
-      "$ref": "../../../enums/euVehicleCategory.ignore.json"
-    }]},
+    "techRecord_euVehicleCategory": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        }
+      ]
+    },
     "techRecord_lastUpdatedAt": {
       "type": [
         "string",
@@ -128,13 +144,22 @@
       ]
     },
     "techRecord_recordCompleteness": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_noOfAxles": {
-      "type": ["null", "integer"]
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_notes": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_reasonForCreation": {
       "type": "string"
@@ -145,29 +170,66 @@
         "null"
       ]
     },
-    "techRecord_statusCode": {"anyOf": [{"type": "null"},{
-      "$ref": "../../../enums/statusCode.ignore.json"
-    }]},
-    "techRecord_vehicleConfiguration": {"anyOf": [{"type": "null"},{
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-    }]},
-    "techRecord_vehicleType": {"anyOf": [{"type": "null"}, {
-      "$ref": "../../../enums/vehicleType.ignore.json"
-    }]},
+    "techRecord_statusCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/statusCode.ignore.json"
+        }
+      ]
+    },
+    "techRecord_vehicleConfiguration": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+        }
+      ]
+    },
+    "techRecord_vehicleType": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleType.ignore.json"
+        }
+      ]
+    },
     "vin": {
       "type": "string"
     },
-    "techRecord_vehicleSubclass": {"anyOf": [{"type": "null"}, {
-      "$ref": "../../../enums/vehicleSubclass.ignore.json"
-    }]},
+    "techRecord_vehicleSubclass": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleSubclass.ignore.json"
+        }
+      ]
+    },
     "techRecord_numberOfWheelsDriven": {
-      "type": ["null", "integer"]
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_hiddenInVta": {
-      "type": ["null", "boolean"]
+      "type": [
+        "null",
+        "boolean"
+      ]
     },
     "techRecord_updateType": {
-      "type":  ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }
