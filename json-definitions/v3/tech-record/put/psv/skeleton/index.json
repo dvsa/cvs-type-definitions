@@ -3,7 +3,6 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "systemNumber",
     "techRecord_bodyMake",
     "techRecord_bodyType_description",
     "techRecord_brakes_dtpNumber",
@@ -26,7 +25,10 @@
       ]
     },
     "systemNumber": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "primaryVrm": {
       "type": [

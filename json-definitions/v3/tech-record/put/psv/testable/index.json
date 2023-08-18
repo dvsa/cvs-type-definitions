@@ -4,7 +4,6 @@
   "additionalProperties": false,
   "required": [
     "vin",
-    "systemNumber",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleSize",
     "techRecord_seatsLowerDeck",
@@ -27,7 +26,10 @@
       ]
     },
     "systemNumber": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "primaryVrm": {
       "type": [
