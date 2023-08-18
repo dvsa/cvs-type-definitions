@@ -700,7 +700,7 @@
               "null"
             ]
           },
-          "reasonForIssue": {
+          "plateReasonForIssue": {
             "anyOf": [
               {
                 "type": "null"

@@ -283,6 +283,6 @@ export interface HGVAxles {
 export interface HGVPlates {
   plateSerialNumber?: string | null;
   plateIssueDate?: string | null;
-  reasonForIssue?: null | PlateReasonForIssue;
+  plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
 }
