@@ -184,7 +184,7 @@ export type MicrofilmDocumentType =
   | "Tempo 100 Permit";
 
 export interface TechRecordGETPSVComplete {
-  secondaryVrms?: string[];
+  secondaryVrms?: null | string[];
   vin: string;
   partialVin?: null | string;
   systemNumber: string;
