@@ -278,7 +278,7 @@ export interface TechRecordPUTTRLSkeleton {
 export interface TRLPlates {
   plateSerialNumber?: string | null;
   plateIssueDate?: string | null;
-  reasonForIssue?: null | PlateReasonForIssue;
+  plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
 }
 export interface TRLAxles {
