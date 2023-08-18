@@ -8,12 +8,17 @@
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
-export interface TechRecordSearchSkeletonSchema {
-  techRecord_manufactureYear: number | null;
-  primaryVrm: string;
+export interface TechRecordSearchSchema {
+  primaryVrm?: string;
   vin: string;
   techRecord_statusCode: StatusCode;
   techRecord_vehicleType: VehicleType;
   createdTimestamp: string;
+  trailerId?: string;
   systemNumber: string;
+  techRecord_chassisMake?: null | string;
+  techRecord_chassisModel?: null | string;
+  techRecord_make?: null | string;
+  techRecord_model?: null | string;
+  techRecord_manufactureYear: number | null;
 }

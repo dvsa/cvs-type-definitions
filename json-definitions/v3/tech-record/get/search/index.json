@@ -1,0 +1,66 @@
+{
+  "title": "Tech Record Search Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "systemNumber",
+    "createdTimestamp",
+    "vin",
+    "techRecord_vehicleType",
+    "techRecord_manufactureYear",
+    "techRecord_statusCode"
+  ],
+  "properties": {
+    "primaryVrm": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../enums/statusCode.ignore.json"
+    },
+    "techRecord_vehicleType": {
+      "$ref": "../../enums/vehicleType.ignore.json"
+    },
+    "createdTimestamp": {
+      "type": "string"
+    },
+    "trailerId": {
+      "type": "string"
+    },
+    "systemNumber": {
+      "type": "string"
+    },
+    "techRecord_chassisMake": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_chassisModel": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_make": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_model": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  }
+}
