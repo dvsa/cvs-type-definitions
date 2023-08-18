@@ -9,7 +9,7 @@ export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
-export interface TechRecordPUTRequestCompleteCarSchema {
+export interface TechRecordPUTCarComplete {
   vin: string;
   primaryVrm?: null | string;
   trailerId?: string | null;

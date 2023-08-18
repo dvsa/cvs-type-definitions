@@ -180,7 +180,7 @@ export type SpeedCategorySymbol =
   | "p"
   | "q";
 
-export interface PUTTRLTechnicalRecordV3Complete {
+export interface TechRecordPUTTRLComplete {
   partialVin?: string | null;
   techRecord_createdAt?: null | string;
   techRecord_createdById?: null | string;

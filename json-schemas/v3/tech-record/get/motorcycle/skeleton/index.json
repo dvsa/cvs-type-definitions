@@ -1,5 +1,5 @@
 {
-	"title": "Tech Record Skeleton Motorcycle Schema",
+	"title": "Tech Record GET Motorcycle Skeleton",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

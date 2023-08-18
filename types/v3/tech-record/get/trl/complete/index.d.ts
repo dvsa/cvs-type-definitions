@@ -199,7 +199,7 @@ export type SpeedCategorySymbol =
   | "p"
   | "q";
 
-export interface GETTRLTechnicalRecordV3Complete {
+export interface TechRecordGETTRLComplete {
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;

@@ -1,5 +1,5 @@
 {
-  "title": "Tech Record PUT Request Complete Car Schema",
+  "title": "Tech Record PUT Car Complete",
   "type": "object",
   "additionalProperties": false,
   "required": [

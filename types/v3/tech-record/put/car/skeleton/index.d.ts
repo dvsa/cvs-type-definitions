@@ -8,7 +8,7 @@
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 
-export interface TechRecordPUTRequestSkeletonCarSchema {
+export interface TechRecordPUTCarSkeleton {
   vin: string;
   primaryVrm?: null | string;
   trailerId?: string | null;

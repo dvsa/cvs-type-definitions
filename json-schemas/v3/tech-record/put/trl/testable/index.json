@@ -1,5 +1,5 @@
 {
-	"title": "GET TRL Technical Record V3 Testable",
+	"title": "Tech Record PUT TRL Testable",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

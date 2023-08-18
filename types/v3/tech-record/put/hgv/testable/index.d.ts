@@ -142,7 +142,7 @@ export type ApprovalType =
   | "IVA - VCA"
   | "IVA - DVSA/NI";
 
-export interface PUTHGVTechnicalRecordV3Testable {
+export interface TechRecordPUTHGVTestable {
   secondaryVrms?: string[];
   partialVin?: string | null;
   techRecord_createdAt?: string;

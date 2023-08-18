@@ -128,7 +128,7 @@ export type VehicleConfiguration =
   | "dolly"
   | "full drawbar";
 
-export interface GETTRLTechnicalRecordV3Skeleton {
+export interface TechRecordGETTRLSkeleton {
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;

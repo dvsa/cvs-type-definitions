@@ -1,5 +1,5 @@
 {
-	"title": "Tech Record Skeleton Car Schema",
+	"title": "Tech Record GET LGV Skeleton",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

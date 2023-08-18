@@ -40,7 +40,7 @@ export type VehicleConfiguration =
   | "full drawbar";
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
-export interface TechRecordSkeletonCarSchema {
+export interface TechRecordGETLGVSkeleton {
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
