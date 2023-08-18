@@ -4,7 +4,6 @@
 	"additionalProperties": false,
 	"required": [
 		"techRecord_noOfAxles",
-		"trailerId",
 		"techRecord_reasonForCreation",
 		"techRecord_recordCompleteness",
 		"techRecord_statusCode",

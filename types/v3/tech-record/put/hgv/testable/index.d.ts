@@ -257,7 +257,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_variantNumber?: string | null;
   techRecord_variantVersionNumber?: string | null;
   techRecord_vehicleType: "hgv";
-  primaryVrm: string;
+  primaryVrm?: null | string;
   vin: string;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;

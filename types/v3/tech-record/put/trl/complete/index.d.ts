@@ -316,7 +316,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
-  trailerId: string;
+  trailerId?: string;
   vin: string;
   techRecord_axles?: null | PSVAxles[];
   techRecord_hiddenInVta?: null | boolean;

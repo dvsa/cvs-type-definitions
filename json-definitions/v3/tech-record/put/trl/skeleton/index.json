@@ -9,7 +9,6 @@
     "techRecord_vehicleClass_description",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleType",
-    "trailerId",
     "vin"
   ],
   "properties": {

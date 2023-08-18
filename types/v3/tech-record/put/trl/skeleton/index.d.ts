@@ -264,7 +264,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
-  trailerId: string;
+  trailerId?: string;
   vin: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;

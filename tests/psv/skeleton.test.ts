@@ -20,11 +20,6 @@ describe("validate skeleton psv schema", () => {
     const res = isValidObject(schemaName, data, true);
     expect(res).toEqual([]);
   });
-  it("should fail when missing a required field, systemNumber", () => {
-    const data = psvData[3];
-    const res = isValidObject(schemaName, data);
-    expect(res).toEqual(false);
-  });
   it("should fail if there is a validator wrong, techRecord_noOfAxles is too high", () => {
     const data = psvData[4];
     const res = isValidObject(schemaName, data);

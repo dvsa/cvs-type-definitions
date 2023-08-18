@@ -261,7 +261,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
-  trailerId: string;
+  trailerId?: string;
   vin: string;
   techRecord_axles?: null | TRLAxles[];
   brakes?: {
