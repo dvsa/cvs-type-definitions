@@ -1066,6 +1066,12 @@
         "string",
         "null"
       ]
+    },
+    "techRecord_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   }
 }
