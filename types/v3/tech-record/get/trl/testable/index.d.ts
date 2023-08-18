@@ -287,6 +287,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_authIntoService_datePending?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
+  techRecord_notes?: string | null;
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
