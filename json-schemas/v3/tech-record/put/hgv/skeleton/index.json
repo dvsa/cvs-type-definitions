@@ -6,7 +6,6 @@
 		"techRecord_reasonForCreation",
 		"techRecord_statusCode",
 		"techRecord_vehicleType",
-		"primaryVrm",
 		"vin"
 	],
 	"properties": {
