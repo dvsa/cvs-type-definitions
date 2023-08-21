@@ -61,7 +61,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedById?: string | null;
   techRecord_lastUpdatedByName?: string | null;
-  techRecord_manufactureYear?: string | null;
+  techRecord_manufactureYear?: number | null;
   techRecord_recordCompleteness?: null | string;
   techRecord_noOfAxles?: null | number;
   techRecord_notes?: null | string;

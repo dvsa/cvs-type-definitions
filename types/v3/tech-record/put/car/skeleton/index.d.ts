@@ -16,7 +16,7 @@ export interface TechRecordPUTCarSkeleton {
   techRecord_vehicleType: VehicleType;
   techRecord_statusCode?: null | StatusCode;
   techRecord_regnDate?: string | null;
-  techRecord_manufactureYear?: string | null;
+  techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles?: number | null;
   techRecord_notes?: null | string;
   techRecord_hiddenInVta?: null | boolean;

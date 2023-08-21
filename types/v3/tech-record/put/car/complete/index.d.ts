@@ -17,7 +17,7 @@ export interface TechRecordPUTCarComplete {
   techRecord_vehicleType: VehicleType;
   techRecord_statusCode?: null | StatusCode;
   techRecord_regnDate?: string | null;
-  techRecord_manufactureYear?: string | null;
+  techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles?: number | null;
   techRecord_notes?: string;
   techRecord_vehicleSubclass: VehicleSubclass;

@@ -132,7 +132,7 @@
     },
     "techRecord_manufactureYear": {
       "type": [
-        "string",
+        "integer",
         "null"
       ]
     },
