@@ -391,6 +391,41 @@
         "null"
       ]
     },
+    "techRecord_approvalType": {
+      "anyOf": [
+        {
+          "$ref": "../../../enums/approvalType.ignore.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "techRecord_approvalTypeNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25
+    },
+    "techRecord_ntaNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_variantNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "techRecord_variantVersionNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "techRecord_authIntoService": {
       "type": [
         "string",

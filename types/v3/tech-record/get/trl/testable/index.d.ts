@@ -7,6 +7,21 @@
 
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
+export type ApprovalType =
+  | "NTA"
+  | "ECTA"
+  | "IVA"
+  | "NSSTA"
+  | "ECSSTA"
+  | "GB WVTA"
+  | "UKNI WVTA"
+  | "EU WVTA Pre 23"
+  | "EU WVTA 23 on"
+  | "QNIG"
+  | "Prov.GB WVTA"
+  | "Small series"
+  | "IVA - VCA"
+  | "IVA - DVSA/NI";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -199,6 +214,11 @@ export interface TechRecordGETTRLTestable {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: string | null;
+  techRecord_approvalType?: ApprovalType | null;
+  techRecord_approvalTypeNumber?: string | null;
+  techRecord_ntaNumber?: null | string;
+  techRecord_variantNumber?: null | string;
+  techRecord_variantVersionNumber?: null | string;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
   techRecord_bodyType_code: string;

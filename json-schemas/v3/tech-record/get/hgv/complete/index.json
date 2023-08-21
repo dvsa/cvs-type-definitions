@@ -721,6 +721,9 @@
 				}
 			]
 		},
+		"techRecord_microfilm": {
+			"type": "null"
+		},
 		"techRecord_microfilm_microfilmDocumentType": {
 			"anyOf": [
 				{

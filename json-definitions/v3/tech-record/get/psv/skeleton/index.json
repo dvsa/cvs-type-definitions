@@ -266,6 +266,9 @@
         "null"
       ]
     },
+    "techRecord_dda": {
+      "type": "null"
+    },
     "techRecord_dda_certificateIssued": {
       "type": [
         "boolean",
@@ -525,6 +528,9 @@
       ],
       "maximum": 99999,
       "minimum": 0
+    },
+    "techRecord_dimensions": {
+      "type": "null"
     },
     "techRecord_dimensions_length": {
       "type": [
@@ -844,7 +850,10 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "techRecord_microfilmDocumentType": {
+    "techRecord_microfilm": {
+      "type": "null"
+    },
+    "techRecord_microfilm_microfilmDocumentType": {
       "anyOf": [
         {
           "$ref": "../../../enums/microfilmDocumentType.ignore.json"
@@ -854,14 +863,14 @@
         }
       ]
     },
-    "techRecord_microfilmRollNumber": {
+    "techRecord_microfilm_microfilmRollNumber": {
       "type": [
         "string",
         "null"
       ],
       "maxLength": 5
     },
-    "techRecord_microfilmSerialNumber": {
+    "techRecord_microfilm_microfilmSerialNumber": {
       "type": [
         "string",
         "null"
