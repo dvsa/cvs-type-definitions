@@ -354,6 +354,6 @@ export interface PSVAxles {
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 export interface AxleSpacing {
-  axles?: string | null;
+  axles?: string;
   value?: number | null;
 }

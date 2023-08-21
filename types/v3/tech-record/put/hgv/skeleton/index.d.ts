@@ -274,7 +274,7 @@ export interface HGVAxles {
   tyres_dataTrAxles?: null | number;
 }
 export interface AxleSpacing {
-  axles?: string | null;
+  axles?: string;
   value?: number | null;
 }
 export interface HGVPlates {

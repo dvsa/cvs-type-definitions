@@ -1005,10 +1005,7 @@
 				"additionalProperties": false,
 				"properties": {
 					"axles": {
-						"type": [
-							"string",
-							"null"
-						]
+						"type": "string"
 					},
 					"value": {
 						"type": [

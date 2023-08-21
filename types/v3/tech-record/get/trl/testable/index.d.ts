@@ -326,6 +326,6 @@ export interface TRLAxles {
   };
 }
 export interface AxleSpacing {
-  axles?: string | null;
+  axles?: string;
   value?: number | null;
 }
