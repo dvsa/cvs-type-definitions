@@ -223,6 +223,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
+  techRecord_dda?: null;
   techRecord_dda_certificateIssued?: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
   techRecord_dda_wheelchairFittings?: string | null;
@@ -257,6 +258,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_grossLadenWeight?: number | null;
   techRecord_unladenWeight?: number | null;
   techRecord_maxTrainGbWeight?: number | null;
+  techRecord_dimensions?: null;
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_dimensions_height?: number | null;
@@ -286,9 +288,10 @@ export interface TechRecordGETPSVTestable {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB?: number | null;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB?: number | null;
-  techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
-  techRecord_microfilmRollNumber?: string | null;
-  techRecord_microfilmSerialNumber?: string | null;
+  techRecord_microfilm?: null;
+  techRecord_microfilm_microfilmDocumentType?: MicrofilmDocumentType | null;
+  techRecord_microfilm_microfilmRollNumber?: string | null;
+  techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp?: null | string;
   techRecord_applicationId?: null | string;

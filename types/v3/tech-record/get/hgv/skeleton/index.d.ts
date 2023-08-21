@@ -231,6 +231,7 @@ export interface TechRecordGETHGVSkeleton {
   techRecord_maxTrainEecWeight?: number | null;
   techRecord_maxTrainDesignWeight?: number | null;
   techRecord_manufactureYear?: number | null;
+  techRecord_microfilm?: null;
   techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentType;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;

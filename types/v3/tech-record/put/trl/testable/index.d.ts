@@ -5,6 +5,21 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type ApprovalType =
+  | "NTA"
+  | "ECTA"
+  | "IVA"
+  | "NSSTA"
+  | "ECSSTA"
+  | "GB WVTA"
+  | "UKNI WVTA"
+  | "EU WVTA Pre 23"
+  | "EU WVTA 23 on"
+  | "QNIG"
+  | "Prov.GB WVTA"
+  | "Small series"
+  | "IVA - VCA"
+  | "IVA - DVSA/NI";
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type EUVehicleCategory =
@@ -147,6 +162,11 @@ export type SpeedCategorySymbol =
 
 export interface TechRecordPUTTRLTestable {
   partialVin?: string | null;
+  techRecord_approvalType?: ApprovalType | null;
+  techRecord_approvalTypeNumber?: string | null;
+  techRecord_ntaNumber?: null | string;
+  techRecord_variantNumber?: null | string;
+  techRecord_variantVersionNumber?: null | string;
   techRecord_createdAt?: string;
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
@@ -233,7 +253,6 @@ export interface TechRecordPUTTRLTestable {
   techRecord_manufactureYear?: number | null;
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling?: number | null;
-  techRecord_microfilm?: string | null;
   techRecord_microfilm_microfilmDocumentType?: null | MicrofilmDocumentType;
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;

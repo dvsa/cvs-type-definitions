@@ -289,9 +289,9 @@ export interface TechRecordPUTPSVComplete {
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB: number;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB: number;
   techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB: number;
-  techRecord_microfilmDocumentType?: MicrofilmDocumentType | null;
-  techRecord_microfilmRollNumber?: string | null;
-  techRecord_microfilmSerialNumber?: string | null;
+  techRecord_microfilm_microfilmDocumentType?: MicrofilmDocumentType | null;
+  techRecord_microfilm_microfilmRollNumber?: string | null;
+  techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp?: null | string;
   secondaryVrms?: null | string[];

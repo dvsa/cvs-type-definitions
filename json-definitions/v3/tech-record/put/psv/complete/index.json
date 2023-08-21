@@ -798,7 +798,7 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "techRecord_microfilmDocumentType": {
+    "techRecord_microfilm_microfilmDocumentType": {
       "anyOf": [
         {
           "$ref": "../../../enums/microfilmDocumentType.ignore.json"
@@ -808,14 +808,14 @@
         }
       ]
     },
-    "techRecord_microfilmRollNumber": {
+    "techRecord_microfilm_microfilmRollNumber": {
       "type": [
         "string",
         "null"
       ],
       "maxLength": 5
     },
-    "techRecord_microfilmSerialNumber": {
+    "techRecord_microfilm_microfilmSerialNumber": {
       "type": [
         "string",
         "null"
