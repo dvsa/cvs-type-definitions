@@ -4,6 +4,7 @@
   "additionalProperties": false,
   "required": [
     "vin",
+    "createdTimestamp",
     "systemNumber",
     "primaryVrm",
     "techRecord_vehicleConfiguration",
@@ -841,7 +842,6 @@
     },
     "createdTimestamp": {
       "type": [
-        "null",
         "string"
       ]
     },

@@ -293,7 +293,6 @@ export interface TechRecordPUTPSVComplete {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  createdTimestamp?: null | string;
   secondaryVrms?: null | string[];
   techRecord_updateType?: null | string;
 }

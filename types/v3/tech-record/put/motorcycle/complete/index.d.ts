@@ -50,7 +50,6 @@ export interface TechRecordPUTMotorcycleComplete {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  createdTimestamp?: null | string;
   partialVin?: null | string;
   primaryVrm?: null | string;
   systemNumber?: null | string;
