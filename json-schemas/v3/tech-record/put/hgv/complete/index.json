@@ -542,16 +542,29 @@
 				"null"
 			]
 		},
-		"techRecord_dimensions_axleSpacing_axles": {
-			"type": "string"
-		},
-		"techRecord_dimensions_axleSpacing_value": {
-			"type": [
-				"integer",
-				"null"
-			],
-			"maximum": 99999,
-			"minimum": 0
+		"techRecord_dimensions_axleSpacing": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "AxleSpacing",
+				"additionalProperties": false,
+				"properties": {
+					"axles": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"value": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"maximum": 99999,
+						"minimum": 0
+					}
+				}
+			}
 		},
 		"techRecord_dimensions_length": {
 			"type": "integer",

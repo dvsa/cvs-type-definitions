@@ -308,6 +308,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
   techRecord_notes?: string | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
@@ -323,4 +324,8 @@ export interface TRLAxles {
     leverLength?: null | number;
     springBrakeParking?: null | boolean;
   };
+}
+export interface AxleSpacing {
+  axles?: string | null;
+  value?: number | null;
 }

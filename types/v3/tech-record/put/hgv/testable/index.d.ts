@@ -206,8 +206,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_conversionRefNo?: string | null;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_axleSpacing_axles?: null | string;
-  techRecord_dimensions_axleSpacing_value?: number | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_drawbarCouplingFitted?: boolean | null;
@@ -273,6 +272,10 @@ export interface HGVAxles {
   tyres_plyRating?: string | null;
   tyres_fitmentCode?: null | FitmentCode;
   tyres_dataTrAxles?: null | number;
+}
+export interface AxleSpacing {
+  axles?: string | null;
+  value?: number | null;
 }
 export interface HGVPlates {
   plateSerialNumber?: string | null;

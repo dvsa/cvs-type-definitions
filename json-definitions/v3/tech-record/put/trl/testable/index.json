@@ -851,6 +851,30 @@
       ],
       "maxLength": 1
     },
+    "techRecord_dimensions_axleSpacing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "AxleSpacing",
+        "additionalProperties": false,
+        "properties": {
+          "axles": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "maximum": 99999,
+            "minimum": 0
+          }
+        }
+      }
+    },
     "techRecord_tyreUseCode": {
       "type": [
         "string",

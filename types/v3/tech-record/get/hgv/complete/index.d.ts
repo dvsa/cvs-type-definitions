@@ -208,8 +208,7 @@ export interface TechRecordGETHGVComplete {
   techRecord_createdById: string;
   techRecord_createdByName: string;
   techRecord_departmentalVehicleMarker?: boolean | null;
-  techRecord_dimensions_axleSpacing_axles?: null | string;
-  techRecord_dimensions_axleSpacing_value?: number | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
   techRecord_dimensions_length: number;
   techRecord_dimensions_width: number;
   techRecord_drawbarCouplingFitted: boolean;
@@ -280,6 +279,10 @@ export interface HGVAxles {
   tyres_plyRating?: string | null;
   tyres_fitmentCode?: FitmentCode;
   tyres_dataTrAxles?: null | number;
+}
+export interface AxleSpacing {
+  axles?: string | null;
+  value?: number | null;
 }
 export interface HGVPlates {
   plateSerialNumber?: string | null;

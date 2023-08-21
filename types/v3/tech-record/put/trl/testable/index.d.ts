@@ -275,6 +275,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
   techRecord_tyreUseCode?: string | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
@@ -311,6 +312,10 @@ export interface TRLPlates {
   plateIssueDate?: string | null;
   plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
+}
+export interface AxleSpacing {
+  axles?: string | null;
+  value?: number | null;
 }
 export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;

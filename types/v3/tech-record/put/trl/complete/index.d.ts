@@ -326,6 +326,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_authIntoService_datePending?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
@@ -351,4 +352,8 @@ export interface PSVAxles {
   tyres_fitmentCode?: null | FitmentCode;
   tyres_dataTrAxles?: null | number;
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
+}
+export interface AxleSpacing {
+  axles?: string | null;
+  value?: number | null;
 }
