@@ -1,4 +1,4 @@
-import { TechRecordGETCarComplete, VehicleType } from "./get/car/complete";
+import { TechRecordGETCarComplete } from "./get/car/complete";
 import { TechRecordGETCarSkeleton } from "./get/car/skeleton";
 import { TechRecordGETHGVComplete } from "./get/hgv/complete";
 import { TechRecordGETHGVSkeleton } from "./get/hgv/skeleton";
@@ -10,6 +10,7 @@ import { TechRecordGETMotorcycleSkeleton } from "./get/motorcycle/skeleton";
 import { TechRecordGETPSVComplete } from "./get/psv/complete";
 import { TechRecordGETPSVSkeleton } from "./get/psv/skeleton";
 import { TechRecordGETPSVTestable } from "./get/psv/testable";
+import { VehicleType } from "./get/search";
 import { TechRecordGETTRLComplete } from "./get/trl/complete";
 import { TechRecordGETTRLSkeleton } from "./get/trl/skeleton";
 import { TechRecordGETTRLTestable } from "./get/trl/testable";

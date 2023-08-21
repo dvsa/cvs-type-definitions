@@ -189,7 +189,7 @@
       ]
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../enums/vehicleType.ignore.json"
+      "const": "car"
     },
     "vin": {
       "type": "string"

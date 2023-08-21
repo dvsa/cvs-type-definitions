@@ -5,7 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
@@ -14,7 +13,7 @@ export interface TechRecordPUTCarComplete {
   primaryVrm?: null | string;
   trailerId?: string | null;
   techRecord_reasonForCreation?: string | null;
-  techRecord_vehicleType: VehicleType;
+  techRecord_vehicleType: "car";
   techRecord_statusCode?: null | StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;

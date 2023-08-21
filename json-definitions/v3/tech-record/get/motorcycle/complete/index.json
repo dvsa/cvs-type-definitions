@@ -191,14 +191,7 @@
       ]
     },
     "techRecord_vehicleType": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/vehicleType.ignore.json"
-        }
-      ]
+      "const": "motorcycle"
     },
     "vin": {
       "type": "string"

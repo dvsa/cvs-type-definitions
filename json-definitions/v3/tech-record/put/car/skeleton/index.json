@@ -29,7 +29,7 @@
       ]
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../enums/vehicleType.ignore.json"
+      "const": "car"
     },
     "techRecord_statusCode": {
       "anyOf": [

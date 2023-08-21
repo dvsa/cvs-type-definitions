@@ -38,7 +38,6 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
 export interface TechRecordGETCarSkeleton {
   techRecord_applicantDetails_name?: string | null;
@@ -68,7 +67,7 @@ export interface TechRecordGETCarSkeleton {
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: null | StatusCode;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
-  techRecord_vehicleType: VehicleType;
+  techRecord_vehicleType: "car";
   vin: string;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;

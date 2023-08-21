@@ -24,7 +24,6 @@ export type EUVehicleCategory =
   | "l5e"
   | "l6e"
   | "l7e";
-export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type StatusCode = "provisional" | "current" | "archived";
 
 export interface TechRecordPUTLGVSkeleton {
@@ -41,7 +40,7 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory;
   techRecord_reasonForCreation?: string | null;
-  techRecord_vehicleType: VehicleType;
+  techRecord_vehicleType: "lgv";
   techRecord_statusCode?: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
