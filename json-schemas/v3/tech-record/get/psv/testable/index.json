@@ -5,6 +5,7 @@
 	"required": [
 		"vin",
 		"systemNumber",
+		"createdTimestamp",
 		"primaryVrm",
 		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleSize",
@@ -1096,7 +1097,6 @@
 		},
 		"createdTimestamp": {
 			"type": [
-				"null",
 				"string"
 			]
 		},

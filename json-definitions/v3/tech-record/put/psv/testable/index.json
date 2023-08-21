@@ -864,12 +864,6 @@
         "null"
       ]
     },
-    "createdTimestamp": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "techRecord_applicationId": {
       "type": [
         "null",

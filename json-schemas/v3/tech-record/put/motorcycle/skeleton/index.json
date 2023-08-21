@@ -64,12 +64,6 @@
 			],
 			"maxLength": 255
 		},
-		"createdTimestamp": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
 		"partialVin": {
 			"type": [
 				"null",

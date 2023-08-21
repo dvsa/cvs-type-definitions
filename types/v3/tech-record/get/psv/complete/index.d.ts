@@ -297,7 +297,7 @@ export interface TechRecordGETPSVComplete {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  createdTimestamp?: null | string;
+  createdTimestamp: string;
   techRecord_updateType?: null | string;
 }
 export interface PSVAxlesComplete {

@@ -828,12 +828,6 @@
         "null"
       ]
     },
-    "createdTimestamp": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "secondaryVrms": {
       "type": [
         "null",
