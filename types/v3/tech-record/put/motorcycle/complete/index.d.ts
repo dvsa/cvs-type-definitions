@@ -38,7 +38,6 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordPUTMotorcycleComplete {
@@ -70,7 +69,7 @@ export interface TechRecordPUTMotorcycleComplete {
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: null | StatusCode;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
-  techRecord_vehicleType?: null | VehicleType;
+  techRecord_vehicleType?: "motorcycle";
   vin: string;
   techRecord_vehicleSubclass?: null | VehicleSubclass;
   techRecord_numberOfWheelsDriven: number;

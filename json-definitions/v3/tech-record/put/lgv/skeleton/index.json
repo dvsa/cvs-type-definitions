@@ -89,7 +89,7 @@
       ]
     },
     "techRecord_vehicleType": {
-      "$ref": "../../../enums/vehicleType.ignore.json"
+      "const": "lgv"
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"

@@ -110,16 +110,7 @@
 			]
 		},
 		"techRecord_vehicleType": {
-			"title": "Vehicle Type",
-			"type": "string",
-			"enum": [
-				"psv",
-				"trl",
-				"hgv",
-				"car",
-				"lgv",
-				"motorcycle"
-			]
+			"const": "lgv"
 		},
 		"techRecord_statusCode": {
 			"title": "Status Code",

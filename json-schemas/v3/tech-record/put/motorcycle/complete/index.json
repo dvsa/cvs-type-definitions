@@ -240,23 +240,7 @@
 			]
 		},
 		"techRecord_vehicleType": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Vehicle Type",
-					"type": "string",
-					"enum": [
-						"psv",
-						"trl",
-						"hgv",
-						"car",
-						"lgv",
-						"motorcycle"
-					]
-				}
-			]
+			"const": "motorcycle"
 		},
 		"vin": {
 			"type": "string"
