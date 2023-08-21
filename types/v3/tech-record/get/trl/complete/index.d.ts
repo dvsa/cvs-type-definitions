@@ -352,10 +352,15 @@ export interface TechRecordGETTRLComplete {
   techRecord_authIntoService_datePending?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
+  techRecord_dimensions_axleSpacing?: AxleSpacing[];
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
   plateIssueDate?: string | null;
   plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
+}
+export interface AxleSpacing {
+  axles?: string;
+  value?: number | null;
 }

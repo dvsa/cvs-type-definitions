@@ -1087,6 +1087,27 @@
 				"null"
 			]
 		},
+		"techRecord_dimensions_axleSpacing": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "AxleSpacing",
+				"additionalProperties": false,
+				"properties": {
+					"axles": {
+						"type": "string"
+					},
+					"value": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"maximum": 99999,
+						"minimum": 0
+					}
+				}
+			}
+		},
 		"techRecord_authIntoService_datePending": {
 			"type": [
 				"string",
