@@ -319,11 +319,19 @@ export interface TRLPlates {
 export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
-  brakes?: null | {
-    brakeActuator?: null | number;
-    leverLength?: null | number;
-    springBrakeParking?: null | boolean;
-  };
+  brakes_brakeActuator?: null | number;
+  brakes_leverLength?: null | number;
+  brakes_springBrakeParking?: null | boolean;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 export interface AxleSpacing {
   axles?: string;

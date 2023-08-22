@@ -318,7 +318,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_vehicleType: "trl";
   trailerId?: string;
   vin: string;
-  techRecord_axles?: null | PSVAxles[];
+  techRecord_axles?: null | TRLAxles[];
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;
@@ -334,14 +334,12 @@ export interface TRLPlates {
   plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
 }
-export interface PSVAxles {
+export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
-  brakes?: null | {
-    brakeActuator?: null | number;
-    leverLength?: null | number;
-    springBrakeParking?: null | boolean;
-  };
+  brakes_brakeActuator?: null | number;
+  brakes_leverLength?: null | number;
+  brakes_springBrakeParking?: null | boolean;
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;

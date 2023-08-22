@@ -926,33 +926,27 @@
               "null"
             ]
           },
-          "brakes": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "brakeActuator": {
-                "type": [
-                  "null",
-                  "integer"
-                ],
-                "minimum": 0,
-                "maximum": 999
-              },
-              "leverLength": {
-                "type": [
-                  "null",
-                  "integer"
-                ],
-                "minimum": 0,
-                "maximum": 999
-              },
-              "springBrakeParking": {
-                "type": [
-                  "null",
-                  "boolean"
-                ]
-              }
-            }
+          "brakes_brakeActuator": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          "brakes_leverLength": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          "brakes_springBrakeParking": {
+            "type": [
+              "null",
+              "boolean"
+            ]
           },
           "weights_gbWeight": {
             "type": [

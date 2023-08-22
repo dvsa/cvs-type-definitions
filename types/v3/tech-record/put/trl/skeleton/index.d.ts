@@ -308,11 +308,9 @@ export interface AxleSpacing {
 export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
-  brakes?: {
-    brakeActuator?: null | number;
-    leverLength?: null | number;
-    springBrakeParking?: null | boolean;
-  };
+  brakes_brakeActuator?: null | number;
+  brakes_leverLength?: null | number;
+  brakes_springBrakeParking?: null | boolean;
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;

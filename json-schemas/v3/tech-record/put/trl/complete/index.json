@@ -1213,7 +1213,7 @@
 			],
 			"items": {
 				"type": "object",
-				"title": "PSV Axles",
+				"title": "TRL Axles",
 				"additionalProperties": false,
 				"properties": {
 					"parkingBrakeMrk": {
@@ -1228,36 +1228,27 @@
 							"null"
 						]
 					},
-					"brakes": {
+					"brakes_brakeActuator": {
 						"type": [
 							"null",
-							"object"
+							"integer"
 						],
-						"additionalProperties": false,
-						"properties": {
-							"brakeActuator": {
-								"type": [
-									"null",
-									"integer"
-								],
-								"minimum": 0,
-								"maximum": 999
-							},
-							"leverLength": {
-								"type": [
-									"null",
-									"integer"
-								],
-								"minimum": 0,
-								"maximum": 999
-							},
-							"springBrakeParking": {
-								"type": [
-									"null",
-									"boolean"
-								]
-							}
-						}
+						"minimum": 0,
+						"maximum": 999
+					},
+					"brakes_leverLength": {
+						"type": [
+							"null",
+							"integer"
+						],
+						"minimum": 0,
+						"maximum": 999
+					},
+					"brakes_springBrakeParking": {
+						"type": [
+							"null",
+							"boolean"
+						]
 					},
 					"weights_gbWeight": {
 						"type": [
