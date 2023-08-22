@@ -109,6 +109,23 @@ export type MicrofilmDocumentType =
   | "COF Cert"
   | "PRT - Tr Plating Cert paid"
   | "Tempo 100 Permit";
+export type FitmentCode = "single" | "double";
+export type SpeedCategorySymbol =
+  | "a7"
+  | "a8"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "g"
+  | "j"
+  | "k"
+  | "l"
+  | "m"
+  | "n"
+  | "p"
+  | "q";
 export type PlateReasonForIssue =
   | "Free replacement"
   | "Replacement"
@@ -286,11 +303,19 @@ export interface TechRecordGETTRLSkeleton {
 export interface TRLAxles {
   parkingBrakeMrk?: boolean | null;
   axleNumber?: number | null;
-  brakes?: null | {
-    brakeActuator?: null | number;
-    leverLength?: null | number;
-    springBrakeParking?: null | boolean;
-  };
+  brakes_brakeActuator?: null | number;
+  brakes_leverLength?: null | number;
+  brakes_springBrakeParking?: null | boolean;
+  weights_gbWeight?: number | null;
+  weights_designWeight?: number | null;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode?: number | null;
+  tyres_tyreSize?: string | null;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode?: null | FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;

@@ -1120,36 +1120,131 @@
 							"null"
 						]
 					},
-					"brakes": {
+					"brakes_brakeActuator": {
 						"type": [
 							"null",
-							"object"
+							"integer"
 						],
-						"additionalProperties": false,
-						"properties": {
-							"brakeActuator": {
-								"type": [
-									"null",
-									"integer"
-								],
-								"minimum": 0,
-								"maximum": 999
+						"minimum": 0,
+						"maximum": 999
+					},
+					"brakes_leverLength": {
+						"type": [
+							"null",
+							"integer"
+						],
+						"minimum": 0,
+						"maximum": 999
+					},
+					"brakes_springBrakeParking": {
+						"type": [
+							"null",
+							"boolean"
+						]
+					},
+					"weights_gbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_designWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_ladenWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"weights_kerbWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"tyres_tyreCode": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
+					"tyres_tyreSize": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 12
+					},
+					"tyres_plyRating": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"tyres_fitmentCode": {
+						"anyOf": [
+							{
+								"type": "null"
 							},
-							"leverLength": {
-								"type": [
-									"null",
-									"integer"
-								],
-								"minimum": 0,
-								"maximum": 999
-							},
-							"springBrakeParking": {
-								"type": [
-									"null",
-									"boolean"
+							{
+								"title": "Fitment Code",
+								"type": "string",
+								"enum": [
+									"single",
+									"double"
 								]
 							}
-						}
+						]
+					},
+					"tyres_dataTrAxles": {
+						"type": [
+							"null",
+							"integer"
+						],
+						"minimum": 0,
+						"maximum": 999
+					},
+					"tyres_speedCategorySymbol": {
+						"anyOf": [
+							{
+								"title": "Speed Category Symbol",
+								"type": "string",
+								"enum": [
+									"a7",
+									"a8",
+									"b",
+									"c",
+									"d",
+									"e",
+									"f",
+									"g",
+									"j",
+									"k",
+									"l",
+									"m",
+									"n",
+									"p",
+									"q"
+								]
+							},
+							{
+								"type": "null"
+							}
+						]
 					}
 				}
 			}
