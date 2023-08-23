@@ -225,7 +225,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
-  techRecord_alterationMarker?: string | null;
+  techRecord_alterationMarker?: boolean | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;

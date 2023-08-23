@@ -359,7 +359,7 @@
     },
     "techRecord_alterationMarker": {
       "type": [
-        "string",
+        "boolean",
         "null"
       ]
     },

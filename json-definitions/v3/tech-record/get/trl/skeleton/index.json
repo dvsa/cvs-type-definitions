@@ -322,7 +322,7 @@
     },
     "techRecord_alterationMarker": {
       "type": [
-        "string",
+        "boolean",
         "null"
       ]
     },
@@ -449,7 +449,7 @@
     },
     "techRecord_brakes_antilockBrakingSystem": {
       "type": [
-        "string",
+        "boolean",
         "null"
       ]
     },
@@ -1008,7 +1008,7 @@
     },
     "techRecord_roadFriendly": {
       "type": [
-        "string",
+        "boolean",
         "null"
       ]
     },
