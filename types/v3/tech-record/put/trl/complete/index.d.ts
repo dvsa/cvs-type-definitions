@@ -256,7 +256,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_dimensions_width: number | null;
   drawbarCouplingFitted?: null | string;
   techRecord_emissionsLimit?: null | number;
-  techRecord_euVehicleCategory?: EUVehicleCategory | null;
+  techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_euroStandard?: null | EuroStandard;
   frontAxleTo5thWheelMax?: number | null;
   techRecord_frontAxleTo5thWheelMin?: number | null;

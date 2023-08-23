@@ -37,7 +37,8 @@
 		"techRecord_bodyType_description",
 		"techRecord_bodyType_code",
 		"techRecord_vehicleConfiguration",
-		"vin"
+		"vin",
+		"techRecord_euVehicleCategory"
 	],
 	"properties": {
 		"createdTimestamp": {
@@ -587,34 +588,27 @@
 			"maximum": 99
 		},
 		"techRecord_euVehicleCategory": {
-			"anyOf": [
-				{
-					"title": "EU vehicle category",
-					"type": "string",
-					"enum": [
-						"m1",
-						"m2",
-						"m3",
-						"n1",
-						"n2",
-						"n3",
-						"o1",
-						"o2",
-						"o3",
-						"o4",
-						"l1e-a",
-						"l1e",
-						"l2e",
-						"l3e",
-						"l4e",
-						"l5e",
-						"l6e",
-						"l7e"
-					]
-				},
-				{
-					"type": "null"
-				}
+			"title": "EU vehicle category",
+			"type": "string",
+			"enum": [
+				"m1",
+				"m2",
+				"m3",
+				"n1",
+				"n2",
+				"n3",
+				"o1",
+				"o2",
+				"o3",
+				"o4",
+				"l1e-a",
+				"l1e",
+				"l2e",
+				"l3e",
+				"l4e",
+				"l5e",
+				"l6e",
+				"l7e"
 			]
 		},
 		"techRecord_euroStandard": {

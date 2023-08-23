@@ -29,7 +29,8 @@
     "techRecord_bodyType_description",
     "techRecord_bodyType_code",
     "techRecord_vehicleConfiguration",
-    "vin"
+    "vin",
+    "techRecord_euVehicleCategory"
   ],
   "properties": {
     "partialVin": {
@@ -558,14 +559,7 @@
       "maximum": 99
     },
     "techRecord_euVehicleCategory": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/euVehicleCategory.ignore.json"
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
     "techRecord_euroStandard": {
       "anyOf": [

@@ -122,6 +122,7 @@
     "techRecord_dimensions_length": 7500,
     "techRecord_dimensions_width": 2200,
     "techRecord_frontAxleToRearAxle": 1700,
+    "techRecord_euVehicleCategory": "o4",
     "techRecord_rearAxleToRearTrl": 400,
     "techRecord_couplingCenterToRearAxleMax": 900,
     "techRecord_couplingCenterToRearAxleMin": 1000,
