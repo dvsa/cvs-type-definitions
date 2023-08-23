@@ -699,7 +699,7 @@
 				},
 				{
 					"title": "Paragraph Ids",
-					"type": "string",
+					"type": "number",
 					"enum": [
 						3,
 						4,
