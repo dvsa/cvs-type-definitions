@@ -18,7 +18,6 @@
 		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_numberOfWheelsDriven",
 		"techRecord_approvalType",
 		"techRecord_manufactureYear",
 		"techRecord_bodyType_code",
@@ -433,9 +432,17 @@
 		},
 		"techRecord_axles": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"title": "HGV Axles",
+				"required": [
+					"weights_gbWeight",
+					"weights_designWeight",
+					"tyres_tyreCode",
+					"tyres_tyreSize",
+					"tyres_fitmentCode"
+				],
 				"additionalProperties": false,
 				"properties": {
 					"parkingBrakeMrk": {
@@ -592,31 +599,27 @@
 			]
 		},
 		"techRecord_euVehicleCategory": {
-			"anyOf": [
-				{
-					"title": "EU vehicle category",
-					"type": "string",
-					"enum": [
-						"m1",
-						"m2",
-						"m3",
-						"n1",
-						"n2",
-						"n3",
-						"o1",
-						"o2",
-						"o3",
-						"o4",
-						"l1e-a",
-						"l1e",
-						"l2e",
-						"l3e",
-						"l4e",
-						"l5e",
-						"l6e",
-						"l7e"
-					]
-				}
+			"title": "EU vehicle category",
+			"type": "string",
+			"enum": [
+				"m1",
+				"m2",
+				"m3",
+				"n1",
+				"n2",
+				"n3",
+				"o1",
+				"o2",
+				"o3",
+				"o4",
+				"l1e-a",
+				"l1e",
+				"l2e",
+				"l3e",
+				"l4e",
+				"l5e",
+				"l6e",
+				"l7e"
 			]
 		},
 		"techRecord_frontAxleToRearAxle": {

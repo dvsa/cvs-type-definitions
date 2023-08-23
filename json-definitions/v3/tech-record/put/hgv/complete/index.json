@@ -10,7 +10,6 @@
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
-    "techRecord_numberOfWheelsDriven",
     "techRecord_approvalType",
     "techRecord_manufactureYear",
     "techRecord_bodyType_code",
@@ -430,10 +429,18 @@
     },
     "techRecord_axles": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "title": "HGV Axles",
         "additionalProperties": false,
+        "required": [
+          "weights_gbWeight",
+          "weights_designWeight",
+          "tyres_tyreCode",
+          "tyres_tyreSize",
+          "tyres_fitmentCode"
+        ],
         "properties": {
           "parkingBrakeMrk": {
             "type": "boolean"
@@ -575,11 +582,7 @@
       ]
     },
     "techRecord_euVehicleCategory": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/euVehicleCategory.ignore.json"
-        }
-      ]
+      "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
     "techRecord_frontAxleToRearAxle": {
       "type": "integer",
@@ -705,9 +708,6 @@
     "techRecord_model": {
       "type": "string",
       "maxLength": 30
-    },
-    "techRecord_numberOfWheelsDriven": {
-      "type": "integer"
     },
     "techRecord_noOfAxles": {
       "anyOf": [

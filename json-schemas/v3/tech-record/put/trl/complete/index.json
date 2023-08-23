@@ -29,7 +29,8 @@
 		"techRecord_bodyType_description",
 		"techRecord_bodyType_code",
 		"techRecord_vehicleConfiguration",
-		"vin"
+		"vin",
+		"techRecord_euVehicleCategory"
 	],
 	"properties": {
 		"partialVin": {
@@ -585,34 +586,27 @@
 			"maximum": 99
 		},
 		"techRecord_euVehicleCategory": {
-			"anyOf": [
-				{
-					"title": "EU vehicle category",
-					"type": "string",
-					"enum": [
-						"m1",
-						"m2",
-						"m3",
-						"n1",
-						"n2",
-						"n3",
-						"o1",
-						"o2",
-						"o3",
-						"o4",
-						"l1e-a",
-						"l1e",
-						"l2e",
-						"l3e",
-						"l4e",
-						"l5e",
-						"l6e",
-						"l7e"
-					]
-				},
-				{
-					"type": "null"
-				}
+			"title": "EU vehicle category",
+			"type": "string",
+			"enum": [
+				"m1",
+				"m2",
+				"m3",
+				"n1",
+				"n2",
+				"n3",
+				"o1",
+				"o2",
+				"o3",
+				"o4",
+				"l1e-a",
+				"l1e",
+				"l2e",
+				"l3e",
+				"l4e",
+				"l5e",
+				"l6e",
+				"l7e"
 			]
 		},
 		"techRecord_euroStandard": {
@@ -1207,20 +1201,25 @@
 			"type": "string"
 		},
 		"techRecord_axles": {
-			"type": [
-				"null",
-				"array"
-			],
+			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"title": "TRL Axles",
 				"additionalProperties": false,
+				"required": [
+					"weights_gbWeight",
+					"weights_designWeight",
+					"tyres_tyreCode",
+					"tyres_tyreSize",
+					"tyres_fitmentCode",
+					"parkingBrakeMrk",
+					"brakes_brakeActuator",
+					"brakes_leverLength"
+				],
 				"properties": {
 					"parkingBrakeMrk": {
-						"type": [
-							"boolean",
-							"null"
-						]
+						"type": "boolean"
 					},
 					"axleNumber": {
 						"type": [
@@ -1229,18 +1228,12 @@
 						]
 					},
 					"brakes_brakeActuator": {
-						"type": [
-							"null",
-							"integer"
-						],
+						"type": "integer",
 						"minimum": 0,
 						"maximum": 999
 					},
 					"brakes_leverLength": {
-						"type": [
-							"null",
-							"integer"
-						],
+						"type": "integer",
 						"minimum": 0,
 						"maximum": 999
 					},
@@ -1251,18 +1244,12 @@
 						]
 					},
 					"weights_gbWeight": {
-						"type": [
-							"integer",
-							"null"
-						],
+						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
 					"weights_designWeight": {
-						"type": [
-							"integer",
-							"null"
-						],
+						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
@@ -1283,18 +1270,12 @@
 						"maximum": 99999
 					},
 					"tyres_tyreCode": {
-						"type": [
-							"integer",
-							"null"
-						],
+						"type": "integer",
 						"minimum": 0,
 						"maximum": 99999
 					},
 					"tyres_tyreSize": {
-						"type": [
-							"string",
-							"null"
-						],
+						"type": "string",
 						"maxLength": 12
 					},
 					"tyres_plyRating": {
@@ -1304,18 +1285,11 @@
 						]
 					},
 					"tyres_fitmentCode": {
-						"anyOf": [
-							{
-								"type": "null"
-							},
-							{
-								"title": "Fitment Code",
-								"type": "string",
-								"enum": [
-									"single",
-									"double"
-								]
-							}
+						"title": "Fitment Code",
+						"type": "string",
+						"enum": [
+							"single",
+							"double"
 						]
 					},
 					"tyres_dataTrAxles": {
