@@ -204,7 +204,7 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
-  techRecord_alterationMarker?: string | null;
+  techRecord_alterationMarker?: boolean | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -223,7 +223,7 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_batchId?: string | null;
   techRecord_bodyType_code?: null | string;
   techRecord_bodyType_description?: null | string;
-  techRecord_brakes_antilockBrakingSystem?: string | null;
+  techRecord_brakes_antilockBrakingSystem?: boolean | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_centreOfRearmostAxleToRearOfTrl?: number | null;
@@ -280,7 +280,7 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness: "skeleton";
   techRecord_regnDate?: string | null;
-  techRecord_roadFriendly?: string | null;
+  techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
   techRecord_tyreUseCode?: string | null;
