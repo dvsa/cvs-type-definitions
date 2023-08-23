@@ -6,6 +6,7 @@
  */
 
 export type StatusCode = "provisional" | "current" | "archived";
+export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordPUTCarSkeleton {
   vin: string;
@@ -24,4 +25,5 @@ export interface TechRecordPUTCarSkeleton {
   techRecord_createdById?: null | string;
   techRecord_createdByName?: null | string;
   secondaryVrms?: null | string[];
+  techRecord_vehicleSubclass?: VehicleSubclass[];
 }

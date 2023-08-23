@@ -38,7 +38,6 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordGETMotorcycleComplete {
   secondaryVrms?: string[];
@@ -71,7 +70,6 @@ export interface TechRecordGETMotorcycleComplete {
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleType?: "motorcycle";
   vin: string;
-  techRecord_vehicleSubclass?: null | VehicleSubclass;
   techRecord_numberOfWheelsDriven: null | number;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;

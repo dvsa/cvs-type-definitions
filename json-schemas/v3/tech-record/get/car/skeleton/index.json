@@ -255,6 +255,29 @@
 			"items": {
 				"type": "string"
 			}
+		},
+		"techRecord_vehicleSubclass": {
+			"type": "array",
+			"items": {
+				"title": "Vehicle Subclass",
+				"type": "array",
+				"items": {
+					"type": "string",
+					"enum": [
+						"n",
+						"p",
+						"a",
+						"s",
+						"c",
+						"l",
+						"t",
+						"e",
+						"m",
+						"r",
+						"w"
+					]
+				}
+			}
 		}
 	}
 }

@@ -197,16 +197,6 @@
     "vin": {
       "type": "string"
     },
-    "techRecord_vehicleSubclass": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/vehicleSubclass.ignore.json"
-        }
-      ]
-    },
     "techRecord_numberOfWheelsDriven": {
       "type": "integer"
     },

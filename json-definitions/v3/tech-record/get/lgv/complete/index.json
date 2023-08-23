@@ -195,14 +195,10 @@
       "type": "string"
     },
     "techRecord_vehicleSubclass": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/vehicleSubclass.ignore.json"
-        }
-      ]
+      "type": "array",
+      "items": {
+        "$ref": "../../../enums/vehicleSubclass.ignore.json"
+      }
     },
     "techRecord_hiddenInVta": {
       "type": [
