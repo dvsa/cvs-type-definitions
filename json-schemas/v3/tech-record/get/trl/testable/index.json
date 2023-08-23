@@ -680,7 +680,7 @@
 					"title": "letter types",
 					"type": "string",
 					"enum": [
-						"trailer accept",
+						"trailer acceptance",
 						"trailer rejection"
 					]
 				}
@@ -699,13 +699,13 @@
 				},
 				{
 					"title": "Paragraph Ids",
-					"type": "string",
+					"type": "integer",
 					"enum": [
-						"3",
-						"4",
-						"5",
-						"6",
-						"7"
+						3,
+						4,
+						5,
+						6,
+						7
 					]
 				}
 			]
