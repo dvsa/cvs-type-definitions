@@ -907,6 +907,14 @@
 						"minimum": 0,
 						"maximum": 99999
 					},
+					"weights_eecWeight": {
+						"type": [
+							"integer",
+							"null"
+						],
+						"minimum": 0,
+						"maximum": 99999
+					},
 					"weights_ladenWeight": {
 						"type": [
 							"integer",
