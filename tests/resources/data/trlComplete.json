@@ -79,6 +79,7 @@
     "techRecord_tyreUseCode": "2B",
     "techRecord_suspensionType": "Y",
     "techRecord_couplingType": "F",
+    "techRecord_euVehicleCategory": "o2",
     "techRecord_dimensions_length": 7500,
     "techRecord_dimensions_width": 2200,
     "techRecord_frontAxleToRearAxle": 1700,
