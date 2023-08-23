@@ -294,11 +294,6 @@ export interface TechRecordPUTTRLTestable {
   trailerId?: string;
   vin: string;
   techRecord_axles?: null | TRLAxles[];
-  brakes?: {
-    brakeActuator?: number;
-    leverLength?: number;
-    springBrakeParking?: boolean;
-  };
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;

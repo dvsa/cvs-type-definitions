@@ -1298,25 +1298,6 @@
 				}
 			}
 		},
-		"brakes": {
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"brakeActuator": {
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 999
-				},
-				"leverLength": {
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 999
-				},
-				"springBrakeParking": {
-					"type": "boolean"
-				}
-			}
-		},
 		"weights_gbWeight": {
 			"type": [
 				"integer",
