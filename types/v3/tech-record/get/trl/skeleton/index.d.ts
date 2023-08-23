@@ -308,6 +308,7 @@ export interface TRLAxles {
   brakes_springBrakeParking?: null | boolean;
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
+  weights_eecWeight?: number | null;
   weights_ladenWeight?: number | null;
   weights_kerbWeight?: number | null;
   tyres_tyreCode?: number | null;
