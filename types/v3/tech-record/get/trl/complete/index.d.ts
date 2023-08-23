@@ -162,23 +162,6 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type TRLAxles = null | {
-  parkingBrakeMrk?: boolean | null;
-  axleNumber?: number | null;
-  brakes_brakeActuator?: null | number;
-  brakes_leverLength?: null | number;
-  brakes_springBrakeParking?: null | boolean;
-  weights_gbWeight?: number | null;
-  weights_designWeight?: number | null;
-  weights_ladenWeight?: number | null;
-  weights_kerbWeight?: number | null;
-  tyres_tyreCode?: number | null;
-  tyres_tyreSize?: string | null;
-  tyres_plyRating?: string | null;
-  tyres_fitmentCode?: null | FitmentCode;
-  tyres_dataTrAxles?: null | number;
-  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
-};
 export type FitmentCode = "single" | "double";
 export type SpeedCategorySymbol =
   | "a7"
@@ -275,7 +258,7 @@ export interface TechRecordGETTRLComplete {
   techRecord_dimensions_width: number | null;
   drawbarCouplingFitted?: null | string;
   techRecord_emissionsLimit?: null | number;
-  techRecord_euVehicleCategory?: EUVehicleCategory | null;
+  techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_euroStandard?: null | EuroStandard;
   frontAxleTo5thWheelMax?: number | null;
   techRecord_frontAxleTo5thWheelMin?: number | null;
@@ -342,7 +325,10 @@ export interface TechRecordGETTRLComplete {
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
-  techRecord_axles?: null | TRLAxles[];
+  /**
+   * @minItems 1
+   */
+  techRecord_axles?: [TRLAxles, ...TRLAxles[]];
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;
@@ -357,6 +343,23 @@ export interface TRLPlates {
   plateIssueDate?: string | null;
   plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
+}
+export interface TRLAxles {
+  parkingBrakeMrk: boolean;
+  axleNumber?: number | null;
+  brakes_brakeActuator: number;
+  brakes_leverLength: number;
+  brakes_springBrakeParking?: null | boolean;
+  weights_gbWeight: number;
+  weights_designWeight: number;
+  weights_ladenWeight?: number | null;
+  weights_kerbWeight?: number | null;
+  tyres_tyreCode: number;
+  tyres_tyreSize: string;
+  tyres_plyRating?: string | null;
+  tyres_fitmentCode: FitmentCode;
+  tyres_dataTrAxles?: null | number;
+  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 export interface AxleSpacing {
   axles?: string;
