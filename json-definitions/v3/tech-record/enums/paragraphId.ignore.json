@@ -1,6 +1,6 @@
 {
     "title": "Paragraph Ids",
-    "type": "number",
+    "type": "integer",
     "enum": [
         3,
         4,
