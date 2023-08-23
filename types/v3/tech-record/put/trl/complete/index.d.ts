@@ -71,8 +71,8 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
-export type LetterTypes = "trailer accept" | "trailer rejection";
-export type ParagraphIds = "3" | "4" | "5" | "6" | "7";
+export type LetterTypes = "trailer acceptance" | "trailer rejection";
+export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"

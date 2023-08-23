@@ -2,7 +2,7 @@
     "title": "letter types",
     "type": "string",
     "enum": [
-        "trailer accept",
+        "trailer acceptance",
         "trailer rejection"
     ]
 }
