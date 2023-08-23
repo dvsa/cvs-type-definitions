@@ -197,7 +197,10 @@ export interface TechRecordGETHGVComplete {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_applicationId?: null | string;
-  techRecord_axles: HGVAxles[];
+  /**
+   * @minItems 1
+   */
+  techRecord_axles: [HGVAxles, ...HGVAxles[]];
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
   techRecord_brakes_antilockBrakingSystem?: string | null;
@@ -235,7 +238,7 @@ export interface TechRecordGETHGVComplete {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model: string;
-  techRecord_numberOfWheelsDriven: number;
+  techRecord_numberOfWheelsDriven?: number;
   techRecord_noOfAxles?: number | null;
   techRecord_notes: string;
   techRecord_offRoad: boolean;
@@ -271,13 +274,13 @@ export interface TechRecordGETHGVComplete {
 export interface HGVAxles {
   parkingBrakeMrk?: boolean;
   axleNumber?: number;
-  weights_gbWeight?: number;
-  weights_designWeight?: number;
+  weights_gbWeight: number;
+  weights_designWeight: number;
   weights_eecWeight?: number | null;
-  tyres_tyreCode?: number;
-  tyres_tyreSize?: string;
+  tyres_tyreCode: number;
+  tyres_tyreSize: string;
   tyres_plyRating?: string | null;
-  tyres_fitmentCode?: FitmentCode;
+  tyres_fitmentCode: FitmentCode;
   tyres_dataTrAxles?: null | number;
 }
 export interface AxleSpacing {

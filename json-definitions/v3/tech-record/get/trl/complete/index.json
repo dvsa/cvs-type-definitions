@@ -1037,23 +1037,25 @@
       "type": "string"
     },
     "techRecord_axles": {
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": "array",
+      "minItems": 1,
       "items": {
-        "type": [
-          "null",
-          "object"
-        ],
+        "type": "object",
         "title": "TRL Axles",
         "additionalProperties": false,
+        "required": [
+          "weights_gbWeight",
+          "weights_designWeight",
+          "tyres_tyreCode",
+          "tyres_tyreSize",
+          "tyres_fitmentCode",
+          "parkingBrakeMrk",
+          "brakes_brakeActuator",
+          "brakes_leverLength"
+        ],
         "properties": {
           "parkingBrakeMrk": {
-            "type": [
-              "boolean",
-              "null"
-            ]
+            "type": "boolean"
           },
           "axleNumber": {
             "type": [
@@ -1062,18 +1064,12 @@
             ]
           },
           "brakes_brakeActuator": {
-            "type": [
-              "null",
-              "integer"
-            ],
+            "type": "integer",
             "minimum": 0,
             "maximum": 999
           },
           "brakes_leverLength": {
-            "type": [
-              "null",
-              "integer"
-            ],
+            "type": "integer",
             "minimum": 0,
             "maximum": 999
           },
@@ -1084,18 +1080,12 @@
             ]
           },
           "weights_gbWeight": {
-            "type": [
-              "integer",
-              "null"
-            ],
+            "type": "integer",
             "minimum": 0,
             "maximum": 99999
           },
           "weights_designWeight": {
-            "type": [
-              "integer",
-              "null"
-            ],
+            "type": "integer",
             "minimum": 0,
             "maximum": 99999
           },
@@ -1116,18 +1106,12 @@
             "maximum": 99999
           },
           "tyres_tyreCode": {
-            "type": [
-              "integer",
-              "null"
-            ],
+            "type": "integer",
             "minimum": 0,
             "maximum": 99999
           },
           "tyres_tyreSize": {
-            "type": [
-              "string",
-              "null"
-            ],
+            "type": "string",
             "maxLength": 12
           },
           "tyres_plyRating": {
@@ -1137,14 +1121,7 @@
             ]
           },
           "tyres_fitmentCode": {
-            "anyOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "../../../enums/fitmentCode.ignore.json"
-              }
-            ]
+            "$ref": "../../../enums/fitmentCode.ignore.json"
           },
           "tyres_dataTrAxles": {
             "type": [

@@ -752,12 +752,6 @@
       ],
       "maxLength": 30
     },
-    "techRecord_numberOfWheelsDriven": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
     "techRecord_noOfAxles": {
       "anyOf": [
         {
