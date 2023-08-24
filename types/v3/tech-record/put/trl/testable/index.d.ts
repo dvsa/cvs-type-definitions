@@ -257,7 +257,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -267,6 +267,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_purchaserDetails_name?: string | null;
   techRecord_purchaserDetails_postCode?: string | null;
   techRecord_purchaserDetails_postTown?: string | null;
+  techRecord_notes?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
   techRecord_manufacturerDetails_address1?: string | null;

@@ -1174,6 +1174,13 @@
 				"null"
 			]
 		},
+		"techRecord_notes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
 		"techRecord_authIntoService_dateAuthorised": {
 			"type": [
 				"string",
