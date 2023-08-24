@@ -5,7 +5,6 @@
 	"required": [
 		"techRecord_noOfAxles",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
