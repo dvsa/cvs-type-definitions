@@ -267,6 +267,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_purchaserDetails_name?: string | null;
   techRecord_purchaserDetails_postCode?: string | null;
   techRecord_purchaserDetails_postTown?: string | null;
+  techRecord_notes?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
   techRecord_manufacturerDetails_address1?: string | null;

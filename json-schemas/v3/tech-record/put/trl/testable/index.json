@@ -936,6 +936,13 @@
 				"null"
 			]
 		},
+		"techRecord_notes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
 		"techRecord_purchaserDetails_purchaserNotes": {
 			"type": [
 				"string",

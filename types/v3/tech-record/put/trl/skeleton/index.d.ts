@@ -301,6 +301,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_authIntoService_dateReceived?: string | null;
   techRecord_dimensions_axleSpacing?: AxleSpacing[];
   techRecord_authIntoService_datePending?: string | null;
+  techRecord_notes?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
   techRecord_axles?: null | TRLAxles[];
