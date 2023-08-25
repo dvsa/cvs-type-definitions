@@ -326,7 +326,7 @@
 				"null"
 			],
 			"maximum": 99999,
-			"min": 0
+			"minimum": 0
 		},
 		"techRecord_createdByName": {
 			"type": [
@@ -369,8 +369,8 @@
 				"integer",
 				"null"
 			],
-			"max": 99,
-			"min": 0
+			"maximum": 99,
+			"minimum": 0
 		},
 		"techRecord_dda_wheelchairFittings": {
 			"type": [
@@ -410,8 +410,8 @@
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_dda_outswing": {
 			"type": [
@@ -432,8 +432,8 @@
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 999
+			"minimum": 0,
+			"maximum": 999
 		},
 		"techRecord_dda_ddaNotes": {
 			"type": [
@@ -447,8 +447,8 @@
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 999
+			"minimum": 0,
+			"maximum": 999
 		},
 		"techRecord_speedLimiterMrk": {
 			"type": [
@@ -511,16 +511,16 @@
 				"null",
 				"integer"
 			],
-			"min": 0,
-			"max": 99
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_trainDesignWeight": {
 			"type": [
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99999
+			"minimum": 0,
+			"maximum": 99999
 		},
 		"techRecord_numberOfSeatbelts": {
 			"type": [
@@ -607,72 +607,72 @@
 				"number",
 				"null"
 			],
-			"max": 99,
-			"min": 0
+			"maximum": 99,
+			"minimum": 0
 		},
 		"techRecord_grossKerbWeight": {
 			"type": [
 				"number",
 				"null"
 			],
-			"max": 99999,
-			"min": 0
+			"maximum": 99999,
+			"minimum": 0
 		},
 		"techRecord_grossLadenWeight": {
 			"type": [
 				"number",
 				"null"
 			],
-			"max": 99999,
-			"min": 0
+			"maximum": 99999,
+			"minimum": 0
 		},
 		"techRecord_unladenWeight": {
 			"type": [
 				"number",
 				"null"
 			],
-			"max": 99999,
-			"min": 0
+			"maximum": 99999,
+			"minimum": 0
 		},
 		"techRecord_maxTrainGbWeight": {
 			"type": [
 				"number",
 				"null"
 			],
-			"max": 99999,
-			"min": 0
+			"maximum": 99999,
+			"minimum": 0
 		},
 		"techRecord_dimensions_length": {
 			"type": [
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99999
+			"minimum": 0,
+			"maximum": 99999
 		},
 		"techRecord_dimensions_width": {
 			"type": [
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99999
+			"minimum": 0,
+			"maximum": 99999
 		},
 		"techRecord_dimensions_height": {
 			"type": [
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99999
+			"minimum": 0,
+			"maximum": 99999
 		},
 		"techRecord_frontAxleToRearAxle": {
 			"type": [
 				"integer",
 				"null"
 			],
-			"min": 0,
-			"max": 99999
+			"minimum": 0,
+			"maximum": 99999
 		},
 		"techRecord_remarks": {
 			"type": [
