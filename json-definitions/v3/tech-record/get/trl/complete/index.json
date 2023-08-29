@@ -911,6 +911,66 @@
         "null"
       ]
     },
+    "techRecord_manufacturerDetails_address1": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_address2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_address3": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_emailAddress": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_faxNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_postCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_postTown": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_manufacturerNotes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_telephoneNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "techRecord_lastUpdatedAt": {
       "type": [
         "string",

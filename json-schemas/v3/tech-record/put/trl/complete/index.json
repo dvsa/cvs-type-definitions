@@ -746,7 +746,7 @@
 					"title": "letter types",
 					"type": "string",
 					"enum": [
-						"trailer accept",
+						"trailer acceptance",
 						"trailer rejection"
 					]
 				}
@@ -765,13 +765,13 @@
 				},
 				{
 					"title": "Paragraph Ids",
-					"type": "string",
+					"type": "integer",
 					"enum": [
-						"3",
-						"4",
-						"5",
-						"6",
-						"7"
+						3,
+						4,
+						5,
+						6,
+						7
 					]
 				}
 			]
@@ -935,7 +935,8 @@
 			]
 		},
 		"techRecord_notes": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 1024
 		},
 		"techRecord_ntaNumber": {
 			"type": [
@@ -1062,6 +1063,66 @@
 			]
 		},
 		"techRecord_purchaserDetails_telephoneNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address1": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address2": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address3": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_emailAddress": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_faxNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_name": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_postCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_postTown": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_manufacturerNotes": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_telephoneNumber": {
 			"type": [
 				"string",
 				"null"

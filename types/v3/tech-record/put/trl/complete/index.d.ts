@@ -71,8 +71,8 @@ export type FuelPropulsionSystem =
   | "Fuel cell"
   | "LNG"
   | "Other";
-export type LetterTypes = "trailer accept" | "trailer rejection";
-export type ParagraphIds = "3" | "4" | "5" | "6" | "7";
+export type LetterTypes = "trailer acceptance" | "trailer rejection";
+export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -301,6 +301,16 @@ export interface TechRecordPUTTRLComplete {
   techRecord_purchaserDetails_postTown?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
+  techRecord_manufacturerDetails_address1?: string | null;
+  techRecord_manufacturerDetails_address2?: string | null;
+  techRecord_manufacturerDetails_address3?: string | null;
+  techRecord_manufacturerDetails_emailAddress?: string | null;
+  techRecord_manufacturerDetails_faxNumber?: string | null;
+  techRecord_manufacturerDetails_name?: string | null;
+  techRecord_manufacturerDetails_postCode?: string | null;
+  techRecord_manufacturerDetails_postTown?: string | null;
+  techRecord_manufacturerDetails_manufacturerNotes?: string | null;
+  techRecord_manufacturerDetails_telephoneNumber?: string | null;
   techRecord_rearAxleToRearTrl: number | null;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;

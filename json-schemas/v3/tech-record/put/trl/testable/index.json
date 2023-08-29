@@ -5,7 +5,6 @@
 	"required": [
 		"techRecord_noOfAxles",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
@@ -670,7 +669,7 @@
 					"title": "letter types",
 					"type": "string",
 					"enum": [
-						"trailer accept",
+						"trailer acceptance",
 						"trailer rejection"
 					]
 				}
@@ -689,13 +688,13 @@
 				},
 				{
 					"title": "Paragraph Ids",
-					"type": "string",
+					"type": "integer",
 					"enum": [
-						"3",
-						"4",
-						"5",
-						"6",
-						"7"
+						3,
+						4,
+						5,
+						6,
+						7
 					]
 				}
 			]
@@ -829,16 +828,9 @@
 			"maxLength": 30
 		},
 		"techRecord_noOfAxles": {
-			"anyOf": [
-				{
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 99
-				},
-				{
-					"type": "null"
-				}
-			]
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_plates": {
 			"type": "array",
@@ -937,6 +929,13 @@
 				"null"
 			]
 		},
+		"techRecord_notes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
 		"techRecord_purchaserDetails_purchaserNotes": {
 			"type": [
 				"string",
@@ -944,6 +943,66 @@
 			]
 		},
 		"techRecord_purchaserDetails_telephoneNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address1": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address2": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_address3": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_emailAddress": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_faxNumber": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_name": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_postCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_postTown": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_manufacturerNotes": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufacturerDetails_telephoneNumber": {
 			"type": [
 				"string",
 				"null"
@@ -1235,25 +1294,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		"brakes": {
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"brakeActuator": {
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 999
-				},
-				"leverLength": {
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 999
-				},
-				"springBrakeParking": {
-					"type": "boolean"
 				}
 			}
 		},

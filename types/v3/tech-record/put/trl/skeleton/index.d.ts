@@ -51,8 +51,8 @@ export type FrameDescription =
   | "integral"
   | "Box section"
   | "U section";
-export type LetterTypes = "trailer accept" | "trailer rejection";
-export type ParagraphIds = "3" | "4" | "5" | "6" | "7";
+export type LetterTypes = "trailer acceptance" | "trailer rejection";
+export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -288,9 +288,20 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
   techRecord_authIntoService_cocIssueDate?: string | null;
+  techRecord_manufacturerDetails_address1?: string | null;
+  techRecord_manufacturerDetails_address2?: string | null;
+  techRecord_manufacturerDetails_address3?: string | null;
+  techRecord_manufacturerDetails_emailAddress?: string | null;
+  techRecord_manufacturerDetails_faxNumber?: string | null;
+  techRecord_manufacturerDetails_name?: string | null;
+  techRecord_manufacturerDetails_postCode?: string | null;
+  techRecord_manufacturerDetails_postTown?: string | null;
+  techRecord_manufacturerDetails_manufacturerNotes?: string | null;
+  techRecord_manufacturerDetails_telephoneNumber?: string | null;
   techRecord_authIntoService_dateReceived?: string | null;
   techRecord_dimensions_axleSpacing?: AxleSpacing[];
   techRecord_authIntoService_datePending?: string | null;
+  techRecord_notes?: string | null;
   techRecord_authIntoService_dateAuthorised?: string | null;
   techRecord_authIntoService_dateRejected?: string | null;
   techRecord_axles?: null | TRLAxles[];

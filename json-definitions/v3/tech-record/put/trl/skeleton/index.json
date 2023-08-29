@@ -906,6 +906,66 @@
         "null"
       ]
     },
+    "techRecord_manufacturerDetails_address1": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_address2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_address3": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_emailAddress": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_faxNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_postCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_postTown": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_manufacturerNotes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_manufacturerDetails_telephoneNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "techRecord_authIntoService_dateReceived": {
       "type": [
         "string",
@@ -938,6 +998,13 @@
         "string",
         "null"
       ]
+    },
+    "techRecord_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1024
     },
     "techRecord_authIntoService_dateAuthorised": {
       "type": [
@@ -1004,13 +1071,13 @@
             "maximum": 99999
           },
           "weights_eecWeight": {
-						"type": [
-							"integer",
-							"null"
-						],
-						"minimum": 0,
-						"maximum": 99999
-					},
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 99999
+          },
           "weights_designWeight": {
             "type": [
               "integer",

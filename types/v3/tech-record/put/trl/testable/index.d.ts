@@ -51,8 +51,8 @@ export type FrameDescription =
   | "integral"
   | "Box section"
   | "U section";
-export type LetterTypes = "trailer accept" | "trailer rejection";
-export type ParagraphIds = "3" | "4" | "5" | "6" | "7";
+export type LetterTypes = "trailer acceptance" | "trailer rejection";
+export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -257,7 +257,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_plates?: TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -267,8 +267,19 @@ export interface TechRecordPUTTRLTestable {
   techRecord_purchaserDetails_name?: string | null;
   techRecord_purchaserDetails_postCode?: string | null;
   techRecord_purchaserDetails_postTown?: string | null;
+  techRecord_notes?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
+  techRecord_manufacturerDetails_address1?: string | null;
+  techRecord_manufacturerDetails_address2?: string | null;
+  techRecord_manufacturerDetails_address3?: string | null;
+  techRecord_manufacturerDetails_emailAddress?: string | null;
+  techRecord_manufacturerDetails_faxNumber?: string | null;
+  techRecord_manufacturerDetails_name?: string | null;
+  techRecord_manufacturerDetails_postCode?: string | null;
+  techRecord_manufacturerDetails_postTown?: string | null;
+  techRecord_manufacturerDetails_manufacturerNotes?: string | null;
+  techRecord_manufacturerDetails_telephoneNumber?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
@@ -284,11 +295,6 @@ export interface TechRecordPUTTRLTestable {
   trailerId?: string;
   vin: string;
   techRecord_axles?: null | TRLAxles[];
-  brakes?: {
-    brakeActuator?: number;
-    leverLength?: number;
-    springBrakeParking?: boolean;
-  };
   weights_gbWeight?: number | null;
   weights_designWeight?: number | null;
   weights_ladenWeight?: number | null;
