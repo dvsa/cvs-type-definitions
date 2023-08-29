@@ -21,9 +21,6 @@ export interface TechRecordPUTCarSkeleton {
   techRecord_notes?: null | string;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
-  techRecord_createdAt?: null | string;
-  techRecord_createdById?: null | string;
-  techRecord_createdByName?: null | string;
   secondaryVrms?: null | string[];
   techRecord_vehicleSubclass?: VehicleSubclass[];
 }

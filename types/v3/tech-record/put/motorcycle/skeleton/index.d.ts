@@ -51,13 +51,7 @@ export interface TechRecordPUTMotorcycleSkeleton {
   partialVin?: null | string;
   primaryVrm?: null | string;
   systemNumber?: null | string;
-  techRecord_createdAt?: null | string;
-  techRecord_createdById?: null | string;
-  techRecord_createdByName?: null | string;
   techRecord_euVehicleCategory?: null | EUVehicleCategory;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedById?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_recordCompleteness?: null | string;
   techRecord_noOfAxles?: null | number;

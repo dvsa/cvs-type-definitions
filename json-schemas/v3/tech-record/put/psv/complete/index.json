@@ -357,36 +357,6 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"techRecord_createdByName": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_createdById": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedAt": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedByName": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedById": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
 		"techRecord_dda_certificateIssued": {
 			"type": "boolean"
 		},

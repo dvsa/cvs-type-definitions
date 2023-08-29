@@ -70,15 +70,6 @@
 				"string"
 			]
 		},
-		"techRecord_createdAt": {
-			"type": "string"
-		},
-		"techRecord_createdById": {
-			"type": "string"
-		},
-		"techRecord_createdByName": {
-			"type": "string"
-		},
 		"techRecord_adrDetails_vehicleDetails_type": {
 			"type": [
 				"string",
@@ -937,24 +928,6 @@
 			]
 		},
 		"techRecord_purchaserDetails_telephoneNumber": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedAt": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedByName": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedById": {
 			"type": [
 				"string",
 				"null"

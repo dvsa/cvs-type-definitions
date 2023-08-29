@@ -50,8 +50,5 @@ export interface TechRecordPUTLGVComplete {
   techRecord_vehicleSubclass: VehicleSubclass[];
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
   secondaryVrms?: string[];
 }

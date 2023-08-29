@@ -218,11 +218,6 @@ export interface TechRecordPUTPSVTestable {
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
-  techRecord_createdByName?: string | null;
-  techRecord_createdById?: string | null;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
   techRecord_dda_certificateIssued?: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
   techRecord_dda_wheelchairFittings?: string | null;
