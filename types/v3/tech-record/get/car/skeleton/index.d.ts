@@ -73,5 +73,5 @@ export interface TechRecordGETCarSkeleton {
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];
-  techRecord_vehicleSubclass?: VehicleSubclass[];
+  techRecord_vehicleSubclass?: VehicleSubclass;
 }

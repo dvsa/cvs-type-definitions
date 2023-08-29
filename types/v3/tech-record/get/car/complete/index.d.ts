@@ -70,7 +70,7 @@ export interface TechRecordGETCarComplete {
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleType: "car";
   vin: string;
-  techRecord_vehicleSubclass: VehicleSubclass[];
+  techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];
