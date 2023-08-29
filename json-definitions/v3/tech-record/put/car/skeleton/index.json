@@ -87,10 +87,7 @@
       }
     },
     "techRecord_vehicleSubclass": {
-      "type": "array",
-      "items": {
-        "$ref": "../../../enums/vehicleSubclass.ignore.json"
-      }
+      "$ref": "../../../enums/vehicleSubclass.ignore.json"
     }
   }
 }

@@ -53,5 +53,5 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
   secondaryVrms?: string[];
-  techRecord_vehicleSubclass?: VehicleSubclass[];
+  techRecord_vehicleSubclass?: VehicleSubclass;
 }
