@@ -167,9 +167,6 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_ntaNumber?: null | string;
   techRecord_variantNumber?: null | string;
   techRecord_variantVersionNumber?: null | string;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -269,9 +266,6 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_purchaserDetails_postTown?: string | null;
   techRecord_purchaserDetails_purchaserNotes?: string | null;
   techRecord_purchaserDetails_telephoneNumber?: string | null;
-  techRecord_lastUpdatedAt?: string | null;
-  techRecord_lastUpdatedByName?: string | null;
-  techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;

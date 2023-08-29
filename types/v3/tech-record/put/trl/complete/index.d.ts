@@ -182,9 +182,6 @@ export type SpeedCategorySymbol =
 
 export interface TechRecordPUTTRLComplete {
   partialVin?: string | null;
-  techRecord_createdAt?: null | string;
-  techRecord_createdById?: null | string;
-  techRecord_createdByName?: null | string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;

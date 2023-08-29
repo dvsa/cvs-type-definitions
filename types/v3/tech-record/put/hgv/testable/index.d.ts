@@ -145,9 +145,6 @@ export type ApprovalType =
 export interface TechRecordPUTHGVTestable {
   secondaryVrms?: string[];
   partialVin?: string | null;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;

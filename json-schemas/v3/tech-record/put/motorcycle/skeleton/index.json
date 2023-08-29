@@ -82,24 +82,6 @@
 				"string"
 			]
 		},
-		"techRecord_createdAt": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
-		"techRecord_createdById": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
-		"techRecord_createdByName": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
 				{
@@ -129,24 +111,6 @@
 						"l7e"
 					]
 				}
-			]
-		},
-		"techRecord_lastUpdatedAt": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedById": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_lastUpdatedByName": {
-			"type": [
-				"string",
-				"null"
 			]
 		},
 		"techRecord_manufactureYear": {

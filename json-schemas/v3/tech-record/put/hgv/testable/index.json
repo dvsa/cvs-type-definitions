@@ -24,15 +24,6 @@
 				"null"
 			]
 		},
-		"techRecord_createdAt": {
-			"type": "string"
-		},
-		"techRecord_createdById": {
-			"type": "string"
-		},
-		"techRecord_createdByName": {
-			"type": "string"
-		},
 		"techRecord_adrDetails_vehicleDetails_type": {
 			"type": [
 				"string",
