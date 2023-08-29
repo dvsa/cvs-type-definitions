@@ -25,6 +25,7 @@ export type EUVehicleCategory =
   | "l6e"
   | "l7e";
 export type StatusCode = "provisional" | "current" | "archived";
+export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordPUTLGVSkeleton {
   vin: string;
@@ -52,4 +53,5 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_createdById?: string;
   techRecord_createdByName?: string;
   secondaryVrms?: string[];
+  techRecord_vehicleSubclass?: VehicleSubclass[];
 }

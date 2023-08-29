@@ -70,7 +70,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleType: "lgv";
   vin: string;
-  techRecord_vehicleSubclass: null | VehicleSubclass;
+  techRecord_vehicleSubclass: VehicleSubclass[];
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];

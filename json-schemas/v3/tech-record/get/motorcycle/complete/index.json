@@ -238,33 +238,6 @@
 		"vin": {
 			"type": "string"
 		},
-		"techRecord_vehicleSubclass": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Vehicle Subclass",
-					"type": "array",
-					"items": {
-						"type": "string",
-						"enum": [
-							"n",
-							"p",
-							"a",
-							"s",
-							"c",
-							"l",
-							"t",
-							"e",
-							"m",
-							"r",
-							"w"
-						]
-					}
-				}
-			]
-		},
 		"techRecord_numberOfWheelsDriven": {
 			"type": [
 				"null",
