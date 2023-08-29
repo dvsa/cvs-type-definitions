@@ -39,7 +39,7 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_euVehicleCategory?: EUVehicleCategory;
+  techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_reasonForCreation?: string | null;
   techRecord_vehicleType: "lgv";
   techRecord_statusCode?: StatusCode;
