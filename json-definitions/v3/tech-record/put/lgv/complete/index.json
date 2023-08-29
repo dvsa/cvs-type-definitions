@@ -80,6 +80,9 @@
       "anyOf": [
         {
           "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        },
+        {
+          "type": "null"
         }
       ]
     },
