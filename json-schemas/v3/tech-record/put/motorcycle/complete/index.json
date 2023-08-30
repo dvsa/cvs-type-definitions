@@ -5,6 +5,7 @@
 	"required": [
 		"techRecord_numberOfWheelsDriven",
 		"techRecord_vehicleClass_description",
+		"techRecord_vehicleClass_code",
 		"techRecord_reasonForCreation",
 		"vin"
 	],
@@ -171,6 +172,26 @@
 					]
 				}
 			]
+		},
+		"techRecord_vehicleClass_description": {
+			"title": "Vehicle Class Description",
+			"type": "string",
+			"enum": [
+				"motorbikes over 200cc or with a sidecar",
+				"not applicable",
+				"small psv (ie: less than or equal to 22 seats)",
+				"motorbikes up to 200cc",
+				"trailer",
+				"large psv(ie: greater than 23 seats)",
+				"3 wheelers",
+				"heavy goods vehicle",
+				"MOT class 4",
+				"MOT class 7",
+				"MOT class 5"
+			]
+		},
+		"techRecord_vehicleClass_code": {
+			"type": "string"
 		},
 		"techRecord_vehicleConfiguration": {
 			"anyOf": [
