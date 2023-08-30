@@ -1,0 +1,124 @@
+{
+    "title": "Tech Record PUT Small TRL Skeleton",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "vin",
+        "techRecord_statusCode",
+        "techRecord_vehicleClass_code",
+        "techRecord_vehicleClass_description",
+        "techRecord_vehicleType",
+        "techRecord_euVehicleCategory",
+        "techRecord_reasonForCreation"
+    ],
+    "properties": {
+        "techRecord_applicantDetails_address1": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_address2": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_address3": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_emailAddress": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_name": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_postCode": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_postTown": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_applicantDetails_telephoneNumber": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_euVehicleCategory": {
+            "type": "string",
+            "enum": [
+                "o1",
+                "o2"
+            ]
+        },
+        "techRecord_manufactureYear": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_noOfAxles": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_notes": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 1024
+        },
+        "techRecord_reasonForCreation": {
+            "type": "string"
+        },
+        "techRecord_statusCode": {
+            "$ref": "../../../enums/statusCode.ignore.json"
+        },
+        "techRecord_vehicleClass_code": {
+            "type": "string"
+        },
+        "techRecord_vehicleClass_description": {
+            "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+        },
+        "techRecord_vehicleConfiguration": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+                }
+            ]
+        },
+        "techRecord_vehicleSubclass": {
+            "$ref": "../../../enums/vehicleSubclass.ignore.json"
+        },
+        "techRecord_vehicleType": {
+            "const": "trl"
+        },
+        "vin": {
+            "type": "string"
+        },
+        "trailerId": {
+            "type": "string"
+        }
+    }
+}
