@@ -115,12 +115,6 @@
 				"null"
 			]
 		},
-		"techRecord_vehicleClass_code": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",
 			"type": "string",

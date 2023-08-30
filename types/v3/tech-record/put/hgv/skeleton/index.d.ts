@@ -243,7 +243,6 @@ export interface TechRecordPUTHGVSkeleton {
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight?: number | null;
   techRecord_tyreUseCode?: string | null;
-  techRecord_vehicleClass_code?: null | string;
   techRecord_vehicleClass_description?: null | VehicleClassDescription;
   techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_approvalType?: ApprovalType | null;

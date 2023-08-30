@@ -70,12 +70,6 @@
         "null"
       ]
     },
-    "techRecord_vehicleClass_code": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },

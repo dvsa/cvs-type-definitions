@@ -23,7 +23,6 @@
     "techRecord_roadFriendly",
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
-    "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
     "techRecord_vehicleType",
     "techRecord_bodyType_description",
@@ -1018,9 +1017,6 @@
         "null",
         "string"
       ]
-    },
-    "techRecord_vehicleClass_code": {
-      "type": "string"
     },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
