@@ -4,6 +4,7 @@
   "additionalProperties": false,
   "required": [
     "techRecord_vehicleClass_description",
+    "techRecord_vehicleClass_code",
     "systemNumber",
     "primaryVrm",
     "techRecord_createdByName",
@@ -172,6 +173,12 @@
           "$ref": "../../../enums/statusCode.ignore.json"
         }
       ]
+    },
+    "techRecord_vehicleClass_description": {
+      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+    },
+    "techRecord_vehicleClass_code": {
+      "type": "string"
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [
