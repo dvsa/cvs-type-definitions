@@ -197,7 +197,6 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_seatsLowerDeck?: number | null;
   techRecord_seatsUpperDeck?: number | null;
   techRecord_numberOfWheelsDriven?: number | null;
-  techRecord_vehicleClass_code?: null | string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_recordCompleteness?: null | string;

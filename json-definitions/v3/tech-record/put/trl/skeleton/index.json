@@ -5,7 +5,6 @@
   "required": [
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
-    "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
     "techRecord_vehicleConfiguration",
     "techRecord_vehicleType",
@@ -841,9 +840,6 @@
         "null"
       ],
       "maxLength": 2
-    },
-    "techRecord_vehicleClass_code": {
-      "type": "string"
     },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"

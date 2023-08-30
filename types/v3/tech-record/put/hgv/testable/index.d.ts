@@ -243,7 +243,6 @@ export interface TechRecordPUTHGVTestable {
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight?: number | null;
   techRecord_tyreUseCode?: string | null;
-  techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_approvalType?: ApprovalType | null;

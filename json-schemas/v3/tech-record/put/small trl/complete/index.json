@@ -5,7 +5,6 @@
 	"required": [
 		"vin",
 		"techRecord_statusCode",
-		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
 		"techRecord_vehicleType",
 		"techRecord_euVehicleCategory",
@@ -99,9 +98,6 @@
 				"current",
 				"archived"
 			]
-		},
-		"techRecord_vehicleClass_code": {
-			"type": "string"
 		},
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",

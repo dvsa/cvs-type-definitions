@@ -48,7 +48,6 @@ export interface TechRecordPUTSmallTRLSkeleton {
   techRecord_notes?: string | null;
   techRecord_reasonForCreation: string;
   techRecord_statusCode: StatusCode;
-  techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleSubclass?: VehicleSubclass;

@@ -319,7 +319,6 @@ export interface TechRecordPUTTRLComplete {
   techRecord_tyreUseCode: string | null;
   techRecord_variantNumber?: null | string;
   techRecord_variantVersionNumber?: null | string;
-  techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";

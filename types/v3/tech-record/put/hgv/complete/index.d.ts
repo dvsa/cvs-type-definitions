@@ -246,7 +246,6 @@ export interface TechRecordPUTHGVComplete {
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight: number;
   techRecord_tyreUseCode: string;
-  techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_approvalType: ApprovalType;

@@ -8,7 +8,6 @@
     "techRecord_vehicleType",
     "vin",
     "techRecord_vehicleConfiguration",
-    "techRecord_vehicleClass_code",
     "techRecord_vehicleClass_description",
     "techRecord_approvalType",
     "techRecord_manufactureYear",
@@ -803,9 +802,6 @@
     "techRecord_tyreUseCode": {
       "type": "string",
       "maxLength": 2
-    },
-    "techRecord_vehicleClass_code": {
-      "type": "string"
     },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"

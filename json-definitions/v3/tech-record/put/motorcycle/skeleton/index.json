@@ -4,7 +4,6 @@
   "additionalProperties": false,
   "required": [
     "techRecord_vehicleClass_description",
-    "techRecord_vehicleClass_code",
     "techRecord_reasonForCreation",
     "vin"
   ],
@@ -138,9 +137,6 @@
     },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
-    },
-    "techRecord_vehicleClass_code": {
-      "type": "string"
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

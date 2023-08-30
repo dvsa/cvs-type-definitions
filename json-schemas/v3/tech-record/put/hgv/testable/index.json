@@ -8,7 +8,6 @@
 		"techRecord_vehicleType",
 		"vin",
 		"techRecord_vehicleConfiguration",
-		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description"
 	],
 	"properties": {
@@ -982,9 +981,6 @@
 				"null"
 			],
 			"maxLength": 2
-		},
-		"techRecord_vehicleClass_code": {
-			"type": "string"
 		},
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",

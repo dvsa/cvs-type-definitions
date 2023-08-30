@@ -4,7 +4,6 @@
 	"additionalProperties": false,
 	"required": [
 		"techRecord_vehicleClass_description",
-		"techRecord_vehicleClass_code",
 		"techRecord_reasonForCreation",
 		"vin"
 	],
@@ -179,9 +178,6 @@
 				"MOT class 7",
 				"MOT class 5"
 			]
-		},
-		"techRecord_vehicleClass_code": {
-			"type": "string"
 		},
 		"techRecord_vehicleConfiguration": {
 			"anyOf": [
