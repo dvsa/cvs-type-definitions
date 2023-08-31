@@ -3,11 +3,18 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"techRecord_vehicleSubclass",
-		"createdTimestamp",
 		"systemNumber",
 		"vin",
-		"techRecord_vehicleType"
+		"createdTimestamp",
+		"techRecord_vehicleSubclass",
+		"techRecord_vehicleType",
+		"techRecord_createdAt",
+		"techRecord_createdById",
+		"techRecord_createdByName",
+		"techRecord_reasonForCreation",
+		"techRecord_statusCode",
+		"techRecord_noOfAxles",
+		"primaryVrm"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {

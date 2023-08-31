@@ -6,7 +6,11 @@
 		"createdTimestamp",
 		"systemNumber",
 		"vin",
-		"techRecord_vehicleType"
+		"techRecord_vehicleType",
+		"techRecord_createdAt",
+		"techRecord_createdById",
+		"techRecord_createdByName",
+		"primaryVrm"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {
@@ -77,10 +81,7 @@
 			]
 		},
 		"primaryVrm": {
-			"type": [
-				"null",
-				"string"
-			]
+			"type": "string"
 		},
 		"systemNumber": {
 			"type": "string"

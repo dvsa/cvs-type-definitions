@@ -4,7 +4,8 @@
   "additionalProperties": false,
   "required": [
     "vin",
-    "techRecord_vehicleType"
+    "techRecord_vehicleType",
+    "techRecord_reasonForCreation"
   ],
   "properties": {
     "vin": {
@@ -14,12 +15,6 @@
       "type": [
         "null",
         "string"
-      ]
-    },
-    "trailerId": {
-      "type": [
-        "string",
-        "null"
       ]
     },
     "techRecord_reasonForCreation": {
@@ -32,14 +27,7 @@
       "const": "car"
     },
     "techRecord_statusCode": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/statusCode.ignore.json"
-        }
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
       "type": [
@@ -88,6 +76,66 @@
     },
     "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
+    },
+    "techRecord_euVehicleCategory": {
+      "anyOf": [
+        {
+          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "techRecord_applicantDetails_name": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "techRecord_applicantDetails_address1": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 60
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 12
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 25
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 255
     }
   }
 }
