@@ -3,11 +3,18 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "techRecord_vehicleSubclass",
-    "createdTimestamp",
     "systemNumber",
     "vin",
-    "techRecord_vehicleType"
+    "createdTimestamp",
+    "techRecord_vehicleSubclass",
+    "techRecord_vehicleType",
+    "techRecord_createdAt",
+    "techRecord_createdById",
+    "techRecord_createdByName",
+    "techRecord_reasonForCreation",
+    "techRecord_statusCode",
+    "techRecord_noOfAxles",
+    "primaryVrm"
   ],
   "properties": {
     "techRecord_applicantDetails_name": {
@@ -78,31 +85,19 @@
       ]
     },
     "primaryVrm": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "systemNumber": {
       "type": "string"
     },
     "techRecord_createdAt": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_createdById": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_createdByName": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
@@ -139,16 +134,10 @@
       ]
     },
     "techRecord_recordCompleteness": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "const": "complete"
     },
     "techRecord_noOfAxles": {
-      "type": [
-        "null",
-        "integer"
-      ]
+      "type": "integer"
     },
     "techRecord_notes": {
       "type": [
@@ -157,10 +146,7 @@
       ]
     },
     "techRecord_reasonForCreation": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_regnDate": {
       "type": [

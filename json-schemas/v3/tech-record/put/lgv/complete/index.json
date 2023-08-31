@@ -5,7 +5,8 @@
 	"required": [
 		"techRecord_vehicleSubclass",
 		"vin",
-		"techRecord_vehicleType"
+		"techRecord_vehicleType",
+		"techRecord_statusCode"
 	],
 	"properties": {
 		"vin": {

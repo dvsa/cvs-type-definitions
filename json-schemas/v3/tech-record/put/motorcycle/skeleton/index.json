@@ -5,7 +5,8 @@
 	"required": [
 		"techRecord_vehicleClass_description",
 		"techRecord_reasonForCreation",
-		"vin"
+		"vin",
+		"techRecord_statusCode"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {
@@ -147,19 +148,12 @@
 			]
 		},
 		"techRecord_statusCode": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Status Code",
-					"type": "string",
-					"enum": [
-						"provisional",
-						"current",
-						"archived"
-					]
-				}
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
 			]
 		},
 		"techRecord_vehicleClass_description": {
