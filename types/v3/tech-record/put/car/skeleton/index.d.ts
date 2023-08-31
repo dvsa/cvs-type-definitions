@@ -42,10 +42,10 @@ export interface TechRecordPUTCarSkeleton {
   secondaryVrms?: null | string[];
   techRecord_vehicleSubclass?: VehicleSubclass;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_applicantDetails_name?: string;
+  techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
-  techRecord_applicantDetails_postTown?: string;
+  techRecord_applicantDetails_postTown?: null | string;
   techRecord_applicantDetails_address3?: null | string;
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;

@@ -82,7 +82,10 @@
       ]
     },
     "techRecord_applicantDetails_name": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_applicantDetails_address1": {
@@ -100,7 +103,10 @@
       "maxLength": 60
     },
     "techRecord_applicantDetails_postTown": {
-      "type": "string",
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address3": {
