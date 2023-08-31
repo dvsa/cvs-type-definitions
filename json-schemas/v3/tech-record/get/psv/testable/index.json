@@ -18,7 +18,6 @@
 		"techRecord_reasonForCreation",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_createdAt",
 		"techRecord_brakes_dtpNumber"
 	],
 	"properties": {
@@ -189,9 +188,6 @@
 					"type": "integer",
 					"minimum": 0,
 					"maximum": 99
-				},
-				{
-					"type": "null"
 				}
 			]
 		},
@@ -878,8 +874,7 @@
 		},
 		"techRecord_brakes_dtpNumber": {
 			"type": [
-				"string",
-				"null"
+				"string"
 			],
 			"maxLength": 6
 		},

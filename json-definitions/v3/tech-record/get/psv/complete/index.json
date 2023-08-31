@@ -85,9 +85,6 @@
       "anyOf": [
         {
           "$ref": "../../../enums/vehicleSize.ignore.json"
-        },
-        {
-          "type": "null"
         }
       ]
     },
@@ -156,9 +153,6 @@
           "type": "integer",
           "minimum": 0,
           "maximum": 99
-        },
-        {
-          "type": "null"
         }
       ]
     },
@@ -711,8 +705,7 @@
     },
     "techRecord_brakes_dtpNumber": {
       "type": [
-        "string",
-        "null"
+        "string"
       ],
       "maxLength": 6
     },

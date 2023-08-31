@@ -79,9 +79,6 @@
       "anyOf": [
         {
           "$ref": "../../../enums/vehicleSize.ignore.json"
-        },
-        {
-          "type": "null"
         }
       ]
     },
@@ -147,9 +144,6 @@
           "type": "integer",
           "minimum": 0,
           "maximum": 99
-        },
-        {
-          "type": "null"
         }
       ]
     },
