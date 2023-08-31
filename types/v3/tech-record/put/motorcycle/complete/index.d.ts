@@ -71,7 +71,7 @@ export interface TechRecordPUTMotorcycleComplete {
   techRecord_notes?: null | string;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
-  techRecord_statusCode?: null | StatusCode;
+  techRecord_statusCode: StatusCode;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleType?: "motorcycle";

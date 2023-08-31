@@ -5,7 +5,8 @@
   "required": [
     "techRecord_vehicleClass_description",
     "techRecord_reasonForCreation",
-    "vin"
+    "vin",
+    "techRecord_statusCode"
   ],
   "properties": {
     "techRecord_applicantDetails_name": {
@@ -126,14 +127,7 @@
       ]
     },
     "techRecord_statusCode": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/statusCode.ignore.json"
-        }
-      ]
+      "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_vehicleClass_description": {
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"

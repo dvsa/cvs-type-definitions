@@ -4,47 +4,29 @@
 	"additionalProperties": false,
 	"required": [
 		"vin",
-		"techRecord_vehicleType"
+		"techRecord_vehicleType",
+		"techRecord_reasonForCreation"
 	],
 	"properties": {
 		"vin": {
 			"type": "string"
 		},
 		"primaryVrm": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
-		"trailerId": {
-			"type": [
-				"string",
-				"null"
-			]
+			"type": "string"
 		},
 		"techRecord_reasonForCreation": {
-			"type": [
-				"string",
-				"null"
-			]
+			"type": "string"
 		},
 		"techRecord_vehicleType": {
 			"const": "car"
 		},
 		"techRecord_statusCode": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Status Code",
-					"type": "string",
-					"enum": [
-						"provisional",
-						"current",
-						"archived"
-					]
-				}
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
 			]
 		},
 		"techRecord_regnDate": {
@@ -111,6 +93,87 @@
 					"w"
 				]
 			}
+		},
+		"techRecord_euVehicleCategory": {
+			"anyOf": [
+				{
+					"title": "EU vehicle category",
+					"type": "string",
+					"enum": [
+						"m1",
+						"m2",
+						"m3",
+						"n1",
+						"n2",
+						"n3",
+						"o1",
+						"o2",
+						"o3",
+						"o4",
+						"l1e-a",
+						"l1e",
+						"l2e",
+						"l3e",
+						"l4e",
+						"l5e",
+						"l6e",
+						"l7e"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_applicantDetails_name": {
+			"type": "string",
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": "string",
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
 		}
 	}
 }
