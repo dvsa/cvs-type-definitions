@@ -719,9 +719,6 @@
           "type": "integer",
           "minimum": 0,
           "maximum": 99
-        },
-        {
-          "type": "null"
         }
       ]
     },
@@ -968,9 +965,6 @@
       "anyOf": [
         {
           "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-        },
-        {
-          "type": "null"
         }
       ]
     },

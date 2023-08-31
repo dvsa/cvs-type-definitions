@@ -260,7 +260,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_plates?: null | TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -295,7 +295,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_tyreUseCode?: string | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_vehicleConfiguration: VehicleConfiguration | null;
+  techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;
