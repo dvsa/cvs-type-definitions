@@ -53,9 +53,9 @@ export interface TechRecordGETLGVComplete {
   partialVin?: null | string;
   primaryVrm?: null | string;
   systemNumber: string;
-  techRecord_createdAt: null | string;
-  techRecord_createdById: null | string;
-  techRecord_createdByName: null | string;
+  techRecord_createdAt: string;
+  techRecord_createdById: string;
+  techRecord_createdByName: string;
   techRecord_euVehicleCategory?: null | EUVehicleCategory;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedById?: string | null;

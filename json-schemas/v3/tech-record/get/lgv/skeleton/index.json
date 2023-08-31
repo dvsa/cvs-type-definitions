@@ -90,22 +90,13 @@
 			"type": "string"
 		},
 		"techRecord_createdAt": {
-			"type": [
-				"null",
-				"string"
-			]
+			"type": "string"
 		},
 		"techRecord_createdById": {
-			"type": [
-				"null",
-				"string"
-			]
+			"type": "string"
 		},
 		"techRecord_createdByName": {
-			"type": [
-				"null",
-				"string"
-			]
+			"type": "string"
 		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
