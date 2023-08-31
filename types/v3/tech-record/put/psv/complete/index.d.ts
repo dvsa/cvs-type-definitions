@@ -193,7 +193,7 @@ export interface TechRecordPUTPSVComplete {
   techRecord_reasonForCreation: string;
   techRecord_createdAt?: null | string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
-  techRecord_vehicleSize: VehicleSize | null;
+  techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
   techRecord_numberOfWheelsDriven: number | null;
@@ -203,7 +203,7 @@ export interface TechRecordPUTPSVComplete {
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: null | string;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_alterationMarker?: boolean | null;
   techRecord_approvalType?: ApprovalType | null;

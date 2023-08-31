@@ -187,8 +187,8 @@ export interface TechRecordPUTHGVComplete {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
   techRecord_alterationMarker?: boolean | null;
   techRecord_applicantDetails_name: string;
-  techRecord_applicantDetails_address1: null | string;
-  techRecord_applicantDetails_address2: null | string;
+  techRecord_applicantDetails_address1: string;
+  techRecord_applicantDetails_address2: string;
   techRecord_applicantDetails_postTown: string;
   techRecord_applicantDetails_address3?: null | string;
   techRecord_applicantDetails_postCode?: null | string;
