@@ -5,7 +5,8 @@
 	"required": [
 		"vin",
 		"techRecord_vehicleType",
-		"techRecord_statusCode"
+		"techRecord_statusCode",
+		"techRecord_reasonForCreation"
 	],
 	"properties": {
 		"vin": {
@@ -13,12 +14,6 @@
 		},
 		"primaryVrm": {
 			"type": "string"
-		},
-		"trailerId": {
-			"type": [
-				"string",
-				"null"
-			]
 		},
 		"techRecord_applicantDetails_name": {
 			"type": [
@@ -109,8 +104,7 @@
 		},
 		"techRecord_reasonForCreation": {
 			"type": [
-				"string",
-				"null"
+				"string"
 			]
 		},
 		"techRecord_vehicleType": {
@@ -150,15 +144,6 @@
 			"type": "boolean"
 		},
 		"techRecord_updateType": {
-			"type": "string"
-		},
-		"techRecord_createdAt": {
-			"type": "string"
-		},
-		"techRecord_createdById": {
-			"type": "string"
-		},
-		"techRecord_createdByName": {
 			"type": "string"
 		},
 		"secondaryVrms": {

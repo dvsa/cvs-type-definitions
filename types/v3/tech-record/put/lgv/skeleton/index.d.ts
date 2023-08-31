@@ -30,7 +30,6 @@ export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "
 export interface TechRecordPUTLGVSkeleton {
   vin: string;
   primaryVrm?: string;
-  trailerId?: string | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;
@@ -40,7 +39,7 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
-  techRecord_reasonForCreation?: string | null;
+  techRecord_reasonForCreation: string;
   techRecord_vehicleType: "lgv";
   techRecord_statusCode: StatusCode;
   techRecord_regnDate?: string | null;
@@ -49,9 +48,6 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_notes?: string;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
-  techRecord_createdAt?: string;
-  techRecord_createdById?: string;
-  techRecord_createdByName?: string;
   secondaryVrms?: string[];
   techRecord_vehicleSubclass?: VehicleSubclass;
 }

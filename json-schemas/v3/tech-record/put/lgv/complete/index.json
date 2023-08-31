@@ -6,7 +6,8 @@
 		"techRecord_vehicleSubclass",
 		"vin",
 		"techRecord_vehicleType",
-		"techRecord_statusCode"
+		"techRecord_statusCode",
+		"techRecord_reasonForCreation"
 	],
 	"properties": {
 		"vin": {
@@ -109,10 +110,7 @@
 			]
 		},
 		"techRecord_reasonForCreation": {
-			"type": [
-				"string",
-				"null"
-			]
+			"type": "string"
 		},
 		"techRecord_vehicleType": {
 			"const": "lgv"

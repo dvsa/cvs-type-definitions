@@ -53,9 +53,9 @@ export interface TechRecordGETLGVComplete {
   partialVin?: null | string;
   primaryVrm?: null | string;
   systemNumber: string;
-  techRecord_createdAt?: null | string;
-  techRecord_createdById?: null | string;
-  techRecord_createdByName?: null | string;
+  techRecord_createdAt: null | string;
+  techRecord_createdById: null | string;
+  techRecord_createdByName: null | string;
   techRecord_euVehicleCategory?: null | EUVehicleCategory;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedById?: string | null;
@@ -64,7 +64,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_recordCompleteness?: null | string;
   techRecord_noOfAxles?: null | number;
   techRecord_notes?: null | string;
-  techRecord_reasonForCreation?: null | string;
+  techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: null | StatusCode;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
