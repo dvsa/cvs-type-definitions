@@ -4,7 +4,8 @@
 	"additionalProperties": false,
 	"required": [
 		"vin",
-		"techRecord_vehicleType"
+		"techRecord_vehicleType",
+		"techRecord_statusCode"
 	],
 	"properties": {
 		"vin": {
