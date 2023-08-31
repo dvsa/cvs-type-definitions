@@ -869,9 +869,7 @@
 			"maxLength": 255
 		},
 		"techRecord_brakes_dtpNumber": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"maxLength": 6
 		},
 		"techRecord_brakes_brakeCode": {
