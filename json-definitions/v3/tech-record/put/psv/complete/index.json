@@ -76,11 +76,7 @@
       "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_vehicleSize": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/vehicleSize.ignore.json"
-        }
-      ]
+      "$ref": "../../../enums/vehicleSize.ignore.json"
     },
     "techRecord_seatsLowerDeck": {
       "type": "integer"
@@ -139,13 +135,9 @@
       ]
     },
     "techRecord_noOfAxles": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 99
-        }
-      ]
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
     },
     "techRecord_departmentalVehicleMarker": {
       "type": [
