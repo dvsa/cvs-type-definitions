@@ -29,8 +29,8 @@ export type EUVehicleCategory =
 
 export interface TechRecordPUTCarSkeleton {
   vin: string;
-  primaryVrm?: null | string;
-  techRecord_reasonForCreation: string | null;
+  primaryVrm?: string;
+  techRecord_reasonForCreation: string;
   techRecord_vehicleType: "car";
   techRecord_statusCode?: StatusCode;
   techRecord_regnDate?: string | null;

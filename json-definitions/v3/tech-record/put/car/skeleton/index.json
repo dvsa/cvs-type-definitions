@@ -12,16 +12,10 @@
       "type": "string"
     },
     "primaryVrm": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_reasonForCreation": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_vehicleType": {
       "const": "car"

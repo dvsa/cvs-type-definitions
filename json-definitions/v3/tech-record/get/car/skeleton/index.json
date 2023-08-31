@@ -70,9 +70,7 @@
       "maxLength": 255
     },
     "createdTimestamp": {
-      "type": [
-        "string"
-      ]
+      "type": "string"
     },
     "partialVin": {
       "type": [
@@ -87,22 +85,13 @@
       "type": "string"
     },
     "techRecord_createdAt": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_createdById": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_createdByName": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
@@ -139,10 +128,7 @@
       ]
     },
     "techRecord_recordCompleteness": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "const": "skeleton"
     },
     "techRecord_noOfAxles": {
       "type": [
@@ -157,10 +143,7 @@
       ]
     },
     "techRecord_reasonForCreation": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_regnDate": {
       "type": [
