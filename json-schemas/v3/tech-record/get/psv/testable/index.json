@@ -18,7 +18,6 @@
 		"techRecord_reasonForCreation",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_createdAt",
 		"techRecord_brakes_dtpNumber"
 	],
 	"properties": {
@@ -184,16 +183,9 @@
 			]
 		},
 		"techRecord_noOfAxles": {
-			"anyOf": [
-				{
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 99
-				},
-				{
-					"type": "null"
-				}
-			]
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_departmentalVehicleMarker": {
 			"type": [
@@ -877,10 +869,7 @@
 			"maxLength": 255
 		},
 		"techRecord_brakes_dtpNumber": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
 			"maxLength": 6
 		},
 		"techRecord_brakes_brakeCode": {

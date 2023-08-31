@@ -203,7 +203,7 @@ export interface TechRecordPUTPSVTestable {
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_alterationMarker?: boolean | null;
   techRecord_approvalType?: ApprovalType | null;

@@ -191,7 +191,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt: string;
+  techRecord_createdAt?: string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;
@@ -204,7 +204,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_alterationMarker?: boolean | null;
   techRecord_approvalType?: ApprovalType | null;
@@ -274,7 +274,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_brakes_dtpNumber: string | null;
+  techRecord_brakes_dtpNumber: string;
   techRecord_brakes_brakeCode?: string | null;
   techRecord_brakes_brakeCodeOriginal?: string | null;
   techRecord_brakes_dataTrBrakeOne?: string | null;

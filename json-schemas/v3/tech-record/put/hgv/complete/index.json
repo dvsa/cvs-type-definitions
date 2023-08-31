@@ -367,17 +367,11 @@
 			"maxLength": 150
 		},
 		"techRecord_applicantDetails_address1": {
-			"type": [
-				"null",
-				"string"
-			],
+			"type": "string",
 			"maxLength": 60
 		},
 		"techRecord_applicantDetails_address2": {
-			"type": [
-				"null",
-				"string"
-			],
+			"type": "string",
 			"maxLength": 60
 		},
 		"techRecord_applicantDetails_postTown": {
