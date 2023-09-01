@@ -525,12 +525,6 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "techRecord_drawbarCouplingFitted": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "techRecord_emissionsLimit": {
       "type": [
         "null",
@@ -587,18 +581,6 @@
       ],
       "maximum": 99999,
       "minimum": 0
-    },
-    "techRecord_frontVehicleTo5thWheelCouplingMax": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_frontVehicleTo5thWheelCouplingMin": {
-      "type": [
-        "string",
-        "null"
-      ]
     },
     "techRecord_fuelPropulsionSystem": {
       "$ref": "../../../enums/fuelPropulsionSystem.ignore.json"
