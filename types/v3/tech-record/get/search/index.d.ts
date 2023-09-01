@@ -21,4 +21,6 @@ export interface TechRecordSearchSchema {
   techRecord_make?: null | string;
   techRecord_model?: null | string;
   techRecord_manufactureYear: number | null;
+  techRecord_reasonForCreation?: string;
+  techRecord_createdByName?: string;
 }

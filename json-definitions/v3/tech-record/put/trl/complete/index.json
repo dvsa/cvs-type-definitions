@@ -525,7 +525,7 @@
       "maximum": 99999,
       "minimum": 0
     },
-    "drawbarCouplingFitted": {
+    "techRecord_drawbarCouplingFitted": {
       "type": [
         "null",
         "string"
@@ -552,7 +552,7 @@
         }
       ]
     },
-    "frontAxleTo5thWheelMax": {
+    "techRecord_frontAxleTo5thWheelMRex": {
       "type": [
         "integer",
         "null"
