@@ -251,7 +251,6 @@ export interface TechRecordPUTTRLComplete {
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_dimensions_length: number | null;
   techRecord_dimensions_width: number | null;
-  techRecord_drawbarCouplingFitted?: null | string;
   techRecord_emissionsLimit?: null | number;
   techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_euroStandard?: null | EuroStandard;
@@ -260,8 +259,6 @@ export interface TechRecordPUTTRLComplete {
   techRecord_firstUseDate: string | null;
   techRecord_frameDescription?: FrameDescription | null;
   techRecord_frontAxleToRearAxle: number | null;
-  techRecord_frontVehicleTo5thWheelCouplingMax?: string | null;
-  techRecord_frontVehicleTo5thWheelCouplingMin?: string | null;
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
