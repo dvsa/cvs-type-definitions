@@ -73,7 +73,7 @@ export interface TechRecordPUTMotorcycleSkeleton {
   techRecord_statusCode: StatusCode;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
-  techRecord_vehicleType?: "motorcycle";
+  techRecord_vehicleType: "motorcycle";
   vin: string;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;

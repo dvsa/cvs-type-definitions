@@ -5,8 +5,9 @@
   "required": [
     "techRecord_vehicleClass_description",
     "techRecord_reasonForCreation",
-    "vin",
-    "techRecord_statusCode"
+    "techRecord_statusCode",
+    "techRecord_vehicleType",
+    "vin"
   ],
   "properties": {
     "techRecord_applicantDetails_name": {

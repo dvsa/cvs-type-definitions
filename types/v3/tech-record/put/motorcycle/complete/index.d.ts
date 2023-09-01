@@ -74,7 +74,7 @@ export interface TechRecordPUTMotorcycleComplete {
   techRecord_statusCode: StatusCode;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
-  techRecord_vehicleType?: "motorcycle";
+  techRecord_vehicleType: "motorcycle";
   vin: string;
   techRecord_numberOfWheelsDriven: number;
   techRecord_hiddenInVta?: null | boolean;

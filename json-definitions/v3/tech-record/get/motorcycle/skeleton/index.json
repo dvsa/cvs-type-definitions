@@ -10,6 +10,7 @@
     "techRecord_createdByName",
     "techRecord_createdById",
     "techRecord_reasonForCreation",
+    "techRecord_vehicleType",
     "createdTimestamp",
     "partialVin",
     "vin"
