@@ -6,8 +6,9 @@
 		"techRecord_numberOfWheelsDriven",
 		"techRecord_vehicleClass_description",
 		"techRecord_reasonForCreation",
-		"vin",
-		"techRecord_statusCode"
+		"techRecord_vehicleType",
+		"techRecord_statusCode",
+		"vin"
 	],
 	"properties": {
 		"secondaryVrms": {
