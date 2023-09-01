@@ -833,6 +833,12 @@
         "null",
         "string"
       ]
+    },
+    "techRecord_applicationId": {
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

@@ -76,6 +76,12 @@
 				"integer",
 				"null"
 			]
+		},
+		"techRecord_reasonForCreation": {
+			"type": "string"
+		},
+		"techRecord_createdByName": {
+			"type": "string"
 		}
 	}
 }
