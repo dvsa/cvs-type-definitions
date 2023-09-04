@@ -30,7 +30,6 @@ export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "
 export interface TechRecordPUTLGVComplete {
   vin: string;
   primaryVrm?: string;
-  trailerId?: string | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
   techRecord_applicantDetails_address2?: null | string;

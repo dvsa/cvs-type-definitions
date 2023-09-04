@@ -287,7 +287,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "testable";
+  techRecord_recordCompleteness?: "testable";
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
@@ -300,16 +300,6 @@ export interface TechRecordGETTRLTestable {
   trailerId: string;
   vin: string;
   techRecord_axles?: null | TRLAxles[];
-  weights_gbWeight?: number | null;
-  weights_designWeight?: number | null;
-  weights_ladenWeight?: number | null;
-  weights_kerbWeight?: number | null;
-  tyres_tyreCode?: number | null;
-  tyres_tyreSize?: string | null;
-  tyres_plyRating?: string | null;
-  tyres_fitmentCode?: null | FitmentCode;
-  tyres_dataTrAxles?: null | number;
-  tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   techRecord_authIntoService_cocIssueDate?: string | null;

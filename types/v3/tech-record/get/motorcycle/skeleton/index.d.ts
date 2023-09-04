@@ -64,7 +64,7 @@ export interface TechRecordGETMotorcycleSkeleton {
   partialVin: string;
   primaryVrm: string;
   systemNumber: string;
-  techRecord_createdAt?: null | string;
+  techRecord_createdAt: null | string;
   techRecord_createdById: null | string;
   techRecord_createdByName: null | string;
   techRecord_euVehicleCategory?: null | EUVehicleCategory;

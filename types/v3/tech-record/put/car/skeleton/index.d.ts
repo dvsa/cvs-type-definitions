@@ -32,7 +32,7 @@ export interface TechRecordPUTCarSkeleton {
   primaryVrm?: string;
   techRecord_reasonForCreation: string;
   techRecord_vehicleType: "car";
-  techRecord_statusCode?: StatusCode;
+  techRecord_statusCode: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles?: number | null;

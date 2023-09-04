@@ -10,7 +10,6 @@
 		"techRecord_createdById",
 		"techRecord_createdByName",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",

@@ -288,7 +288,7 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "skeleton";
+  techRecord_recordCompleteness?: "skeleton";
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;

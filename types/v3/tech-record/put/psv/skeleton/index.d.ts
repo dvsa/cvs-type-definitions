@@ -196,7 +196,6 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_vehicleSize?: VehicleSize | null;
   techRecord_seatsLowerDeck?: number | null;
   techRecord_seatsUpperDeck?: number | null;
-  techRecord_numberOfWheelsDriven?: number | null;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_recordCompleteness?: null | string;
@@ -241,10 +240,10 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_coifSerialNumber?: string | null;
   techRecord_coifCertifierName?: string | null;
   techRecord_coifDate?: string | null;
-  techRecord_bodyMake: string | null;
+  techRecord_bodyMake: string;
   techRecord_bodyModel?: string | null;
-  techRecord_chassisMake: string | null;
-  techRecord_chassisModel: string | null;
+  techRecord_chassisMake: string;
+  techRecord_chassisModel: string;
   techRecord_modelLiteral?: string | null;
   techRecord_speedRestriction?: number | null;
   techRecord_grossKerbWeight?: number | null;
@@ -266,7 +265,7 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_brakes_dtpNumber: string | null;
+  techRecord_brakes_dtpNumber: string;
   techRecord_brakes_brakeCode?: string | null;
   techRecord_brakes_brakeCodeOriginal?: string | null;
   techRecord_brakes_dataTrBrakeOne?: string | null;

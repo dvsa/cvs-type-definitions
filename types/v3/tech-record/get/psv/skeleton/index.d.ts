@@ -218,8 +218,8 @@ export interface TechRecordGETPSVSkeleton {
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
-  techRecord_createdByName: string | null;
-  techRecord_createdById: string | null;
+  techRecord_createdByName: string;
+  techRecord_createdById: string;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;

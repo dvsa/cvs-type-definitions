@@ -29,7 +29,6 @@
 		"techRecord_createdById",
 		"techRecord_createdByName",
 		"techRecord_reasonForCreation",
-		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
@@ -552,20 +551,6 @@
 			"maximum": 99999,
 			"minimum": 0
 		},
-		"drawbarCouplingFitted": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
-		"techRecord_emissionsLimit": {
-			"type": [
-				"null",
-				"integer"
-			],
-			"minimum": 0,
-			"maximum": 99
-		},
 		"techRecord_euVehicleCategory": {
 			"title": "EU vehicle category",
 			"type": "string",
@@ -588,40 +573,6 @@
 				"l5e",
 				"l6e",
 				"l7e"
-			]
-		},
-		"techRecord_euroStandard": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Euro standard",
-					"type": "string",
-					"enum": [
-						"0.10 g/kWh Euro 3 PM",
-						"0.03 g/kWh Euro IV PM",
-						"Euro 3",
-						"Euro 4",
-						"Euro 5",
-						"Euro 6",
-						"Euro V",
-						"Euro VI",
-						"Full Electric"
-					]
-				}
-			]
-		},
-		"frontAxleTo5thWheelMax": {
-			"type": [
-				"integer",
-				"null"
-			]
-		},
-		"techRecord_frontAxleTo5thWheelMin": {
-			"type": [
-				"integer",
-				"null"
 			]
 		},
 		"techRecord_firstUseDate": {
@@ -653,33 +604,6 @@
 			"type": "integer",
 			"maximum": 99999,
 			"minimum": 0
-		},
-		"techRecord_frontVehicleTo5thWheelCouplingMax": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_frontVehicleTo5thWheelCouplingMin": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
-		"techRecord_fuelPropulsionSystem": {
-			"title": "Fuel Propulsion System",
-			"type": "string",
-			"enum": [
-				"DieselPetrol",
-				"Diesel",
-				"Petrol",
-				"Hybrid",
-				"Electric",
-				"CNG",
-				"Fuel cell",
-				"LNG",
-				"Other"
-			]
 		},
 		"techRecord_functionCode": {
 			"type": [
@@ -771,24 +695,6 @@
 				{
 					"type": "null"
 				}
-			]
-		},
-		"techRecord_maxTrainDesignWeight": {
-			"type": [
-				"null",
-				"integer"
-			]
-		},
-		"techRecord_maxTrainEecWeight": {
-			"type": [
-				"null",
-				"integer"
-			]
-		},
-		"techRecord_maxTrainGbWeight": {
-			"type": [
-				"null",
-				"integer"
 			]
 		},
 		"techRecord_manufacturerDetails": {
@@ -906,18 +812,6 @@
 			"type": [
 				"null",
 				"string"
-			]
-		},
-		"techRecord_numberOfWheelsDriven": {
-			"type": [
-				"integer",
-				"null"
-			]
-		},
-		"techRecord_offRoad": {
-			"type": [
-				"null",
-				"boolean"
 			]
 		},
 		"techRecord_plates": {
@@ -1139,12 +1033,6 @@
 		"techRecord_roadFriendly": {
 			"type": "boolean"
 		},
-		"techRecord_speedLimiterMrk": {
-			"type": [
-				"null",
-				"boolean"
-			]
-		},
 		"techRecord_statusCode": {
 			"title": "Status Code",
 			"type": "string",
@@ -1152,12 +1040,6 @@
 				"provisional",
 				"current",
 				"archived"
-			]
-		},
-		"techRecord_tachoExemptMrk": {
-			"type": [
-				"null",
-				"boolean"
 			]
 		},
 		"techRecord_suspensionType": {

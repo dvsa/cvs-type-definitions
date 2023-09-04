@@ -39,7 +39,9 @@
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_parkingBrakeForceB",
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_secondaryBrakeForceB",
     "techRecord_brakes_brakeForceWheelsUpToHalfLocked_serviceBrakeForceB",
-    "techRecord_brakes_dtpNumber"
+    "techRecord_brakes_dtpNumber",
+    "techRecord_createdByName",
+    "techRecord_createdById"
   ],
   "properties": {
     "secondaryVrms": {
@@ -245,16 +247,10 @@
       "minimum": 0
     },
     "techRecord_createdByName": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_createdById": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_lastUpdatedAt": {
       "type": [

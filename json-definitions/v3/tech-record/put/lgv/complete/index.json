@@ -16,12 +16,6 @@
     "primaryVrm": {
       "type": "string"
     },
-    "trailerId": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
     "techRecord_applicantDetails_name": {
       "type": [
         "string",

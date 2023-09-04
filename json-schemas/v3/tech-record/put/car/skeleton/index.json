@@ -5,7 +5,8 @@
 	"required": [
 		"vin",
 		"techRecord_vehicleType",
-		"techRecord_reasonForCreation"
+		"techRecord_reasonForCreation",
+		"techRecord_statusCode"
 	],
 	"properties": {
 		"vin": {

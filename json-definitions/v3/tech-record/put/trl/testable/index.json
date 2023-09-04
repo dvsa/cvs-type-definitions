@@ -932,14 +932,7 @@
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_vehicleType": {
       "const": "trl"
@@ -1085,87 +1078,6 @@
           }
         }
       }
-    },
-    "weights_gbWeight": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 0,
-      "maximum": 99999
-    },
-    "weights_designWeight": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 0,
-      "maximum": 99999
-    },
-    "weights_ladenWeight": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 0,
-      "maximum": 99999
-    },
-    "weights_kerbWeight": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 0,
-      "maximum": 99999
-    },
-    "tyres_tyreCode": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 0,
-      "maximum": 99999
-    },
-    "tyres_tyreSize": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 12
-    },
-    "tyres_plyRating": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "tyres_fitmentCode": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/fitmentCode.ignore.json"
-        }
-      ]
-    },
-    "tyres_dataTrAxles": {
-      "type": [
-        "null",
-        "integer"
-      ],
-      "minimum": 0,
-      "maximum": 999
-    },
-    "tyres_speedCategorySymbol": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/speedCategorySymbol.ignore.json"
-        },
-        {
-          "type": "null"
-        }
-      ]
     },
     "techRecord_hiddenInVta": {
       "type": "boolean"

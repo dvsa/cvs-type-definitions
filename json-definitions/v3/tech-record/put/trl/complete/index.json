@@ -465,42 +465,27 @@
       "maxLength": 10
     },
     "techRecord_couplingCenterToRearAxleMax": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_couplingCenterToRearAxleMin": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_couplingCenterToRearTrlMax": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_couplingCenterToRearTrlMin": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_couplingType": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 1
     },
     "techRecord_departmentalVehicleMarker": {
@@ -510,59 +495,20 @@
       ]
     },
     "techRecord_dimensions_length": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
     "techRecord_dimensions_width": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
-    },
-    "techRecord_emissionsLimit": {
-      "type": [
-        "null",
-        "integer"
-      ],
-      "minimum": 0,
-      "maximum": 99
     },
     "techRecord_euVehicleCategory": {
       "$ref": "../../../enums/euVehicleCategory.ignore.json"
     },
-    "techRecord_euroStandard": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/euroStandard.ignore.json"
-        }
-      ]
-    },
-    "techRecord_frontAxleTo5thWheelMRex": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "techRecord_frontAxleTo5thWheelMin": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
     "techRecord_firstUseDate": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_frameDescription": {
       "anyOf": [
@@ -575,15 +521,9 @@
       ]
     },
     "techRecord_frontAxleToRearAxle": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
-    },
-    "techRecord_fuelPropulsionSystem": {
-      "$ref": "../../../enums/fuelPropulsionSystem.ignore.json"
     },
     "techRecord_functionCode": {
       "type": [
@@ -649,10 +589,7 @@
       ]
     },
     "techRecord_make": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 50
     },
     "techRecord_manufactureYear": {
@@ -667,24 +604,6 @@
         }
       ]
     },
-    "techRecord_maxTrainDesignWeight": {
-      "type": [
-        "null",
-        "integer"
-      ]
-    },
-    "techRecord_maxTrainEecWeight": {
-      "type": [
-        "null",
-        "integer"
-      ]
-    },
-    "techRecord_maxTrainGbWeight": {
-      "type": [
-        "null",
-        "integer"
-      ]
-    },
     "techRecord_manufacturerDetails": {
       "type": [
         "string",
@@ -692,10 +611,7 @@
       ]
     },
     "techRecord_maxLoadOnCoupling": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "minimum": 0,
       "maximum": 99999
     },
@@ -724,23 +640,13 @@
       "maxLength": 4
     },
     "techRecord_model": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 30
     },
     "techRecord_noOfAxles": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 99
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
     },
     "techRecord_notes": {
       "type": "string",
@@ -750,18 +656,6 @@
       "type": [
         "null",
         "string"
-      ]
-    },
-    "techRecord_numberOfWheelsDriven": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "techRecord_offRoad": {
-      "type": [
-        "null",
-        "boolean"
       ]
     },
     "techRecord_plates": {
@@ -928,10 +822,7 @@
       ]
     },
     "techRecord_rearAxleToRearTrl": {
-      "type": [
-        "integer",
-        "null"
-      ],
+      "type": "integer",
       "maximum": 99999,
       "minimum": 0
     },
@@ -954,38 +845,17 @@
       ]
     },
     "techRecord_roadFriendly": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_speedLimiterMrk": {
-      "type": [
-        "null",
-        "boolean"
-      ]
+      "type": "boolean"
     },
     "techRecord_statusCode": {
       "$ref": "../../../enums/statusCode.ignore.json"
     },
-    "techRecord_tachoExemptMrk": {
-      "type": [
-        "null",
-        "boolean"
-      ]
-    },
     "techRecord_suspensionType": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 1
     },
     "techRecord_tyreUseCode": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 2
     },
     "techRecord_variantNumber": {
@@ -1004,14 +874,7 @@
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
-      "anyOf": [
-        {
-          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_vehicleType": {
       "const": "trl"

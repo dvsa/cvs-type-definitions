@@ -19,7 +19,11 @@ describe("test schema validation", () => {
   it("should return errors when returnErrors is true", () => {
     const result1 = isValidObject(
       "v3/tech-record/put/car/skeleton/index.json",
-      { vin: "testVIN", techRecord_vehicleType: "123" },
+      {
+        vin: "testVIN",
+        techRecord_vehicleType: "123",
+        techRecord_statusCode: "provisional",
+      },
       true
     );
 
@@ -45,7 +49,7 @@ describe("test schema validation", () => {
       {},
       true
     );
-    expect(result2).toHaveLength(3);
+    expect(result2).toHaveLength(4);
     expect(result2).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -61,6 +65,12 @@ describe("test schema validation", () => {
           keyword: "required",
           message: "must have required property 'techRecord_reasonForCreation'",
           params: { missingProperty: "techRecord_reasonForCreation" },
+        }),
+        expect.objectContaining({
+          instancePath: "",
+          keyword: "required",
+          message: "must have required property 'techRecord_statusCode'",
+          params: { missingProperty: "techRecord_statusCode" },
         }),
       ])
     );
