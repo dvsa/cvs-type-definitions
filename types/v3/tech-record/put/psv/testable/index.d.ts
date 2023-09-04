@@ -191,7 +191,6 @@ export interface TechRecordPUTPSVTestable {
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt?: string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;

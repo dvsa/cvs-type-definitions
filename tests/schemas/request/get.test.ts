@@ -30,7 +30,6 @@ describe("required fields", () => {
 
     schemas.forEach((s) => {
       expect(`${fields[s]?.indexOf(field)} ${s}`).not.toEqual(`-1 ${s}`);
-      expect(fields[s]);
     });
   });
 });

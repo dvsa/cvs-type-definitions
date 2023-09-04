@@ -45,9 +45,6 @@
     "techRecord_reasonForCreation": {
       "type": "string"
     },
-    "techRecord_createdAt": {
-      "type": "string"
-    },
     "techRecord_vehicleConfiguration": {
       "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },

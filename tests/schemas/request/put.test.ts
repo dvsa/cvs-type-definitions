@@ -26,3 +26,32 @@ describe("required fields", () => {
     });
   });
 });
+
+describe("fields added on get", () => {
+  const fieldsAddedOnGet = [
+    "techRecord_createdByName",
+    "techRecord_createdAt",
+    "techRecord_createdById",
+    "createdTimestamp",
+    "systemNumber",
+  ];
+  it.each(fieldsAddedOnGet)(
+    "should not have %s added by the backend on put request",
+    (field) => {
+      const schemas: Schema[] = validationSchemas.filter((schema) =>
+        schema.includes("put")
+      );
+      const fields: Partial<Record<Schema, string[]>> = {};
+      schemas.forEach((path) => {
+        const file = readFile(path);
+        fields[path] = Object.keys(file.properties)
+          .filter((k) => file.required.includes(k))
+          .sort();
+      });
+
+      schemas.forEach((s) => {
+        expect(`${fields[s]?.indexOf(field)} ${s}`).toEqual(`-1 ${s}`);
+      });
+    }
+  );
+});

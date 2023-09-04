@@ -51,12 +51,6 @@
 		"techRecord_reasonForCreation": {
 			"type": "string"
 		},
-		"techRecord_createdAt": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
 		"techRecord_vehicleConfiguration": {
 			"anyOf": [
 				{
