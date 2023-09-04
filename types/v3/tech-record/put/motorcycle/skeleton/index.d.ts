@@ -68,6 +68,7 @@ export interface TechRecordPUTMotorcycleSkeleton {
   techRecord_recordCompleteness?: null | string;
   techRecord_noOfAxles?: null | number;
   techRecord_notes?: null | string;
+  techRecord_numberOfWheelsDriven?: number;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_statusCode: StatusCode;
