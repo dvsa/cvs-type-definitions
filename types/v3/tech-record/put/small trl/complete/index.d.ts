@@ -44,7 +44,7 @@ export interface TechRecordPUTSmallTRLComplete {
   techRecord_applicantDetails_telephoneNumber?: string | null;
   techRecord_euVehicleCategory: "o1" | "o2";
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_notes?: string | null;
   techRecord_reasonForCreation: string;
   techRecord_statusCode: StatusCode;
@@ -54,4 +54,5 @@ export interface TechRecordPUTSmallTRLComplete {
   techRecord_vehicleType: "trl";
   vin: string;
   trailerId?: string;
+  techRecord_hiddenInVta?: null | boolean;
 }

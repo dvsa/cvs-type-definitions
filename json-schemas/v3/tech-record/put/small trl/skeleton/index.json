@@ -73,9 +73,15 @@
 			]
 		},
 		"techRecord_noOfAxles": {
-			"type": [
-				"integer",
-				"null"
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 99
+				},
+				{
+					"type": "null"
+				}
 			]
 		},
 		"techRecord_notes": {
@@ -167,6 +173,12 @@
 		},
 		"trailerId": {
 			"type": "string"
+		},
+		"techRecord_hiddenInVta": {
+			"type": [
+				"null",
+				"boolean"
+			]
 		}
 	}
 }

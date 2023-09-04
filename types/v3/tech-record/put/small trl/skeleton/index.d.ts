@@ -54,4 +54,5 @@ export interface TechRecordPUTSmallTRLSkeleton {
   techRecord_vehicleType: "trl";
   vin: string;
   trailerId?: string;
+  techRecord_hiddenInVta?: null | boolean;
 }
