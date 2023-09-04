@@ -119,7 +119,10 @@
       ]
     },
     "techRecord_numberOfWheelsDriven": {
-      "type": "integer"
+      "type": [
+        "null",
+        "integer"
+      ]
     },
     "techRecord_reasonForCreation": {
       "type": "string"

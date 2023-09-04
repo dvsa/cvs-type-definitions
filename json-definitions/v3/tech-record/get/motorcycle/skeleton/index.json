@@ -217,6 +217,12 @@
       "items": {
         "type": "string"
       }
+    },
+    "techRecord_numberOfWheelsDriven": {
+      "type": [
+        "null",
+        "integer"
+      ]
     }
   }
 }

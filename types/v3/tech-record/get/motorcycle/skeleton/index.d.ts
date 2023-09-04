@@ -86,4 +86,5 @@ export interface TechRecordGETMotorcycleSkeleton {
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];
+  techRecord_numberOfWheelsDriven?: null | number;
 }

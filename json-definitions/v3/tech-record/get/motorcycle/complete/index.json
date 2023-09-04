@@ -205,10 +205,7 @@
       "type": "string"
     },
     "techRecord_numberOfWheelsDriven": {
-      "type": [
-        "null",
-        "integer"
-      ]
+      "type": "integer"
     },
     "techRecord_hiddenInVta": {
       "type": [
