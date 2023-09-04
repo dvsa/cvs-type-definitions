@@ -109,7 +109,9 @@
             "type": [
                 "integer",
                 "null"
-            ]
+            ],
+            "minimum": 0,
+            "maximum": 99
         },
         "techRecord_notes": {
             "type": [
@@ -160,6 +162,12 @@
         },
         "techRecord_recordCompleteness": {
             "const": "skeleton"
+        },
+        "techRecord_hiddenInVta": {
+            "type": [
+                "null",
+                "boolean"
+            ]
         }
     }
 }

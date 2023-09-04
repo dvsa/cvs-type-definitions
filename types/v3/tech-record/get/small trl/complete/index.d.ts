@@ -50,7 +50,7 @@ export interface TechRecordGETSmallTRLComplete {
   techRecord_lastUpdatedById?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_notes?: string | null;
   techRecord_reasonForCreation: string;
   techRecord_statusCode: StatusCode;
@@ -63,4 +63,5 @@ export interface TechRecordGETSmallTRLComplete {
   trailerId?: string;
   systemNumber: string;
   createdTimestamp: string;
+  techRecord_hiddenInVta?: null | boolean;
 }

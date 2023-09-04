@@ -64,4 +64,5 @@ export interface TechRecordGETSmallTRLSkeleton {
   systemNumber: string;
   createdTimestamp: string;
   techRecord_recordCompleteness?: "skeleton";
+  techRecord_hiddenInVta?: null | boolean;
 }
