@@ -84,7 +84,7 @@ export interface TechRecordGETMotorcycleComplete {
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
   techRecord_vehicleType: "motorcycle";
   vin: string;
-  techRecord_numberOfWheelsDriven: null | number;
+  techRecord_numberOfWheelsDriven: number;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
 }
