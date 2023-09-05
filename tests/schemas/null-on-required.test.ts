@@ -24,6 +24,7 @@ describe("there should not be any required fields which accept null on put reque
     "%s should not accept null",
     (schema) => {
       const file = readFile(schema);
+      expect.assertions(file.required.length - whitelist.length);
       file.required.forEach((field: any) => {
         if (whitelist.includes(field)) {
           return;
