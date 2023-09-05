@@ -191,7 +191,7 @@ export interface TechRecordGETPSVTestable {
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt?: string;
+  techRecord_createdAt: string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;
@@ -218,8 +218,8 @@ export interface TechRecordGETPSVTestable {
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
-  techRecord_createdByName?: string | null;
-  techRecord_createdById?: string | null;
+  techRecord_createdByName: string | null;
+  techRecord_createdById: string | null;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;

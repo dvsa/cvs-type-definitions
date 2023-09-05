@@ -191,12 +191,10 @@ export interface TechRecordPUTPSVTestable {
   techRecord_vehicleType: "psv";
   techRecord_statusCode: StatusCode;
   techRecord_reasonForCreation: string;
-  techRecord_createdAt?: null | string;
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleSize: VehicleSize;
   techRecord_seatsLowerDeck: number;
   techRecord_seatsUpperDeck: number;
-  techRecord_numberOfWheelsDriven: number | null;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_recordCompleteness?: null | string;

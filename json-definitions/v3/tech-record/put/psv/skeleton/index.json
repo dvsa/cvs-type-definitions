@@ -45,12 +45,6 @@
     "techRecord_reasonForCreation": {
       "type": "string"
     },
-    "techRecord_createdAt": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "techRecord_vehicleConfiguration": {
       "anyOf": [
         {
@@ -78,12 +72,6 @@
       ]
     },
     "techRecord_seatsUpperDeck": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "techRecord_numberOfWheelsDriven": {
       "type": [
         "integer",
         "null"
@@ -429,8 +417,7 @@
     },
     "techRecord_bodyMake": {
       "type": [
-        "string",
-        "null"
+        "string"
       ],
       "maxLength": 50
     },
@@ -442,17 +429,11 @@
       "maxLength": 20
     },
     "techRecord_chassisMake": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 50
     },
     "techRecord_chassisModel": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 20
     },
     "techRecord_modelLiteral": {
@@ -711,10 +692,7 @@
       "maxLength": 255
     },
     "techRecord_brakes_dtpNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 6
     },
     "techRecord_brakes_brakeCode": {

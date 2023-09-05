@@ -157,6 +157,9 @@
                 "null",
                 "boolean"
             ]
+        },
+        "techRecord_recordCompleteness": {
+            "const": "complete"
         }
     }
 }

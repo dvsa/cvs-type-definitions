@@ -18,7 +18,10 @@
 		"techRecord_reasonForCreation",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_brakes_dtpNumber"
+		"techRecord_brakes_dtpNumber",
+		"techRecord_createdByName",
+		"techRecord_createdById",
+		"techRecord_createdAt"
 	],
 	"properties": {
 		"vin": {

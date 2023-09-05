@@ -64,4 +64,5 @@ export interface TechRecordGETSmallTRLComplete {
   systemNumber: string;
   createdTimestamp: string;
   techRecord_hiddenInVta?: null | boolean;
+  techRecord_recordCompleteness?: "complete";
 }

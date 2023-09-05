@@ -9,6 +9,7 @@
 		"primaryVrm",
 		"techRecord_createdByName",
 		"techRecord_createdById",
+		"techRecord_createdAt",
 		"techRecord_reasonForCreation",
 		"techRecord_vehicleType",
 		"createdTimestamp",

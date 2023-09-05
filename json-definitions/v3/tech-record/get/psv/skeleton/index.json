@@ -237,16 +237,10 @@
       "minimum": 0
     },
     "techRecord_createdByName": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_createdById": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_lastUpdatedAt": {
       "type": [

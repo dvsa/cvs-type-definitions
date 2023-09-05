@@ -8,7 +8,6 @@
 		"techRecord_vehicleSize",
 		"techRecord_seatsLowerDeck",
 		"techRecord_seatsUpperDeck",
-		"techRecord_numberOfWheelsDriven",
 		"techRecord_vehicleType",
 		"techRecord_noOfAxles",
 		"techRecord_statusCode",
@@ -72,12 +71,6 @@
 		"techRecord_reasonForCreation": {
 			"type": "string"
 		},
-		"techRecord_createdAt": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
 		"techRecord_vehicleConfiguration": {
 			"title": "Vehicle Configuration",
 			"type": "string",
@@ -109,12 +102,6 @@
 		},
 		"techRecord_seatsUpperDeck": {
 			"type": "integer"
-		},
-		"techRecord_numberOfWheelsDriven": {
-			"type": [
-				"integer",
-				"null"
-			]
 		},
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",

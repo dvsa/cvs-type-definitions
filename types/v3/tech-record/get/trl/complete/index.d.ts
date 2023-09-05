@@ -41,16 +41,6 @@ export type EUVehicleCategory =
   | "l5e"
   | "l6e"
   | "l7e";
-export type EuroStandard =
-  | "0.10 g/kWh Euro 3 PM"
-  | "0.03 g/kWh Euro IV PM"
-  | "Euro 3"
-  | "Euro 4"
-  | "Euro 5"
-  | "Euro 6"
-  | "Euro V"
-  | "Euro VI"
-  | "Full Electric";
 export type FrameDescription =
   | "Channel section"
   | "Space frame"
@@ -61,16 +51,6 @@ export type FrameDescription =
   | "integral"
   | "Box section"
   | "U section";
-export type FuelPropulsionSystem =
-  | "DieselPetrol"
-  | "Diesel"
-  | "Petrol"
-  | "Hybrid"
-  | "Electric"
-  | "CNG"
-  | "Fuel cell"
-  | "LNG"
-  | "Other";
 export type LetterTypes = "trailer acceptance" | "trailer rejection";
 export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
 export type MicrofilmDocumentType =
@@ -256,18 +236,10 @@ export interface TechRecordGETTRLComplete {
   techRecord_departmentalVehicleMarker?: boolean | null;
   techRecord_dimensions_length: number;
   techRecord_dimensions_width: number;
-  drawbarCouplingFitted?: null | string;
-  techRecord_emissionsLimit?: null | number;
   techRecord_euVehicleCategory: EUVehicleCategory;
-  techRecord_euroStandard?: null | EuroStandard;
-  frontAxleTo5thWheelMax?: number | null;
-  techRecord_frontAxleTo5thWheelMin?: number | null;
   techRecord_firstUseDate: string;
   techRecord_frameDescription?: FrameDescription | null;
   techRecord_frontAxleToRearAxle: number;
-  techRecord_frontVehicleTo5thWheelCouplingMax?: string | null;
-  techRecord_frontVehicleTo5thWheelCouplingMin?: string | null;
-  techRecord_fuelPropulsionSystem?: FuelPropulsionSystem;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
@@ -278,9 +250,6 @@ export interface TechRecordGETTRLComplete {
   techRecord_letterOfAuth_letterIssuer?: string | null;
   techRecord_make: string;
   techRecord_manufactureYear?: number | null;
-  techRecord_maxTrainDesignWeight?: null | number;
-  techRecord_maxTrainEecWeight?: null | number;
-  techRecord_maxTrainGbWeight?: null | number;
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling: number;
   techRecord_microfilm?: string | null;
@@ -291,8 +260,6 @@ export interface TechRecordGETTRLComplete {
   techRecord_noOfAxles: number;
   techRecord_notes: string;
   techRecord_ntaNumber?: null | string;
-  techRecord_numberOfWheelsDriven?: number | null;
-  techRecord_offRoad?: null | boolean;
   techRecord_plates?: null | TRLPlates[];
   techRecord_purchaserDetails_address1?: string | null;
   techRecord_purchaserDetails_address2?: string | null;
@@ -319,12 +286,10 @@ export interface TechRecordGETTRLComplete {
   techRecord_lastUpdatedById?: string | null;
   techRecord_rearAxleToRearTrl: number;
   techRecord_reasonForCreation: string;
-  techRecord_recordCompleteness: "complete";
+  techRecord_recordCompleteness?: "complete";
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly: boolean;
-  techRecord_speedLimiterMrk?: null | boolean;
   techRecord_statusCode: StatusCode;
-  techRecord_tachoExemptMrk?: null | boolean;
   techRecord_suspensionType: string;
   techRecord_tyreUseCode: string;
   techRecord_variantNumber?: null | string;
