@@ -376,7 +376,10 @@
 			"type": "null"
 		},
 		"techRecord_dda_certificateIssued": {
-			"type": "boolean"
+			"type": [
+				"boolean",
+				"null"
+			]
 		},
 		"techRecord_dda_wheelchairCapacity": {
 			"type": [
