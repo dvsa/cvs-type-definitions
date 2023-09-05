@@ -225,7 +225,7 @@ export interface TechRecordGETPSVComplete {
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
   techRecord_dda?: null;
-  techRecord_dda_certificateIssued: boolean;
+  techRecord_dda_certificateIssued: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
   techRecord_dda_wheelchairFittings?: string | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
