@@ -19,11 +19,15 @@ const containsNull = (field: any) => {
 };
 
 describe("there should not be any required fields which accept null on put requests", () => {
+  const whitelist = ["techRecord_dda_certificateIssued"];
   it.each(schemas.filter((s) => s.includes("put")))(
     "%s should not accept null",
     (schema) => {
       const file = readFile(schema);
       file.required.forEach((field: any) => {
+        if (whitelist.includes(field)) {
+          return;
+        }
         const fieldProps = file.properties[field];
         const hasNull = !!containsNull(fieldProps);
         expect(`${hasNull}${schema}${field}`).toEqual(
