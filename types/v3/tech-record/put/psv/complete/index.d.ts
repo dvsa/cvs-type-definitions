@@ -217,7 +217,7 @@ export interface TechRecordPUTPSVComplete {
   techRecord_conversionRefNo?: string | null;
   techRecord_grossGbWeight?: number | null;
   techRecord_grossDesignWeight?: number | null;
-  techRecord_dda_certificateIssued: boolean;
+  techRecord_dda_certificateIssued: boolean | null;
   techRecord_dda_wheelchairCapacity?: number | null;
   techRecord_dda_wheelchairFittings?: string | null;
   techRecord_dda_wheelchairLiftPresent?: boolean | null;
