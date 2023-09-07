@@ -219,8 +219,8 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_applicationId?: string;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
-  techRecord_bodyType_code?: string;
-  techRecord_bodyType_description?: string;
+  techRecord_bodyType_code: string;
+  techRecord_bodyType_description: string;
   techRecord_brakes_antilockBrakingSystem?: boolean | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
@@ -274,7 +274,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_suspensionType?: string | null;
   techRecord_tyreUseCode?: string | null;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_vehicleConfiguration: VehicleConfiguration;
+  techRecord_vehicleConfiguration?: VehicleConfiguration;
   techRecord_vehicleType: "trl";
   trailerId?: string;
   vin: string;
