@@ -164,6 +164,8 @@
     "techRecord_vehicleConfiguration": "rigid",
     "techRecord_vehicleType": "trl",
     "techRecord_statusCode": "provisional",
+    "techRecord_bodyType_code": "l",
+    "techRecord_bodyType_description": "low loader",
     "trailerId": "C530005",
     "vin": "9080977997"
   },

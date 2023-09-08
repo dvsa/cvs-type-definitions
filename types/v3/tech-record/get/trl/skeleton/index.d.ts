@@ -221,8 +221,8 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_variantVersionNumber?: null | string;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
-  techRecord_bodyType_code?: null | string;
-  techRecord_bodyType_description?: null | string;
+  techRecord_bodyType_code: null | string;
+  techRecord_bodyType_description: null | string;
   techRecord_brakes_antilockBrakingSystem?: boolean | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
@@ -296,7 +296,7 @@ export interface TechRecordGETTRLSkeleton {
   techRecord_tyreUseCode?: string | null;
   techRecord_vehicleClass_code: string;
   techRecord_vehicleClass_description: VehicleClassDescription;
-  techRecord_vehicleConfiguration: VehicleConfiguration | null;
+  techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
   trailerId: string;
   vin: string;

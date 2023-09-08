@@ -6,7 +6,8 @@
 		"techRecord_reasonForCreation",
 		"techRecord_statusCode",
 		"techRecord_vehicleClass_description",
-		"techRecord_vehicleConfiguration",
+		"techRecord_bodyType_description",
+		"techRecord_bodyType_code",
 		"techRecord_vehicleType",
 		"vin"
 	],
