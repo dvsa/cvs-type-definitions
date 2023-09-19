@@ -509,12 +509,6 @@
 				"string"
 			]
 		},
-		"techRecord_brakes_antilockBrakingSystem": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
 		"techRecord_brakes_dtpNumber": {
 			"type": [
 				"string",
