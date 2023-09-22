@@ -8,7 +8,9 @@
 		"techRecord_vehicleType",
 		"vin",
 		"techRecord_vehicleConfiguration",
-		"techRecord_vehicleClass_description"
+		"techRecord_vehicleClass_description",
+		"techRecord_noOfAxles",
+		"techRecord_bodyType_description"
 	],
 	"properties": {
 		"secondaryVrms": {

@@ -12,7 +12,8 @@
 		"techRecord_noOfAxles",
 		"techRecord_statusCode",
 		"techRecord_reasonForCreation",
-		"techRecord_vehicleClass_description"
+		"techRecord_vehicleClass_description",
+		"techRecord_brakes_dtpNumber"
 	],
 	"properties": {
 		"vin": {

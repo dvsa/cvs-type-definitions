@@ -197,7 +197,7 @@ export interface TechRecordPUTHGVSkeleton {
   techRecord_applicationId?: string | null;
   techRecord_axles?: null | HGVAxles[];
   techRecord_bodyType_code?: null | string;
-  techRecord_bodyType_description?: null | string;
+  techRecord_bodyType_description: null | string;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_conversionRefNo?: string | null;
@@ -242,7 +242,7 @@ export interface TechRecordPUTHGVSkeleton {
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight?: number | null;
   techRecord_tyreUseCode?: string | null;
-  techRecord_vehicleClass_description?: null | VehicleClassDescription;
+  techRecord_vehicleClass_description: null | VehicleClassDescription;
   techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_approvalType?: ApprovalType | null;
   techRecord_approvalTypeNumber?: string | null;

@@ -264,7 +264,7 @@ export interface TechRecordPUTPSVTestable {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_brakes_dtpNumber?: string | null;
+  techRecord_brakes_dtpNumber: string | null;
   techRecord_brakes_brakeCode?: string | null;
   techRecord_brakes_brakeCodeOriginal?: string | null;
   techRecord_brakes_dataTrBrakeOne?: string | null;

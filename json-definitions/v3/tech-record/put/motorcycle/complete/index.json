@@ -8,6 +8,7 @@
     "techRecord_reasonForCreation",
     "techRecord_vehicleType",
     "techRecord_statusCode",
+    "techRecord_vehicleConfiguration",
     "vin"
   ],
   "properties": {

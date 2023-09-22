@@ -8,7 +8,8 @@
 		"techRecord_vehicleType",
 		"techRecord_statusCode",
 		"techRecord_noOfAxles",
-		"techRecord_reasonForCreation"
+		"techRecord_reasonForCreation",
+		"techRecord_vehicleConfiguration"
 	],
 	"properties": {
 		"vin": {
@@ -93,6 +94,31 @@
 			"items": {
 				"type": "string"
 			}
+		},
+		"techRecord_vehicleConfiguration": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Vehicle Configuration",
+					"type": "string",
+					"enum": [
+						"rigid",
+						"articulated",
+						"centre axle drawbar",
+						"semi-car transporter",
+						"semi-trailer",
+						"long semi-trailer",
+						"low loader",
+						"other",
+						"drawbar",
+						"four-in-line",
+						"dolly",
+						"full drawbar"
+					]
+				}
+			]
 		},
 		"techRecord_euVehicleCategory": {
 			"anyOf": [
