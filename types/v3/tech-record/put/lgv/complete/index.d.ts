@@ -44,7 +44,7 @@ export interface TechRecordPUTLGVComplete {
   techRecord_statusCode: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_notes?: string;
   techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;

@@ -228,7 +228,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
-  techRecord_noOfAxles: number | null;
+  techRecord_noOfAxles: number;
   techRecord_notes?: string | null;
   techRecord_offRoad?: boolean | null;
   techRecord_plates?: HGVPlates[];

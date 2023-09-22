@@ -477,10 +477,7 @@
       ]
     },
     "techRecord_bodyType_description": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "techRecord_brakes_dtpNumber": {
       "type": [
@@ -868,14 +865,7 @@
       "maxLength": 2
     },
     "techRecord_vehicleClass_description": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/vehicleClassDescription.ignore.json"
-        }
-      ]
+      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

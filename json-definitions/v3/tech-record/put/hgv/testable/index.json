@@ -724,16 +724,9 @@
       "maxLength": 30
     },
     "techRecord_noOfAxles": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 99
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
     },
     "techRecord_notes": {
       "type": [

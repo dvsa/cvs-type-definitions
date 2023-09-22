@@ -54,7 +54,7 @@ export interface TechRecordPUTCarComplete {
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];
-  techRecord_vehicleConfiguration: null | VehicleConfiguration;
+  techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;
