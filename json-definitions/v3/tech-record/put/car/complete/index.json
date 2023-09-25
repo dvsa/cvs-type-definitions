@@ -8,7 +8,8 @@
     "techRecord_vehicleType",
     "techRecord_statusCode",
     "techRecord_noOfAxles",
-    "techRecord_reasonForCreation"
+    "techRecord_reasonForCreation",
+    "techRecord_vehicleConfiguration"
   ],
   "properties": {
     "vin": {
@@ -70,6 +71,9 @@
       "items": {
         "type": "string"
       }
+    },
+    "techRecord_vehicleConfiguration": {
+      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [
