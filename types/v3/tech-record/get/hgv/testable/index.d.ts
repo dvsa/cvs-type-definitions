@@ -199,7 +199,7 @@ export interface TechRecordGETHGVTestable {
   techRecord_applicationId?: string | null;
   techRecord_axles?: null | HGVAxles[];
   techRecord_bodyType_code?: null | string;
-  techRecord_bodyType_description?: null | string;
+  techRecord_bodyType_description: string;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_conversionRefNo?: string | null;
@@ -235,7 +235,7 @@ export interface TechRecordGETHGVTestable {
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_model?: string | null;
   techRecord_numberOfWheelsDriven: number;
-  techRecord_noOfAxles?: number | null;
+  techRecord_noOfAxles: number;
   techRecord_notes?: string | null;
   techRecord_offRoad?: boolean | null;
   techRecord_plates?: null | HGVPlates[];
