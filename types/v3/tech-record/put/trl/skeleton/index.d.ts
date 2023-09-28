@@ -216,7 +216,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: string | null;
   techRecord_authIntoService?: string | null;
   techRecord_batchId?: string | null;
   techRecord_bodyType_code: string;

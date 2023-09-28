@@ -7,19 +7,6 @@
 
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -54,7 +41,6 @@ export interface TechRecordPUTCarComplete {
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
   secondaryVrms?: null | string[];
-  techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_applicantDetails_name?: string | null;
   techRecord_applicantDetails_address1?: null | string;

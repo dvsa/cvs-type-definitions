@@ -15,8 +15,7 @@
     "techRecord_vehicleType",
     "createdTimestamp",
     "partialVin",
-    "vin",
-    "techRecord_vehicleConfiguration"
+    "vin"
   ],
   "properties": {
     "secondaryVrms": {
@@ -191,8 +190,15 @@
       "type": "string"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
-    },  
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+        }
+      ]
+    },
     "techRecord_vehicleType": {
       "const": "motorcycle"
     },

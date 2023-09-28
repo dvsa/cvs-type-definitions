@@ -12,8 +12,7 @@
     "techRecord_noOfAxles",
     "techRecord_statusCode",
     "techRecord_reasonForCreation",
-    "techRecord_vehicleClass_description",
-    "techRecord_brakes_dtpNumber"
+    "techRecord_vehicleClass_description"
   ],
   "properties": {
     "vin": {
@@ -670,7 +669,10 @@
       "maxLength": 255
     },
     "techRecord_brakes_dtpNumber": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 6
     },
     "techRecord_brakes_brakeCode": {
