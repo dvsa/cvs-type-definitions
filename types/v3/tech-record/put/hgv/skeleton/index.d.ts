@@ -198,6 +198,7 @@ export interface TechRecordPUTHGVSkeleton {
   techRecord_axles?: null | HGVAxles[];
   techRecord_bodyType_code?: null | string;
   techRecord_bodyType_description?: null | string;
+  techRecord_brakes_antilockBrakingSystem?: string | null;
   techRecord_brakes_dtpNumber?: string | null;
   techRecord_brakes_loadSensingValve?: boolean | null;
   techRecord_conversionRefNo?: string | null;
