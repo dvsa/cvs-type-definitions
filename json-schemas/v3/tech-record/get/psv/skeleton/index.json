@@ -1108,7 +1108,10 @@
 			]
 		},
 		"techRecord_applicationId": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"secondaryVrms": {
 			"type": [

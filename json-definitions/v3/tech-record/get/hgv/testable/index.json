@@ -393,7 +393,10 @@
       "maxLength": 255
     },
     "techRecord_applicationId": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_axles": {
       "type": [
