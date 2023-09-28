@@ -6,8 +6,6 @@
     "techRecord_reasonForCreation",
     "techRecord_statusCode",
     "techRecord_vehicleType",
-    "techRecord_vehicleClass_description",
-    "techRecord_bodyType_description",
     "vin"
   ],
   "properties": {
@@ -477,7 +475,10 @@
       ]
     },
     "techRecord_bodyType_description": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "techRecord_brakes_dtpNumber": {
       "type": [
@@ -865,7 +866,14 @@
       "maxLength": 2
     },
     "techRecord_vehicleClass_description": {
-      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+        }
+      ]
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

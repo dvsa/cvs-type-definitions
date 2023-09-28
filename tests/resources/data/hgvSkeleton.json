@@ -142,10 +142,7 @@
     "techRecord_recordCompleteness": "skeleton",
     "techRecord_statusCode": "provisional",
     "techRecord_vehicleType": "hgv",
-    "vin": "DANHGV1231",
-    "techRecord_bodyType_code": "u",
-    "techRecord_bodyType_description": "artic",
-    "techRecord_vehicleClass_description": "heavy goods vehicle"
+    "vin": "DANHGV1231"
   },
   {
     "createdTimestamp": "2023-06-16T15:17:21.819Z",

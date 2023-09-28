@@ -50,7 +50,7 @@ export interface TechRecordPUTSmallTRLComplete {
   techRecord_statusCode: StatusCode;
   techRecord_vehicleClass_description: VehicleClassDescription;
   techRecord_vehicleConfiguration: VehicleConfiguration;
-  techRecord_vehicleSubclass?: null | VehicleSubclass;
+  techRecord_vehicleSubclass?: VehicleSubclass;
   techRecord_vehicleType: "trl";
   vin: string;
   trailerId?: string;

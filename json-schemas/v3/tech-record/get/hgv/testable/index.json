@@ -18,9 +18,7 @@
 		"techRecord_vehicleConfiguration",
 		"techRecord_vehicleClass_code",
 		"techRecord_vehicleClass_description",
-		"techRecord_numberOfWheelsDriven",
-		"techRecord_noOfAxles",
-		"techRecord_bodyType_description"
+		"techRecord_numberOfWheelsDriven"
 	],
 	"properties": {
 		"secondaryVrms": {
@@ -507,7 +505,10 @@
 			]
 		},
 		"techRecord_bodyType_description": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"techRecord_brakes_dtpNumber": {
 			"type": [
@@ -864,9 +865,16 @@
 			"type": "integer"
 		},
 		"techRecord_noOfAxles": {
-			"type": "integer",
-			"minimum": 0,
-			"maximum": 99
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 99
+				},
+				{
+					"type": "null"
+				}
+			]
 		},
 		"techRecord_notes": {
 			"type": [

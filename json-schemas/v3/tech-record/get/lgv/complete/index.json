@@ -11,8 +11,7 @@
 		"techRecord_createdAt",
 		"techRecord_createdById",
 		"techRecord_createdByName",
-		"techRecord_reasonForCreation",
-		"techRecord_noOfAxles"
+		"techRecord_reasonForCreation"
 	],
 	"properties": {
 		"techRecord_applicantDetails_name": {
@@ -162,7 +161,10 @@
 			]
 		},
 		"techRecord_noOfAxles": {
-			"type": "integer"
+			"type": [
+				"null",
+				"integer"
+			]
 		},
 		"techRecord_notes": {
 			"type": [

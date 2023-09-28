@@ -8,7 +8,6 @@
     "techRecord_reasonForCreation",
     "techRecord_vehicleType",
     "techRecord_statusCode",
-    "techRecord_vehicleConfiguration",
     "vin"
   ],
   "properties": {
@@ -145,7 +144,14 @@
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+        }
+      ]
     },
     "techRecord_vehicleType": {
       "const": "motorcycle"
