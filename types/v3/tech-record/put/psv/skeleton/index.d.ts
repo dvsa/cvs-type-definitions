@@ -282,7 +282,7 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_microfilm_microfilmRollNumber?: string | null;
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   secondaryVrms?: string[];
   techRecord_updateType?: null | string;
 }

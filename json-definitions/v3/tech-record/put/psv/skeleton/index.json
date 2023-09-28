@@ -829,7 +829,10 @@
       ]
     },
     "techRecord_applicationId": {
-      "type": "string"
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "secondaryVrms": {
       "type": "array",

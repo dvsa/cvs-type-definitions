@@ -196,7 +196,7 @@ export interface TechRecordGETHGVTestable {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   techRecord_axles?: null | HGVAxles[];
   techRecord_bodyType_code?: null | string;
   techRecord_bodyType_description?: null | string;

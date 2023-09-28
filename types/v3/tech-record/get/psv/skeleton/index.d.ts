@@ -294,7 +294,7 @@ export interface TechRecordGETPSVSkeleton {
   techRecord_microfilm_microfilmSerialNumber?: string | null;
   techRecord_brakeCode?: string | null;
   createdTimestamp: string;
-  techRecord_applicationId?: string;
+  techRecord_applicationId?: null | string;
   secondaryVrms?: null | string[];
   techRecord_updateType?: null | string;
 }
