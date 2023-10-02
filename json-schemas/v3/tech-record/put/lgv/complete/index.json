@@ -7,7 +7,8 @@
 		"vin",
 		"techRecord_vehicleType",
 		"techRecord_statusCode",
-		"techRecord_reasonForCreation"
+		"techRecord_reasonForCreation",
+		"techRecord_noOfAxles"
 	],
 	"properties": {
 		"vin": {
@@ -131,10 +132,7 @@
 			]
 		},
 		"techRecord_noOfAxles": {
-			"type": [
-				"integer",
-				"null"
-			]
+			"type": "integer"
 		},
 		"techRecord_notes": {
 			"type": "string"
