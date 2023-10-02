@@ -13,6 +13,8 @@
 		"techRecord_recordCompleteness",
 		"techRecord_statusCode",
 		"techRecord_vehicleType",
+		"techRecord_vehicleClass_description",
+		"techRecord_bodyType_description",
 		"primaryVrm",
 		"vin"
 	],
@@ -504,16 +506,7 @@
 			]
 		},
 		"techRecord_bodyType_description": {
-			"type": [
-				"null",
-				"string"
-			]
-		},
-		"techRecord_brakes_antilockBrakingSystem": {
-			"type": [
-				"string",
-				"null"
-			]
+			"type": "string"
 		},
 		"techRecord_brakes_dtpNumber": {
 			"type": [
@@ -1034,27 +1027,20 @@
 			]
 		},
 		"techRecord_vehicleClass_description": {
-			"anyOf": [
-				{
-					"type": "null"
-				},
-				{
-					"title": "Vehicle Class Description",
-					"type": "string",
-					"enum": [
-						"motorbikes over 200cc or with a sidecar",
-						"not applicable",
-						"small psv (ie: less than or equal to 22 seats)",
-						"motorbikes up to 200cc",
-						"trailer",
-						"large psv(ie: greater than 23 seats)",
-						"3 wheelers",
-						"heavy goods vehicle",
-						"MOT class 4",
-						"MOT class 7",
-						"MOT class 5"
-					]
-				}
+			"title": "Vehicle Class Description",
+			"type": "string",
+			"enum": [
+				"motorbikes over 200cc or with a sidecar",
+				"not applicable",
+				"small psv (ie: less than or equal to 22 seats)",
+				"motorbikes up to 200cc",
+				"trailer",
+				"large psv(ie: greater than 23 seats)",
+				"3 wheelers",
+				"heavy goods vehicle",
+				"MOT class 4",
+				"MOT class 7",
+				"MOT class 5"
 			]
 		},
 		"techRecord_vehicleConfiguration": {

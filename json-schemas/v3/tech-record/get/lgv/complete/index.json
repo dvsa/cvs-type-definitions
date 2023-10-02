@@ -12,6 +12,7 @@
 		"techRecord_createdById",
 		"techRecord_createdByName",
 		"techRecord_reasonForCreation",
+		"techRecord_noOfAxles",
 		"techRecord_vehicleConfiguration"
 	],
 	"properties": {
@@ -162,10 +163,7 @@
 			]
 		},
 		"techRecord_noOfAxles": {
-			"type": [
-				"null",
-				"integer"
-			]
+			"type": "integer"
 		},
 		"techRecord_notes": {
 			"type": [

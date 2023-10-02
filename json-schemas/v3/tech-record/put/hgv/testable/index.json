@@ -8,7 +8,9 @@
 		"techRecord_vehicleType",
 		"vin",
 		"techRecord_vehicleConfiguration",
-		"techRecord_vehicleClass_description"
+		"techRecord_vehicleClass_description",
+		"techRecord_noOfAxles",
+		"techRecord_bodyType_description"
 	],
 	"properties": {
 		"secondaryVrms": {
@@ -488,12 +490,6 @@
 		"techRecord_bodyType_description": {
 			"type": "string"
 		},
-		"techRecord_brakes_antilockBrakingSystem": {
-			"type": [
-				"string",
-				"null"
-			]
-		},
 		"techRecord_brakes_dtpNumber": {
 			"type": [
 				"string",
@@ -834,16 +830,9 @@
 			"maxLength": 30
 		},
 		"techRecord_noOfAxles": {
-			"anyOf": [
-				{
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 99
-				},
-				{
-					"type": "null"
-				}
-			]
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 99
 		},
 		"techRecord_notes": {
 			"type": [

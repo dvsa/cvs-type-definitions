@@ -8,6 +8,7 @@
     "techRecord_vehicleType",
     "techRecord_statusCode",
     "techRecord_reasonForCreation",
+    "techRecord_noOfAxles",
     "techRecord_vehicleConfiguration"
   ],
   "properties": {
@@ -75,10 +76,7 @@
       "type": ["integer", "null"]
     },
     "techRecord_noOfAxles": {
-      "type": [
-        "integer",
-        "null"
-      ]
+      "type": "integer"
     },
     "techRecord_notes": {
       "type": "string"
