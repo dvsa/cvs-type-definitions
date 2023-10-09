@@ -14,7 +14,7 @@
 
 ## Example usage (json schemas)
 
-The package exports an `isValidObject()` function which can be used to validate an object against a specified schema. E.g:
+The package exports an `isValidObject()` function which can be used to validate if an object against a specified schema. E.g:
 
 `import { isValidObject } from '@dvsa/cvs-type-definitions/lib/src/schema-validation../../schema-validator';`
 
