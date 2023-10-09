@@ -67,7 +67,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: null | StatusCode;
-  techRecord_vehicleConfiguration?: null | VehicleConfiguration;
+  techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleType: "lgv";
   vin: string;
   techRecord_vehicleSubclass: VehicleSubclass;
