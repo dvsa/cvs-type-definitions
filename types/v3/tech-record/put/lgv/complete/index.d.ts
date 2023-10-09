@@ -63,5 +63,5 @@ export interface TechRecordPUTLGVComplete {
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
   secondaryVrms?: string[];
-  techRecord_vehicleConfiguration?: null | VehicleConfiguration;
+  techRecord_vehicleConfiguration: null | VehicleConfiguration;
 }

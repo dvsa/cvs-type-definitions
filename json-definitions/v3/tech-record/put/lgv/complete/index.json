@@ -8,7 +8,7 @@
     "techRecord_vehicleType",
     "techRecord_statusCode",
     "techRecord_reasonForCreation",
-    "techRecord_noOfAxles"
+    "techRecord_noOfAxles","techRecord_vehicleConfiguration"
   ],
   "properties": {
     "vin": {
