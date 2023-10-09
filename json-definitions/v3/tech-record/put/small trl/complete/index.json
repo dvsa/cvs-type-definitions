@@ -99,14 +99,7 @@
             "$ref": "../../../enums/vehicleConfiguration.ignore.json"
         },
         "techRecord_vehicleSubclass": {
-            "anyOf": [
-                {
-                  "type": "null"
-                },
-                {
-                  "$ref": "../../../enums/vehicleSubclass.ignore.json"
-                }
-              ]
+            "$ref": "../../../enums/vehicleSubclass.ignore.json"
         },
         "techRecord_vehicleType": {
             "const": "trl"
