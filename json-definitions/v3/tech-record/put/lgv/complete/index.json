@@ -8,7 +8,7 @@
     "techRecord_vehicleType",
     "techRecord_statusCode",
     "techRecord_reasonForCreation",
-    "techRecord_noOfAxles"
+    "techRecord_vehicleConfiguration"
   ],
   "properties": {
     "vin": {
@@ -18,59 +18,35 @@
       "type": "string"
     },
     "techRecord_applicantDetails_name": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "maxLength": 150
     },
     "techRecord_applicantDetails_address1": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address2": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postTown": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address3": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postCode": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 12
     },
     "techRecord_applicantDetails_telephoneNumber": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 25
     },
     "techRecord_applicantDetails_emailAddress": {
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "maxLength": 255
     },
     "techRecord_euVehicleCategory": {
@@ -93,19 +69,16 @@
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "techRecord_manufactureYear": {
+      "type": ["integer", "null"]
+    },
+    "techRecord_noOfAxles": {
       "type": [
         "integer",
         "null"
       ]
-    },
-    "techRecord_noOfAxles": {
-      "type": "integer"
     },
     "techRecord_notes": {
       "type": "string"
@@ -124,6 +97,24 @@
       "items": {
         "type": "string"
       }
+    },
+    "techRecord_vehicleConfiguration": {
+      "title": "Vehicle Configuration",
+      "type": "string",
+      "enum": [
+        "rigid",
+        "articulated",
+        "centre axle drawbar",
+        "semi-car transporter",
+        "semi-trailer",
+        "long semi-trailer",
+        "low loader",
+        "other",
+        "drawbar",
+        "four-in-line",
+        "dolly",
+        "full drawbar"
+      ]
     }
   }
 }

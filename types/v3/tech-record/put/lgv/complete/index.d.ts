@@ -26,6 +26,19 @@ export type EUVehicleCategory =
   | "l7e";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
+export type VehicleConfiguration =
+  | "rigid"
+  | "articulated"
+  | "centre axle drawbar"
+  | "semi-car transporter"
+  | "semi-trailer"
+  | "long semi-trailer"
+  | "low loader"
+  | "other"
+  | "drawbar"
+  | "four-in-line"
+  | "dolly"
+  | "full drawbar";
 
 export interface TechRecordPUTLGVComplete {
   vin: string;
@@ -44,10 +57,11 @@ export interface TechRecordPUTLGVComplete {
   techRecord_statusCode: StatusCode;
   techRecord_regnDate?: string | null;
   techRecord_manufactureYear?: number | null;
-  techRecord_noOfAxles: number;
+  techRecord_noOfAxles?: number | null;
   techRecord_notes?: string;
   techRecord_vehicleSubclass: VehicleSubclass;
   techRecord_hiddenInVta?: boolean;
   techRecord_updateType?: string;
   secondaryVrms?: string[];
+  techRecord_vehicleConfiguration: VehicleConfiguration;
 }

@@ -62,12 +62,12 @@ export interface TechRecordGETLGVComplete {
   techRecord_lastUpdatedByName?: string | null;
   techRecord_manufactureYear?: number | null;
   techRecord_recordCompleteness?: null | string;
-  techRecord_noOfAxles: number;
+  techRecord_noOfAxles?: null | number;
   techRecord_notes?: null | string;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_statusCode?: null | StatusCode;
-  techRecord_vehicleConfiguration?: null | VehicleConfiguration;
+  techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleType: "lgv";
   vin: string;
   techRecord_vehicleSubclass: VehicleSubclass;
