@@ -72,6 +72,16 @@
     "techRecord_vehicleSubclass": {
       "$ref": "../../../enums/vehicleSubclass.ignore.json"
     },
+    "techRecord_vehicleConfiguration": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+        }
+      ]
+    },
     "techRecord_euVehicleCategory": {
       "anyOf": [
         {

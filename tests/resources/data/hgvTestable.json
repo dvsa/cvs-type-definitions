@@ -232,6 +232,8 @@
     "techRecord_vehicleClass_description": "heavy goods vehicle",
     "techRecord_vehicleConfiguration": "articulated",
     "techRecord_vehicleType": "hgv",
+    "techRecord_bodyType_description": "artic",
+    "techRecord_noOfAxles": 2,
     "vin": "GB01DAN0000000001"
   },
   {
