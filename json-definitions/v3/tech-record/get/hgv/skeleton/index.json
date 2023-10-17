@@ -13,6 +13,8 @@
     "techRecord_recordCompleteness",
     "techRecord_statusCode",
     "techRecord_vehicleType",
+    "techRecord_vehicleClass_description",
+    "techRecord_bodyType_description",
     "primaryVrm",
     "vin"
   ],
@@ -227,7 +229,7 @@
         "string",
         "null"
       ],
-      "maxLength": 30
+      "maxLength": 65
     },
     "techRecord_adrDetails_tank_tankDetails_tankCode": {
       "type": [
@@ -489,16 +491,7 @@
       ]
     },
     "techRecord_bodyType_description": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "techRecord_brakes_antilockBrakingSystem": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "techRecord_brakes_dtpNumber": {
       "type": [
@@ -913,14 +906,7 @@
       ]
     },
     "techRecord_vehicleClass_description": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/vehicleClassDescription.ignore.json"
-        }
-      ]
+        "$ref": "../../../enums/vehicleClassDescription.ignore.json" 
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

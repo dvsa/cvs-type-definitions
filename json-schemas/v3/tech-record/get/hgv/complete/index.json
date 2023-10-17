@@ -259,7 +259,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 30
+			"maxLength": 65
 		},
 		"techRecord_adrDetails_tank_tankDetails_tankCode": {
 			"type": [
@@ -506,12 +506,6 @@
 		},
 		"techRecord_bodyType_description": {
 			"type": "string"
-		},
-		"techRecord_brakes_antilockBrakingSystem": {
-			"type": [
-				"string",
-				"null"
-			]
 		},
 		"techRecord_brakes_dtpNumber": {
 			"type": "string",
