@@ -247,7 +247,7 @@
 				"string",
 				"null"
 			],
-			"maxLength": 30
+			"maxLength": 65
 		},
 		"techRecord_adrDetails_tank_tankDetails_tankCode": {
 			"type": [
