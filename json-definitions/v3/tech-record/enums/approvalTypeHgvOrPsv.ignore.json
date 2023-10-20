@@ -1,0 +1,16 @@
+{
+  "title": "Approval Type",
+  "type": "string",
+  "enum": [
+    "NTA",
+    "ECTA",
+    "IVA",
+    "NSSTA",
+    "ECSSTA",
+    "GB WVTA",
+    "Prov.GB WVTA",
+    "Small series",
+    "IVA - VCA",
+    "IVA - DVSA/NI"
+  ]
+}
