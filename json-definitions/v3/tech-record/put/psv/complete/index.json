@@ -141,7 +141,7 @@
     "techRecord_approvalType": {
       "anyOf": [
         {
-          "$ref": "../../../enums/approvalType.ignore.json"
+          "$ref": "../../../enums/approvalTypeHgvOrPsv.ignore.json"
         },
         {
           "type": "null"
