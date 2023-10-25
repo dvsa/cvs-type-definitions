@@ -1068,8 +1068,8 @@
 						"NSSTA",
 						"ECSSTA",
 						"GB_WVTA",
-						"Prov_GB_WVTA",
-						"Small_series",
+						"PROV_GB_WVTA",
+						"SMALL_SERIES",
 						"IVA_VCA",
 						"IVA_DVSA_NI"
 					],

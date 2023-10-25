@@ -270,8 +270,8 @@ export const enum ApprovalType {
   NSSTA = "NSSTA",
   ECSSTA = "ECSSTA",
   GB_WVTA = "GB WVTA",
-  Prov_GB_WVTA = "Prov.GB WVTA",
-  Small_series = "Small series",
+  PROV_GB_WVTA = "Prov.GB WVTA",
+  SMALL_SERIES = "Small series",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
 }
