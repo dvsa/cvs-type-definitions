@@ -1,0 +1,8 @@
+{
+  "title": "Inspection Type",
+  "type": "string",
+  "enum":[
+    "basic",
+    "normal"
+  ]
+}

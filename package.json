@@ -1,7 +1,7 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "3.1.2",
-  "description": "type definitions for cvs vta application",
+  "version": "3.2.0",
+  "description": "type definitions for cvs vta and vtm applications",
   "main": "index.js",
   "repository": {
     "url": "git://github.com/dvsa/cvs-type-definitions.git"

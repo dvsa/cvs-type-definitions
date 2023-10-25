@@ -18,7 +18,7 @@ describe("required fields", () => {
     const schemas: Schema[] = validationSchemas.filter(
       (schema) =>
         schema.includes("get") &&
-        schema !== "v3/tech-record/get/search/index.json"
+          (schema !== "v3/tech-record/get/search/index.json" && schema !== "iva/defects/get/index.json")
     );
     const fields: Partial<Record<Schema, string[]>> = {};
     schemas.forEach((path) => {

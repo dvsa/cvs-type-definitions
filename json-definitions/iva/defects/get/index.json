@@ -1,0 +1,80 @@
+{
+  "title": "Defect GET IVA",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sectionNumber",
+    "sectionDescription",
+    "vehicleTypes",
+    "euVehicleCategories",
+    "requiredStandards"
+  ],
+  "properties": {
+    "sectionNumber": {
+      "type": [
+        "string"
+      ]
+    },
+    "sectionDescription": {
+      "type": [
+        "string"
+      ]
+    },
+    "vehicleTypes": {
+      "anyOf": [
+        {
+          "$ref": "../../../v3/tech-record/enums/vehicleType.ignore.json"
+        }
+      ]
+    },
+    "euVehicleCategories": {
+      "anyOf": [
+        {
+          "$ref": "../../../v3/tech-record/enums/euVehicleCategory.ignore.json"
+        }
+      ]
+    },
+    "requiredStandards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rsNumber",
+          "requiredStandard",
+          "refCalculation",
+          "additionalInfo",
+          "inspectionTypes"
+        ],
+        "properties": {
+          "rsNumber": {
+            "type": [
+              "integer"
+            ]
+          },
+          "requiredStandard": {
+            "type": [
+              "string"
+            ]
+          },
+          "refCalculation": {
+            "type": [
+              "string"
+            ]
+          },
+          "additionalInfo": {
+            "type": [
+              "boolean"
+            ]
+          },
+          "inspectionTypes": {
+            "anyOf": [
+              {
+                "$ref": "../enums/inspectionType.ignore.json"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
