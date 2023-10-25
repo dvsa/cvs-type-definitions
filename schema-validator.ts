@@ -33,6 +33,7 @@ export function isValidObject<B extends boolean | undefined>(
   logErrors = false
 ): boolean | ErrorObject[] {
   const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+  ajv.addKeyword('tsEnumNames');
   const schema = JSON.parse(
     readFileSync(`${__dirname}/json-schemas/${schemaName}`, "utf8")
   );

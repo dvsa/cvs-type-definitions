@@ -7,21 +7,6 @@
 
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
-export type ApprovalType =
-  | "NTA"
-  | "ECTA"
-  | "IVA"
-  | "NSSTA"
-  | "ECSSTA"
-  | "GB WVTA"
-  | "UKNI WVTA"
-  | "EU WVTA Pre 23"
-  | "EU WVTA 23 on"
-  | "QNIG"
-  | "Prov.GB WVTA"
-  | "Small series"
-  | "IVA - VCA"
-  | "IVA - DVSA/NI";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -340,4 +325,21 @@ export interface TRLAxles {
 export interface AxleSpacing {
   axles?: string;
   value?: number | null;
+}
+
+export const enum ApprovalType {
+  NTA = "NTA",
+  ECTA = "ECTA",
+  IVA = "IVA",
+  NSSTA = "NSSTA",
+  ECSSTA = "ECSSTA",
+  GB_WVTA = "GB WVTA",
+  UKNI_WVTA = "UKNI WVTA",
+  EU_WVTA_Pre_23 = "EU WVTA Pre 23",
+  EU_WVTA_23_on = "EU WVTA 23 on",
+  QNIG = "QNIG",
+  PROV_GB_WVTA = "Prov.GB WVTA",
+  SMALL_SERIES = "Small series",
+  IVA_VCA = "IVA - VCA",
+  IVA_DVSA_NI = "IVA - DVSA/NI"
 }

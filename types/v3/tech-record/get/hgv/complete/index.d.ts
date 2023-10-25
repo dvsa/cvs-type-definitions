@@ -126,17 +126,6 @@ export type VehicleConfiguration =
   | "four-in-line"
   | "dolly"
   | "full drawbar";
-export type ApprovalType =
-  | "NTA"
-  | "ECTA"
-  | "IVA"
-  | "NSSTA"
-  | "ECSSTA"
-  | "GB WVTA"
-  | "Prov.GB WVTA"
-  | "Small series"
-  | "IVA - VCA"
-  | "IVA - DVSA/NI";
 
 export interface TechRecordGETHGVComplete {
   secondaryVrms?: string[];
@@ -287,4 +276,17 @@ export interface HGVPlates {
   plateIssueDate?: string | null;
   plateReasonForIssue?: null | PlateReasonForIssue;
   plateIssuer?: string | null;
+}
+
+export const enum ApprovalType {
+  NTA = "NTA",
+  ECTA = "ECTA",
+  IVA = "IVA",
+  NSSTA = "NSSTA",
+  ECSSTA = "ECSSTA",
+  GB_WVTA = "GB WVTA",
+  PROV_GB_WVTA = "Prov.GB WVTA",
+  SMALL_SERIES = "Small series",
+  IVA_VCA = "IVA - VCA",
+  IVA_DVSA_NI = "IVA - DVSA/NI"
 }
