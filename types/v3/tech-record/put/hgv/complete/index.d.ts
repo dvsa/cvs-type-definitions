@@ -266,7 +266,7 @@ export interface HGVPlates {
   plateIssuer?: string | null;
 }
 
-export const enum ApprovalType {
+export enum ApprovalType {
   NTA = "NTA",
   ECTA = "ECTA",
   IVA = "IVA",
