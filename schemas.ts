@@ -1,4 +1,5 @@
 export const schemas = [
+  "iva/defects/get/index.json",
   "v1/activity/index.json",
   "v1/defect-category-reference-data/index.json",
   "v1/defect-details/index.json",
