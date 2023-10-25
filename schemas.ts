@@ -13,6 +13,8 @@ export const schemas = [
   "v1/vehicle/index.json",
   "v1/vehicle-tech-record/index.json",
   "v1/visit/index.json",
+  "v3/tech-record/enums/approvalType.enum.json",
+  "v3/tech-record/enums/approvalTypeHgvOrPsv.enum.json",
   "v3/tech-record/get/car/complete/index.json",
   "v3/tech-record/get/car/skeleton/index.json",
   "v3/tech-record/get/hgv/complete/index.json",

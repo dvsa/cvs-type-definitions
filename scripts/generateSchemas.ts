@@ -21,9 +21,10 @@ const options = {
 };
 
 async function generateTypescriptInterface(schemaLocation: string) {
+  const fileExt = schemaLocation.includes("enum") ? ".ts" : ".d.ts";
   const saveToLocation = schemaLocation
     .replace(definitionsDirName, typesDirName)
-    .replace(".json", ".d.ts");
+    .replace(".json", fileExt);
   const types = await json2ts.compileFromFile(schemaLocation, {
     unreachableDefinitions: true,
     enableConstEnums: false
