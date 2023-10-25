@@ -324,7 +324,7 @@ export interface AxleSpacing {
   value?: number | null;
 }
 
-export const enum ApprovalType {
+export enum ApprovalType {
   NTA = "NTA",
   ECTA = "ECTA",
   IVA = "IVA",
@@ -332,8 +332,8 @@ export const enum ApprovalType {
   ECSSTA = "ECSSTA",
   GB_WVTA = "GB WVTA",
   UKNI_WVTA = "UKNI WVTA",
-  EU_WVTA_Pre_23 = "EU WVTA Pre 23",
-  EU_WVTA_23_on = "EU WVTA 23 on",
+  EU_WVTA_PRE_23 = "EU WVTA Pre 23",
+  EU_WVTA_23_ON = "EU WVTA 23 on",
   QNIG = "QNIG",
   PROV_GB_WVTA = "Prov.GB WVTA",
   SMALL_SERIES = "Small series",
