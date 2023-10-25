@@ -301,7 +301,7 @@ export interface PSVAxlesComplete {
   tyres_speedCategorySymbol: SpeedCategorySymbol;
 }
 
-export const enum ApprovalType {
+export enum ApprovalType {
   NTA = "NTA",
   ECTA = "ECTA",
   IVA = "IVA",

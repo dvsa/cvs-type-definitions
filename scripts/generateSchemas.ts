@@ -26,6 +26,7 @@ async function generateTypescriptInterface(schemaLocation: string) {
     .replace(".json", ".d.ts");
   const types = await json2ts.compileFromFile(schemaLocation, {
     unreachableDefinitions: true,
+    enableConstEnums: false
   });
   writeFile(saveToLocation, types);
   console.log(
