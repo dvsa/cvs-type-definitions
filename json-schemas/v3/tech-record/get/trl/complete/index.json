@@ -423,6 +423,22 @@
 				{
 					"title": "Approval Type",
 					"type": "string",
+					"tsEnumNames": [
+						"NTA",
+						"ECTA",
+						"IVA",
+						"NSSTA",
+						"ECSSTA",
+						"GB_WVTA",
+						"UKNI_WVTA",
+						"EU_WVTA_Pre_23",
+						"EU_WVTA_23_on",
+						"QNIG",
+						"Prov_GB_WVTA",
+						"Small_series",
+						"IVA_VCA",
+						"IVA_DVSA_NI"
+					],
 					"enum": [
 						"NTA",
 						"ECTA",

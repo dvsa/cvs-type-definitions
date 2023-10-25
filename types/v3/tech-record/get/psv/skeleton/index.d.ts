@@ -51,17 +51,6 @@ export type EUVehicleCategory =
   | "l5e"
   | "l6e"
   | "l7e";
-export type ApprovalType =
-  | "NTA"
-  | "ECTA"
-  | "IVA"
-  | "NSSTA"
-  | "ECSSTA"
-  | "GB WVTA"
-  | "Prov.GB WVTA"
-  | "Small series"
-  | "IVA - VCA"
-  | "IVA - DVSA/NI";
 export type BodyTypeDescription =
   | "artic"
   | "articulated"
@@ -307,4 +296,17 @@ export interface PSVAxles {
   tyres_fitmentCode?: null | FitmentCode;
   tyres_dataTrAxles?: null | number;
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
+}
+
+export const enum ApprovalType {
+  NTA = "NTA",
+  ECTA = "ECTA",
+  IVA = "IVA",
+  NSSTA = "NSSTA",
+  ECSSTA = "ECSSTA",
+  GB_WVTA = "GB WVTA",
+  Prov_GB_WVTA = "Prov.GB WVTA",
+  Small_series = "Small series",
+  IVA_VCA = "IVA - VCA",
+  IVA_DVSA_NI = "IVA - DVSA/NI"
 }
