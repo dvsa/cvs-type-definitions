@@ -1023,7 +1023,8 @@
 						"ECSSTA",
 						"GB_WVTA",
 						"PROV_GB_WVTA",
-						"SMALL_SERIES",
+						"SMALL_SERIES_NKSXX",
+						"SMALL_SERIES_NKS",
 						"IVA_VCA",
 						"IVA_DVSA_NI"
 					],
@@ -1035,7 +1036,8 @@
 						"ECSSTA",
 						"GB WVTA",
 						"Prov.GB WVTA",
-						"Small series",
+						"Small series NKSXX",
+						"Small series NKS",
 						"IVA - VCA",
 						"IVA - DVSA/NI"
 					]
