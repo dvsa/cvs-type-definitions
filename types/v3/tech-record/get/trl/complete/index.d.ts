@@ -102,18 +102,6 @@ export type PlateReasonForIssue =
   | "Original"
   | "Manual";
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleClassDescription =
-  | "motorbikes over 200cc or with a sidecar"
-  | "not applicable"
-  | "small psv (ie: less than or equal to 22 seats)"
-  | "motorbikes up to 200cc"
-  | "trailer"
-  | "large psv(ie: greater than 23 seats)"
-  | "3 wheelers"
-  | "heavy goods vehicle"
-  | "MOT class 4"
-  | "MOT class 7"
-  | "MOT class 5";
 export type VehicleConfiguration =
   | "rigid"
   | "articulated"
@@ -279,8 +267,8 @@ export interface TechRecordGETTRLComplete {
   techRecord_tyreUseCode: string;
   techRecord_variantNumber?: null | string;
   techRecord_variantVersionNumber?: null | string;
-  techRecord_vehicleClass_code: string;
-  techRecord_vehicleClass_description: VehicleClassDescription;
+  techRecord_vehicleClass_code: "t";
+  techRecord_vehicleClass_description: "trailer";
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleType: "trl";
   trailerId: string;
