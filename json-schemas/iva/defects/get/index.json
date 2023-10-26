@@ -46,6 +46,26 @@
 					{
 						"title": "EU vehicle category",
 						"type": "string",
+						"tsEnumNames": [
+							"M1",
+							"M2",
+							"M3",
+							"N1",
+							"N2",
+							"N3",
+							"O1",
+							"O2",
+							"O3",
+							"O4",
+							"L1E_A",
+							"l1E",
+							"L2e",
+							"L3E",
+							"L4E",
+							"L5E",
+							"L6E",
+							"L7E"
+						],
 						"enum": [
 							"m1",
 							"m2",
