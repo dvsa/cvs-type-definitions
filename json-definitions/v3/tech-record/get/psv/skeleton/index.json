@@ -101,7 +101,7 @@
     "techRecord_euVehicleCategory": {
       "anyOf": [
         {
-          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+          "$ref": "../../../enums/euVehicleCategoryPsv.enum.json"
         },
         {
           "type": "null"

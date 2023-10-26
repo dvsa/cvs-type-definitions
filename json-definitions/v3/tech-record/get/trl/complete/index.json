@@ -525,7 +525,7 @@
       "minimum": 0
     },
     "techRecord_euVehicleCategory": {
-      "$ref": "../../../enums/euVehicleCategory.ignore.json"
+      "$ref": "../../../enums/euVehicleCategory.enum.json"
     },
     "techRecord_firstUseDate": {
       "type": "string"

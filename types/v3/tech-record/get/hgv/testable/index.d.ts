@@ -8,25 +8,6 @@
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type FitmentCode = "single" | "double";
-export type EUVehicleCategory =
-  | "m1"
-  | "m2"
-  | "m3"
-  | "n1"
-  | "n2"
-  | "n3"
-  | "o1"
-  | "o2"
-  | "o3"
-  | "o4"
-  | "l1e-a"
-  | "l1e"
-  | "l2e"
-  | "l3e"
-  | "l4e"
-  | "l5e"
-  | "l6e"
-  | "l7e";
 export type FuelPropulsionSystem =
   | "DieselPetrol"
   | "Diesel"
@@ -250,6 +231,11 @@ export interface HGVPlates {
   plateIssuer?: string | null;
 }
 
+export enum EUVehicleCategory {
+  N1 = "n1",
+  N2 = "n2",
+  N3 = "n3"
+}
 export enum VehicleConfiguration {
   RIGID = "rigid",
   ARTICULATED = "articulated"
