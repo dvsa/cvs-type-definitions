@@ -424,7 +424,8 @@
 						"EU_WVTA_23_ON",
 						"QNIG",
 						"PROV_GB_WVTA",
-						"SMALL_SERIES",
+						"SMALL_SERIES_NKSXX",
+						"SMALL_SERIES_NKS",
 						"IVA_VCA",
 						"IVA_DVSA_NI"
 					],
@@ -440,7 +441,8 @@
 						"EU WVTA 23 on",
 						"QNIG",
 						"Prov.GB WVTA",
-						"Small series",
+						"Small series NKSXX",
+						"Small series NKS",
 						"IVA - VCA",
 						"IVA - DVSA/NI"
 					]

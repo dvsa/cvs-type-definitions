@@ -313,7 +313,8 @@ export enum ApprovalType {
   EU_WVTA_23_ON = "EU WVTA 23 on",
   QNIG = "QNIG",
   PROV_GB_WVTA = "Prov.GB WVTA",
-  SMALL_SERIES = "Small series",
+  SMALL_SERIES_NKSXX = "Small series NKSXX",
+  SMALL_SERIES_NKS = "Small series NKS",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
 }

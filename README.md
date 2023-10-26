@@ -40,6 +40,12 @@ TypeScript interfaces will be generated from these files and saved to `types` di
 4. Bump the version of the package using `npm version {major|minor|patch}`
 5. Publish updates
 
+# Creating a new enum
+1. Add (or update) the enum to a file marked `*.enum.json` in the `enum` folder in `json-definitions`
+2. Make sure you give it both `enum` and `tsEnumNames` properties on the object
+3. Then update the `json-definitions` to use the new file name
+4. Run the generate and you should have just a new file in the enum folder of types, which is exportable and useable.
+
 # Publishing a new version
 
 - Raise a PR
