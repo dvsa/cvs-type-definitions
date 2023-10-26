@@ -1,0 +1,12 @@
+{
+    "title": "Vehicle Class Description",
+    "type": "string",
+    "tsEnumNames": [
+      "SMALL_PSV",
+      "LARGE_PSV"
+    ],
+    "enum": [
+      "small psv (ie: less than or equal to 22 seats)",
+      "large psv(ie: greater than 23 seats)"
+    ]
+  }

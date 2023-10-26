@@ -73,7 +73,7 @@
       "type": "string"
     },
     "techRecord_vehicleClass_description": {
-      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+      "$ref": "../../../enums/vehicleClassDescriptionPSV.enum.json"
     },
     "techRecord_hiddenInVta": {
       "type": [
