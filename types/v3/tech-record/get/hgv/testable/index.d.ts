@@ -101,19 +101,6 @@ export type PlateReasonForIssue =
   | "Original"
   | "Manual";
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 
 export interface TechRecordGETHGVTestable {
   secondaryVrms?: null | string[];
@@ -263,6 +250,10 @@ export interface HGVPlates {
   plateIssuer?: string | null;
 }
 
+export enum VehicleConfiguration {
+  RIGID = "rigid",
+  ARTICULATED = "articulated"
+}
 export enum ApprovalType {
   NTA = "NTA",
   ECTA = "ECTA",

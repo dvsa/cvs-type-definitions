@@ -170,7 +170,7 @@
           "type": "null"
         },
         {
-          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+          "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
         }
       ]
     },

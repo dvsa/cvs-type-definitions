@@ -145,7 +145,7 @@
       "$ref": "../../../enums/vehicleClassDescription.ignore.json"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
     },
     "techRecord_vehicleType": {
       "const": "motorcycle"

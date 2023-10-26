@@ -18,19 +18,6 @@ export type VehicleClassDescription =
   | "MOT class 4"
   | "MOT class 7"
   | "MOT class 5";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
 export interface TechRecordGETSmallTRLSkeleton {
@@ -65,4 +52,19 @@ export interface TechRecordGETSmallTRLSkeleton {
   createdTimestamp: string;
   techRecord_recordCompleteness?: "skeleton";
   techRecord_hiddenInVta?: null | boolean;
+}
+
+export enum VehicleConfiguration {
+  RIGID = "rigid",
+  ARTICULATED = "articulated",
+  CENTRE_AXLE_DRAWBAR = "centre axle drawbar",
+  SEMI_CAR_TRANSPORTER = "semi-car transporter",
+  SEMI_TRAILER = "semi-trailer",
+  LONG_SEMI_TRAILER = "long semi-trailer",
+  LOW_LOADER = "low loader",
+  OTHER = "other",
+  DRAWBAR = "drawbar",
+  FOUR_IN_LINE = "four-in-line",
+  DOLLY = "dolly",
+  FULL_DRAWBAR = "full drawbar"
 }

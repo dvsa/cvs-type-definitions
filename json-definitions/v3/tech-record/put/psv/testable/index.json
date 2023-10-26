@@ -47,7 +47,7 @@
       "type": "string"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "$ref": "../../../enums/vehicleConfigurationHgvPsv.enum.json"
     },
     "techRecord_vehicleSize": {
       "$ref": "../../../enums/vehicleSize.ignore.json"

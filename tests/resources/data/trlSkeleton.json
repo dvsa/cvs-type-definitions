@@ -69,7 +69,7 @@
     "techRecord_tyreUseCode": null,
     "techRecord_vehicleClass_code": "t",
     "techRecord_vehicleClass_description": "trailer",
-    "techRecord_vehicleConfiguration": "rigid",
+    "techRecord_vehicleConfiguration": "other",
     "techRecord_vehicleType": "trl",
     "trailerId": "C530005",
     "vin": "9080977997"
@@ -145,7 +145,7 @@
     "foo": "bar",
     "techRecord_vehicleClass_code": "t",
     "techRecord_vehicleClass_description": "trailer",
-    "techRecord_vehicleConfiguration": "rigid",
+    "techRecord_vehicleConfiguration": "other",
     "techRecord_vehicleType": "trl",
     "trailerId": "C530005",
     "vin": "9080977997"
@@ -161,7 +161,7 @@
     "techRecord_recordCompleteness": "skeleton",
     "techRecord_vehicleClass_code": "t",
     "techRecord_vehicleClass_description": "trailer",
-    "techRecord_vehicleConfiguration": "rigid",
+    "techRecord_vehicleConfiguration": "other",
     "techRecord_vehicleType": "trl",
     "techRecord_statusCode": "provisional",
     "techRecord_bodyType_code": "l",

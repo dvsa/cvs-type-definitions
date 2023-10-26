@@ -48,7 +48,7 @@
     "techRecord_vehicleConfiguration": {
       "anyOf": [
         {
-          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+          "$ref": "../../../enums/vehicleConfigurationHgvPsv.enum.json"
         },
         {
           "type": "null"

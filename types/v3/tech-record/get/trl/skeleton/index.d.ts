@@ -119,19 +119,6 @@ export type PlateReasonForIssue =
   | "Original"
   | "Manual";
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 
 export interface TechRecordGETTRLSkeleton {
   createdTimestamp: string;
@@ -328,4 +315,16 @@ export enum ApprovalType {
   SMALL_SERIES_NKS = "Small series NKS",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
+}
+export enum VehicleConfiguration {
+  CENTRE_AXLE_DRAWBAR = "centre axle drawbar",
+  SEMI_CAR_TRANSPORTER = "semi-car transporter",
+  SEMI_TRAILER = "semi-trailer",
+  LONG_SEMI_TRAILER = "long semi-trailer",
+  LOW_LOADER = "low loader",
+  OTHER = "other",
+  DRAWBAR = "drawbar",
+  FOUR_IN_LINE = "four-in-line",
+  DOLLY = "dolly",
+  FULL_DRAWBAR = "full drawbar"
 }
