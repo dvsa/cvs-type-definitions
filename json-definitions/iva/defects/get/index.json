@@ -11,33 +11,36 @@
   ],
   "properties": {
     "sectionNumber": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "sectionDescription": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "vehicleTypes": {
-      "anyOf": [
-        {
-          "$ref": "../../../v3/tech-record/enums/vehicleType.ignore.json"
-        }
-      ]
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "../../../v3/tech-record/enums/vehicleType.ignore.json"
+          }
+        ]
+      }
     },
     "euVehicleCategories": {
-      "anyOf": [
-        {
-          "$ref": "../../../v3/tech-record/enums/euVehicleCategory.ignore.json"
-        }
-      ]
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "../../../v3/tech-record/enums/euVehicleCategory.ignore.json"
+          }
+        ]
+      }
     },
     "requiredStandards": {
       "type": "array",
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "rsNumber",
           "requiredStandard",
@@ -47,31 +50,26 @@
         ],
         "properties": {
           "rsNumber": {
-            "type": [
-              "integer"
-            ]
+            "type": ["integer"]
           },
           "requiredStandard": {
-            "type": [
-              "string"
-            ]
+            "type": ["string"]
           },
           "refCalculation": {
-            "type": [
-              "string"
-            ]
+            "type": ["string"]
           },
           "additionalInfo": {
-            "type": [
-              "boolean"
-            ]
+            "type": ["boolean"]
           },
           "inspectionTypes": {
-            "anyOf": [
-              {
-                "$ref": "../enums/inspectionType.ignore.json"
-              }
-            ]
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "../enums/inspectionType.ignore.json"
+                }
+              ]
+            }
           }
         }
       }

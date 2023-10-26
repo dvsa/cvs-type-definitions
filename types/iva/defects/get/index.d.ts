@@ -30,14 +30,13 @@ export type InspectionType = "basic" | "normal";
 export interface DefectGETIVA {
   sectionNumber: string;
   sectionDescription: string;
-  vehicleTypes: VehicleType;
-  euVehicleCategories: EUVehicleCategory;
+  vehicleTypes: VehicleType[];
+  euVehicleCategories: EUVehicleCategory[];
   requiredStandards: {
     rsNumber: number;
     requiredStandard: string;
     refCalculation: string;
     additionalInfo: boolean;
-    inspectionTypes: InspectionType;
-    [k: string]: unknown;
+    inspectionTypes: InspectionType[];
   }[];
 }
