@@ -20,18 +20,6 @@ export type VehicleConfiguration =
   | "dolly"
   | "full drawbar";
 export type VehicleSize = "small" | "large";
-export type VehicleClassDescription =
-  | "motorbikes over 200cc or with a sidecar"
-  | "not applicable"
-  | "small psv (ie: less than or equal to 22 seats)"
-  | "motorbikes up to 200cc"
-  | "trailer"
-  | "large psv(ie: greater than 23 seats)"
-  | "3 wheelers"
-  | "heavy goods vehicle"
-  | "MOT class 4"
-  | "MOT class 7"
-  | "MOT class 5";
 export type EUVehicleCategory =
   | "m1"
   | "m2"
@@ -289,6 +277,10 @@ export interface PSVAxlesComplete {
   tyres_speedCategorySymbol: SpeedCategorySymbol;
 }
 
+export enum VehicleClassDescription {
+  SMALL_PSV = "small psv (ie: less than or equal to 22 seats)",
+  LARGE_PSV = "large psv(ie: greater than 23 seats)"
+}
 export enum ApprovalType {
   NTA = "NTA",
   ECTA = "ECTA",

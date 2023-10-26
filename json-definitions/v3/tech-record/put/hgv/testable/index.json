@@ -851,7 +851,7 @@
       "maxLength": 2
     },
     "techRecord_vehicleClass_description": {
-      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+      "const": "heavy goods vehicle"
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

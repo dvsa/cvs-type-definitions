@@ -917,10 +917,10 @@
       ]
     },
     "techRecord_vehicleClass_code": {
-      "type": "string"
+      "const": "t"
     },
     "techRecord_vehicleClass_description": {
-      "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+      "const": "trailer"
     },
     "techRecord_vehicleConfiguration": {
       "$ref": "../../../enums/vehicleConfiguration.ignore.json"
