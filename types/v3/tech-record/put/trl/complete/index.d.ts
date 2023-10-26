@@ -7,25 +7,6 @@
 
 export type TC2Types = "initial";
 export type TC3Types = "intermediate" | "periodic" | "exceptional";
-export type EUVehicleCategory =
-  | "m1"
-  | "m2"
-  | "m3"
-  | "n1"
-  | "n2"
-  | "n3"
-  | "o1"
-  | "o2"
-  | "o3"
-  | "o4"
-  | "l1e-a"
-  | "l1e"
-  | "l2e"
-  | "l3e"
-  | "l4e"
-  | "l5e"
-  | "l6e"
-  | "l7e";
 export type FrameDescription =
   | "Channel section"
   | "Space frame"
@@ -320,4 +301,24 @@ export enum ApprovalType {
   SMALL_SERIES_NKS = "Small series NKS",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
+}
+export enum EUVehicleCategory {
+  M1 = "m1",
+  M2 = "m2",
+  M3 = "m3",
+  N1 = "n1",
+  N2 = "n2",
+  N3 = "n3",
+  O1 = "o1",
+  O2 = "o2",
+  O3 = "o3",
+  O4 = "o4",
+  L1E_A = "l1e-a",
+  l1E = "l1e",
+  L2e = "l2e",
+  L3E = "l3e",
+  L4E = "l4e",
+  L5E = "l5e",
+  L6E = "l6e",
+  L7E = "l7e"
 }

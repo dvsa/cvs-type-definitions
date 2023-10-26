@@ -31,7 +31,7 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "../../../v3/tech-record/enums/euVehicleCategory.ignore.json"
+            "$ref": "../../../v3/tech-record/enums/euVehicleCategory.enum.json"
           }
         ]
       }

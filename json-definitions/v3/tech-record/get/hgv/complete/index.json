@@ -572,7 +572,7 @@
       ]
     },
     "techRecord_euVehicleCategory": {
-      "$ref": "../../../enums/euVehicleCategory.ignore.json"
+      "$ref": "../../../enums/euVehicleCategoryHgv.enum.json"
     },
     "techRecord_frontAxleToRearAxle": {
       "type": "integer",

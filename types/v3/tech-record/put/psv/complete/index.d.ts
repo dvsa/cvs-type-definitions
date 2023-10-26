@@ -20,25 +20,6 @@ export type VehicleConfiguration =
   | "dolly"
   | "full drawbar";
 export type VehicleSize = "small" | "large";
-export type EUVehicleCategory =
-  | "m1"
-  | "m2"
-  | "m3"
-  | "n1"
-  | "n2"
-  | "n3"
-  | "o1"
-  | "o2"
-  | "o3"
-  | "o4"
-  | "l1e-a"
-  | "l1e"
-  | "l2e"
-  | "l3e"
-  | "l4e"
-  | "l5e"
-  | "l6e"
-  | "l7e";
 export type BodyTypeDescription =
   | "artic"
   | "articulated"
@@ -280,6 +261,11 @@ export interface PSVAxlesComplete {
 export enum VehicleClassDescription {
   SMALL_PSV = "small psv (ie: less than or equal to 22 seats)",
   LARGE_PSV = "large psv(ie: greater than 23 seats)"
+}
+export enum EUVehicleCategory {
+  M1 = "m1",
+  M2 = "m2",
+  M3 = "m3"
 }
 export enum ApprovalType {
   NTA = "NTA",
