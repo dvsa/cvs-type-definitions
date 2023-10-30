@@ -78,7 +78,6 @@ export enum EUVehicleCategory {
   L6E = "l6e",
   L7E = "l7e"
 }
-
 export enum VehicleClassDescription {
   MotorbikesOver200ccOrWithASidecar = "motorbikes over 200cc or with a sidecar",
   NotApplicable = "not applicable",
