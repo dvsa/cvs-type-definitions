@@ -1023,11 +1023,14 @@
 			"maxLength": 1
 		},
 		"techRecord_tyreUseCode": {
-			"type": [
-				"string",
-				"null"
-			],
-			"maxLength": 2
+			"anyOf": [
+				{
+				  "$ref": "../../../enums/tyreUseCodeTrl.enum.json"
+				},
+				{
+				  "type": "null"
+				}
+			  ]
 		},
 		"techRecord_vehicleClass_description": {
 			"const": "trailer"
