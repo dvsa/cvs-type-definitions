@@ -130,7 +130,7 @@
             "type": "string"
         },
         "techRecord_vehicleClass_description": {
-            "$ref": "../../../enums/vehicleClassDescription.ignore.json"
+            "$ref": "../../../enums/vehicleClassDescription.enum.json"
         },
         "techRecord_vehicleConfiguration": {
             "anyOf": [
