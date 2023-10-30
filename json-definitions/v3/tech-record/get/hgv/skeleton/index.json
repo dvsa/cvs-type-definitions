@@ -893,11 +893,14 @@
       "minimum": 0
     },
     "techRecord_tyreUseCode": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 2
+      "anyOf": [
+        {
+          "$ref": "../../../enums/tyreUseCodeHgv.enum.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "techRecord_vehicleClass_code": {
       "const": "v"

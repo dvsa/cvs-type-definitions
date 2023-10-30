@@ -955,11 +955,20 @@
 			"minimum": 0
 		},
 		"techRecord_tyreUseCode": {
-			"type": [
-				"string",
-				"null"
-			],
-			"maxLength": 2
+			"anyOf": [
+				{
+					"title": "Tyre Use Code",
+					"type": "string",
+					"tsEnumNames": [
+						"_2R",
+						"_2B"
+					],
+					"enum": [
+						"2R",
+						"2B"
+					]
+				}
+			]
 		},
 		"techRecord_vehicleClass_description": {
 			"const": "heavy goods vehicle"

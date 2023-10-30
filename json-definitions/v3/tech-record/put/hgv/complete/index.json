@@ -788,8 +788,11 @@
       "minimum": 0
     },
     "techRecord_tyreUseCode": {
-      "type": "string",
-      "maxLength": 2
+      "anyOf": [
+        {
+          "$ref": "../../../enums/tyreUseCodeHgv.enum.json"
+        }
+      ]
     },
     "techRecord_vehicleClass_description": {
       "const": "heavy goods vehicle"

@@ -246,7 +246,7 @@ export interface TechRecordGETTRLTestable {
   techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
-  techRecord_tyreUseCode?: string | null;
+  techRecord_tyreUseCode?: TyreUseCode | null;
   techRecord_vehicleClass_code: "t";
   techRecord_vehicleClass_description: "trailer";
   techRecord_vehicleConfiguration: VehicleConfiguration;
@@ -329,4 +329,10 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
+}
+export enum TyreUseCode {
+  _2R = "2R",
+  _2B = "2B",
+  _2J = "2J",
+  _2M = "2M"
 }

@@ -195,7 +195,7 @@ export interface TechRecordPUTHGVTestable {
   techRecord_trainDesignWeight?: number | null;
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight?: number | null;
-  techRecord_tyreUseCode?: string | null;
+  techRecord_tyreUseCode?: TyreUseCode;
   techRecord_vehicleClass_description: "heavy goods vehicle";
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_approvalType?: ApprovalType | null;
@@ -236,6 +236,10 @@ export enum EUVehicleCategory {
   N1 = "n1",
   N2 = "n2",
   N3 = "n3"
+}
+export enum TyreUseCode {
+  _2R = "2R",
+  _2B = "2B"
 }
 export enum ApprovalType {
   NTA = "NTA",

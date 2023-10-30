@@ -855,8 +855,11 @@
       "maxLength": 1
     },
     "techRecord_tyreUseCode": {
-      "type": "string",
-      "maxLength": 2
+      "anyOf": [
+        {
+          "$ref": "../../../enums/tyreUseCodeTrl.enum.json"
+        }
+      ]
     },
     "techRecord_variantNumber": {
       "type": [
