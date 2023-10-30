@@ -206,6 +206,19 @@
 		"techRecord_vehicleClass_description": {
 			"title": "Vehicle Class Description",
 			"type": "string",
+			"tsEnumNames": [
+				"MotorbikesOver200ccOrWithASidecar",
+				"NotApplicable",
+				"SmallPsvIeLessThanOrEqualTo22Seats",
+				"MotorbikesUpTo200cc",
+				"Trailer",
+				"LargePsvIeGreaterThan23Seats",
+				"_3Wheelers",
+				"HeavyGoodsVehicle",
+				"MOTClass4",
+				"MOTClass7",
+				"MOTClass5"
+			],
 			"enum": [
 				"motorbikes over 200cc or with a sidecar",
 				"not applicable",

@@ -6,18 +6,6 @@
  */
 
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleClassDescription =
-  | "motorbikes over 200cc or with a sidecar"
-  | "not applicable"
-  | "small psv (ie: less than or equal to 22 seats)"
-  | "motorbikes up to 200cc"
-  | "trailer"
-  | "large psv(ie: greater than 23 seats)"
-  | "3 wheelers"
-  | "heavy goods vehicle"
-  | "MOT class 4"
-  | "MOT class 7"
-  | "MOT class 5";
 export type VehicleConfiguration =
   | "rigid"
   | "articulated"
@@ -55,4 +43,18 @@ export interface TechRecordPUTSmallTRLComplete {
   vin: string;
   trailerId?: string;
   techRecord_hiddenInVta?: null | boolean;
+}
+
+export enum VehicleClassDescription {
+  MotorbikesOver200ccOrWithASidecar = "motorbikes over 200cc or with a sidecar",
+  NotApplicable = "not applicable",
+  SmallPsvIeLessThanOrEqualTo22Seats = "small psv (ie: less than or equal to 22 seats)",
+  MotorbikesUpTo200cc = "motorbikes up to 200cc",
+  Trailer = "trailer",
+  LargePsvIeGreaterThan23Seats = "large psv(ie: greater than 23 seats)",
+  _3Wheelers = "3 wheelers",
+  HeavyGoodsVehicle = "heavy goods vehicle",
+  MOTClass4 = "MOT class 4",
+  MOTClass7 = "MOT class 7",
+  MOTClass5 = "MOT class 5"
 }
