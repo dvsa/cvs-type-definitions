@@ -21,53 +21,80 @@
 			]
 		},
 		"vehicleTypes": {
-			"anyOf": [
-				{
-					"title": "Vehicle Type",
-					"type": "string",
-					"enum": [
-						"psv",
-						"trl",
-						"hgv",
-						"car",
-						"lgv",
-						"motorcycle"
-					]
-				}
-			]
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"title": "Vehicle Type",
+						"type": "string",
+						"enum": [
+							"psv",
+							"trl",
+							"hgv",
+							"car",
+							"lgv",
+							"motorcycle"
+						]
+					}
+				]
+			}
 		},
 		"euVehicleCategories": {
-			"anyOf": [
-				{
-					"title": "EU vehicle category",
-					"type": "string",
-					"enum": [
-						"m1",
-						"m2",
-						"m3",
-						"n1",
-						"n2",
-						"n3",
-						"o1",
-						"o2",
-						"o3",
-						"o4",
-						"l1e-a",
-						"l1e",
-						"l2e",
-						"l3e",
-						"l4e",
-						"l5e",
-						"l6e",
-						"l7e"
-					]
-				}
-			]
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"title": "EU vehicle category",
+						"type": "string",
+						"tsEnumNames": [
+							"M1",
+							"M2",
+							"M3",
+							"N1",
+							"N2",
+							"N3",
+							"O1",
+							"O2",
+							"O3",
+							"O4",
+							"L1E_A",
+							"l1E",
+							"L2e",
+							"L3E",
+							"L4E",
+							"L5E",
+							"L6E",
+							"L7E"
+						],
+						"enum": [
+							"m1",
+							"m2",
+							"m3",
+							"n1",
+							"n2",
+							"n3",
+							"o1",
+							"o2",
+							"o3",
+							"o4",
+							"l1e-a",
+							"l1e",
+							"l2e",
+							"l3e",
+							"l4e",
+							"l5e",
+							"l6e",
+							"l7e"
+						]
+					}
+				]
+			}
 		},
 		"requiredStandards": {
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"required": [
 					"rsNumber",
 					"requiredStandard",
@@ -97,16 +124,19 @@
 						]
 					},
 					"inspectionTypes": {
-						"anyOf": [
-							{
-								"title": "Inspection Type",
-								"type": "string",
-								"enum": [
-									"basic",
-									"normal"
-								]
-							}
-						]
+						"type": "array",
+						"items": {
+							"anyOf": [
+								{
+									"title": "Inspection Type",
+									"type": "string",
+									"enum": [
+										"basic",
+										"normal"
+									]
+								}
+							]
+						}
 					}
 				}
 			}

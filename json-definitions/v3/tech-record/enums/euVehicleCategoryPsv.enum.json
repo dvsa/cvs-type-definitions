@@ -1,0 +1,14 @@
+{
+  "title": "EU vehicle category",
+  "type": "string",
+  "tsEnumNames": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "enum": [
+    "m1",
+    "m2",
+    "m3"
+  ]
+}

@@ -105,7 +105,7 @@
           "type": "null"
         },
         {
-          "$ref": "../../../enums/euVehicleCategory.ignore.json"
+          "$ref": "../../../enums/euVehicleCategory.enum.json"
         }
       ]
     },
