@@ -235,7 +235,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_roadFriendly: boolean;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType: string;
-  techRecord_tyreUseCode: TyreUseCode | null;
+  techRecord_tyreUseCode: TyreUseCode;
   techRecord_variantNumber?: null | string;
   techRecord_variantVersionNumber?: null | string;
   techRecord_vehicleClass_description: "trailer";

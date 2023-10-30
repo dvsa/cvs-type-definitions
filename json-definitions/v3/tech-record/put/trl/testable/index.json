@@ -925,9 +925,6 @@
       "anyOf": [
         {
           "$ref": "../../../enums/tyreUseCodeTrl.enum.json"
-        },
-        {
-          "type": "null"
         }
       ]
     },

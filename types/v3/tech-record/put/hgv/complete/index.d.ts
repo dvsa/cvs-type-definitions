@@ -198,7 +198,7 @@ export interface TechRecordPUTHGVComplete {
   techRecord_trainDesignWeight?: number | null;
   techRecord_trainEecWeight?: number | null;
   techRecord_trainGbWeight: number;
-  techRecord_tyreUseCode: TyreUseCode | null;
+  techRecord_tyreUseCode: TyreUseCode;
   techRecord_vehicleClass_description: "heavy goods vehicle";
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_approvalType: ApprovalType;

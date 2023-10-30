@@ -226,7 +226,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_roadFriendly?: boolean | null;
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
-  techRecord_tyreUseCode?: TyreUseCode | null;
+  techRecord_tyreUseCode?: TyreUseCode;
   techRecord_vehicleClass_description: "trailer";
   techRecord_vehicleConfiguration?: VehicleConfiguration | null;
   techRecord_vehicleType: "trl";
