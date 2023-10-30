@@ -1300,12 +1300,25 @@
 		"techRecord_tyreUseCode": {
 			"anyOf": [
 				{
-				  "$ref": "../../../enums/tyreUseCodeTrl.enum.json"
+					"title": "Tyre Use Code",
+					"type": "string",
+					"tsEnumNames": [
+						"_2R",
+						"_2B",
+						"_2J",
+						"_2M"
+					],
+					"enum": [
+						"2R",
+						"2B",
+						"2J",
+						"2M"
+					]
 				},
 				{
-				  "type": "null"
+					"type": "null"
 				}
-			  ]
+			]
 		},
 		"techRecord_vehicleClass_code": {
 			"const": "t"

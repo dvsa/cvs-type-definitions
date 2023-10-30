@@ -931,12 +931,21 @@
 		"techRecord_tyreUseCode": {
 			"anyOf": [
 				{
-				  "$ref": "../../../enums/tyreUseCodeHgv.enum.json"
+					"title": "Tyre Use Code",
+					"type": "string",
+					"tsEnumNames": [
+						"_2R",
+						"_2B"
+					],
+					"enum": [
+						"2R",
+						"2B"
+					]
 				},
 				{
-				  "type": "null"
+					"type": "null"
 				}
-			  ]
+			]
 		},
 		"techRecord_vehicleClass_code": {
 			"const": "v"
