@@ -877,7 +877,7 @@
       "const": "trailer"
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "$ref": "../../../enums/vehicleConfigurationTrl.enum.json"
     },
     "techRecord_vehicleType": {
       "const": "trl"
