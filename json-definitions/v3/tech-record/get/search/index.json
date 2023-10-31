@@ -21,7 +21,7 @@
       "$ref": "../../enums/statusCode.ignore.json"
     },
     "techRecord_vehicleType": {
-      "$ref": "../../enums/vehicleType.ignore.json"
+      "$ref": "../../enums/vehicleType.enum.json"
     },
     "createdTimestamp": {
       "type": "string"
