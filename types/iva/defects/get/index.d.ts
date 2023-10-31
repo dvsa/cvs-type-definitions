@@ -5,9 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
-export type InspectionType = "basic" | "normal";
-
 export interface DefectGETIVA {
   sectionNumber: string;
   sectionDescription: string;
@@ -22,6 +19,14 @@ export interface DefectGETIVA {
   }[];
 }
 
+export enum VehicleType {
+  psv = "psv",
+  trl = "trl",
+  hgv = "hgv",
+  car = "car",
+  lgv = "lgv",
+  motorcycle = "motorcycle"
+}
 export enum EUVehicleCategory {
   M1 = "m1",
   M2 = "m2",
@@ -41,4 +46,8 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
+}
+export enum InspectionType {
+  basic = "basic",
+  normal = "normal"
 }

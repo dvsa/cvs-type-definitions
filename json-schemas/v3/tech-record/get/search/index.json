@@ -29,6 +29,14 @@
 		"techRecord_vehicleType": {
 			"title": "Vehicle Type",
 			"type": "string",
+			"tsEnumNames": [
+				"psv",
+				"trl",
+				"hgv",
+				"car",
+				"lgv",
+				"motorcycle"
+			],
 			"enum": [
 				"psv",
 				"trl",
