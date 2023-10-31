@@ -6,19 +6,6 @@
  */
 
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 export type VehicleSize = "small" | "large";
 export type BodyTypeDescription =
   | "artic"
@@ -267,6 +254,10 @@ export interface PSVAxles {
   tyres_speedCategorySymbol?: SpeedCategorySymbol | null;
 }
 
+export enum VehicleConfiguration {
+  RIGID = "rigid",
+  ARTICULATED = "articulated"
+}
 export enum VehicleClassDescription {
   SMALL_PSV = "small psv (ie: less than or equal to 22 seats)",
   LARGE_PSV = "large psv(ie: greater than 23 seats)"

@@ -132,7 +132,7 @@
             "$ref": "../../../enums/vehicleClassDescription.enum.json"
         },
         "techRecord_vehicleConfiguration": {
-            "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+            "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
         },
         "techRecord_vehicleSubclass": {
             "$ref": "../../../enums/vehicleSubclass.ignore.json"

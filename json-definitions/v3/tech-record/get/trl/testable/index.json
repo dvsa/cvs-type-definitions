@@ -966,7 +966,7 @@
     "techRecord_vehicleConfiguration": {
       "anyOf": [
         {
-          "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+          "$ref": "../../../enums/vehicleConfigurationTrl.enum.json"
         }
       ]
     },

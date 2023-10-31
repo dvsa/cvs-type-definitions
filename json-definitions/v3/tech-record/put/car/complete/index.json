@@ -73,7 +73,7 @@
       }
     },
     "techRecord_vehicleConfiguration": {
-      "$ref": "../../../enums/vehicleConfiguration.ignore.json"
+      "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
     },
     "techRecord_euVehicleCategory": {
       "anyOf": [

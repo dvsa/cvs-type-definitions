@@ -82,19 +82,6 @@ export type PlateReasonForIssue =
   | "Original"
   | "Manual";
 export type StatusCode = "provisional" | "current" | "archived";
-export type VehicleConfiguration =
-  | "rigid"
-  | "articulated"
-  | "centre axle drawbar"
-  | "semi-car transporter"
-  | "semi-trailer"
-  | "long semi-trailer"
-  | "low loader"
-  | "other"
-  | "drawbar"
-  | "four-in-line"
-  | "dolly"
-  | "full drawbar";
 
 export interface TechRecordGETHGVComplete {
   secondaryVrms?: string[];
@@ -255,6 +242,10 @@ export enum EUVehicleCategory {
 export enum TyreUseCode {
   _2R = "2R",
   _2B = "2B"
+}
+export enum VehicleConfiguration {
+  RIGID = "rigid",
+  ARTICULATED = "articulated"
 }
 export enum ApprovalType {
   NTA = "NTA",
