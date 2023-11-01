@@ -335,7 +335,7 @@
     },
     "techRecord_trainDesignWeight": {
       "type": [
-        "integer",
+        "float",
         "null"
       ],
       "minimum": 0,
