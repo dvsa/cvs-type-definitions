@@ -21,7 +21,7 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "../../../v3/tech-record/enums/vehicleType.enum.json"
+            "$ref": "../../../v3/tech-record/enums/vehicleType.ignore.json"
           }
         ]
       }
@@ -66,7 +66,7 @@
             "items": {
               "anyOf": [
                 {
-                  "$ref": "../enums/inspectionType.enum.json"
+                  "$ref": "../enums/inspectionType.ignore.json"
                 }
               ]
             }

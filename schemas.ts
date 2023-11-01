@@ -1,5 +1,4 @@
 export const schemas = [
-  "iva/defects/enums/inspectionType.enum.json",
   "iva/defects/get/index.json",
   "v1/activity/index.json",
   "v1/defect-category-reference-data/index.json",
@@ -26,7 +25,6 @@ export const schemas = [
   "v3/tech-record/enums/vehicleConfigurationHgvPsv.enum.json",
   "v3/tech-record/enums/vehicleConfigurationLightVehicle.enum.json",
   "v3/tech-record/enums/vehicleConfigurationTrl.enum.json",
-  "v3/tech-record/enums/vehicleType.enum.json",
   "v3/tech-record/get/car/complete/index.json",
   "v3/tech-record/get/car/skeleton/index.json",
   "v3/tech-record/get/hgv/complete/index.json",

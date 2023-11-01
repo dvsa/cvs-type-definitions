@@ -6,6 +6,7 @@
  */
 
 export type StatusCode = "provisional" | "current" | "archived";
+export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 
 export interface TechRecordSearchSchema {
   primaryVrm?: string;
@@ -22,13 +23,4 @@ export interface TechRecordSearchSchema {
   techRecord_manufactureYear: number | null;
   techRecord_reasonForCreation?: string;
   techRecord_createdByName?: string;
-}
-
-export enum VehicleType {
-  psv = "psv",
-  trl = "trl",
-  hgv = "hgv",
-  car = "car",
-  lgv = "lgv",
-  motorcycle = "motorcycle"
 }
