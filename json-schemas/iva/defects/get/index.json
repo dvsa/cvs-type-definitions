@@ -27,14 +27,6 @@
 					{
 						"title": "Vehicle Type",
 						"type": "string",
-						"tsEnumNames": [
-							"psv",
-							"trl",
-							"hgv",
-							"car",
-							"lgv",
-							"motorcycle"
-						],
 						"enum": [
 							"psv",
 							"trl",
@@ -138,10 +130,6 @@
 								{
 									"title": "Inspection Type",
 									"type": "string",
-									"tsEnumNames": [
-										"basic",
-										"normal"
-									],
 									"enum": [
 										"basic",
 										"normal"

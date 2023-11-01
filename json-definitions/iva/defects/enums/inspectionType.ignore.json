@@ -1,10 +1,6 @@
 {
   "title": "Inspection Type",
   "type": "string",
-  "tsEnumNames":[
-    "basic",
-    "normal"
-  ],
   "enum":[
     "basic",
     "normal"
