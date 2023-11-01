@@ -174,7 +174,9 @@ export interface TechRecordPUTPSVTestable {
   techRecord_euroStandard?: EuroStandard | null;
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
   techRecord_emissionsLimit?: null | number;
-  techRecord_trainDesignWeight?: number | null;
+  techRecord_trainDesignWeight?: {
+    [k: string]: unknown;
+  } | null;
   techRecord_numberOfSeatbelts?: null | string;
   techRecord_seatbeltInstallationApprovalDate?: string | null;
   techRecord_coifSerialNumber?: string | null;

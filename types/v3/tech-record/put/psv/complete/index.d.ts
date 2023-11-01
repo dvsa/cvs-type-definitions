@@ -173,7 +173,9 @@ export interface TechRecordPUTPSVComplete {
   techRecord_tachoExemptMrk?: null | boolean;
   techRecord_euroStandard?: null | EuroStandard;
   techRecord_fuelPropulsionSystem?: null | FuelPropulsionSystem;
-  techRecord_emissionsLimit?: null | number;
+  techRecord_emissionsLimit?: null | {
+    [k: string]: unknown;
+  };
   techRecord_trainDesignWeight?: number | null;
   techRecord_numberOfSeatbelts: string;
   techRecord_seatbeltInstallationApprovalDate?: string | null;

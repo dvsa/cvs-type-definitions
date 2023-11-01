@@ -152,7 +152,9 @@ export interface TechRecordGETHGVTestable {
   techRecord_dimensions_length?: number | null;
   techRecord_dimensions_width?: number | null;
   techRecord_drawbarCouplingFitted?: boolean | null;
-  techRecord_emissionsLimit?: null | number;
+  techRecord_emissionsLimit?: null | {
+    [k: string]: unknown;
+  };
   techRecord_euroStandard?: string | null;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_frontAxleToRearAxle?: number | null;

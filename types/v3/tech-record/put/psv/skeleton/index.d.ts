@@ -173,7 +173,9 @@ export interface TechRecordPUTPSVSkeleton {
   techRecord_tachoExemptMrk?: boolean | null;
   techRecord_euroStandard?: EuroStandard | null;
   techRecord_fuelPropulsionSystem?: FuelPropulsionSystem | null;
-  techRecord_emissionsLimit?: null | number;
+  techRecord_emissionsLimit?: null | {
+    [k: string]: unknown;
+  };
   techRecord_trainDesignWeight?: number | null;
   techRecord_numberOfSeatbelts?: string | null;
   techRecord_seatbeltInstallationApprovalDate?: string | null;
