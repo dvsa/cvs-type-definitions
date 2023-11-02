@@ -512,7 +512,7 @@
 		"techRecord_emissionsLimit": {
 			"type": [
 				"null",
-				"integer"
+				"number"
 			],
 			"minimum": 0,
 			"maximum": 99
