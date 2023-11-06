@@ -225,7 +225,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_statusCode: StatusCode;
   techRecord_suspensionType?: string | null;
   techRecord_dimensions_axleSpacing?: AxleSpacing[];
-  techRecord_tyreUseCode?: TyreUseCode;
+  techRecord_tyreUseCode?: TyreUseCode | null;
   techRecord_vehicleClass_description: "trailer";
   techRecord_vehicleConfiguration: VehicleConfiguration;
   techRecord_vehicleType: "trl";
