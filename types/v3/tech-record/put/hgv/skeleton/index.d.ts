@@ -86,6 +86,7 @@ export type StatusCode = "provisional" | "current" | "archived";
 export interface TechRecordPUTHGVSkeleton {
   secondaryVrms?: string[];
   partialVin?: string | null;
+  techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;

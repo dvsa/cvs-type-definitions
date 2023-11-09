@@ -88,6 +88,12 @@
 				"string"
 			]
 		},
+		"techRecord_adrDetails_dangerousGoods": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
 		"techRecord_adrDetails_vehicleDetails_type": {
 			"type": [
 				"string",
