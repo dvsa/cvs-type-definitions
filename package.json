@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "test": "npm run generate && jest",
-    "generate": "ts-node scripts/generateSchemas.ts"
+    "generate": "ts-node scripts/generateSchemas.ts",
+    "postinstall": "tsc"
   },
   "author": "dvsa",
   "license": "ISC",
