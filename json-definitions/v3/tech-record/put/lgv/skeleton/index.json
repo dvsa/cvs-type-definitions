@@ -71,6 +71,303 @@
       ],
       "maxLength": 255
     },
+    "techRecord_adrDetails_dangerousGoods": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_vehicleDetails_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_vehicleDetails_approvalDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_permittedDangerousGoods": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "techRecord_adrDetails_compatibilityGroupJ": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_additionalExaminerNotes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1024
+    },
+    "techRecord_adrDetails_applicantDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150
+    },
+    "techRecord_adrDetails_applicantDetails_street": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150
+    },
+    "techRecord_adrDetails_applicantDetails_town": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
+    },
+    "techRecord_adrDetails_applicantDetails_city": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
+    },
+    "techRecord_adrDetails_applicantDetails_postcode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25
+    },
+    "techRecord_adrDetails_memosApply": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "techRecord_adrDetails_documents": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "techRecord_adrDetails_listStatementApplicable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_batteryListNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 8
+    },
+    "techRecord_adrDetails_brakeDeclarationsSeen": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_brakeDeclarationIssuer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_brakeEndurance": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_weight": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 8
+    },
+    "techRecord_adrDetails_declarationsSeen": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_additionalNotes_guidanceNotes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "techRecord_adrDetails_additionalNotes_number": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "techRecord_adrDetails_adrTypeApprovalNo": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_adrCertificateNotes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1500
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 70
+    },
+    "techRecord_adrDetails_tank_tankDetails_yearOfManufacture": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "maximum": 9999
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 50
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 65
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 30
+    },
+    "techRecord_adrDetails_tank_tankDetails_specialProvisions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1024
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/tc2Types.ignore.json"
+        }
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 70
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/tc3Types.ignore.json"
+        }
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 75
+    },
+    "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1500
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_productList": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1500
+    },
     "techRecord_euVehicleCategory": {
       "anyOf": [
         {
