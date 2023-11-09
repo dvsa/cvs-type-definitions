@@ -1,0 +1,12 @@
+{
+    "title": "Vehicle Configuration",
+    "type": "string",
+    "tsEnumNames": [
+        "RIGID",
+        "ARTICULATED"
+    ],
+    "enum": [
+        "rigid",
+        "articulated"
+    ]
+}

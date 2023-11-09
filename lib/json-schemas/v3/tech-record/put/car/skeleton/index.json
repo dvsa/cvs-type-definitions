@@ -1,0 +1,245 @@
+{
+    "title": "Tech Record PUT Car Skeleton",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "vin",
+        "techRecord_vehicleType",
+        "techRecord_reasonForCreation",
+        "techRecord_statusCode"
+    ],
+    "properties": {
+        "vin": {
+            "type": "string"
+        },
+        "primaryVrm": {
+            "type": "string"
+        },
+        "techRecord_reasonForCreation": {
+            "type": "string"
+        },
+        "techRecord_vehicleType": {
+            "const": "car"
+        },
+        "techRecord_statusCode": {
+            "title": "Status Code",
+            "type": "string",
+            "enum": [
+                "provisional",
+                "current",
+                "archived"
+            ]
+        },
+        "techRecord_regnDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_manufactureYear": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_noOfAxles": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_notes": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_hiddenInVta": {
+            "type": [
+                "null",
+                "boolean"
+            ]
+        },
+        "techRecord_updateType": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "secondaryVrms": {
+            "type": [
+                "null",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "techRecord_vehicleSubclass": {
+            "title": "Vehicle Subclass",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "n",
+                    "p",
+                    "a",
+                    "s",
+                    "c",
+                    "l",
+                    "t",
+                    "e",
+                    "m",
+                    "r",
+                    "w"
+                ]
+            }
+        },
+        "techRecord_vehicleConfiguration": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "title": "Vehicle Configuration",
+                    "type": "string",
+                    "tsEnumNames": [
+                        "RIGID",
+                        "ARTICULATED",
+                        "CENTRE_AXLE_DRAWBAR",
+                        "SEMI_CAR_TRANSPORTER",
+                        "SEMI_TRAILER",
+                        "LONG_SEMI_TRAILER",
+                        "LOW_LOADER",
+                        "OTHER",
+                        "DRAWBAR",
+                        "FOUR_IN_LINE",
+                        "DOLLY",
+                        "FULL_DRAWBAR"
+                    ],
+                    "enum": [
+                        "rigid",
+                        "articulated",
+                        "centre axle drawbar",
+                        "semi-car transporter",
+                        "semi-trailer",
+                        "long semi-trailer",
+                        "low loader",
+                        "other",
+                        "drawbar",
+                        "four-in-line",
+                        "dolly",
+                        "full drawbar"
+                    ]
+                }
+            ]
+        },
+        "techRecord_euVehicleCategory": {
+            "anyOf": [
+                {
+                    "title": "EU vehicle category",
+                    "type": "string",
+                    "tsEnumNames": [
+                        "M1",
+                        "M2",
+                        "M3",
+                        "N1",
+                        "N2",
+                        "N3",
+                        "O1",
+                        "O2",
+                        "O3",
+                        "O4",
+                        "L1E_A",
+                        "l1E",
+                        "L2e",
+                        "L3E",
+                        "L4E",
+                        "L5E",
+                        "L6E",
+                        "L7E"
+                    ],
+                    "enum": [
+                        "m1",
+                        "m2",
+                        "m3",
+                        "n1",
+                        "n2",
+                        "n3",
+                        "o1",
+                        "o2",
+                        "o3",
+                        "o4",
+                        "l1e-a",
+                        "l1e",
+                        "l2e",
+                        "l3e",
+                        "l4e",
+                        "l5e",
+                        "l6e",
+                        "l7e"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "techRecord_applicantDetails_name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 150
+        },
+        "techRecord_applicantDetails_address1": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_address2": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_postTown": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_address3": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_postCode": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 12
+        },
+        "techRecord_applicantDetails_telephoneNumber": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 25
+        },
+        "techRecord_applicantDetails_emailAddress": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 255
+        }
+    }
+}

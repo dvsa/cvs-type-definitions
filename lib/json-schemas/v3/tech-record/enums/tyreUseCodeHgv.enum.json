@@ -1,0 +1,12 @@
+{
+    "title": "Tyre Use Code",
+    "type": "string",
+    "tsEnumNames": [
+        "_2R",
+        "_2B"
+    ],
+    "enum": [
+        "2R",
+        "2B"
+    ]
+}

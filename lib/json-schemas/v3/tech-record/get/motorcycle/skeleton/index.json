@@ -1,0 +1,332 @@
+{
+    "title": "Tech Record GET Motorcycle Skeleton",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "techRecord_vehicleClass_description",
+        "techRecord_vehicleClass_code",
+        "systemNumber",
+        "primaryVrm",
+        "techRecord_createdByName",
+        "techRecord_createdById",
+        "techRecord_createdAt",
+        "techRecord_reasonForCreation",
+        "techRecord_vehicleType",
+        "createdTimestamp",
+        "partialVin",
+        "vin"
+    ],
+    "properties": {
+        "techRecord_applicantDetails_name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 150
+        },
+        "techRecord_applicantDetails_address1": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_address2": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_postTown": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_address3": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 60
+        },
+        "techRecord_applicantDetails_postCode": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 12
+        },
+        "techRecord_applicantDetails_telephoneNumber": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 25
+        },
+        "techRecord_applicantDetails_emailAddress": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 255
+        },
+        "createdTimestamp": {
+            "type": [
+                "string"
+            ]
+        },
+        "partialVin": {
+            "type": "string"
+        },
+        "primaryVrm": {
+            "type": "string"
+        },
+        "systemNumber": {
+            "type": "string"
+        },
+        "techRecord_createdAt": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_createdById": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_createdByName": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_euVehicleCategory": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "title": "EU vehicle category",
+                    "type": "string",
+                    "tsEnumNames": [
+                        "M1",
+                        "M2",
+                        "M3",
+                        "N1",
+                        "N2",
+                        "N3",
+                        "O1",
+                        "O2",
+                        "O3",
+                        "O4",
+                        "L1E_A",
+                        "l1E",
+                        "L2e",
+                        "L3E",
+                        "L4E",
+                        "L5E",
+                        "L6E",
+                        "L7E"
+                    ],
+                    "enum": [
+                        "m1",
+                        "m2",
+                        "m3",
+                        "n1",
+                        "n2",
+                        "n3",
+                        "o1",
+                        "o2",
+                        "o3",
+                        "o4",
+                        "l1e-a",
+                        "l1e",
+                        "l2e",
+                        "l3e",
+                        "l4e",
+                        "l5e",
+                        "l6e",
+                        "l7e"
+                    ]
+                }
+            ]
+        },
+        "techRecord_lastUpdatedAt": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_lastUpdatedById": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_lastUpdatedByName": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_manufactureYear": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_recordCompleteness": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_noOfAxles": {
+            "type": [
+                "null",
+                "integer"
+            ]
+        },
+        "techRecord_notes": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_reasonForCreation": {
+            "type": "string"
+        },
+        "techRecord_regnDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "techRecord_statusCode": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "title": "Status Code",
+                    "type": "string",
+                    "enum": [
+                        "provisional",
+                        "current",
+                        "archived"
+                    ]
+                }
+            ]
+        },
+        "techRecord_vehicleClass_description": {
+            "title": "Vehicle Class Description",
+            "type": "string",
+            "tsEnumNames": [
+                "MotorbikesOver200ccOrWithASidecar",
+                "NotApplicable",
+                "SmallPsvIeLessThanOrEqualTo22Seats",
+                "MotorbikesUpTo200cc",
+                "Trailer",
+                "LargePsvIeGreaterThan23Seats",
+                "_3Wheelers",
+                "HeavyGoodsVehicle",
+                "MOTClass4",
+                "MOTClass7",
+                "MOTClass5"
+            ],
+            "enum": [
+                "motorbikes over 200cc or with a sidecar",
+                "not applicable",
+                "small psv (ie: less than or equal to 22 seats)",
+                "motorbikes up to 200cc",
+                "trailer",
+                "large psv(ie: greater than 23 seats)",
+                "3 wheelers",
+                "heavy goods vehicle",
+                "MOT class 4",
+                "MOT class 7",
+                "MOT class 5"
+            ]
+        },
+        "techRecord_vehicleClass_code": {
+            "type": "string"
+        },
+        "techRecord_vehicleConfiguration": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "title": "Vehicle Configuration",
+                    "type": "string",
+                    "tsEnumNames": [
+                        "RIGID",
+                        "ARTICULATED",
+                        "CENTRE_AXLE_DRAWBAR",
+                        "SEMI_CAR_TRANSPORTER",
+                        "SEMI_TRAILER",
+                        "LONG_SEMI_TRAILER",
+                        "LOW_LOADER",
+                        "OTHER",
+                        "DRAWBAR",
+                        "FOUR_IN_LINE",
+                        "DOLLY",
+                        "FULL_DRAWBAR"
+                    ],
+                    "enum": [
+                        "rigid",
+                        "articulated",
+                        "centre axle drawbar",
+                        "semi-car transporter",
+                        "semi-trailer",
+                        "long semi-trailer",
+                        "low loader",
+                        "other",
+                        "drawbar",
+                        "four-in-line",
+                        "dolly",
+                        "full drawbar"
+                    ]
+                }
+            ]
+        },
+        "techRecord_vehicleType": {
+            "const": "motorcycle"
+        },
+        "vin": {
+            "type": "string"
+        },
+        "techRecord_hiddenInVta": {
+            "type": [
+                "null",
+                "boolean"
+            ]
+        },
+        "techRecord_updateType": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "secondaryVrms": {
+            "type": [
+                "null",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "techRecord_numberOfWheelsDriven": {
+            "type": [
+                "null",
+                "integer"
+            ]
+        }
+    }
+}

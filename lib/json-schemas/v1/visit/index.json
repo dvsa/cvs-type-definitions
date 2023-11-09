@@ -1,0 +1,1895 @@
+{
+    "title": "Visit Schema",
+    "type": "object",
+    "properties": {
+        "startTime": {
+            "type": "string"
+        },
+        "endTime": {
+            "type": "string"
+        },
+        "testStationName": {
+            "type": "string"
+        },
+        "testStationPNumber": {
+            "type": "string"
+        },
+        "testStationEmail": {
+            "type": "string"
+        },
+        "testStationType": {
+            "type": "string"
+        },
+        "testerName": {
+            "type": "string"
+        },
+        "testerId": {
+            "type": "string"
+        },
+        "testerEmail": {
+            "type": "string"
+        },
+        "tests": {
+            "type": "array",
+            "items": {
+                "title": "Commercial Vehicle Test Schema",
+                "type": "object",
+                "additionalProperties": false,
+                "definitions": {},
+                "properties": {
+                    "testResultId": {
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "enum": [
+                            "submitted",
+                            "cancelled",
+                            null
+                        ],
+                        "type": "string"
+                    },
+                    "reasonForCancellation": {
+                        "type": "string"
+                    },
+                    "vehicles": {
+                        "type": "array",
+                        "items": {
+                            "title": "Vehicle Schema",
+                            "type": "object",
+                            "properties": {
+                                "systemNumber": {
+                                    "type": "string"
+                                },
+                                "vrm": {
+                                    "type": "string"
+                                },
+                                "vin": {
+                                    "type": "string"
+                                },
+                                "techRecord": {
+                                    "title": "Tech Record Schema",
+                                    "type": "object",
+                                    "properties": {
+                                        "bodyType": {
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                },
+                                                "description": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                                "code",
+                                                "description"
+                                            ]
+                                        },
+                                        "manufactureYear": {
+                                            "type": "integer"
+                                        },
+                                        "regnDate": {
+                                            "type": "string"
+                                        },
+                                        "ntaNumber": {
+                                            "type": "string"
+                                        },
+                                        "conversionRefNo": {
+                                            "type": "string"
+                                        },
+                                        "speedLimiterMrk": {
+                                            "type": "boolean"
+                                        },
+                                        "tachoExemptMrk": {
+                                            "type": "boolean"
+                                        },
+                                        "reasonForCreation": {
+                                            "type": "string"
+                                        },
+                                        "statusCode": {
+                                            "type": "string"
+                                        },
+                                        "grossKerbWeight": {
+                                            "type": "integer"
+                                        },
+                                        "grossLadenWeight": {
+                                            "type": "integer"
+                                        },
+                                        "noOfAxles": {
+                                            "type": "integer"
+                                        },
+                                        "brakeCode": {
+                                            "type": "string"
+                                        },
+                                        "vehicleType": {
+                                            "type": "string"
+                                        },
+                                        "euVehicleCategory": {
+                                            "type": "string"
+                                        },
+                                        "axles": {
+                                            "type": "array",
+                                            "items": {
+                                                "title": "Axle Schema",
+                                                "type": "object",
+                                                "properties": {
+                                                    "parkingBrakeMrk": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "axleNumber": {
+                                                        "type": "integer"
+                                                    },
+                                                    "weights": {
+                                                        "title": "Weights Schema",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "kerbWeight": {
+                                                                "type": "integer"
+                                                            },
+                                                            "ladenWeight": {
+                                                                "type": "integer"
+                                                            },
+                                                            "gbWeight": {
+                                                                "type": "integer"
+                                                            },
+                                                            "designWeight": {
+                                                                "type": "integer"
+                                                            }
+                                                        },
+                                                        "additionalProperties": false,
+                                                        "required": [
+                                                            "gbWeight",
+                                                            "designWeight"
+                                                        ]
+                                                    },
+                                                    "tyres": {
+                                                        "title": "Tyres Schema",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "tyreSize": {
+                                                                "type": "string"
+                                                            },
+                                                            "plyRating": {
+                                                                "type": "string"
+                                                            },
+                                                            "fitmentCode": {
+                                                                "type": "string"
+                                                            },
+                                                            "dataTrPsvAxles": {
+                                                                "type": "integer"
+                                                            },
+                                                            "tyreCode": {
+                                                                "type": "number"
+                                                            },
+                                                            "dataTrAxles": {
+                                                                "type": "number"
+                                                            },
+                                                            "speedCategorySymbol": {
+                                                                "description": "PSV only",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "additionalProperties": false,
+                                                        "required": [
+                                                            "tyreSize",
+                                                            "plyRating",
+                                                            "fitmentCode",
+                                                            "tyreCode"
+                                                        ]
+                                                    },
+                                                    "brakes": {
+                                                        "title": "Axle Brake Properties Schema",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "brakeActuator": {
+                                                                "type": "integer"
+                                                            },
+                                                            "leverLength": {
+                                                                "type": "integer"
+                                                            },
+                                                            "springBrakeParking": {
+                                                                "type": "boolean"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "brakeActuator",
+                                                            "leverLength",
+                                                            "springBrakeParking"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    }
+                                                },
+                                                "required": [
+                                                    "axleNumber",
+                                                    "tyres"
+                                                ],
+                                                "additionalProperties": false
+                                            },
+                                            "additionalProperties": false
+                                        },
+                                        "vehicleClass": {
+                                            "title": "Vehicle Class Schema",
+                                            "type": "object",
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                },
+                                                "description": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                                "code",
+                                                "description"
+                                            ]
+                                        },
+                                        "vehicleSubclass": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "vehicleConfiguration": {
+                                            "type": "string"
+                                        },
+                                        "recordCompleteness": {
+                                            "type": "string"
+                                        },
+                                        "chassisMake": {
+                                            "type": "string"
+                                        },
+                                        "chassisModel": {
+                                            "type": "string"
+                                        },
+                                        "bodyMake": {
+                                            "type": "string"
+                                        },
+                                        "bodyModel": {
+                                            "type": "string"
+                                        },
+                                        "vehicleSize": {
+                                            "type": "string"
+                                        },
+                                        "coifDate": {
+                                            "type": "string"
+                                        },
+                                        "unladenWeight": {
+                                            "type": "integer"
+                                        },
+                                        "grossGbWeight": {
+                                            "type": "integer"
+                                        },
+                                        "grossDesignWeight": {
+                                            "type": "integer"
+                                        },
+                                        "grossUnladenWeight": {
+                                            "type": "integer"
+                                        },
+                                        "seatsLowerDeck": {
+                                            "type": "integer"
+                                        },
+                                        "seatsUpperDeck": {
+                                            "type": "integer"
+                                        },
+                                        "standingCapacity": {
+                                            "type": "integer"
+                                        },
+                                        "speedRestriction": {
+                                            "type": "integer"
+                                        },
+                                        "dispensations": {
+                                            "type": "string"
+                                        },
+                                        "remarks": {
+                                            "type": "string"
+                                        },
+                                        "brakes": {
+                                            "title": "Brake",
+                                            "type": "object",
+                                            "properties": {
+                                                "brakeCode": {
+                                                    "type": "string"
+                                                },
+                                                "dataTrBrakeOne": {
+                                                    "type": "string"
+                                                },
+                                                "dataTrBrakeTwo": {
+                                                    "type": "string"
+                                                },
+                                                "dataTrBrakeThree": {
+                                                    "type": "string"
+                                                },
+                                                "retarderBrakeOne": {
+                                                    "type": "string"
+                                                },
+                                                "retarderBrakeTwo": {
+                                                    "type": "string"
+                                                },
+                                                "brakeCodeOriginal": {
+                                                    "type": "string"
+                                                },
+                                                "brakeForceWheelsNotLocked": {
+                                                    "title": "Brake Force Wheel",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "serviceBrakeForce": {
+                                                            "type": "integer"
+                                                        },
+                                                        "secondaryBrakeForce": {
+                                                            "type": "integer"
+                                                        },
+                                                        "parkingBrakeForce": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "serviceBrakeForce",
+                                                        "secondaryBrakeForce",
+                                                        "parkingBrakeForce"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                "brakeForceWheelsUpToHalfLocked": {
+                                                    "title": "Brake Force Wheel",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "serviceBrakeForce": {
+                                                            "type": "integer"
+                                                        },
+                                                        "secondaryBrakeForce": {
+                                                            "type": "integer"
+                                                        },
+                                                        "parkingBrakeForce": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "serviceBrakeForce",
+                                                        "secondaryBrakeForce",
+                                                        "parkingBrakeForce"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                "dtpNumber": {
+                                                    "type": "string"
+                                                },
+                                                "loadSensingValve": {
+                                                    "type": "boolean"
+                                                },
+                                                "antilockBrakingSystem": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        },
+                                        "make": {
+                                            "type": "string"
+                                        },
+                                        "model": {
+                                            "type": "string"
+                                        },
+                                        "functionCode": {
+                                            "type": "string"
+                                        },
+                                        "typeUseCode": {
+                                            "type": "string"
+                                        },
+                                        "roadFriendly": {
+                                            "type": "boolean"
+                                        },
+                                        "drawbarCouplingFitted": {
+                                            "type": "boolean"
+                                        },
+                                        "dimensions": {
+                                            "title": "Dimensions Schema",
+                                            "type": "object",
+                                            "properties": {
+                                                "length": {
+                                                    "type": "integer"
+                                                },
+                                                "width": {
+                                                    "type": "integer"
+                                                },
+                                                "axleSpacing": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "properties": {
+                                                            "axles": {
+                                                                "type": "string"
+                                                            },
+                                                            "value": {
+                                                                "type": "integer"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "axles",
+                                                            "value"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    },
+                                                    "minItems": 1,
+                                                    "maxItems": 1
+                                                }
+                                            },
+                                            "required": [
+                                                "length",
+                                                "width",
+                                                "axleSpacing"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        "notes": {
+                                            "type": "string"
+                                        },
+                                        "adrDetails": {
+                                            "title": "ADR Details Schema",
+                                            "type": "object",
+                                            "properties": {
+                                                "vehicleDetails": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string"
+                                                        },
+                                                        "approvalDate": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "additionalProperties": false
+                                                },
+                                                "listStatementApplicable": {
+                                                    "type": "boolean"
+                                                },
+                                                "batteryListNumber": {
+                                                    "type": "string"
+                                                },
+                                                "permittedDangerousGoods": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalExaminerNotes": {
+                                                    "type": "string"
+                                                },
+                                                "applicantDetails": {
+                                                    "title": "Applicant Details Schema",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "street": {
+                                                            "type": "string"
+                                                        },
+                                                        "town": {
+                                                            "type": "string"
+                                                        },
+                                                        "city": {
+                                                            "type": "string"
+                                                        },
+                                                        "postcode": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "additionalProperties": false
+                                                },
+                                                "memosApply": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalNotes": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "number": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "guidanceNotes": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "additionalProperties": false
+                                                },
+                                                "adrTypeApprovalNo": {
+                                                    "type": "string"
+                                                },
+                                                "compatibilityGroupJ": {
+                                                    "type": "boolean"
+                                                },
+                                                "tank": {
+                                                    "title": "Tank Schema",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "tankDetails": {
+                                                            "title": "Tank Details Schema",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "tankManufacturer": {
+                                                                    "type": "string"
+                                                                },
+                                                                "tc2Details": {
+                                                                    "title": "TC2 Details Schema",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "tc2Type": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "tc2IntermediateApprovalNo": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "tc2IntermediateExpiryDate": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "additionalProperties": false
+                                                                },
+                                                                "tc3Details": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "title": "TC3 Details Schema",
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "tc3Type": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "tc3IntermediateApprovalNo": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "tc3IntermediateExpiryDate": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "additionalProperties": false
+                                                                    }
+                                                                },
+                                                                "yearOfManufacture": {
+                                                                    "type": "string"
+                                                                },
+                                                                "tankCode": {
+                                                                    "type": "string"
+                                                                },
+                                                                "specialProvisions": {
+                                                                    "type": "string"
+                                                                },
+                                                                "tankManufacturerSerialNo": {
+                                                                    "type": "string"
+                                                                },
+                                                                "tankTypeAppNo": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "additionalProperties": false
+                                                        },
+                                                        "tankStatement": {
+                                                            "title": "Tank Statement Schema",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "substancesPermitted": {
+                                                                    "type": "string"
+                                                                },
+                                                                "statement": {
+                                                                    "type": "string"
+                                                                },
+                                                                "productList": {
+                                                                    "type": "string"
+                                                                },
+                                                                "productListRefNo": {
+                                                                    "type": "string"
+                                                                },
+                                                                "productListUnNo": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "additionalProperties": false
+                                                        }
+                                                    },
+                                                    "additionalProperties": false
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        },
+                                        "trainGbWeight": {
+                                            "type": "integer"
+                                        },
+                                        "trainDesignWeight": {
+                                            "type": "integer"
+                                        },
+                                        "maxTrainGbWeight": {
+                                            "type": "integer"
+                                        },
+                                        "maxTrainDesignWeight": {
+                                            "type": "integer"
+                                        },
+                                        "euroStandard": {
+                                            "type": "integer"
+                                        },
+                                        "frontAxleTo5thWheelMin": {
+                                            "type": "integer"
+                                        },
+                                        "frontAxleTo5thWheelMax": {
+                                            "type": "integer"
+                                        },
+                                        "frontAxleTo5thWheelCouplingMin": {
+                                            "type": "integer"
+                                        },
+                                        "frontAxleTo5thWheelCouplingMax": {
+                                            "type": "integer"
+                                        },
+                                        "firstUseDate": {
+                                            "type": "string"
+                                        },
+                                        "maxLoadOnCoupling": {
+                                            "type": "integer"
+                                        },
+                                        "suspensionType": {
+                                            "type": "string"
+                                        },
+                                        "couplingType": {
+                                            "type": "string"
+                                        },
+                                        "frontAxleToRearAxle": {
+                                            "type": "integer"
+                                        },
+                                        "rearAxleToRearTrl": {
+                                            "type": "integer"
+                                        },
+                                        "couplingCenterToRearAxleMin": {
+                                            "type": "integer"
+                                        },
+                                        "couplingCenterToRearAxleMax": {
+                                            "type": "integer"
+                                        },
+                                        "couplingCenterToRearTrlMin": {
+                                            "type": "integer"
+                                        },
+                                        "couplingCenterToRearTrlMax": {
+                                            "type": "integer"
+                                        },
+                                        "numberOfWheelsDriven": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "bodyType",
+                                        "regnDate",
+                                        "manufactureYear",
+                                        "ntaNumber",
+                                        "conversionRefNo",
+                                        "speedLimiterMrk",
+                                        "tachoExemptMrk",
+                                        "reasonForCreation",
+                                        "statusCode",
+                                        "grossKerbWeight",
+                                        "grossLadenWeight",
+                                        "noOfAxles",
+                                        "brakeCode",
+                                        "vehicleType",
+                                        "euVehicleCategory",
+                                        "axles",
+                                        "vehicleClass",
+                                        "vehicleSubclass",
+                                        "vehicleConfiguration",
+                                        "notes"
+                                    ]
+                                },
+                                "testResultsHistory": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "Test Result Schema",
+                                        "type": "object",
+                                        "properties": {
+                                            "testResultId": {
+                                                "type": "string"
+                                            },
+                                            "testStationName": {
+                                                "type": "string"
+                                            },
+                                            "testStationPNumber": {
+                                                "type": "string"
+                                            },
+                                            "testStationType": {
+                                                "type": "string"
+                                            },
+                                            "testerName": {
+                                                "type": "string"
+                                            },
+                                            "testerStaffId": {
+                                                "type": "string"
+                                            },
+                                            "testerEmailAddress": {
+                                                "type": "string"
+                                            },
+                                            "testStartTimestamp": {
+                                                "type": "string"
+                                            },
+                                            "testEndTimestamp": {
+                                                "type": "string"
+                                            },
+                                            "testStatus": {
+                                                "type": "string"
+                                            },
+                                            "reasonForCancellation": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "systemNumber": {
+                                                "type": "string"
+                                            },
+                                            "vrm": {
+                                                "type": "string"
+                                            },
+                                            "trailerId": {
+                                                "type": "string"
+                                            },
+                                            "vin": {
+                                                "type": "string"
+                                            },
+                                            "vehicleClass": {
+                                                "title": "Vehicle Class Schema",
+                                                "type": "object",
+                                                "properties": {
+                                                    "code": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "code",
+                                                    "description"
+                                                ]
+                                            },
+                                            "vehicleSubclass": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "vehicleType": {
+                                                "type": "string"
+                                            },
+                                            "vehicleConfiguration": {
+                                                "type": "string"
+                                            },
+                                            "odometerReading": {
+                                                "type": [
+                                                    "number",
+                                                    "null"
+                                                ]
+                                            },
+                                            "odometerReadingUnits": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "preparerId": {
+                                                "type": "string"
+                                            },
+                                            "preparerName": {
+                                                "type": "string"
+                                            },
+                                            "euVehicleCategory": {
+                                                "type": "string"
+                                            },
+                                            "countryOfRegistration": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "noOfAxles": {
+                                                "type": "integer"
+                                            },
+                                            "numberOfWheelsDriven": {
+                                                "type": "integer"
+                                            },
+                                            "vehicleSize": {
+                                                "type": "string"
+                                            },
+                                            "numberOfSeats": {
+                                                "type": "integer"
+                                            },
+                                            "regnDate": {
+                                                "type": "string"
+                                            },
+                                            "firstUseDate": {
+                                                "type": "string"
+                                            },
+                                            "testTypes": {
+                                                "type": "array",
+                                                "items": {
+                                                    "title": "Test Type Schema",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "testTypeName": {
+                                                            "type": "string"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "testTypeId": {
+                                                            "type": "string"
+                                                        },
+                                                        "certificateNumber": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "secondaryCertificateNumber": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "testTypeStartTimestamp": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "testTypeEndTimestamp": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "testResult": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "prohibitionIssued": {
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "reasonForAbandoning": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "additionalNotesRecorded": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "additionalCommentsForAbandon": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "numberOfSeatbeltsFitted": {
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "lastSeatbeltInstallationCheckDate": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "seatbeltInstallationCheckDate": {
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "testExpiryDate": {
+                                                            "type": "string"
+                                                        },
+                                                        "modType": {
+                                                            "anyOf": [
+                                                                {
+                                                                    "title": "Mod Type Schema",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "code": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "description": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "code",
+                                                                        "description"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "type": "null"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "emissionStandard": {
+                                                            "type": "string"
+                                                        },
+                                                        "fuelType": {
+                                                            "type": "string"
+                                                        },
+                                                        "modificationTypeUsed": {
+                                                            "type": "string"
+                                                        },
+                                                        "smokeTestKLimitApplied": {
+                                                            "type": "string"
+                                                        },
+                                                        "particulateTrapFitted": {
+                                                            "type": "string"
+                                                        },
+                                                        "particulateTrapSerialNumber": {
+                                                            "type": "string"
+                                                        },
+                                                        "defects": {
+                                                            "type": [
+                                                                "array"
+                                                            ],
+                                                            "items": {
+                                                                "title": "Defect Details Schema",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "imNumber": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "imDescription": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "additionalInformation": {
+                                                                        "properties": {
+                                                                            "location": {
+                                                                                "title": "Defect Location Schema",
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "vertical": {
+                                                                                        "type": [
+                                                                                            "string",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "horizontal": {
+                                                                                        "type": [
+                                                                                            "string",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "lateral": {
+                                                                                        "type": [
+                                                                                            "string",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "longitudinal": {
+                                                                                        "type": [
+                                                                                            "string",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "rowNumber": {
+                                                                                        "type": [
+                                                                                            "integer",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "seatNumber": {
+                                                                                        "type": [
+                                                                                            "integer",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    },
+                                                                                    "axleNumber": {
+                                                                                        "type": [
+                                                                                            "integer",
+                                                                                            "null"
+                                                                                        ]
+                                                                                    }
+                                                                                },
+                                                                                "additionalProperties": false
+                                                                            },
+                                                                            "notes": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "additionalProperties": false,
+                                                                        "required": [
+                                                                            "location",
+                                                                            "notes"
+                                                                        ]
+                                                                    },
+                                                                    "itemNumber": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "itemDescription": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "deficiencyRef": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "deficiencyId": {
+                                                                        "type": [
+                                                                            "string",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "deficiencySubId": {
+                                                                        "type": [
+                                                                            "string",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "deficiencyCategory": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "deficiencyText": {
+                                                                        "type": [
+                                                                            "string",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "stdForProhibition": {
+                                                                        "type": [
+                                                                            "boolean",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "prs": {
+                                                                        "type": [
+                                                                            "boolean",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "prohibitionIssued": {
+                                                                        "type": [
+                                                                            "boolean",
+                                                                            "null"
+                                                                        ]
+                                                                    },
+                                                                    "metadata": {
+                                                                        "title": "Defect Metadata Schema",
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "category": {
+                                                                                "properties": {
+                                                                                    "additionalInfo": {
+                                                                                        "title": "Defect Additional Details Metadata Schema",
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "location": {
+                                                                                                "title": "Defect Location Metadata Schema",
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "vertical": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "string"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "horizontal": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "string"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "lateral": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "string"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "longitudinal": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "string"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "rowNumber": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "number"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "seatNumber": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "integer"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "axleNumber": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "type": "array",
+                                                                                                                "items": {
+                                                                                                                    "type": "number"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "null"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                },
+                                                                                                "additionalProperties": false
+                                                                                            },
+                                                                                            "notes": {
+                                                                                                "type": "boolean"
+                                                                                            }
+                                                                                        },
+                                                                                        "additionalProperties": false,
+                                                                                        "required": [
+                                                                                            "location",
+                                                                                            "notes"
+                                                                                        ]
+                                                                                    }
+                                                                                },
+                                                                                "additionalProperties": false
+                                                                            }
+                                                                        },
+                                                                        "additionalProperties": false,
+                                                                        "required": [
+                                                                            "category"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "additionalProperties": false,
+                                                                "required": [
+                                                                    "imNumber",
+                                                                    "imDescription",
+                                                                    "additionalInformation",
+                                                                    "itemNumber",
+                                                                    "itemDescription",
+                                                                    "deficiencyRef",
+                                                                    "deficiencyId",
+                                                                    "deficiencySubId",
+                                                                    "deficiencyCategory",
+                                                                    "deficiencyText",
+                                                                    "stdForProhibition",
+                                                                    "prs",
+                                                                    "prohibitionIssued",
+                                                                    "metadata"
+                                                                ]
+                                                            }
+                                                        },
+                                                        "customDefects": {
+                                                            "type": [
+                                                                "array"
+                                                            ],
+                                                            "items": {
+                                                                "title": "Specialist Custom Defects Schema",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "referenceNumber": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "defectName": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "defectNotes": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "hasAllMandatoryFields": {
+                                                                        "type": "boolean",
+                                                                        "description": "FE only"
+                                                                    }
+                                                                },
+                                                                "additionalProperties": false,
+                                                                "required": [
+                                                                    "referenceNumber",
+                                                                    "defectName",
+                                                                    "defectNotes"
+                                                                ]
+                                                            }
+                                                        },
+                                                        "completionStatus": {
+                                                            "type": "string"
+                                                        },
+                                                        "testTypeCategoryName": {
+                                                            "type": "string"
+                                                        },
+                                                        "reasons": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "testNumber": {
+                                                            "type": "string"
+                                                        },
+                                                        "linkedIds": {
+                                                            "anyOf": [
+                                                                {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "null"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "testTypeName",
+                                                        "name",
+                                                        "testTypeId",
+                                                        "certificateNumber",
+                                                        "secondaryCertificateNumber",
+                                                        "testTypeStartTimestamp",
+                                                        "testTypeEndTimestamp",
+                                                        "testResult",
+                                                        "prohibitionIssued",
+                                                        "reasonForAbandoning",
+                                                        "additionalNotesRecorded",
+                                                        "additionalCommentsForAbandon",
+                                                        "defects"
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "testResultId",
+                                            "testStationName",
+                                            "testStationPNumber",
+                                            "testStationType",
+                                            "testerName",
+                                            "testerStaffId",
+                                            "testerEmailAddress",
+                                            "testStartTimestamp",
+                                            "testEndTimestamp",
+                                            "testStatus",
+                                            "reasonForCancellation",
+                                            "systemNumber",
+                                            "vin",
+                                            "vehicleClass",
+                                            "vehicleType",
+                                            "vehicleConfiguration",
+                                            "preparerId",
+                                            "preparerName",
+                                            "euVehicleCategory",
+                                            "countryOfRegistration",
+                                            "noOfAxles",
+                                            "numberOfWheelsDriven",
+                                            "testTypes"
+                                        ]
+                                    }
+                                },
+                                "countryOfRegistration": {
+                                    "type": "string"
+                                },
+                                "euVehicleCategory": {
+                                    "type": "string"
+                                },
+                                "odometerReading": {
+                                    "type": "string"
+                                },
+                                "odometerMetric": {
+                                    "type": "string"
+                                },
+                                "preparerId": {
+                                    "type": "string"
+                                },
+                                "preparerName": {
+                                    "type": "string"
+                                },
+                                "testTypes": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "Test Type Schema",
+                                        "type": "object",
+                                        "properties": {
+                                            "testTypeName": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "testTypeId": {
+                                                "type": "string"
+                                            },
+                                            "certificateNumber": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "secondaryCertificateNumber": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "testTypeStartTimestamp": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "testTypeEndTimestamp": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "testResult": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "prohibitionIssued": {
+                                                "type": [
+                                                    "boolean",
+                                                    "null"
+                                                ]
+                                            },
+                                            "reasonForAbandoning": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "additionalNotesRecorded": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "additionalCommentsForAbandon": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "numberOfSeatbeltsFitted": {
+                                                "type": [
+                                                    "integer",
+                                                    "null"
+                                                ]
+                                            },
+                                            "lastSeatbeltInstallationCheckDate": {
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ]
+                                            },
+                                            "seatbeltInstallationCheckDate": {
+                                                "type": [
+                                                    "boolean",
+                                                    "null"
+                                                ]
+                                            },
+                                            "testExpiryDate": {
+                                                "type": "string"
+                                            },
+                                            "modType": {
+                                                "anyOf": [
+                                                    {
+                                                        "title": "Mod Type Schema",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "code": {
+                                                                "type": "string"
+                                                            },
+                                                            "description": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "code",
+                                                            "description"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    },
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
+                                            },
+                                            "emissionStandard": {
+                                                "type": "string"
+                                            },
+                                            "fuelType": {
+                                                "type": "string"
+                                            },
+                                            "modificationTypeUsed": {
+                                                "type": "string"
+                                            },
+                                            "smokeTestKLimitApplied": {
+                                                "type": "string"
+                                            },
+                                            "particulateTrapFitted": {
+                                                "type": "string"
+                                            },
+                                            "particulateTrapSerialNumber": {
+                                                "type": "string"
+                                            },
+                                            "defects": {
+                                                "type": [
+                                                    "array"
+                                                ],
+                                                "items": {
+                                                    "title": "Defect Details Schema",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "imNumber": {
+                                                            "type": "integer"
+                                                        },
+                                                        "imDescription": {
+                                                            "type": "string"
+                                                        },
+                                                        "additionalInformation": {
+                                                            "properties": {
+                                                                "location": {
+                                                                    "title": "Defect Location Schema",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "vertical": {
+                                                                            "type": [
+                                                                                "string",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "horizontal": {
+                                                                            "type": [
+                                                                                "string",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "lateral": {
+                                                                            "type": [
+                                                                                "string",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "longitudinal": {
+                                                                            "type": [
+                                                                                "string",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "rowNumber": {
+                                                                            "type": [
+                                                                                "integer",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "seatNumber": {
+                                                                            "type": [
+                                                                                "integer",
+                                                                                "null"
+                                                                            ]
+                                                                        },
+                                                                        "axleNumber": {
+                                                                            "type": [
+                                                                                "integer",
+                                                                                "null"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "additionalProperties": false
+                                                                },
+                                                                "notes": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "additionalProperties": false,
+                                                            "required": [
+                                                                "location",
+                                                                "notes"
+                                                            ]
+                                                        },
+                                                        "itemNumber": {
+                                                            "type": "integer"
+                                                        },
+                                                        "itemDescription": {
+                                                            "type": "string"
+                                                        },
+                                                        "deficiencyRef": {
+                                                            "type": "string"
+                                                        },
+                                                        "deficiencyId": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "deficiencySubId": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "deficiencyCategory": {
+                                                            "type": "string"
+                                                        },
+                                                        "deficiencyText": {
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "stdForProhibition": {
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "prs": {
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "prohibitionIssued": {
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
+                                                        },
+                                                        "metadata": {
+                                                            "title": "Defect Metadata Schema",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "category": {
+                                                                    "properties": {
+                                                                        "additionalInfo": {
+                                                                            "title": "Defect Additional Details Metadata Schema",
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                                "location": {
+                                                                                    "title": "Defect Location Metadata Schema",
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                        "vertical": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "string"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "horizontal": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "string"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "lateral": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "string"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "longitudinal": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "string"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "rowNumber": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "number"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "seatNumber": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "integer"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        "axleNumber": {
+                                                                                            "anyOf": [
+                                                                                                {
+                                                                                                    "type": "array",
+                                                                                                    "items": {
+                                                                                                        "type": "number"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "null"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    },
+                                                                                    "additionalProperties": false
+                                                                                },
+                                                                                "notes": {
+                                                                                    "type": "boolean"
+                                                                                }
+                                                                            },
+                                                                            "additionalProperties": false,
+                                                                            "required": [
+                                                                                "location",
+                                                                                "notes"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "additionalProperties": false
+                                                                }
+                                                            },
+                                                            "additionalProperties": false,
+                                                            "required": [
+                                                                "category"
+                                                            ]
+                                                        }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                        "imNumber",
+                                                        "imDescription",
+                                                        "additionalInformation",
+                                                        "itemNumber",
+                                                        "itemDescription",
+                                                        "deficiencyRef",
+                                                        "deficiencyId",
+                                                        "deficiencySubId",
+                                                        "deficiencyCategory",
+                                                        "deficiencyText",
+                                                        "stdForProhibition",
+                                                        "prs",
+                                                        "prohibitionIssued",
+                                                        "metadata"
+                                                    ]
+                                                }
+                                            },
+                                            "customDefects": {
+                                                "type": [
+                                                    "array"
+                                                ],
+                                                "items": {
+                                                    "title": "Specialist Custom Defects Schema",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "referenceNumber": {
+                                                            "type": "string"
+                                                        },
+                                                        "defectName": {
+                                                            "type": "string"
+                                                        },
+                                                        "defectNotes": {
+                                                            "type": "string"
+                                                        },
+                                                        "hasAllMandatoryFields": {
+                                                            "type": "boolean",
+                                                            "description": "FE only"
+                                                        }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                        "referenceNumber",
+                                                        "defectName",
+                                                        "defectNotes"
+                                                    ]
+                                                }
+                                            },
+                                            "completionStatus": {
+                                                "type": "string"
+                                            },
+                                            "testTypeCategoryName": {
+                                                "type": "string"
+                                            },
+                                            "reasons": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "testNumber": {
+                                                "type": "string"
+                                            },
+                                            "linkedIds": {
+                                                "anyOf": [
+                                                    {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "testTypeName",
+                                            "name",
+                                            "testTypeId",
+                                            "certificateNumber",
+                                            "secondaryCertificateNumber",
+                                            "testTypeStartTimestamp",
+                                            "testTypeEndTimestamp",
+                                            "testResult",
+                                            "prohibitionIssued",
+                                            "reasonForAbandoning",
+                                            "additionalNotesRecorded",
+                                            "additionalCommentsForAbandon",
+                                            "defects"
+                                        ],
+                                        "additionalProperties": false
+                                    }
+                                },
+                                "trailerId": {
+                                    "description": "trailer only",
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "systemNumber",
+                                "vrm",
+                                "vin",
+                                "techRecord"
+                            ]
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "startTime",
+                    "endTime",
+                    "status",
+                    "reasonForCancellation",
+                    "vehicles"
+                ]
+            }
+        },
+        "id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "startTime",
+        "endTime",
+        "testStationName",
+        "testStationPNumber",
+        "testStationEmail",
+        "testStationType",
+        "testerName",
+        "testerId",
+        "testerEmail",
+        "tests"
+    ]
+}

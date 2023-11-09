@@ -1,0 +1,87 @@
+{
+    "title": "Tech Record Search Schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "systemNumber",
+        "createdTimestamp",
+        "vin",
+        "techRecord_vehicleType",
+        "techRecord_manufactureYear",
+        "techRecord_statusCode"
+    ],
+    "properties": {
+        "primaryVrm": {
+            "type": "string"
+        },
+        "vin": {
+            "type": "string"
+        },
+        "techRecord_statusCode": {
+            "title": "Status Code",
+            "type": "string",
+            "enum": [
+                "provisional",
+                "current",
+                "archived"
+            ]
+        },
+        "techRecord_vehicleType": {
+            "title": "Vehicle Type",
+            "type": "string",
+            "enum": [
+                "psv",
+                "trl",
+                "hgv",
+                "car",
+                "lgv",
+                "motorcycle"
+            ]
+        },
+        "createdTimestamp": {
+            "type": "string"
+        },
+        "trailerId": {
+            "type": "string"
+        },
+        "systemNumber": {
+            "type": "string"
+        },
+        "techRecord_chassisMake": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_chassisModel": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_make": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_model": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "techRecord_manufactureYear": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "techRecord_reasonForCreation": {
+            "type": "string"
+        },
+        "techRecord_createdByName": {
+            "type": "string"
+        }
+    }
+}
