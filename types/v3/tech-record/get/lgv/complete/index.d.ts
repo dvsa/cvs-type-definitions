@@ -5,6 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type TC2Types = "initial";
+export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
@@ -17,6 +19,47 @@ export interface TechRecordGETLGVComplete {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
+  techRecord_adrDetails_dangerousGoods?: boolean | null;
+  techRecord_adrDetails_vehicleDetails_type?: string | null;
+  techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
+  techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
+  techRecord_adrDetails_compatibilityGroupJ?: boolean | null;
+  techRecord_adrDetails_additionalExaminerNotes?: string | null;
+  techRecord_adrDetails_applicantDetails_name?: string | null;
+  techRecord_adrDetails_applicantDetails_street?: string | null;
+  techRecord_adrDetails_applicantDetails_town?: string | null;
+  techRecord_adrDetails_applicantDetails_city?: string | null;
+  techRecord_adrDetails_applicantDetails_postcode?: string | null;
+  techRecord_adrDetails_memosApply?: string[] | null;
+  techRecord_adrDetails_documents?: string[] | null;
+  techRecord_adrDetails_listStatementApplicable?: boolean | null;
+  techRecord_adrDetails_batteryListNumber?: string | null;
+  techRecord_adrDetails_brakeDeclarationsSeen?: boolean | null;
+  techRecord_adrDetails_brakeDeclarationIssuer?: string | null;
+  techRecord_adrDetails_brakeEndurance?: boolean | null;
+  techRecord_adrDetails_weight?: string | null;
+  techRecord_adrDetails_declarationsSeen?: boolean | null;
+  techRecord_adrDetails_additionalNotes_guidanceNotes?: string[] | null;
+  techRecord_adrDetails_additionalNotes_number?: string[] | null;
+  techRecord_adrDetails_adrTypeApprovalNo?: string | null;
+  techRecord_adrDetails_adrCertificateNotes?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankManufacturer?: string | null;
+  techRecord_adrDetails_tank_tankDetails_yearOfManufacture?: number | null;
+  techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankTypeAppNo?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankCode?: string | null;
+  techRecord_adrDetails_tank_tankDetails_specialProvisions?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type?: null | TC2Types;
+  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type?: null | TC3Types;
+  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_statement?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
   createdTimestamp: string;
   partialVin?: null | string;
   primaryVrm?: null | string;
