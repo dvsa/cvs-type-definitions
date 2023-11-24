@@ -57,9 +57,22 @@
 			}
 		},
 		"techRecord_adrDetails_compatibilityGroupJ": {
-			"type": [
-				"boolean",
-				"null"
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "ADR Compatibility Group J",
+					"type": "string",
+					"tsEnumNames": [
+						"I",
+						"E"
+					],
+					"enum": [
+						"I",
+						"E"
+					]
+				}
 			]
 		},
 		"techRecord_adrDetails_additionalExaminerNotes": {

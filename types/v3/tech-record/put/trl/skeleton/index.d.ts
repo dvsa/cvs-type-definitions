@@ -112,7 +112,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
-  techRecord_adrDetails_compatibilityGroupJ?: boolean | null;
+  techRecord_adrDetails_compatibilityGroupJ?: null | ADRCompatibilityGroupJ;
   techRecord_adrDetails_additionalExaminerNotes?: string | null;
   techRecord_adrDetails_applicantDetails_name?: string | null;
   techRecord_adrDetails_applicantDetails_street?: string | null;
@@ -286,6 +286,10 @@ export enum ApprovalType {
   SMALL_SERIES_NKS = "Small series NKS",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
+}
+export enum ADRCompatibilityGroupJ {
+  I = "I",
+  E = "E"
 }
 export enum EUVehicleCategory {
   M1 = "m1",

@@ -77,9 +77,13 @@
       }
     },
     "techRecord_adrDetails_compatibilityGroupJ": {
-      "type": [
-        "boolean",
-        "null"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/adrCompatibilityGroupJ.enum.json"
+        }
       ]
     },
     "techRecord_adrDetails_additionalExaminerNotes": {
