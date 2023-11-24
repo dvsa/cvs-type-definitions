@@ -1,0 +1,12 @@
+{
+	"title": "ADR Compatibility Group J",
+	"type": "string",
+	"tsEnumNames": [
+		"I",
+		"E"
+	],
+	"enum": [
+		"I",
+		"E"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"title": "ADR Dangerous Good",
+	"type": "string",
+	"tsEnumNames": [
+		"FP",
+		"AT",
+		"HYDROGEN_PEROXIDE",
+		"MEMU",
+		"CARBON_DISULPHIDE",
+		"HYDROGEN",
+		"EXPLOSIVES_TYPE_2",
+		"EXPLOSIVES_TYPE_3"
+	],
+	"enum": [
+		"FP <61 (FL)",
+		"AT",
+		"Class 5.1 Hydrogen Peroxide (OX)",
+		"MEMU",
+		"Carbon Disulphide",
+		"Hydrogen",
+		"Explosives (type 2)",
+		"Explosives (type 3)"
+	]
+}

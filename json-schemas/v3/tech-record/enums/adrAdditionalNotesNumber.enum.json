@@ -1,0 +1,20 @@
+{
+	"title": "ADR Additional Notes Number",
+	"type": "string",
+	"tsEnumNames": [
+		"ONE",
+		"ONE_A",
+		"TWO",
+		"THREE",
+		"V1B",
+		"T1B"
+	],
+	"enum": [
+		"1",
+		"1A",
+		"2",
+		"3",
+		"V1B",
+		"T1B"
+	]
+}
