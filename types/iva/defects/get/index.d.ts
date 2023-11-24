@@ -20,6 +20,9 @@ export interface DefectGETIVA {
     additionalInfo: boolean;
     inspectionTypes: InspectionType[];
   }[];
+  additionalInformation?: {
+    notes?: string;
+  };
 }
 
 export enum EUVehicleCategory {

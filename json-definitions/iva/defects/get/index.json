@@ -73,6 +73,15 @@
           }
         }
       }
+    },
+    "additionalInformation": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "notes" : {
+          "type" : ["string"]
+        }
+      }
     }
   }
 }
