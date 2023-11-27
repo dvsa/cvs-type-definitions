@@ -261,7 +261,7 @@
           "type": "null"
         },
         {
-          "$ref": "../../../enums/tc2Types.ignore.json"
+          "$ref": "../../../enums/tc2Types.json"
         }
       ]
     },
@@ -284,7 +284,7 @@
           "type": "null"
         },
         {
-          "$ref": "../../../enums/tc3Types.ignore.json"
+          "$ref": "../../../enums/tc3Types.json"
         }
       ]
     },

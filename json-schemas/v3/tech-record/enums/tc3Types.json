@@ -1,0 +1,14 @@
+{
+	"title": "TC3 Types",
+	"type": "string",
+	"tsEnumNames": [
+		"INTERMEDIATE",
+		"PERIODIC",
+		"EXCEPTIONAL"
+	],
+	"enum": [
+		"intermediate",
+		"periodic",
+		"exceptional"
+	]
+}

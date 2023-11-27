@@ -260,6 +260,9 @@
 				{
 					"title": "TC2 Types",
 					"type": "string",
+					"tsEnumNames": [
+						"INITIAL"
+					],
 					"enum": [
 						"initial"
 					]
@@ -287,6 +290,11 @@
 				{
 					"title": "TC3 Types",
 					"type": "string",
+					"tsEnumNames": [
+						"INTERMEDIATE",
+						"PERIODIC",
+						"EXCEPTIONAL"
+					],
 					"enum": [
 						"intermediate",
 						"periodic",
