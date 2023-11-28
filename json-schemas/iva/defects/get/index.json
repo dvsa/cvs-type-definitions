@@ -20,25 +20,6 @@
 				"string"
 			]
 		},
-		"vehicleTypes": {
-			"type": "array",
-			"items": {
-				"anyOf": [
-					{
-						"title": "Vehicle Type",
-						"type": "string",
-						"enum": [
-							"psv",
-							"trl",
-							"hgv",
-							"car",
-							"lgv",
-							"motorcycle"
-						]
-					}
-				]
-			}
-		},
 		"euVehicleCategories": {
 			"type": "array",
 			"items": {
@@ -99,8 +80,7 @@
 					"rsNumber",
 					"requiredStandard",
 					"refCalculation",
-					"additionalInfo",
-					"inspectionTypes"
+					"additionalInfo"
 				],
 				"properties": {
 					"rsNumber": {
@@ -138,6 +118,20 @@
 							]
 						}
 					}
+				}
+			}
+		},
+		"additionalInformation": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"notes"
+			],
+			"properties": {
+				"notes": {
+					"type": [
+						"string"
+					]
 				}
 			}
 		}
