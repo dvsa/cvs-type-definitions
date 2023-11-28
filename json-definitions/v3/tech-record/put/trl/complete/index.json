@@ -279,28 +279,41 @@
         "null"
       ]
     },
-    "techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "../../../enums/tc3Types.ignore.json"
-        }
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber": {
+    "techRecord_adrDetails_tank_tankDetails_tc3Details": {
       "type": [
-        "string",
+        "array",
         "null"
       ],
-      "maxLength": 75
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "items": {
+        "type": "object",
+        "title": "TC3 Details",
+        "additionalProperties": false,
+        "properties": {
+          "tc3Type": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "../../../enums/tc3Types.ignore.json"
+              }
+            ]
+          },
+          "tc3Type_tc3PeriodicNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 75
+          },
+          "tc3Type_tc3PeriodicExpiryDate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
     },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
       "type": [
