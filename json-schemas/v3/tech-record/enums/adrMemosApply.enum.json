@@ -1,0 +1,10 @@
+{
+	"title": "ADR Memos Apply",
+	"type": "string",
+	"tsEnumNames": [
+		"THREE_MONTH_EXTENSION"
+	],
+	"enum": [
+		"07/09 3mth leak ext"
+	]
+}
