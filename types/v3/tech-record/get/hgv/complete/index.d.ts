@@ -121,9 +121,7 @@ export interface TechRecordGETHGVComplete {
   techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type?: null | TC2Types;
   techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc3Details_tc3Type?: null | TC3Types;
-  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicNumber?: string | null;
-  techRecord_adrDetails_tank_tankDetails_tc3Type_tc3PeriodicExpiryDate?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tc3Details?: TC3Details[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_statement?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
@@ -211,6 +209,11 @@ export interface TechRecordGETHGVComplete {
   vin: string;
   techRecord_hiddenInVta?: null | boolean;
   techRecord_updateType?: null | string;
+}
+export interface TC3Details {
+  tc3Type?: null | TC3Types;
+  tc3Type_tc3PeriodicNumber?: string | null;
+  tc3Type_tc3PeriodicExpiryDate?: string | null;
 }
 export interface HGVAxles {
   parkingBrakeMrk?: boolean;
