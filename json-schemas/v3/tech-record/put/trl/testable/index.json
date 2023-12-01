@@ -370,14 +370,14 @@
 							}
 						]
 					},
-					"tc3Type_tc3PeriodicNumber": {
+					"tc3PeriodicNumber": {
 						"type": [
 							"string",
 							"null"
 						],
 						"maxLength": 75
 					},
-					"tc3Type_tc3PeriodicExpiryDate": {
+					"tc3PeriodicExpiryDate": {
 						"type": [
 							"string",
 							"null"

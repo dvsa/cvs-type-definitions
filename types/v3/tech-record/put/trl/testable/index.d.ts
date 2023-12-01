@@ -241,8 +241,8 @@ export interface TechRecordPUTTRLTestable {
 }
 export interface TC3Details {
   tc3Type?: null | TC3Types;
-  tc3Type_tc3PeriodicNumber?: string | null;
-  tc3Type_tc3PeriodicExpiryDate?: string | null;
+  tc3PeriodicNumber?: string | null;
+  tc3PeriodicExpiryDate?: string | null;
 }
 export interface TRLPlates {
   plateSerialNumber?: string | null;
