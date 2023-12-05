@@ -326,7 +326,7 @@
                 "type": "null"
               },
               {
-                "$ref": "../../../enums/tc3Types.ignore.json"
+                "$ref": "../../../enums/tc3Types.enum.json"
               }
             ]
           },

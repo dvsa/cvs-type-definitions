@@ -22,6 +22,7 @@ export const schemas = [
   "v3/tech-record/enums/euVehicleCategory.enum.json",
   "v3/tech-record/enums/euVehicleCategoryHgv.enum.json",
   "v3/tech-record/enums/euVehicleCategoryPsv.enum.json",
+  "v3/tech-record/enums/tc3Types.enum.json",
   "v3/tech-record/enums/tyreUseCodeHgv.enum.json",
   "v3/tech-record/enums/tyreUseCodeTrl.enum.json",
   "v3/tech-record/enums/vehicleClassDescription.enum.json",

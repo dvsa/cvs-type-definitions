@@ -1,0 +1,9 @@
+{
+	"title": "TC3 Types",
+	"type": "string",
+	"enum": [
+		"intermediate",
+		"periodic",
+		"exceptional"
+	]
+}
