@@ -6,7 +6,6 @@
  */
 
 export type TC2Types = "initial";
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
@@ -83,6 +82,11 @@ export interface TC3Details {
 export enum ADRCompatibilityGroupJ {
   I = "I",
   E = "E"
+}
+export enum TC3Types {
+  INTERMEDIATE = "intermediate",
+  PERIODIC = "periodic",
+  EXCEPTIONAL = "exceptional"
 }
 export enum EUVehicleCategory {
   M1 = "m1",

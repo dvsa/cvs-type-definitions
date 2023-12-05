@@ -5,4 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
+export enum TC3Types {
+  INTERMEDIATE = "intermediate",
+  PERIODIC = "periodic",
+  EXCEPTIONAL = "exceptional"
+}

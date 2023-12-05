@@ -6,7 +6,6 @@
  */
 
 export type TC2Types = "initial";
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type FrameDescription =
   | "Channel section"
   | "Space frame"
@@ -287,6 +286,11 @@ export interface AxleSpacing {
 export enum ADRCompatibilityGroupJ {
   I = "I",
   E = "E"
+}
+export enum TC3Types {
+  INTERMEDIATE = "intermediate",
+  PERIODIC = "periodic",
+  EXCEPTIONAL = "exceptional"
 }
 export enum ApprovalType {
   NTA = "NTA",

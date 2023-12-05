@@ -6,7 +6,6 @@
  */
 
 export type TC2Types = "initial";
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type FitmentCode = "single" | "double";
 export type FuelPropulsionSystem =
   | "DieselPetrol"
@@ -229,6 +228,11 @@ export interface HGVPlates {
 export enum ADRCompatibilityGroupJ {
   I = "I",
   E = "E"
+}
+export enum TC3Types {
+  INTERMEDIATE = "intermediate",
+  PERIODIC = "periodic",
+  EXCEPTIONAL = "exceptional"
 }
 export enum EUVehicleCategory {
   N1 = "n1",
