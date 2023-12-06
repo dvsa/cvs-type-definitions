@@ -19,35 +19,59 @@
       "type": "string"
     },
     "techRecord_applicantDetails_name": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 150
     },
     "techRecord_applicantDetails_address1": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address2": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postTown": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_address3": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 60
     },
     "techRecord_applicantDetails_postCode": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 12
     },
     "techRecord_applicantDetails_telephoneNumber": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 25
     },
     "techRecord_applicantDetails_emailAddress": {
-      "type": ["null", "string"],
+      "type": [
+        "null",
+        "string"
+      ],
       "maxLength": 255
     },
     "techRecord_adrDetails_dangerousGoods": {
@@ -63,9 +87,14 @@
       ]
     },
     "techRecord_adrDetails_vehicleDetails_approvalDate": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_adrDetails_permittedDangerousGoods": {
@@ -217,7 +246,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 40
     },
     "techRecord_adrDetails_adrCertificateNotes": {
       "type": [
@@ -286,9 +316,14 @@
       "maxLength": 70
     },
     "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_adrDetails_tank_tankDetails_tc3Details": {
@@ -319,9 +354,14 @@
             "maxLength": 75
           },
           "tc3PeriodicExpiryDate": {
-            "type": [
-              "string",
-              "null"
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              {
+                "type": "null"
+              }
             ]
           }
         }
@@ -384,10 +424,16 @@
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_regnDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "techRecord_manufactureYear": {
-      "type": ["integer", "null"]
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "techRecord_noOfAxles": {
       "type": "integer"
