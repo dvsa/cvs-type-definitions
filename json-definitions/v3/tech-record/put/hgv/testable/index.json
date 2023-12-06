@@ -38,9 +38,14 @@
       ]
     },
     "techRecord_adrDetails_vehicleDetails_approvalDate": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_adrDetails_permittedDangerousGoods": {
@@ -192,7 +197,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 40
     },
     "techRecord_adrDetails_adrCertificateNotes": {
       "type": [
@@ -261,9 +267,14 @@
       "maxLength": 70
     },
     "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "techRecord_adrDetails_tank_tankDetails_tc3Details": {
@@ -282,7 +293,7 @@
                 "type": "null"
               },
               {
-                "$ref": "../../../enums/tc3Types.ignore.json"
+                "$ref": "../../../enums/tc3Types.enum.json"
               }
             ]
           },
@@ -294,9 +305,14 @@
             "maxLength": 75
           },
           "tc3PeriodicExpiryDate": {
-            "type": [
-              "string",
-              "null"
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              {
+                "type": "null"
+              }
             ]
           }
         }

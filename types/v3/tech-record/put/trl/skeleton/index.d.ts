@@ -6,7 +6,6 @@
  */
 
 export type TC2Types = "initial";
-export type TC3Types = "intermediate" | "periodic" | "exceptional";
 export type FrameDescription =
   | "Channel section"
   | "Space frame"
@@ -293,6 +292,11 @@ export enum ApprovalType {
 export enum ADRCompatibilityGroupJ {
   I = "I",
   E = "E"
+}
+export enum TC3Types {
+  INTERMEDIATE = "intermediate",
+  PERIODIC = "periodic",
+  EXCEPTIONAL = "exceptional"
 }
 export enum EUVehicleCategory {
   M1 = "m1",
