@@ -1,0 +1,12 @@
+{
+    "title": "ADR Tank Statement Substance Permitted",
+    "type": "string",
+    "tsEnumNames": [
+        "UNDER_TANK_CODE",
+        "UNDER_UN_NUMBER"
+    ],
+    "enum": [
+        "Substances permitted under the tank code and any special provisions specified in 9 may be carried",
+        "Substances (Class UN number and if necessary packing group and proper shipping name) may be carried"
+    ]
+  }
