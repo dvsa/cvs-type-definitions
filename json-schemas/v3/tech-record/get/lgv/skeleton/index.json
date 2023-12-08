@@ -392,6 +392,25 @@
 				"null"
 			]
 		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_select": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "ADR Tank Details Tank Statement Select",
+					"type": "string",
+					"tsEnumNames": [
+						"STATEMENT",
+						"PRODUCT_LIST"
+					],
+					"enum": [
+						"Statement",
+						"Product list"
+					]
+				}
+			]
+		},
 		"techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
 			"type": [
 				"string",

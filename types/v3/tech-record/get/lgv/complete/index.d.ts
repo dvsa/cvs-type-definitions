@@ -53,6 +53,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate?: string | null;
   techRecord_adrDetails_tank_tankDetails_tc3Details?: TC3Details[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted?: string | null;
+  techRecord_adrDetails_tank_tankDetails_tankStatement_select?: null | ADRTankDetailsTankStatementSelect;
   techRecord_adrDetails_tank_tankDetails_tankStatement_statement?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
@@ -97,6 +98,10 @@ export enum TC3Types {
   INTERMEDIATE = "intermediate",
   PERIODIC = "periodic",
   EXCEPTIONAL = "exceptional"
+}
+export enum ADRTankDetailsTankStatementSelect {
+  STATEMENT = "Statement",
+  PRODUCT_LIST = "Product list"
 }
 export enum EUVehicleCategory {
   M1 = "m1",
