@@ -352,6 +352,16 @@
         "null"
       ]
     },
+    "techRecord_adrDetails_tank_tankDetails_tankStatement_select": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/adrTankDetailsTankStatementSelect.enum.json"
+        }
+      ]
+    },
     "techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
       "type": [
         "string",
