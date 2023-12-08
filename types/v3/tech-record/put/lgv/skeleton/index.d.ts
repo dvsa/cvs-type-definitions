@@ -25,7 +25,7 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
   techRecord_adrDetails_compatibilityGroupJ?: null | ADRCompatibilityGroupJ;
-  techRecord_adrDetails_additionalExaminerNotes?: string | null;
+  techRecord_adrDetails_additionalExaminerNotes?: AdditionalExaminerNotes[] | null;
   techRecord_adrDetails_applicantDetails_name?: string | null;
   techRecord_adrDetails_applicantDetails_street?: string | null;
   techRecord_adrDetails_applicantDetails_town?: string | null;
@@ -73,6 +73,11 @@ export interface TechRecordPUTLGVSkeleton {
   secondaryVrms?: string[];
   techRecord_vehicleSubclass?: VehicleSubclass;
   techRecord_vehicleConfiguration?: null | VehicleConfiguration;
+}
+export interface AdditionalExaminerNotes {
+  note?: string | null;
+  createdAtDate?: string | null;
+  lastUpdatedBy?: string | null;
 }
 export interface TC3Details {
   tc3Type?: null | TC3Types;
