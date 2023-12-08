@@ -91,10 +91,39 @@
 		},
 		"techRecord_adrDetails_additionalExaminerNotes": {
 			"type": [
-				"string",
+				"array",
 				"null"
 			],
-			"maxLength": 1024
+			"items": {
+				"title": "Additional Examiner Notes",
+				"additionalProperties": false,
+				"properties": {
+					"note": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 1024
+					},
+					"createdAtDate": {
+						"anyOf": [
+							{
+								"type": "string",
+								"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"lastUpdatedBy": {
+						"type": [
+							"string",
+							"null"
+						]
+					}
+				}
+			}
 		},
 		"techRecord_adrDetails_applicantDetails_name": {
 			"type": [
