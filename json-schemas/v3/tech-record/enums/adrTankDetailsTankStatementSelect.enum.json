@@ -1,0 +1,12 @@
+{
+	"title": "ADR Tank Details Tank Statement Select",
+	"type": "string",
+	"tsEnumNames": [
+		"STATEMENT",
+		"PRODUCT_LIST"
+	],
+	"enum": [
+		"Statement",
+		"Product list"
+	]
+}
