@@ -1146,5 +1146,96 @@
         }
       }
     }
+  },
+  "if": {
+    "properties": {
+      "techRecord_adrDetails_dangerousGoods": {
+        "const": true
+      }
+    },
+    "required": [
+      "techRecord_adrDetails_dangerousGoods"
+    ]
+  },
+  "then": {
+    "required": [
+      "techRecord_adrDetails_vehicleDetails_type",
+      "techRecord_adrDetails_vehicleDetails_approvalDate",
+      "techRecord_adrDetails_permittedDangerousGoods",
+      "techRecord_adrDetails_additionalNotes_number"
+    ],
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "techRecord_adrDetails_permittedDangerousGoods": {
+              "type": "array",
+                "contains": {
+                  "type": "string",
+                  "pattern": "^Explosives \\(type \\d\\)$"
+                }
+            }
+          },
+          "required": ["techRecord_adrDetails_permittedDangerousGoods"]
+        },
+        "then": {
+          "required": [
+            "techRecord_adrDetails_compatibilityGroupJ"
+          ]
+        }
+      },
+      {
+        "if" : {
+          "properties": {
+            "techRecord_adrDetails_vehicleDetails_type": {
+              "enum": ["Rigid tank","Rigid battery","Full drawbar tank",
+               "Full drawbar battery", "Centre axle tank" ,"Centre axle battery",
+               "Semi trailer tank","Semi trailer battery"]
+            }
+          },
+          "required": ["techRecord_adrDetails_vehicleDetails_type"]
+        },
+        "then" : {
+          "required": [
+            "techRecord_adrDetails_tank_tankDetails_tankManufacturer",
+            "techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
+            "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo",
+            "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo",
+            "techRecord_adrDetails_tank_tankDetails_tankCode",
+            "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "techRecord_adrDetails_listStatementApplicable": {
+              "const": true
+            }
+          },
+          "required": [
+            "techRecord_adrDetails_listStatementApplicable"
+          ]
+        },
+        "then": {
+          "required":["techRecord_adrDetails_batteryListNumber"]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "techRecord_adrDetails_brakeEndurance": {
+              "const": true
+            }
+          },
+          "required": [
+            "techRecord_adrDetails_brakeEndurance"
+          ]
+        },
+        "then": {
+          "required": ["techRecord_adrDetails_weight"]
+        }
+      }
+    ]
   }
 }
