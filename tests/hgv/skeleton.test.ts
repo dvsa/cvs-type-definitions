@@ -2,7 +2,7 @@ import { isValidObject } from "../../schema-validator";
 import * as hgvData from "../resources/data/hgvSkeleton.json";
 
 const schemaName = "v3/tech-record/get/hgv/skeleton/index.json";
-
+const schemaNamePut = "v3/tech-record/put/hgv/skeleton/index.json"
 describe("validate skeleton hgv schema", () => {
   it("should validate when given full data for complete", () => {
     const data = hgvData[0];
@@ -39,7 +39,7 @@ describe("validate ADR hgv schema", () => {
   });
   it("should pass if adr fields are missing when adr is No", () => {
     const data = hgvData[5];
-    (data as any).techRecord_adrDetails_dangerousGoods = false;
+    data.techRecord_adrDetails_dangerousGoods = false;
     const res = isValidObject(schemaName, data);
     expect(res).toEqual(true);
   });
@@ -87,7 +87,6 @@ describe("validate ADR hgv schema", () => {
     const res = isValidObject(schemaName, data);
     expect(res).toEqual(true);
   });
-
   it("should fail if techRecord_adrDetails_brakeEndurance is true but weight is missing", () => {
     const data = hgvData[7];
     (data as any).techRecord_adrDetails_brakeEndurance = true;
@@ -99,6 +98,17 @@ describe("validate ADR hgv schema", () => {
     (data as any).techRecord_adrDetails_brakeEndurance = true;
     (data as any).techRecord_adrDetails_weight = "123";
     const res = isValidObject(schemaName, data);
+    expect(res).toEqual(true);
+  });
+  it("should fail if adr fields are missing when adr is Yes in put schema", () => {
+    const data = hgvData[8];
+    const res = isValidObject(schemaNamePut, data);
+    expect(res).toEqual(false);
+  });
+  it("should pass if adr fields are missing when adr is No in put schema", () => {
+    const data = hgvData[8];
+    data.techRecord_adrDetails_dangerousGoods = false;
+    const res = isValidObject(schemaNamePut, data);
     expect(res).toEqual(true);
   });
 });
