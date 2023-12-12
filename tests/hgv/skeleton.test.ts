@@ -101,12 +101,13 @@ describe("validate ADR hgv schema", () => {
     expect(res).toEqual(true);
   });
   it("should fail if adr fields are missing when adr is Yes in put schema", () => {
-    const data = hgvData[8];
+    const data = hgvData[5];
+    data.techRecord_adrDetails_dangerousGoods = true;
     const res = isValidObject(schemaNamePut, data);
     expect(res).toEqual(false);
   });
   it("should pass if adr fields are missing when adr is No in put schema", () => {
-    const data = hgvData[8];
+    const data = hgvData[5];
     data.techRecord_adrDetails_dangerousGoods = false;
     const res = isValidObject(schemaNamePut, data);
     expect(res).toEqual(true);
