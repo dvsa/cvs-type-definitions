@@ -91,6 +91,12 @@
         }
       ]
     },
+    "techRecord_adrDetails_additionalExaminerNotes_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "techRecord_adrDetails_additionalExaminerNotes": {
       "type": [
         "array",

@@ -112,6 +112,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
   techRecord_adrDetails_compatibilityGroupJ?: null | ADRCompatibilityGroupJ;
+  techRecord_adrDetails_additionalExaminerNotes_note?: string | null;
   techRecord_adrDetails_additionalExaminerNotes?: AdditionalExaminerNotes[] | null;
   techRecord_adrDetails_applicantDetails_name?: string | null;
   techRecord_adrDetails_applicantDetails_street?: string | null;
