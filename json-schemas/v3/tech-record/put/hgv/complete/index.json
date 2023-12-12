@@ -114,6 +114,7 @@
 			"items": {
 				"title": "Additional Examiner Notes",
 				"additionalProperties": false,
+				"type": "object",
 				"properties": {
 					"note": {
 						"type": [
