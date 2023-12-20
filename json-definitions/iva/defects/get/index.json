@@ -1,12 +1,11 @@
 {
-  "title": "Defect GET IVA",
+  "title": "Section IVA",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "sectionNumber",
     "sectionDescription",
     "vehicleTypes",
-    "euVehicleCategories",
     "requiredStandards"
   ],
   "properties": {
@@ -15,16 +14,6 @@
     },
     "sectionDescription": {
       "type": ["string"]
-    },
-    "euVehicleCategories": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "../../../v3/tech-record/enums/euVehicleCategory.enum.json"
-          }
-        ]
-      }
     },
     "requiredStandards": {
       "type": "array",
@@ -35,7 +24,8 @@
           "rsNumber",
           "requiredStandard",
           "refCalculation",
-          "additionalInfo"
+          "additionalInfo",
+          "inspectionTypes"
         ],
         "properties": {
           "rsNumber": {
