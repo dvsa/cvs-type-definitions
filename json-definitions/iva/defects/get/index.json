@@ -18,6 +18,7 @@
     "requiredStandards": {
       "type": "array",
       "items": {
+        "title": "Required Standard",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -45,7 +46,7 @@
             "items": {
               "anyOf": [
                 {
-                  "$ref": "../enums/inspectionType.ignore.json"
+                  "$ref": "../enums/inspectionType.enum.json"
                 }
               ]
             }

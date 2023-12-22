@@ -10,14 +10,15 @@ export type InspectionType = "basic" | "normal";
 export interface SectionIVA {
   sectionNumber: string;
   sectionDescription: string;
-  requiredStandards: {
-    rsNumber: number;
-    requiredStandard: string;
-    refCalculation: string;
-    additionalInfo: boolean;
-    inspectionTypes: InspectionType[];
-  }[];
+  requiredStandards: RequiredStandard[];
   additionalInformation?: {
     notes: string;
   };
+}
+export interface RequiredStandard {
+  rsNumber: number;
+  requiredStandard: string;
+  refCalculation: string;
+  additionalInfo: boolean;
+  inspectionTypes: InspectionType[];
 }
