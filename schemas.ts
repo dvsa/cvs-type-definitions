@@ -1,5 +1,6 @@
 export const schemas = [
   "iva/defects/enums/euVehicleCategory.enum.json",
+  "iva/defects/enums/inspectionType.enum.json",
   "iva/defects/get/index.json",
   "v1/activity/index.json",
   "v1/defect-category-reference-data/index.json",
