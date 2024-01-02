@@ -1,88 +1,176 @@
 {
-	"title": "Section IVA",
+	"title": "DefectGETIVA",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"sectionNumber",
-		"sectionDescription",
-		"vehicleTypes",
-		"requiredStandards"
+		"euVehicleCategory",
+		"basic",
+		"normal"
 	],
 	"properties": {
-		"sectionNumber": {
-			"type": [
-				"string"
-			]
+		"euVehicleCategory": {
+			"type": "string"
 		},
-		"sectionDescription": {
-			"type": [
-				"string"
-			]
-		},
-		"requiredStandards": {
+		"basic": {
 			"type": "array",
 			"items": {
-				"title": "Required Standard",
-				"type": "object",
-				"additionalProperties": false,
-				"required": [
-					"rsNumber",
-					"requiredStandard",
-					"refCalculation",
-					"additionalInfo",
-					"inspectionTypes"
-				],
-				"properties": {
-					"rsNumber": {
-						"type": [
-							"integer"
-						]
-					},
-					"requiredStandard": {
-						"type": [
-							"string"
-						]
-					},
-					"refCalculation": {
-						"type": [
-							"string"
-						]
-					},
-					"additionalInfo": {
-						"type": [
-							"boolean"
-						]
-					},
-					"inspectionTypes": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"title": "Inspection Type",
-									"type": "string",
-									"enum": [
-										"basic",
-										"normal"
-									]
+				"anyOf": [
+					{
+						"title": "SectionIVA",
+						"type": "object",
+						"additionalProperties": false,
+						"required": [
+							"sectionNumber",
+							"sectionDescription",
+							"requiredStandards"
+						],
+						"properties": {
+							"sectionNumber": {
+								"type": [
+									"string"
+								]
+							},
+							"sectionDescription": {
+								"type": [
+									"string"
+								]
+							},
+							"requiredStandards": {
+								"type": "array",
+								"items": {
+									"title": "Required Standard",
+									"type": "object",
+									"additionalProperties": false,
+									"required": [
+										"rsNumber",
+										"requiredStandard",
+										"refCalculation",
+										"additionalInfo",
+										"inspectionTypes"
+									],
+									"properties": {
+										"rsNumber": {
+											"type": [
+												"integer"
+											]
+										},
+										"requiredStandard": {
+											"type": [
+												"string"
+											]
+										},
+										"refCalculation": {
+											"type": [
+												"string"
+											]
+										},
+										"additionalInfo": {
+											"type": [
+												"boolean"
+											]
+										},
+										"inspectionTypes": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{
+														"title": "Inspection Type",
+														"type": "string",
+														"enum": [
+															"basic",
+															"normal"
+														]
+													}
+												]
+											}
+										}
+									}
 								}
-							]
+							}
 						}
 					}
-				}
+				]
 			}
 		},
-		"additionalInformation": {
-			"type": "object",
-			"additionalProperties": false,
-			"required": [
-				"notes"
-			],
-			"properties": {
-				"notes": {
-					"type": [
-						"string"
-					]
-				}
+		"normal": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"title": "SectionIVA",
+						"type": "object",
+						"additionalProperties": false,
+						"required": [
+							"sectionNumber",
+							"sectionDescription",
+							"requiredStandards"
+						],
+						"properties": {
+							"sectionNumber": {
+								"type": [
+									"string"
+								]
+							},
+							"sectionDescription": {
+								"type": [
+									"string"
+								]
+							},
+							"requiredStandards": {
+								"type": "array",
+								"items": {
+									"title": "Required Standard",
+									"type": "object",
+									"additionalProperties": false,
+									"required": [
+										"rsNumber",
+										"requiredStandard",
+										"refCalculation",
+										"additionalInfo",
+										"inspectionTypes"
+									],
+									"properties": {
+										"rsNumber": {
+											"type": [
+												"integer"
+											]
+										},
+										"requiredStandard": {
+											"type": [
+												"string"
+											]
+										},
+										"refCalculation": {
+											"type": [
+												"string"
+											]
+										},
+										"additionalInfo": {
+											"type": [
+												"boolean"
+											]
+										},
+										"inspectionTypes": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{
+														"title": "Inspection Type",
+														"type": "string",
+														"enum": [
+															"basic",
+															"normal"
+														]
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
 			}
 		}
 	}

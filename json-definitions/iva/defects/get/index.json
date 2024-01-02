@@ -1,68 +1,36 @@
 {
-  "title": "Section IVA",
+  "title": "DefectGETIVA",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "sectionNumber",
-    "sectionDescription",
-    "vehicleTypes",
-    "requiredStandards"
+  "required" : [
+    "euVehicleCategory",
+    "basic",
+    "normal"
   ],
   "properties": {
-    "sectionNumber": {
-      "type": ["string"]
+    "euVehicleCategory": {
+      "type": "string"
     },
-    "sectionDescription": {
-      "type": ["string"]
-    },
-    "requiredStandards": {
+    "basic": {
       "type": "array",
       "items": {
-        "title" : "Required Standard",
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "rsNumber",
-          "requiredStandard",
-          "refCalculation",
-          "additionalInfo",
-          "inspectionTypes"
-        ],
-        "properties": {
-          "rsNumber": {
-            "type": ["integer"]
-          },
-          "requiredStandard": {
-            "type": ["string"]
-          },
-          "refCalculation": {
-            "type": ["string"]
-          },
-          "additionalInfo": {
-            "type": ["boolean"]
-          },
-          "inspectionTypes": {
-            "type": "array",
-            "items": {
-              "anyOf": [
-                {
-                  "$ref": "../enums/inspectionType.ignore.json"
-                }
-              ]
-            }
+        "anyOf": [
+          {
+            "$ref" : "../sectionIVA.json"
           }
-        }
+        ]
       }
     },
-    "additionalInformation": {
-      "type": "object",
-      "additionalProperties" : false,
-      "required" : ["notes"],
-      "properties": {
-        "notes" : {
-          "type" : ["string"]
-        }
+    "normal": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref" : "../sectionIVA.json"
+          }
+        ]
       }
     }
   }
 }
+

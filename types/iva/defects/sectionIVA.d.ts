@@ -7,11 +7,6 @@
 
 export type InspectionType = "basic" | "normal";
 
-export interface DefectGETIVA {
-  euVehicleCategory: string;
-  basic: SectionIVA[];
-  normal: SectionIVA[];
-}
 export interface SectionIVA {
   sectionNumber: string;
   sectionDescription: string;
