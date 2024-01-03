@@ -1,0 +1,69 @@
+{
+  "title": "SectionIVA",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sectionNumber",
+    "sectionDescription",
+    "requiredStandards"
+  ],
+  "properties": {
+    "sectionNumber": {
+      "type": [
+        "string"
+      ]
+    },
+    "sectionDescription": {
+      "type": [
+        "string"
+      ]
+    },
+    "requiredStandards": {
+      "type": "array",
+      "items": {
+        "title": "Required Standard",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rsNumber",
+          "requiredStandard",
+          "refCalculation",
+          "additionalInfo",
+          "inspectionTypes"
+        ],
+        "properties": {
+          "rsNumber": {
+            "type": [
+              "integer"
+            ]
+          },
+          "requiredStandard": {
+            "type": [
+              "string"
+            ]
+          },
+          "refCalculation": {
+            "type": [
+              "string"
+            ]
+          },
+          "additionalInfo": {
+            "type": [
+              "boolean"
+            ]
+          },
+          "inspectionTypes": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "./enums/inspectionType.ignore.json"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

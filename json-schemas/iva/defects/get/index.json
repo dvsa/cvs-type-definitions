@@ -1,87 +1,224 @@
 {
-	"title": "Section IVA",
+	"title": "DefectGETIVA",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"sectionNumber",
-		"sectionDescription",
-		"vehicleTypes",
-		"requiredStandards"
+		"euVehicleCategories",
+		"basic",
+		"normal"
 	],
 	"properties": {
-		"sectionNumber": {
-			"type": [
-				"string"
-			]
-		},
-		"sectionDescription": {
-			"type": [
-				"string"
-			]
-		},
-		"requiredStandards": {
+		"euVehicleCategories": {
 			"type": "array",
 			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"required": [
-					"rsNumber",
-					"requiredStandard",
-					"refCalculation",
-					"additionalInfo",
-					"inspectionTypes"
-				],
-				"properties": {
-					"rsNumber": {
-						"type": [
-							"integer"
+				"anyOf": [
+					{
+						"title": "EU Vehicle Category",
+						"type": "string",
+						"tsEnumNames": [
+							"M1",
+							"M2",
+							"M3",
+							"N1",
+							"N2",
+							"N3",
+							"O1",
+							"O2",
+							"O3",
+							"O4",
+							"L1E_A",
+							"l1E",
+							"L2e",
+							"L3E",
+							"L4E",
+							"L5E",
+							"L6E",
+							"L7E"
+						],
+						"enum": [
+							"m1",
+							"m2",
+							"m3",
+							"n1",
+							"n2",
+							"n3",
+							"o1",
+							"o2",
+							"o3",
+							"o4",
+							"l1e-a",
+							"l1e",
+							"l2e",
+							"l3e",
+							"l4e",
+							"l5e",
+							"l6e",
+							"l7e"
 						]
-					},
-					"requiredStandard": {
-						"type": [
-							"string"
-						]
-					},
-					"refCalculation": {
-						"type": [
-							"string"
-						]
-					},
-					"additionalInfo": {
-						"type": [
-							"boolean"
-						]
-					},
-					"inspectionTypes": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"title": "Inspection Type",
-									"type": "string",
-									"enum": [
-										"basic",
-										"normal"
-									]
-								}
-							]
-						}
 					}
-				}
+				]
 			}
 		},
-		"additionalInformation": {
-			"type": "object",
-			"additionalProperties": false,
-			"required": [
-				"notes"
-			],
-			"properties": {
-				"notes": {
-					"type": [
-						"string"
-					]
-				}
+		"basic": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"title": "SectionIVA",
+						"type": "object",
+						"additionalProperties": false,
+						"required": [
+							"sectionNumber",
+							"sectionDescription",
+							"requiredStandards"
+						],
+						"properties": {
+							"sectionNumber": {
+								"type": [
+									"string"
+								]
+							},
+							"sectionDescription": {
+								"type": [
+									"string"
+								]
+							},
+							"requiredStandards": {
+								"type": "array",
+								"items": {
+									"title": "Required Standard",
+									"type": "object",
+									"additionalProperties": false,
+									"required": [
+										"rsNumber",
+										"requiredStandard",
+										"refCalculation",
+										"additionalInfo",
+										"inspectionTypes"
+									],
+									"properties": {
+										"rsNumber": {
+											"type": [
+												"integer"
+											]
+										},
+										"requiredStandard": {
+											"type": [
+												"string"
+											]
+										},
+										"refCalculation": {
+											"type": [
+												"string"
+											]
+										},
+										"additionalInfo": {
+											"type": [
+												"boolean"
+											]
+										},
+										"inspectionTypes": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{
+														"title": "Inspection Type",
+														"type": "string",
+														"enum": [
+															"basic",
+															"normal"
+														]
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		},
+		"normal": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"title": "SectionIVA",
+						"type": "object",
+						"additionalProperties": false,
+						"required": [
+							"sectionNumber",
+							"sectionDescription",
+							"requiredStandards"
+						],
+						"properties": {
+							"sectionNumber": {
+								"type": [
+									"string"
+								]
+							},
+							"sectionDescription": {
+								"type": [
+									"string"
+								]
+							},
+							"requiredStandards": {
+								"type": "array",
+								"items": {
+									"title": "Required Standard",
+									"type": "object",
+									"additionalProperties": false,
+									"required": [
+										"rsNumber",
+										"requiredStandard",
+										"refCalculation",
+										"additionalInfo",
+										"inspectionTypes"
+									],
+									"properties": {
+										"rsNumber": {
+											"type": [
+												"integer"
+											]
+										},
+										"requiredStandard": {
+											"type": [
+												"string"
+											]
+										},
+										"refCalculation": {
+											"type": [
+												"string"
+											]
+										},
+										"additionalInfo": {
+											"type": [
+												"boolean"
+											]
+										},
+										"inspectionTypes": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{
+														"title": "Inspection Type",
+														"type": "string",
+														"enum": [
+															"basic",
+															"normal"
+														]
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
 			}
 		}
 	}
