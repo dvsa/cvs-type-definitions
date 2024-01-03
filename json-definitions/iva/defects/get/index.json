@@ -3,13 +3,20 @@
   "type": "object",
   "additionalProperties": false,
   "required" : [
-    "euVehicleCategory",
+    "euVehicleCategories",
     "basic",
     "normal"
   ],
   "properties": {
-    "euVehicleCategory": {
-      "type": "string"
+    "euVehicleCategories": {
+      "type": "array",
+      "items": {
+        "anyOf" : [
+          {
+            "$ref": "../enums/euVehicleCategory.enum.json"
+          }
+        ]
+      }
     },
     "basic": {
       "type": "array",
