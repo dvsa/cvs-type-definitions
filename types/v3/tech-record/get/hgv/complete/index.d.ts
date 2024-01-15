@@ -141,6 +141,7 @@ export interface TechRecordGETHGVComplete {
    * @minItems 1
    */
   techRecord_axles: [HGVAxles, ...HGVAxles[]];
+  techRecord_adrPassCertificateDetails?: ADRCertificateDetails[] | null;
   techRecord_bodyType_code: string;
   techRecord_bodyType_description: string;
   techRecord_brakes_dtpNumber: string;
@@ -232,6 +233,12 @@ export interface HGVAxles {
   tyres_fitmentCode: FitmentCode;
   tyres_dataTrAxles?: null | number;
 }
+export interface ADRCertificateDetails {
+  createdByName: string;
+  certificateType: ADRCertificateTypes;
+  generatedTimestamp: string;
+  certificateId: string;
+}
 export interface AxleSpacing {
   axles?: string;
   value?: number | null;
@@ -255,6 +262,10 @@ export enum TC3Types {
 export enum ADRTankDetailsTankStatementSelect {
   STATEMENT = "Statement",
   PRODUCT_LIST = "Product list"
+}
+export enum ADRCertificateTypes {
+  PASS = "PASS",
+  REPLACEMENT = "REPLACEMENT"
 }
 export enum EUVehicleCategory {
   N1 = "n1",
