@@ -126,6 +126,7 @@ export interface TechRecordPUTHGVComplete {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
   techRecord_alterationMarker?: boolean | null;
+  techRecord_adrPassCertificateDetails?: ADRCertificateDetails[] | null;
   techRecord_applicantDetails_name: string;
   techRecord_applicantDetails_address1: string;
   techRecord_applicantDetails_address2: string;
@@ -208,6 +209,12 @@ export interface TC3Details {
   tc3PeriodicNumber?: string | null;
   tc3PeriodicExpiryDate?: string | null;
 }
+export interface ADRCertificateDetails {
+  createdByName: string;
+  certificateType: ADRCertificateTypes;
+  generatedTimestamp: string;
+  certificateId: string;
+}
 export interface HGVAxles {
   parkingBrakeMrk?: boolean;
   axleNumber?: number;
@@ -243,6 +250,10 @@ export enum TC3Types {
 export enum ADRTankDetailsTankStatementSelect {
   STATEMENT = "Statement",
   PRODUCT_LIST = "Product list"
+}
+export enum ADRCertificateTypes {
+  PASS = "PASS",
+  REPLACEMENT = "REPLACEMENT"
 }
 export enum EUVehicleCategory {
   N1 = "n1",

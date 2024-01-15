@@ -393,6 +393,37 @@
       ],
       "maxLength": 1500
     },
+    "techRecord_adrPassCertificateDetails": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "title": "ADR Certificate Details",
+        "required": [
+          "createdByName",
+          "certificateType",
+          "generatedTimestamp",
+          "certificateId"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "createdByName": {
+            "type": "string"
+          },
+          "certificateType":{
+            "$ref": "../../../enums/adrCertificateTypes.enum.json"
+          },
+          "generatedTimestamp": {
+            "type": "string"
+          },
+          "certificateId": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "techRecord_alterationMarker": {
       "type": [
         "boolean",

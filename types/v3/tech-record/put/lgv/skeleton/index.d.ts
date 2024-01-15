@@ -60,6 +60,7 @@ export interface TechRecordPUTLGVSkeleton {
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo?: string[] | null;
   techRecord_adrDetails_tank_tankDetails_tankStatement_productList?: string | null;
+  techRecord_adrPassCertificateDetails?: ADRCertificateDetails[] | null;
   techRecord_euVehicleCategory?: EUVehicleCategory | null;
   techRecord_reasonForCreation: string;
   techRecord_vehicleType: "lgv";
@@ -84,6 +85,12 @@ export interface TC3Details {
   tc3PeriodicNumber?: string | null;
   tc3PeriodicExpiryDate?: string | null;
 }
+export interface ADRCertificateDetails {
+  createdByName: string;
+  certificateType: ADRCertificateTypes;
+  generatedTimestamp: string;
+  certificateId: string;
+}
 
 export enum ADRCompatibilityGroupJ {
   I = "I",
@@ -97,6 +104,10 @@ export enum TC3Types {
 export enum ADRTankDetailsTankStatementSelect {
   STATEMENT = "Statement",
   PRODUCT_LIST = "Product list"
+}
+export enum ADRCertificateTypes {
+  PASS = "PASS",
+  REPLACEMENT = "REPLACEMENT"
 }
 export enum EUVehicleCategory {
   M1 = "m1",
