@@ -96,7 +96,7 @@ describe("validate ADR hgv schema", () => {
   it("should pass if techRecord_adrDetails_brakeEndurance is true and weight is present", () => {
     const data = hgvData[7];
     (data as any).techRecord_adrDetails_brakeEndurance = true;
-    (data as any).techRecord_adrDetails_weight = "123";
+    (data as any).techRecord_adrDetails_weight = 123;
     const res = isValidObject(schemaName, data);
     expect(res).toEqual(true);
   });
