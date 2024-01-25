@@ -213,7 +213,7 @@
         "number",
         "null"
       ],
-      "maximum": 99999999.99
+      "maximum": 99999999
     },
     "techRecord_adrDetails_declarationsSeen": {
       "type": [
