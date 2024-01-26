@@ -36,7 +36,7 @@ export interface TechRecordGETLGVSkeleton {
   techRecord_adrDetails_brakeDeclarationsSeen?: boolean | null;
   techRecord_adrDetails_brakeDeclarationIssuer?: string | null;
   techRecord_adrDetails_brakeEndurance?: boolean | null;
-  techRecord_adrDetails_weight?: string | null;
+  techRecord_adrDetails_weight?: number | null;
   techRecord_adrDetails_declarationsSeen?: boolean | null;
   techRecord_adrDetails_additionalNotes_guidanceNotes?: string[] | null;
   techRecord_adrDetails_additionalNotes_number?: string[] | null;
