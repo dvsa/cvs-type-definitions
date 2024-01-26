@@ -252,10 +252,10 @@
 		},
 		"techRecord_adrDetails_weight": {
 			"type": [
-				"string",
+				"number",
 				"null"
 			],
-			"maxLength": 8
+			"maxLength": 99999999
 		},
 		"techRecord_adrDetails_declarationsSeen": {
 			"type": [
