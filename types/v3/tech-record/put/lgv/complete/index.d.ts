@@ -40,7 +40,8 @@ export interface TechRecordPUTLGVComplete {
   techRecord_adrDetails_brakeEndurance?: boolean | null;
   techRecord_adrDetails_weight?: number | null;
   techRecord_adrDetails_declarationsSeen?: boolean | null;
-  techRecord_adrDetails_additionalNotes_guidanceNotes?: string[] | null;
+  techRecord_adrDetails_m145Statement?: boolean | null;
+  techRecord_adrDetails_newCertificateRequested?: boolean | null;
   techRecord_adrDetails_additionalNotes_number?: string[] | null;
   techRecord_adrDetails_adrTypeApprovalNo?: string | null;
   techRecord_adrDetails_adrCertificateNotes?: string | null;
