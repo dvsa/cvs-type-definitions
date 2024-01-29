@@ -235,14 +235,17 @@
         "null"
       ]
     },
-    "techRecord_adrDetails_additionalNotes_guidanceNotes": {
+    "techRecord_adrDetails_m145Statement": {
       "type": [
-        "array",
+        "boolean",
         "null"
-      ],
-      "items": {
-        "type": "string"
-      }
+      ]
+    },
+    "techRecord_adrDetails_newCertificateRequested": {
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "techRecord_adrDetails_additionalNotes_number": {
       "type": [
