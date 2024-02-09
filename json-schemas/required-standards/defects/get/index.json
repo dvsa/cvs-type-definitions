@@ -1,5 +1,5 @@
 {
-	"title": "DefectGETIVA",
+	"title": "DefectGETRequiredStandards",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -64,7 +64,7 @@
 			"items": {
 				"anyOf": [
 					{
-						"title": "SectionIVA",
+						"title": "RequiredStandardTaxonomySection",
 						"type": "object",
 						"additionalProperties": false,
 						"required": [
@@ -145,7 +145,7 @@
 			"items": {
 				"anyOf": [
 					{
-						"title": "SectionIVA",
+						"title": "RequiredStandardTaxonomySection",
 						"type": "object",
 						"additionalProperties": false,
 						"required": [
