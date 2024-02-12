@@ -1,5 +1,5 @@
 {
-  "title": "SectionIVA",
+  "title": "RequiredStandardTaxonomySection",
   "type": "object",
   "additionalProperties": false,
   "required": [
