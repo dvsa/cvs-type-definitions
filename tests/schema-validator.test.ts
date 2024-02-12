@@ -7,7 +7,7 @@ describe("test schema validation", () => {
     });
 
     it("iva defect should return false when passed and empty object", () => {
-        const res = isValidObject("iva/defects/get/index.json", {});
+        const res = isValidObject("required-standards/defects/get/index.json", {});
         expect(res).toBe(false);
     });
 
