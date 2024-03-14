@@ -73,7 +73,7 @@
       "maxLength": 255
     },
     "techRecord_adrDetails_documentId": {
-			"type": "string"
+			"type": "string" 
 		},
     "techRecord_adrDetails_dangerousGoods": {
       "type": [
