@@ -38,6 +38,9 @@
 				"null"
 			]
 		},
+		"techRecord_adrDetails_documentId": {
+			"type": "string"
+		},
 		"techRecord_adrDetails_dangerousGoods": {
 			"type": [
 				"boolean",
