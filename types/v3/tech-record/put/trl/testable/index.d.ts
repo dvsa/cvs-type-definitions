@@ -107,6 +107,7 @@ export interface TechRecordPUTTRLTestable {
   techRecord_ntaNumber?: null | string;
   techRecord_variantNumber?: null | string;
   techRecord_variantVersionNumber?: null | string;
+  techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;

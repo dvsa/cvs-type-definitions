@@ -18,6 +18,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_applicantDetails_postCode?: null | string;
   techRecord_applicantDetails_telephoneNumber?: null | string;
   techRecord_applicantDetails_emailAddress?: null | string;
+  techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
