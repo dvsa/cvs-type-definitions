@@ -21,6 +21,7 @@ export interface TechRecordGETLGVComplete {
   techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
+  techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys?: null | RadioButtonOptions;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
   techRecord_adrDetails_compatibilityGroupJ?: null | ADRCompatibilityGroupJ;
@@ -104,6 +105,11 @@ export interface ADRCertificateDetails {
   certificateId: string;
 }
 
+export enum RadioButtonOptions {
+  yes = "yes",
+  no = "no",
+  not_applicable = "n/a"
+}
 export enum ADRCompatibilityGroupJ {
   I = "I",
   E = "E"

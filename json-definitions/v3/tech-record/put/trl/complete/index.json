@@ -53,6 +53,16 @@
         "null"
       ]
     },
+    "techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/radioButtonOptions.enum.json"
+        }
+      ]
+    },
     "techRecord_adrDetails_vehicleDetails_approvalDate": {
       "anyOf": [
         {
