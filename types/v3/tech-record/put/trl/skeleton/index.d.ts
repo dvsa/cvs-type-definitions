@@ -110,6 +110,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
+  techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys?: null | RadioButtonOptions;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
   techRecord_adrDetails_compatibilityGroupJ?: null | ADRCompatibilityGroupJ;
@@ -303,6 +304,11 @@ export enum ApprovalType {
   SMALL_SERIES_NKS = "Small series NKS",
   IVA_VCA = "IVA - VCA",
   IVA_DVSA_NI = "IVA - DVSA/NI"
+}
+export enum RadioButtonOptions {
+  yes = "yes",
+  no = "no",
+  not_applicable = "n/a"
 }
 export enum ADRCompatibilityGroupJ {
   I = "I",

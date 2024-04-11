@@ -1,0 +1,14 @@
+{
+  "title": "Radio Button Options",
+  "type": "string",
+  "tsEnumNames": [
+    "yes",
+    "no",
+    "not_applicable"
+  ],
+  "enum": [
+    "yes",
+    "no",
+    "n/a"
+  ]
+}
