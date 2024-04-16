@@ -1011,8 +1011,7 @@
 						"type": [
 							"string",
 							"null"
-						],
-						"maxLength": 12
+						]
 					},
 					"plateIssueDate": {
 						"type": [
