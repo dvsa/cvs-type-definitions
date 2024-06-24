@@ -191,6 +191,7 @@ export interface TechRecordPUTTRLSkeleton {
   techRecord_letterOfAuth_paragraphId?: null | ParagraphIds;
   techRecord_letterOfAuth_letterIssuer?: string | null;
   techRecord_make?: string | null;
+  techRecord_manufactureMonth?: number | null;
   techRecord_manufactureYear?: number | null;
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling?: number | null;
