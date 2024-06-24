@@ -6,6 +6,8 @@ export const schemas = [
   "v1/defect-category-reference-data/index.json",
   "v1/defect-details/index.json",
   "v1/defect-location/index.json",
+  "v1/enums/activityType.enum.json",
+  "v1/enums/testStationType.enum.json",
   "v1/reason-item/index.json",
   "v1/tech-record/index.json",
   "v1/test/index.json",

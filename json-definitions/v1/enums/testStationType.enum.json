@@ -1,0 +1,16 @@
+{
+    "title": "Test Station Type",
+    "type": "string",
+    "tsEnumNames": [
+        "ATF",
+        "GVTS" ,
+        "HQ",
+        "POTF" 
+    ],
+    "enum": [
+        "atf",
+        "gvts",
+        "hq",
+        "potf"
+    ]
+  }
