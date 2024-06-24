@@ -1,0 +1,14 @@
+{
+	"title": "Activity Type",
+	"type": "string",
+	"tsEnumNames": [
+		"VISIT",
+		"WAIT",
+		"UNACCOUNTABLE_TIME"
+	],
+	"enum": [
+		"visit",
+		"time",
+		"unaccountable time"
+	]
+}
