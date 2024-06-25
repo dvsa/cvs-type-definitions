@@ -6,22 +6,49 @@
       "type": "string"
     },
     "testStationName": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 999
     },
     "testStationPNumber": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 20
     },
     "testStationType": {
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "../enums/testStationType.enum.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "testerName": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 60
     },
     "testerStaffId": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 36
     },
     "testerEmailAddress": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 60
     },
     "testStartTimestamp": {
       "type": "string"
@@ -30,22 +57,31 @@
       "type": "string"
     },
     "testStatus": {
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "../enums/testStatus.enum.json"
+        }
+      ]
     },
     "reasonForCancellation": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "systemNumber": {
       "type": "string"
     },
     "vrm": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 9
     },
     "trailerId": {
       "type": "string"
     },
     "vin": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 21
     },
     "vehicleClass": {
       "$ref": "../vehicle-class/index.ignore.json#"
@@ -57,34 +93,61 @@
       }
     },
     "vehicleType": {
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "../../v3/tech-record/enums/vehicleType.ignore.json"
+        }
+      ]
     },
     "vehicleConfiguration": {
       "type": "string"
     },
     "odometerReading": {
-      "type": ["number", "null"]
+      "type": [
+        "number",
+        "null"
+      ]
     },
     "odometerReadingUnits": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "preparerId": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "preparerName": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "euVehicleCategory": {
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "../../v3/tech-record/enums/euVehicleCategory.enum.json"
+        }
+      ]
     },
     "countryOfRegistration": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "noOfAxles": {
-      "type": "integer"
+      "type": "integer",
+      "maximum": 99
     },
     "numberOfWheelsDriven": {
-      "type": "integer"
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "vehicleSize": {
       "type": "string"
@@ -93,16 +156,130 @@
       "type": "integer"
     },
     "regnDate": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "firstUseDate": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "testTypes": {
       "type": "array",
       "items": {
         "$ref": "../test-type/index.json#"
       }
+    },
+    "reasonForCreation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
+    },
+    "createdAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "createdByEmailAddress": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "createdByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "createdById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lastUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lastUpdatedByEmailAddress": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lastUpdatedByName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lastUpdatedById": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shouldEmailCertificate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contingencyTestNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 8,
+      "minLength": 6
+    },
+    "typeOfTest": {
+      "anyOf": [
+        {
+          "$ref": "../enums/typeOfTest.enum.json"
+        }
+      ]
+    },
+    "source": {
+      "anyOf": [
+        {
+          "$ref": "../enums/sources.enum.json"
+        }
+      ]
+    },
+    "make": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "bodyType": {
+      "title": "Body Type Schema",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,

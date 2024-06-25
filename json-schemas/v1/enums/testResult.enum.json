@@ -1,0 +1,16 @@
+{
+	"title": "Test Results",
+	"type": "string",
+	"tsEnumNames": [
+		"PASS",
+		"PRS",
+		"FAIL",
+		"ABANDONED"
+	],
+	"enum": [
+		"pass",
+		"prs",
+		"fail",
+		"abandoned"
+	]
+}
