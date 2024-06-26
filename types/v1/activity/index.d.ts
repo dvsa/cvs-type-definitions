@@ -18,7 +18,7 @@ export interface ActivitySchema {
   testerEmail?: string;
   startTime: string;
   endTime?: string;
-  waitReason?: string[];
+  waitReason?: WaitReason[];
   notes?: string;
   activityDay?: string;
 }
@@ -33,4 +33,11 @@ export enum TestStationType {
   GVTS = "gvts",
   HQ = "hq",
   POTF = "potf"
+}
+export enum WaitReason {
+  WAITING_FOR_VEHICLE = "Waiting for vehicle",
+  BREAK = "Break",
+  ADMIN = "Admin",
+  SITE_ISSUE = "Site issue",
+  OTHER = "Other"
 }

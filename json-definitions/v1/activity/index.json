@@ -41,7 +41,7 @@
     "waitReason": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "../enums/waitReason.enum.json"
       }
     },
     "notes": {
