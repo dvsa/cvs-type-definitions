@@ -37,10 +37,7 @@
       "maxLength": 60
     },
     "testerStaffId": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 36
     },
     "testerEmailAddress": {

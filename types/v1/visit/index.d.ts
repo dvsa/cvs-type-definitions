@@ -248,7 +248,7 @@ export interface TestResultSchema {
   testStationPNumber: string | null;
   testStationType: TestStationTypes | null;
   testerName: string | null;
-  testerStaffId: string | null;
+  testerStaffId: string;
   testerEmailAddress: string | null;
   testStartTimestamp: string;
   testEndTimestamp: string;
