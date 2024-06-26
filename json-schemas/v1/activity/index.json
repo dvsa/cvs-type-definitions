@@ -65,7 +65,22 @@
 		"waitReason": {
 			"type": "array",
 			"items": {
-				"type": "string"
+				"title": "Wait Reason",
+				"type": "string",
+				"tsEnumNames": [
+					"WAITING_FOR_VEHICLE",
+					"BREAK",
+					"ADMIN",
+					"SITE_ISSUE",
+					"OTHER"
+				],
+				"enum": [
+					"Waiting for vehicle",
+					"Break",
+					"Admin",
+					"Site issue",
+					"Other"
+				]
 			}
 		},
 		"notes": {
