@@ -503,7 +503,8 @@
 		},
 		"customDefects": {
 			"type": [
-				"array"
+				"array",
+				"null"
 			],
 			"items": {
 				"title": "Specialist Custom Defects Schema",

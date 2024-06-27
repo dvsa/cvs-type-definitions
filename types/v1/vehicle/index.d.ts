@@ -225,7 +225,7 @@ export interface TestResultSchema {
   testResultId: string;
   testStationName: string | null;
   testStationPNumber: string | null;
-  testStationType: TestStationTypes | null;
+  testStationType: TestStationTypes;
   testerName: string | null;
   testerStaffId: string;
   testerEmailAddress: string | null;
@@ -242,7 +242,7 @@ export interface TestResultSchema {
   vehicleType: VehicleType;
   vehicleConfiguration: string;
   odometerReading?: number | null;
-  odometerReadingUnits?: string | null;
+  odometerReadingUnits?: FuelType | null;
   preparerId: string | null;
   preparerName: string | null;
   euVehicleCategory: EUVehicleCategory;
@@ -254,16 +254,16 @@ export interface TestResultSchema {
   regnDate?: string | null;
   firstUseDate?: string | null;
   testTypes: TestTypeSchema[];
-  reasonForCreation?: string | null;
+  reasonForCreation?: string;
   createdAt?: string | null;
-  createdByEmailAddress?: string | null;
-  createdByName?: string | null;
-  createdById?: string | null;
+  createdByEmailAddress?: string;
+  createdByName?: string;
+  createdById?: string;
   lastUpdatedAt?: string | null;
-  lastUpdatedByEmailAddress?: string | null;
-  lastUpdatedByName?: string | null;
-  lastUpdatedById?: string | null;
-  shouldEmailCertificate?: string | null;
+  lastUpdatedByEmailAddress?: string;
+  lastUpdatedByName?: string;
+  lastUpdatedById?: string;
+  shouldEmailCertificate?: string;
   contingencyTestNumber?: string | null;
   typeOfTest?: TypeOfTest;
   source?: TestSources;
@@ -303,13 +303,13 @@ export interface TestTypeSchema {
     | {
         [k: string]: unknown;
       }
-    | FuelType;
+    | FuelType1;
   modificationTypeUsed?: string | null;
   smokeTestKLimitApplied?: string | null;
   particulateTrapFitted?: string | null;
   particulateTrapSerialNumber?: string | null;
   defects: DefectDetailsSchema[];
-  customDefects?: SpecialistCustomDefectsSchema[];
+  customDefects?: SpecialistCustomDefectsSchema[] | null;
   requiredStandards?: SpecialistCustomDefectsSchema1[];
   testNumber?: string | null;
   reapplicationDate?: string | null;
@@ -385,8 +385,8 @@ export interface SpecialistCustomDefectsSchema1 {
   prs: boolean;
 }
 export interface BodyTypeSchema {
-  code?: string;
-  description?: string;
+  code?: string | null;
+  description?: string | null;
 }
 
 export enum TestStationTypes {
@@ -398,6 +398,10 @@ export enum TestStationTypes {
 export enum TestStatus {
   SUBMITTED = "submitted",
   CANCELLED = "cancelled"
+}
+export enum FuelType {
+  KILOM = "kilometres",
+  MILES = "miles"
 }
 export enum EUVehicleCategory {
   M1 = "m1",
@@ -436,7 +440,7 @@ export enum TestResults1 {
   EUROVI = "Euro VI",
   FULL_ELECTRIC = "Full Electric"
 }
-export enum FuelType {
+export enum FuelType1 {
   DIESEL = "diesel",
   GAS_CNG = "gas-cng",
   GAS_LNG = "gas-lng",

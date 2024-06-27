@@ -23,9 +23,6 @@
       "anyOf": [
         {
           "$ref": "../enums/testStationType.enum.json"
-        },
-        {
-          "type": "null"
         }
       ]
     },
@@ -106,9 +103,13 @@
       ]
     },
     "odometerReadingUnits": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "$ref": "../enums/odometerReadingUnits.enum.json"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "preparerId": {
@@ -171,10 +172,7 @@
       }
     },
     "reasonForCreation": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "maxLength": 100
     },
     "createdAt": {
@@ -184,22 +182,13 @@
       ]
     },
     "createdByEmailAddress": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "createdByName": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "createdById": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "lastUpdatedAt": {
       "type": [
@@ -208,28 +197,16 @@
       ]
     },
     "lastUpdatedByEmailAddress": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "lastUpdatedByName": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "lastUpdatedById": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "shouldEmailCertificate": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": "string"
     },
     "contingencyTestNumber": {
       "type": [
@@ -270,10 +247,16 @@
       "type": "object",
       "properties": {
         "code": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "description": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "additionalProperties": false

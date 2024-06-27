@@ -172,7 +172,8 @@
     },
     "customDefects": {
       "type": [
-        "array"
+        "array",
+        "null"
       ],
       "items": {
         "$ref": "../specialist-custom-defects/index.ignore.json#"

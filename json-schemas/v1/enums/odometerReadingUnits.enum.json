@@ -1,0 +1,12 @@
+{
+	"title": "Fuel Type",
+	"type": "string",
+	"tsEnumNames": [
+		"KILOM",
+		"MILES"
+	],
+	"enum": [
+		"kilometres",
+		"miles"
+	]
+}

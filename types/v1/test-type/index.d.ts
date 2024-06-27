@@ -45,7 +45,7 @@ export interface TestTypeSchema {
   particulateTrapFitted?: string | null;
   particulateTrapSerialNumber?: string | null;
   defects: DefectDetailsSchema[];
-  customDefects?: SpecialistCustomDefectsSchema[];
+  customDefects?: SpecialistCustomDefectsSchema[] | null;
   requiredStandards?: SpecialistCustomDefectsSchema1[];
   testNumber?: string | null;
   reapplicationDate?: string | null;

@@ -718,9 +718,6 @@
 												"hq",
 												"potf"
 											]
-										},
-										{
-											"type": "null"
 										}
 									]
 								},
@@ -833,9 +830,22 @@
 									]
 								},
 								"odometerReadingUnits": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"title": "Fuel Type",
+											"type": "string",
+											"tsEnumNames": [
+												"KILOM",
+												"MILES"
+											],
+											"enum": [
+												"kilometres",
+												"miles"
+											]
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"preparerId": {
@@ -1439,7 +1449,8 @@
 											},
 											"customDefects": {
 												"type": [
-													"array"
+													"array",
+													"null"
 												],
 												"items": {
 													"title": "Specialist Custom Defects Schema",
@@ -1563,10 +1574,7 @@
 									}
 								},
 								"reasonForCreation": {
-									"type": [
-										"string",
-										"null"
-									],
+									"type": "string",
 									"maxLength": 100
 								},
 								"createdAt": {
@@ -1576,22 +1584,13 @@
 									]
 								},
 								"createdByEmailAddress": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"createdByName": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"createdById": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"lastUpdatedAt": {
 									"type": [
@@ -1600,28 +1599,16 @@
 									]
 								},
 								"lastUpdatedByEmailAddress": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"lastUpdatedByName": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"lastUpdatedById": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"shouldEmailCertificate": {
-									"type": [
-										"string",
-										"null"
-									]
+									"type": "string"
 								},
 								"contingencyTestNumber": {
 									"type": [
@@ -1682,10 +1669,16 @@
 									"type": "object",
 									"properties": {
 										"code": {
-											"type": "string"
+											"type": [
+												"string",
+												"null"
+											]
 										},
 										"description": {
-											"type": "string"
+											"type": [
+												"string",
+												"null"
+											]
 										}
 									},
 									"additionalProperties": false
@@ -2244,7 +2237,8 @@
 								},
 								"customDefects": {
 									"type": [
-										"array"
+										"array",
+										"null"
 									],
 									"items": {
 										"title": "Specialist Custom Defects Schema",
