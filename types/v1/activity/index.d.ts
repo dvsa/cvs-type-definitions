@@ -17,7 +17,7 @@ export interface ActivitySchema {
   testerStaffId: string;
   testerEmail?: string;
   startTime: string;
-  endTime?: string;
+  endTime?: null | string;
   waitReason?: WaitReason[];
   notes?: string;
   activityDay?: string;

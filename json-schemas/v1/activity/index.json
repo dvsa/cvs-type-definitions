@@ -60,7 +60,10 @@
 			"type": "string"
 		},
 		"endTime": {
-			"type": "string"
+			"type": [
+				"null",
+				"string"
+			]
 		},
 		"waitReason": {
 			"type": "array",
