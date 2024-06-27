@@ -1,0 +1,12 @@
+{
+    "title": "Test Sources",
+    "type": "string",
+    "tsEnumNames": [
+        "VTM",
+        "VTA"
+    ],
+    "enum": [
+        "vtm",
+        "vta"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Odometer Reading Units",
+    "type": "string",
+    "tsEnumNames": [
+        "KILOMETRES",
+        "MILES"
+    ],
+    "enum": [
+        "kilometres",
+        "miles"
+    ]
+}

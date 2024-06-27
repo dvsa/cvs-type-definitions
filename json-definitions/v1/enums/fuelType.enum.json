@@ -1,0 +1,22 @@
+{
+    "title": "Fuel Type",
+    "type": "string",
+    "tsEnumNames": [
+        "DIESEL",
+        "GAS_CNG",
+        "GAS_LNG",
+        "GAS_LPG",
+        "PETROL",
+        "FUEL_CELL",
+        "FULL_ELECTRIC"
+    ],
+    "enum": [
+        "diesel",
+        "gas-cng",
+        "gas-lng",
+        "gas-lpg",
+        "petrol",
+        "fuel cell",
+        "full electric"
+    ]
+}

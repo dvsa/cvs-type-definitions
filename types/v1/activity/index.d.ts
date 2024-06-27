@@ -6,18 +6,38 @@
  */
 
 export interface ActivitySchema {
-  activityType: string;
+  parentId?: string;
+  id?: string;
+  activityType: ActivityType;
   testStationName: string;
   testStationPNumber: string;
   testStationEmail: string;
-  testStationType: string;
+  testStationType: TestStationTypes;
   testerName: string;
   testerStaffId: string;
   testerEmail?: string;
   startTime: string;
-  endTime?: string;
-  parentId?: string;
-  waitReason?: string[];
+  endTime?: null | string;
+  waitReason?: WaitReason[];
   notes?: string;
-  id?: string;
+  activityDay?: string;
+}
+
+export enum ActivityType {
+  VISIT = "visit",
+  WAIT = "time",
+  UNACCOUNTABLE_TIME = "unaccountable time"
+}
+export enum TestStationTypes {
+  ATF = "atf",
+  GVTS = "gvts",
+  HQ = "hq",
+  POTF = "potf"
+}
+export enum WaitReason {
+  WAITING_FOR_VEHICLE = "Waiting for vehicle",
+  BREAK = "Break",
+  ADMIN = "Admin",
+  SITE_ISSUE = "Site issue",
+  OTHER = "Other"
 }

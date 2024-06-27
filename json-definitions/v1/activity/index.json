@@ -2,8 +2,14 @@
   "title": "Activity Schema",
   "type": "object",
   "properties": {
-    "activityType": {
+    "parentId": {
       "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "activityType": {
+      "$ref": "../enums/activityType.enum.json"
     },
     "testStationName": {
       "type": "string"
@@ -15,7 +21,7 @@
       "type": "string"
     },
     "testStationType": {
-      "type": "string"
+      "$ref": "../enums/testStationType.enum.json"
     },
     "testerName": {
       "type": "string"
@@ -30,24 +36,20 @@
       "type": "string"
     },
     "endTime": {
-      "type": "string"
-    },
-    "parentId": {
-      "type": "string"
+      "type": ["null", "string"]
     },
     "waitReason": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "../enums/waitReason.enum.json"
       }
     },
     "notes": {
       "type": "string"
     },
-    "id": {
+    "activityDay": {
       "type": "string"
     }
-
   },
   "additionalProperties": false,
   "required": [

@@ -3,7 +3,10 @@
   "type": "object",
   "properties": {
     "testTypeName": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "name": {
       "type": "string"
@@ -12,43 +15,91 @@
       "type": "string"
     },
     "certificateNumber": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "secondaryCertificateNumber": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "testTypeStartTimestamp": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "testTypeEndTimestamp": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "testResult": {
-      "type": ["string", "null"]
+      "anyOf": [
+        {
+          "type:": "null"
+        },
+        {
+          "$ref": "../enums/testResult.enum.json"
+        }
+      ]
     },
     "prohibitionIssued": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "reasonForAbandoning": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "additionalNotesRecorded": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500
     },
     "additionalCommentsForAbandon": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500
     },
     "numberOfSeatbeltsFitted": {
-      "type": ["integer", "null"]
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "lastSeatbeltInstallationCheckDate": {
-      "type": ["string", "null"]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "seatbeltInstallationCheckDate": {
-      "type": ["boolean", "null"]
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "testExpiryDate": {
       "type": "string"
+    },
+    "testAnniversaryDate": {
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "modType": {
       "anyOf": [
@@ -64,61 +115,88 @@
       ]
     },
     "emissionStandard": {
-      "type": "string"
+      "anyOf": [
+        {
+          "type:": "null"
+        },
+        {
+          "$ref": "../enums/emissionStandard.enum.json"
+        }
+      ]
     },
     "fuelType": {
-      "type": "string"
+      "anyOf": [
+        {
+          "type:": "null"
+        },
+        {
+          "$ref": "../enums/fuelType.enum.json"
+        }
+      ]
     },
     "modificationTypeUsed": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
     },
     "smokeTestKLimitApplied": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
     },
     "particulateTrapFitted": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
     },
     "particulateTrapSerialNumber": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100
     },
     "defects": {
-      "type": ["array"],
+      "type": [
+        "array"
+      ],
       "items": {
         "$ref": "../defect-details/index.json#"
       }
     },
     "customDefects": {
-      "type": ["array"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "../specialist-custom-defects/index.ignore.json#"
       }
     },
-    "completionStatus": {
-      "type": "string"
-    },
-    "testTypeCategoryName": {
-      "type": "string"
-    },
-    "reasons": {
-      "type": "array",
+    "requiredStandards": {
+      "type": [
+        "array"
+      ],
       "items": {
-        "type": "string"
+        "$ref": "../required-standards/index.ignore.json#"
       }
     },
     "testNumber": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
-    "linkedIds": {
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        {
-          "type": "null"
-        }
+    "reapplicationDate": {
+      "type": [
+        "string",
+        "null"
       ]
     }
   },

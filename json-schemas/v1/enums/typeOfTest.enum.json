@@ -1,0 +1,14 @@
+{
+	"title": "Type of test",
+	"type": "string",
+	"tsEnumNames": [
+		"CONTINGENCY",
+		"DESK_BASED",
+		"COMPLETION"
+	],
+	"enum": [
+		"contingency",
+		"desk-based",
+		"completion"
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"title": "Test Status",
+	"type": "string",
+	"tsEnumNames": [
+		"SUBMITTED",
+		"CANCELLED"
+	],
+	"enum": [
+		"submitted",
+		"cancelled"
+	]
+}

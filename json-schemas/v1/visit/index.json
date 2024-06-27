@@ -721,22 +721,56 @@
 												"type": "string"
 											},
 											"testStationName": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 999
 											},
 											"testStationPNumber": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 20
 											},
 											"testStationType": {
-												"type": "string"
+												"anyOf": [
+													{
+														"title": "Test Station Types",
+														"type": "string",
+														"tsEnumNames": [
+															"ATF",
+															"GVTS",
+															"HQ",
+															"POTF"
+														],
+														"enum": [
+															"atf",
+															"gvts",
+															"hq",
+															"potf"
+														]
+													}
+												]
 											},
 											"testerName": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 60
 											},
 											"testerStaffId": {
-												"type": "string"
+												"type": "string",
+												"maxLength": 36
 											},
 											"testerEmailAddress": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 60
 											},
 											"testStartTimestamp": {
 												"type": "string"
@@ -745,7 +779,20 @@
 												"type": "string"
 											},
 											"testStatus": {
-												"type": "string"
+												"anyOf": [
+													{
+														"title": "Test Status",
+														"type": "string",
+														"tsEnumNames": [
+															"SUBMITTED",
+															"CANCELLED"
+														],
+														"enum": [
+															"submitted",
+															"cancelled"
+														]
+													}
+												]
 											},
 											"reasonForCancellation": {
 												"type": [
@@ -757,13 +804,15 @@
 												"type": "string"
 											},
 											"vrm": {
-												"type": "string"
+												"type": "string",
+												"maxLength": 9
 											},
 											"trailerId": {
 												"type": "string"
 											},
 											"vin": {
-												"type": "string"
+												"type": "string",
+												"maxLength": 21
 											},
 											"vehicleClass": {
 												"title": "Vehicle Class Schema",
@@ -789,7 +838,20 @@
 												}
 											},
 											"vehicleType": {
-												"type": "string"
+												"anyOf": [
+													{
+														"title": "Vehicle Type",
+														"type": "string",
+														"enum": [
+															"psv",
+															"trl",
+															"hgv",
+															"car",
+															"lgv",
+															"motorcycle"
+														]
+													}
+												]
 											},
 											"vehicleConfiguration": {
 												"type": "string"
@@ -801,19 +863,83 @@
 												]
 											},
 											"odometerReadingUnits": {
+												"anyOf": [
+													{
+														"title": "Odometer Reading Units",
+														"type": "string",
+														"tsEnumNames": [
+															"KILOMETRES",
+															"MILES"
+														],
+														"enum": [
+															"kilometres",
+															"miles"
+														]
+													},
+													{
+														"type": "null"
+													}
+												]
+											},
+											"preparerId": {
 												"type": [
 													"string",
 													"null"
 												]
 											},
-											"preparerId": {
-												"type": "string"
-											},
 											"preparerName": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												]
 											},
 											"euVehicleCategory": {
-												"type": "string"
+												"anyOf": [
+													{
+														"title": "EU vehicle category",
+														"type": "string",
+														"tsEnumNames": [
+															"M1",
+															"M2",
+															"M3",
+															"N1",
+															"N2",
+															"N3",
+															"O1",
+															"O2",
+															"O3",
+															"O4",
+															"L1E_A",
+															"l1E",
+															"L2e",
+															"L3E",
+															"L4E",
+															"L5E",
+															"L6E",
+															"L7E"
+														],
+														"enum": [
+															"m1",
+															"m2",
+															"m3",
+															"n1",
+															"n2",
+															"n3",
+															"o1",
+															"o2",
+															"o3",
+															"o4",
+															"l1e-a",
+															"l1e",
+															"l2e",
+															"l3e",
+															"l4e",
+															"l5e",
+															"l6e",
+															"l7e"
+														]
+													}
+												]
 											},
 											"countryOfRegistration": {
 												"type": [
@@ -822,10 +948,14 @@
 												]
 											},
 											"noOfAxles": {
-												"type": "integer"
+												"type": "integer",
+												"maximum": 99
 											},
 											"numberOfWheelsDriven": {
-												"type": "integer"
+												"type": [
+													"integer",
+													"null"
+												]
 											},
 											"vehicleSize": {
 												"type": "string"
@@ -834,10 +964,16 @@
 												"type": "integer"
 											},
 											"regnDate": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												]
 											},
 											"firstUseDate": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												]
 											},
 											"testTypes": {
 												"type": "array",
@@ -846,7 +982,10 @@
 													"type": "object",
 													"properties": {
 														"testTypeName": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															]
 														},
 														"name": {
 															"type": "string"
@@ -879,9 +1018,26 @@
 															]
 														},
 														"testResult": {
-															"type": [
-																"string",
-																"null"
+															"anyOf": [
+																{
+																	"type:": "null"
+																},
+																{
+																	"title": "Test Results",
+																	"type": "string",
+																	"tsEnumNames": [
+																		"PASS",
+																		"PRS",
+																		"FAIL",
+																		"ABANDONED"
+																	],
+																	"enum": [
+																		"pass",
+																		"prs",
+																		"fail",
+																		"abandoned"
+																	]
+																}
 															]
 														},
 														"prohibitionIssued": {
@@ -900,13 +1056,15 @@
 															"type": [
 																"string",
 																"null"
-															]
+															],
+															"maxLength": 500
 														},
 														"additionalCommentsForAbandon": {
 															"type": [
 																"string",
 																"null"
-															]
+															],
+															"maxLength": 500
 														},
 														"numberOfSeatbeltsFitted": {
 															"type": [
@@ -928,6 +1086,12 @@
 														},
 														"testExpiryDate": {
 															"type": "string"
+														},
+														"testAnniversaryDate": {
+															"type": [
+																"string",
+																"null"
+															]
 														},
 														"modType": {
 															"anyOf": [
@@ -957,22 +1121,94 @@
 															]
 														},
 														"emissionStandard": {
-															"type": "string"
+															"anyOf": [
+																{
+																	"type:": "null"
+																},
+																{
+																	"title": "Emission Standards",
+																	"type": "string",
+																	"tsEnumNames": [
+																		"EURO3_PM",
+																		"EURO4_PM",
+																		"EURO3",
+																		"EURO4",
+																		"EURO5",
+																		"EURO6",
+																		"EUROV",
+																		"EUROVI",
+																		"FULL_ELECTRIC"
+																	],
+																	"enum": [
+																		"0.10 g/kWh Euro 3 PM",
+																		"0.03 g/kWh Euro IV PM'",
+																		"Euro 3",
+																		"Euro 4",
+																		"Euro 5",
+																		"Euro 6",
+																		"Euro V",
+																		"Euro VI",
+																		"Full Electric"
+																	]
+																}
+															]
 														},
 														"fuelType": {
-															"type": "string"
+															"anyOf": [
+																{
+																	"type:": "null"
+																},
+																{
+																	"title": "Fuel Type",
+																	"type": "string",
+																	"tsEnumNames": [
+																		"DIESEL",
+																		"GAS_CNG",
+																		"GAS_LNG",
+																		"GAS_LPG",
+																		"PETROL",
+																		"FUEL_CELL",
+																		"FULL_ELECTRIC"
+																	],
+																	"enum": [
+																		"diesel",
+																		"gas-cng",
+																		"gas-lng",
+																		"gas-lpg",
+																		"petrol",
+																		"fuel cell",
+																		"full electric"
+																	]
+																}
+															]
 														},
 														"modificationTypeUsed": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															],
+															"maxLength": 100
 														},
 														"smokeTestKLimitApplied": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															],
+															"maxLength": 100
 														},
 														"particulateTrapFitted": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															],
+															"maxLength": 100
 														},
 														"particulateTrapSerialNumber": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															],
+															"maxLength": 100
 														},
 														"defects": {
 															"type": [
@@ -1246,7 +1482,8 @@
 														},
 														"customDefects": {
 															"type": [
-																"array"
+																"array",
+																"null"
 															],
 															"items": {
 																"title": "Specialist Custom Defects Schema",
@@ -1274,32 +1511,80 @@
 																]
 															}
 														},
-														"completionStatus": {
-															"type": "string"
-														},
-														"testTypeCategoryName": {
-															"type": "string"
-														},
-														"reasons": {
-															"type": "array",
+														"requiredStandards": {
+															"type": [
+																"array"
+															],
 															"items": {
-																"type": "string"
+																"title": "Specialist Custom Defects Schema Put",
+																"type": "object",
+																"properties": {
+																	"sectionNumber": {
+																		"type": "string"
+																	},
+																	"sectionDescription": {
+																		"type": "string"
+																	},
+																	"additionalNotes": {
+																		"type": [
+																			"string",
+																			"null"
+																		]
+																	},
+																	"rsNumber": {
+																		"type": "integer"
+																	},
+																	"requiredStandard": {
+																		"type": "string"
+																	},
+																	"refCalculation": {
+																		"type": "string"
+																	},
+																	"additionalInfo": {
+																		"type": "boolean"
+																	},
+																	"inspectionTypes": {
+																		"type": "array",
+																		"items": {
+																			"anyOf": [
+																				{
+																					"title": "Inspection Type",
+																					"type": "string",
+																					"enum": [
+																						"basic",
+																						"normal"
+																					]
+																				}
+																			]
+																		}
+																	},
+																	"prs": {
+																		"type": "boolean"
+																	}
+																},
+																"additionalProperties": false,
+																"required": [
+																	"sectionNumber",
+																	"sectionDescription",
+																	"rsNumber",
+																	"requiredStandard",
+																	"refCalculation",
+																	"additionalInfo",
+																	"referenceNumber",
+																	"prs"
+																]
 															}
 														},
 														"testNumber": {
-															"type": "string"
+															"type": [
+																"string",
+																"null"
+															]
 														},
-														"linkedIds": {
-															"anyOf": [
-																{
-																	"type": "array",
-																	"items": {
-																		"type": "string"
-																	}
-																},
-																{
-																	"type": "null"
-																}
+														"reapplicationDate": {
+															"type": [
+																"string",
+																"null"
 															]
 														}
 													},
@@ -1320,6 +1605,116 @@
 													],
 													"additionalProperties": false
 												}
+											},
+											"reasonForCreation": {
+												"type": "string",
+												"maxLength": 100
+											},
+											"createdAt": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"createdByEmailAddress": {
+												"type": "string"
+											},
+											"createdByName": {
+												"type": "string"
+											},
+											"createdById": {
+												"type": "string"
+											},
+											"lastUpdatedAt": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"lastUpdatedByEmailAddress": {
+												"type": "string"
+											},
+											"lastUpdatedByName": {
+												"type": "string"
+											},
+											"lastUpdatedById": {
+												"type": "string"
+											},
+											"shouldEmailCertificate": {
+												"type": "string"
+											},
+											"contingencyTestNumber": {
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 8,
+												"minLength": 6
+											},
+											"typeOfTest": {
+												"anyOf": [
+													{
+														"title": "Type of test",
+														"type": "string",
+														"tsEnumNames": [
+															"CONTINGENCY",
+															"DESK_BASED",
+															"COMPLETION"
+														],
+														"enum": [
+															"contingency",
+															"desk-based",
+															"completion"
+														]
+													}
+												]
+											},
+											"source": {
+												"anyOf": [
+													{
+														"title": "Test Sources",
+														"type": "string",
+														"tsEnumNames": [
+															"VTM",
+															"VTA"
+														],
+														"enum": [
+															"vtm",
+															"vta"
+														]
+													}
+												]
+											},
+											"make": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"model": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"bodyType": {
+												"title": "Body Type Schema",
+												"type": "object",
+												"properties": {
+													"code": {
+														"type": [
+															"string",
+															"null"
+														]
+													},
+													"description": {
+														"type": [
+															"string",
+															"null"
+														]
+													}
+												},
+												"additionalProperties": false
 											}
 										},
 										"additionalProperties": false,
@@ -1375,7 +1770,10 @@
 										"type": "object",
 										"properties": {
 											"testTypeName": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												]
 											},
 											"name": {
 												"type": "string"
@@ -1408,9 +1806,26 @@
 												]
 											},
 											"testResult": {
-												"type": [
-													"string",
-													"null"
+												"anyOf": [
+													{
+														"type:": "null"
+													},
+													{
+														"title": "Test Results",
+														"type": "string",
+														"tsEnumNames": [
+															"PASS",
+															"PRS",
+															"FAIL",
+															"ABANDONED"
+														],
+														"enum": [
+															"pass",
+															"prs",
+															"fail",
+															"abandoned"
+														]
+													}
 												]
 											},
 											"prohibitionIssued": {
@@ -1429,13 +1844,15 @@
 												"type": [
 													"string",
 													"null"
-												]
+												],
+												"maxLength": 500
 											},
 											"additionalCommentsForAbandon": {
 												"type": [
 													"string",
 													"null"
-												]
+												],
+												"maxLength": 500
 											},
 											"numberOfSeatbeltsFitted": {
 												"type": [
@@ -1457,6 +1874,12 @@
 											},
 											"testExpiryDate": {
 												"type": "string"
+											},
+											"testAnniversaryDate": {
+												"type": [
+													"string",
+													"null"
+												]
 											},
 											"modType": {
 												"anyOf": [
@@ -1486,22 +1909,94 @@
 												]
 											},
 											"emissionStandard": {
-												"type": "string"
+												"anyOf": [
+													{
+														"type:": "null"
+													},
+													{
+														"title": "Emission Standards",
+														"type": "string",
+														"tsEnumNames": [
+															"EURO3_PM",
+															"EURO4_PM",
+															"EURO3",
+															"EURO4",
+															"EURO5",
+															"EURO6",
+															"EUROV",
+															"EUROVI",
+															"FULL_ELECTRIC"
+														],
+														"enum": [
+															"0.10 g/kWh Euro 3 PM",
+															"0.03 g/kWh Euro IV PM'",
+															"Euro 3",
+															"Euro 4",
+															"Euro 5",
+															"Euro 6",
+															"Euro V",
+															"Euro VI",
+															"Full Electric"
+														]
+													}
+												]
 											},
 											"fuelType": {
-												"type": "string"
+												"anyOf": [
+													{
+														"type:": "null"
+													},
+													{
+														"title": "Fuel Type",
+														"type": "string",
+														"tsEnumNames": [
+															"DIESEL",
+															"GAS_CNG",
+															"GAS_LNG",
+															"GAS_LPG",
+															"PETROL",
+															"FUEL_CELL",
+															"FULL_ELECTRIC"
+														],
+														"enum": [
+															"diesel",
+															"gas-cng",
+															"gas-lng",
+															"gas-lpg",
+															"petrol",
+															"fuel cell",
+															"full electric"
+														]
+													}
+												]
 											},
 											"modificationTypeUsed": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 100
 											},
 											"smokeTestKLimitApplied": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 100
 											},
 											"particulateTrapFitted": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 100
 											},
 											"particulateTrapSerialNumber": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												],
+												"maxLength": 100
 											},
 											"defects": {
 												"type": [
@@ -1775,7 +2270,8 @@
 											},
 											"customDefects": {
 												"type": [
-													"array"
+													"array",
+													"null"
 												],
 												"items": {
 													"title": "Specialist Custom Defects Schema",
@@ -1803,32 +2299,80 @@
 													]
 												}
 											},
-											"completionStatus": {
-												"type": "string"
-											},
-											"testTypeCategoryName": {
-												"type": "string"
-											},
-											"reasons": {
-												"type": "array",
+											"requiredStandards": {
+												"type": [
+													"array"
+												],
 												"items": {
-													"type": "string"
+													"title": "Specialist Custom Defects Schema Put",
+													"type": "object",
+													"properties": {
+														"sectionNumber": {
+															"type": "string"
+														},
+														"sectionDescription": {
+															"type": "string"
+														},
+														"additionalNotes": {
+															"type": [
+																"string",
+																"null"
+															]
+														},
+														"rsNumber": {
+															"type": "integer"
+														},
+														"requiredStandard": {
+															"type": "string"
+														},
+														"refCalculation": {
+															"type": "string"
+														},
+														"additionalInfo": {
+															"type": "boolean"
+														},
+														"inspectionTypes": {
+															"type": "array",
+															"items": {
+																"anyOf": [
+																	{
+																		"title": "Inspection Type",
+																		"type": "string",
+																		"enum": [
+																			"basic",
+																			"normal"
+																		]
+																	}
+																]
+															}
+														},
+														"prs": {
+															"type": "boolean"
+														}
+													},
+													"additionalProperties": false,
+													"required": [
+														"sectionNumber",
+														"sectionDescription",
+														"rsNumber",
+														"requiredStandard",
+														"refCalculation",
+														"additionalInfo",
+														"referenceNumber",
+														"prs"
+													]
 												}
 											},
 											"testNumber": {
-												"type": "string"
+												"type": [
+													"string",
+													"null"
+												]
 											},
-											"linkedIds": {
-												"anyOf": [
-													{
-														"type": "array",
-														"items": {
-															"type": "string"
-														}
-													},
-													{
-														"type": "null"
-													}
+											"reapplicationDate": {
+												"type": [
+													"string",
+													"null"
 												]
 											}
 										},

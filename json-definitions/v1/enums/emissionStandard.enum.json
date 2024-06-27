@@ -1,0 +1,26 @@
+{
+    "title": "Emission Standards",
+    "type": "string",
+    "tsEnumNames": [
+        "EURO3_PM",
+        "EURO4_PM",
+        "EURO3",
+        "EURO4",
+        "EURO5",
+        "EURO6",
+        "EUROV",
+        "EUROVI",
+        "FULL_ELECTRIC"
+    ],
+    "enum": [
+        "0.10 g/kWh Euro 3 PM",
+        "0.03 g/kWh Euro IV PM'",
+        "Euro 3",
+        "Euro 4",
+        "Euro 5",
+        "Euro 6",
+        "Euro V",
+        "Euro VI",
+        "Full Electric"
+    ]
+}

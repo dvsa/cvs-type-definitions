@@ -5,15 +5,21 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type InspectionType = "basic" | "normal";
+
 export interface TestTypeSchema {
-  testTypeName: string;
+  testTypeName: string | null;
   name: string;
   testTypeId: string;
   certificateNumber: string | null;
   secondaryCertificateNumber: string | null;
   testTypeStartTimestamp: string | null;
   testTypeEndTimestamp: string | null;
-  testResult: string | null;
+  testResult:
+    | {
+        [k: string]: unknown;
+      }
+    | TestResults;
   prohibitionIssued: boolean | null;
   reasonForAbandoning: string | null;
   additionalNotesRecorded: string | null;
@@ -22,20 +28,27 @@ export interface TestTypeSchema {
   lastSeatbeltInstallationCheckDate?: string | null;
   seatbeltInstallationCheckDate?: boolean | null;
   testExpiryDate?: string;
+  testAnniversaryDate?: string | null;
   modType?: ModTypeSchema | string | null;
-  emissionStandard?: string;
-  fuelType?: string;
-  modificationTypeUsed?: string;
-  smokeTestKLimitApplied?: string;
-  particulateTrapFitted?: string;
-  particulateTrapSerialNumber?: string;
+  emissionStandard?:
+    | {
+        [k: string]: unknown;
+      }
+    | EmissionStandards;
+  fuelType?:
+    | {
+        [k: string]: unknown;
+      }
+    | FuelType;
+  modificationTypeUsed?: string | null;
+  smokeTestKLimitApplied?: string | null;
+  particulateTrapFitted?: string | null;
+  particulateTrapSerialNumber?: string | null;
   defects: DefectDetailsSchema[];
-  customDefects?: SpecialistCustomDefectsSchema[];
-  completionStatus?: string;
-  testTypeCategoryName?: string;
-  reasons?: string[];
-  testNumber?: string;
-  linkedIds?: string[] | null;
+  customDefects?: SpecialistCustomDefectsSchema[] | null;
+  requiredStandards?: SpecialistCustomDefectsSchemaPut[];
+  testNumber?: string | null;
+  reapplicationDate?: string | null;
 }
 export interface ModTypeSchema {
   code: string;
@@ -95,4 +108,42 @@ export interface SpecialistCustomDefectsSchema {
    * FE only
    */
   hasAllMandatoryFields?: boolean;
+}
+export interface SpecialistCustomDefectsSchemaPut {
+  sectionNumber: string;
+  sectionDescription: string;
+  additionalNotes?: string | null;
+  rsNumber: number;
+  requiredStandard: string;
+  refCalculation: string;
+  additionalInfo: boolean;
+  inspectionTypes?: InspectionType[];
+  prs: boolean;
+}
+
+export enum TestResults {
+  PASS = "pass",
+  PRS = "prs",
+  FAIL = "fail",
+  ABANDONED = "abandoned"
+}
+export enum EmissionStandards {
+  EURO3_PM = "0.10 g/kWh Euro 3 PM",
+  EURO4_PM = "0.03 g/kWh Euro IV PM'",
+  EURO3 = "Euro 3",
+  EURO4 = "Euro 4",
+  EURO5 = "Euro 5",
+  EURO6 = "Euro 6",
+  EUROV = "Euro V",
+  EUROVI = "Euro VI",
+  FULL_ELECTRIC = "Full Electric"
+}
+export enum FuelType {
+  DIESEL = "diesel",
+  GAS_CNG = "gas-cng",
+  GAS_LNG = "gas-lng",
+  GAS_LPG = "gas-lpg",
+  PETROL = "petrol",
+  FUEL_CELL = "fuel cell",
+  FULL_ELECTRIC = "full electric"
 }

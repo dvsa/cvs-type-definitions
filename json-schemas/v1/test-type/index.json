@@ -3,7 +3,10 @@
 	"type": "object",
 	"properties": {
 		"testTypeName": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"name": {
 			"type": "string"
@@ -36,9 +39,26 @@
 			]
 		},
 		"testResult": {
-			"type": [
-				"string",
-				"null"
+			"anyOf": [
+				{
+					"type:": "null"
+				},
+				{
+					"title": "Test Results",
+					"type": "string",
+					"tsEnumNames": [
+						"PASS",
+						"PRS",
+						"FAIL",
+						"ABANDONED"
+					],
+					"enum": [
+						"pass",
+						"prs",
+						"fail",
+						"abandoned"
+					]
+				}
 			]
 		},
 		"prohibitionIssued": {
@@ -57,13 +77,15 @@
 			"type": [
 				"string",
 				"null"
-			]
+			],
+			"maxLength": 500
 		},
 		"additionalCommentsForAbandon": {
 			"type": [
 				"string",
 				"null"
-			]
+			],
+			"maxLength": 500
 		},
 		"numberOfSeatbeltsFitted": {
 			"type": [
@@ -85,6 +107,12 @@
 		},
 		"testExpiryDate": {
 			"type": "string"
+		},
+		"testAnniversaryDate": {
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"modType": {
 			"anyOf": [
@@ -114,22 +142,94 @@
 			]
 		},
 		"emissionStandard": {
-			"type": "string"
+			"anyOf": [
+				{
+					"type:": "null"
+				},
+				{
+					"title": "Emission Standards",
+					"type": "string",
+					"tsEnumNames": [
+						"EURO3_PM",
+						"EURO4_PM",
+						"EURO3",
+						"EURO4",
+						"EURO5",
+						"EURO6",
+						"EUROV",
+						"EUROVI",
+						"FULL_ELECTRIC"
+					],
+					"enum": [
+						"0.10 g/kWh Euro 3 PM",
+						"0.03 g/kWh Euro IV PM'",
+						"Euro 3",
+						"Euro 4",
+						"Euro 5",
+						"Euro 6",
+						"Euro V",
+						"Euro VI",
+						"Full Electric"
+					]
+				}
+			]
 		},
 		"fuelType": {
-			"type": "string"
+			"anyOf": [
+				{
+					"type:": "null"
+				},
+				{
+					"title": "Fuel Type",
+					"type": "string",
+					"tsEnumNames": [
+						"DIESEL",
+						"GAS_CNG",
+						"GAS_LNG",
+						"GAS_LPG",
+						"PETROL",
+						"FUEL_CELL",
+						"FULL_ELECTRIC"
+					],
+					"enum": [
+						"diesel",
+						"gas-cng",
+						"gas-lng",
+						"gas-lpg",
+						"petrol",
+						"fuel cell",
+						"full electric"
+					]
+				}
+			]
 		},
 		"modificationTypeUsed": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
 		},
 		"smokeTestKLimitApplied": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
 		},
 		"particulateTrapFitted": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
 		},
 		"particulateTrapSerialNumber": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
 		},
 		"defects": {
 			"type": [
@@ -403,7 +503,8 @@
 		},
 		"customDefects": {
 			"type": [
-				"array"
+				"array",
+				"null"
 			],
 			"items": {
 				"title": "Specialist Custom Defects Schema",
@@ -431,32 +532,80 @@
 				]
 			}
 		},
-		"completionStatus": {
-			"type": "string"
-		},
-		"testTypeCategoryName": {
-			"type": "string"
-		},
-		"reasons": {
-			"type": "array",
+		"requiredStandards": {
+			"type": [
+				"array"
+			],
 			"items": {
-				"type": "string"
+				"title": "Specialist Custom Defects Schema Put",
+				"type": "object",
+				"properties": {
+					"sectionNumber": {
+						"type": "string"
+					},
+					"sectionDescription": {
+						"type": "string"
+					},
+					"additionalNotes": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"rsNumber": {
+						"type": "integer"
+					},
+					"requiredStandard": {
+						"type": "string"
+					},
+					"refCalculation": {
+						"type": "string"
+					},
+					"additionalInfo": {
+						"type": "boolean"
+					},
+					"inspectionTypes": {
+						"type": "array",
+						"items": {
+							"anyOf": [
+								{
+									"title": "Inspection Type",
+									"type": "string",
+									"enum": [
+										"basic",
+										"normal"
+									]
+								}
+							]
+						}
+					},
+					"prs": {
+						"type": "boolean"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"sectionNumber",
+					"sectionDescription",
+					"rsNumber",
+					"requiredStandard",
+					"refCalculation",
+					"additionalInfo",
+					"referenceNumber",
+					"prs"
+				]
 			}
 		},
 		"testNumber": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
-		"linkedIds": {
-			"anyOf": [
-				{
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				},
-				{
-					"type": "null"
-				}
+		"reapplicationDate": {
+			"type": [
+				"string",
+				"null"
 			]
 		}
 	},
