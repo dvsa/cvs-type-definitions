@@ -242,7 +242,7 @@ export interface TestResultSchema {
   vehicleType: VehicleType;
   vehicleConfiguration: string;
   odometerReading?: number | null;
-  odometerReadingUnits?: FuelType | null;
+  odometerReadingUnits?: OdometerReadingUnits | null;
   preparerId: string | null;
   preparerName: string | null;
   euVehicleCategory: EUVehicleCategory;
@@ -298,12 +298,12 @@ export interface TestTypeSchema {
     | {
         [k: string]: unknown;
       }
-    | TestResults1;
+    | EmissionStandards;
   fuelType?:
     | {
         [k: string]: unknown;
       }
-    | FuelType1;
+    | FuelType;
   modificationTypeUsed?: string | null;
   smokeTestKLimitApplied?: string | null;
   particulateTrapFitted?: string | null;
@@ -399,8 +399,8 @@ export enum TestStatus {
   SUBMITTED = "submitted",
   CANCELLED = "cancelled"
 }
-export enum FuelType {
-  KILOM = "kilometres",
+export enum OdometerReadingUnits {
+  KILOMETRES = "kilometres",
   MILES = "miles"
 }
 export enum EUVehicleCategory {
@@ -429,7 +429,7 @@ export enum TestResults {
   FAIL = "fail",
   ABANDONED = "abandoned"
 }
-export enum TestResults1 {
+export enum EmissionStandards {
   EURO3_PM = "0.10 g/kWh Euro 3 PM",
   EURO4_PM = "0.03 g/kWh Euro IV PM'",
   EURO3 = "Euro 3",
@@ -440,7 +440,7 @@ export enum TestResults1 {
   EUROVI = "Euro VI",
   FULL_ELECTRIC = "Full Electric"
 }
-export enum FuelType1 {
+export enum FuelType {
   DIESEL = "diesel",
   GAS_CNG = "gas-cng",
   GAS_LNG = "gas-lng",

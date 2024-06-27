@@ -147,7 +147,7 @@
 					"type:": "null"
 				},
 				{
-					"title": "Test Results",
+					"title": "Emission Standards",
 					"type": "string",
 					"tsEnumNames": [
 						"EURO3_PM",

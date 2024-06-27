@@ -1,8 +1,8 @@
 {
-    "title": "Fuel Type",
+    "title": "Odometer Reading Units",
     "type": "string",
     "tsEnumNames": [
-        "KILOM",
+        "KILOMETRES",
         "MILES"
     ],
     "enum": [

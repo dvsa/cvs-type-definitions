@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum FuelType {
-  KILOM = "kilometres",
+export enum OdometerReadingUnits {
+  KILOMETRES = "kilometres",
   MILES = "miles"
 }

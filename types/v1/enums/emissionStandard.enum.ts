@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum TestResults {
+export enum EmissionStandards {
   EURO3_PM = "0.10 g/kWh Euro 3 PM",
   EURO4_PM = "0.03 g/kWh Euro IV PM'",
   EURO3 = "Euro 3",

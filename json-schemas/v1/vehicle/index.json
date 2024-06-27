@@ -804,10 +804,10 @@
 					"odometerReadingUnits": {
 						"anyOf": [
 							{
-								"title": "Fuel Type",
+								"title": "Odometer Reading Units",
 								"type": "string",
 								"tsEnumNames": [
-									"KILOM",
+									"KILOMETRES",
 									"MILES"
 								],
 								"enum": [
@@ -1065,7 +1065,7 @@
 											"type:": "null"
 										},
 										{
-											"title": "Test Results",
+											"title": "Emission Standards",
 											"type": "string",
 											"tsEnumNames": [
 												"EURO3_PM",
@@ -1853,7 +1853,7 @@
 								"type:": "null"
 							},
 							{
-								"title": "Test Results",
+								"title": "Emission Standards",
 								"type": "string",
 								"tsEnumNames": [
 									"EURO3_PM",

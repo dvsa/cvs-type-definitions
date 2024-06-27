@@ -34,7 +34,7 @@ export interface TestTypeSchema {
     | {
         [k: string]: unknown;
       }
-    | TestResults1;
+    | EmissionStandards;
   fuelType?:
     | {
         [k: string]: unknown;
@@ -127,7 +127,7 @@ export enum TestResults {
   FAIL = "fail",
   ABANDONED = "abandoned"
 }
-export enum TestResults1 {
+export enum EmissionStandards {
   EURO3_PM = "0.10 g/kWh Euro 3 PM",
   EURO4_PM = "0.03 g/kWh Euro IV PM'",
   EURO3 = "Euro 3",
