@@ -318,7 +318,7 @@ export interface TestTypeSchema {
   particulateTrapSerialNumber?: string | null;
   defects: DefectDetailsSchema[];
   customDefects?: SpecialistCustomDefectsSchema[] | null;
-  requiredStandards?: SpecialistCustomDefectsSchema1[];
+  requiredStandards?: SpecialistCustomDefectsSchemaPut[];
   testNumber?: string | null;
   reapplicationDate?: string | null;
 }
@@ -381,7 +381,7 @@ export interface SpecialistCustomDefectsSchema {
    */
   hasAllMandatoryFields?: boolean;
 }
-export interface SpecialistCustomDefectsSchema1 {
+export interface SpecialistCustomDefectsSchemaPut {
   sectionNumber: string;
   sectionDescription: string;
   additionalNotes?: string | null;

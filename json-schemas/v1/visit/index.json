@@ -1516,7 +1516,7 @@
 																"array"
 															],
 															"items": {
-																"title": "Specialist Custom Defects Schema",
+																"title": "Specialist Custom Defects Schema Put",
 																"type": "object",
 																"properties": {
 																	"sectionNumber": {
@@ -2304,7 +2304,7 @@
 													"array"
 												],
 												"items": {
-													"title": "Specialist Custom Defects Schema",
+													"title": "Specialist Custom Defects Schema Put",
 													"type": "object",
 													"properties": {
 														"sectionNumber": {
