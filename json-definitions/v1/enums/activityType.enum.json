@@ -8,7 +8,7 @@
     ],
     "enum": [
         "visit",
-        "time",
+        "wait",
         "unaccountable time"
     ]
   }
