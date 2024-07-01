@@ -25,7 +25,7 @@ export interface ActivitySchema {
 
 export enum ActivityType {
   VISIT = "visit",
-  WAIT = "time",
+  WAIT = "wait",
   UNACCOUNTABLE_TIME = "unaccountable time"
 }
 export enum TestStationTypes {
