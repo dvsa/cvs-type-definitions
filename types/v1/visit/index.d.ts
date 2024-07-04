@@ -274,7 +274,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
-  testTypes: TestTypeSchema[];
+  testTypes: TestTypeSchema[] | TestTypeSchema1;
   reasonForCreation?: string;
   createdAt?: string | null;
   createdByEmailAddress?: string;
@@ -404,6 +404,49 @@ export interface SpecialistCustomDefectsSchemaPut {
   additionalInfo: boolean;
   inspectionTypes?: InspectionType[];
   prs: boolean;
+}
+export interface TestTypeSchema1 {
+  testTypeName: string | null;
+  name: string;
+  testTypeId: string;
+  certificateNumber: string | null;
+  secondaryCertificateNumber: string | null;
+  testTypeStartTimestamp: string | null;
+  testTypeEndTimestamp: string | null;
+  testResult:
+    | {
+        [k: string]: unknown;
+      }
+    | TestResults;
+  prohibitionIssued: boolean | null;
+  reasonForAbandoning: string | null;
+  additionalNotesRecorded: string | null;
+  additionalCommentsForAbandon: string | null;
+  numberOfSeatbeltsFitted?: number | null;
+  lastSeatbeltInstallationCheckDate?: string | null;
+  seatbeltInstallationCheckDate?: boolean | null;
+  testExpiryDate?: string;
+  testAnniversaryDate?: string | null;
+  modType?: ModTypeSchema | string | null;
+  emissionStandard?:
+    | {
+        [k: string]: unknown;
+      }
+    | EmissionStandards;
+  fuelType?:
+    | {
+        [k: string]: unknown;
+      }
+    | FuelType;
+  modificationTypeUsed?: string | null;
+  smokeTestKLimitApplied?: string | null;
+  particulateTrapFitted?: string | null;
+  particulateTrapSerialNumber?: string | null;
+  defects: DefectDetailsSchema[];
+  customDefects?: SpecialistCustomDefectsSchema[] | null;
+  requiredStandards?: SpecialistCustomDefectsSchemaPut[];
+  testNumber?: string | null;
+  reapplicationDate?: string | null;
 }
 export interface BodyTypeSchema {
   code?: string | null;

@@ -166,10 +166,18 @@
       ]
     },
     "testTypes": {
-      "type": "array",
-      "items": {
-        "$ref": "../test-type/index.json#"
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../test-type/index.json#"
+          }
+        },
+        {
+          "type": "object",
+          "$ref": "../test-type/index.json#"
+        }
+      ]
     },
     "reasonForCreation": {
       "type": "string",
