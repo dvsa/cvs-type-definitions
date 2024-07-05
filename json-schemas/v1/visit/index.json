@@ -1586,6 +1586,12 @@
 																"string",
 																"null"
 															]
+														},
+														"testCode": {
+															"type": [
+																"string",
+																"null"
+															]
 														}
 													},
 													"required": [
@@ -2370,6 +2376,12 @@
 												]
 											},
 											"reapplicationDate": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"testCode": {
 												"type": [
 													"string",
 													"null"

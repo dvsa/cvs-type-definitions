@@ -607,6 +607,12 @@
 				"string",
 				"null"
 			]
+		},
+		"testCode": {
+			"type": [
+				"string",
+				"null"
+			]
 		}
 	},
 	"required": [

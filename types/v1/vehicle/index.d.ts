@@ -313,6 +313,7 @@ export interface TestTypeSchema {
   requiredStandards?: SpecialistCustomDefectsSchemaPut[];
   testNumber?: string | null;
   reapplicationDate?: string | null;
+  testCode?: string | null;
 }
 export interface ModTypeSchema {
   code: string;
