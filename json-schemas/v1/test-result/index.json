@@ -1032,6 +1032,12 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"vehicleId": {
+			"type": [
+				"string",
+				"null"
+			]
 		}
 	},
 	"additionalProperties": false,

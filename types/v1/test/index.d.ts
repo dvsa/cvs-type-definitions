@@ -278,6 +278,7 @@ export interface TestResultSchema {
   make?: string | null;
   model?: string | null;
   bodyType?: BodyTypeSchema;
+  vehicleId?: string | null;
 }
 export interface TestTypeSchema {
   testTypeName: string | null;
