@@ -1586,6 +1586,38 @@
 																"string",
 																"null"
 															]
+														},
+														"testCode": {
+															"type": [
+																"string",
+																"null"
+															]
+														},
+														"lastUpdatedAt": {
+															"type": [
+																"string",
+																"date",
+																"null"
+															]
+														},
+														"createdAt": {
+															"type": [
+																"string",
+																"date",
+																"null"
+															]
+														},
+														"testTypeClassification": {
+															"type": [
+																"string",
+																"null"
+															]
+														},
+														"deletionFlag": {
+															"type": [
+																"string",
+																"null"
+															]
 														}
 													},
 													"required": [
@@ -1715,6 +1747,12 @@
 													}
 												},
 												"additionalProperties": false
+											},
+											"vehicleId": {
+												"type": [
+													"string",
+													"null"
+												]
 											}
 										},
 										"additionalProperties": false,
@@ -2370,6 +2408,38 @@
 												]
 											},
 											"reapplicationDate": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"testCode": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"lastUpdatedAt": {
+												"type": [
+													"string",
+													"date",
+													"null"
+												]
+											},
+											"createdAt": {
+												"type": [
+													"string",
+													"date",
+													"null"
+												]
+											},
+											"testTypeClassification": {
+												"type": [
+													"string",
+													"null"
+												]
+											},
+											"deletionFlag": {
 												"type": [
 													"string",
 													"null"

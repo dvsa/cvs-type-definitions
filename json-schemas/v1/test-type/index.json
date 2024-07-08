@@ -607,6 +607,38 @@
 				"string",
 				"null"
 			]
+		},
+		"testCode": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"lastUpdatedAt": {
+			"type": [
+				"string",
+				"date",
+				"null"
+			]
+		},
+		"createdAt": {
+			"type": [
+				"string",
+				"date",
+				"null"
+			]
+		},
+		"testTypeClassification": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"deletionFlag": {
+			"type": [
+				"string",
+				"null"
+			]
 		}
 	},
 	"required": [

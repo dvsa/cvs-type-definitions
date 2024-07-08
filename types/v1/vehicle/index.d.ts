@@ -270,6 +270,7 @@ export interface TestResultSchema {
   make?: string | null;
   model?: string | null;
   bodyType?: BodyTypeSchema;
+  vehicleId?: string | null;
 }
 export interface TestTypeSchema {
   testTypeName: string | null;
@@ -313,6 +314,21 @@ export interface TestTypeSchema {
   requiredStandards?: SpecialistCustomDefectsSchemaPut[];
   testNumber?: string | null;
   reapplicationDate?: string | null;
+  testCode?: string | null;
+  lastUpdatedAt?:
+    | string
+    | {
+        [k: string]: unknown;
+      }
+    | null;
+  createdAt?:
+    | string
+    | {
+        [k: string]: unknown;
+      }
+    | null;
+  testTypeClassification?: string | null;
+  deletionFlag?: string | null;
 }
 export interface ModTypeSchema {
   code: string;
