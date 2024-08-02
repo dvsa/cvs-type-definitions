@@ -1,0 +1,23 @@
+{
+  "title": "Central docs object",
+  "type": "object",
+  "properties": {
+    "issueRequired": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "reasonsForIssue": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "issueRequired",
+    "reasonsForIssue"
+  ]
+}

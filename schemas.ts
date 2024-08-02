@@ -3,6 +3,7 @@ export const schemas = [
   "required-standards/defects/get/index.json",
   "required-standards/defects/requiredStandardTaxonomySection.json",
   "v1/activity/index.json",
+  "v1/central-docs/index.json",
   "v1/defect-category-reference-data/index.json",
   "v1/defect-details/index.json",
   "v1/defect-location/index.json",
