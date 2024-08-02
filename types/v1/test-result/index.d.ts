@@ -120,6 +120,11 @@ export interface TestTypeSchema {
     | null;
   testTypeClassification?: string | null;
   deletionFlag?: string | null;
+  centralDocs?: {
+    issueRequired: boolean;
+    notes?: string;
+    reasonsForIssue: string[];
+  };
 }
 export interface ModTypeSchema {
   code: string;

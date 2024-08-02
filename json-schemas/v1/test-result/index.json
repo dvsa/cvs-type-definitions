@@ -903,6 +903,27 @@
 							"string",
 							"null"
 						]
+					},
+					"centralDocs": {
+						"properties": {
+							"issueRequired": {
+								"type": "boolean"
+							},
+							"notes": {
+								"type": "string"
+							},
+							"reasonsForIssue": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"issueRequired",
+							"reasonsForIssue"
+						]
 					}
 				},
 				"required": [
