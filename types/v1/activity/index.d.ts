@@ -32,7 +32,8 @@ export enum TestStationTypes {
   ATF = "atf",
   GVTS = "gvts",
   HQ = "hq",
-  POTF = "potf"
+  POTF = "potf",
+  VEF = "vef"
 }
 export enum WaitReason {
   WAITING_FOR_VEHICLE = "Waiting for vehicle",

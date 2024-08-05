@@ -435,7 +435,8 @@ export enum TestStationTypes {
   ATF = "atf",
   GVTS = "gvts",
   HQ = "hq",
-  POTF = "potf"
+  POTF = "potf",
+  VEF = "vef"
 }
 export enum TestStatus {
   SUBMITTED = "submitted",
