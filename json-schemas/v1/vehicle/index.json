@@ -682,13 +682,15 @@
 									"ATF",
 									"GVTS",
 									"HQ",
-									"POTF"
+									"POTF",
+									"VEF"
 								],
 								"enum": [
 									"atf",
 									"gvts",
 									"hq",
-									"potf"
+									"potf",
+									"vef"
 								]
 							}
 						]
