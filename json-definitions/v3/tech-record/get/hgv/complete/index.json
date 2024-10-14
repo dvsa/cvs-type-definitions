@@ -82,6 +82,16 @@
         "null"
       ]
     },
+    "techRecord_adrDetails_bodyDeclaration_type": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/adrBodyDeclarationType.enum.json"
+        }
+      ]
+    },
     "techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys": {
       "anyOf": [
         {
@@ -1072,6 +1082,33 @@
           "required": [
             "techRecord_adrDetails_compatibilityGroupJ"
           ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "techRecord_adrDetails_permittedDangerousGoods": {
+              "type": "array",
+              "contains": {
+                "type": "string",
+                "not": {
+                  "enum": [
+                    "Explosives (type 3)"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "techRecord_adrDetails_permittedDangerousGoods"
+          ]
+        },
+        "then": {
+          "not": {
+            "required": [
+              "techRecord_adrDetails_bodyDeclaration_type"
+            ]
+          }
         }
       },
       {

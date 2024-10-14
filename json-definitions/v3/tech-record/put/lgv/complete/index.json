@@ -75,8 +75,8 @@
       "maxLength": 255
     },
     "techRecord_adrDetails_documentId": {
-			"type": "string"
-		},
+      "type": "string"
+    },
     "techRecord_adrDetails_dangerousGoods": {
       "type": [
         "boolean",
@@ -87,6 +87,16 @@
       "type": [
         "string",
         "null"
+      ]
+    },
+    "techRecord_adrDetails_bodyDeclaration_type": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/adrBodyDeclarationType.enum.json"
+        }
       ]
     },
     "techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys": {
@@ -474,7 +484,7 @@
           "createdByName": {
             "type": "string"
           },
-          "certificateType":{
+          "certificateType": {
             "$ref": "../../../enums/adrCertificateTypes.enum.json"
           },
           "generatedTimestamp": {
@@ -569,13 +579,15 @@
           "properties": {
             "techRecord_adrDetails_permittedDangerousGoods": {
               "type": "array",
-                "contains": {
-                  "type": "string",
-                  "pattern": "^Explosives \\(type \\d\\)$"
-                }
+              "contains": {
+                "type": "string",
+                "pattern": "^Explosives \\(type \\d\\)$"
+              }
             }
           },
-          "required": ["techRecord_adrDetails_permittedDangerousGoods"]
+          "required": [
+            "techRecord_adrDetails_permittedDangerousGoods"
+          ]
         },
         "then": {
           "required": [
@@ -584,17 +596,53 @@
         }
       },
       {
-        "if" : {
+        "if": {
           "properties": {
-            "techRecord_adrDetails_vehicleDetails_type": {
-              "enum": ["Rigid tank","Rigid battery","Full drawbar tank",
-               "Full drawbar battery", "Centre axle tank" ,"Centre axle battery",
-               "Semi trailer tank","Semi trailer battery"]
+            "techRecord_adrDetails_permittedDangerousGoods": {
+              "type": "array",
+              "contains": {
+                "type": "string",
+                "not": {
+                  "enum": [
+                    "Explosives (type 3)"
+                  ]
+                }
+              }
             }
           },
-          "required": ["techRecord_adrDetails_vehicleDetails_type"]
+          "required": [
+            "techRecord_adrDetails_permittedDangerousGoods"
+          ]
         },
-        "then" : {
+        "then": {
+          "not": {
+            "required": [
+              "techRecord_adrDetails_bodyDeclaration_type"
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "techRecord_adrDetails_vehicleDetails_type": {
+              "enum": [
+                "Rigid tank",
+                "Rigid battery",
+                "Full drawbar tank",
+                "Full drawbar battery",
+                "Centre axle tank",
+                "Centre axle battery",
+                "Semi trailer tank",
+                "Semi trailer battery"
+              ]
+            }
+          },
+          "required": [
+            "techRecord_adrDetails_vehicleDetails_type"
+          ]
+        },
+        "then": {
           "required": [
             "techRecord_adrDetails_tank_tankDetails_tankManufacturer",
             "techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
@@ -617,7 +665,9 @@
           ]
         },
         "then": {
-          "required":["techRecord_adrDetails_batteryListNumber"]
+          "required": [
+            "techRecord_adrDetails_batteryListNumber"
+          ]
         }
       },
       {
@@ -632,7 +682,9 @@
           ]
         },
         "then": {
-          "required": ["techRecord_adrDetails_weight"]
+          "required": [
+            "techRecord_adrDetails_weight"
+          ]
         }
       }
     ]
