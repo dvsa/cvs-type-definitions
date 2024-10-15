@@ -26,6 +26,7 @@ export const schemas = [
   "v1/vehicle-tech-record/index.json",
   "v1/visit/index.json",
   "v3/tech-record/enums/adrAdditionalNotesNumber.enum.json",
+  "v3/tech-record/enums/adrBodyDeclarationType.enum.json",
   "v3/tech-record/enums/adrBodyType.enum.json",
   "v3/tech-record/enums/adrCertificateTypes.enum.json",
   "v3/tech-record/enums/adrCompatibilityGroupJ.enum.json",

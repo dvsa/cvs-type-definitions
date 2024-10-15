@@ -30,4 +30,84 @@ describe("validate complete hgv schema", () => {
     const res = isValidObject(schemaName, data);
     expect(res).toEqual(false);
   });
+
+  describe('adr tests', () => {
+    beforeEach(() => { 
+      const data = [];
+    });
+
+    it('should allow me to submit a body declaration type with EX3', () => {
+      const data: any = hgvData[0];
+      const modifiedData = { ...data, 
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ['Explosives (type 3)'],
+        techRecord_adrDetails_vehicleDetails_type: 'Rigid box body',
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+        techRecord_adrDetails_bodyDeclaration_type: 'Unknown'
+      }
+      const res = isValidObject(schemaName, modifiedData);
+      expect(res).toEqual(true);
+    });
+
+    it('should allow me to submit without a body declaration type with EX3', () => {
+      const data: any = hgvData[0];
+      const modifiedData = { ...data, 
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ['Explosives (type 3)'],
+        techRecord_adrDetails_vehicleDetails_type: 'Rigid box body',
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+      }
+      const res = isValidObject(schemaName, modifiedData);
+      expect(res).toEqual(true);
+    });
+
+    it('should allow me to submit without a body declaration type with EX2', () => {
+      const data: any = hgvData[0];
+      const modifiedData = { ...data, 
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ['Explosives (type 2)'],
+        techRecord_adrDetails_vehicleDetails_type: 'Rigid box body',
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+      }
+      const res = isValidObject(schemaName, modifiedData);
+      expect(res).toEqual(true);
+    });
+
+    it('should not allow me to submit with a body declaration type with EX2', () => {
+      const data: any = hgvData[0];
+      const modifiedData = { ...data, 
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ['Explosives (type 2)'],
+        techRecord_adrDetails_vehicleDetails_type: 'Rigid box body',
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+        techRecord_adrDetails_bodyDeclaration_type: 'Pre 1st July 2005'
+      }
+      const res = isValidObject(schemaName, modifiedData);
+      expect(res).toEqual(false);
+    })
+
+    it('should not allow me to submit with a body declaration type with EX3 but a non enum value', () => {
+      const data: any = hgvData[0];
+      const modifiedData = { ...data, 
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ['Explosives (type 3)'],
+        techRecord_adrDetails_vehicleDetails_type: 'Rigid box body',
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+        techRecord_adrDetails_bodyDeclaration_type: 'bad faith value'
+      }
+      const res = isValidObject(schemaName, modifiedData);
+      expect(res).toEqual(false);
+    })
+  })
 });
+

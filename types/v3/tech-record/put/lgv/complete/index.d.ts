@@ -23,6 +23,7 @@ export interface TechRecordPUTLGVComplete {
   techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
   techRecord_adrDetails_vehicleDetails_type?: string | null;
+  techRecord_adrDetails_bodyDeclaration_type?: null | ADRBodyDeclarationTypes;
   techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys?: null | RadioButtonOptions;
   techRecord_adrDetails_vehicleDetails_approvalDate?: string | null;
   techRecord_adrDetails_permittedDangerousGoods?: string[] | null;
@@ -95,6 +96,11 @@ export interface ADRCertificateDetails {
   certificateId: string;
 }
 
+export enum ADRBodyDeclarationTypes {
+  PRE_1ST_JULY_2005 = "Pre 1st July 2005",
+  ON_OR_AFTER_1ST_JULY_2005 = "On or after 1st July 2005",
+  UNKNOWN = "Unknown"
+}
 export enum RadioButtonOptions {
   yes = "yes",
   no = "no",
