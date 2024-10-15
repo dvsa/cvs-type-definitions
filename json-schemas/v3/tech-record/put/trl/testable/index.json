@@ -114,8 +114,8 @@
 					"title": "ADR Body Declaration Types",
 					"type": "string",
 					"tsEnumNames": [
-						"PRE_1_JULY_2005",
-						"ON_OR_AFTER_1_JULY_2005",
+						"PRE_1ST_JULY_2005",
+						"ON_OR_AFTER_1ST_JULY_2005",
 						"UNKNOWN"
 					],
 					"enum": [

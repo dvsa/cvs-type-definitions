@@ -304,8 +304,8 @@ export interface AxleSpacing {
 }
 
 export enum ADRBodyDeclarationTypes {
-  PRE_1_JULY_2005 = "Pre 1st July 2005",
-  ON_OR_AFTER_1_JULY_2005 = "On or after 1st July 2005",
+  PRE_1ST_JULY_2005 = "Pre 1st July 2005",
+  ON_OR_AFTER_1ST_JULY_2005 = "On or after 1st July 2005",
   UNKNOWN = "Unknown"
 }
 export enum RadioButtonOptions {
