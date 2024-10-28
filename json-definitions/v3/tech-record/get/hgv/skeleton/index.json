@@ -1171,12 +1171,7 @@
             "techRecord_adrDetails_permittedDangerousGoods": {
               "type": "array",
               "contains": {
-                "type": "string",
-                "not": {
-                  "enum": [
-                    "Explosives (type 3)"
-                  ]
-                }
+                "const": "Explosives (type 3)"
               }
             }
           },
@@ -1184,11 +1179,34 @@
             "techRecord_adrDetails_permittedDangerousGoods"
           ]
         },
-        "then": {
-          "not": {
+        "else": {
+          "if": {
+            "properties": {
+              "techRecord_adrDetails_permittedDangerousGoods": {
+                "type": "array",
+                "contains": {
+                  "enum": [
+                    "FP <61 (FL)",
+                    "AT",
+                    "Class 5.1 Hydrogen Peroxide (OX)",
+                    "MEMU",
+                    "Carbon Disulphide",
+                    "Hydrogen",
+                    "Explosives (type 2)"
+                  ]
+                }
+              }
+            },
             "required": [
-              "techRecord_adrDetails_bodyDeclaration_type"
+              "techRecord_adrDetails_permittedDangerousGoods"
             ]
+          },
+          "then": {
+            "not": {
+              "required": [
+                "techRecord_adrDetails_bodyDeclaration_type"
+              ]
+            }
           }
         }
       },
