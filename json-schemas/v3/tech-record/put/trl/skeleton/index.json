@@ -926,7 +926,7 @@
 		"techRecord_manufactureMonth": {
 			"anyOf": [
 				{
-					"title": "Paragraph Ids",
+					"title": "Months",
 					"type": "string",
 					"enum": [
 						"January",

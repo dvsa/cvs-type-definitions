@@ -1,5 +1,5 @@
 {
-    "title": "Paragraph Ids",
+    "title": "Months",
     "type": "string",
     "enum": [
         "January",
