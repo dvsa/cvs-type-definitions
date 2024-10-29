@@ -46,6 +46,7 @@
     "techRecord_loadSensingValve": false,
     "techRecord_make": "Isuzu",
     "techRecord_manufactureYear": 2018,
+    "techRecord_manufactureMonth": "January",
     "techRecord_maxLoadOnCoupling": 7000,
     "techRecord_model": "F06",
     "techRecord_noOfAxles": 2,

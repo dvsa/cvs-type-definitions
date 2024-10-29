@@ -784,6 +784,16 @@
       ],
       "maxLength": 50
     },
+    "techRecord_manufactureMonth": {
+      "anyOf": [
+        {
+          "$ref": "../../../enums/manufactureMonth.ignore.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
     "techRecord_manufactureYear": {
       "anyOf": [
         {
