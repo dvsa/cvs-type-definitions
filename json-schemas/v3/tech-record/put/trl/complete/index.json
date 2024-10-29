@@ -888,6 +888,31 @@
 			"type": "string",
 			"maxLength": 50
 		},
+		"techRecord_manufactureMonth": {
+			"anyOf": [
+				{
+					"title": "Paragraph Ids",
+					"type": "string",
+					"enum": [
+						"January",
+						"February",
+						"March",
+						"April",
+						"May",
+						"June",
+						"July",
+						"August",
+						"September",
+						"October",
+						"November",
+						"December"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
 		"techRecord_manufactureYear": {
 			"anyOf": [
 				{

@@ -18,6 +18,19 @@ export type FrameDescription =
   | "U section";
 export type LetterTypes = "trailer acceptance" | "trailer rejection";
 export type ParagraphIds = 3 | 4 | 5 | 6 | 7;
+export type ParagraphIds1 =
+  | "January"
+  | "February"
+  | "March"
+  | "April"
+  | "May"
+  | "June"
+  | "July"
+  | "August"
+  | "September"
+  | "October"
+  | "November"
+  | "December";
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
@@ -189,6 +202,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_letterOfAuth_paragraphId?: null | ParagraphIds;
   techRecord_letterOfAuth_letterIssuer?: string | null;
   techRecord_make: string;
+  techRecord_manufactureMonth?: ParagraphIds1 | null;
   techRecord_manufactureYear?: number | null;
   techRecord_manufacturerDetails?: string | null;
   techRecord_maxLoadOnCoupling: number;

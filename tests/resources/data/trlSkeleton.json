@@ -44,6 +44,7 @@
     "techRecord_letterOfAuth": null,
     "techRecord_make": "A PL",
     "techRecord_manufactureYear": null,
+    "techRecord_manufactureMonth": null,
     "techRecord_manufacturerDetails": null,
     "techRecord_maxLoadOnCoupling": null,
     "techRecord_microfilm_microfilmDocumentType": "Tempo 100 Sp Ord",

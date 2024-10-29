@@ -34,6 +34,7 @@
     "techRecord_lastUpdatedAt": null,
     "techRecord_make": null,
     "techRecord_manufactureYear": 2021,
+    "techRecord_manufactureMonth": "April",
     "techRecord_maxTrainDesignWeight": 0,
     "techRecord_maxTrainGbWeight": 0,
     "techRecord_model": "model1",
