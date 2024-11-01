@@ -263,8 +263,21 @@
     },
     "vehicleId": {
       "type": [
-        "string", "null"
+        "string",
+        "null"
       ]
+    },
+    "testHistory": {
+      "type": "array",
+      "items": {
+        "$ref": "#"
+      }
+    },
+    "testVersion": {
+      "type": "string"
+    },
+    "deletionFlag": {
+      "type": "boolean"
     }
   },
   "additionalProperties": false,

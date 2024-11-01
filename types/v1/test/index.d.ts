@@ -279,6 +279,9 @@ export interface TestResultSchema {
   model?: string | null;
   bodyType?: BodyTypeSchema;
   vehicleId?: string | null;
+  testHistory?: TestResultSchema[];
+  testVersion?: string;
+  deletionFlag?: boolean;
 }
 export interface TestTypeSchema {
   testTypeName: string | null;
