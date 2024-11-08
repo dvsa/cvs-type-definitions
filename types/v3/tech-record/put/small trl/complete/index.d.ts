@@ -5,6 +5,19 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type Months =
+  | "January"
+  | "February"
+  | "March"
+  | "April"
+  | "May"
+  | "June"
+  | "July"
+  | "August"
+  | "September"
+  | "October"
+  | "November"
+  | "December";
 export type StatusCode = "provisional" | "current" | "archived";
 export type VehicleSubclass = ("n" | "p" | "a" | "s" | "c" | "l" | "t" | "e" | "m" | "r" | "w")[];
 
@@ -18,6 +31,7 @@ export interface TechRecordPUTSmallTRLComplete {
   techRecord_applicantDetails_postTown?: string | null;
   techRecord_applicantDetails_telephoneNumber?: string | null;
   techRecord_euVehicleCategory: "o1" | "o2";
+  techRecord_manufactureMonth?: Months | null;
   techRecord_manufactureYear?: number | null;
   techRecord_noOfAxles: number;
   techRecord_notes?: string | null;
