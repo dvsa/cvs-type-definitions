@@ -46,6 +46,12 @@
 		},
 		"searchProperty": {
 			"type": "string"
+		},
+		"testStationCountry": {
+			"type": "string"
+		},
+		"testStationStatus": {
+			"type": "string"
 		}
 	},
 	"required": [
@@ -61,7 +67,8 @@
 		"testStationLongitude",
 		"testStationLatitude",
 		"testStationType",
-		"testStationEmails"
+		"testStationEmails",
+		"testStationStatus"
 	],
 	"additionalProperties": false
 }
