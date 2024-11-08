@@ -21,4 +21,5 @@ export interface TestStationSchema {
   testStationEmails: string[];
   searchProperty?: string;
   testStationCountry?: string;
+  testStationStatus: string;
 }
