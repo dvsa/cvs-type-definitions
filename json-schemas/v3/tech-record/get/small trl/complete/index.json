@@ -101,6 +101,31 @@
 				"null"
 			]
 		},
+		"techRecord_manufactureMonth": {
+			"anyOf": [
+				{
+					"title": "Months",
+					"type": "string",
+					"enum": [
+						"January",
+						"February",
+						"March",
+						"April",
+						"May",
+						"June",
+						"July",
+						"August",
+						"September",
+						"October",
+						"November",
+						"December"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
 		"techRecord_manufactureYear": {
 			"type": [
 				"integer",

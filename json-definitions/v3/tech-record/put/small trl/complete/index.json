@@ -68,6 +68,16 @@
                 "o2"
             ]
         },
+        "techRecord_manufactureMonth": {
+            "anyOf": [
+                {
+                    "$ref": "../../../enums/manufactureMonth.ignore.json"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
         "techRecord_manufactureYear": {
             "type": [
                 "integer",
@@ -101,12 +111,12 @@
         "techRecord_vehicleSubclass": {
             "anyOf": [
                 {
-                  "type": "null"
+                    "type": "null"
                 },
                 {
-                  "$ref": "../../../enums/vehicleSubclass.ignore.json"
+                    "$ref": "../../../enums/vehicleSubclass.ignore.json"
                 }
-              ]
+            ]
         },
         "techRecord_vehicleType": {
             "const": "trl"
