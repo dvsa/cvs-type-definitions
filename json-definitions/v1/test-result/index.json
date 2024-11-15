@@ -278,6 +278,13 @@
     },
     "deletionFlag": {
       "type": "boolean"
+    },
+    "recalls": {
+      "anyOf": [
+        {
+          "$ref": "../recalls/index.json"
+        }
+      ]
     }
   },
   "additionalProperties": false,

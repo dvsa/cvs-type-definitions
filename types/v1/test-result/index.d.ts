@@ -61,6 +61,7 @@ export interface TestResultSchema {
   testHistory?: TestResultSchema[];
   testVersion?: string;
   deletionFlag?: boolean;
+  recalls?: RecallsSchema;
 }
 export interface VehicleClassSchema {
   code: string;
@@ -202,6 +203,10 @@ export interface SpecialistCustomDefectsSchemaPut {
 export interface BodyTypeSchema {
   code?: string | null;
   description?: string | null;
+}
+export interface RecallsSchema {
+  hasRecall: boolean | null;
+  manufacturer: string | null;
 }
 
 export enum TestStationTypes {
