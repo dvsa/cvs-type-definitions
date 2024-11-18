@@ -274,7 +274,7 @@ export interface TestResultSchema {
   testHistory?: TestResultSchema[];
   testVersion?: string;
   deletionFlag?: boolean;
-  recalls?: RecallsSchema;
+  recalls?: RecallsSchema | null;
 }
 export interface TestTypeSchema {
   testTypeName: string | null;
