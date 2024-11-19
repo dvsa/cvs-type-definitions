@@ -61,7 +61,7 @@ export interface TestResultSchema {
   testHistory?: TestResultSchema[];
   testVersion?: string;
   deletionFlag?: boolean;
-  recalls?: RecallsSchema | null;
+  recalls?: RecallsSchema;
 }
 export interface VehicleClassSchema {
   code: string;
@@ -205,7 +205,7 @@ export interface BodyTypeSchema {
   description?: string | null;
 }
 export interface RecallsSchema {
-  hasRecall: boolean | null;
+  hasRecall: boolean;
   manufacturer: string | null;
 }
 

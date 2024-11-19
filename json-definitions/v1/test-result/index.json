@@ -283,9 +283,6 @@
       "anyOf": [
         {
           "$ref": "../recalls/index.json"
-        },
-        {
-          "type": "null"
         }
       ]
     }
