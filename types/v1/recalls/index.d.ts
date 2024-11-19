@@ -6,6 +6,6 @@
  */
 
 export interface RecallsSchema {
-  hasRecall: boolean | null;
+  hasRecall: boolean;
   manufacturer: string | null;
 }

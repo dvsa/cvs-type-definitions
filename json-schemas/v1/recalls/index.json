@@ -3,10 +3,7 @@
 	"type": "object",
 	"properties": {
 		"hasRecall": {
-			"type": [
-				"boolean",
-				"null"
-			]
+			"type": "boolean"
 		},
 		"manufacturer": {
 			"type": [
