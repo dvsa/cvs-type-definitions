@@ -4,7 +4,6 @@
 	"tsEnumNames": [
 		"FP",
 		"AT",
-		"HYDROGEN_PEROXIDE",
 		"MEMU",
 		"CARBON_DISULPHIDE",
 		"HYDROGEN",
@@ -14,7 +13,6 @@
 	"enum": [
 		"FP <61 (FL)",
 		"AT",
-		"Class 5.1 Hydrogen Peroxide (OX)",
 		"MEMU",
 		"Carbon Disulphide",
 		"Hydrogen",

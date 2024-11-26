@@ -8,7 +8,6 @@
 export enum ADRDangerousGood {
   FP = "FP <61 (FL)",
   AT = "AT",
-  HYDROGEN_PEROXIDE = "Class 5.1 Hydrogen Peroxide (OX)",
   MEMU = "MEMU",
   CARBON_DISULPHIDE = "Carbon Disulphide",
   HYDROGEN = "Hydrogen",
