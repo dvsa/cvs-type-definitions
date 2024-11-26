@@ -285,7 +285,9 @@ export enum EUVehicleCategory {
 }
 export enum TyreUseCode {
   _2R = "2R",
-  _2B = "2B"
+  _2B = "2B",
+  _2J = "2J",
+  _2M = "2M"
 }
 export enum VehicleConfiguration {
   RIGID = "rigid",
