@@ -499,7 +499,7 @@
     "techRecord_euVehicleCategory": {
       "anyOf": [
         {
-          "$ref": "../../../enums/euVehicleCategory.enum.json"
+          "$ref": "../../../enums/euVehicleCategoryLgv.enum.json"
         },
         {
           "type": "null"

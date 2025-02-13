@@ -99,7 +99,7 @@
           "type": "null"
         },
         {
-          "$ref": "../../../enums/euVehicleCategory.enum.json"
+          "$ref": "../../../enums/euVehicleCategoryCar.enum.json"
         }
       ]
     },

@@ -33,7 +33,7 @@ export interface TechRecordGETSmallTRLSkeleton {
   techRecord_createdAt: string;
   techRecord_createdById: string;
   techRecord_createdByName: string;
-  techRecord_euVehicleCategory: "o1" | "o2";
+  techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedById?: string | null;
   techRecord_lastUpdatedByName?: string | null;
@@ -56,6 +56,10 @@ export interface TechRecordGETSmallTRLSkeleton {
   techRecord_hiddenInVta?: null | boolean;
 }
 
+export enum EUVehicleCategory {
+  O1 = "o1",
+  O2 = "o2"
+}
 export enum VehicleClassDescription {
   MotorbikesOver200ccOrWithASidecar = "motorbikes over 200cc or with a sidecar",
   NotApplicable = "not applicable",
