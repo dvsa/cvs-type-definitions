@@ -348,6 +348,8 @@ export enum ADRCertificateTypes {
   REPLACEMENT = "REPLACEMENT"
 }
 export enum EUVehicleCategory {
+  O1 = "o1",
+  O2 = "o2",
   O3 = "o3",
   O4 = "o4"
 }

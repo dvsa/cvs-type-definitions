@@ -738,10 +738,14 @@
 			"title": "EU vehicle category",
 			"type": "string",
 			"tsEnumNames": [
+				"O1",
+				"O2",
 				"O3",
 				"O4"
 			],
 			"enum": [
+				"o1",
+				"o2",
 				"o3",
 				"o4"
 			]
