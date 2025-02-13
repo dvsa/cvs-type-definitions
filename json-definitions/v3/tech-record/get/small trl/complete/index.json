@@ -77,11 +77,7 @@
             "type": "string"
         },
         "techRecord_euVehicleCategory": {
-            "type": "string",
-            "enum": [
-                "o1",
-                "o2"
-            ]
+            "$ref": "../../../enums/euVehicleCategorySmallTrl.enum.json"
         },
         "techRecord_lastUpdatedAt": {
             "type": [
