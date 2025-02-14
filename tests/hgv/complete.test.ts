@@ -138,6 +138,22 @@ describe("validate complete hgv schema", () => {
       const res = isValidObject(schemaName, modifiedData);
       expect(res).toEqual(true);
     })
+
+    it("should allow me to submit with a body declaration type of null when EX3 is not in the array", () => {
+      const data: any = hgvData[0];
+      const modifiedData = {
+        ...data,
+        techRecord_adrDetails_dangerousGoods: true,
+        techRecord_adrDetails_permittedDangerousGoods: ["FP <61 (FL)"],
+        techRecord_adrDetails_vehicleDetails_type: "Rigid box body",
+        techRecord_adrDetails_vehicleDetails_approvalDate: null,
+        techRecord_adrDetails_additionalNotes_number: null,
+        techRecord_adrDetails_compatibilityGroupJ: null,
+        techRecord_adrDetails_bodyDeclaration_type: null,
+      };
+      const res = isValidObject(schemaName, modifiedData, true);
+      expect(res).toEqual(true);
+    });
   })
 });
 
