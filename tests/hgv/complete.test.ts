@@ -151,7 +151,7 @@ describe("validate complete hgv schema", () => {
         techRecord_adrDetails_compatibilityGroupJ: null,
         techRecord_adrDetails_bodyDeclaration_type: null,
       };
-      const res = isValidObject(schemaName, modifiedData, true);
+      const res = isValidObject(schemaName, modifiedData);
       expect(res).toEqual(true);
     });
   })
