@@ -1362,11 +1362,22 @@
 						]
 					},
 					"then": {
-						"not": {
-							"required": [
-								"techRecord_adrDetails_bodyDeclaration_type"
-							]
-						}
+						"anyOf": [
+							{
+								"not": {
+									"required": [
+										"techRecord_adrDetails_bodyDeclaration_type"
+									]
+								}
+							},
+							{
+								"properties": {
+									"techRecord_adrDetails_bodyDeclaration_type": {
+										"const": null
+									}
+								}
+							}
+						]
 					}
 				}
 			},
