@@ -29,7 +29,8 @@
 			"type": "string"
 		},
 		"testStationEmail": {
-			"type": "string"
+			"type": "string",
+			"format": "email"
 		},
 		"testStationType": {
 			"title": "Test Station Types",
@@ -50,13 +51,30 @@
 			]
 		},
 		"testerName": {
-			"type": "string"
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 60
 		},
 		"testerStaffId": {
 			"type": "string"
 		},
 		"testerEmail": {
-			"type": "string"
+			"type": "string",
+			"format": "email",
+			"if": {
+				"properties": {
+					"activityType": {
+						"const": "visit"
+					}
+				}
+			},
+			"then": {
+				"type": "string",
+				"format": "email"
+			},
+			"else": {
+				"not": {}
+			}
 		},
 		"startTime": {
 			"type": "string"
