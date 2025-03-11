@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "7.11.0",
+  "version": "7.12.0",
   "description": "type definitions for cvs vta and vtm applications",
   "main": "index.js",
   "repository": {
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
     "json-schema-deref-sync": "^0.14.0",
     "pretty-js": "^0.2.2",
     "util": "^0.12.5"

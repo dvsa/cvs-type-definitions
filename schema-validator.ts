@@ -1,4 +1,5 @@
 import Ajv, { ErrorObject } from "ajv";
+import addFormats from "ajv-formats"
 import { readFileSync } from "fs";
 import { schemas } from "./schemas";
 
@@ -33,7 +34,10 @@ export function isValidObject<B extends boolean | undefined>(
   logErrors = false
 ): boolean | ErrorObject[] {
   const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+  addFormats(ajv);
+
   ajv.addKeyword('tsEnumNames');
+
   const schema = JSON.parse(
     readFileSync(`${__dirname}/json-schemas/${schemaName}`, "utf8")
   );
