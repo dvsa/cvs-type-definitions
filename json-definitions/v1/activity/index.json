@@ -12,10 +12,14 @@
       "$ref": "../enums/activityType.enum.json"
     },
     "testStationName": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
     },
     "testStationPNumber": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
     },
     "testStationEmail": {
       "type": "string",
@@ -26,11 +30,14 @@
     },
     "testerName": {
       "type": "string",
+      "pattern": ".*\\S.*",
       "minLength": 1,
       "maxLength": 60
     },
     "testerStaffId": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
     },
     "testerEmail": {
       "type": "string",
@@ -51,10 +58,21 @@
       }
     },
     "startTime": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
     },
     "endTime": {
-      "type": ["null", "string"]
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "waitReason": {
       "type": "array",

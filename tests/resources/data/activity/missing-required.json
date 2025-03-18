@@ -1,0 +1,9 @@
+{
+  "testStationName": "Central Testing Facility",
+  "testStationPNumber": "P12345",
+  "testStationEmail": "central.testing@example.com",
+  "testStationType": "atf",
+  "testerName": "John Smith",
+  "testerStaffId": "JS789",
+  "startTime": "2025-03-12T10:00:00Z"
+}

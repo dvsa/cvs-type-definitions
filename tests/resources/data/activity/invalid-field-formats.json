@@ -1,0 +1,20 @@
+{
+  "parentId": "parent123",
+  "id": "act456",
+  "activityType": "wait",
+  "testStationName": "Central Testing Facility",
+  "testStationPNumber": "P12345",
+  "testStationEmail": "central.testing@example.com",
+  "testStationType": "atf",
+  "testerName": "John Smith",
+  "testerStaffId": "JS789",
+  "testerEmail": "bad email",
+  "startTime": "2025-03-12T10:00:00Z",
+  "endTime": "2025-03-12T11:30:00Z",
+  "waitReason": [
+    "Other",
+    "Admin"
+  ],
+  "notes": "Regular inspection visit completed successfully.",
+  "activityDay": "2025-03-12"
+}
