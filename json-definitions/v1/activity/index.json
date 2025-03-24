@@ -22,8 +22,7 @@
       "pattern": ".*\\S.*"
     },
     "testStationEmail": {
-      "type": "string",
-      "format": "email"
+      "type": "string"
     },
     "testStationType": {
       "$ref": "../enums/testStationType.enum.json"
