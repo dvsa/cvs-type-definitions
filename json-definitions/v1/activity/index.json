@@ -81,7 +81,15 @@
       }
     },
     "notes": {
-      "type": "string"
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "activityDay": {
       "type": "string"

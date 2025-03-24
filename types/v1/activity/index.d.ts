@@ -19,7 +19,7 @@ export interface ActivitySchema {
   startTime: string;
   endTime?: string | null;
   waitReason?: WaitReason[];
-  notes?: string;
+  notes?: string | null;
   activityDay?: string;
 }
 
