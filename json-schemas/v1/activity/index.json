@@ -33,8 +33,7 @@
 			"pattern": ".*\\S.*"
 		},
 		"testStationEmail": {
-			"type": "string",
-			"format": "email"
+			"type": "string"
 		},
 		"testStationType": {
 			"title": "Test Station Types",
