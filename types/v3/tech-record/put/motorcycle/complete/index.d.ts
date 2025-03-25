@@ -23,7 +23,7 @@ export interface TechRecordPUTMotorcycleComplete {
   techRecord_euVehicleCategory?: null | EUVehicleCategory;
   techRecord_manufactureYear?: number | null;
   techRecord_recordCompleteness?: null | string;
-  techRecord_noOfAxles?: null | number;
+  techRecord_noOfAxles?: number;
   techRecord_notes?: null | string;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;

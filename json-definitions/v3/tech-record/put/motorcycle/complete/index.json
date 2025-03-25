@@ -118,10 +118,7 @@
       ]
     },
     "techRecord_noOfAxles": {
-      "type": [
-        "null",
-        "integer"
-      ]
+      "type": "integer"
     },
     "techRecord_notes": {
       "type": [
