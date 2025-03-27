@@ -16,7 +16,8 @@
     "createdTimestamp",
     "partialVin",
     "vin",
-    "techRecord_vehicleConfiguration"
+    "techRecord_vehicleConfiguration",
+    "techRecord_noOfAxles"
   ],
   "properties": {
     "secondaryVrms": {
@@ -154,10 +155,7 @@
       ]
     },
     "techRecord_noOfAxles": {
-      "type": [
-        "null",
-        "integer"
-      ]
+      "type": "integer"
     },
     "techRecord_notes": {
       "type": [
@@ -192,7 +190,7 @@
     },
     "techRecord_vehicleConfiguration": {
       "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
-    },  
+    },
     "techRecord_vehicleType": {
       "const": "motorcycle"
     },
