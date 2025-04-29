@@ -1,4 +1,4 @@
-export enum VehicleConfigurationEnum {
+export enum VehicleConfiguration {
   Articulated = 'articulated',
   Rigid = 'rigid',
   CentreAxleDrawbar = 'centre axle drawbar',
