@@ -1,4 +1,4 @@
-export enum vehicleType {
+export enum VehicleTypeEnum {
   Hgv = 'hgv',
   Psv = 'psv',
   Trl = 'trl',
