@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum VehicleConfiguration {
+export enum VehicleSize {
   LARGE = "large",
   SMALL = "small"
 }
