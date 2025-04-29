@@ -1,0 +1,32 @@
+{
+    "title": "Vehicle Configuration",
+    "type": "string",
+    "tsEnumNames": [
+        "ARTICULATED",
+        "RIGID",
+        "CENTRE_AXLE_DRAWBAR",
+        "SEMI_CART_TRANSPORTER",
+        "SEMI_TRAILER",
+        "LONG_SEMI_TRAILER",
+        "LOW_LOADER",
+        "OTHER",
+        "DRAWBAR",
+        "FOUR_IN_LINE",
+        "DOLLY",
+        "FULL_DRAWBAR"
+    ],
+    "enum": [
+        "articulated",
+        "rigid",
+        "centre axle drawbar",
+        "semi-car transporter",
+        "semi-trailer",
+        "long semi-trailer",
+        "low loader",
+        "other",
+        "drawbar",
+        "four-in-line",
+        "dolly",
+        "full drawbar"
+    ]
+}
