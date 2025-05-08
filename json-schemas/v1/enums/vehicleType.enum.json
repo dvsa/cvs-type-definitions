@@ -1,0 +1,20 @@
+{
+	"title": "Vehicle Type",
+	"type": "string",
+	"tsEnumNames": [
+		"HGV",
+		"PSV",
+		"TRL",
+		"LGV",
+		"CAR",
+		"MOTORCYCLE"
+	],
+	"enum": [
+		"hgv",
+		"psv",
+		"trl",
+		"lgv",
+		"car",
+		"motorcycle"
+	]
+}
