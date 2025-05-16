@@ -25,6 +25,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^12.0.2",
     "ajv": "^8.12.0",
     "ajv-formats": "^3.0.1",
     "json-schema-deref-sync": "^0.14.0",

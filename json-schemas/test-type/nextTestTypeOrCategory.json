@@ -1,0 +1,416 @@
+{
+	"title": "NextTestTypeOrCategory Schema",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"id",
+		"linkedIds",
+		"name",
+		"forVehicleType",
+		"forVehicleSize",
+		"forVehicleConfiguration",
+		"forVehicleAxles",
+		"forEuVehicleCategory",
+		"forVehicleClass",
+		"forVehicleSubclass",
+		"forVehicleWheels"
+	],
+	"properties": {
+		"typeOfTest": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"linkedIds": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"name": {
+			"type": "string"
+		},
+		"testTypeName": {
+			"type": "string"
+		},
+		"forVehicleType": {
+			"anyOf": [
+				{
+					"title": "Vehicle Type",
+					"type": "string",
+					"tsEnumNames": [
+						"HGV",
+						"PSV",
+						"TRL",
+						"LGV",
+						"CAR",
+						"MOTORCYCLE"
+					],
+					"enum": [
+						"hgv",
+						"psv",
+						"trl",
+						"lgv",
+						"car",
+						"motorcycle"
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/properties/forVehicleType/anyOf/0"
+					}
+				}
+			]
+		},
+		"forProvisionalStatus": {
+			"type": "boolean"
+		},
+		"forProvisionalStatusOnly": {
+			"type": "boolean"
+		},
+		"forVehicleSize": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"title": "Vehicle Size",
+				"type": "string",
+				"tsEnumNames": [
+					"LARGE",
+					"SMALL"
+				],
+				"enum": [
+					"large",
+					"small"
+				]
+			}
+		},
+		"forVehicleConfiguration": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"title": "Vehicle Configuration",
+				"type": "string",
+				"tsEnumNames": [
+					"RIGID",
+					"ARTICULATED",
+					"CENTRE_AXLE_DRAWBAR",
+					"SEMI_CAR_TRANSPORTER",
+					"SEMI_TRAILER",
+					"LONG_SEMI_TRAILER",
+					"LOW_LOADER",
+					"OTHER",
+					"DRAWBAR",
+					"FOUR_IN_LINE",
+					"DOLLY",
+					"FULL_DRAWBAR"
+				],
+				"enum": [
+					"rigid",
+					"articulated",
+					"centre axle drawbar",
+					"semi-car transporter",
+					"semi-trailer",
+					"long semi-trailer",
+					"low loader",
+					"other",
+					"drawbar",
+					"four-in-line",
+					"dolly",
+					"full drawbar"
+				]
+			}
+		},
+		"forVehicleAxles": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "integer"
+			}
+		},
+		"forEuVehicleCategory": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"title": "EU Vehicle Category",
+				"type": "string",
+				"tsEnumNames": [
+					"M1",
+					"M2",
+					"M3",
+					"N1",
+					"N2",
+					"N3",
+					"O1",
+					"O2",
+					"O3",
+					"O4",
+					"L1E_A",
+					"L1E",
+					"L2E",
+					"L3E",
+					"L4E",
+					"L5E",
+					"L6E",
+					"L7E"
+				],
+				"enum": [
+					"m1",
+					"m2",
+					"m3",
+					"n1",
+					"n2",
+					"n3",
+					"o1",
+					"o2",
+					"o3",
+					"o4",
+					"l1e-a",
+					"l1e",
+					"l2e",
+					"l3e",
+					"l4e",
+					"l5e",
+					"l6e",
+					"l7e"
+				]
+			}
+		},
+		"forVehicleClass": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"forVehicleSubclass": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"title": "Vehicle Subclass",
+				"type": "string",
+				"tsEnumNames": [
+					"A",
+					"C",
+					"S",
+					"L",
+					"M",
+					"N",
+					"P",
+					"T",
+					"R"
+				],
+				"enum": [
+					"a",
+					"c",
+					"s",
+					"l",
+					"m",
+					"n",
+					"p",
+					"t",
+					"r"
+				]
+			}
+		},
+		"forVehicleWheels": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "integer"
+			}
+		},
+		"testTypeClassification": {
+			"anyOf": [
+				{
+					"title": "Test Type Classification",
+					"type": "string",
+					"tsEnumNames": [
+						"ANNUAL_NO_CERTIFICATE",
+						"ANNUAL_WITH_CERTIFICATE",
+						"NON_ANNUAL"
+					],
+					"enum": [
+						"Annual NO CERTIFICATE",
+						"Annual With Certificate",
+						"NON ANNUAL"
+					]
+				}
+			]
+		},
+		"testCodes": {
+			"type": "array",
+			"items": {
+				"title": "TestCode Schema",
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"forVehicleType",
+					"forVehicleSize",
+					"forVehicleConfiguration",
+					"forVehicleAxles",
+					"forEuVehicleCategory",
+					"forVehicleClass",
+					"forVehicleSubclass",
+					"forVehicleWheels",
+					"defaultTestCode",
+					"linkedTestCode"
+				],
+				"properties": {
+					"forVehicleType": {
+						"anyOf": [
+							{
+								"$ref": "#/properties/forVehicleType/anyOf/0"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/properties/forVehicleType/anyOf/0"
+								}
+							}
+						]
+					},
+					"forVehicleSize": {
+						"anyOf": [
+							{
+								"$ref": "#/properties/forVehicleSize/items"
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forVehicleConfiguration": {
+						"anyOf": [
+							{
+								"$ref": "#/properties/forVehicleConfiguration/items"
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forVehicleAxles": {
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "integer"
+								}
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forEuVehicleCategory": {
+						"anyOf": [
+							{
+								"$ref": "#/properties/forEuVehicleCategory/items"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/properties/forEuVehicleCategory/items"
+								}
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forVehicleClass": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forVehicleSubclass": {
+						"anyOf": [
+							{
+								"$ref": "#/properties/forVehicleSubclass/items"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/properties/forVehicleSubclass/items"
+								}
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"forVehicleWheels": {
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "integer"
+								}
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"defaultTestCode": {
+						"type": "string"
+					},
+					"linkedTestCode": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"forProvisionalStatus": {
+						"type": "boolean"
+					},
+					"forProvisionalStatusOnly": {
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		"nextTestTypeOrCategories": {
+			"type": "array",
+			"items": {
+				"$ref": "#"
+			}
+		}
+	}
+}

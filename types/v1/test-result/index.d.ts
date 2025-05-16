@@ -40,7 +40,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
-  testTypes: TestTypeSchema[];
+  testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
   createdByEmailAddress?: string;
@@ -67,7 +67,7 @@ export interface VehicleClassSchema {
   code: string;
   description: string;
 }
-export interface TestTypeSchema {
+export interface TestResultTestTypeSchema {
   testTypeName: string | null;
   name: string;
   testTypeId: string;

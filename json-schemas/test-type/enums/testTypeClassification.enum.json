@@ -1,0 +1,14 @@
+{
+	"title": "Test Type Classification",
+	"type": "string",
+	"tsEnumNames": [
+		"ANNUAL_NO_CERTIFICATE",
+		"ANNUAL_WITH_CERTIFICATE",
+		"NON_ANNUAL"
+	],
+	"enum": [
+		"Annual NO CERTIFICATE",
+		"Annual With Certificate",
+		"NON ANNUAL"
+	]
+}

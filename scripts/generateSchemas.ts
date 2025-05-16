@@ -1,13 +1,12 @@
 import {
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  rmSync,
-  writeFileSync,
+    mkdirSync,
+    readFileSync,
+    readdirSync,
+    rmSync,
+    writeFileSync,
 } from "fs";
-
-const json2ts = require("json-schema-to-typescript");
-const derefSchema = require("json-schema-deref-sync");
+import { compileFromFile } from "json-schema-to-typescript";
+import $RefParser from "@apidevtools/json-schema-ref-parser";
 const prettyJs = require("pretty-js");
 
 const jsonSchemaDirName = "json-schemas";
@@ -15,110 +14,129 @@ const typesDirName = "types";
 const definitionsDirName = "json-definitions";
 
 const options = {
-  indent: "\t",
-  newline: "\r\n",
-  quoteProperties: "true",
+    indent: "\t",
+    newline: "\r\n",
+    quoteProperties: "true",
 };
 
 async function generateTypescriptInterface(schemaLocation: string) {
-  const fileExt = schemaLocation.includes("enum") ? ".ts" : ".d.ts";
-  const saveToLocation = schemaLocation
-    .replace(definitionsDirName, typesDirName)
-    .replace(".json", fileExt);
-  const types = await json2ts.compileFromFile(schemaLocation, {
-    unreachableDefinitions: true,
-    enableConstEnums: false
-  });
-  writeFile(saveToLocation, types);
-  console.log(
-    `********** types generated for ${schemaLocation} and saved to ${saveToLocation} **********`
-  );
+    const fileExt = schemaLocation.includes("enum") ? ".ts" : ".d.ts";
+    const saveToLocation = schemaLocation
+        .replace(definitionsDirName, typesDirName)
+        .replace(".json", fileExt);
+
+    const types = await compileFromFile(schemaLocation, {
+        unreachableDefinitions: true,
+        enableConstEnums: false,
+    });
+
+    writeFile(saveToLocation, types);
+    console.log(
+        `********** types generated for ${schemaLocation} and saved to ${saveToLocation} **********`
+    );
 }
 
-function deReferenceJsonSchema(schemaLocation: string): void {
-  const derefSchemaPath = schemaLocation.replace(
-    definitionsDirName,
-    jsonSchemaDirName
-  );
-  const originalSchema = require(schemaLocation);
-  const baseFolder = schemaLocation.substring(
-    0,
-    schemaLocation.lastIndexOf("/")
-  );
-  const deReferencedJsonSchema = derefSchema(originalSchema, {
-    baseFolder: baseFolder,
-  });
-  const deReferencedSchema = prettyJs(
-    JSON.stringify(deReferencedJsonSchema),
-    options
-  );
-  writeFile(derefSchemaPath, deReferencedSchema);
+async function deReferenceJsonSchema(schemaLocation: string): Promise<void> {
+    const derefSchemaPath = schemaLocation.replace(
+        definitionsDirName,
+        jsonSchemaDirName
+    );
+
+    try {
+        const bundledSchema = await $RefParser.bundle(schemaLocation);
+
+        const deReferencedSchema = prettyJs(
+            JSON.stringify(bundledSchema),
+            options
+        );
+
+        writeFile(derefSchemaPath, deReferencedSchema);
+        console.log(`✅ Schema bundled for: ${schemaLocation}`);
+    } catch (error) {
+        console.error(`❌ Error bundling schema at ${schemaLocation}:`, error);
+    }
 }
 
 function writeFile(path: string, data: string) {
-  const baseFolder = path.substring(0, path.lastIndexOf("/"));
-  mkdirSync(baseFolder, { recursive: true });
-  writeFileSync(path, data, "utf8");
+    const baseFolder = path.substring(0, path.lastIndexOf("/"));
+    mkdirSync(baseFolder, { recursive: true });
+    writeFileSync(path, data, "utf8");
 }
 
 function sanitiseFolders() {
-  try {
-    sanitiseTypesFolder(typesDirName);
-  } catch {}
-  try {
-    rmSync(jsonSchemaDirName, { recursive: true });
-  } catch {}
+    try {
+        sanitiseTypesFolder(typesDirName);
+    } catch (err) {
+        console.warn(`⚠️ Could not sanitise types folder: ${(err as Error).message}`);
+    }
+
+    try {
+        rmSync(jsonSchemaDirName, { recursive: true, force: true });
+    } catch (err) {
+        console.warn(`⚠️ Could not remove JSON schemas folder: ${(err as Error).message}`);
+    }
 }
 
 const isFolder = (name: string) => !name.includes(".");
 
-function generateTypesAndSchemaInFolder(path: string, schemasPath: string[]) {
-  const folderContents = readdirSync(path, "utf-8");
-  folderContents.forEach((item) => {
-    const definitionFullPath = `${path}/${item}`;
-    if (isFolder(item)) {
-      generateTypesAndSchemaInFolder(definitionFullPath, schemasPath);
-    } else if (!item.includes(".ignore")) {
-      deReferenceJsonSchema(definitionFullPath);
-      generateTypescriptInterface(definitionFullPath);
-      const removedRootFolder = definitionFullPath.substring(
-        definitionFullPath.indexOf("/") + 1
-      );
-      schemasPath.push(removedRootFolder);
+async function generateTypesAndSchemaInFolder(path: string, schemasPath: string[]) {
+    const folderContents = readdirSync(path, "utf-8");
+
+    for (const item of folderContents) {
+        const definitionFullPath = `${path}/${item}`;
+
+        if (isFolder(item)) {
+            await generateTypesAndSchemaInFolder(definitionFullPath, schemasPath);
+        } else if (!item.includes(".ignore")) {
+            await deReferenceJsonSchema(definitionFullPath);
+            await generateTypescriptInterface(definitionFullPath);
+
+            const removedRootFolder = definitionFullPath.substring(
+                definitionFullPath.indexOf("/") + 1
+            );
+            schemasPath.push(removedRootFolder);
+        }
     }
-  });
-  return schemasPath;
+
+    return schemasPath;
 }
 
-function sanitiseTypesFolder(directory: string, files: string[] = []) {
-  const contents = readdirSync(directory);
-  contents.forEach(async (f) => {
-    const name = `${directory}/${f}`;
-    if (isFolder(name)) {
-      sanitiseTypesFolder(name, files);
-    } else {
-      const contents = readFileSync(name, { encoding: "utf-8" });
-      if (
-        contents.includes(
-          "This file was automatically generated by json-schema-to-typescript"
-        )
-      ) {
-        rmSync(name);
-      }
+function sanitiseTypesFolder(directory: string) {
+    const contents = readdirSync(directory);
+
+    for (const f of contents) {
+        const name = `${directory}/${f}`;
+
+        if (isFolder(f)) {
+            sanitiseTypesFolder(name);
+        } else {
+            const contents = readFileSync(name, { encoding: "utf-8" });
+
+            if (
+                contents.includes(
+                    "This file was automatically generated by json-schema-to-typescript"
+                )
+            ) {
+                rmSync(name);
+                console.log(`🗑️ Removed generated file: ${name}`);
+            }
+        }
     }
-  });
 }
 
 // Defines and maintains an array of valid json schemas for type-safe runtime validation
 function generateSchemasArray(paths: string[]) {
-  const schemas = `export const schemas = [
+    const schemas = `export const schemas = [
   "${paths.join('",\n  "')}",\n] as const;\n`;
-  writeFileSync("./schemas.ts", schemas);
+    writeFileSync("./schemas.ts", schemas);
 }
-/**
- * Generate typescript files from json definitions
- */
-sanitiseFolders();
-const schemas: string[] = [];
-generateTypesAndSchemaInFolder(definitionsDirName, schemas);
-generateSchemasArray(schemas);
+
+(async () => {
+    console.log("🛠️ Generating TypeScript definitions from JSON Schemas...");
+
+    sanitiseFolders();
+
+    const schemas: string[] = [];
+    await generateTypesAndSchemaInFolder(definitionsDirName, schemas);
+    generateSchemasArray(schemas);
+})();
