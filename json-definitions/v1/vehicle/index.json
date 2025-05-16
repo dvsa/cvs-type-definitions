@@ -41,7 +41,7 @@
     "testTypes": {
       "type": "array",
       "items": {
-        "$ref": "../test-type/index.json#"
+        "$ref": "../test-result-test-type/index.json#"
       }
     },
     "trailerId": {

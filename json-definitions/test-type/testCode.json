@@ -1,0 +1,147 @@
+{
+  "title": "TestCode Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "forVehicleType",
+    "forVehicleSize",
+    "forVehicleConfiguration",
+    "forVehicleAxles",
+    "forEuVehicleCategory",
+    "forVehicleClass",
+    "forVehicleSubclass",
+    "forVehicleWheels",
+    "defaultTestCode",
+    "linkedTestCode"
+  ],
+  "properties": {
+    "forVehicleType": {
+      "anyOf": [
+        {
+          "$ref": "../enums/vehicleType.enum.json"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../enums/vehicleType.enum.json"
+          }
+        }
+      ]
+    },
+    "forVehicleSize": {
+      "anyOf": [
+        {
+          "$ref": "../enums/vehicleSize.enum.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forVehicleConfiguration": {
+      "anyOf": [
+        {
+          "$ref": "../enums/vehicleConfiguration.enum.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forVehicleAxles": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forEuVehicleCategory": {
+      "anyOf": [
+        {
+          "$ref": "../enums/euVehicleCategory.enum.json"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../enums/euVehicleCategory.enum.json"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forVehicleClass": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forVehicleSubclass": {
+      "anyOf": [
+        {
+          "$ref": "../enums/vehicleSubclass.enum.json"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../enums/vehicleSubclass.enum.json"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forVehicleWheels": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "defaultTestCode": {
+      "type": "string"
+    },
+    "linkedTestCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "forProvisionalStatus": {
+      "type": "boolean"
+    },
+    "forProvisionalStatusOnly": {
+      "type": "boolean"
+    }
+  }
+}
