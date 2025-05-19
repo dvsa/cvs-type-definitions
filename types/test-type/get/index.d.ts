@@ -27,7 +27,7 @@ export interface GETTestTypeSchema {
   forVehicleWheels: number[] | null;
   testTypeClassification?: TestTypeClassification;
   testCodes?: TestCodeSchema[];
-  nextTestTypeOrCategories?: NextTestTypeOrCategorySchema[];
+  nextTestTypesOrCategories?: NextTestTypesOrCategorySchema[];
 }
 export interface TestCodeSchema {
   forVehicleType: VehicleType | VehicleType[];
@@ -43,7 +43,7 @@ export interface TestCodeSchema {
   forProvisionalStatus?: boolean;
   forProvisionalStatusOnly?: boolean;
 }
-export interface NextTestTypeOrCategorySchema {
+export interface NextTestTypesOrCategorySchema {
   typeOfTest?: string;
   id: string;
   linkedIds: string[] | null;
@@ -61,7 +61,7 @@ export interface NextTestTypeOrCategorySchema {
   forVehicleWheels: number[] | null;
   testTypeClassification?: TestTypeClassification;
   testCodes?: TestCodeSchema[];
-  nextTestTypeOrCategories?: NextTestTypeOrCategorySchema[];
+  nextTestTypesOrCategories?: NextTestTypesOrCategorySchema[];
 }
 
 export enum VehicleType {

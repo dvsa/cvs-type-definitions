@@ -145,12 +145,12 @@
         ]
       }
     },
-    "nextTestTypeOrCategories": {
+    "nextTestTypesOrCategories": {
       "type": "array",
       "items": {
         "anyOf": [
           {
-            "$ref": "../nextTestTypeOrCategory.json"
+            "$ref": "../nextTestTypesOrCategory.json"
           }
         ]
       }

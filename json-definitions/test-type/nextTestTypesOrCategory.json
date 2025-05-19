@@ -1,5 +1,5 @@
 {
-  "title": "NextTestTypeOrCategory Schema",
+  "title": "NextTestTypesOrCategory Schema",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -132,10 +132,10 @@
         "$ref": "../test-type/testCode.json"
       }
     },
-    "nextTestTypeOrCategories": {
+    "nextTestTypesOrCategories": {
       "type": "array",
       "items": {
-        "$ref": "../test-type/nextTestTypeOrCategory.json"
+        "$ref": "../test-type/nextTestTypesOrCategory.json"
       }
     }
   }

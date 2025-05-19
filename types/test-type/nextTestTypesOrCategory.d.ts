@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface NextTestTypeOrCategorySchema {
+export interface NextTestTypesOrCategorySchema {
   typeOfTest?: string;
   id: string;
   linkedIds: string[] | null;
@@ -23,7 +23,7 @@ export interface NextTestTypeOrCategorySchema {
   forVehicleWheels: number[] | null;
   testTypeClassification?: TestTypeClassification;
   testCodes?: TestCodeSchema[];
-  nextTestTypeOrCategories?: NextTestTypeOrCategorySchema1[];
+  nextTestTypesOrCategories?: NextTestTypesOrCategorySchema1[];
 }
 export interface TestCodeSchema {
   forVehicleType: VehicleType | VehicleType[];
@@ -39,7 +39,7 @@ export interface TestCodeSchema {
   forProvisionalStatus?: boolean;
   forProvisionalStatusOnly?: boolean;
 }
-export interface NextTestTypeOrCategorySchema1 {
+export interface NextTestTypesOrCategorySchema1 {
   typeOfTest?: string;
   id: string;
   linkedIds: string[] | null;
@@ -57,7 +57,7 @@ export interface NextTestTypeOrCategorySchema1 {
   forVehicleWheels: number[] | null;
   testTypeClassification?: TestTypeClassification;
   testCodes?: TestCodeSchema[];
-  nextTestTypeOrCategories?: NextTestTypeOrCategorySchema1[];
+  nextTestTypesOrCategories?: NextTestTypesOrCategorySchema1[];
 }
 
 export enum VehicleType {

@@ -9,7 +9,7 @@ export const schemas = [
   "required-standards/defects/requiredStandardTaxonomySection.json",
   "test-type/enums/testTypeClassification.enum.json",
   "test-type/get/index.json",
-  "test-type/nextTestTypeOrCategory.json",
+  "test-type/nextTestTypesOrCategory.json",
   "test-type/testCode.json",
   "v1/activity/index.json",
   "v1/defect-category-reference-data/index.json",
