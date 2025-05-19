@@ -41,7 +41,7 @@ export interface VehicleSchema {
   odometerMetric?: string;
   preparerId?: string;
   preparerName?: string;
-  testTypes?: TestTypeSchema[];
+  testTypes?: TestResultTestTypeSchema[];
   /**
    * trailer only
    */
@@ -274,7 +274,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
-  testTypes: TestTypeSchema[];
+  testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
   createdByEmailAddress?: string;
@@ -297,7 +297,7 @@ export interface TestResultSchema {
   deletionFlag?: boolean;
   recalls?: RecallsSchema;
 }
-export interface TestTypeSchema {
+export interface TestResultTestTypeSchema {
   testTypeName: string | null;
   name: string;
   testTypeId: string;

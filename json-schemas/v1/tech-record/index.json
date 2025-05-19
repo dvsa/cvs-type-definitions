@@ -283,25 +283,7 @@
 					"additionalProperties": false
 				},
 				"brakeForceWheelsUpToHalfLocked": {
-					"title": "Brake Force Wheel",
-					"type": "object",
-					"properties": {
-						"serviceBrakeForce": {
-							"type": "integer"
-						},
-						"secondaryBrakeForce": {
-							"type": "integer"
-						},
-						"parkingBrakeForce": {
-							"type": "integer"
-						}
-					},
-					"required": [
-						"serviceBrakeForce",
-						"secondaryBrakeForce",
-						"parkingBrakeForce"
-					],
-					"additionalProperties": false
+					"$ref": "#/properties/brakes/properties/brakeForceWheelsNotLocked"
 				},
 				"dtpNumber": {
 					"type": "string"

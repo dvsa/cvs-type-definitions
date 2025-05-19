@@ -7,7 +7,7 @@
 
 export type InspectionType = "basic" | "normal";
 
-export interface TestTypeSchema {
+export interface TestResultTestTypeSchema {
   testTypeName: string | null;
   name: string;
   testTypeId: string;

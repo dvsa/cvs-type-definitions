@@ -324,25 +324,7 @@
 										"additionalProperties": false
 									},
 									"brakeForceWheelsUpToHalfLocked": {
-										"title": "Brake Force Wheel",
-										"type": "object",
-										"properties": {
-											"serviceBrakeForce": {
-												"type": "integer"
-											},
-											"secondaryBrakeForce": {
-												"type": "integer"
-											},
-											"parkingBrakeForce": {
-												"type": "integer"
-											}
-										},
-										"required": [
-											"serviceBrakeForce",
-											"secondaryBrakeForce",
-											"parkingBrakeForce"
-										],
-										"additionalProperties": false
+										"$ref": "#/properties/vehicles/items/properties/techRecord/properties/brakes/properties/brakeForceWheelsNotLocked"
 									},
 									"dtpNumber": {
 										"type": "string"
@@ -680,7 +662,442 @@
 					},
 					"testResultsHistory": {
 						"type": "array",
-						"items": {}
+						"items": {
+							"title": "Test Result Schema",
+							"type": "object",
+							"properties": {
+								"testResultId": {
+									"type": "string"
+								},
+								"testStationName": {
+									"type": [
+										"string",
+										"null"
+									],
+									"maxLength": 999
+								},
+								"testStationPNumber": {
+									"type": [
+										"string",
+										"null"
+									],
+									"maxLength": 20
+								},
+								"testStationType": {
+									"anyOf": [
+										{
+											"title": "Test Station Types",
+											"type": "string",
+											"tsEnumNames": [
+												"ATF",
+												"GVTS",
+												"HQ",
+												"POTF",
+												"VEF"
+											],
+											"enum": [
+												"atf",
+												"gvts",
+												"hq",
+												"potf",
+												"vef"
+											]
+										}
+									]
+								},
+								"testerName": {
+									"type": [
+										"string",
+										"null"
+									],
+									"maxLength": 60
+								},
+								"testerStaffId": {
+									"type": "string",
+									"maxLength": 36
+								},
+								"testerEmailAddress": {
+									"type": [
+										"string",
+										"null"
+									],
+									"maxLength": 60
+								},
+								"testStartTimestamp": {
+									"type": "string"
+								},
+								"testEndTimestamp": {
+									"type": "string"
+								},
+								"testStatus": {
+									"anyOf": [
+										{
+											"title": "Test Status",
+											"type": "string",
+											"tsEnumNames": [
+												"SUBMITTED",
+												"CANCELLED"
+											],
+											"enum": [
+												"submitted",
+												"cancelled"
+											]
+										}
+									]
+								},
+								"reasonForCancellation": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"systemNumber": {
+									"type": "string"
+								},
+								"vrm": {
+									"type": "string",
+									"maxLength": 9
+								},
+								"trailerId": {
+									"type": "string"
+								},
+								"vin": {
+									"type": "string",
+									"maxLength": 21
+								},
+								"vehicleClass": {
+									"$ref": "#/properties/vehicles/items/properties/techRecord/properties/vehicleClass"
+								},
+								"vehicleSubclass": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"vehicleType": {
+									"anyOf": [
+										{
+											"title": "Vehicle Type",
+											"type": "string",
+											"enum": [
+												"psv",
+												"trl",
+												"hgv",
+												"car",
+												"lgv",
+												"motorcycle"
+											]
+										}
+									]
+								},
+								"vehicleConfiguration": {
+									"type": "string"
+								},
+								"odometerReading": {
+									"type": [
+										"number",
+										"null"
+									]
+								},
+								"odometerReadingUnits": {
+									"anyOf": [
+										{
+											"title": "Odometer Reading Units",
+											"type": "string",
+											"tsEnumNames": [
+												"KILOMETRES",
+												"MILES"
+											],
+											"enum": [
+												"kilometres",
+												"miles"
+											]
+										},
+										{
+											"type": "null"
+										}
+									]
+								},
+								"preparerId": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"preparerName": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"euVehicleCategory": {
+									"anyOf": [
+										{
+											"title": "EU vehicle category",
+											"type": "string",
+											"tsEnumNames": [
+												"M1",
+												"M2",
+												"M3",
+												"N1",
+												"N2",
+												"N3",
+												"O1",
+												"O2",
+												"O3",
+												"O4",
+												"L1E_A",
+												"l1E",
+												"L2e",
+												"L3E",
+												"L4E",
+												"L5E",
+												"L6E",
+												"L7E"
+											],
+											"enum": [
+												"m1",
+												"m2",
+												"m3",
+												"n1",
+												"n2",
+												"n3",
+												"o1",
+												"o2",
+												"o3",
+												"o4",
+												"l1e-a",
+												"l1e",
+												"l2e",
+												"l3e",
+												"l4e",
+												"l5e",
+												"l6e",
+												"l7e"
+											]
+										}
+									]
+								},
+								"countryOfRegistration": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"noOfAxles": {
+									"type": "integer",
+									"maximum": 99
+								},
+								"numberOfWheelsDriven": {
+									"type": [
+										"integer",
+										"null"
+									]
+								},
+								"vehicleSize": {
+									"type": "string"
+								},
+								"numberOfSeats": {
+									"type": "integer"
+								},
+								"regnDate": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"firstUseDate": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"testTypes": {
+									"type": "array",
+									"items": {
+										"$ref": "#/properties/vehicles/items/properties/testTypes/items"
+									}
+								},
+								"reasonForCreation": {
+									"type": "string",
+									"maxLength": 100
+								},
+								"createdAt": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"createdByEmailAddress": {
+									"type": "string"
+								},
+								"createdByName": {
+									"type": "string"
+								},
+								"createdById": {
+									"type": "string"
+								},
+								"lastUpdatedAt": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"lastUpdatedByEmailAddress": {
+									"type": "string"
+								},
+								"lastUpdatedByName": {
+									"type": "string"
+								},
+								"lastUpdatedById": {
+									"type": "string"
+								},
+								"shouldEmailCertificate": {
+									"type": "string"
+								},
+								"contingencyTestNumber": {
+									"type": [
+										"string",
+										"null"
+									],
+									"maxLength": 8,
+									"minLength": 6
+								},
+								"typeOfTest": {
+									"anyOf": [
+										{
+											"title": "Type of test",
+											"type": "string",
+											"tsEnumNames": [
+												"CONTINGENCY",
+												"DESK_BASED",
+												"COMPLETION"
+											],
+											"enum": [
+												"contingency",
+												"desk-based",
+												"completion"
+											]
+										}
+									]
+								},
+								"source": {
+									"anyOf": [
+										{
+											"title": "Test Sources",
+											"type": "string",
+											"tsEnumNames": [
+												"VTM",
+												"VTA"
+											],
+											"enum": [
+												"vtm",
+												"vta"
+											]
+										}
+									]
+								},
+								"make": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"model": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"bodyType": {
+									"title": "Body Type Schema",
+									"type": "object",
+									"properties": {
+										"code": {
+											"type": [
+												"string",
+												"null"
+											]
+										},
+										"description": {
+											"type": [
+												"string",
+												"null"
+											]
+										}
+									},
+									"additionalProperties": false
+								},
+								"vehicleId": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"testHistory": {
+									"type": "array",
+									"items": {
+										"$ref": "#/properties/vehicles/items/properties/testResultsHistory/items"
+									}
+								},
+								"testVersion": {
+									"type": "string"
+								},
+								"deletionFlag": {
+									"type": "boolean"
+								},
+								"recalls": {
+									"anyOf": [
+										{
+											"title": "Recalls Schema",
+											"type": "object",
+											"properties": {
+												"hasRecall": {
+													"type": "boolean"
+												},
+												"manufacturer": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"additionalProperties": false,
+											"required": [
+												"hasRecall",
+												"manufacturer"
+											]
+										}
+									]
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"testResultId",
+								"testStationName",
+								"testStationPNumber",
+								"testStationType",
+								"testerName",
+								"testerStaffId",
+								"testerEmailAddress",
+								"testStartTimestamp",
+								"testEndTimestamp",
+								"testStatus",
+								"reasonForCancellation",
+								"systemNumber",
+								"vin",
+								"vehicleClass",
+								"vehicleType",
+								"vehicleConfiguration",
+								"preparerId",
+								"preparerName",
+								"euVehicleCategory",
+								"countryOfRegistration",
+								"noOfAxles",
+								"numberOfWheelsDriven",
+								"testTypes"
+							]
+						}
 					},
 					"countryOfRegistration": {
 						"type": "string"
@@ -703,7 +1120,7 @@
 					"testTypes": {
 						"type": "array",
 						"items": {
-							"title": "Test Type Schema",
+							"title": "Test Result Test Type Schema",
 							"type": "object",
 							"properties": {
 								"testTypeName": {

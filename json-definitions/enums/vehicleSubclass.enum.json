@@ -1,0 +1,26 @@
+{
+  "title": "Vehicle Subclass",
+  "type": "string",
+  "tsEnumNames": [
+    "A",
+    "C",
+    "S",
+    "L",
+    "M",
+    "N",
+    "P",
+    "T",
+    "R"
+  ],
+  "enum":[
+    "a",
+    "c",
+    "s",
+    "l",
+    "m",
+    "n",
+    "p",
+    "t",
+    "r"
+  ]
+}
