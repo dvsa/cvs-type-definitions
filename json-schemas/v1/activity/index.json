@@ -133,6 +133,9 @@
 		},
 		"activityDay": {
 			"type": "string"
+		},
+		"closureReason": {
+			"ref": "../enums/closureReason.enum.json"
 		}
 	},
 	"additionalProperties": false,

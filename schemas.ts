@@ -16,6 +16,7 @@ export const schemas = [
   "v1/defect-details/index.json",
   "v1/defect-location/index.json",
   "v1/enums/activityType.enum.json",
+  "v1/enums/closureReason.enum.json",
   "v1/enums/emissionStandard.enum.json",
   "v1/enums/fuelType.enum.json",
   "v1/enums/odometerReadingUnits.enum.json",

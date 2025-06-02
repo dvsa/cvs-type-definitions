@@ -1,0 +1,12 @@
+{
+    "title": "Closure Reason Type",
+    "type": "string",
+    "tsEnumNames": [
+        "AUTO_CLOSE",
+        "MANUAL"
+    ],
+    "enum": [
+        "Auto Close",
+        "Manual"
+    ]
+}

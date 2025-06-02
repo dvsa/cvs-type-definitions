@@ -21,6 +21,9 @@ export interface ActivitySchema {
   waitReason?: WaitReason[];
   notes?: string | null;
   activityDay?: string;
+  closureReason?: {
+    [k: string]: unknown;
+  };
 }
 
 export enum ActivityType {
