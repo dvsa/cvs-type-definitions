@@ -21,9 +21,7 @@ export interface ActivitySchema {
   waitReason?: WaitReason[];
   notes?: string | null;
   activityDay?: string;
-  closureReason?: {
-    [k: string]: unknown;
-  };
+  closureReason?: ClosureReasonType;
 }
 
 export enum ActivityType {
@@ -44,4 +42,8 @@ export enum WaitReason {
   ADMIN = "Admin",
   SITE_ISSUE = "Site issue",
   OTHER = "Other"
+}
+export enum ClosureReasonType {
+  AUTOCLOSE = "Autoclose",
+  MANUAL = "Manual"
 }
