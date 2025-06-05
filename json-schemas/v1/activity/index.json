@@ -133,6 +133,18 @@
 		},
 		"activityDay": {
 			"type": "string"
+		},
+		"closureReason": {
+			"title": "Closure Reason Type",
+			"type": "string",
+			"tsEnumNames": [
+				"AUTOCLOSE",
+				"MANUAL"
+			],
+			"enum": [
+				"Autoclose",
+				"Manual"
+			]
 		}
 	},
 	"additionalProperties": false,
