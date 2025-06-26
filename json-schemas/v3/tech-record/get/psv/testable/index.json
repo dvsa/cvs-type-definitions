@@ -921,7 +921,16 @@
 		"techRecord_brakes_retarderBrakeTwo": {
 			"anyOf": [
 				{
-					"$ref": "#/properties/techRecord_brakes_retarderBrakeOne/anyOf/0"
+					"title": "Retarder Brake",
+					"type": "string",
+					"enum": [
+						"electric",
+						"exhaust",
+						"friction",
+						"hydraulic",
+						"other",
+						"none"
+					]
 				},
 				{
 					"type": "null"
