@@ -1,0 +1,70 @@
+{
+	"title": "Dynamics Test Station Schema",
+	"type": "object",
+	"properties": {
+		"testStationId": {
+			"type": "string"
+		},
+		"testStationPNumber": {
+			"type": "string"
+		},
+		"testStationName": {
+			"type": "string"
+		},
+		"testStationContactNumber": {
+			"type": "string"
+		},
+		"testStationAccessNotes": {
+			"type": "string"
+		},
+		"testStationGeneralNotes": {
+			"type": "string"
+		},
+		"testStationTown": {
+			"type": "string"
+		},
+		"testStationAddress": {
+			"type": "string"
+		},
+		"testStationPostcode": {
+			"type": "string"
+		},
+		"testStationLongitude": {
+			"type": "integer"
+		},
+		"testStationLatitude": {
+			"type": "integer"
+		},
+		"testStationType": {
+			"type": "string"
+		},
+		"testStationEmails": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"searchProperty": {
+			"type": "string"
+		},
+		"testStationCountry": {
+			"type": "string"
+		},
+		"testStationStatus": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"testStationId",
+		"testStationPNumber",
+		"testStationName",
+		"testStationContactNumber",
+		"testStationTown",
+		"testStationAddress",
+		"testStationPostcode",
+		"testStationType",
+		"testStationEmails",
+		"testStationStatus"
+	],
+	"additionalProperties": false
+}
