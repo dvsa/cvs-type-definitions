@@ -30,10 +30,10 @@
       "type": "string"
     },
     "testStationLongitude": {
-      "type": "integer"
+      "type": "number"
     },
     "testStationLatitude": {
-      "type": "integer"
+      "type": "number "
     },
     "testStationType": {
       "type": "string"
