@@ -54,3 +54,28 @@ export function isValidObject<B extends boolean | undefined>(
 
   return isValid;
 }
+
+export function validate<B extends boolean | undefined>(
+    schemaObject: object,
+    objectToValidate: object,
+    returnErrors: B,
+    logErrors = false
+) {
+  const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+  addFormats(ajv);
+
+  ajv.addKeyword('tsEnumNames');
+
+  const validateFunction = ajv.compile(schemaObject);
+  const isValid = validateFunction(objectToValidate);
+
+  if (logErrors && validateFunction.errors) {
+    console.error(validateFunction.errors);
+  }
+
+  if (returnErrors) {
+    return validateFunction.errors ?? [];
+  }
+
+  return isValid;
+}
