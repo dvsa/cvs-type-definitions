@@ -923,9 +923,14 @@
 									"maxLength": 100
 								},
 								"createdAt": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "string",
+											"format": "date-time"
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"createdByEmailAddress": {
@@ -938,9 +943,14 @@
 									"type": "string"
 								},
 								"lastUpdatedAt": {
-									"type": [
-										"string",
-										"null"
+									"anyOf": [
+										{
+											"type": "string",
+											"format": "date-time"
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"lastUpdatedByEmailAddress": {
@@ -1162,9 +1172,6 @@
 								"testResult": {
 									"anyOf": [
 										{
-											"type:": "null"
-										},
-										{
 											"title": "Test Results",
 											"type": "string",
 											"tsEnumNames": [
@@ -1179,6 +1186,9 @@
 												"fail",
 												"abandoned"
 											]
+										},
+										{
+											"type": "null"
 										}
 									]
 								},
@@ -1265,9 +1275,6 @@
 								"emissionStandard": {
 									"anyOf": [
 										{
-											"type:": "null"
-										},
-										{
 											"title": "Emission Standards",
 											"type": "string",
 											"tsEnumNames": [
@@ -1292,14 +1299,14 @@
 												"Euro VI",
 												"Full Electric"
 											]
+										},
+										{
+											"type": "null"
 										}
 									]
 								},
 								"fuelType": {
 									"anyOf": [
-										{
-											"type:": "null"
-										},
 										{
 											"title": "Fuel Type",
 											"type": "string",
@@ -1321,6 +1328,9 @@
 												"fuel cell",
 												"full electric"
 											]
+										},
+										{
+											"type": "null"
 										}
 									]
 								},
@@ -1736,17 +1746,25 @@
 									]
 								},
 								"lastUpdatedAt": {
-									"type": [
-										"string",
-										"date",
-										"null"
+									"anyOf": [
+										{
+											"type": "string",
+											"format": "date-time"
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"createdAt": {
-									"type": [
-										"string",
-										"date",
-										"null"
+									"anyOf": [
+										{
+											"type": "string",
+											"format": "date-time"
+										},
+										{
+											"type": "null"
+										}
 									]
 								},
 								"testTypeClassification": {

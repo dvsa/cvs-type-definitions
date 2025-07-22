@@ -176,9 +176,9 @@
       "maxLength": 100
     },
     "createdAt": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "null" }
       ]
     },
     "createdByEmailAddress": {
@@ -191,9 +191,9 @@
       "type": "string"
     },
     "lastUpdatedAt": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "null" }
       ]
     },
     "lastUpdatedByEmailAddress": {

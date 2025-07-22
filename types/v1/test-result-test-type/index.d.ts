@@ -15,11 +15,7 @@ export interface TestResultTestTypeSchema {
   secondaryCertificateNumber: string | null;
   testTypeStartTimestamp: string | null;
   testTypeEndTimestamp: string | null;
-  testResult:
-    | {
-        [k: string]: unknown;
-      }
-    | TestResults;
+  testResult: TestResults | null;
   prohibitionIssued: boolean | null;
   reasonForAbandoning: string | null;
   additionalNotesRecorded: string | null;
@@ -30,16 +26,8 @@ export interface TestResultTestTypeSchema {
   testExpiryDate?: string;
   testAnniversaryDate?: string | null;
   modType?: ModTypeSchema | string | null;
-  emissionStandard?:
-    | {
-        [k: string]: unknown;
-      }
-    | EmissionStandards;
-  fuelType?:
-    | {
-        [k: string]: unknown;
-      }
-    | FuelType;
+  emissionStandard?: EmissionStandards | null;
+  fuelType?: FuelType | null;
   modificationTypeUsed?: string | null;
   smokeTestKLimitApplied?: string | null;
   particulateTrapFitted?: string | null;
@@ -50,18 +38,8 @@ export interface TestResultTestTypeSchema {
   testNumber?: string | null;
   reapplicationDate?: string | null;
   testCode?: string | null;
-  lastUpdatedAt?:
-    | string
-    | {
-        [k: string]: unknown;
-      }
-    | null;
-  createdAt?:
-    | string
-    | {
-        [k: string]: unknown;
-      }
-    | null;
+  lastUpdatedAt?: string | null;
+  createdAt?: string | null;
   testTypeClassification?: string | null;
   deletionFlag?: string | null;
   centralDocs?: {
