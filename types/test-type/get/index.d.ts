@@ -124,5 +124,7 @@ export enum VehicleSubclass {
 export enum TestTypeClassification {
   ANNUAL_NO_CERTIFICATE = "Annual NO CERTIFICATE",
   ANNUAL_WITH_CERTIFICATE = "Annual With Certificate",
-  NON_ANNUAL = "NON ANNUAL"
+  NON_ANNUAL = "NON ANNUAL",
+  IVA_WITH_CERTIFICATE = "IVA With Certificate",
+  MSVA_WITH_CERTIFICATE = "MSVA With Certificate"
 }
