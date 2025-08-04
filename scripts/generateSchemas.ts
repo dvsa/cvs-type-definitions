@@ -43,7 +43,7 @@ async function deReferenceJsonSchema(schemaLocation: string): Promise<void> {
     );
 
     try {
-        const bundledSchema = await $RefParser.bundle(schemaLocation);
+        const bundledSchema = await $RefParser.dereference(schemaLocation);
 
         const deReferencedSchema = prettyJs(
             JSON.stringify(bundledSchema),
@@ -53,6 +53,23 @@ async function deReferenceJsonSchema(schemaLocation: string): Promise<void> {
         writeFile(derefSchemaPath, deReferencedSchema);
         console.log(`✅ Schema bundled for: ${schemaLocation}`);
     } catch (error) {
+        if ((error as Error).message.includes('Converting circular structure to JSON')) { // this is an error thrown by $RefParser when it encounters circular references
+            try {
+                const bundledSchema = await $RefParser.bundle(schemaLocation);
+
+                const deReferencedSchema = prettyJs(
+                    JSON.stringify(bundledSchema),
+                    options
+                );
+
+                writeFile(derefSchemaPath, deReferencedSchema);
+                console.log(`✅ Schema bundled for: ${schemaLocation}`);
+                return;
+            } catch (err) {
+                console.error(`❌ Error bundling schema at ${schemaLocation}:`, error);
+                return;
+            }
+        }
         console.error(`❌ Error bundling schema at ${schemaLocation}:`, error);
     }
 }

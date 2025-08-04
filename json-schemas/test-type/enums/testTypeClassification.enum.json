@@ -4,11 +4,15 @@
 	"tsEnumNames": [
 		"ANNUAL_NO_CERTIFICATE",
 		"ANNUAL_WITH_CERTIFICATE",
-		"NON_ANNUAL"
+		"NON_ANNUAL",
+		"IVA_WITH_CERTIFICATE",
+		"MSVA_WITH_CERTIFICATE"
 	],
 	"enum": [
 		"Annual NO CERTIFICATE",
 		"Annual With Certificate",
-		"NON ANNUAL"
+		"NON ANNUAL",
+		"IVA With Certificate",
+		"MSVA With Certificate"
 	]
 }

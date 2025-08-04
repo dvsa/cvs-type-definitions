@@ -40,7 +40,24 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/properties/forVehicleType/anyOf/0"
+						"title": "Vehicle Type",
+						"type": "string",
+						"tsEnumNames": [
+							"HGV",
+							"PSV",
+							"TRL",
+							"LGV",
+							"CAR",
+							"MOTORCYCLE"
+						],
+						"enum": [
+							"hgv",
+							"psv",
+							"trl",
+							"lgv",
+							"car",
+							"motorcycle"
+						]
 					}
 				}
 			]
@@ -168,7 +185,48 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/properties/forEuVehicleCategory/anyOf/0"
+						"title": "EU Vehicle Category",
+						"type": "string",
+						"tsEnumNames": [
+							"M1",
+							"M2",
+							"M3",
+							"N1",
+							"N2",
+							"N3",
+							"O1",
+							"O2",
+							"O3",
+							"O4",
+							"L1E_A",
+							"L1E",
+							"L2E",
+							"L3E",
+							"L4E",
+							"L5E",
+							"L6E",
+							"L7E"
+						],
+						"enum": [
+							"m1",
+							"m2",
+							"m3",
+							"n1",
+							"n2",
+							"n3",
+							"o1",
+							"o2",
+							"o3",
+							"o4",
+							"l1e-a",
+							"l1e",
+							"l2e",
+							"l3e",
+							"l4e",
+							"l5e",
+							"l6e",
+							"l7e"
+						]
 					}
 				},
 				{
@@ -223,7 +281,30 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/properties/forVehicleSubclass/anyOf/0"
+						"title": "Vehicle Subclass",
+						"type": "string",
+						"tsEnumNames": [
+							"A",
+							"C",
+							"S",
+							"L",
+							"M",
+							"N",
+							"P",
+							"T",
+							"R"
+						],
+						"enum": [
+							"a",
+							"c",
+							"s",
+							"l",
+							"m",
+							"n",
+							"p",
+							"t",
+							"r"
+						]
 					}
 				},
 				{

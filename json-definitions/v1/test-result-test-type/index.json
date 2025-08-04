@@ -41,10 +41,10 @@
     "testResult": {
       "anyOf": [
         {
-          "type:": "null"
+          "$ref": "../enums/testResult.enum.json"
         },
         {
-          "$ref": "../enums/testResult.enum.json"
+          "type": "null"
         }
       ]
     },
@@ -116,22 +116,14 @@
     },
     "emissionStandard": {
       "anyOf": [
-        {
-          "type:": "null"
-        },
-        {
-          "$ref": "../enums/emissionStandard.enum.json"
-        }
+        { "$ref": "../enums/emissionStandard.enum.json" },
+        { "type": "null" }
       ]
     },
     "fuelType": {
       "anyOf": [
-        {
-          "type:": "null"
-        },
-        {
-          "$ref": "../enums/fuelType.enum.json"
-        }
+        { "$ref": "../enums/fuelType.enum.json" },
+        { "type": "null" }
       ]
     },
     "modificationTypeUsed": {
@@ -206,17 +198,15 @@
       ]
     },
     "lastUpdatedAt": {
-      "type": [
-        "string",
-        "date",
-        "null"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "null" }
       ]
     },
     "createdAt": {
-      "type": [
-        "string",
-        "date",
-        "null"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "null" }
       ]
     },
     "testTypeClassification": {
