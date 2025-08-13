@@ -33,7 +33,7 @@
 			"type": "number"
 		},
 		"testStationLatitude": {
-			"type": "number"
+			"type": "number "
 		},
 		"testStationType": {
 			"type": "string"
