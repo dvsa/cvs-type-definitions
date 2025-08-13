@@ -16,9 +16,7 @@ export interface DynamicsTestStationSchema {
   testStationAddress: string;
   testStationPostcode: string;
   testStationLongitude?: number;
-  testStationLatitude?: {
-    [k: string]: unknown;
-  };
+  testStationLatitude?: number;
   testStationType: string;
   testStationEmails: string[];
   searchProperty?: string;
