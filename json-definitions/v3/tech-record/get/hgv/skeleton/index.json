@@ -1077,7 +1077,7 @@
         "string",
         "null"
       ],
-      "maxLength": 25
+      "maxLength": 35
     },
     "techRecord_variantVersionNumber": {
       "type": [
