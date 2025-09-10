@@ -43,7 +43,8 @@
       "$ref": "../../../enums/statusCode.ignore.json"
     },
     "techRecord_reasonForCreation": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "techRecord_vehicleConfiguration": {
       "anyOf": [

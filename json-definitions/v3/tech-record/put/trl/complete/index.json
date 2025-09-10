@@ -967,7 +967,8 @@
       "minimum": 0
     },
     "techRecord_reasonForCreation": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "techRecord_regnDate": {
       "anyOf": [

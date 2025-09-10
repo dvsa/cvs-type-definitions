@@ -16,7 +16,8 @@
 			"type": "string"
 		},
 		"techRecord_reasonForCreation": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 100
 		},
 		"techRecord_vehicleType": {
 			"const": "car"
