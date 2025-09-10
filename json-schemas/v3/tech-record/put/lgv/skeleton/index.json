@@ -1,847 +1,847 @@
 {
-  "title": "Tech Record PUT LGV Skeleton",
-  "type": "object",
-  "additionalProperties": false,
-  "required": [
-    "vin",
-    "techRecord_vehicleType",
-    "techRecord_statusCode",
-    "techRecord_reasonForCreation"
-  ],
-  "properties": {
-    "vin": {
-      "type": "string"
-    },
-    "primaryVrm": {
-      "type": "string"
-    },
-    "techRecord_applicantDetails_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 150
-    },
-    "techRecord_applicantDetails_address1": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 60
-    },
-    "techRecord_applicantDetails_address2": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 60
-    },
-    "techRecord_applicantDetails_postTown": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 60
-    },
-    "techRecord_applicantDetails_address3": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 60
-    },
-    "techRecord_applicantDetails_postCode": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 12
-    },
-    "techRecord_applicantDetails_telephoneNumber": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 25
-    },
-    "techRecord_applicantDetails_emailAddress": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "maxLength": 255
-    },
-    "techRecord_adrDetails_documentId": {
-      "type": "string"
-    },
-    "techRecord_adrDetails_dangerousGoods": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_vehicleDetails_type": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_bodyDeclaration_type": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "ADR Body Declaration Types",
-          "type": "string",
-          "tsEnumNames": [
-            "PRE_1ST_JULY_2005",
-            "ON_OR_AFTER_1ST_JULY_2005",
-            "UNKNOWN"
-          ],
-          "enum": [
-            "Pre 1st July 2005",
-            "On or after 1st July 2005",
-            "Unknown"
-          ]
-        }
-      ]
-    },
-    "techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "Radio Button Options",
-          "type": "string",
-          "tsEnumNames": [
-            "yes",
-            "no",
-            "not_applicable"
-          ],
-          "enum": [
-            "yes",
-            "no",
-            "n/a"
-          ]
-        }
-      ]
-    },
-    "techRecord_adrDetails_vehicleDetails_approvalDate": {
-      "anyOf": [
-        {
-          "type": "string",
-          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "techRecord_adrDetails_permittedDangerousGoods": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "string"
-      }
-    },
-    "techRecord_adrDetails_compatibilityGroupJ": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "ADR Compatibility Group J",
-          "type": "string",
-          "tsEnumNames": [
-            "I",
-            "E"
-          ],
-          "enum": [
-            "I",
-            "E"
-          ]
-        }
-      ]
-    },
-    "techRecord_adrDetails_additionalExaminerNotes": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "title": "Additional Examiner Notes",
-        "additionalProperties": false,
-        "type": "object",
-        "properties": {
-          "note": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "maxLength": 1024
-          },
-          "createdAtDate": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "lastUpdatedBy": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      }
-    },
-    "techRecord_adrDetails_applicantDetails_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 150
-    },
-    "techRecord_adrDetails_applicantDetails_street": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 150
-    },
-    "techRecord_adrDetails_applicantDetails_town": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 100
-    },
-    "techRecord_adrDetails_applicantDetails_city": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 100
-    },
-    "techRecord_adrDetails_applicantDetails_postcode": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 25
-    },
-    "techRecord_adrDetails_memosApply": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string"
-        ]
-      }
-    },
-    "techRecord_adrDetails_documents": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string"
-        ]
-      }
-    },
-    "techRecord_adrDetails_listStatementApplicable": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_batteryListNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 8
-    },
-    "techRecord_adrDetails_brakeDeclarationsSeen": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_brakeDeclarationIssuer": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_brakeEndurance": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_weight": {
-      "type": [
-        "number",
-        "null"
-      ],
-      "maximum": 99999999
-    },
-    "techRecord_adrDetails_declarationsSeen": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_m145Statement": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_newCertificateRequested": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_additionalNotes_number": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "string"
-      }
-    },
-    "techRecord_adrDetails_adrTypeApprovalNo": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 40
-    },
-    "techRecord_adrDetails_adrCertificateNotes": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 1500
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 70
-    },
-    "techRecord_adrDetails_tank_tankDetails_yearOfManufacture": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "maximum": 9999
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 50
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 65
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankCode": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 30
-    },
-    "techRecord_adrDetails_tank_tankDetails_specialProvisions": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 1024
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "TC2 Types",
-          "type": "string",
-          "enum": [
-            "initial"
-          ]
-        }
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 70
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
-      "anyOf": [
-        {
-          "type": "string",
-          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tc3Details": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "object",
-        "title": "TC3 Details",
-        "additionalProperties": false,
-        "properties": {
-          "tc3Type": {
-            "anyOf": [
-              {
-                "type": "null"
-              },
-              {
-                "title": "TC3 Types",
-                "type": "string",
-                "tsEnumNames": [
-                  "INTERMEDIATE",
-                  "PERIODIC",
-                  "EXCEPTIONAL"
-                ],
-                "enum": [
-                  "intermediate",
-                  "periodic",
-                  "exceptional"
-                ]
-              }
-            ]
-          },
-          "tc3PeriodicNumber": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "maxLength": 75
-          },
-          "tc3PeriodicExpiryDate": {
-            "anyOf": [
-              {
-                "type": "string",
-                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        }
-      }
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_select": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "ADR Tank Details Tank Statement Select",
-          "type": "string",
-          "tsEnumNames": [
-            "STATEMENT",
-            "PRODUCT_LIST"
-          ],
-          "enum": [
-            "Statement",
-            "Product list"
-          ]
-        }
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 1500
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string"
-        ]
-      }
-    },
-    "techRecord_adrDetails_tank_tankDetails_tankStatement_productList": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 1500
-    },
-    "techRecord_adrPassCertificateDetails": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "object",
-        "title": "ADR Certificate Details",
-        "required": [
-          "createdByName",
-          "certificateType",
-          "generatedTimestamp",
-          "certificateId"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "createdByName": {
-            "type": "string"
-          },
-          "certificateType": {
-            "title": "ADR Certificate Types",
-            "type": "string",
-            "tsEnumNames": [
-              "PASS",
-              "REPLACEMENT"
-            ],
-            "enum": [
-              "PASS",
-              "REPLACEMENT"
-            ]
-          },
-          "generatedTimestamp": {
-            "type": "string"
-          },
-          "certificateId": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "techRecord_euVehicleCategory": {
-      "anyOf": [
-        {
-          "title": "EU vehicle category",
-          "type": "string",
-          "tsEnumNames": [
-            "N1"
-          ],
-          "enum": [
-            "n1"
-          ]
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "techRecord_reasonForCreation": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "techRecord_vehicleType": {
-      "const": "lgv"
-    },
-    "techRecord_statusCode": {
-      "title": "Status Code",
-      "type": "string",
-      "enum": [
-        "provisional",
-        "current",
-        "archived"
-      ]
-    },
-    "techRecord_regnDate": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "techRecord_manufactureYear": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "techRecord_noOfAxles": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "techRecord_notes": {
-      "type": "string"
-    },
-    "techRecord_hiddenInVta": {
-      "type": "boolean"
-    },
-    "techRecord_updateType": {
-      "type": "string"
-    },
-    "secondaryVrms": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "techRecord_vehicleSubclass": {
-      "title": "Vehicle Subclass",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "n",
-          "p",
-          "a",
-          "s",
-          "c",
-          "l",
-          "t",
-          "e",
-          "m",
-          "r",
-          "w"
-        ]
-      }
-    },
-    "techRecord_vehicleConfiguration": {
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "title": "Vehicle Configuration",
-          "type": "string",
-          "tsEnumNames": [
-            "RIGID",
-            "ARTICULATED",
-            "CENTRE_AXLE_DRAWBAR",
-            "SEMI_CAR_TRANSPORTER",
-            "SEMI_TRAILER",
-            "LONG_SEMI_TRAILER",
-            "LOW_LOADER",
-            "OTHER",
-            "DRAWBAR",
-            "FOUR_IN_LINE",
-            "DOLLY",
-            "FULL_DRAWBAR"
-          ],
-          "enum": [
-            "rigid",
-            "articulated",
-            "centre axle drawbar",
-            "semi-car transporter",
-            "semi-trailer",
-            "long semi-trailer",
-            "low loader",
-            "other",
-            "drawbar",
-            "four-in-line",
-            "dolly",
-            "full drawbar"
-          ]
-        }
-      ]
-    }
-  },
-  "if": {
-    "properties": {
-      "techRecord_adrDetails_dangerousGoods": {
-        "const": true
-      }
-    },
-    "required": [
-      "techRecord_adrDetails_dangerousGoods"
-    ]
-  },
-  "then": {
-    "required": [
-      "techRecord_adrDetails_vehicleDetails_type",
-      "techRecord_adrDetails_vehicleDetails_approvalDate",
-      "techRecord_adrDetails_permittedDangerousGoods",
-      "techRecord_adrDetails_additionalNotes_number"
-    ],
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_permittedDangerousGoods": {
-              "type": "array",
-              "contains": {
-                "type": "string",
-                "pattern": "^Explosives \\(type \\d\\)$"
-              }
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_permittedDangerousGoods"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_compatibilityGroupJ"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_permittedDangerousGoods": {
-              "type": "array",
-              "contains": {
-                "const": "Explosives (type 3)"
-              }
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_permittedDangerousGoods"
-          ]
-        },
-        "else": {
-          "if": {
-            "properties": {
-              "techRecord_adrDetails_permittedDangerousGoods": {
-                "type": "array",
-                "contains": {
-                  "enum": [
-                    "FP <61 (FL)",
-                    "AT",
-                    "MEMU",
-                    "Carbon Disulphide",
-                    "Hydrogen",
-                    "Explosives (type 2)"
-                  ]
-                }
-              }
-            },
-            "required": [
-              "techRecord_adrDetails_permittedDangerousGoods"
-            ]
-          },
-          "then": {
-            "anyOf": [
-              {
-                "not": {
-                  "required": [
-                    "techRecord_adrDetails_bodyDeclaration_type"
-                  ]
-                }
-              },
-              {
-                "properties": {
-                  "techRecord_adrDetails_bodyDeclaration_type": {
-                    "const": null
-                  }
-                }
-              }
-            ]
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_vehicleDetails_type": {
-              "enum": [
-                "Rigid tank",
-                "Rigid battery",
-                "Full drawbar tank",
-                "Full drawbar battery",
-                "Centre axle tank",
-                "Centre axle battery",
-                "Semi trailer tank",
-                "Semi trailer battery"
-              ]
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_vehicleDetails_type"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_tank_tankDetails_tankManufacturer",
-            "techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
-            "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo",
-            "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo",
-            "techRecord_adrDetails_tank_tankDetails_tankCode",
-            "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_listStatementApplicable": {
-              "const": true
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_listStatementApplicable"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_batteryListNumber"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_brakeEndurance": {
-              "const": true
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_brakeEndurance"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_weight"
-          ]
-        }
-      }
-    ]
-  }
+	"title": "Tech Record PUT LGV Skeleton",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"vin",
+		"techRecord_vehicleType",
+		"techRecord_statusCode",
+		"techRecord_reasonForCreation"
+	],
+	"properties": {
+		"vin": {
+			"type": "string"
+		},
+		"primaryVrm": {
+			"type": "string"
+		},
+		"techRecord_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_applicantDetails_address1": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address2": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postTown": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_address3": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 60
+		},
+		"techRecord_applicantDetails_postCode": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 12
+		},
+		"techRecord_applicantDetails_telephoneNumber": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 25
+		},
+		"techRecord_applicantDetails_emailAddress": {
+			"type": [
+				"null",
+				"string"
+			],
+			"maxLength": 255
+		},
+		"techRecord_adrDetails_documentId": {
+			"type": "string"
+		},
+		"techRecord_adrDetails_dangerousGoods": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_vehicleDetails_type": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_bodyDeclaration_type": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "ADR Body Declaration Types",
+					"type": "string",
+					"tsEnumNames": [
+						"PRE_1ST_JULY_2005",
+						"ON_OR_AFTER_1ST_JULY_2005",
+						"UNKNOWN"
+					],
+					"enum": [
+						"Pre 1st July 2005",
+						"On or after 1st July 2005",
+						"Unknown"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_vehicleDetails_usedOnInternationalJourneys": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Radio Button Options",
+					"type": "string",
+					"tsEnumNames": [
+						"yes",
+						"no",
+						"not_applicable"
+					],
+					"enum": [
+						"yes",
+						"no",
+						"n/a"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_vehicleDetails_approvalDate": {
+			"anyOf": [
+				{
+					"type": "string",
+					"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_adrDetails_permittedDangerousGoods": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_adrDetails_compatibilityGroupJ": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "ADR Compatibility Group J",
+					"type": "string",
+					"tsEnumNames": [
+						"I",
+						"E"
+					],
+					"enum": [
+						"I",
+						"E"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_additionalExaminerNotes": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"title": "Additional Examiner Notes",
+				"additionalProperties": false,
+				"type": "object",
+				"properties": {
+					"note": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 1024
+					},
+					"createdAtDate": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"lastUpdatedBy": {
+						"type": [
+							"string",
+							"null"
+						]
+					}
+				}
+			}
+		},
+		"techRecord_adrDetails_applicantDetails_name": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_adrDetails_applicantDetails_street": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 150
+		},
+		"techRecord_adrDetails_applicantDetails_town": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
+		},
+		"techRecord_adrDetails_applicantDetails_city": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 100
+		},
+		"techRecord_adrDetails_applicantDetails_postcode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 25
+		},
+		"techRecord_adrDetails_memosApply": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_documents": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_listStatementApplicable": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_batteryListNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 8
+		},
+		"techRecord_adrDetails_brakeDeclarationsSeen": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_brakeDeclarationIssuer": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_brakeEndurance": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_weight": {
+			"type": [
+				"number",
+				"null"
+			],
+			"maximum": 99999999
+		},
+		"techRecord_adrDetails_declarationsSeen": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_m145Statement": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_newCertificateRequested": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_additionalNotes_number": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_adrDetails_adrTypeApprovalNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 40
+		},
+		"techRecord_adrDetails_adrCertificateNotes": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 70
+		},
+		"techRecord_adrDetails_tank_tankDetails_yearOfManufacture": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 9999
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 50
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankTypeAppNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 65
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankCode": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 30
+		},
+		"techRecord_adrDetails_tank_tankDetails_specialProvisions": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1024
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2Type": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "TC2 Types",
+					"type": "string",
+					"enum": [
+						"initial"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateApprovalNo": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 70
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc2Details_tc2IntermediateExpiryDate": {
+			"anyOf": [
+				{
+					"type": "string",
+					"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tc3Details": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "object",
+				"title": "TC3 Details",
+				"additionalProperties": false,
+				"properties": {
+					"tc3Type": {
+						"anyOf": [
+							{
+								"type": "null"
+							},
+							{
+								"title": "TC3 Types",
+								"type": "string",
+								"tsEnumNames": [
+									"INTERMEDIATE",
+									"PERIODIC",
+									"EXCEPTIONAL"
+								],
+								"enum": [
+									"intermediate",
+									"periodic",
+									"exceptional"
+								]
+							}
+						]
+					},
+					"tc3PeriodicNumber": {
+						"type": [
+							"string",
+							"null"
+						],
+						"maxLength": 75
+					},
+					"tc3PeriodicExpiryDate": {
+						"anyOf": [
+							{
+								"type": "string",
+								"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+							},
+							{
+								"type": "null"
+							}
+						]
+					}
+				}
+			}
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_select": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "ADR Tank Details Tank Statement Select",
+					"type": "string",
+					"tsEnumNames": [
+						"STATEMENT",
+						"PRODUCT_LIST"
+					],
+					"enum": [
+						"Statement",
+						"Product list"
+					]
+				}
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_statement": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productListRefNo": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productListUnNo": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": [
+					"string"
+				]
+			}
+		},
+		"techRecord_adrDetails_tank_tankDetails_tankStatement_productList": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 1500
+		},
+		"techRecord_adrPassCertificateDetails": {
+			"type": [
+				"array",
+				"null"
+			],
+			"items": {
+				"type": "object",
+				"title": "ADR Certificate Details",
+				"required": [
+					"createdByName",
+					"certificateType",
+					"generatedTimestamp",
+					"certificateId"
+				],
+				"additionalProperties": false,
+				"properties": {
+					"createdByName": {
+						"type": "string"
+					},
+					"certificateType": {
+						"title": "ADR Certificate Types",
+						"type": "string",
+						"tsEnumNames": [
+							"PASS",
+							"REPLACEMENT"
+						],
+						"enum": [
+							"PASS",
+							"REPLACEMENT"
+						]
+					},
+					"generatedTimestamp": {
+						"type": "string"
+					},
+					"certificateId": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"techRecord_euVehicleCategory": {
+			"anyOf": [
+				{
+					"title": "EU vehicle category",
+					"type": "string",
+					"tsEnumNames": [
+						"N1"
+					],
+					"enum": [
+						"n1"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"techRecord_reasonForCreation": {
+			"type": "string",
+			"maxLength": 100
+		},
+		"techRecord_vehicleType": {
+			"const": "lgv"
+		},
+		"techRecord_statusCode": {
+			"title": "Status Code",
+			"type": "string",
+			"enum": [
+				"provisional",
+				"current",
+				"archived"
+			]
+		},
+		"techRecord_regnDate": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"techRecord_manufactureYear": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_noOfAxles": {
+			"type": [
+				"integer",
+				"null"
+			]
+		},
+		"techRecord_notes": {
+			"type": "string"
+		},
+		"techRecord_hiddenInVta": {
+			"type": "boolean"
+		},
+		"techRecord_updateType": {
+			"type": "string"
+		},
+		"secondaryVrms": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"techRecord_vehicleSubclass": {
+			"title": "Vehicle Subclass",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"n",
+					"p",
+					"a",
+					"s",
+					"c",
+					"l",
+					"t",
+					"e",
+					"m",
+					"r",
+					"w"
+				]
+			}
+		},
+		"techRecord_vehicleConfiguration": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"title": "Vehicle Configuration",
+					"type": "string",
+					"tsEnumNames": [
+						"RIGID",
+						"ARTICULATED",
+						"CENTRE_AXLE_DRAWBAR",
+						"SEMI_CAR_TRANSPORTER",
+						"SEMI_TRAILER",
+						"LONG_SEMI_TRAILER",
+						"LOW_LOADER",
+						"OTHER",
+						"DRAWBAR",
+						"FOUR_IN_LINE",
+						"DOLLY",
+						"FULL_DRAWBAR"
+					],
+					"enum": [
+						"rigid",
+						"articulated",
+						"centre axle drawbar",
+						"semi-car transporter",
+						"semi-trailer",
+						"long semi-trailer",
+						"low loader",
+						"other",
+						"drawbar",
+						"four-in-line",
+						"dolly",
+						"full drawbar"
+					]
+				}
+			]
+		}
+	},
+	"if": {
+		"properties": {
+			"techRecord_adrDetails_dangerousGoods": {
+				"const": true
+			}
+		},
+		"required": [
+			"techRecord_adrDetails_dangerousGoods"
+		]
+	},
+	"then": {
+		"required": [
+			"techRecord_adrDetails_vehicleDetails_type",
+			"techRecord_adrDetails_vehicleDetails_approvalDate",
+			"techRecord_adrDetails_permittedDangerousGoods",
+			"techRecord_adrDetails_additionalNotes_number"
+		],
+		"allOf": [
+			{
+				"if": {
+					"properties": {
+						"techRecord_adrDetails_permittedDangerousGoods": {
+							"type": "array",
+							"contains": {
+								"type": "string",
+								"pattern": "^Explosives \\(type \\d\\)$"
+							}
+						}
+					},
+					"required": [
+						"techRecord_adrDetails_permittedDangerousGoods"
+					]
+				},
+				"then": {
+					"required": [
+						"techRecord_adrDetails_compatibilityGroupJ"
+					]
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"techRecord_adrDetails_permittedDangerousGoods": {
+							"type": "array",
+							"contains": {
+								"const": "Explosives (type 3)"
+							}
+						}
+					},
+					"required": [
+						"techRecord_adrDetails_permittedDangerousGoods"
+					]
+				},
+				"else": {
+					"if": {
+						"properties": {
+							"techRecord_adrDetails_permittedDangerousGoods": {
+								"type": "array",
+								"contains": {
+									"enum": [
+										"FP <61 (FL)",
+										"AT",
+										"MEMU",
+										"Carbon Disulphide",
+										"Hydrogen",
+										"Explosives (type 2)"
+									]
+								}
+							}
+						},
+						"required": [
+							"techRecord_adrDetails_permittedDangerousGoods"
+						]
+					},
+					"then": {
+						"anyOf": [
+							{
+								"not": {
+									"required": [
+										"techRecord_adrDetails_bodyDeclaration_type"
+									]
+								}
+							},
+							{
+								"properties": {
+									"techRecord_adrDetails_bodyDeclaration_type": {
+										"const": null
+									}
+								}
+							}
+						]
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"techRecord_adrDetails_vehicleDetails_type": {
+							"enum": [
+								"Rigid tank",
+								"Rigid battery",
+								"Full drawbar tank",
+								"Full drawbar battery",
+								"Centre axle tank",
+								"Centre axle battery",
+								"Semi trailer tank",
+								"Semi trailer battery"
+							]
+						}
+					},
+					"required": [
+						"techRecord_adrDetails_vehicleDetails_type"
+					]
+				},
+				"then": {
+					"required": [
+						"techRecord_adrDetails_tank_tankDetails_tankManufacturer",
+						"techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
+						"techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo",
+						"techRecord_adrDetails_tank_tankDetails_tankTypeAppNo",
+						"techRecord_adrDetails_tank_tankDetails_tankCode",
+						"techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted"
+					]
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"techRecord_adrDetails_listStatementApplicable": {
+							"const": true
+						}
+					},
+					"required": [
+						"techRecord_adrDetails_listStatementApplicable"
+					]
+				},
+				"then": {
+					"required": [
+						"techRecord_adrDetails_batteryListNumber"
+					]
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"techRecord_adrDetails_brakeEndurance": {
+							"const": true
+						}
+					},
+					"required": [
+						"techRecord_adrDetails_brakeEndurance"
+					]
+				},
+				"then": {
+					"required": [
+						"techRecord_adrDetails_weight"
+					]
+				}
+			}
+		]
+	}
 }

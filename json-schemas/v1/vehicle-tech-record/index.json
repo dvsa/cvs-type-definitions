@@ -67,7 +67,8 @@
 						"type": "boolean"
 					},
 					"reasonForCreation": {
-						"type": "string"
+						"type": "string",
+						"maxLength": 100
 					},
 					"statusCode": {
 						"type": "string"
