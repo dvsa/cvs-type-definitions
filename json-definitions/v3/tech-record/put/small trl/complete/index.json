@@ -1,133 +1,134 @@
 {
-    "title": "Tech Record PUT Small TRL Complete",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-        "vin",
-        "techRecord_statusCode",
-        "techRecord_vehicleClass_description",
-        "techRecord_vehicleType",
-        "techRecord_euVehicleCategory",
-        "techRecord_reasonForCreation",
-        "techRecord_noOfAxles",
-        "techRecord_vehicleConfiguration"
-    ],
-    "properties": {
-        "techRecord_applicantDetails_address1": {
-            "type": [
-                "string",
-                "null"
-            ]
+  "title": "Tech Record PUT Small TRL Complete",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vin",
+    "techRecord_statusCode",
+    "techRecord_vehicleClass_description",
+    "techRecord_vehicleType",
+    "techRecord_euVehicleCategory",
+    "techRecord_reasonForCreation",
+    "techRecord_noOfAxles",
+    "techRecord_vehicleConfiguration"
+  ],
+  "properties": {
+    "techRecord_applicantDetails_address1": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_address2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_address3": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_postCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_postTown": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_applicantDetails_telephoneNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "techRecord_euVehicleCategory": {
+      "$ref": "../../../enums/euVehicleCategorySmallTrl.enum.json"
+    },
+    "techRecord_manufactureMonth": {
+      "anyOf": [
+        {
+          "$ref": "../../../enums/manufactureMonth.ignore.json"
         },
-        "techRecord_applicantDetails_address2": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_address3": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_emailAddress": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_name": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_postCode": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_postTown": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_applicantDetails_telephoneNumber": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "techRecord_euVehicleCategory": {
-            "$ref": "../../../enums/euVehicleCategorySmallTrl.enum.json"
-        },
-        "techRecord_manufactureMonth": {
-            "anyOf": [
-                {
-                    "$ref": "../../../enums/manufactureMonth.ignore.json"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        },
-        "techRecord_manufactureYear": {
-            "type": [
-                "integer",
-                "null"
-            ]
-        },
-        "techRecord_noOfAxles": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 99
-        },
-        "techRecord_notes": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "maxLength": 1024
-        },
-        "techRecord_reasonForCreation": {
-            "type": "string"
-        },
-        "techRecord_statusCode": {
-            "$ref": "../../../enums/statusCode.ignore.json"
-        },
-        "techRecord_vehicleClass_description": {
-            "$ref": "../../../enums/vehicleClassDescription.enum.json"
-        },
-        "techRecord_vehicleConfiguration": {
-            "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
-        },
-        "techRecord_vehicleSubclass": {
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "../../../enums/vehicleSubclass.ignore.json"
-                }
-            ]
-        },
-        "techRecord_vehicleType": {
-            "const": "trl"
-        },
-        "vin": {
-            "type": "string"
-        },
-        "trailerId": {
-            "type": "string"
-        },
-        "techRecord_hiddenInVta": {
-            "type": [
-                "null",
-                "boolean"
-            ]
+        {
+          "type": "null"
         }
+      ]
+    },
+    "techRecord_manufactureYear": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "techRecord_noOfAxles": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
+    },
+    "techRecord_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1024
+    },
+    "techRecord_reasonForCreation": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "techRecord_statusCode": {
+      "$ref": "../../../enums/statusCode.ignore.json"
+    },
+    "techRecord_vehicleClass_description": {
+      "$ref": "../../../enums/vehicleClassDescription.enum.json"
+    },
+    "techRecord_vehicleConfiguration": {
+      "$ref": "../../../enums/vehicleConfigurationLightVehicle.enum.json"
+    },
+    "techRecord_vehicleSubclass": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "../../../enums/vehicleSubclass.ignore.json"
+        }
+      ]
+    },
+    "techRecord_vehicleType": {
+      "const": "trl"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "trailerId": {
+      "type": "string"
+    },
+    "techRecord_hiddenInVta": {
+      "type": [
+        "null",
+        "boolean"
+      ]
     }
+  }
 }

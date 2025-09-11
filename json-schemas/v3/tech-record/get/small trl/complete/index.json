@@ -150,7 +150,8 @@
 			"maxLength": 1024
 		},
 		"techRecord_reasonForCreation": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 100
 		},
 		"techRecord_statusCode": {
 			"title": "Status Code",
