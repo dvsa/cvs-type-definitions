@@ -10,13 +10,13 @@ export interface DynamicsTestStationSchema {
   testStationPNumber: string;
   testStationName: string;
   testStationContactNumber: string;
-  testStationAccessNotes?: string;
-  testStationGeneralNotes?: string;
+  testStationAccessNotes?: string | null;
+  testStationGeneralNotes?: string | null;
   testStationTown: string;
   testStationAddress: string;
   testStationPostcode: string;
-  testStationLongitude?: number;
-  testStationLatitude?: number;
+  testStationLongitude?: number | null;
+  testStationLatitude?: number | null;
   testStationType: string;
   testStationEmails: string[];
   searchProperty?: string;

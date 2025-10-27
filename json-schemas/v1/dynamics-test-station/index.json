@@ -15,10 +15,16 @@
 			"type": "string"
 		},
 		"testStationAccessNotes": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"testStationGeneralNotes": {
-			"type": "string"
+			"type": [
+				"string",
+				"null"
+			]
 		},
 		"testStationTown": {
 			"type": "string"
@@ -30,10 +36,16 @@
 			"type": "string"
 		},
 		"testStationLongitude": {
-			"type": "number"
+			"type": [
+				"number",
+				"null"
+			]
 		},
 		"testStationLatitude": {
-			"type": "number"
+			"type": [
+				"number",
+				"null"
+			]
 		},
 		"testStationType": {
 			"type": "string"
