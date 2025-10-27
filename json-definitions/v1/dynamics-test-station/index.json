@@ -48,7 +48,10 @@
       "type": "string"
     },
     "testStationCountry": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "testStationStatus": {
       "type": "string"

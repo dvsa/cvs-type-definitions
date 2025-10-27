@@ -20,6 +20,6 @@ export interface DynamicsTestStationSchema {
   testStationType: string;
   testStationEmails: string[];
   searchProperty?: string;
-  testStationCountry?: string;
+  testStationCountry?: string | null;
   testStationStatus: string;
 }
