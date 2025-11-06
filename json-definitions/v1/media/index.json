@@ -1,45 +1,16 @@
 {
   "title": "Media Schema",
   "type": "object",
-  "properties": {
-    "fileType": {
-      "anyOf": [
-        {
-          "$ref": "../enums/fileType.enum.json"
-        }
-      ]
-    },
-    "filePath": {
-      "type": "string"
-    },
-    "duration": {
-      "type": [
-        "number",
-        "null"
-      ]
-    },
-    "width": {
-      "type": [
-        "number",
-        "null"
-      ]
-    },
-    "height": {
-      "type": [
-        "number",
-        "null"
-      ]
-    },
-    "failReason": {
-      "type": [
-        "string",
-        "null"
-      ]
-    }
-  },
   "additionalProperties": false,
-  "required": [
-    "fileType",
-    "filePath"
+  "anyOf": [
+    {
+      "$ref": "../media/image.json"
+    },
+    {
+      "$ref": "../media/video.json"
+    },
+    {
+      "$ref": "../media/failReason.json"
+    }
   ]
 }

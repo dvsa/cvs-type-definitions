@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum FileType {
-  VIDEO = "Video",
-  IMAGE = "Image"
+export interface ImageSchema {
+  type: "image";
+  path: string;
 }

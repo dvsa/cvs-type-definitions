@@ -886,62 +886,67 @@
 						]
 					},
 					"media": {
-						"type": [
-							"array",
-							"null"
-						],
+						"type": "array",
 						"items": {
 							"title": "Media Schema",
 							"type": "object",
-							"properties": {
-								"fileType": {
-									"anyOf": [
-										{
-											"title": "File Type",
-											"type": "string",
-											"tsEnumNames": [
-												"VIDEO",
-												"IMAGE"
-											],
-											"enum": [
-												"Video",
-												"Image"
-											]
+							"additionalProperties": false,
+							"anyOf": [
+								{
+									"title": "Image Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "image"
+										},
+										"path": {
+											"type": "string"
 										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path"
 									]
 								},
-								"filePath": {
-									"type": "string"
-								},
-								"duration": {
-									"type": [
-										"number",
-										"null"
+								{
+									"title": "Video Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "video"
+										},
+										"path": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path"
 									]
 								},
-								"width": {
-									"type": [
-										"number",
-										"null"
-									]
-								},
-								"height": {
-									"type": [
-										"number",
-										"null"
-									]
-								},
-								"failReason": {
-									"type": [
-										"string",
-										"null"
+								{
+									"title": "Fail Reason Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "failReason"
+										},
+										"path": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path",
+										"reason"
 									]
 								}
-							},
-							"additionalProperties": false,
-							"required": [
-								"fileType",
-								"filePath"
 							]
 						}
 					},

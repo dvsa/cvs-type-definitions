@@ -166,10 +166,7 @@
       ]
     },
     "media": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type":  "array",
       "items": {
         "$ref": "../media/index.json#"
       }

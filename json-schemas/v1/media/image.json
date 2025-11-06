@@ -1,0 +1,17 @@
+{
+	"title": "Image Schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"const": "image"
+		},
+		"path": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"type",
+		"path"
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"title": "Video Schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"const": "video"
+		},
+		"path": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"type",
+		"path"
+	]
+}

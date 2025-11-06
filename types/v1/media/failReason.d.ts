@@ -5,16 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
-
-export interface ImageSchema {
-  type: "image";
-  path: string;
-}
-export interface VideoSchema {
-  type: "video";
-  path: string;
-}
 export interface FailReasonSchema {
   type: "failReason";
   path: string;

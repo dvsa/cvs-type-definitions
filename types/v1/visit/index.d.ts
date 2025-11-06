@@ -6,6 +6,7 @@
  */
 
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
+export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
 export type InspectionType = "basic" | "normal";
 
 export interface VisitSchema {
@@ -274,7 +275,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
-  media?: MediaSchema[] | null;
+  media?: MediaSchema[];
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
@@ -298,13 +299,18 @@ export interface TestResultSchema {
   deletionFlag?: boolean;
   recalls?: RecallsSchema;
 }
-export interface MediaSchema {
-  fileType: FileType;
-  filePath: string;
-  duration?: number | null;
-  width?: number | null;
-  height?: number | null;
-  failReason?: string | null;
+export interface ImageSchema {
+  type: "image";
+  path: string;
+}
+export interface VideoSchema {
+  type: "video";
+  path: string;
+}
+export interface FailReasonSchema {
+  type: "failReason";
+  path: string;
+  reason: string;
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
@@ -460,10 +466,6 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
-}
-export enum FileType {
-  VIDEO = "Video",
-  IMAGE = "Image"
 }
 export enum TestResults {
   PASS = "pass",
