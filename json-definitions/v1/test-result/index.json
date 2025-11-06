@@ -165,6 +165,15 @@
         "null"
       ]
     },
+    "media": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "../media/index.json#"
+      }
+    },
     "testTypes": {
       "type": "array",
       "items": {

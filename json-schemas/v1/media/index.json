@@ -1,0 +1,54 @@
+{
+	"title": "Media Schema",
+	"type": "object",
+	"properties": {
+		"fileType": {
+			"anyOf": [
+				{
+					"title": "File Type",
+					"type": "string",
+					"tsEnumNames": [
+						"VIDEO",
+						"IMAGE"
+					],
+					"enum": [
+						"Video",
+						"Image"
+					]
+				}
+			]
+		},
+		"filePath": {
+			"type": "string"
+		},
+		"duration": {
+			"type": [
+				"number",
+				"null"
+			]
+		},
+		"width": {
+			"type": [
+				"number",
+				"null"
+			]
+		},
+		"height": {
+			"type": [
+				"number",
+				"null"
+			]
+		},
+		"failReason": {
+			"type": [
+				"string",
+				"null"
+			]
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"fileType",
+		"filePath"
+	]
+}

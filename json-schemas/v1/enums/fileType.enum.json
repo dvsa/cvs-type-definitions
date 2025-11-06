@@ -1,0 +1,12 @@
+{
+	"title": "File Type",
+	"type": "string",
+	"tsEnumNames": [
+		"VIDEO",
+		"IMAGE"
+	],
+	"enum": [
+		"Video",
+		"Image"
+	]
+}

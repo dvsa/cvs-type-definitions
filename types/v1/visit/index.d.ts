@@ -274,6 +274,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
+  media?: MediaSchema[] | null;
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
@@ -296,6 +297,14 @@ export interface TestResultSchema {
   testVersion?: string;
   deletionFlag?: boolean;
   recalls?: RecallsSchema;
+}
+export interface MediaSchema {
+  fileType: FileType;
+  filePath: string;
+  duration?: number | null;
+  width?: number | null;
+  height?: number | null;
+  failReason?: string | null;
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
@@ -451,6 +460,10 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
+}
+export enum FileType {
+  VIDEO = "Video",
+  IMAGE = "Image"
 }
 export enum TestResults {
   PASS = "pass",
