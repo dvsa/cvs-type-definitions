@@ -1,0 +1,19 @@
+{
+  "title": "Fail Reason Schema",
+  "type": "object",
+  "properties": {
+    "type": { "const": "failReason" },
+    "path": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "path",
+    "reason"
+  ]
+}

@@ -6,6 +6,7 @@
  */
 
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
+export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
 export type InspectionType = "basic" | "normal";
 
 export interface VehicleSchema {
@@ -253,6 +254,7 @@ export interface TestResultSchema {
   numberOfSeats?: number;
   regnDate?: string | null;
   firstUseDate?: string | null;
+  media?: MediaSchema[];
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
@@ -275,6 +277,19 @@ export interface TestResultSchema {
   testVersion?: string;
   deletionFlag?: boolean;
   recalls?: RecallsSchema;
+}
+export interface ImageSchema {
+  type: "image";
+  path: string;
+}
+export interface VideoSchema {
+  type: "video";
+  path: string;
+}
+export interface FailReasonSchema {
+  type: "failReason";
+  path: string;
+  reason: string;
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
