@@ -139,11 +139,13 @@
 			"type": "string",
 			"tsEnumNames": [
 				"AUTOCLOSE",
-				"MANUAL"
+				"MANUAL",
+				"CLOSE_ALL"
 			],
 			"enum": [
 				"Autoclose",
-				"Manual"
+				"Manual",
+				"Close all"
 			]
 		}
 	},

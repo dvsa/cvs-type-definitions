@@ -7,5 +7,6 @@
 
 export enum ClosureReasonType {
   AUTOCLOSE = "Autoclose",
-  MANUAL = "Manual"
+  MANUAL = "Manual",
+  CLOSE_ALL = "Close all"
 }
