@@ -5,6 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
+
 export interface DefectDetailsSchema {
   imNumber: number;
   imDescription: string;
@@ -23,6 +25,7 @@ export interface DefectDetailsSchema {
   prs: boolean | null;
   prohibitionIssued: boolean | null;
   metadata: DefectMetadataSchema;
+  media?: MediaSchema[];
 }
 export interface DefectLocationSchema {
   vertical?: string | null;
@@ -50,4 +53,17 @@ export interface DefectLocationMetadataSchema {
   rowNumber?: number[] | null;
   seatNumber?: number[] | null;
   axleNumber?: number[] | null;
+}
+export interface ImageSchema {
+  type: "image";
+  path: string;
+}
+export interface VideoSchema {
+  type: "video";
+  path: string;
+}
+export interface FailReasonSchema {
+  type: "failReason";
+  path: string;
+  reason: string;
 }

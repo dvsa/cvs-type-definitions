@@ -480,6 +480,71 @@
 						"required": [
 							"category"
 						]
+					},
+					"media": {
+						"type": "array",
+						"items": {
+							"title": "Media Schema",
+							"type": "object",
+							"additionalProperties": false,
+							"anyOf": [
+								{
+									"title": "Image Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "image"
+										},
+										"path": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path"
+									]
+								},
+								{
+									"title": "Video Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "video"
+										},
+										"path": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path"
+									]
+								},
+								{
+									"title": "Fail Reason Schema",
+									"type": "object",
+									"properties": {
+										"type": {
+											"const": "failReason"
+										},
+										"path": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"type",
+										"path",
+										"reason"
+									]
+								}
+							]
+						}
 					}
 				},
 				"additionalProperties": false,

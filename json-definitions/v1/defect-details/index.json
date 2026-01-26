@@ -52,6 +52,12 @@
     },
     "metadata": {
       "$ref": "../defect-metadata/index.ignore.json#"
+    },
+    "media": {
+      "type":  "array",
+      "items": {
+        "$ref": "../media/index.json#"
+      }
     }
   },
   "additionalProperties": false,
