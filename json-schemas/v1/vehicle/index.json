@@ -1649,6 +1649,12 @@
 									"required": [
 										"category"
 									]
+								},
+								"media": {
+									"type": "array",
+									"items": {
+										"$ref": "#/properties/testResultsHistory/items/properties/media/items"
+									}
 								}
 							},
 							"additionalProperties": false,

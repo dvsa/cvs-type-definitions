@@ -1677,6 +1677,12 @@
 												"required": [
 													"category"
 												]
+											},
+											"media": {
+												"type": "array",
+												"items": {
+													"$ref": "#/properties/vehicles/items/properties/testResultsHistory/items/properties/media/items"
+												}
 											}
 										},
 										"additionalProperties": false,

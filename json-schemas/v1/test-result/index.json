@@ -811,6 +811,12 @@
 									"required": [
 										"category"
 									]
+								},
+								"media": {
+									"type": "array",
+									"items": {
+										"$ref": "#/properties/media/items"
+									}
 								}
 							},
 							"additionalProperties": false,

@@ -375,6 +375,7 @@ export interface DefectDetailsSchema {
   prs: boolean | null;
   prohibitionIssued: boolean | null;
   metadata: DefectMetadataSchema;
+  media?: MediaSchema[];
 }
 export interface DefectLocationSchema {
   vertical?: string | null;
