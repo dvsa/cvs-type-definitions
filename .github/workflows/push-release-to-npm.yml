@@ -10,11 +10,11 @@ on:
   workflow_run:
     workflows: ["Create Release"]
     types: [completed]
-    
+
 permissions:
   id-token: write   # Required for OIDC
   contents: read
-  
+
 jobs:
   push-to-npm:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        
+
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -31,16 +31,16 @@ jobs:
 
       - name: Update npm to latest version for OIDC support
         run: npm install -g npm@latest
-          
+
       - name: Install packages
         run: npm ci
-        
+
       - name: Build package
         run: npm run build
-        
+
       - name: Package files
         run: |
           cp -r types lib
-          
+
       - name: Publish on npm
-        run: cd lib && npm publish --provenance --access public
+        run: cd lib && npm publish --access public
