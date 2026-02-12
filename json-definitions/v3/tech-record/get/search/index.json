@@ -68,6 +68,12 @@
     },
     "techRecord_createdByName": {
       "type": "string"
+    },
+    "techRecord_applicantDetails_emailAddress": {
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }
