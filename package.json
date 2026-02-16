@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^12.0.2",
-    "ajv": "^8.12.0",
+    "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "json-schema-deref-sync": "^0.14.0",
     "pretty-js": "^0.2.2",
