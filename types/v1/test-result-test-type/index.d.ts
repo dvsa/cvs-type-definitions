@@ -158,6 +158,5 @@ export enum FuelType {
   GAS_LPG = "gas-lpg",
   PETROL = "petrol",
   FUEL_CELL = "fuel cell",
-  FULL_ELECTRIC = "full electric",
-  ETHANOL = "ethanol"
+  FULL_ELECTRIC = "full electric"
 }

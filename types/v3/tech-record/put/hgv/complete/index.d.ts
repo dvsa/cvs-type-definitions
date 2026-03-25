@@ -16,8 +16,8 @@ export type FuelPropulsionSystem =
   | "CNG"
   | "Fuel cell"
   | "LNG"
-  | "Other"
-  | "Ethanol";
+  | "Ethanol"
+  | "Other";
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
   | "AAT - Trailer Annual Test"
