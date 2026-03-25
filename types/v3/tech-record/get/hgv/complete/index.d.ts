@@ -16,6 +16,7 @@ export type FuelPropulsionSystem =
   | "CNG"
   | "Fuel cell"
   | "LNG"
+  | "Ethanol"
   | "Other";
 export type MicrofilmDocumentType =
   | "PSV Miscellaneous"
