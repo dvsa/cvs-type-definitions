@@ -517,7 +517,8 @@
 									"GAS_LPG",
 									"PETROL",
 									"FUEL_CELL",
-									"FULL_ELECTRIC"
+									"FULL_ELECTRIC",
+									"ETHANOL"
 								],
 								"enum": [
 									"diesel",
@@ -526,7 +527,8 @@
 									"gas-lpg",
 									"petrol",
 									"fuel cell",
-									"full electric"
+									"full electric",
+									"ethanol"
 								]
 							},
 							{
