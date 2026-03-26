@@ -48,6 +48,7 @@ export type FuelPropulsionSystem =
   | "CNG"
   | "Fuel cell"
   | "LNG"
+  | "Ethanol"
   | "Other";
 export type FitmentCode = "single" | "double";
 export type SpeedCategorySymbol =
