@@ -1,5 +1,6 @@
 export const schemas = [
   "enums/euVehicleCategory.enum.json",
+  "enums/refDataType.enum.json",
   "enums/vehicleConfiguration.enum.json",
   "enums/vehicleSize.enum.json",
   "enums/vehicleSubclass.enum.json",
