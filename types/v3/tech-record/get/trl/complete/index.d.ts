@@ -145,6 +145,8 @@ export interface TechRecordGETTRLComplete {
   techRecord_adrDetails_additionalNotes_number?: string[] | null;
   techRecord_adrDetails_adrTypeApprovalNo?: string | null;
   techRecord_adrDetails_adrCertificateNotes?: string | null;
+  techRecord_adrDetails_approved?: boolean | null;
+  techRecord_adrDetails_receivedDate?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankManufacturer?: string | null;
   techRecord_adrDetails_tank_tankDetails_yearOfManufacture?: number | null;
   techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo?: string | null;
