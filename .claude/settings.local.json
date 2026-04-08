@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find /Users/matt/work/cvs/cvs-type-definitions/tests/resources/data -type f -exec ls -lh {})",
+      "Bash(sort -k1 -h)",
+      "Bash(find /Users/matt/work/cvs/cvs-type-definitions/lib -type f -exec basename {})",
+      "Bash(npm pack:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

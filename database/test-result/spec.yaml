@@ -1,0 +1,1248 @@
+openapi: 3.1.0
+info:
+  title: cvs-test-result-service
+  version: 3.54.0
+  license:
+    name: Open Government Licence v3.0
+    url: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+tags:
+  - name: Test Results
+    description: API endpoints related to test results
+paths:
+  /test-results/version:
+    get:
+      operationId: VersionResource.getVersion
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/VersionModel'
+          description: OK
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get version
+      tags:
+        - Version
+      description: API for retrieving the version of the service
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-results/getTestResultsByTesterStaffId:
+    get:
+      operationId: TestResultResource.getByTesterStaffId
+      parameters:
+        - in: query
+          name: testerStaffId
+          required: true
+          schema:
+            minLength: 1
+            type: string
+        - in: query
+          name: toDateTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: fromDateTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: testStationPNumber
+          required: false
+          schema:
+            minLength: 1
+            type: string
+        - in: query
+          name: testStatus
+          required: false
+          schema:
+            minLength: 1
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/TestResultSchema'
+          description: OK
+        '400':
+          description: Test Result request is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test Result request is invalid
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get by tester staff id
+      tags:
+        - Test Results
+      description: API for retrieving test results by tester staff ID
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-results/{systemNumber}:
+    get:
+      operationId: TestResultResource.getBySystemNumber
+      parameters:
+        - in: path
+          name: systemNumber
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+        - in: query
+          name: toDateTime
+          schema:
+            type: string
+        - in: query
+          name: fromDateTime
+          schema:
+            type: string
+        - in: query
+          name: status
+          schema:
+            minLength: 1
+            type: string
+        - in: query
+          name: testResultId
+          schema:
+            minLength: 1
+            type: string
+        - in: query
+          name: version
+          schema:
+            minLength: 1
+            type: string
+        - in: query
+          name: testStationPNumber
+          schema:
+            minLength: 1
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/TestResultSchema'
+          description: OK
+        '400':
+          description: Test Result request is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test Result request is invalid
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get by system number
+      tags:
+        - Test Results
+      description: API for retrieving test results by system number
+      servers:
+        - description: Dev URL
+          url: https://your-url
+    put:
+      operationId: TestResultResource.updateTestResult
+      parameters:
+        - in: path
+          name: systemNumber
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTestResultBodyModel'
+        description: UpdateTestResultBodyModel
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/TestResultSchema'
+          description: OK
+        '400':
+          description: Test Result request is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test Result request is invalid
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Update test result
+      tags:
+        - Test Results
+      description: API for retrieving test results by tester staff ID
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-results:
+    post:
+      operationId: TestResultResource.postTestResult
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/TestResultSchema'
+        description: Test result data to be created
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test result created successfully for abc-123-xyz
+          description: Created
+        '400':
+          description: Test Result request is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test Result request is invalid
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Post test result
+      tags:
+        - Test Results
+      description: API for creating a test results
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-results/media:
+    patch:
+      operationId: TestResultResource.patchTestResultMedia
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchMedia'
+        description: PatchMedia
+        required: true
+      responses:
+        '204':
+          content:
+            application/json:
+              schema: {}
+          description: No content
+        '400':
+          description: Test Result request is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test Result request is invalid
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Patch test result media
+      tags:
+        - Test Results
+      description: API for updating test result media
+      servers:
+        - description: Dev URL
+          url: https://your-url
+components:
+  schemas:
+    VersionModel:
+      type: object
+      properties:
+        name:
+          type: string
+        buildDateTime:
+          type: string
+        version:
+          type: string
+      required:
+        - name
+        - buildDateTime
+        - version
+      additionalProperties: false
+    PatchMediaItem:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - image
+            - video
+        path:
+          type: string
+      required:
+        - type
+        - path
+      additionalProperties: false
+    PatchMedia:
+      type: object
+      properties:
+        category:
+          type: string
+          enum:
+            - approvals
+            - defects
+        vin:
+          type: string
+        systemNumber:
+          type: string
+        testResultId:
+          type: string
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/PatchMediaItem'
+      required:
+        - category
+        - vin
+        - systemNumber
+        - testResultId
+        - media
+      additionalProperties: false
+    VehicleType:
+      type: string
+      enum:
+        - psv
+        - trl
+        - hgv
+        - car
+        - lgv
+        - motorcycle
+      description: >-
+        This file was automatically generated by json-schema-to-typescript. DO
+        NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file, and
+        run json-schema-to-typescript to regenerate this file.
+    MediaSchema:
+      anyOf:
+        - $ref: '#/components/schemas/ImageSchema'
+        - $ref: '#/components/schemas/VideoSchema'
+        - $ref: '#/components/schemas/FailReasonSchema'
+    ImageSchema:
+      type: object
+      properties:
+        type:
+          type: string
+          const: image
+        path:
+          type: string
+      required:
+        - type
+        - path
+      additionalProperties: false
+    VideoSchema:
+      type: object
+      properties:
+        type:
+          type: string
+          const: video
+        path:
+          type: string
+      required:
+        - type
+        - path
+      additionalProperties: false
+    FailReasonSchema:
+      type: object
+      properties:
+        type:
+          type: string
+          const: failReason
+        path:
+          type: string
+        reason:
+          type: string
+      required:
+        - type
+        - path
+        - reason
+      additionalProperties: false
+    InspectionType:
+      type: string
+      enum:
+        - basic
+        - normal
+    TestResultSchema:
+      type: object
+      properties:
+        testResultId:
+          type: string
+        testStationName:
+          type:
+            - string
+            - 'null'
+        testStationPNumber:
+          type:
+            - string
+            - 'null'
+        testStationType:
+          $ref: '#/components/schemas/TestStationTypes'
+        testerName:
+          type:
+            - string
+            - 'null'
+        testerStaffId:
+          type: string
+        testerEmailAddress:
+          type:
+            - string
+            - 'null'
+        testStartTimestamp:
+          type: string
+        testEndTimestamp:
+          type: string
+        testStatus:
+          $ref: '#/components/schemas/TestStatus'
+        reasonForCancellation:
+          type:
+            - string
+            - 'null'
+        systemNumber:
+          type: string
+        vrm:
+          type: string
+        trailerId:
+          type: string
+        vin:
+          type: string
+        vehicleClass:
+          $ref: '#/components/schemas/VehicleClassSchema'
+        vehicleSubclass:
+          type: array
+          items:
+            type: string
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        vehicleConfiguration:
+          type: string
+        odometerReading:
+          type:
+            - number
+            - 'null'
+        odometerReadingUnits:
+          anyOf:
+            - $ref: '#/components/schemas/OdometerReadingUnits'
+            - type: 'null'
+        preparerId:
+          type:
+            - string
+            - 'null'
+        preparerName:
+          type:
+            - string
+            - 'null'
+        euVehicleCategory:
+          $ref: '#/components/schemas/EUVehicleCategory'
+        countryOfRegistration:
+          type:
+            - string
+            - 'null'
+        noOfAxles:
+          type: number
+        numberOfWheelsDriven:
+          type:
+            - number
+            - 'null'
+        vehicleSize:
+          type: string
+        numberOfSeats:
+          type: number
+        regnDate:
+          type:
+            - string
+            - 'null'
+        firstUseDate:
+          type:
+            - string
+            - 'null'
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaSchema'
+        testTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestResultTestTypeSchema'
+        reasonForCreation:
+          type: string
+        createdAt:
+          type:
+            - string
+            - 'null'
+        createdByEmailAddress:
+          type: string
+        createdByName:
+          type: string
+        createdById:
+          type: string
+        lastUpdatedAt:
+          type:
+            - string
+            - 'null'
+        lastUpdatedByEmailAddress:
+          type: string
+        lastUpdatedByName:
+          type: string
+        lastUpdatedById:
+          type: string
+        shouldEmailCertificate:
+          type: string
+        contingencyTestNumber:
+          type:
+            - string
+            - 'null'
+        typeOfTest:
+          $ref: '#/components/schemas/TypeOfTest'
+        source:
+          $ref: '#/components/schemas/TestSources'
+        make:
+          type:
+            - string
+            - 'null'
+        model:
+          type:
+            - string
+            - 'null'
+        bodyType:
+          $ref: '#/components/schemas/BodyTypeSchema'
+        vehicleId:
+          type:
+            - string
+            - 'null'
+        testHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestResultSchema'
+        testVersion:
+          type: string
+        deletionFlag:
+          type: boolean
+        recalls:
+          $ref: '#/components/schemas/RecallsSchema'
+      required:
+        - testResultId
+        - testStationName
+        - testStationPNumber
+        - testStationType
+        - testerName
+        - testerStaffId
+        - testerEmailAddress
+        - testStartTimestamp
+        - testEndTimestamp
+        - testStatus
+        - reasonForCancellation
+        - systemNumber
+        - vin
+        - vehicleClass
+        - vehicleType
+        - vehicleConfiguration
+        - preparerId
+        - preparerName
+        - euVehicleCategory
+        - countryOfRegistration
+        - noOfAxles
+        - numberOfWheelsDriven
+        - testTypes
+      additionalProperties: false
+    TestStationTypes:
+      type: string
+      enum:
+        - atf
+        - gvts
+        - hq
+        - potf
+        - vef
+    TestStatus:
+      type: string
+      enum:
+        - submitted
+        - cancelled
+    VehicleClassSchema:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+      required:
+        - code
+        - description
+      additionalProperties: false
+    OdometerReadingUnits:
+      type: string
+      enum:
+        - kilometres
+        - miles
+    EUVehicleCategory:
+      type: string
+      enum:
+        - m1
+        - m2
+        - m3
+        - n1
+        - n2
+        - n3
+        - o1
+        - o2
+        - o3
+        - o4
+        - l1e-a
+        - l1e
+        - l2e
+        - l3e
+        - l4e
+        - l5e
+        - l6e
+        - l7e
+    TestResultTestTypeSchema:
+      type: object
+      properties:
+        testTypeName:
+          type:
+            - string
+            - 'null'
+        name:
+          type: string
+        testTypeId:
+          type: string
+        certificateNumber:
+          type:
+            - string
+            - 'null'
+        secondaryCertificateNumber:
+          type:
+            - string
+            - 'null'
+        testTypeStartTimestamp:
+          type:
+            - string
+            - 'null'
+        testTypeEndTimestamp:
+          type:
+            - string
+            - 'null'
+        testResult:
+          anyOf:
+            - $ref: '#/components/schemas/TestResults'
+            - type: 'null'
+        prohibitionIssued:
+          type:
+            - boolean
+            - 'null'
+        reasonForAbandoning:
+          type:
+            - string
+            - 'null'
+        additionalNotesRecorded:
+          type:
+            - string
+            - 'null'
+        additionalCommentsForAbandon:
+          type:
+            - string
+            - 'null'
+        numberOfSeatbeltsFitted:
+          type:
+            - number
+            - 'null'
+        lastSeatbeltInstallationCheckDate:
+          type:
+            - string
+            - 'null'
+        seatbeltInstallationCheckDate:
+          type:
+            - boolean
+            - 'null'
+        testExpiryDate:
+          type: string
+        testAnniversaryDate:
+          type:
+            - string
+            - 'null'
+        modType:
+          anyOf:
+            - $ref: '#/components/schemas/ModTypeSchema'
+            - type: string
+            - type: 'null'
+        emissionStandard:
+          anyOf:
+            - $ref: '#/components/schemas/EmissionStandards'
+            - type: 'null'
+        fuelType:
+          anyOf:
+            - $ref: '#/components/schemas/FuelType'
+            - type: 'null'
+        modificationTypeUsed:
+          type:
+            - string
+            - 'null'
+        smokeTestKLimitApplied:
+          type:
+            - string
+            - 'null'
+        particulateTrapFitted:
+          type:
+            - string
+            - 'null'
+        particulateTrapSerialNumber:
+          type:
+            - string
+            - 'null'
+        defects:
+          type: array
+          items:
+            $ref: '#/components/schemas/DefectDetailsSchema'
+        customDefects:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/SpecialistCustomDefectsSchema'
+            - type: 'null'
+        requiredStandards:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpecialistCustomDefectsSchemaPut'
+        testNumber:
+          type:
+            - string
+            - 'null'
+        reapplicationDate:
+          type:
+            - string
+            - 'null'
+        testCode:
+          type:
+            - string
+            - 'null'
+        lastUpdatedAt:
+          type:
+            - string
+            - 'null'
+        createdAt:
+          type:
+            - string
+            - 'null'
+        testTypeClassification:
+          type:
+            - string
+            - 'null'
+        deletionFlag:
+          type:
+            - string
+            - 'null'
+        centralDocs:
+          type: object
+          properties:
+            issueRequired:
+              type: boolean
+            notes:
+              type: string
+            reasonsForIssue:
+              type: array
+              items:
+                type: string
+          required:
+            - issueRequired
+            - reasonsForIssue
+          additionalProperties: false
+      required:
+        - testTypeName
+        - name
+        - testTypeId
+        - certificateNumber
+        - secondaryCertificateNumber
+        - testTypeStartTimestamp
+        - testTypeEndTimestamp
+        - testResult
+        - prohibitionIssued
+        - reasonForAbandoning
+        - additionalNotesRecorded
+        - additionalCommentsForAbandon
+        - defects
+      additionalProperties: false
+    TestResults:
+      type: string
+      enum:
+        - pass
+        - prs
+        - fail
+        - abandoned
+    ModTypeSchema:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+      required:
+        - code
+        - description
+      additionalProperties: false
+    EmissionStandards:
+      type: string
+      enum:
+        - 0.10 g/kWh Euro 3 PM
+        - 0.03 g/kWh Euro IV PM
+        - Euro 3
+        - Euro 4
+        - Euro 5
+        - Euro 6
+        - Euro V
+        - Euro VI
+        - Full Electric
+    FuelType:
+      type: string
+      enum:
+        - diesel
+        - gas-cng
+        - gas-lng
+        - gas-lpg
+        - petrol
+        - fuel cell
+        - full electric
+    DefectDetailsSchema:
+      type: object
+      properties:
+        imNumber:
+          type: number
+        imDescription:
+          type: string
+        additionalInformation:
+          type: object
+          properties:
+            location:
+              $ref: '#/components/schemas/DefectLocationSchema'
+            notes:
+              type: string
+          required:
+            - location
+            - notes
+          additionalProperties: false
+        itemNumber:
+          type: number
+        itemDescription:
+          type: string
+        deficiencyRef:
+          type: string
+        deficiencyId:
+          type:
+            - string
+            - 'null'
+        deficiencySubId:
+          type:
+            - string
+            - 'null'
+        deficiencyCategory:
+          type: string
+        deficiencyText:
+          type:
+            - string
+            - 'null'
+        stdForProhibition:
+          type:
+            - boolean
+            - 'null'
+        prs:
+          type:
+            - boolean
+            - 'null'
+        prohibitionIssued:
+          type:
+            - boolean
+            - 'null'
+        metadata:
+          $ref: '#/components/schemas/DefectMetadataSchema'
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaSchema'
+      required:
+        - imNumber
+        - imDescription
+        - additionalInformation
+        - itemNumber
+        - itemDescription
+        - deficiencyRef
+        - deficiencyId
+        - deficiencySubId
+        - deficiencyCategory
+        - deficiencyText
+        - stdForProhibition
+        - prs
+        - prohibitionIssued
+        - metadata
+      additionalProperties: false
+    DefectLocationSchema:
+      type: object
+      properties:
+        vertical:
+          type:
+            - string
+            - 'null'
+        horizontal:
+          type:
+            - string
+            - 'null'
+        lateral:
+          type:
+            - string
+            - 'null'
+        longitudinal:
+          type:
+            - string
+            - 'null'
+        rowNumber:
+          type:
+            - number
+            - 'null'
+        seatNumber:
+          type:
+            - number
+            - 'null'
+        axleNumber:
+          type:
+            - number
+            - 'null'
+      additionalProperties: false
+    DefectMetadataSchema:
+      type: object
+      properties:
+        category:
+          type: object
+          properties:
+            additionalInfo:
+              $ref: '#/components/schemas/DefectAdditionalDetailsMetadataSchema'
+          additionalProperties: false
+      required:
+        - category
+      additionalProperties: false
+    DefectAdditionalDetailsMetadataSchema:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/DefectLocationMetadataSchema'
+        notes:
+          type: boolean
+      required:
+        - location
+        - notes
+      additionalProperties: false
+    DefectLocationMetadataSchema:
+      type: object
+      properties:
+        vertical:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        horizontal:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        lateral:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        longitudinal:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        rowNumber:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        seatNumber:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        axleNumber:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+      additionalProperties: false
+    SpecialistCustomDefectsSchema:
+      type: object
+      properties:
+        referenceNumber:
+          type: string
+        defectName:
+          type: string
+        defectNotes:
+          type: string
+        hasAllMandatoryFields:
+          type: boolean
+          description: FE only
+      required:
+        - referenceNumber
+        - defectName
+        - defectNotes
+      additionalProperties: false
+    SpecialistCustomDefectsSchemaPut:
+      type: object
+      properties:
+        sectionNumber:
+          type: string
+        sectionDescription:
+          type: string
+        additionalNotes:
+          type:
+            - string
+            - 'null'
+        rsNumber:
+          type: number
+        requiredStandard:
+          type: string
+        refCalculation:
+          type: string
+        additionalInfo:
+          type: boolean
+        inspectionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InspectionType'
+        prs:
+          type: boolean
+      required:
+        - sectionNumber
+        - sectionDescription
+        - rsNumber
+        - requiredStandard
+        - refCalculation
+        - additionalInfo
+        - prs
+      additionalProperties: false
+    TypeOfTest:
+      type: string
+      enum:
+        - contingency
+        - desk-based
+        - completion
+    TestSources:
+      type: string
+      enum:
+        - vtm
+        - vta
+    BodyTypeSchema:
+      type: object
+      properties:
+        code:
+          type:
+            - string
+            - 'null'
+        description:
+          type:
+            - string
+            - 'null'
+      additionalProperties: false
+    RecallsSchema:
+      type: object
+      properties:
+        hasRecall:
+          type: boolean
+        manufacturer:
+          type:
+            - string
+            - 'null'
+      required:
+        - hasRecall
+        - manufacturer
+      additionalProperties: false
+    SystemNumberPathParamModel:
+      properties:
+        systemNumber:
+          minLength: 1
+          type: string
+          pattern: ^(?!null$|undefined$).+
+      type: object
+      required:
+        - systemNumber
+    FindBySystemNumberQueryParamModel:
+      properties:
+        toDateTime:
+          type: string
+        fromDateTime:
+          type: string
+        status:
+          minLength: 1
+          type: string
+        testResultId:
+          minLength: 1
+          type: string
+        version:
+          minLength: 1
+          type: string
+        testStationPNumber:
+          minLength: 1
+          type: string
+      type: object
+    FindByTesterStaffIdModel:
+      properties:
+        testerStaffId:
+          minLength: 1
+          type: string
+        toDateTime:
+          type: string
+        fromDateTime:
+          type: string
+        testStationPNumber:
+          minLength: 1
+          type: string
+        testStatus:
+          minLength: 1
+          type: string
+      type: object
+      required:
+        - testerStaffId
+        - toDateTime
+        - fromDateTime
+    MsUserDetailsModel:
+      properties:
+        msUser:
+          type: string
+          minLength: 1
+        msOid:
+          type: string
+          minLength: 1
+      type: object
+      required:
+        - msUser
+        - msOid
+    UpdateTestResultBodyModel:
+      properties:
+        testResult:
+          minLength: 1
+          type: string
+        msUserDetails:
+          $ref: '#/components/schemas/MsUserDetailsModel'
+      type: object
+      required:
+        - testResult
+        - msUserDetails

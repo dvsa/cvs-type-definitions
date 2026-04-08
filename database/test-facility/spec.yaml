@@ -1,0 +1,1001 @@
+openapi: 3.1.0
+info:
+  title: cvs-test-facility-service
+  version: 3.53.0
+  license:
+    name: Open Government Licence v3.0
+    url: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+tags:
+  - name: TestStation
+    description: API endpoints related to test stations
+  - name: Activity
+    description: API endpoints related to activities
+paths:
+  /test-stations/version:
+    get:
+      operationId: VersionResource.getVersion
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/VersionModel'
+          description: OK
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get version
+      tags:
+        - Version
+      description: API for retrieving the version of the service
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/version:
+    get:
+      operationId: VersionResource.getVersion
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/VersionModel'
+          description: OK
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get version
+      tags:
+        - Version
+      description: API for retrieving the version of the service
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities:
+    post:
+      operationId: ActivityResource.startActivity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/ActivitySchema'
+        description: ''
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/StartActivityResponseModel'
+          description: Created
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '403':
+          description: Forbidden action
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Forbidden action
+                  error:
+                    type: string
+                    example: You are not allowed to perform this action
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Activity not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Start activity
+      tags:
+        - Activity
+      description: API creating a new activity
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/update:
+    put:
+      operationId: ActivityResource.updateActivity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                type: object
+                $ref: '#/components/schemas/ActivitySchema'
+              type: array
+        description: ''
+        required: true
+      responses:
+        '200':
+          content:
+            application/json: {}
+          description: Successful response
+        '204':
+          description: No content
+          content:
+            application/json:
+              schema: {}
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Activity not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Update activity
+      tags:
+        - Activity
+      description: API for checking if a user has an open visit
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/{activityId}/end:
+    put:
+      operationId: ActivityResource.endActivity
+      parameters:
+        - in: path
+          name: activityId
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                endTime:
+                  type: string
+        description: ''
+        required: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/EndActivityResponseModel'
+          description: OK
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: End activity
+      tags:
+        - Activity
+      description: API for checking if a user has an open visit
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/details:
+    get:
+      operationId: ActivityResource.getActivityByDetails
+      parameters:
+        - in: query
+          name: fromStartTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: toStartTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: activityType
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: testStationPNumber
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: testerStaffId
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: isOpen
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivitySchema'
+          description: OK
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Activity not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Get activity by details
+      tags:
+        - Activity
+      description: API for checking if a user has an open visit
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/cleanup:
+    get:
+      operationId: ActivityResource.getActivitiesForCleanup
+      parameters:
+        - in: query
+          name: fromStartTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: toStartTime
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: activityType
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: testStationPNumber
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: testerStaffId
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: isOpen
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivitySchema'
+          description: OK
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Activity not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Get activities for cleanup
+      tags:
+        - Activity
+      description: >-
+        API for retrieving a list of activities that will be auto-closed based
+        on isOpen
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/open:
+    get:
+      operationId: ActivityResource.openVisitCheck
+      parameters:
+        - in: query
+          name: testerStaffId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: OK
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+                  error:
+                    type: string
+                    example: X is required
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Open visit check
+      tags:
+        - Activity
+      description: API for checking if a user has an open visit
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /activities/close-all:
+    put:
+      operationId: ActivityResource.closeAllOpenActivities
+      parameters:
+        - in: header
+          name: x-api-key
+          required: false
+          schema:
+            type: string
+      responses:
+        '204':
+          content:
+            application/json:
+              schema: {}
+          description: No content
+        '403':
+          description: Forbidden action
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Forbidden action
+                  error:
+                    type: string
+                    example: You are not allowed to perform this action
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error has occurred and has been logged.
+      summary: Close all open activities
+      tags:
+        - Activity
+      description: API for closing all open activities
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /test-stations/{testStationPNumber}:
+    get:
+      operationId: TestStationResource.getTestStationByPNumber
+      parameters:
+        - in: path
+          name: testStationPNumber
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/TestStationSchema'
+          description: OK
+        '400':
+          description: Missing parameter value.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Missing parameter value.
+        '404':
+          description: Test station not found for the given P number
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test station not found for the given P number
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get test station by p number
+      tags:
+        - TestStation
+      description: >-
+        API for retrieving a test station based on the path parameter
+        testStationPNumber
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /test-stations:
+    get:
+      operationId: TestStationResource.getTestStations
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TestStationSchema'
+          description: OK
+        '404':
+          description: No resources match the search criteria.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: No resources match the search criteria.
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get test stations
+      tags:
+        - TestStation
+      description: API for retrieving list of all test stations
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+  /test-stations/{testStationPNumber}/email-addresses:
+    get:
+      operationId: TestStationResource.getTestStationsEmails
+      parameters:
+        - in: path
+          name: testStationPNumber
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmailPartialTestStation'
+          description: OK
+        '400':
+          description: Missing parameter value.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Missing parameter value.
+        '404':
+          description: No resources match the search criteria.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: No resources match the search criteria.
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get test stations emails
+      tags:
+        - TestStation
+      description: >-
+        API for retrieving a test station based on the path parameter
+        testStationPNumber
+      servers:
+        - description: Dev URL
+          url: http://localhost:3000/dev
+components:
+  schemas:
+    VersionModel:
+      type: object
+      properties:
+        name:
+          type: string
+        buildDateTime:
+          type: string
+        version:
+          type: string
+      required:
+        - name
+        - buildDateTime
+        - version
+      additionalProperties: false
+    EmailPartialTestStation:
+      type: object
+      properties:
+        testStationEmails:
+          type: array
+          items:
+            type: string
+        testStationId:
+          type: string
+        testStationPNumber:
+          type: string
+      required:
+        - testStationEmails
+        - testStationId
+        - testStationPNumber
+      additionalProperties: false
+    ActivityCleanupRequestModel:
+      type: object
+      properties:
+        fromStartTime:
+          type: string
+        toStartTime:
+          type: string
+        activityType:
+          type: string
+        testStationPNumber:
+          type: string
+        testerStaffId:
+          type: string
+        isOpen:
+          type: boolean
+      required:
+        - fromStartTime
+        - isOpen
+        - toStartTime
+      additionalProperties: false
+    EndActivityParamsRequestModel:
+      type: object
+      properties:
+        activityId:
+          type: string
+      required:
+        - activityId
+      additionalProperties: false
+    EndActivityBodyRequestModel:
+      type: object
+      properties:
+        endTime:
+          type: string
+      required:
+        - endTime
+      additionalProperties: false
+    EndActivityResponseModel:
+      type: object
+      properties:
+        wasVisitAlreadyClosed:
+          type: boolean
+      required:
+        - wasVisitAlreadyClosed
+      additionalProperties: false
+    GetActivityRequestModel:
+      type: object
+      properties:
+        fromStartTime:
+          type: string
+        toStartTime:
+          type: string
+        activityType:
+          type: string
+        testStationPNumber:
+          type: string
+        testerStaffId:
+          type: string
+        isOpen:
+          type: boolean
+      required:
+        - fromStartTime
+        - toStartTime
+      additionalProperties: false
+    StartActivityResponseModel:
+      type: object
+      properties:
+        id:
+          type: string
+      required:
+        - id
+      additionalProperties: false
+    ActivitySchema:
+      type: object
+      properties:
+        parentId:
+          type: string
+        id:
+          type: string
+        activityType:
+          $ref: '#/components/schemas/ActivityType'
+        testStationName:
+          type: string
+        testStationPNumber:
+          type: string
+        testStationEmail:
+          type: string
+        testStationType:
+          $ref: '#/components/schemas/TestStationTypes'
+        testerName:
+          type: string
+        testerStaffId:
+          type: string
+        testerEmail:
+          type: string
+        startTime:
+          type: string
+        endTime:
+          type:
+            - string
+            - 'null'
+        waitReason:
+          type: array
+          items:
+            $ref: '#/components/schemas/WaitReason'
+        notes:
+          type:
+            - string
+            - 'null'
+        activityDay:
+          type: string
+        closureReason:
+          $ref: '#/components/schemas/ClosureReasonType'
+      required:
+        - activityType
+        - testStationName
+        - testStationPNumber
+        - testStationEmail
+        - testStationType
+        - testerName
+        - testerStaffId
+        - startTime
+      additionalProperties: false
+      description: >-
+        This file was automatically generated by json-schema-to-typescript. DO
+        NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file, and
+        run json-schema-to-typescript to regenerate this file.
+    ActivityType:
+      type: string
+      enum:
+        - visit
+        - wait
+        - unaccountable time
+    TestStationTypes:
+      type: string
+      enum:
+        - atf
+        - gvts
+        - hq
+        - potf
+        - vef
+    WaitReason:
+      type: string
+      enum:
+        - Waiting for vehicle
+        - Break
+        - Admin
+        - Site issue
+        - Other
+    ClosureReasonType:
+      type: string
+      enum:
+        - Autoclose
+        - Manual
+        - Close all
+    TestStationSchema:
+      type: object
+      properties:
+        testStationId:
+          type: string
+        testStationPNumber:
+          type: string
+        testStationName:
+          type: string
+        testStationContactNumber:
+          type: string
+        testStationAccessNotes:
+          type: string
+        testStationGeneralNotes:
+          type: string
+        testStationTown:
+          type: string
+        testStationAddress:
+          type: string
+        testStationPostcode:
+          type: string
+        testStationLongitude:
+          type: number
+        testStationLatitude:
+          type: number
+        testStationType:
+          type: string
+        testStationEmails:
+          type: array
+          items:
+            type: string
+        searchProperty:
+          type: string
+        testStationCountry:
+          type: string
+        testStationStatus:
+          type: string
+      required:
+        - testStationId
+        - testStationPNumber
+        - testStationName
+        - testStationContactNumber
+        - testStationAccessNotes
+        - testStationGeneralNotes
+        - testStationTown
+        - testStationAddress
+        - testStationPostcode
+        - testStationLongitude
+        - testStationLatitude
+        - testStationType
+        - testStationEmails
+        - testStationStatus
+      additionalProperties: false
+      description: >-
+        This file was automatically generated by json-schema-to-typescript. DO
+        NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file, and
+        run json-schema-to-typescript to regenerate this file.
+    TestStationPNumberValidation:
+      properties:
+        testStationPNumber:
+          minLength: 1
+          type: string
+      type: object
+      required:
+        - testStationPNumber
+    TestStationValidation:
+      properties:
+        testStationId:
+          type: string
+          not:
+            type: 'null'
+        testStationPNumber:
+          type: string
+          not:
+            type: 'null'
+        testStationStatus:
+          type: string
+          enum:
+            - active
+            - termination requested
+            - inactive
+            - pending
+            - suspended
+            - terminated
+        testStationName:
+          type: string
+          not:
+            type: 'null'
+        testStationContactNumber:
+          type: string
+          not:
+            type: 'null'
+        testStationAccessNotes:
+          type: string
+        testStationGeneralNotes:
+          type: string
+        testStationTown:
+          type: string
+          not:
+            type: 'null'
+        testStationAddress:
+          type: string
+          not:
+            type: 'null'
+        testStationPostcode:
+          type: string
+          not:
+            type: 'null'
+        testStationCountry:
+          type: string
+        testStationLongitude:
+          type: number
+        testStationLatitude:
+          type: number
+        testStationType:
+          type: string
+          enum:
+            - atf
+            - gvts
+            - hq
+            - potf
+            - vef
+        testStationEmails:
+          items:
+            type: string
+          type: array
+          not:
+            type: 'null'
+      type: object
+      required:
+        - testStationId
+        - testStationPNumber
+        - testStationStatus
+        - testStationName
+        - testStationContactNumber
+        - testStationTown
+        - testStationAddress
+        - testStationPostcode
+        - testStationType
+        - testStationEmails
