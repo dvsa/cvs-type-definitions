@@ -287,6 +287,23 @@
 			],
 			"maxLength": 1500
 		},
+		"techRecord_adrDetails_approved": {
+			"type": [
+				"boolean",
+				"null"
+			]
+		},
+		"techRecord_adrDetails_receivedDate": {
+			"anyOf": [
+				{
+					"type": "string",
+					"pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
 		"techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
 			"type": [
 				"string",
