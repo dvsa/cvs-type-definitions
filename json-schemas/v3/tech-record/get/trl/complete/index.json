@@ -15,8 +15,6 @@
 		"techRecord_couplingType",
 		"techRecord_dimensions_length",
 		"techRecord_dimensions_width",
-		"techRecord_frontAxleToRearAxle",
-		"techRecord_rearAxleToRearTrl",
 		"techRecord_couplingCenterToRearAxleMin",
 		"techRecord_couplingCenterToRearAxleMax",
 		"techRecord_couplingCenterToRearTrlMax",
@@ -1720,6 +1718,25 @@
 				"then": {
 					"required": [
 						"techRecord_adrDetails_weight"
+					]
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"techRecord_axles": {
+							"type": "array",
+							"minItems": 2
+						}
+					},
+					"required": [
+						"techRecord_axles"
+					]
+				},
+				"then": {
+					"required": [
+						"techRecord_frontAxleToRearAxle",
+						"techRecord_rearAxleToRearTrl"
 					]
 				}
 			}

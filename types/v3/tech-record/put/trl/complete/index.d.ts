@@ -194,7 +194,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_firstUseDate: string;
   techRecord_frameDescription?: FrameDescription | null;
-  techRecord_frontAxleToRearAxle: number;
+  techRecord_frontAxleToRearAxle?: number;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
@@ -236,7 +236,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_manufacturerDetails_postTown?: string | null;
   techRecord_manufacturerDetails_manufacturerNotes?: string | null;
   techRecord_manufacturerDetails_telephoneNumber?: string | null;
-  techRecord_rearAxleToRearTrl: number;
+  techRecord_rearAxleToRearTrl?: number;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly: boolean;
