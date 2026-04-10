@@ -3,6 +3,15 @@ name: Publish to NPM
 on:
   workflow_dispatch:
     inputs:
+      canary-level:
+        description: 'Canary pre-release bump level'
+        default: 'none'
+        type: choice
+        options:
+          - none
+          - prepatch
+          - preminor
+          - premajor
       force:
         description: 'Force deploy'
         default: false
@@ -16,9 +25,41 @@ permissions:
   contents: read
 
 jobs:
+  publish-canary:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.canary-level != 'none' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Update npm to latest version for OIDC support
+        run: npm install -g npm@latest
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Version as prerelease
+        run: npm version ${{ inputs.canary-level }} --preid=canary --no-git-tag-version
+
+      - name: Package files
+        run: |
+          cp -r types lib
+
+      - name: Publish canary on npm
+        run: cd lib && npm publish --tag canary --access public
+
   push-to-npm:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.inputs.force }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || (github.event_name == 'workflow_dispatch' && inputs.force && inputs.canary-level == 'none') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
