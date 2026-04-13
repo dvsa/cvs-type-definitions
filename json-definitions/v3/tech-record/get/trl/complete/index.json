@@ -687,7 +687,10 @@
       ]
     },
     "techRecord_frontAxleToRearAxle": {
-      "type": "integer",
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
@@ -1020,7 +1023,10 @@
       ]
     },
     "techRecord_rearAxleToRearTrl": {
-      "type": "integer",
+      "type": [
+        "integer",
+        "null"
+      ],
       "maximum": 99999,
       "minimum": 0
     },
@@ -1276,182 +1282,206 @@
       }
     }
   },
-  "if": {
-    "properties": {
-      "techRecord_adrDetails_dangerousGoods": {
-        "const": true
-      }
-    },
-    "required": [
-      "techRecord_adrDetails_dangerousGoods"
-    ]
-  },
-  "then": {
-    "required": [
-      "techRecord_adrDetails_vehicleDetails_type",
-      "techRecord_adrDetails_vehicleDetails_approvalDate",
-      "techRecord_adrDetails_permittedDangerousGoods",
-      "techRecord_adrDetails_additionalNotes_number"
-    ],
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_permittedDangerousGoods": {
-              "type": "array",
-              "contains": {
-                "type": "string",
-                "pattern": "^Explosives \\(type \\d\\)$"
-              }
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_permittedDangerousGoods"
-          ]
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "techRecord_adrDetails_dangerousGoods": {
+            "const": true
+          }
         },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_compatibilityGroupJ"
-          ]
-        }
+        "required": [
+          "techRecord_adrDetails_dangerousGoods"
+        ]
       },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_permittedDangerousGoods": {
-              "type": "array",
-              "contains": {
-                "const": "Explosives (type 3)"
-              }
-            }
-          },
-          "required": [
-            "techRecord_adrDetails_permittedDangerousGoods"
-          ]
-        },
-        "else": {
-          "if": {
-            "properties": {
-              "techRecord_adrDetails_permittedDangerousGoods": {
-                "type": "array",
-                "contains": {
-                  "enum": [
-                    "FP <61 (FL)",
-                    "AT",
-                    "MEMU",
-                    "Carbon Disulphide",
-                    "Hydrogen",
-                    "Explosives (type 2)"
-                  ]
-                }
-              }
-            },
-            "required": [
-              "techRecord_adrDetails_permittedDangerousGoods"
-            ]
-          },
-          "then": {
-            "anyOf": [
-              {
-                "not": {
-                  "required": [
-                    "techRecord_adrDetails_bodyDeclaration_type"
-                  ]
-                }
-              },
-              {
-                "properties": {
-                  "techRecord_adrDetails_bodyDeclaration_type": {
-                    "const": null
+      "then": {
+        "required": [
+          "techRecord_adrDetails_vehicleDetails_type",
+          "techRecord_adrDetails_vehicleDetails_approvalDate",
+          "techRecord_adrDetails_permittedDangerousGoods",
+          "techRecord_adrDetails_additionalNotes_number"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "techRecord_adrDetails_permittedDangerousGoods": {
+                  "type": "array",
+                  "contains": {
+                    "type": "string",
+                    "pattern": "^Explosives \\(type \\d\\)$"
                   }
                 }
-              }
-            ]
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_vehicleDetails_type": {
-              "enum": [
-                "Rigid tank",
-                "Rigid battery",
-                "Full drawbar tank",
-                "Full drawbar battery",
-                "Centre axle tank",
-                "Centre axle battery",
-                "Semi trailer tank",
-                "Semi trailer battery"
+              },
+              "required": [
+                "techRecord_adrDetails_permittedDangerousGoods"
+              ]
+            },
+            "then": {
+              "required": [
+                "techRecord_adrDetails_compatibilityGroupJ"
               ]
             }
           },
-          "required": [
-            "techRecord_adrDetails_vehicleDetails_type"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_tank_tankDetails_tankManufacturer",
-            "techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
-            "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo",
-            "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo",
-            "techRecord_adrDetails_tank_tankDetails_tankCode",
-            "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_listStatementApplicable": {
-              "const": true
+          {
+            "if": {
+              "properties": {
+                "techRecord_adrDetails_permittedDangerousGoods": {
+                  "type": "array",
+                  "contains": {
+                    "const": "Explosives (type 3)"
+                  }
+                }
+              },
+              "required": [
+                "techRecord_adrDetails_permittedDangerousGoods"
+              ]
+            },
+            "else": {
+              "if": {
+                "properties": {
+                  "techRecord_adrDetails_permittedDangerousGoods": {
+                    "type": "array",
+                    "contains": {
+                      "enum": [
+                        "FP <61 (FL)",
+                        "AT",
+                        "MEMU",
+                        "Carbon Disulphide",
+                        "Hydrogen",
+                        "Explosives (type 2)"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "techRecord_adrDetails_permittedDangerousGoods"
+                ]
+              },
+              "then": {
+                "anyOf": [
+                  {
+                    "not": {
+                      "required": [
+                        "techRecord_adrDetails_bodyDeclaration_type"
+                      ]
+                    }
+                  },
+                  {
+                    "properties": {
+                      "techRecord_adrDetails_bodyDeclaration_type": {
+                        "const": null
+                      }
+                    }
+                  }
+                ]
+              }
             }
           },
-          "required": [
-            "techRecord_adrDetails_listStatementApplicable"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_batteryListNumber"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_adrDetails_brakeEndurance": {
-              "const": true
+          {
+            "if": {
+              "properties": {
+                "techRecord_adrDetails_vehicleDetails_type": {
+                  "enum": [
+                    "Rigid tank",
+                    "Rigid battery",
+                    "Full drawbar tank",
+                    "Full drawbar battery",
+                    "Centre axle tank",
+                    "Centre axle battery",
+                    "Semi trailer tank",
+                    "Semi trailer battery"
+                  ]
+                }
+              },
+              "required": [
+                "techRecord_adrDetails_vehicleDetails_type"
+              ]
+            },
+            "then": {
+              "required": [
+                "techRecord_adrDetails_tank_tankDetails_tankManufacturer",
+                "techRecord_adrDetails_tank_tankDetails_yearOfManufacture",
+                "techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo",
+                "techRecord_adrDetails_tank_tankDetails_tankTypeAppNo",
+                "techRecord_adrDetails_tank_tankDetails_tankCode",
+                "techRecord_adrDetails_tank_tankDetails_tankStatement_substancesPermitted"
+              ]
             }
           },
-          "required": [
-            "techRecord_adrDetails_brakeEndurance"
-          ]
-        },
-        "then": {
-          "required": [
-            "techRecord_adrDetails_weight"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "techRecord_axles": {
-              "type": "array",
-              "minItems": 2
+          {
+            "if": {
+              "properties": {
+                "techRecord_adrDetails_listStatementApplicable": {
+                  "const": true
+                }
+              },
+              "required": [
+                "techRecord_adrDetails_listStatementApplicable"
+              ]
+            },
+            "then": {
+              "required": [
+                "techRecord_adrDetails_batteryListNumber"
+              ]
             }
           },
-          "required": ["techRecord_axles"]
-        },
-        "then": {
-          "required": [
-            "techRecord_frontAxleToRearAxle",
-            "techRecord_rearAxleToRearTrl"
-          ]
-        }
+          {
+            "if": {
+              "properties": {
+                "techRecord_adrDetails_brakeEndurance": {
+                  "const": true
+                }
+              },
+              "required": [
+                "techRecord_adrDetails_brakeEndurance"
+              ]
+            },
+            "then": {
+              "required": [
+                "techRecord_adrDetails_weight"
+              ]
+            }
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "if": {
+        "properties": {
+          "techRecord_axles": {
+            "type": "array",
+            "minItems": 2
+          }
+        },
+        "required": ["techRecord_axles"]
+      },
+      "then": {
+        "required": [
+          "techRecord_frontAxleToRearAxle",
+          "techRecord_rearAxleToRearTrl"
+        ],
+        "allOf": [
+          {
+            "properties": {
+              "techRecord_frontAxleToRearAxle": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999
+              }
+            }
+          },
+          {
+            "properties": {
+              "techRecord_rearAxleToRearTrl": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

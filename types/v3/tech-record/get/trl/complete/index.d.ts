@@ -5,6 +5,10 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type TechRecordGETTRLComplete = TechRecordGETTRLComplete1 & TechRecordGETTRLComplete2;
+export type TechRecordGETTRLComplete1 = {
+  [k: string]: unknown;
+};
 export type TC2Types = "initial";
 export type FrameDescription =
   | "Channel section"
@@ -113,7 +117,7 @@ export type SpeedCategorySymbol =
   | "p"
   | "q";
 
-export interface TechRecordGETTRLComplete {
+export interface TechRecordGETTRLComplete2 {
   createdTimestamp: string;
   partialVin: string;
   systemNumber: string;
@@ -199,7 +203,7 @@ export interface TechRecordGETTRLComplete {
   techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_firstUseDate: string;
   techRecord_frameDescription?: FrameDescription | null;
-  techRecord_frontAxleToRearAxle?: number;
+  techRecord_frontAxleToRearAxle?: number | null;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
@@ -245,7 +249,7 @@ export interface TechRecordGETTRLComplete {
   techRecord_lastUpdatedAt?: string | null;
   techRecord_lastUpdatedByName?: string | null;
   techRecord_lastUpdatedById?: string | null;
-  techRecord_rearAxleToRearTrl?: number;
+  techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
   techRecord_recordCompleteness?: "complete";
   techRecord_regnDate?: string | null;

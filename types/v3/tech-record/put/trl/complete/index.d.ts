@@ -5,6 +5,10 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+export type TechRecordPUTTRLComplete = TechRecordPUTTRLComplete1 & TechRecordPUTTRLComplete2;
+export type TechRecordPUTTRLComplete1 = {
+  [k: string]: unknown;
+};
 export type TC2Types = "initial";
 export type FrameDescription =
   | "Channel section"
@@ -113,7 +117,7 @@ export type SpeedCategorySymbol =
   | "p"
   | "q";
 
-export interface TechRecordPUTTRLComplete {
+export interface TechRecordPUTTRLComplete2 {
   partialVin?: string | null;
   techRecord_adrDetails_documentId?: string;
   techRecord_adrDetails_dangerousGoods?: boolean | null;
@@ -194,7 +198,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_euVehicleCategory: EUVehicleCategory;
   techRecord_firstUseDate: string;
   techRecord_frameDescription?: FrameDescription | null;
-  techRecord_frontAxleToRearAxle?: number;
+  techRecord_frontAxleToRearAxle?: number | null;
   techRecord_functionCode?: string | null;
   techRecord_grossDesignWeight?: number | null;
   techRecord_grossEecWeight?: number | null;
@@ -236,7 +240,7 @@ export interface TechRecordPUTTRLComplete {
   techRecord_manufacturerDetails_postTown?: string | null;
   techRecord_manufacturerDetails_manufacturerNotes?: string | null;
   techRecord_manufacturerDetails_telephoneNumber?: string | null;
-  techRecord_rearAxleToRearTrl?: number;
+  techRecord_rearAxleToRearTrl?: number | null;
   techRecord_reasonForCreation: string;
   techRecord_regnDate?: string | null;
   techRecord_roadFriendly: boolean;
