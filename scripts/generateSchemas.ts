@@ -19,16 +19,25 @@ const options = {
     quoteProperties: "true",
 };
 
+function stripIndexSignatureIntersection(types: string): string {
+    return types.replace(
+        /export type (\w+) = \{\n\s*\[k: string\]: unknown;\n\} & \{([\s\S]*?\n)\};/g,
+        "export interface $1 {$2}"
+    );
+}
+
 async function generateTypescriptInterface(schemaLocation: string) {
     const fileExt = schemaLocation.includes("enum") ? ".ts" : ".d.ts";
     const saveToLocation = schemaLocation
         .replace(definitionsDirName, typesDirName)
         .replace(".json", fileExt);
 
-    const types = await compileFromFile(schemaLocation, {
+    let types = await compileFromFile(schemaLocation, {
         unreachableDefinitions: true,
         enableConstEnums: false,
     });
+
+    types = stripIndexSignatureIntersection(types);
 
     writeFile(saveToLocation, types);
     console.log(
