@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "12.7.0",
+  "version": "12.7.1",
   "description": "Type definitions for CVS VTA and VTM applications",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,7 @@
     "@types/jest": "^29.5.2",
     "@types/node": "^22.19.3",
     "jest": "^29.5.0",
-    "json-schema-to-typescript": "^11.0.2",
+    "json-schema-to-typescript": "^15.0.4",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
