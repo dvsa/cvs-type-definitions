@@ -306,6 +306,13 @@
 				}
 			]
 		},
+		"techRecord_adrDetails_applicationNumber": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 30
+		},
 		"techRecord_adrDetails_tank_tankDetails_tankManufacturer": {
 			"type": [
 				"string",

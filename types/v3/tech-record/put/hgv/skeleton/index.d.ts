@@ -116,6 +116,7 @@ export interface TechRecordPUTHGVSkeleton {
   techRecord_adrDetails_adrCertificateNotes?: string | null;
   techRecord_adrDetails_approved?: boolean | null;
   techRecord_adrDetails_receivedDate?: string | null;
+  techRecord_adrDetails_applicationNumber?: string | null;
   techRecord_adrDetails_tank_tankDetails_tankManufacturer?: string | null;
   techRecord_adrDetails_tank_tankDetails_yearOfManufacture?: number | null;
   techRecord_adrDetails_tank_tankDetails_tankManufacturerSerialNo?: string | null;
