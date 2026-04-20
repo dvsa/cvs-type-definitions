@@ -9,6 +9,7 @@
       "@matty/*": ["json-schemas/*"]
     },
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "target": "es5",
     "module": "commonjs",
     "declaration": true,

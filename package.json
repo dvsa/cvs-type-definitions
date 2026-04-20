@@ -30,7 +30,8 @@
     "ajv-formats": "^3.0.1",
     "json-schema-deref-sync": "^0.14.0",
     "pretty-js": "^0.2.2",
-    "util": "^0.12.5"
+    "util": "^0.12.5",
+    "zod": "^4.3.6"
   },
   "overrides": {
     "fast-uri": "^4.1.0"
