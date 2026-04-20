@@ -1,0 +1,38 @@
+export { vehicleTypeEnum, type VehicleType } from './vehicleType.enum';
+export { vehicleSizeEnum, type VehicleSize } from './vehicleSize.enum';
+export { vehicleConfigurationEnum, type VehicleConfiguration } from './vehicleConfiguration.enum';
+export { vehicleSubclassEnum, type VehicleSubclass } from './vehicleSubclass.enum';
+export { euVehicleCategoryEnum, type EUVehicleCategory } from './euVehicleCategory.enum';
+export { testResultEnum, type TestResult } from './testResult.enum';
+export { testStatusEnum, type TestStatus } from './testStatus.enum';
+export { testStationTypeEnum, type TestStationType } from './testStationType.enum';
+export { typeOfTestEnum, type TypeOfTest } from './typeOfTest.enum';
+export { testSourceEnum, type TestSource } from './testSource.enum';
+export { testTypeClassificationEnum, type TestTypeClassification } from './testTypeClassification.enum';
+export { inspectionTypeEnum, type InspectionType } from './inspectionType.enum';
+export { fuelTypeEnum, type FuelType } from './fuelType.enum';
+export { emissionStandardEnum, type EmissionStandard } from './emissionStandard.enum';
+export { activityTypeEnum, type ActivityType } from './activityType.enum';
+export { closureReasonEnum, type ClosureReason } from './closureReason.enum';
+export { waitReasonEnum, type WaitReason } from './waitReason.enum';
+export { odometerReadingUnitsEnum, type OdometerReadingUnits } from './odometerReadingUnits.enum';
+export { statusCodeEnum, type StatusCode } from './statusCode.enum';
+export { approvalTypeEnum, type ApprovalType } from './approvalType.enum';
+export { approvalTypeHgvOrPsvEnum, type ApprovalTypeHgvOrPsv } from './approvalTypeHgvOrPsv.enum';
+export { fitmentCodeEnum, type FitmentCode } from './fitmentCode.enum';
+export { fuelPropulsionSystemEnum, type FuelPropulsionSystem } from './fuelPropulsionSystem.enum';
+export { retarderBrakeEnum, type RetarderBrake } from './retarderBrake.enum';
+export { plateReasonForIssueEnum, type PlateReasonForIssue } from './plateReasonForIssue.enum';
+export { tc3TypeEnum, type TC3Type } from './tc3Type.enum';
+export { adrCertificateTypeEnum, type AdrCertificateType } from './adrCertificateType.enum';
+export { radioButtonOptionsEnum, type RadioButtonOption } from './radioButtonOptions.enum';
+export { speedCategorySymbolEnum, type SpeedCategorySymbol } from './speedCategorySymbol.enum';
+export { recordCompletenessEnum, type RecordCompleteness } from './recordCompleteness.enum';
+export { refDataTypeEnum, type RefDataType } from './refDataType.enum';
+
+// Backwards-compat aliases
+export type { ClosureReason as ClosureReasonType } from './closureReason.enum';
+export type { EmissionStandard as EmissionStandards } from './emissionStandard.enum';
+export type { TestSource as TestSources } from './testSource.enum';
+export type { TestResult as TestResults } from './testResult.enum';
+export type { TestStationType as TestStationTypes } from './testStationType.enum';
