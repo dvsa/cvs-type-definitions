@@ -323,9 +323,14 @@
       ]
     },
     "techRecord_adrDetails_applicationNumber": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^APP-\\d{7}-\\d{4}-\\d{1,2}$"
+        },
+        {
+          "type": "null"
+        }
       ],
       "maxLength": 30
     },
