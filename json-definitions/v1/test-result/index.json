@@ -171,6 +171,9 @@
         "$ref": "../media/index.json#"
       }
     },
+    "weights": {
+      "$ref": "../test-result-weights/index.json#"
+    },
     "testTypes": {
       "type": "array",
       "items": {

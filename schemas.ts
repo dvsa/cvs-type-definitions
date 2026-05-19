@@ -39,6 +39,7 @@ export const schemas = [
   "v1/test/index.json",
   "v1/test-result/index.json",
   "v1/test-result-test-type/index.json",
+  "v1/test-result-weights/index.json",
   "v1/test-station/index.json",
   "v1/vehicle/index.json",
   "v1/vehicle-tech-record/index.json",

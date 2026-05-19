@@ -263,6 +263,7 @@ export interface TestResultSchema {
   regnDate?: string | null;
   firstUseDate?: string | null;
   media?: MediaSchema[];
+  weights?: TestResultWeightsSchema;
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
@@ -298,6 +299,11 @@ export interface FailReasonSchema {
   type: "failReason";
   path: string;
   reason: string;
+}
+export interface TestResultWeightsSchema {
+  designGrossVehicleWeight: number;
+  designGrossTrainWeight?: number | null;
+  designGrossAxleWeight?: number | null;
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
