@@ -1,0 +1,31 @@
+{
+	"title": "Test Result Weights Schema",
+	"type": "object",
+	"properties": {
+		"designGrossVehicleWeight": {
+			"type": "integer",
+			"maximum": 99999,
+			"minimum": 1
+		},
+		"designGrossTrainWeight": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 1
+		},
+		"designGrossAxleWeight": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"maximum": 99999,
+			"minimum": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"designGrossVehicleWeight"
+	]
+}
