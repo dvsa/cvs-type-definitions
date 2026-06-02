@@ -5,13 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface TestResultWeightsSchema {
-  designGrossVehicleWeight: number;
-  designGrossTrainWeight?: number | null;
-  designGrossAxleWeight?: number | null;
-  designTrainWeightRequired?: DesignTrainWeightRequired;
-}
-
 export enum DesignTrainWeightRequired {
   NOT_APPLICABLE = "N/A"
 }

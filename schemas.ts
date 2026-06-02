@@ -19,6 +19,7 @@ export const schemas = [
   "v1/dynamics-test-station/index.json",
   "v1/enums/activityType.enum.json",
   "v1/enums/closureReason.enum.json",
+  "v1/enums/designTrainWeight.enum.json",
   "v1/enums/emissionStandard.enum.json",
   "v1/enums/fuelType.enum.json",
   "v1/enums/odometerReadingUnits.enum.json",
