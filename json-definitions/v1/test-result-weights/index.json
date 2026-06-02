@@ -16,6 +16,9 @@
       "type": ["integer", "null"],
       "maximum": 99999,
       "minimum": 1
+    },
+    "designTrainWeightRequired": {
+      "$ref": "../enums/designTrainWeight.enum.json"
     }
   },
   "additionalProperties": false,

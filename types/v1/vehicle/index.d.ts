@@ -296,6 +296,7 @@ export interface TestResultWeightsSchema {
   designGrossVehicleWeight: number;
   designGrossTrainWeight?: number | null;
   designGrossAxleWeight?: number | null;
+  designTrainWeightRequired?: DesignTrainWeightRequired;
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
@@ -452,6 +453,9 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
+}
+export enum DesignTrainWeightRequired {
+  NOT_APPLICABLE = "n/a"
 }
 export enum TestResults {
   PASS = "pass",

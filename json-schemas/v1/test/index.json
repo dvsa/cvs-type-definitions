@@ -1002,6 +1002,16 @@
 											],
 											"maximum": 99999,
 											"minimum": 1
+										},
+										"designTrainWeightRequired": {
+											"title": "Design Train Weight Required",
+											"type": "string",
+											"tsEnumNames": [
+												"NOT_APPLICABLE"
+											],
+											"enum": [
+												"n/a"
+											]
 										}
 									},
 									"additionalProperties": false,
