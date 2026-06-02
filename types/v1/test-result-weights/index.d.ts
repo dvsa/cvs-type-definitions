@@ -13,5 +13,5 @@ export interface TestResultWeightsSchema {
 }
 
 export enum DesignTrainWeightRequired {
-  NOT_APPLICABLE = "n/a"
+  NOT_APPLICABLE = "N/A"
 }

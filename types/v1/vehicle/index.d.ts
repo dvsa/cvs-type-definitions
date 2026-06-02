@@ -455,7 +455,7 @@ export enum EUVehicleCategory {
   L7E = "l7e"
 }
 export enum DesignTrainWeightRequired {
-  NOT_APPLICABLE = "n/a"
+  NOT_APPLICABLE = "N/A"
 }
 export enum TestResults {
   PASS = "pass",
