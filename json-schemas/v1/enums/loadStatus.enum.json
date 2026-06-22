@@ -1,0 +1,20 @@
+{
+	"title": "Load Status Type",
+	"type": "string",
+	"tsEnumNames": [
+		"UNLADEN",
+		"PARTIALLY_LADEN",
+		"PARTIALLY_LADEN_50_TO_65",
+		"FULLY_LADEN",
+		"LOAD_SIMULATED_PARTIALLY_LADEN",
+		"LOAD_SIMULATED_FULLY_LADEN"
+	],
+	"enum": [
+		"Unladen",
+		"Partially laden",
+		"Partially laden 50% to 65%",
+		"Fully laden",
+		"Load simulated partially laden",
+		"Load simulated fully laden"
+	]
+}

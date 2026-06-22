@@ -1,0 +1,31 @@
+{
+  "title": "Load Status Schema",
+  "type": "object",
+  "properties": {
+    "loadStatus": {
+      "$ref": "../enums/loadStatus.enum.json"
+    },
+    "unladenBodyTyoe": {
+      "$ref": "../enums/unladenBodyType.enum.json"
+    },
+    "unladenBodyTypeOtherReason": {
+      "type": ["string", "null"],
+      "maxLength": 200
+    },
+    "reasonForNotLoading": {
+      "$ref": "../enums/reasonForNotLoading.enum.json"
+    },
+    "otherReasonForNotLoading": {
+      "type": ["string", "null"],
+      "maxLength": 200
+    },
+    "partiallyLadenReason": {
+      "type": ["string", "null"],
+      "maxLength": 200
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+   "loadStatus"
+  ]
+}

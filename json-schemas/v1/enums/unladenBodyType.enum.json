@@ -1,0 +1,34 @@
+{
+	"title": "Unladen Body Type",
+	"type": "string",
+	"tsEnumNames": [
+		"SKELETAL",
+		"CURTAIN",
+		"FRIDGE",
+		"BOX",
+		"TANK",
+		"FLAT",
+		"CAR_TRANSPORTER",
+		"FIXED_PLANT",
+		"TIPPER",
+		"REFUGE",
+		"STREET_CLEANER",
+		"SPECIALISED_VEHICLE_TRAILER",
+		"OTHER"
+	],
+	"enum": [
+		"Skeletal",
+		"Curtain",
+		"Fridge",
+		"Box",
+		"Tank",
+		"Flat",
+		"Car transporter",
+		"Fixed plant",
+		"Tipper",
+		"Refuge",
+		"Street cleaner",
+		"Specialised vehicle/trailer",
+		"Other"
+	]
+}
