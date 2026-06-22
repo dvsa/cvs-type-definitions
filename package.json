@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "13.2.0",
+  "version": "14.1.0",
   "description": "Type definitions for CVS VTA and VTM applications",
   "main": "index.js",
   "repository": {
