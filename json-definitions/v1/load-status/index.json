@@ -2,8 +2,8 @@
   "title": "Load Status Schema",
   "type": "object",
   "properties": {
-    "loadStatus": {
-      "$ref": "../enums/loadStatus.enum.json"
+    "vehicleLoadStatus": {
+      "$ref": "../enums/vehicleLoadStatus.enum.json"
     },
     "unladenBodyType": {
       "$ref": "../enums/unladenBodyType.enum.json"

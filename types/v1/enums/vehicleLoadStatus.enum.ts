@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum LoadStatusType {
+export enum VehicleLoadStatusType {
   UNLADEN = "Unladen",
   PARTIALLY_LADEN = "Partially laden",
   PARTIALLY_LADEN_50_TO_65 = "Partially laden 50% to 65%",

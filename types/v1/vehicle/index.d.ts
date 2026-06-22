@@ -412,7 +412,7 @@ export interface SpecialistCustomDefectsSchemaPut {
   prs: boolean;
 }
 export interface LoadStatusSchema {
-  loadStatus: LoadStatusType;
+  vehicleLoadStatus?: VehicleLoadStatusType;
   unladenBodyType?: UnladenBodyType;
   unladenBodyTypeOtherReason?: string | null;
   reasonForNotLoading?: ReasonForNotLoading;
@@ -492,7 +492,7 @@ export enum FuelType {
   FUEL_CELL = "fuel cell",
   FULL_ELECTRIC = "full electric"
 }
-export enum LoadStatusType {
+export enum VehicleLoadStatusType {
   UNLADEN = "Unladen",
   PARTIALLY_LADEN = "Partially laden",
   PARTIALLY_LADEN_50_TO_65 = "Partially laden 50% to 65%",

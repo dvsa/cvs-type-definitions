@@ -1923,8 +1923,8 @@
 												"title": "Load Status Schema",
 												"type": "object",
 												"properties": {
-													"loadStatus": {
-														"title": "Load Status Type",
+													"vehicleLoadStatus": {
+														"title": "Vehicle Load Status Type",
 														"type": "string",
 														"tsEnumNames": [
 															"UNLADEN",
