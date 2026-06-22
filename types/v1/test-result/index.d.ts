@@ -123,6 +123,7 @@ export interface TestResultTestTypeSchema {
   lastUpdatedAt?: string | null;
   createdAt?: string | null;
   testTypeClassification?: string | null;
+  loadStatus?: LoadStatusSchema;
   deletionFlag?: string | null;
   centralDocs?: {
     issueRequired: boolean;
@@ -201,6 +202,14 @@ export interface SpecialistCustomDefectsSchemaPut {
   inspectionTypes?: InspectionType[];
   prs: boolean;
 }
+export interface LoadStatusSchema {
+  vehicleLoadStatus?: VehicleLoadStatusType;
+  unladenBodyType?: UnladenBodyType;
+  unladenBodyTypeOtherReason?: string | null;
+  reasonForNotLoading?: ReasonForNotLoading;
+  otherReasonForNotLoading?: string | null;
+  partiallyLadenReason?: string | null;
+}
 export interface BodyTypeSchema {
   code?: string | null;
   description?: string | null;
@@ -273,6 +282,41 @@ export enum FuelType {
   PETROL = "petrol",
   FUEL_CELL = "fuel cell",
   FULL_ELECTRIC = "full electric"
+}
+export enum VehicleLoadStatusType {
+  UNLADEN = "Unladen",
+  PARTIALLY_LADEN = "Partially laden",
+  PARTIALLY_LADEN_50_TO_65 = "Partially laden 50% to 65%",
+  FULLY_LADEN = "Fully laden",
+  LOAD_SIMULATED_PARTIALLY_LADEN = "Load simulated partially laden",
+  LOAD_SIMULATED_FULLY_LADEN = "Load simulated fully laden"
+}
+export enum UnladenBodyType {
+  SKELETAL = "Skeletal",
+  CURTAIN = "Curtain",
+  FRIDGE = "Fridge",
+  BOX = "Box",
+  TANK = "Tank",
+  FLAT = "Flat",
+  CAR_TRANSPORTER = "Car transporter",
+  FIXED_PLANT = "Fixed plant",
+  TIPPER = "Tipper",
+  REFUGE = "Refuge",
+  STREET_CLEANER = "Street cleaner",
+  SPECIALISED_VEHICLE_TRAILER = "Specialised vehicle/trailer",
+  OTHER = "Other"
+}
+export enum ReasonForNotLoading {
+  OBNOXIOUS_LOADS = "Obnoxious loads",
+  TANKER = "Tanker",
+  PERISHABLE_GOODS = "Perishable goods",
+  LIVESTOCK = "Livestock",
+  CAR_TRANSPORTER = "Car transporter",
+  REFUGE = "Refuge",
+  STREET_CLEANER = "Street cleaner",
+  ULTAST = "ULTAST",
+  SPECIALIST_BODY_LOAD = "Specialist body/load",
+  OTHER = "Other"
 }
 export enum TypeOfTest {
   CONTINGENCY = "contingency",

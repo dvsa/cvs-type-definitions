@@ -1,0 +1,28 @@
+{
+	"title": "Reason For Not Loading",
+	"type": "string",
+	"tsEnumNames": [
+		"OBNOXIOUS_LOADS",
+		"TANKER",
+		"PERISHABLE_GOODS",
+		"LIVESTOCK",
+		"CAR_TRANSPORTER",
+		"REFUGE",
+		"STREET_CLEANER",
+		"ULTAST",
+		"SPECIALIST_BODY_LOAD",
+		"OTHER"
+	],
+	"enum": [
+		"Obnoxious loads",
+		"Tanker",
+		"Perishable goods",
+		"Livestock",
+		"Car transporter",
+		"Refuge",
+		"Street cleaner",
+		"ULTAST",
+		"Specialist body/load",
+		"Other"
+	]
+}

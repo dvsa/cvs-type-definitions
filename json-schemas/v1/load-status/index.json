@@ -1,0 +1,113 @@
+{
+	"title": "Load Status Schema",
+	"type": "object",
+	"properties": {
+		"vehicleLoadStatus": {
+			"title": "Vehicle Load Status Type",
+			"type": "string",
+			"tsEnumNames": [
+				"UNLADEN",
+				"PARTIALLY_LADEN",
+				"PARTIALLY_LADEN_50_TO_65",
+				"FULLY_LADEN",
+				"LOAD_SIMULATED_PARTIALLY_LADEN",
+				"LOAD_SIMULATED_FULLY_LADEN"
+			],
+			"enum": [
+				"Unladen",
+				"Partially laden",
+				"Partially laden 50% to 65%",
+				"Fully laden",
+				"Load simulated partially laden",
+				"Load simulated fully laden"
+			]
+		},
+		"unladenBodyType": {
+			"title": "Unladen Body Type",
+			"type": "string",
+			"tsEnumNames": [
+				"SKELETAL",
+				"CURTAIN",
+				"FRIDGE",
+				"BOX",
+				"TANK",
+				"FLAT",
+				"CAR_TRANSPORTER",
+				"FIXED_PLANT",
+				"TIPPER",
+				"REFUGE",
+				"STREET_CLEANER",
+				"SPECIALISED_VEHICLE_TRAILER",
+				"OTHER"
+			],
+			"enum": [
+				"Skeletal",
+				"Curtain",
+				"Fridge",
+				"Box",
+				"Tank",
+				"Flat",
+				"Car transporter",
+				"Fixed plant",
+				"Tipper",
+				"Refuge",
+				"Street cleaner",
+				"Specialised vehicle/trailer",
+				"Other"
+			]
+		},
+		"unladenBodyTypeOtherReason": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 200
+		},
+		"reasonForNotLoading": {
+			"title": "Reason For Not Loading",
+			"type": "string",
+			"tsEnumNames": [
+				"OBNOXIOUS_LOADS",
+				"TANKER",
+				"PERISHABLE_GOODS",
+				"LIVESTOCK",
+				"CAR_TRANSPORTER",
+				"REFUGE",
+				"STREET_CLEANER",
+				"ULTAST",
+				"SPECIALIST_BODY_LOAD",
+				"OTHER"
+			],
+			"enum": [
+				"Obnoxious loads",
+				"Tanker",
+				"Perishable goods",
+				"Livestock",
+				"Car transporter",
+				"Refuge",
+				"Street cleaner",
+				"ULTAST",
+				"Specialist body/load",
+				"Other"
+			]
+		},
+		"otherReasonForNotLoading": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 200
+		},
+		"partiallyLadenReason": {
+			"type": [
+				"string",
+				"null"
+			],
+			"maxLength": 200
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"loadStatus"
+	]
+}

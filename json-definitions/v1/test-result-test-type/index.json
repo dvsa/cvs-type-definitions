@@ -215,6 +215,9 @@
         "null"
       ]
     },
+    "loadStatus": {
+      "$ref": "../load-status/index.json#"
+    },
     "deletionFlag": {
       "type": [
         "string",
