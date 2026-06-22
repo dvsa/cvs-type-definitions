@@ -22,7 +22,7 @@
 				"Load simulated fully laden"
 			]
 		},
-		"unladenBodyTyoe": {
+		"unladenBodyType": {
 			"title": "Unladen Body Type",
 			"type": "string",
 			"tsEnumNames": [

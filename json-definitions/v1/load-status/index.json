@@ -5,7 +5,7 @@
     "loadStatus": {
       "$ref": "../enums/loadStatus.enum.json"
     },
-    "unladenBodyTyoe": {
+    "unladenBodyType": {
       "$ref": "../enums/unladenBodyType.enum.json"
     },
     "unladenBodyTypeOtherReason": {

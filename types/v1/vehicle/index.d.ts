@@ -413,7 +413,7 @@ export interface SpecialistCustomDefectsSchemaPut {
 }
 export interface LoadStatusSchema {
   loadStatus: LoadStatusType;
-  unladenBodyTyoe?: UnladenBodyType;
+  unladenBodyType?: UnladenBodyType;
   unladenBodyTypeOtherReason?: string | null;
   reasonForNotLoading?: ReasonForNotLoading;
   otherReasonForNotLoading?: string | null;
