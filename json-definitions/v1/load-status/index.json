@@ -8,7 +8,7 @@
     "unladenBodyType": {
       "$ref": "../enums/unladenBodyType.enum.json"
     },
-    "unladenBodyTypeOtherReason": {
+    "otherUnladenBodyType": {
       "type": ["string", "null"],
       "maxLength": 200
     },

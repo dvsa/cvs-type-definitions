@@ -414,7 +414,7 @@ export interface SpecialistCustomDefectsSchemaPut {
 export interface LoadStatusSchema {
   vehicleLoadStatus?: VehicleLoadStatusType;
   unladenBodyType?: UnladenBodyType;
-  unladenBodyTypeOtherReason?: string | null;
+  otherUnladenBodyType?: string | null;
   reasonForNotLoading?: ReasonForNotLoading;
   otherReasonForNotLoading?: string | null;
   partiallyLadenReason?: string | null;

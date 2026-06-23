@@ -765,7 +765,7 @@
 						"Other"
 					]
 				},
-				"unladenBodyTypeOtherReason": {
+				"otherUnladenBodyType": {
 					"type": [
 						"string",
 						"null"
