@@ -1,12 +1,12 @@
+import $RefParser from "@apidevtools/json-schema-ref-parser";
 import {
-    mkdirSync,
-    readFileSync,
-    readdirSync,
-    rmSync,
-    writeFileSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
 } from "fs";
 import { compileFromFile } from "json-schema-to-typescript";
-import $RefParser from "@apidevtools/json-schema-ref-parser";
 const prettyJs = require("pretty-js");
 
 const jsonSchemaDirName = "json-schemas";
