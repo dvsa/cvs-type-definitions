@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "description": "Type definitions for CVS VTA and VTM applications",
   "main": "index.js",
   "repository": {
@@ -14,6 +14,7 @@
   "author": "dvsa",
   "license": "ISC",
   "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^15.4.0",
     "@jest/globals": "^29.5.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^22.19.3",
@@ -25,11 +26,13 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^12.0.2",
-    "ajv": "^8.18.0",
+    "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "json-schema-deref-sync": "^0.14.0",
     "pretty-js": "^0.2.2",
     "util": "^0.12.5"
+  },
+  "overrides": {
+    "fast-uri": "^4.1.0"
   }
 }
