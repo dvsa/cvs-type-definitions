@@ -1,0 +1,12 @@
+{
+	"title": "Vertical Location",
+	"type": "string",
+	"tsEnumNames": [
+		"UPPER",
+		"LOWER"
+	],
+	"enum": [
+		"upper",
+		"lower"
+	]
+}

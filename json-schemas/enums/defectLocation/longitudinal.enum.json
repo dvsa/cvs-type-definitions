@@ -1,0 +1,12 @@
+{
+	"title": "Longitudinal Location",
+	"type": "string",
+	"tsEnumNames": [
+		"FRONT",
+		"REAR"
+	],
+	"enum": [
+		"front",
+		"rear"
+	]
+}
