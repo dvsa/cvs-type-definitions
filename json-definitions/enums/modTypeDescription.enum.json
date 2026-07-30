@@ -1,5 +1,5 @@
 {
-  "title": "Mod Type",
+  "title": "Mod Type Description",
   "type": "string",
   "tsEnumNames": [
     "PARTICULATE_TRAP",

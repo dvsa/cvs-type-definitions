@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export enum ModType {
+export enum ModTypeDescription {
   PARTICULATE_TRAP = "particulate trap",
   MODIFICATION_OR_CHANGE_OF_ENGINE = "modification or change of engine",
   GAS_ENGINE = "gas engine"
