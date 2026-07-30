@@ -1,0 +1,14 @@
+{
+  "title": "Mod Type Code",
+  "type": "string",
+  "tsEnumNames": [
+    "P",
+    "M",
+    "G"
+  ],
+  "enum": [
+    "p",
+    "m",
+    "g"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+	"title": "Mod Type",
+	"type": "string",
+	"tsEnumNames": [
+		"PARTICULATE_TRAP",
+		"MODIFICATION_OR_CHANGE_OF_ENGINE",
+		"GAS_ENGINE"
+	],
+	"enum": [
+		"particulate trap",
+		"modification or change of engine",
+		"gas engine"
+	]
+}

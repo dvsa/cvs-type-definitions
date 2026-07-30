@@ -1,0 +1,14 @@
+{
+	"title": "Lateral Location",
+	"type": "string",
+	"tsEnumNames": [
+		"NEARSIDE",
+		"CENTRE",
+		"OFFSIDE"
+	],
+	"enum": [
+		"nearside",
+		"centre",
+		"offside"
+	]
+}

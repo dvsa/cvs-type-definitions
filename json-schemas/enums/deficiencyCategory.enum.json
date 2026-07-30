@@ -1,0 +1,16 @@
+{
+	"title": "Deficiency Category",
+	"type": "string",
+	"tsEnumNames": [
+		"ADVISORY",
+		"DANGEROUS",
+		"MAJOR",
+		"MINOR"
+	],
+	"enum": [
+		"advisory",
+		"dangerous",
+		"major",
+		"minor"
+	]
+}

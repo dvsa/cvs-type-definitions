@@ -1,0 +1,12 @@
+{
+  "title": "Horizontal Location",
+  "type": "string",
+  "tsEnumNames": [
+    "INNER",
+    "OUTER"
+  ],
+  "enum": [
+    "inner",
+    "outer"
+  ]
+}
