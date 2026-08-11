@@ -5,6 +5,7 @@ export const schemas = [
   "enums/defectLocation/vertical.enum.json",
   "enums/deficiencyCategory.enum.json",
   "enums/euVehicleCategory.enum.json",
+  "enums/hazardClassification.enum.json",
   "enums/inspectionType.enum.json",
   "enums/modTypeCode.enum.json",
   "enums/modTypeDescription.enum.json",
