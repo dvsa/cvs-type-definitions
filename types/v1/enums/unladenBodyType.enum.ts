@@ -15,7 +15,7 @@ export enum UnladenBodyType {
   CAR_TRANSPORTER = "Car transporter",
   FIXED_PLANT = "Fixed plant",
   TIPPER = "Tipper",
-  REFUGE = "Refuge",
+  REFUSE = "Refuse",
   STREET_CLEANER = "Street cleaner",
   SPECIALISED_VEHICLE_TRAILER = "Specialised vehicle/trailer",
   OTHER = "Other"

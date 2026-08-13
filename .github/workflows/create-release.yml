@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Setup version env var
         run: |
           echo "VERSION=v$(jq -r .version package.json)" >> "$GITHUB_ENV"

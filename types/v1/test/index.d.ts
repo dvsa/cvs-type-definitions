@@ -541,7 +541,7 @@ export enum UnladenBodyType {
   CAR_TRANSPORTER = "Car transporter",
   FIXED_PLANT = "Fixed plant",
   TIPPER = "Tipper",
-  REFUGE = "Refuge",
+  REFUSE = "Refuse",
   STREET_CLEANER = "Street cleaner",
   SPECIALISED_VEHICLE_TRAILER = "Specialised vehicle/trailer",
   OTHER = "Other"
@@ -552,7 +552,7 @@ export enum ReasonForNotLoading {
   PERISHABLE_GOODS = "Perishable goods",
   LIVESTOCK = "Livestock",
   CAR_TRANSPORTER = "Car transporter",
-  REFUGE = "Refuge",
+  REFUSE = "Refuse",
   STREET_CLEANER = "Street cleaner",
   ULTAST = "ULTAST",
   SPECIALIST_BODY_LOAD = "Specialist body/load",
