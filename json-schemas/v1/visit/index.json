@@ -1052,6 +1052,69 @@
 													"designGrossVehicleWeight"
 												]
 											},
+											"vtg15": {
+												"title": "VTG15 Schema",
+												"type": "object",
+												"properties": {
+													"vtg15Required": {
+														"type": "boolean"
+													},
+													"unNumber": {
+														"type": [
+															"number"
+														],
+														"maxLength": 4
+													},
+													"primaryHazardClassification": {
+														"title": "Hazard Classification",
+														"type": "string",
+														"tsEnumNames": [
+															"_1",
+															"_2",
+															"_3",
+															"_4.1",
+															"_4.2",
+															"_4.3",
+															"_5.1",
+															"_5.2",
+															"_6.1",
+															"_6.2",
+															"_7",
+															"_8",
+															"_9"
+														],
+														"enum": [
+															"1",
+															"2",
+															"3",
+															"4.1",
+															"4.2",
+															"4.3",
+															"5.1",
+															"5.2",
+															"6.1",
+															"6.2",
+															"7",
+															"8",
+															"9"
+														]
+													},
+													"secondaryHazardClassification": {
+														"$ref": "#/properties/tests/items/properties/vehicles/items/properties/testResultsHistory/items/properties/vtg15/properties/primaryHazardClassification"
+													},
+													"media": {
+														"type": "array",
+														"minItems": 1,
+														"items": {
+															"$ref": "#/properties/tests/items/properties/vehicles/items/properties/testResultsHistory/items/properties/media/items"
+														}
+													}
+												},
+												"additionalProperties": false,
+												"required": [
+													"vtg15Required"
+												]
+											},
 											"testTypes": {
 												"type": "array",
 												"items": {

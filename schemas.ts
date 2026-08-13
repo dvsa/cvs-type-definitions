@@ -59,6 +59,7 @@ export const schemas = [
   "v1/vehicle/index.json",
   "v1/vehicle-tech-record/index.json",
   "v1/visit/index.json",
+  "v1/vtg15/index.json",
   "v3/tech-record/enums/adrAdditionalNotesNumber.enum.json",
   "v3/tech-record/enums/adrBodyDeclarationType.enum.json",
   "v3/tech-record/enums/adrBodyType.enum.json",
