@@ -1,0 +1,152 @@
+{
+	"title": "VTG15 Schema",
+	"type": "object",
+	"properties": {
+		"vtg15Required": {
+			"type": "boolean"
+		},
+		"unNumber": {
+			"type": [
+				"number"
+			],
+			"maxLength": 4
+		},
+		"primaryHazardClassification": {
+			"title": "Hazard Classification",
+			"type": "string",
+			"tsEnumNames": [
+				"_1",
+				"_2",
+				"_3",
+				"_4.1",
+				"_4.2",
+				"_4.3",
+				"_5.1",
+				"_5.2",
+				"_6.1",
+				"_6.2",
+				"_7",
+				"_8",
+				"_9"
+			],
+			"enum": [
+				"1",
+				"2",
+				"3",
+				"4.1",
+				"4.2",
+				"4.3",
+				"5.1",
+				"5.2",
+				"6.1",
+				"6.2",
+				"7",
+				"8",
+				"9"
+			]
+		},
+		"secondaryHazardClassification": {
+			"title": "Hazard Classification",
+			"type": "string",
+			"tsEnumNames": [
+				"_1",
+				"_2",
+				"_3",
+				"_4.1",
+				"_4.2",
+				"_4.3",
+				"_5.1",
+				"_5.2",
+				"_6.1",
+				"_6.2",
+				"_7",
+				"_8",
+				"_9"
+			],
+			"enum": [
+				"1",
+				"2",
+				"3",
+				"4.1",
+				"4.2",
+				"4.3",
+				"5.1",
+				"5.2",
+				"6.1",
+				"6.2",
+				"7",
+				"8",
+				"9"
+			]
+		},
+		"media": {
+			"type": "array",
+			"items": {
+				"title": "Media Schema",
+				"type": "object",
+				"additionalProperties": false,
+				"anyOf": [
+					{
+						"title": "Image Schema",
+						"type": "object",
+						"properties": {
+							"type": {
+								"const": "image"
+							},
+							"path": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"type",
+							"path"
+						]
+					},
+					{
+						"title": "Video Schema",
+						"type": "object",
+						"properties": {
+							"type": {
+								"const": "video"
+							},
+							"path": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"type",
+							"path"
+						]
+					},
+					{
+						"title": "Fail Reason Schema",
+						"type": "object",
+						"properties": {
+							"type": {
+								"const": "failReason"
+							},
+							"path": {
+								"type": "string"
+							},
+							"reason": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"type",
+							"path",
+							"reason"
+						]
+					}
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"vtg15Required"
+	]
+}

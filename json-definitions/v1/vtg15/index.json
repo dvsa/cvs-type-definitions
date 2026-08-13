@@ -1,0 +1,31 @@
+{
+  "title": "VTG15 Schema",
+  "type": "object",
+  "properties": {
+    "vtg15Required": {
+      "type": "boolean"
+    },
+    "unNumber": {
+      "type": [
+        "number"
+      ],
+      "maxLength": 4
+    },
+    "primaryHazardClassification": {
+      "$ref": "../../enums/hazardClassification.enum.json"
+    },
+    "secondaryHazardClassification": {
+      "$ref": "../../enums/hazardClassification.enum.json"
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "$ref": "../media/index.json#"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+   "vtg15Required"
+  ]
+}

@@ -277,6 +277,7 @@ export interface TestResultSchema {
   firstUseDate?: string | null;
   media?: MediaSchema[];
   weights?: TestResultWeightsSchema;
+  vtg15?: VTG15Schema;
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
@@ -318,6 +319,13 @@ export interface TestResultWeightsSchema {
   designGrossTrainWeight?: number | null;
   designGrossAxleWeight?: number | null;
   designTrainWeightRequired?: DesignTrainWeightRequired;
+}
+export interface VTG15Schema {
+  vtg15Required: boolean;
+  unNumber?: number;
+  primaryHazardClassification?: HazardClassification;
+  secondaryHazardClassification?: HazardClassification;
+  media?: MediaSchema[];
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
@@ -486,6 +494,21 @@ export enum EUVehicleCategory {
 }
 export enum DesignTrainWeightRequired {
   NOT_APPLICABLE = "N/A"
+}
+export enum HazardClassification {
+  _1 = "1",
+  _2 = "2",
+  _3 = "3",
+  "_4.1" = "4.1",
+  "_4.2" = "4.2",
+  "_4.3" = "4.3",
+  "_5.1" = "5.1",
+  "_5.2" = "5.2",
+  "_6.1" = "6.1",
+  "_6.2" = "6.2",
+  _7 = "7",
+  _8 = "8",
+  _9 = "9"
 }
 export enum TestResults {
   PASS = "pass",
