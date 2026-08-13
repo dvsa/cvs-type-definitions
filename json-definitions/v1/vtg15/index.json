@@ -19,7 +19,6 @@
     },
     "media": {
       "type": "array",
-      "minItems": 1,
       "items": {
         "$ref": "../media/index.json#"
       }

@@ -1104,7 +1104,6 @@
 													},
 													"media": {
 														"type": "array",
-														"minItems": 1,
 														"items": {
 															"$ref": "#/properties/tests/items/properties/vehicles/items/properties/testResultsHistory/items/properties/media/items"
 														}

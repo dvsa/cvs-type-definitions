@@ -304,10 +304,7 @@ export interface VTG15Schema {
   unNumber?: number;
   primaryHazardClassification?: HazardClassification;
   secondaryHazardClassification?: HazardClassification;
-  /**
-   * @minItems 1
-   */
-  media?: [MediaSchema, ...MediaSchema[]];
+  media?: MediaSchema[];
 }
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
