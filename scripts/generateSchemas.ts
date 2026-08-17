@@ -26,6 +26,72 @@ function stripIndexSignatureIntersection(types: string): string {
     );
 }
 
+function replaceObjectValuedEnums(types: string, declarationFile: boolean): string {
+    const enumDeclaration = /export (?:const )?enum ([A-Za-z_$][\w$]*) \{/g;
+    let result = "";
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = enumDeclaration.exec(types)) !== null) {
+        let depth = 0;
+        let endIndex = -1;
+
+        for (let index = match.index; index < types.length; index += 1) {
+            if (types[index] === "{") {
+                depth += 1;
+            } else if (types[index] === "}") {
+                depth -= 1;
+                if (depth === 0) {
+                    endIndex = index + 1;
+                    break;
+                }
+            }
+        }
+
+        if (endIndex === -1) {
+            break;
+        }
+
+        const enumDeclarationText = types.slice(match.index, endIndex);
+        if (!/=\s*\{/.test(enumDeclarationText)) {
+            continue;
+        }
+
+        const enumBody = enumDeclarationText
+            .slice(enumDeclarationText.indexOf("{") + 1, -1)
+            .replace(/^(\s*[^=\n]+?)\s*=\s*/gm, "$1: ");
+        const enumName = match[1];
+        const objectEnum = declarationFile
+            ? `export declare const ${enumName}: {\n${enumBody
+                  .trim()
+                  .split("\n")
+                  .map((member) => {
+                      const memberMatch = member.trim().replace(/,$/, "").match(/^(.+?):\s*(\{.*\})$/);
+                      if (!memberMatch) {
+                          return member;
+                      }
+
+                      const [, key, value] = memberMatch;
+                      const properties = value
+                          .slice(1, -1)
+                          .split(/,\s*(?=[A-Za-z_$][\w$]*\s*:)/)
+                          .map((property) => `readonly ${property.trim().replace(/:\s*/, ": ")};`)
+                          .join(" ");
+                      return `  ${key}: { ${properties} };`;
+                  })
+                  .join("\n")}\n};\n\n` +
+              `export type ${enumName} = (typeof ${enumName})[keyof typeof ${enumName}];`
+            : `export const ${enumName} = {${enumBody}} as const;\n\n` +
+              `export type ${enumName} = (typeof ${enumName})[keyof typeof ${enumName}];`;
+
+        result += types.slice(lastIndex, match.index) + objectEnum;
+        lastIndex = endIndex;
+        enumDeclaration.lastIndex = endIndex;
+    }
+
+    return result + types.slice(lastIndex);
+}
+
 async function generateTypescriptInterface(schemaLocation: string) {
     const fileExt = schemaLocation.includes("enum") ? ".ts" : ".d.ts";
     const saveToLocation = schemaLocation
@@ -38,6 +104,7 @@ async function generateTypescriptInterface(schemaLocation: string) {
     });
 
     types = stripIndexSignatureIntersection(types);
+    types = replaceObjectValuedEnums(types, fileExt === ".d.ts");
 
     writeFile(saveToLocation, types);
     console.log(

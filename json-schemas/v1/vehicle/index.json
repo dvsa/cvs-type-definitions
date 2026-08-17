@@ -1006,7 +1006,7 @@
 							},
 							"primaryHazardClassification": {
 								"title": "Hazard Classification",
-								"type": "string",
+								"type": "object",
 								"tsEnumNames": [
 									"_1",
 									"_2",
@@ -1023,19 +1023,58 @@
 									"_9"
 								],
 								"enum": [
-									"1",
-									"2",
-									"3",
-									"4.1",
-									"4.2",
-									"4.3",
-									"5.1",
-									"5.2",
-									"6.1",
-									"6.2",
-									"7",
-									"8",
-									"9"
+									{
+										"code": "1",
+										"description": "Explosive"
+									},
+									{
+										"code": "2",
+										"description": "Compressed Gases"
+									},
+									{
+										"code": "3",
+										"description": "Flammable liquids"
+									},
+									{
+										"code": "4.1",
+										"description": "Flammable solids"
+									},
+									{
+										"code": "4.2",
+										"description": "Spontaneously combustible"
+									},
+									{
+										"code": "4.3",
+										"description": "Dangerous when wet"
+									},
+									{
+										"code": "5.1",
+										"description": "Oxidising agents"
+									},
+									{
+										"code": "5.2",
+										"description": "Organic peroxides"
+									},
+									{
+										"code": "6.1",
+										"description": "Toxics"
+									},
+									{
+										"code": "6.2",
+										"description": "Infectious substances"
+									},
+									{
+										"code": "7",
+										"description": "Radioactive"
+									},
+									{
+										"code": "8",
+										"description": "Corrosives"
+									},
+									{
+										"code": "9",
+										"description": "Miscellaneous"
+									}
 								]
 							},
 							"secondaryHazardClassification": {
