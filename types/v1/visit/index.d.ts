@@ -495,21 +495,23 @@ export enum EUVehicleCategory {
 export enum DesignTrainWeightRequired {
   NOT_APPLICABLE = "N/A"
 }
-export enum HazardClassification {
-  _1 = "1",
-  _2 = "2",
-  _3 = "3",
-  "_4.1" = "4.1",
-  "_4.2" = "4.2",
-  "_4.3" = "4.3",
-  "_5.1" = "5.1",
-  "_5.2" = "5.2",
-  "_6.1" = "6.1",
-  "_6.2" = "6.2",
-  _7 = "7",
-  _8 = "8",
-  _9 = "9"
-}
+export declare const HazardClassification: {
+  _1: { readonly code: "1"; readonly description: "Explosive"; };
+  _2: { readonly code: "2"; readonly description: "Compressed Gases"; };
+  _3: { readonly code: "3"; readonly description: "Flammable liquids"; };
+  "_4.1": { readonly code: "4.1"; readonly description: "Flammable solids"; };
+  "_4.2": { readonly code: "4.2"; readonly description: "Spontaneously combustible"; };
+  "_4.3": { readonly code: "4.3"; readonly description: "Dangerous when wet"; };
+  "_5.1": { readonly code: "5.1"; readonly description: "Oxidising agents"; };
+  "_5.2": { readonly code: "5.2"; readonly description: "Organic peroxides"; };
+  "_6.1": { readonly code: "6.1"; readonly description: "Toxics"; };
+  "_6.2": { readonly code: "6.2"; readonly description: "Infectious substances"; };
+  _7: { readonly code: "7"; readonly description: "Radioactive"; };
+  _8: { readonly code: "8"; readonly description: "Corrosives"; };
+  _9: { readonly code: "9"; readonly description: "Miscellaneous"; };
+};
+
+export type HazardClassification = (typeof HazardClassification)[keyof typeof HazardClassification];
 export enum TestResults {
   PASS = "pass",
   PRS = "prs",
