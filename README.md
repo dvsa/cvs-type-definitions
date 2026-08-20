@@ -20,6 +20,23 @@ The package exports an `isValidObject()` function which can be used to validate 
 
 `const isValidVisit: boolean = isValidObject('visit', myVisitObject);`
 
+## Example usage (Zod schemas)
+
+Zod schemas are generated from the same `json-definitions` source and published under
+`@dvsa/cvs-type-definitions/zod/...`, mirroring the `types/` layout. Each schema is a
+runtime validator; inferred types are exported under the same names as `types/`.
+
+```ts
+import { VehicleSchema } from '@dvsa/cvs-type-definitions/zod/v1/vehicle/index';
+import { VehicleType } from '@dvsa/cvs-type-definitions/zod/enums/vehicleType.enum';
+
+const result = VehicleSchema.safeParse(input); // { success, data | error }
+const kind = VehicleType.HGV;                   // enums stay real TS enums
+```
+
+The Zod schemas are additive — the existing `types/` and `json-schemas/` outputs and
+`isValidObject()` are unchanged. See [docs/zod-migration.md](docs/zod-migration.md).
+
 # Updating a schema
 
 Edits should only be made to `json` schema definitions within `json-definitions` directory.
