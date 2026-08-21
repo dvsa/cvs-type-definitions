@@ -6,10 +6,10 @@ import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationHgvPsv.enum";
 import { VehicleSizeSchema } from "./../../../enums/vehicleSize.ignore";
 import { VehicleClassDescriptionSchema } from "./../../../enums/vehicleClassDescriptionPSV.enum";
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryPsv.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryPsv.enum";
 import { ApprovalTypeSchema } from "./../../../enums/approvalTypeHgvOrPsv.enum";
 import { BodyTypeDescriptionSchema } from "./../../../enums/bodyTypeDescription.ignore";
-import { EurostandardSchema } from "./../../../enums/euroStandard.ignore";
+import { EuroStandardSchema } from "./../../../enums/euroStandard.ignore";
 import { FuelPropulsionSystemSchema } from "./../../../enums/fuelPropulsionSystem.ignore";
 import { FitmentCodeSchema } from "./../../../enums/fitmentCode.ignore";
 import { SpeedCategorySymbolSchema } from "./../../../enums/speedCategorySymbol.ignore";
@@ -35,7 +35,7 @@ export const TechRecordGETPSVCompleteSchema = z.object({
   "techRecord_vehicleClass_description": VehicleClassDescriptionSchema,
   "techRecord_hiddenInVta": z.boolean().nullable().optional(),
   "techRecord_recordCompleteness": z.string().nullable().optional(),
-  "techRecord_euVehicleCategory": z.union([EUvehiclecategorySchema, z.null()]).optional(),
+  "techRecord_euVehicleCategory": z.union([EUVehicleCategorySchema, z.null()]).optional(),
   "techRecord_regnDate": z.string().regex(new RegExp("^\\d{4}-\\d{2}-\\d{2}$")).nullable().optional(),
   "techRecord_manufactureYear": z.union([z.number().int(), z.null()]).optional(),
   "techRecord_noOfAxles": z.number().int(),
@@ -73,7 +73,7 @@ export const TechRecordGETPSVCompleteSchema = z.object({
   "techRecord_standingCapacity": z.number().int(),
   "techRecord_speedLimiterMrk": z.boolean().nullable().optional(),
   "techRecord_tachoExemptMrk": z.boolean().nullable().optional(),
-  "techRecord_euroStandard": z.union([z.null(), EurostandardSchema]).optional(),
+  "techRecord_euroStandard": z.union([z.null(), EuroStandardSchema]).optional(),
   "techRecord_fuelPropulsionSystem": z.union([z.null(), FuelPropulsionSystemSchema]).optional(),
   "techRecord_emissionsLimit": z.number().nullable().optional(),
   "techRecord_trainDesignWeight": z.number().int().nullable().optional(),

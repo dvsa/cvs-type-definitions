@@ -7,7 +7,7 @@ import { TestStatusSchema } from "./../enums/testStatus.enum";
 import { VehicleClassSchema } from "./../vehicle-class/index.ignore";
 import { VehicleTypeSchema } from "./../../v3/tech-record/enums/vehicleType.ignore";
 import { OdometerReadingUnitsSchema } from "./../enums/odometerReadingUnits.enum";
-import { EUvehiclecategorySchema } from "./../../v3/tech-record/enums/euVehicleCategory.enum";
+import { EUVehicleCategorySchema } from "./../../v3/tech-record/enums/euVehicleCategory.enum";
 import { MediaSchema } from "./../media/index";
 import { TestResultWeightsSchema } from "./../test-result-weights/index";
 import { VTG15Schema } from "./../vtg15/index";
@@ -40,7 +40,7 @@ export const TestResultSchema: z.ZodType<any> = z.object({
   "odometerReadingUnits": z.union([OdometerReadingUnitsSchema, z.null()]).optional(),
   "preparerId": z.string().nullable(),
   "preparerName": z.string().nullable(),
-  "euVehicleCategory": EUvehiclecategorySchema,
+  "euVehicleCategory": EUVehicleCategorySchema,
   "countryOfRegistration": z.string().nullable(),
   "noOfAxles": z.number().int(),
   "numberOfWheelsDriven": z.number().int().nullable(),

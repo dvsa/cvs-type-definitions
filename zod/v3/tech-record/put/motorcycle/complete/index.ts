@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategory.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategory.enum";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleClassDescriptionSchema } from "./../../../enums/vehicleClassDescription.enum";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationLightVehicle.enum";
@@ -20,7 +20,7 @@ export const TechRecordPUTMotorcycleCompleteSchema = z.object({
   "partialVin": z.string().nullable().optional(),
   "primaryVrm": z.string().nullable().optional(),
   "systemNumber": z.string().nullable().optional(),
-  "techRecord_euVehicleCategory": z.union([z.null(), EUvehiclecategorySchema]).optional(),
+  "techRecord_euVehicleCategory": z.union([z.null(), EUVehicleCategorySchema]).optional(),
   "techRecord_manufactureYear": z.number().int().nullable().optional(),
   "techRecord_recordCompleteness": z.string().nullable().optional(),
   "techRecord_noOfAxles": z.number().int(),

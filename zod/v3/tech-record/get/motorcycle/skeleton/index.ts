@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategory.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategory.enum";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleClassDescriptionSchema } from "./../../../enums/vehicleClassDescription.enum";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationLightVehicle.enum";
@@ -23,7 +23,7 @@ export const TechRecordGETMotorcycleSkeletonSchema = z.object({
   "techRecord_createdAt": z.string().nullable(),
   "techRecord_createdById": z.string().nullable(),
   "techRecord_createdByName": z.string().nullable(),
-  "techRecord_euVehicleCategory": z.union([z.null(), EUvehiclecategorySchema]).optional(),
+  "techRecord_euVehicleCategory": z.union([z.null(), EUVehicleCategorySchema]).optional(),
   "techRecord_lastUpdatedAt": z.string().nullable().optional(),
   "techRecord_lastUpdatedById": z.string().nullable().optional(),
   "techRecord_lastUpdatedByName": z.string().nullable().optional(),

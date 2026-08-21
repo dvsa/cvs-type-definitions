@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategorySmallTrl.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategorySmallTrl.enum";
 import { MonthsSchema } from "./../../../enums/manufactureMonth.ignore";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleClassDescriptionSchema } from "./../../../enums/vehicleClassDescription.enum";
@@ -18,7 +18,7 @@ export const TechRecordPUTSmallTRLSkeletonSchema = z.object({
   "techRecord_applicantDetails_postCode": z.string().nullable().optional(),
   "techRecord_applicantDetails_postTown": z.string().nullable().optional(),
   "techRecord_applicantDetails_telephoneNumber": z.string().nullable().optional(),
-  "techRecord_euVehicleCategory": EUvehiclecategorySchema,
+  "techRecord_euVehicleCategory": EUVehicleCategorySchema,
   "techRecord_manufactureMonth": z.union([MonthsSchema, z.null()]).optional(),
   "techRecord_manufactureYear": z.number().int().nullable().optional(),
   "techRecord_noOfAxles": z.union([z.number().int(), z.null()]).optional(),

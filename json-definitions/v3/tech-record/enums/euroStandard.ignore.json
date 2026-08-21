@@ -1,5 +1,5 @@
 {
-  "title": "Euro standard",
+  "title": "Euro Standard",
   "type": "string",
   "enum": [
     "0.10 g/kWh Euro 3 PM",

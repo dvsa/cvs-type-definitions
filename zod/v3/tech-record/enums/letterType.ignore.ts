@@ -2,6 +2,6 @@
 
 import { z } from "zod";
 
-export const lettertypesSchema = z.enum(["trailer acceptance","trailer rejection"]);
+export const LetterTypesSchema = z.enum(["trailer acceptance","trailer rejection"]);
 
-export type lettertypes = z.infer<typeof lettertypesSchema>;
+export type LetterTypes = z.infer<typeof LetterTypesSchema>;

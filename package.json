@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/cvs-type-definitions",
-  "version": "18.0.1-canary.0",
+  "version": "18.0.0-zod.canary.0",
   "description": "Type definitions for CVS VTA and VTM applications",
   "main": "index.js",
   "repository": {

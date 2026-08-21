@@ -5,7 +5,7 @@ import { z } from "zod";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleSubclassSchema } from "./../../../enums/vehicleSubclass.ignore";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationLightVehicle.enum";
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryCar.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryCar.enum";
 
 export const TechRecordPUTCarSkeletonSchema = z.object({
   "vin": z.string(),
@@ -22,7 +22,7 @@ export const TechRecordPUTCarSkeletonSchema = z.object({
   "secondaryVrms": z.array(z.string()).nullable().optional(),
   "techRecord_vehicleSubclass": VehicleSubclassSchema.optional(),
   "techRecord_vehicleConfiguration": z.union([z.null(), VehicleConfigurationSchema]).optional(),
-  "techRecord_euVehicleCategory": z.union([EUvehiclecategorySchema, z.null()]).optional(),
+  "techRecord_euVehicleCategory": z.union([EUVehicleCategorySchema, z.null()]).optional(),
   "techRecord_applicantDetails_name": z.string().nullable().optional(),
   "techRecord_applicantDetails_address1": z.string().nullable().optional(),
   "techRecord_applicantDetails_address2": z.string().nullable().optional(),

@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryCar.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryCar.enum";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationLightVehicle.enum";
 import { VehicleSubclassSchema } from "./../../../enums/vehicleSubclass.ignore";
@@ -23,7 +23,7 @@ export const TechRecordGETCarCompleteSchema = z.object({
   "techRecord_createdAt": z.string(),
   "techRecord_createdById": z.string(),
   "techRecord_createdByName": z.string(),
-  "techRecord_euVehicleCategory": z.union([z.null(), EUvehiclecategorySchema]).optional(),
+  "techRecord_euVehicleCategory": z.union([z.null(), EUVehicleCategorySchema]).optional(),
   "techRecord_lastUpdatedAt": z.string().nullable().optional(),
   "techRecord_lastUpdatedById": z.string().nullable().optional(),
   "techRecord_lastUpdatedByName": z.string().nullable().optional(),

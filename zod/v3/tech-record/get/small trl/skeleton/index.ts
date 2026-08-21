@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategorySmallTrl.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategorySmallTrl.enum";
 import { MonthsSchema } from "./../../../enums/manufactureMonth.ignore";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleClassDescriptionSchema } from "./../../../enums/vehicleClassDescription.enum";
@@ -21,7 +21,7 @@ export const TechRecordGETSmallTRLSkeletonSchema = z.object({
   "techRecord_createdAt": z.string(),
   "techRecord_createdById": z.string(),
   "techRecord_createdByName": z.string(),
-  "techRecord_euVehicleCategory": EUvehiclecategorySchema,
+  "techRecord_euVehicleCategory": EUVehicleCategorySchema,
   "techRecord_lastUpdatedAt": z.string().nullable().optional(),
   "techRecord_lastUpdatedById": z.string().nullable().optional(),
   "techRecord_lastUpdatedByName": z.string().nullable().optional(),

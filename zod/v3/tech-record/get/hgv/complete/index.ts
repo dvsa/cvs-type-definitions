@@ -10,7 +10,7 @@ import { TC3TypesSchema } from "./../../../enums/tc3Types.enum";
 import { ADRTankDetailsTankStatementSelectSchema } from "./../../../enums/adrTankDetailsTankStatementSelect.enum";
 import { FitmentCodeSchema } from "./../../../enums/fitmentCode.ignore";
 import { ADRCertificateTypesSchema } from "./../../../enums/adrCertificateTypes.enum";
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryHgv.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryHgv.enum";
 import { FuelPropulsionSystemSchema } from "./../../../enums/fuelPropulsionSystem.ignore";
 import { MicrofilmDocumentTypeSchema } from "./../../../enums/microfilmDocumentType.ignore";
 import { PlateReasonForIssueSchema } from "./../../../enums/plateReasonForIssue.ignore";
@@ -125,7 +125,7 @@ export const TechRecordGETHGVCompleteSchema = z.object({
   "techRecord_drawbarCouplingFitted": z.boolean(),
   "techRecord_emissionsLimit": z.number().nullable().optional(),
   "techRecord_euroStandard": z.string(),
-  "techRecord_euVehicleCategory": EUvehiclecategorySchema,
+  "techRecord_euVehicleCategory": EUVehicleCategorySchema,
   "techRecord_frontAxleToRearAxle": z.number().int(),
   "techRecord_frontAxleTo5thWheelMin": z.number().int(),
   "techRecord_frontAxleTo5thWheelMax": z.number().int(),

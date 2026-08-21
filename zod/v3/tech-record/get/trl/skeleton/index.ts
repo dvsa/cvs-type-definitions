@@ -10,9 +10,9 @@ import { TC3TypesSchema } from "./../../../enums/tc3Types.enum";
 import { ADRTankDetailsTankStatementSelectSchema } from "./../../../enums/adrTankDetailsTankStatementSelect.enum";
 import { ADRCertificateTypesSchema } from "./../../../enums/adrCertificateTypes.enum";
 import { ApprovalTypeSchema } from "./../../../enums/approvalType.enum";
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryTrl.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryTrl.enum";
 import { FrameDescriptionSchema } from "./../../../enums/frameDescription.ignore";
-import { lettertypesSchema } from "./../../../enums/letterType.ignore";
+import { LetterTypesSchema } from "./../../../enums/letterType.ignore";
 import { ParagraphIdsSchema } from "./../../../enums/paragraphId.ignore";
 import { MonthsSchema } from "./../../../enums/manufactureMonth.ignore";
 import { MicrofilmDocumentTypeSchema } from "./../../../enums/microfilmDocumentType.ignore";
@@ -123,7 +123,7 @@ export const TechRecordGETTRLSkeletonSchema = z.object({
   "techRecord_departmentalVehicleMarker": z.boolean().nullable().optional(),
   "techRecord_dimensions_length": z.number().int().nullable().optional(),
   "techRecord_dimensions_width": z.number().int().nullable().optional(),
-  "techRecord_euVehicleCategory": z.union([EUvehiclecategorySchema, z.null()]).optional(),
+  "techRecord_euVehicleCategory": z.union([EUVehicleCategorySchema, z.null()]).optional(),
   "techRecord_firstUseDate": z.string().nullable().optional(),
   "techRecord_frameDescription": z.union([FrameDescriptionSchema, z.null()]).optional(),
   "techRecord_frontAxleToRearAxle": z.number().int().nullable().optional(),
@@ -131,7 +131,7 @@ export const TechRecordGETTRLSkeletonSchema = z.object({
   "techRecord_grossDesignWeight": z.number().int().nullable().optional(),
   "techRecord_grossEecWeight": z.number().int().nullable().optional(),
   "techRecord_grossGbWeight": z.number().int().nullable().optional(),
-  "techRecord_letterOfAuth_letterType": z.union([z.null(), lettertypesSchema]).optional(),
+  "techRecord_letterOfAuth_letterType": z.union([z.null(), LetterTypesSchema]).optional(),
   "techRecord_letterOfAuth_letterDateRequested": z.string().nullable().optional(),
   "techRecord_letterOfAuth_paragraphId": z.union([z.null(), ParagraphIdsSchema]).optional(),
   "techRecord_letterOfAuth_letterIssuer": z.string().nullable().optional(),

@@ -9,7 +9,7 @@ import { TC2TypesSchema } from "./../../../enums/tc2Types.ignore";
 import { TC3TypesSchema } from "./../../../enums/tc3Types.enum";
 import { ADRTankDetailsTankStatementSelectSchema } from "./../../../enums/adrTankDetailsTankStatementSelect.enum";
 import { ADRCertificateTypesSchema } from "./../../../enums/adrCertificateTypes.enum";
-import { EUvehiclecategorySchema } from "./../../../enums/euVehicleCategoryLgv.enum";
+import { EUVehicleCategorySchema } from "./../../../enums/euVehicleCategoryLgv.enum";
 import { StatusCodeSchema } from "./../../../enums/statusCode.ignore";
 import { VehicleSubclassSchema } from "./../../../enums/vehicleSubclass.ignore";
 import { VehicleConfigurationSchema } from "./../../../enums/vehicleConfigurationLightVehicle.enum";
@@ -86,7 +86,7 @@ export const TechRecordPUTLGVSkeletonSchema = z.object({
   "generatedTimestamp": z.string(),
   "certificateId": z.string(),
 }).strict()).nullable().optional(),
-  "techRecord_euVehicleCategory": z.union([EUvehiclecategorySchema, z.null()]).optional(),
+  "techRecord_euVehicleCategory": z.union([EUVehicleCategorySchema, z.null()]).optional(),
   "techRecord_reasonForCreation": z.string(),
   "techRecord_vehicleType": z.literal("lgv"),
   "techRecord_statusCode": StatusCodeSchema,

@@ -1,5 +1,5 @@
 {
-    "title": "letter types",
+    "title": "Letter Types",
     "type": "string",
     "enum": [
         "trailer acceptance",
