@@ -2,8 +2,10 @@
 
 import { z } from "zod";
 
-export enum DesignTrainWeightRequired {
-  "NOT_APPLICABLE" = "N/A",
-}
+export const DesignTrainWeightRequired = {
+	"NOT_APPLICABLE": "N/A",
+} as const;
+
+export type DesignTrainWeightRequired = (typeof DesignTrainWeightRequired)[keyof typeof DesignTrainWeightRequired];
 
 export const DesignTrainWeightRequiredSchema = z.enum(DesignTrainWeightRequired);

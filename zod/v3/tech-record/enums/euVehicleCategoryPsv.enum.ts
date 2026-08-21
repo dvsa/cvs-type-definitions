@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum EUvehiclecategory {
-  "M1" = "m1",
-  "M2" = "m2",
-  "M3" = "m3",
-}
+export const EUvehiclecategory = {
+	"M1": "m1",
+	"M2": "m2",
+	"M3": "m3",
+} as const;
+
+export type EUvehiclecategory = (typeof EUvehiclecategory)[keyof typeof EUvehiclecategory];
 
 export const EUvehiclecategorySchema = z.enum(EUvehiclecategory);

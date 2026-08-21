@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum VehicleSize {
-  "LARGE" = "large",
-  "SMALL" = "small",
-}
+export const VehicleSize = {
+	"LARGE": "large",
+	"SMALL": "small",
+} as const;
+
+export type VehicleSize = (typeof VehicleSize)[keyof typeof VehicleSize];
 
 export const VehicleSizeSchema = z.enum(VehicleSize);

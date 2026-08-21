@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum HorizontalLocation {
-  "INNER" = "inner",
-  "OUTER" = "outer",
-}
+export const HorizontalLocation = {
+	"INNER": "inner",
+	"OUTER": "outer",
+} as const;
+
+export type HorizontalLocation = (typeof HorizontalLocation)[keyof typeof HorizontalLocation];
 
 export const HorizontalLocationSchema = z.enum(HorizontalLocation);

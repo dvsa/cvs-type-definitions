@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum VehicleConfiguration {
-  "RIGID" = "rigid",
-  "ARTICULATED" = "articulated",
-}
+export const VehicleConfiguration = {
+	"RIGID": "rigid",
+	"ARTICULATED": "articulated",
+} as const;
+
+export type VehicleConfiguration = (typeof VehicleConfiguration)[keyof typeof VehicleConfiguration];
 
 export const VehicleConfigurationSchema = z.enum(VehicleConfiguration);

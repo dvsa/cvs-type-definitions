@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum VerticalLocation {
-  "UPPER" = "upper",
-  "LOWER" = "lower",
-}
+export const VerticalLocation = {
+	"UPPER": "upper",
+	"LOWER": "lower",
+} as const;
+
+export type VerticalLocation = (typeof VerticalLocation)[keyof typeof VerticalLocation];
 
 export const VerticalLocationSchema = z.enum(VerticalLocation);

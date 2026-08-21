@@ -2,11 +2,13 @@
 
 import { z } from "zod";
 
-export enum TestResults {
-  "PASS" = "pass",
-  "PRS" = "prs",
-  "FAIL" = "fail",
-  "ABANDONED" = "abandoned",
-}
+export const TestResults = {
+	"PASS": "pass",
+	"PRS": "prs",
+	"FAIL": "fail",
+	"ABANDONED": "abandoned",
+} as const;
+
+export type TestResults = (typeof TestResults)[keyof typeof TestResults];
 
 export const TestResultsSchema = z.enum(TestResults);

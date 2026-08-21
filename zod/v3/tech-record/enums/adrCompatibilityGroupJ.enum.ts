@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum ADRCompatibilityGroupJ {
-  "I" = "I",
-  "E" = "E",
-}
+export const ADRCompatibilityGroupJ = {
+	"I": "I",
+	"E": "E",
+} as const;
+
+export type ADRCompatibilityGroupJ = (typeof ADRCompatibilityGroupJ)[keyof typeof ADRCompatibilityGroupJ];
 
 export const ADRCompatibilityGroupJSchema = z.enum(ADRCompatibilityGroupJ);

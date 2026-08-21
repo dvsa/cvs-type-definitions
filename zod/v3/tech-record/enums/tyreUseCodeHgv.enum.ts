@@ -2,11 +2,13 @@
 
 import { z } from "zod";
 
-export enum TyreUseCode {
-  "_2R" = "2R",
-  "_2B" = "2B",
-  "_2J" = "2J",
-  "_2M" = "2M",
-}
+export const TyreUseCode = {
+	"_2R": "2R",
+	"_2B": "2B",
+	"_2J": "2J",
+	"_2M": "2M",
+} as const;
+
+export type TyreUseCode = (typeof TyreUseCode)[keyof typeof TyreUseCode];
 
 export const TyreUseCodeSchema = z.enum(TyreUseCode);

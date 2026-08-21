@@ -2,14 +2,16 @@
 
 import { z } from "zod";
 
-export enum FuelType {
-  "DIESEL" = "diesel",
-  "GAS_CNG" = "gas-cng",
-  "GAS_LNG" = "gas-lng",
-  "GAS_LPG" = "gas-lpg",
-  "PETROL" = "petrol",
-  "FUEL_CELL" = "fuel cell",
-  "FULL_ELECTRIC" = "full electric",
-}
+export const FuelType = {
+	"DIESEL": "diesel",
+	"GAS_CNG": "gas-cng",
+	"GAS_LNG": "gas-lng",
+	"GAS_LPG": "gas-lpg",
+	"PETROL": "petrol",
+	"FUEL_CELL": "fuel cell",
+	"FULL_ELECTRIC": "full electric",
+} as const;
+
+export type FuelType = (typeof FuelType)[keyof typeof FuelType];
 
 export const FuelTypeSchema = z.enum(FuelType);

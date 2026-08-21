@@ -2,18 +2,20 @@
 
 import { z } from "zod";
 
-export enum ApprovalType {
-  "NTA" = "NTA",
-  "ECTA" = "ECTA",
-  "IVA" = "IVA",
-  "NSSTA" = "NSSTA",
-  "ECSSTA" = "ECSSTA",
-  "GB_WVTA" = "GB WVTA",
-  "PROV_GB_WVTA" = "Prov.GB WVTA",
-  "SMALL_SERIES_NKSXX" = "Small series NKSXX",
-  "SMALL_SERIES_NKS" = "Small series NKS",
-  "IVA_VCA" = "IVA - VCA",
-  "IVA_DVSA_NI" = "IVA - DVSA/NI",
-}
+export const ApprovalType = {
+	"NTA": "NTA",
+	"ECTA": "ECTA",
+	"IVA": "IVA",
+	"NSSTA": "NSSTA",
+	"ECSSTA": "ECSSTA",
+	"GB_WVTA": "GB WVTA",
+	"PROV_GB_WVTA": "Prov.GB WVTA",
+	"SMALL_SERIES_NKSXX": "Small series NKSXX",
+	"SMALL_SERIES_NKS": "Small series NKS",
+	"IVA_VCA": "IVA - VCA",
+	"IVA_DVSA_NI": "IVA - DVSA/NI",
+} as const;
+
+export type ApprovalType = (typeof ApprovalType)[keyof typeof ApprovalType];
 
 export const ApprovalTypeSchema = z.enum(ApprovalType);

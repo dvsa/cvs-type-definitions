@@ -2,11 +2,13 @@
 
 import { z } from "zod";
 
-export enum DeficiencyCategory {
-  "ADVISORY" = "advisory",
-  "DANGEROUS" = "dangerous",
-  "MAJOR" = "major",
-  "MINOR" = "minor",
-}
+export const DeficiencyCategory = {
+	"ADVISORY": "advisory",
+	"DANGEROUS": "dangerous",
+	"MAJOR": "major",
+	"MINOR": "minor",
+} as const;
+
+export type DeficiencyCategory = (typeof DeficiencyCategory)[keyof typeof DeficiencyCategory];
 
 export const DeficiencyCategorySchema = z.enum(DeficiencyCategory);

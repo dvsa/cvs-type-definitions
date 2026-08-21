@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum TC3Types {
-  "INTERMEDIATE" = "intermediate",
-  "PERIODIC" = "periodic",
-  "EXCEPTIONAL" = "exceptional",
-}
+export const TC3Types = {
+	"INTERMEDIATE": "intermediate",
+	"PERIODIC": "periodic",
+	"EXCEPTIONAL": "exceptional",
+} as const;
+
+export type TC3Types = (typeof TC3Types)[keyof typeof TC3Types];
 
 export const TC3TypesSchema = z.enum(TC3Types);

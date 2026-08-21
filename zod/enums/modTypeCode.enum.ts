@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum ModTypeCode {
-  "P" = "p",
-  "M" = "m",
-  "G" = "g",
-}
+export const ModTypeCode = {
+	"P": "p",
+	"M": "m",
+	"G": "g",
+} as const;
+
+export type ModTypeCode = (typeof ModTypeCode)[keyof typeof ModTypeCode];
 
 export const ModTypeCodeSchema = z.enum(ModTypeCode);

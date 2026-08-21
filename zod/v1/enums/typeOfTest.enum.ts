@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum Typeoftest {
-  "CONTINGENCY" = "contingency",
-  "DESK_BASED" = "desk-based",
-  "COMPLETION" = "completion",
-}
+export const Typeoftest = {
+	"CONTINGENCY": "contingency",
+	"DESK_BASED": "desk-based",
+	"COMPLETION": "completion",
+} as const;
+
+export type Typeoftest = (typeof Typeoftest)[keyof typeof Typeoftest];
 
 export const TypeoftestSchema = z.enum(Typeoftest);

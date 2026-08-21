@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum InspectionType {
-  "BASIC" = "basic",
-  "NORMAL" = "normal",
-}
+export const InspectionType = {
+	"BASIC": "basic",
+	"NORMAL": "normal",
+} as const;
+
+export type InspectionType = (typeof InspectionType)[keyof typeof InspectionType];
 
 export const InspectionTypeSchema = z.enum(InspectionType);

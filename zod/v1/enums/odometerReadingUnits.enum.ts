@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum OdometerReadingUnits {
-  "KILOMETRES" = "kilometres",
-  "MILES" = "miles",
-}
+export const OdometerReadingUnits = {
+	"KILOMETRES": "kilometres",
+	"MILES": "miles",
+} as const;
+
+export type OdometerReadingUnits = (typeof OdometerReadingUnits)[keyof typeof OdometerReadingUnits];
 
 export const OdometerReadingUnitsSchema = z.enum(OdometerReadingUnits);

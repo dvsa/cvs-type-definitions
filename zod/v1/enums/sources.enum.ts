@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum TestSources {
-  "VTM" = "vtm",
-  "VTA" = "vta",
-}
+export const TestSources = {
+	"VTM": "vtm",
+	"VTA": "vta",
+} as const;
+
+export type TestSources = (typeof TestSources)[keyof typeof TestSources];
 
 export const TestSourcesSchema = z.enum(TestSources);

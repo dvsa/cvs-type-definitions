@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum LongitudinalLocation {
-  "FRONT" = "front",
-  "REAR" = "rear",
-}
+export const LongitudinalLocation = {
+	"FRONT": "front",
+	"REAR": "rear",
+} as const;
+
+export type LongitudinalLocation = (typeof LongitudinalLocation)[keyof typeof LongitudinalLocation];
 
 export const LongitudinalLocationSchema = z.enum(LongitudinalLocation);

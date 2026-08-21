@@ -2,12 +2,14 @@
 
 import { z } from "zod";
 
-export enum TestStationTypes {
-  "ATF" = "atf",
-  "GVTS" = "gvts",
-  "HQ" = "hq",
-  "POTF" = "potf",
-  "VEF" = "vef",
-}
+export const TestStationTypes = {
+	"ATF": "atf",
+	"GVTS": "gvts",
+	"HQ": "hq",
+	"POTF": "potf",
+	"VEF": "vef",
+} as const;
+
+export type TestStationTypes = (typeof TestStationTypes)[keyof typeof TestStationTypes];
 
 export const TestStationTypesSchema = z.enum(TestStationTypes);

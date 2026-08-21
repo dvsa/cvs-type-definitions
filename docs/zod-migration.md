@@ -87,18 +87,22 @@ export type HazardClassification = (typeof HazardClassification)[keyof typeof Ha
 ```
 
 `z.literal(object)` **compiles but rejects all input** (identity comparison) — a silent
-trap; do not use it. The generator instead emits, and this is runtime-verified:
+trap; do not use it. The generator emits a const map plus a schema that **derives its
+membership check from that same map**, so the two cannot drift once the generator is
+removed and Zod becomes the hand-edited source (runtime-verified):
 
 ```ts
 export const HazardClassification = { "_1": {"code":"1","description":"Explosive"}, ... } as const;
 export type HazardClassification = (typeof HazardClassification)[keyof typeof HazardClassification];
-export const HazardClassificationSchema = z.union([
-  z.object({ "code": z.literal("1"), "description": z.literal("Explosive") }), ...
-]);
+export const HazardClassificationSchema = z.custom<HazardClassification>((value) =>
+  value != null && typeof value === 'object' &&
+  Object.values(HazardClassification).some((member) =>
+    Object.keys(member).length === Object.keys(value).length &&
+    Object.entries(member).every(([key, val]) => (value as Record<string, unknown>)[key] === val)));
 ```
 
-Named access (`HazardClassification._1`) and the exact type are preserved; the
-`Schema` union validates the whole object correctly.
+Named access (`HazardClassification._1`) and the exact type are preserved; the schema
+accepts exact members and rejects wrong values, extra keys, and non-members.
 
 ## Naming contract (keeps consumer imports intact)
 
@@ -106,8 +110,10 @@ Named access (`HazardClassification._1`) and the exact type are preserved; the
   `export type VehicleSchema = z.infer<typeof VehicleSchema>` — value and type share the
   identifier (TS keeps the namespaces separate), so existing `import { VehicleSchema }`
   type imports resolve unchanged, and a runtime validator now exists too.
-- String enums stay real `export enum X`; the validator is `export const XSchema =
-  z.enum(X)`. `X.MEMBER` and `Object.values(X)` still work.
+- String enums are emitted as `export const X = {…} as const` (not `enum` — erasable,
+  tree-shakeable, no IIFE runtime); the validator is `export const XSchema = z.enum(X)`,
+  derived from the same const. `X.MEMBER` and `Object.values(X)` still work; the type
+  goes from nominal enum to structural union (looser, non-breaking direction).
 - Titles already ending in `Schema` are not double-suffixed.
 
 ## Known source-data issue surfaced

@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum ClosureReasonType {
-  "AUTOCLOSE" = "Autoclose",
-  "MANUAL" = "Manual",
-  "CLOSE_ALL" = "Close all",
-}
+export const ClosureReasonType = {
+	"AUTOCLOSE": "Autoclose",
+	"MANUAL": "Manual",
+	"CLOSE_ALL": "Close all",
+} as const;
+
+export type ClosureReasonType = (typeof ClosureReasonType)[keyof typeof ClosureReasonType];
 
 export const ClosureReasonTypeSchema = z.enum(ClosureReasonType);

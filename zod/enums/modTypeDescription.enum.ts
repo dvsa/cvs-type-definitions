@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum ModTypeDescription {
-  "PARTICULATE_TRAP" = "particulate trap",
-  "MODIFICATION_OR_CHANGE_OF_ENGINE" = "modification or change of engine",
-  "GAS_ENGINE" = "gas engine",
-}
+export const ModTypeDescription = {
+	"PARTICULATE_TRAP": "particulate trap",
+	"MODIFICATION_OR_CHANGE_OF_ENGINE": "modification or change of engine",
+	"GAS_ENGINE": "gas engine",
+} as const;
+
+export type ModTypeDescription = (typeof ModTypeDescription)[keyof typeof ModTypeDescription];
 
 export const ModTypeDescriptionSchema = z.enum(ModTypeDescription);

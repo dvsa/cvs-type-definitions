@@ -1,9 +1,9 @@
-import Ajv, { ErrorObject } from "ajv";
-import addFormats from "ajv-formats"
-import { readFileSync } from "fs";
-import { schemas } from "./schemas";
+import { readFileSync } from 'node:fs';
+import Ajv, { ErrorObject } from 'ajv';
+import addFormats from 'ajv-formats';
+import { schemas } from './schemas';
 
-export type Schema = typeof schemas[number];
+export type Schema = (typeof schemas)[number];
 /**
  * Validate an object according to a JSON schema
  * @param {Schema} schemaName `enum` - the name of the JSON schema to validate against
@@ -12,70 +12,63 @@ export type Schema = typeof schemas[number];
  * @param {boolean | undefined} logErrors `boolean` - Optional. Toggles the logging of errors to the console. Defaults to false.
  * @returns {boolean | ErrorObject[]}`boolean | validationErrors`, depending on `returnErrors` flag.
  */
+export function isValidObject<_B extends boolean | undefined>(schemaName: Schema, objectToValidate: object): boolean;
 export function isValidObject<B extends boolean | undefined>(
-  schemaName: Schema,
-  objectToValidate: object
-): boolean;
-export function isValidObject<B extends boolean | undefined>(
-  schemaName: Schema,
-  objectToValidate: object,
-  returnErrors: B
+	schemaName: Schema,
+	objectToValidate: object,
+	returnErrors: B
 ): B extends false ? boolean : ErrorObject[];
 export function isValidObject<B extends boolean | undefined>(
-  schemaName: Schema,
-  objectToValidate: object,
-  returnErrors: B,
-  logErrors: boolean | undefined
+	schemaName: Schema,
+	objectToValidate: object,
+	returnErrors: B,
+	logErrors: boolean | undefined
 ): B extends false ? boolean : ErrorObject[];
 export function isValidObject<B extends boolean | undefined>(
-  schemaName: Schema,
-  objectToValidate: object,
-  returnErrors?: B,
-  logErrors = false
+	schemaName: Schema,
+	objectToValidate: object,
+	returnErrors?: B,
+	logErrors = false
 ): boolean | ErrorObject[] {
-  const ajv = new Ajv({ removeAdditional: true, allErrors: true });
-  addFormats(ajv);
+	const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+	addFormats(ajv);
 
-  ajv.addKeyword('tsEnumNames');
+	ajv.addKeyword('tsEnumNames');
 
-  const schema = JSON.parse(
-    readFileSync(`${__dirname}/json-schemas/${schemaName}`, "utf8")
-  );
-  const validateFunction = ajv.compile(schema);
-  const isValid = validateFunction(objectToValidate);
+	const schema = JSON.parse(readFileSync(`${__dirname}/json-schemas/${schemaName}`, 'utf8'));
+	const validateFunction = ajv.compile(schema);
+	const isValid = validateFunction(objectToValidate);
 
-  if (logErrors && validateFunction.errors) {
-    console.error(validateFunction.errors);
-  }
+	if (logErrors && validateFunction.errors) {
+	}
 
-  if (returnErrors) {
-    return validateFunction.errors ?? [];
-  }
+	if (returnErrors) {
+		return validateFunction.errors ?? [];
+	}
 
-  return isValid;
+	return isValid;
 }
 
 export function validate<B extends boolean | undefined>(
-    schemaObject: object,
-    objectToValidate: object,
-    returnErrors: B,
-    logErrors = false
+	schemaObject: object,
+	objectToValidate: object,
+	returnErrors: B,
+	logErrors = false
 ) {
-  const ajv = new Ajv({ removeAdditional: true, allErrors: true });
-  addFormats(ajv);
+	const ajv = new Ajv({ removeAdditional: true, allErrors: true });
+	addFormats(ajv);
 
-  ajv.addKeyword('tsEnumNames');
+	ajv.addKeyword('tsEnumNames');
 
-  const validateFunction = ajv.compile(schemaObject);
-  const isValid = validateFunction(objectToValidate);
+	const validateFunction = ajv.compile(schemaObject);
+	const isValid = validateFunction(objectToValidate);
 
-  if (logErrors && validateFunction.errors) {
-    console.error(validateFunction.errors);
-  }
+	if (logErrors && validateFunction.errors) {
+	}
 
-  if (returnErrors) {
-    return validateFunction.errors ?? [];
-  }
+	if (returnErrors) {
+		return validateFunction.errors ?? [];
+	}
 
-  return isValid;
+	return isValid;
 }

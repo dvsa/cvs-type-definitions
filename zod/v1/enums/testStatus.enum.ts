@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum TestStatus {
-  "SUBMITTED" = "submitted",
-  "CANCELLED" = "cancelled",
-}
+export const TestStatus = {
+	"SUBMITTED": "submitted",
+	"CANCELLED": "cancelled",
+} as const;
+
+export type TestStatus = (typeof TestStatus)[keyof typeof TestStatus];
 
 export const TestStatusSchema = z.enum(TestStatus);

@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum ADRCertificateTypes {
-  "PASS" = "PASS",
-  "REPLACEMENT" = "REPLACEMENT",
-}
+export const ADRCertificateTypes = {
+	"PASS": "PASS",
+	"REPLACEMENT": "REPLACEMENT",
+} as const;
+
+export type ADRCertificateTypes = (typeof ADRCertificateTypes)[keyof typeof ADRCertificateTypes];
 
 export const ADRCertificateTypesSchema = z.enum(ADRCertificateTypes);

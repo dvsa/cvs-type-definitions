@@ -2,10 +2,12 @@
 
 import { z } from "zod";
 
-export enum RadioButtonOptions {
-  "yes" = "yes",
-  "no" = "no",
-  "not_applicable" = "n/a",
-}
+export const RadioButtonOptions = {
+	"yes": "yes",
+	"no": "no",
+	"not_applicable": "n/a",
+} as const;
+
+export type RadioButtonOptions = (typeof RadioButtonOptions)[keyof typeof RadioButtonOptions];
 
 export const RadioButtonOptionsSchema = z.enum(RadioButtonOptions);

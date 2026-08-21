@@ -2,9 +2,11 @@
 
 import { z } from "zod";
 
-export enum ADRTankDetailsTankStatementSelect {
-  "STATEMENT" = "Statement",
-  "PRODUCT_LIST" = "Product list",
-}
+export const ADRTankDetailsTankStatementSelect = {
+	"STATEMENT": "Statement",
+	"PRODUCT_LIST": "Product list",
+} as const;
+
+export type ADRTankDetailsTankStatementSelect = (typeof ADRTankDetailsTankStatementSelect)[keyof typeof ADRTankDetailsTankStatementSelect];
 
 export const ADRTankDetailsTankStatementSelectSchema = z.enum(ADRTankDetailsTankStatementSelect);

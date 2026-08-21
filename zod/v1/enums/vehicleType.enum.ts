@@ -2,13 +2,15 @@
 
 import { z } from "zod";
 
-export enum VehicleType {
-  "HGV" = "hgv",
-  "PSV" = "psv",
-  "TRL" = "trl",
-  "LGV" = "lgv",
-  "CAR" = "car",
-  "MOTORCYCLE" = "motorcycle",
-}
+export const VehicleType = {
+	"HGV": "hgv",
+	"PSV": "psv",
+	"TRL": "trl",
+	"LGV": "lgv",
+	"CAR": "car",
+	"MOTORCYCLE": "motorcycle",
+} as const;
+
+export type VehicleType = (typeof VehicleType)[keyof typeof VehicleType];
 
 export const VehicleTypeSchema = z.enum(VehicleType);
