@@ -3,7 +3,8 @@
 //
 //   string enum + tsEnumNames         -> `as const` object + z.enum(const)
 //   object-valued enum (+tsEnumNames) -> `as const` map + z.custom derived from it
-//   $ref                              -> import (name from target title); self-ref -> z.lazy
+//   $ref                              -> import (name from target title); self-ref in an
+//                                        object prop -> getter; self-ref elsewhere -> z.lazy
 //   anyOf/oneOf -> z.union, allOf -> z.intersection, const -> z.literal
 //   type:[...,"null"] -> .nullable(), additionalProperties:false -> .strict()
 //
@@ -47,13 +48,17 @@ function toZod(node, ctx) {
 
 	if (node.$ref) {
 		const refPath = node.$ref.split('#')[0];
-		if (refPath === '') {
+		const abs = refPath === '' ? ctx.selfAbs : resolve(ctx.dir, refPath);
+		if (refPath === '' || abs === ctx.selfAbs) {
+			// self-ref. Inside an object property -> plain ref wrapped in a getter by
+			// objectExpr (zod4 lazy-getter recursion, keeps full type inference).
+			// Outside any object -> fall back to z.lazy + z.ZodType<any> annotation.
 			ctx.recursive = true;
-			return `z.lazy(() => ${ctx.selfSchema})`;
-		} // "#" self-ref
-		const abs = resolve(ctx.dir, refPath);
-		if (abs === ctx.selfAbs) {
-			ctx.recursive = true;
+			if (ctx.objDepth > 0) {
+				ctx.pendingSelfRef = true;
+				return ctx.selfSchema;
+			}
+			ctx.hardRecursive = true;
 			return `z.lazy(() => ${ctx.selfSchema})`;
 		}
 		if (!titleOf[abs]) {
@@ -136,12 +141,20 @@ function unionExpr(list, ctx) {
 function objectExpr(node, ctx) {
 	const props = node.properties || {};
 	const req = new Set(node.required || []);
+	ctx.objDepth++;
 	const lines = Object.entries(props).map(([k, v]) => {
+		ctx.pendingSelfRef = false;
 		let e = toZod(v, ctx);
 		if (v?.description) e += `.meta({ description: ${JSON.stringify(v.description)} })`;
 		if (!req.has(k)) e += '.optional()';
+		const rec = ctx.pendingSelfRef;
+		ctx.pendingSelfRef = false;
+		// self-ref in this property -> getter so the const is referenced lazily at
+		// access time (avoids use-before-init) while zod infers the recursive type.
+		if (rec) return `  get ${JSON.stringify(k)}() {\n    return ${e};\n  },`;
 		return `  ${JSON.stringify(k)}: ${e},`;
 	});
+	ctx.objDepth--;
 	let out = `z.object({\n${lines.join('\n')}\n})`;
 	if (node.additionalProperties === false) out += '.strict()';
 	return out;
@@ -197,6 +210,9 @@ function generate(path) {
 		selfSchema,
 		pre: [],
 		recursive: false,
+		hardRecursive: false,
+		pendingSelfRef: false,
+		objDepth: 0,
 		isEnumDecl: false,
 		addImport(wanted, abs) {
 			if (importsByPath.has(abs)) return importsByPath.get(abs);
@@ -223,7 +239,7 @@ function generate(path) {
 			: `import { ${wanted} as ${local} } from "${spec}";`;
 	});
 
-	const constDecl = ctx.recursive
+	const constDecl = ctx.hardRecursive
 		? `export const ${selfSchema}: z.ZodType<any> = ${expr};`
 		: `export const ${selfSchema} = ${expr};`;
 	const typeDecl =

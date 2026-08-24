@@ -10,7 +10,7 @@ import { VehicleSubclassSchema } from "./../enums/vehicleSubclass.enum";
 import { TestTypeClassificationSchema } from "./enums/testTypeClassification.enum";
 import { TestCodeSchema } from "./testCode";
 
-export const NextTestTypesOrCategorySchema: z.ZodType<any> = z.object({
+export const NextTestTypesOrCategorySchema = z.object({
   "typeOfTest": z.string().optional(),
   "id": z.string(),
   "linkedIds": z.array(z.string()).nullable(),
@@ -28,7 +28,9 @@ export const NextTestTypesOrCategorySchema: z.ZodType<any> = z.object({
   "forVehicleWheels": z.array(z.number().int()).nullable(),
   "testTypeClassification": TestTypeClassificationSchema.optional(),
   "testCodes": z.array(TestCodeSchema).optional(),
-  "nextTestTypesOrCategories": z.array(z.lazy(() => NextTestTypesOrCategorySchema)).optional(),
+  get "nextTestTypesOrCategories"() {
+    return z.array(NextTestTypesOrCategorySchema).optional();
+  },
 }).strict();
 
 export type NextTestTypesOrCategorySchema = z.infer<typeof NextTestTypesOrCategorySchema>;

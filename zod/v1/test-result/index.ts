@@ -16,7 +16,7 @@ import { TypeoftestSchema } from "./../enums/typeOfTest.enum";
 import { TestSourcesSchema } from "./../enums/sources.enum";
 import { RecallsSchema } from "./../recalls/index";
 
-export const TestResultSchema: z.ZodType<any> = z.object({
+export const TestResultSchema = z.object({
   "testResultId": z.string(),
   "testStationName": z.string().nullable(),
   "testStationPNumber": z.string().nullable(),
@@ -72,7 +72,9 @@ export const TestResultSchema: z.ZodType<any> = z.object({
   "description": z.string().nullable().optional(),
 }).strict().optional(),
   "vehicleId": z.string().nullable().optional(),
-  "testHistory": z.array(z.lazy(() => TestResultSchema)).optional(),
+  get "testHistory"() {
+    return z.array(TestResultSchema).optional();
+  },
   "testVersion": z.string().optional(),
   "deletionFlag": z.boolean().optional(),
   "recalls": RecallsSchema.optional(),
