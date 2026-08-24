@@ -1,38 +1,38 @@
-import { readFileSync } from "fs";
-import { Schema } from "../../../schema-validator";
+import { readFileSync } from 'node:fs';
+import { Schema } from '../../../schema-validator';
 
 const readFile = (path: Schema) => {
-  return JSON.parse(readFileSync(`json-schemas/${path}`).toString("utf-8"));
+	return JSON.parse(readFileSync(`json-schemas/${path}`).toString('utf-8'));
 };
 
-describe("should have the same length of keys regardless of status", () => {
-  it("put hgv", () => {
-    const schemas: Schema[] = [
-      "v3/tech-record/put/hgv/complete/index.json",
-      "v3/tech-record/put/hgv/testable/index.json",
-      "v3/tech-record/put/hgv/skeleton/index.json",
-    ];
-    const fields: Partial<Record<Schema, string[]>> = {};
-    schemas.forEach((path) => {
-      fields[path] = Object.keys(readFile(path).properties).sort();
-    });
+describe('should have the same length of keys regardless of status', () => {
+	it('put hgv', () => {
+		const schemas: Schema[] = [
+			'v3/tech-record/put/hgv/complete/index.json',
+			'v3/tech-record/put/hgv/testable/index.json',
+			'v3/tech-record/put/hgv/skeleton/index.json',
+		];
+		const fields: Partial<Record<Schema, string[]>> = {};
+		schemas.forEach((path) => {
+			fields[path] = Object.keys(readFile(path).properties).sort();
+		});
 
-    expect(fields[schemas[0]]).toEqual(fields[schemas[1]]);
-    expect(fields[schemas[1]]).toEqual(fields[schemas[2]]);
-  });
+		expect(fields[schemas[0]]).toEqual(fields[schemas[1]]);
+		expect(fields[schemas[1]]).toEqual(fields[schemas[2]]);
+	});
 
-  it("get hgv", () => {
-    const schemas: Schema[] = [
-      "v3/tech-record/get/hgv/complete/index.json",
-      "v3/tech-record/get/hgv/testable/index.json",
-      "v3/tech-record/get/hgv/skeleton/index.json",
-    ];
-    const fields: Partial<Record<Schema, string[]>> = {};
-    schemas.forEach((path) => {
-      fields[path] = Object.keys(readFile(path).properties).sort();
-    });
+	it('get hgv', () => {
+		const schemas: Schema[] = [
+			'v3/tech-record/get/hgv/complete/index.json',
+			'v3/tech-record/get/hgv/testable/index.json',
+			'v3/tech-record/get/hgv/skeleton/index.json',
+		];
+		const fields: Partial<Record<Schema, string[]>> = {};
+		schemas.forEach((path) => {
+			fields[path] = Object.keys(readFile(path).properties).sort();
+		});
 
-    expect(fields[schemas[0]]).toEqual(fields[schemas[1]]);
-    expect(fields[schemas[1]]).toEqual(fields[schemas[2]]);
-  });
+		expect(fields[schemas[0]]).toEqual(fields[schemas[1]]);
+		expect(fields[schemas[1]]).toEqual(fields[schemas[2]]);
+	});
 });

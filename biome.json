@@ -1,0 +1,33 @@
+{
+	"extends": ["@dvsa/biome-config/biome"],
+	"files": {
+		"includes": ["**", "!zod/**", "!types/**", "!json-schemas/**", "!database/**", "!schemas.ts"]
+	},
+	"overrides": [
+		{
+			"includes": ["scripts/**"],
+			"linter": {
+				"rules": {
+					"suspicious": { "noConsole": "off", "noExplicitAny": "off" }
+				}
+			}
+		},
+		{
+			"includes": ["tests/**"],
+			"linter": {
+				"rules": {
+					"performance": { "noDynamicNamespaceImportAccess": "off" },
+					"suspicious": { "noExplicitAny": "off" }
+				}
+			}
+		},
+		{
+			"includes": ["schema-validator.ts"],
+			"linter": {
+				"rules": {
+					"suspicious": { "noConsole": "off" }
+				}
+			}
+		}
+	]
+}
