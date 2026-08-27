@@ -16,7 +16,9 @@
       "Bash(rtk grep *)",
       "Bash(echo \"exit: $?\")",
       "Bash(git add *)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(git commit *)"
     ]
   }
 }
