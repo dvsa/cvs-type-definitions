@@ -357,6 +357,7 @@ CREATE TABLE IF NOT EXISTS `tech_record_adr_detail`
     `additional_notes_number`                   JSON COMMENT 'JSON array of additional note numbers',
     `adr_type_approval_no`                      VARCHAR(40) COMMENT 'ADR type approval number',
     `adr_certificate_notes`                     VARCHAR(1500) COMMENT 'Notes on the ADR certificate',
+    `application_number`                        VARCHAR(40) COMMENT 'ADR application number',
 
     -- Tank details
     `tank_manufacturer`                         VARCHAR(70) COMMENT 'Tank manufacturer name',
