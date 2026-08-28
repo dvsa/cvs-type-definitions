@@ -7,7 +7,6 @@ import {
     foreignKey,
     index,
     int,
-    json,
     mysqlSchema,
     primaryKey,
     text,
@@ -39,7 +38,6 @@ export const testResult = schema.table(
         vehicleType: varchar('vehicle_type', { length: 20 }),
         vehicleClassCode: varchar('vehicle_class_code', { length: 10 }),
         vehicleClassDescription: varchar('vehicle_class_description', { length: 100 }),
-        vehicleSubclass: json('vehicle_subclass').$type<string[]>(),
         vehicleConfiguration: varchar('vehicle_configuration', { length: 50 }),
         vehicleSize: varchar('vehicle_size', { length: 20 }),
         euVehicleCategory: varchar('eu_vehicle_category', { length: 10 }),
@@ -87,6 +85,44 @@ export const testResult = schema.table(
     ],
 );
 
+export const testResultVehicleSubclass = schema.table(
+    'test_result_vehicle_subclass',
+    {
+        id: bigint({ mode: 'number', unsigned: true }).autoincrement().primaryKey(),
+        testResultId: bigint('test_result_id', { mode: 'number', unsigned: true }).notNull(),
+        vehicleSubclass: varchar('vehicle_subclass', { length: 20 }).notNull(),
+    },
+    (table) => [
+        primaryKey({ columns: [table.id], name: 'test_result_vehicle_subclass_pk' }),
+        index('idx_vehicle_subclass_test_result_id').on(table.testResultId),
+        foreignKey({
+            columns: [table.testResultId],
+            foreignColumns: [testResult.id],
+            name: 'fk_vehicle_subclass_test_result_id',
+        }),
+    ],
+);
+
+export const testResultVtg15Media = schema.table(
+    'test_result_vtg15_media',
+    {
+        id: bigint({ mode: 'number', unsigned: true }).autoincrement().primaryKey(),
+        testResultId: bigint('test_result_id', { mode: 'number', unsigned: true }).notNull(),
+        type: varchar({ length: 20 }).notNull(),
+        path: varchar({ length: 255 }).notNull(),
+        reason: varchar({ length: 255 }),
+    },
+    (table) => [
+        primaryKey({ columns: [table.id], name: 'test_result_vtg15_media_pk' }),
+        index('idx_vtg15_media_test_result_id').on(table.testResultId),
+        foreignKey({
+            columns: [table.testResultId],
+            foreignColumns: [testResult.id],
+            name: 'fk_vtg15_media_test_result_id',
+        }),
+    ],
+);
+
 export const testResultTestType = schema.table(
     'test_result_test_type',
     {
@@ -120,7 +156,6 @@ export const testResultTestType = schema.table(
         modTypeDescription: varchar('mod_type_description', { length: 100 }),
         centralDocsIssueRequired: boolean('central_docs_issue_required'),
         centralDocsNotes: text('central_docs_notes'),
-        centralDocsReasonsForIssue: json('central_docs_reasons_for_issue').$type<string[]>(),
         deletionFlag: varchar('deletion_flag', { length: 10 }),
         createdAt: datetime('created_at', { mode: 'string', fsp: 3 }),
         lastUpdatedAt: datetime('last_updated_at', { mode: 'string', fsp: 3 }),
@@ -135,6 +170,24 @@ export const testResultTestType = schema.table(
             columns: [table.testResultId],
             foreignColumns: [testResult.id],
             name: 'fk_test_type_test_result_id',
+        }),
+    ],
+);
+
+export const testResultCentralDocsReason = schema.table(
+    'test_result_test_type_central_docs_reason',
+    {
+        id: bigint({ mode: 'number', unsigned: true }).autoincrement().primaryKey(),
+        testResultTestTypeId: bigint('test_result_test_type_id', { mode: 'number', unsigned: true }).notNull(),
+        reason: varchar({ length: 200 }).notNull(),
+    },
+    (table) => [
+        primaryKey({ columns: [table.id], name: 'test_result_test_type_central_docs_reason_pk' }),
+        index('idx_central_docs_reason_test_type_id').on(table.testResultTestTypeId),
+        foreignKey({
+            columns: [table.testResultTestTypeId],
+            foreignColumns: [testResultTestType.id],
+            name: 'fk_central_docs_reason_test_type_id',
         }),
     ],
 );
@@ -205,7 +258,8 @@ export const testResultRequiredStandard = schema.table(
         refCalculation: varchar('ref_calculation', { length: 100 }).notNull(),
         additionalInfo: boolean('additional_info').notNull(),
         additionalNotes: text('additional_notes'),
-        inspectionTypes: json('inspection_types').$type<string[]>(),
+        inspectionTypeBasic: boolean('inspection_type_basic'),
+        inspectionTypeNormal: boolean('inspection_type_normal'),
         prs: boolean().notNull(),
     },
     (table) => [
@@ -223,6 +277,22 @@ export const testResultRequiredStandard = schema.table(
 
 export const testResultRelations = relations(testResult, ({ many }) => ({
     testTypes: many(testResultTestType),
+    vehicleSubclasses: many(testResultVehicleSubclass),
+    vtg15Media: many(testResultVtg15Media),
+}));
+
+export const testResultVehicleSubclassRelations = relations(testResultVehicleSubclass, ({ one }) => ({
+    testResult: one(testResult, {
+        fields: [testResultVehicleSubclass.testResultId],
+        references: [testResult.id],
+    }),
+}));
+
+export const testResultVtg15MediaRelations = relations(testResultVtg15Media, ({ one }) => ({
+    testResult: one(testResult, {
+        fields: [testResultVtg15Media.testResultId],
+        references: [testResult.id],
+    }),
 }));
 
 export const testResultTestTypeRelations = relations(testResultTestType, ({ one, many }) => ({
@@ -233,6 +303,14 @@ export const testResultTestTypeRelations = relations(testResultTestType, ({ one,
     defects: many(testResultDefect),
     customDefects: many(testResultCustomDefect),
     requiredStandards: many(testResultRequiredStandard),
+    centralDocsReasons: many(testResultCentralDocsReason),
+}));
+
+export const testResultCentralDocsReasonRelations = relations(testResultCentralDocsReason, ({ one }) => ({
+    testType: one(testResultTestType, {
+        fields: [testResultCentralDocsReason.testResultTestTypeId],
+        references: [testResultTestType.id],
+    }),
 }));
 
 export const testResultDefectRelations = relations(testResultDefect, ({ one }) => ({

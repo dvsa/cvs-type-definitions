@@ -19,6 +19,8 @@ import {
     testResultDefect,
     testResultCustomDefect,
     testResultRequiredStandard,
+    testResultVehicleSubclass,
+    testResultCentralDocsReason,
 } from './schema';
 
 @Service()
@@ -138,7 +140,6 @@ export class TestResultProvider {
                 vehicleType: input.vehicleType,
                 vehicleClassCode: input.vehicleClass?.code,
                 vehicleClassDescription: input.vehicleClass?.description,
-                vehicleSubclass: input.vehicleSubclass,
                 vehicleConfiguration: input.vehicleConfiguration,
                 vehicleSize: input.vehicleSize,
                 euVehicleCategory: input.euVehicleCategory,
@@ -169,6 +170,15 @@ export class TestResultProvider {
             });
 
             const testResultPk = trInsert.insertId;
+
+            if (input.vehicleSubclass?.length) {
+                await tx.insert(testResultVehicleSubclass).values(
+                    input.vehicleSubclass.map((vehicleSubclass) => ({
+                        testResultId: testResultPk,
+                        vehicleSubclass,
+                    })),
+                );
+            }
 
             for (const tt of input.testTypes ?? []) {
                 const [ttInsert] = await tx.insert(testResultTestType).values({
@@ -201,10 +211,18 @@ export class TestResultProvider {
                     modTypeDescription: typeof tt.modType === 'object' ? tt.modType?.description : null,
                     centralDocsIssueRequired: tt.centralDocs?.issueRequired,
                     centralDocsNotes: tt.centralDocs?.notes,
-                    centralDocsReasonsForIssue: tt.centralDocs?.reasonsForIssue,
                 });
 
                 const ttPk = ttInsert.insertId;
+
+                if (tt.centralDocs?.reasonsForIssue?.length) {
+                    await tx.insert(testResultCentralDocsReason).values(
+                        tt.centralDocs.reasonsForIssue.map((reason) => ({
+                            testResultTestTypeId: ttPk,
+                            reason,
+                        })),
+                    );
+                }
 
                 // Insert defects — need to resolve deficiency FK from IM reference
                 if (tt.defects?.length) {
@@ -270,7 +288,8 @@ export class TestResultProvider {
                             requiredStandard: rs.requiredStandard,
                             refCalculation: rs.refCalculation,
                             additionalInfo: rs.additionalInfo,
-                            inspectionTypes: rs.inspectionTypes,
+                            inspectionTypeBasic: rs.inspectionTypes?.includes('basic') ?? false,
+                            inspectionTypeNormal: rs.inspectionTypes?.includes('normal') ?? false,
                             prs: rs.prs,
                         })),
                     );
@@ -314,8 +333,9 @@ export class TestResultProvider {
                     tx.delete(testResultDefect).where(inArray(testResultDefect.testResultTestTypeId, ttIds)),
                     tx.delete(testResultCustomDefect).where(inArray(testResultCustomDefect.testResultTestTypeId, ttIds)),
                     tx.delete(testResultRequiredStandard).where(inArray(testResultRequiredStandard.testResultTestTypeId, ttIds)),
-                    tx.delete(testResultTestType).where(eq(testResultTestType.testResultId, trPk))
+                    tx.delete(testResultCentralDocsReason).where(inArray(testResultCentralDocsReason.testResultTestTypeId, ttIds)),
                 ]);
+                await tx.delete(testResultTestType).where(eq(testResultTestType.testResultId, trPk));
             }
 
             // Update parent row
@@ -368,10 +388,18 @@ export class TestResultProvider {
                     modTypeDescription: typeof tt.modType === 'object' ? tt.modType?.description : null,
                     centralDocsIssueRequired: tt.centralDocs?.issueRequired,
                     centralDocsNotes: tt.centralDocs?.notes,
-                    centralDocsReasonsForIssue: tt.centralDocs?.reasonsForIssue,
                 });
 
                 const ttPk = ttInsert.insertId;
+
+                if (tt.centralDocs?.reasonsForIssue?.length) {
+                    await tx.insert(testResultCentralDocsReason).values(
+                        tt.centralDocs.reasonsForIssue.map((reason) => ({
+                            testResultTestTypeId: ttPk,
+                            reason,
+                        })),
+                    );
+                }
 
                 if (tt.defects?.length) {
                     for (const d of tt.defects) {
@@ -434,7 +462,8 @@ export class TestResultProvider {
                             requiredStandard: rs.requiredStandard,
                             refCalculation: rs.refCalculation,
                             additionalInfo: rs.additionalInfo,
-                            inspectionTypes: rs.inspectionTypes,
+                            inspectionTypeBasic: rs.inspectionTypes?.includes('basic') ?? false,
+                            inspectionTypeNormal: rs.inspectionTypes?.includes('normal') ?? false,
                             prs: rs.prs,
                         })),
                     );
@@ -535,6 +564,12 @@ export class TestResultProvider {
     ): Promise<TestResultSchema[]> {
         const trIds = rows.map((r) => r.tr.id);
 
+        // Batch-load vehicle subclasses for these results
+        const subclassRows = await this.db.query.testResultVehicleSubclass.findMany({
+            where: inArray(testResultVehicleSubclass.testResultId, trIds),
+        });
+        const subclassesByResult = Map.groupBy(subclassRows, (r) => r.testResultId);
+
         // Batch-load all test types for these results, with children
         const types = await this.db.query.testResultTestType.findMany({
             where: inArray(testResultTestType.testResultId, trIds),
@@ -552,6 +587,7 @@ export class TestResultProvider {
                 },
                 customDefects: true,
                 requiredStandards: true,
+                centralDocsReasons: true,
             },
         });
 
@@ -595,7 +631,7 @@ export class TestResultProvider {
                     code: row.tr.vehicleClassCode ?? '',
                     description: row.tr.vehicleClassDescription ?? '',
                 },
-                vehicleSubclass: row.tr.vehicleSubclass,
+                vehicleSubclass: (subclassesByResult.get(row.tr.id) ?? []).map((r) => r.vehicleSubclass),
                 vehicleType: row.tr.vehicleType,
                 vehicleConfiguration: row.tr.vehicleConfiguration,
                 vehicleSize: row.tr.vehicleSize,
@@ -660,7 +696,7 @@ export class TestResultProvider {
                             ? {
                                 issueRequired: tt.centralDocsIssueRequired,
                                 notes: tt.centralDocsNotes,
-                                reasonsForIssue: tt.centralDocsReasonsForIssue ?? [],
+                                reasonsForIssue: tt.centralDocsReasons.map((r) => r.reason),
                             }
                             : undefined,
                         defects: tt.defects.map((d) => ({
@@ -701,7 +737,10 @@ export class TestResultProvider {
                             requiredStandard: rs.requiredStandard,
                             refCalculation: rs.refCalculation,
                             additionalInfo: rs.additionalInfo,
-                            inspectionTypes: rs.inspectionTypes ?? [],
+                            inspectionTypes: [
+                                rs.inspectionTypeBasic ? 'basic' as const : null,
+                                rs.inspectionTypeNormal ? 'normal' as const : null,
+                            ].filter((t): t is 'basic' | 'normal' => t !== null),
                             prs: rs.prs,
                         })),
                     };

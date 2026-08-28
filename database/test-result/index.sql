@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS `test_result`
     `vehicle_type`                  VARCHAR(20) COMMENT 'Vehicle type at time of test, e.g. psv, hgv, trl, car, lgv, motorcycle',
     `vehicle_class_code`            VARCHAR(10) COMMENT 'Vehicle class code snapshot at time of test',
     `vehicle_class_description`     VARCHAR(100) COMMENT 'Vehicle class description snapshot at time of test',
-    `vehicle_subclass`              JSON COMMENT 'JSON array of vehicle subclass values at time of test',
     `vehicle_configuration`         VARCHAR(50) COMMENT 'Vehicle configuration snapshot at time of test',
     `vehicle_size`                  VARCHAR(20) COMMENT 'Vehicle size snapshot at time of test, PSV only',
     `eu_vehicle_category`           VARCHAR(10) COMMENT 'EU vehicle category snapshot at time of test',
@@ -51,7 +50,6 @@ CREATE TABLE IF NOT EXISTS `test_result`
     `vtg15_un_number`                INT UNSIGNED COMMENT 'UN number of the dangerous goods carried',
     `vtg15_primary_hazard_classification`   VARCHAR(5) COMMENT 'Primary hazard classification code of the dangerous goods carried',
     `vtg15_secondary_hazard_classification` VARCHAR(5) COMMENT 'Secondary hazard classification code of the dangerous goods carried',
-    `vtg15_media`                   JSON COMMENT 'JSON array of media references supporting the VTG15 declaration',
     `deletion_flag`                 BOOLEAN COMMENT 'Whether this test result has been soft-deleted',
     `created_by_id`                 VARCHAR(40) COMMENT 'ID of the user that originally created the record',
     `created_by_name`               VARCHAR(200) COMMENT 'Name of user that created the record',
@@ -71,6 +69,32 @@ CREATE TABLE IF NOT EXISTS `test_result`
 )
     ENGINE = InnoDB
     COMMENT = 'Test result records representing a test visit, with vehicle data snapshotted at the time of test for historical accuracy';
+
+CREATE TABLE IF NOT EXISTS `test_result_vehicle_subclass`
+(
+    `id`                    BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Surrogate key ID',
+    `test_result_id`        BIGINT UNSIGNED NOT NULL COMMENT 'Test result surrogate key ID. References `[test_result].[id]`',
+    `vehicle_subclass`      VARCHAR(20) NOT NULL COMMENT 'Vehicle subclass value snapshot at time of test',
+    PRIMARY KEY (`id`),
+    CONSTRAINT `fk_vehicle_subclass_test_result_id` FOREIGN KEY (`test_result_id`) REFERENCES `test_result` (`id`),
+    INDEX `idx_vehicle_subclass_test_result_id` (`test_result_id` ASC) COMMENT 'Supports efficient lookups of all vehicle subclasses for a test result'
+)
+    ENGINE = InnoDB
+    COMMENT = 'Vehicle subclass values snapshotted at time of test, one row per subclass value';
+
+CREATE TABLE IF NOT EXISTS `test_result_vtg15_media`
+(
+    `id`                    BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Surrogate key ID',
+    `test_result_id`        BIGINT UNSIGNED NOT NULL COMMENT 'Test result surrogate key ID. References `[test_result].[id]`',
+    `type`                  VARCHAR(20) NOT NULL COMMENT 'Media type, e.g. image, video, failReason',
+    `path`                  VARCHAR(255) NOT NULL COMMENT 'Path to the media file',
+    `reason`                VARCHAR(255) COMMENT 'Reason text, applicable when type is failReason',
+    PRIMARY KEY (`id`),
+    CONSTRAINT `fk_vtg15_media_test_result_id` FOREIGN KEY (`test_result_id`) REFERENCES `test_result` (`id`),
+    INDEX `idx_vtg15_media_test_result_id` (`test_result_id` ASC) COMMENT 'Supports efficient lookups of all VTG15 media for a test result'
+)
+    ENGINE = InnoDB
+    COMMENT = 'Media (images, videos, fail reasons) attached to a VTG15 dangerous-goods declaration for a test result';
 
 CREATE TABLE IF NOT EXISTS `test_result_test_type`
 (
@@ -104,7 +128,6 @@ CREATE TABLE IF NOT EXISTS `test_result_test_type`
     `mod_type_description`                      VARCHAR(100) COMMENT 'Modification type description, if applicable',
     `central_docs_issue_required`               BOOLEAN COMMENT 'Whether central documentation issue is required',
     `central_docs_notes`                        TEXT COMMENT 'Notes for central documentation',
-    `central_docs_reasons_for_issue`            JSON COMMENT 'JSON array of reasons for central documentation issue',
     `load_status_vehicle_load_status`           VARCHAR(40) COMMENT 'Vehicle load status at time of test, e.g. unladen, fully laden',
     `load_status_unladen_body_type`             VARCHAR(30) COMMENT 'Unladen body type, if vehicle load status is unladen',
     `load_status_other_unladen_body_type`       VARCHAR(200) COMMENT 'Free-text unladen body type, if unladen body type is other',
@@ -123,6 +146,18 @@ CREATE TABLE IF NOT EXISTS `test_result_test_type`
 )
     ENGINE = InnoDB
     COMMENT = 'Individual test type executions within a test result, capturing the outcome, certificate details and emissions data for each test performed';
+
+CREATE TABLE IF NOT EXISTS `test_result_test_type_central_docs_reason`
+(
+    `id`                         BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Surrogate key ID',
+    `test_result_test_type_id`  BIGINT UNSIGNED NOT NULL COMMENT 'Test result test type surrogate key ID. References `[test_result_test_type].[id]`',
+    `reason`                     VARCHAR(200) NOT NULL COMMENT 'Reason for central documentation issue',
+    PRIMARY KEY (`id`),
+    CONSTRAINT `fk_central_docs_reason_test_type_id` FOREIGN KEY (`test_result_test_type_id`) REFERENCES `test_result_test_type` (`id`),
+    INDEX `idx_central_docs_reason_test_type_id` (`test_result_test_type_id` ASC) COMMENT 'Supports efficient lookups of all central docs reasons for a test type'
+)
+    ENGINE = InnoDB
+    COMMENT = 'Reasons for central documentation issue, one row per reason';
 
 CREATE TABLE IF NOT EXISTS `test_result_defect`
 (
@@ -173,7 +208,8 @@ CREATE TABLE IF NOT EXISTS `test_result_required_standard`
     `ref_calculation`               VARCHAR(100) NOT NULL COMMENT 'Reference calculation for the required standard',
     `additional_info`               BOOLEAN NOT NULL COMMENT 'Whether additional information applies to this standard',
     `additional_notes`              TEXT COMMENT 'Additional notes for the required standard, if applicable',
-    `inspection_types`              JSON COMMENT 'JSON array of inspection types this standard applies to',
+    `inspection_type_basic`         BOOLEAN COMMENT 'Whether this standard applies to basic inspections',
+    `inspection_type_normal`        BOOLEAN COMMENT 'Whether this standard applies to normal inspections',
     `prs`                           BOOLEAN NOT NULL COMMENT 'Whether PRS (pass after rectification at station) applies',
     PRIMARY KEY (`id`),
     CONSTRAINT `fk_required_standard_test_type_id` FOREIGN KEY (`test_result_test_type_id`) REFERENCES `test_result_test_type` (`id`),
