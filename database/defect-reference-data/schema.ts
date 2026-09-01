@@ -150,7 +150,8 @@ export const requiredStandardSection = mysqlSchema(formatSchemaName('defect_refe
  * | requiredStandard           | varchar(500)    | No       | NOT NULL     |
  * | refCalculation             | varchar(100)    | No       | NOT NULL     |
  * | additionalInfo             | boolean         | No       | NOT NULL     |
- * | inspectionTypes            | json            | No       | NOT NULL     |
+ * | inspectionTypeBasic        | boolean         | No       | NOT NULL     |
+ * | inspectionTypeNormal       | boolean         | No       | NOT NULL     |
  */
 export const requiredStandard = mysqlSchema(formatSchemaName('defect_reference_data')).table(
     'required_standard',
@@ -161,7 +162,8 @@ export const requiredStandard = mysqlSchema(formatSchemaName('defect_reference_d
         requiredStandard: varchar('required_standard', { length: 500 }).notNull(),
         refCalculation: varchar('ref_calculation', { length: 100 }).notNull(),
         additionalInfo: boolean('additional_info').notNull(),
-        inspectionTypes: json('inspection_types').$type<string[]>().notNull(),
+        inspectionTypeBasic: boolean('inspection_type_basic').notNull(),
+        inspectionTypeNormal: boolean('inspection_type_normal').notNull(),
     },
     (table) => [
         primaryKey({ columns: [table.id], name: 'required_standard_id' }),

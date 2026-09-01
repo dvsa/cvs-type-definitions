@@ -139,13 +139,14 @@ CREATE TABLE IF NOT EXISTS `test_result_test_type`
     `last_updated_at`                           DATETIME(3) COMMENT 'The Date and Time the test type record was last updated in the source system',
     PRIMARY KEY (`id`),
     CONSTRAINT `fk_test_type_test_result_id` FOREIGN KEY (`test_result_id`) REFERENCES `test_result` (`id`),
+    CONSTRAINT `fk_test_type_test_type_id` FOREIGN KEY (`test_type_id`) REFERENCES `test_type` (`id`),
     INDEX `idx_test_type_test_result_id` (`test_result_id` ASC) COMMENT 'Supports efficient lookups of all test types within a test result',
     INDEX `idx_test_type_test_type_id` (`test_type_id` ASC) COMMENT 'Supports efficient joins to test_type reference data',
     INDEX `idx_test_type_test_number` (`test_number` ASC) COMMENT 'Supports efficient lookups by test number',
     INDEX `idx_test_type_certificate_number` (`certificate_number` ASC) COMMENT 'Supports efficient lookups by certificate number'
 )
     ENGINE = InnoDB
-    COMMENT = 'Individual test type executions within a test result, capturing the outcome, certificate details and emissions data for each test performed';
+    COMMENT = 'Execution of a test type during a specific test visit, capturing the outcome, certificate details and emissions data. `test_type_id` JOINs to `test_type` (the reference catalog of test type definitions) for name/classification.';
 
 CREATE TABLE IF NOT EXISTS `test_result_test_type_central_docs_reason`
 (
@@ -201,19 +202,14 @@ CREATE TABLE IF NOT EXISTS `test_result_required_standard`
 (
     `id`                            BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Surrogate key ID',
     `test_result_test_type_id`      BIGINT UNSIGNED NOT NULL COMMENT 'Test result test type surrogate key ID. References `[test_result_test_type].[id]`',
-    `section_number`                VARCHAR(20) NOT NULL COMMENT 'Section number of the required standard',
-    `section_description`           VARCHAR(500) NOT NULL COMMENT 'Description of the section',
-    `rs_number`                     INT UNSIGNED NOT NULL COMMENT 'Required standard number within the section',
-    `required_standard`             VARCHAR(500) NOT NULL COMMENT 'Description of the required standard',
-    `ref_calculation`               VARCHAR(100) NOT NULL COMMENT 'Reference calculation for the required standard',
-    `additional_info`               BOOLEAN NOT NULL COMMENT 'Whether additional information applies to this standard',
+    `required_standard_id`          BIGINT UNSIGNED NOT NULL COMMENT 'Required standard surrogate key ID. References `[required_standard].[id]`. JOIN through required_standard -> required_standard_section for section/standard details.',
     `additional_notes`              TEXT COMMENT 'Additional notes for the required standard, if applicable',
-    `inspection_type_basic`         BOOLEAN COMMENT 'Whether this standard applies to basic inspections',
-    `inspection_type_normal`        BOOLEAN COMMENT 'Whether this standard applies to normal inspections',
     `prs`                           BOOLEAN NOT NULL COMMENT 'Whether PRS (pass after rectification at station) applies',
     PRIMARY KEY (`id`),
     CONSTRAINT `fk_required_standard_test_type_id` FOREIGN KEY (`test_result_test_type_id`) REFERENCES `test_result_test_type` (`id`),
-    INDEX `idx_required_standard_test_type_id` (`test_result_test_type_id` ASC) COMMENT 'Supports efficient lookups of all required standards within a test type'
+    CONSTRAINT `fk_required_standard_required_standard_id` FOREIGN KEY (`required_standard_id`) REFERENCES `required_standard` (`id`),
+    INDEX `idx_required_standard_test_type_id` (`test_result_test_type_id` ASC) COMMENT 'Supports efficient lookups of all required standards within a test type',
+    INDEX `idx_required_standard_required_standard_id` (`required_standard_id` ASC) COMMENT 'Supports efficient joins to required standard reference data'
 )
     ENGINE = InnoDB
-    COMMENT = 'Required standards assessed during IVA and MSVA test type executions, tracking compliance against individual standards';
+    COMMENT = 'Required standards assessed during IVA and MSVA test type executions. JOIN to required_standard -> required_standard_section for taxonomy details. Stores per-result data: additional_notes, prs.';

@@ -12,7 +12,7 @@ import { Container, Service } from 'typedi';
 import { vehicle } from '../tech-record/schema';
 import { testStation } from '../test-facility/schema';
 import { testType as testTypeRef } from '../test-types/schema';
-import { defectDeficiency, defectItem, defectCategory } from '../defect-reference-data/schema';
+import { defectDeficiency, defectItem, defectCategory, requiredStandard as requiredStandardRef, requiredStandardSection } from '../defect-reference-data/schema';
 import {
     testResult,
     testResultTestType,
@@ -279,20 +279,34 @@ export class TestResultProvider {
                 }
 
                 if (tt.requiredStandards?.length) {
-                    await tx.insert(testResultRequiredStandard).values(
-                        tt.requiredStandards.map((rs) => ({
+                    for (const rs of tt.requiredStandards) {
+                        const requiredStandardRow = await tx
+                            .select({ id: requiredStandardRef.id })
+                            .from(requiredStandardRef)
+                            .innerJoin(requiredStandardSection, eq(requiredStandardRef.requiredStandardSectionId, requiredStandardSection.id))
+                            .where(
+                                and(
+                                    eq(requiredStandardSection.sectionNumber, rs.sectionNumber),
+                                    eq(requiredStandardRef.rsNumber, rs.rsNumber),
+                                ),
+                            )
+                            .limit(1);
+
+                        if (!requiredStandardRow.length) {
+                            this.logger.warn('Required standard not found in reference data', {
+                                sectionNumber: rs.sectionNumber,
+                                rsNumber: rs.rsNumber,
+                            });
+                            continue;
+                        }
+
+                        await tx.insert(testResultRequiredStandard).values({
                             testResultTestTypeId: ttPk,
-                            sectionNumber: rs.sectionNumber,
-                            sectionDescription: rs.sectionDescription,
-                            rsNumber: rs.rsNumber,
-                            requiredStandard: rs.requiredStandard,
-                            refCalculation: rs.refCalculation,
-                            additionalInfo: rs.additionalInfo,
-                            inspectionTypeBasic: rs.inspectionTypes?.includes('basic') ?? false,
-                            inspectionTypeNormal: rs.inspectionTypes?.includes('normal') ?? false,
+                            requiredStandardId: requiredStandardRow[0].id,
+                            additionalNotes: rs.additionalNotes,
                             prs: rs.prs,
-                        })),
-                    );
+                        });
+                    }
                 }
             }
         });
@@ -453,20 +467,34 @@ export class TestResultProvider {
                 }
 
                 if (tt.requiredStandards?.length) {
-                    await tx.insert(testResultRequiredStandard).values(
-                        tt.requiredStandards.map((rs) => ({
+                    for (const rs of tt.requiredStandards) {
+                        const requiredStandardRow = await tx
+                            .select({ id: requiredStandardRef.id })
+                            .from(requiredStandardRef)
+                            .innerJoin(requiredStandardSection, eq(requiredStandardRef.requiredStandardSectionId, requiredStandardSection.id))
+                            .where(
+                                and(
+                                    eq(requiredStandardSection.sectionNumber, rs.sectionNumber),
+                                    eq(requiredStandardRef.rsNumber, rs.rsNumber),
+                                ),
+                            )
+                            .limit(1);
+
+                        if (!requiredStandardRow.length) {
+                            this.logger.warn('Required standard not found in reference data', {
+                                sectionNumber: rs.sectionNumber,
+                                rsNumber: rs.rsNumber,
+                            });
+                            continue;
+                        }
+
+                        await tx.insert(testResultRequiredStandard).values({
                             testResultTestTypeId: ttPk,
-                            sectionNumber: rs.sectionNumber,
-                            sectionDescription: rs.sectionDescription,
-                            rsNumber: rs.rsNumber,
-                            requiredStandard: rs.requiredStandard,
-                            refCalculation: rs.refCalculation,
-                            additionalInfo: rs.additionalInfo,
-                            inspectionTypeBasic: rs.inspectionTypes?.includes('basic') ?? false,
-                            inspectionTypeNormal: rs.inspectionTypes?.includes('normal') ?? false,
+                            requiredStandardId: requiredStandardRow[0].id,
+                            additionalNotes: rs.additionalNotes,
                             prs: rs.prs,
-                        })),
-                    );
+                        });
+                    }
                 }
             }
         });
@@ -586,7 +614,13 @@ export class TestResultProvider {
                     },
                 },
                 customDefects: true,
-                requiredStandards: true,
+                requiredStandards: {
+                    with: {
+                        requiredStandard: {
+                            with: { section: true },
+                        },
+                    },
+                },
                 centralDocsReasons: true,
             },
         });
@@ -731,16 +765,17 @@ export class TestResultProvider {
                             defectNotes: cd.defectNotes,
                         })),
                         requiredStandards: tt.requiredStandards.map((rs) => ({
-                            sectionNumber: rs.sectionNumber,
-                            sectionDescription: rs.sectionDescription,
-                            rsNumber: rs.rsNumber,
-                            requiredStandard: rs.requiredStandard,
-                            refCalculation: rs.refCalculation,
-                            additionalInfo: rs.additionalInfo,
+                            sectionNumber: rs.requiredStandard.section.sectionNumber,
+                            sectionDescription: rs.requiredStandard.section.sectionDescription,
+                            rsNumber: rs.requiredStandard.rsNumber,
+                            requiredStandard: rs.requiredStandard.requiredStandard,
+                            refCalculation: rs.requiredStandard.refCalculation,
+                            additionalInfo: rs.requiredStandard.additionalInfo,
                             inspectionTypes: [
-                                rs.inspectionTypeBasic ? 'basic' as const : null,
-                                rs.inspectionTypeNormal ? 'normal' as const : null,
+                                rs.requiredStandard.inspectionTypeBasic ? 'basic' as const : null,
+                                rs.requiredStandard.inspectionTypeNormal ? 'normal' as const : null,
                             ].filter((t): t is 'basic' | 'normal' => t !== null),
+                            additionalNotes: rs.additionalNotes,
                             prs: rs.prs,
                         })),
                     };

@@ -22,17 +22,14 @@ export class RequiredStandardsProvider {
         return sections.map((section) => ({
             sectionNumber: section.sectionNumber,
             sectionDescription: section.sectionDescription,
-            requiredStandards: section.standards.map((std) => {
-                const types = (std.inspectionTypes ?? []) as string[];
-                return {
-                    rsNumber: String(std.rsNumber),
-                    requiredStandard: std.requiredStandard,
-                    refCalculation: std.refCalculation,
-                    additionalInfo: std.additionalInfo,
-                    basicInspection: types.includes('basic'),
-                    normalInspection: types.includes('normal'),
-                };
-            }),
+            requiredStandards: section.standards.map((std) => ({
+                rsNumber: String(std.rsNumber),
+                requiredStandard: std.requiredStandard,
+                refCalculation: std.refCalculation,
+                additionalInfo: std.additionalInfo,
+                basicInspection: std.inspectionTypeBasic,
+                normalInspection: std.inspectionTypeNormal,
+            })),
         }));
     }
 }

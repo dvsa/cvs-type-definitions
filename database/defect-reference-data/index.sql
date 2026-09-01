@@ -64,7 +64,8 @@ CREATE TABLE IF NOT EXISTS `required_standard`
     `required_standard`             VARCHAR(500) NOT NULL COMMENT 'Description of the required standard',
     `ref_calculation`               VARCHAR(100) NOT NULL COMMENT 'Reference calculation for the required standard',
     `additional_info`               BOOLEAN NOT NULL COMMENT 'Whether additional information applies to this standard',
-    `inspection_types`              JSON NOT NULL COMMENT 'JSON array of inspection types, e.g. ["basic","normal"]',
+    `inspection_type_basic`         BOOLEAN NOT NULL COMMENT 'Whether this standard applies to basic inspections',
+    `inspection_type_normal`        BOOLEAN NOT NULL COMMENT 'Whether this standard applies to normal inspections',
     PRIMARY KEY (`id`),
     CONSTRAINT `fk_req_std_section_id` FOREIGN KEY (`required_standard_section_id`) REFERENCES `required_standard_section` (`id`),
     INDEX `idx_req_std_section_id` (`required_standard_section_id` ASC) COMMENT 'Supports efficient lookups of all standards within a section'

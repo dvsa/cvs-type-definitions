@@ -15,7 +15,8 @@ import {
 } from 'drizzle-orm/mysql-core';
 import { formatSchemaName } from '../helper/format-schema-name';
 import { testStation } from '../test-facility/schema';
-import { defectDeficiency } from '../defect-reference-data/schema';
+import { testType as testTypeRef } from '../test-types/schema';
+import { defectDeficiency, requiredStandard } from '../defect-reference-data/schema';
 
 const schema = mysqlSchema(formatSchemaName('test_result'));
 
@@ -123,6 +124,11 @@ export const testResultVtg15Media = schema.table(
     ],
 );
 
+/**
+ * Execution of a test type during a specific test visit. Not to be confused with
+ * `testType` in `database/test-types/schema.ts`, the reference catalog of test type
+ * definitions — `testTypeId` JOINs there for name/classification.
+ */
 export const testResultTestType = schema.table(
     'test_result_test_type',
     {
@@ -170,6 +176,11 @@ export const testResultTestType = schema.table(
             columns: [table.testResultId],
             foreignColumns: [testResult.id],
             name: 'fk_test_type_test_result_id',
+        }),
+        foreignKey({
+            columns: [table.testTypeId],
+            foreignColumns: [testTypeRef.id],
+            name: 'fk_test_type_test_type_id',
         }),
     ],
 );
@@ -251,24 +262,23 @@ export const testResultRequiredStandard = schema.table(
     {
         id: bigint({ mode: 'number', unsigned: true }).autoincrement().primaryKey(),
         testResultTestTypeId: bigint('test_result_test_type_id', { mode: 'number', unsigned: true }).notNull(),
-        sectionNumber: varchar('section_number', { length: 20 }).notNull(),
-        sectionDescription: varchar('section_description', { length: 500 }).notNull(),
-        rsNumber: int('rs_number', { unsigned: true }).notNull(),
-        requiredStandard: varchar('required_standard', { length: 500 }).notNull(),
-        refCalculation: varchar('ref_calculation', { length: 100 }).notNull(),
-        additionalInfo: boolean('additional_info').notNull(),
+        requiredStandardId: bigint('required_standard_id', { mode: 'number', unsigned: true }).notNull(),
         additionalNotes: text('additional_notes'),
-        inspectionTypeBasic: boolean('inspection_type_basic'),
-        inspectionTypeNormal: boolean('inspection_type_normal'),
         prs: boolean().notNull(),
     },
     (table) => [
         primaryKey({ columns: [table.id], name: 'test_result_required_standard_pk' }),
         index('idx_required_standard_test_type_id').on(table.testResultTestTypeId),
+        index('idx_required_standard_required_standard_id').on(table.requiredStandardId),
         foreignKey({
             columns: [table.testResultTestTypeId],
             foreignColumns: [testResultTestType.id],
             name: 'fk_required_standard_test_type_id',
+        }),
+        foreignKey({
+            columns: [table.requiredStandardId],
+            foreignColumns: [requiredStandard.id],
+            name: 'fk_required_standard_required_standard_id',
         }),
     ],
 );
@@ -299,6 +309,10 @@ export const testResultTestTypeRelations = relations(testResultTestType, ({ one,
     testResult: one(testResult, {
         fields: [testResultTestType.testResultId],
         references: [testResult.id],
+    }),
+    testTypeRef: one(testTypeRef, {
+        fields: [testResultTestType.testTypeId],
+        references: [testTypeRef.id],
     }),
     defects: many(testResultDefect),
     customDefects: many(testResultCustomDefect),
@@ -335,5 +349,9 @@ export const testResultRequiredStandardRelations = relations(testResultRequiredS
     testType: one(testResultTestType, {
         fields: [testResultRequiredStandard.testResultTestTypeId],
         references: [testResultTestType.id],
+    }),
+    requiredStandard: one(requiredStandard, {
+        fields: [testResultRequiredStandard.requiredStandardId],
+        references: [requiredStandard.id],
     }),
 }));

@@ -15,6 +15,10 @@ import { formatSchemaName } from '../helper/format-schema-name';
  * @generated-schema-doc
  * Schema: `test_types` | Table: `test_type`
  *
+ * Reference catalog of test type definitions (IM taxonomy). Not to be confused with
+ * `testResultTestType` in `database/test-result/schema.ts`, which records the execution
+ * of one of these test types during a specific test visit.
+ *
  * | Column                         | Type        | Nullable | Constraints |
  * | ------------------------------ | ----------- | -------- | ----------- |
  * | id                             | varchar(10) | No       | PK          |

@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS `test_type` (
                                            `for_provisional_status_only`       BOOLEAN NULL,
                                            PRIMARY KEY (`id`),
                                            INDEX `idx_test_type_parent_id` (`parent_id`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB
+  COMMENT = 'Reference catalog of test type definitions (IM taxonomy). Not to be confused with test_result_test_type, which records the execution of one of these test types during a specific test visit.';
 
 CREATE TABLE IF NOT EXISTS `test_code` (
                                            `id`                        INT UNSIGNED NOT NULL AUTO_INCREMENT,

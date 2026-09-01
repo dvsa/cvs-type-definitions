@@ -19,7 +19,10 @@
       "Bash(git checkout *)",
       "Bash(git stash *)",
       "Bash(git commit *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(rtk read *)",
+      "Bash(rtk find *)",
+      "Bash(rtk tsc *)"
     ]
   }
 }
