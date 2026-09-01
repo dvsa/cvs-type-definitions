@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find /Users/matt/work/cvs/cvs-type-definitions/tests/resources/data -type f -exec ls -lh {})",
+      "Bash(sort -k1 -h)",
+      "Bash(find /Users/matt/work/cvs/cvs-type-definitions/lib -type f -exec basename {})",
+      "Bash(npm pack:*)",
+      "Bash(wc:*)",
+      "Bash(node *)",
+      "Bash(rtk git *)",
+      "Bash(git rebase *)",
+      "Bash(awk '{print $1}')",
+      "Bash(git rm *)",
+      "Bash(GIT_EDITOR=true git rebase --continue)",
+      "Bash(rtk grep *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git add *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(git commit *)",
+      "Bash(npx tsc *)",
+      "Bash(rtk read *)",
+      "Bash(rtk find *)",
+      "Bash(rtk tsc *)"
+    ]
+  }
+}

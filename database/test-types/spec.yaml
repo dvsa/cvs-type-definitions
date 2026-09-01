@@ -1,0 +1,679 @@
+openapi: 3.1.0
+info:
+  title: cvs-test-types-service
+  version: 3.53.0
+  license:
+    name: Open Government Licence v3.0
+    url: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+tags:
+  - name: Test Types
+    description: API endpoints related to test types
+paths:
+  /test-types/version:
+    get:
+      operationId: VersionResource.getVersion
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/VersionModel'
+          description: OK OBJECT
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get version
+      tags:
+        - Version
+      description: API for retrieving the version of the service
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-types:
+    get:
+      operationId: TestTypeResource.getTestTypes
+      parameters:
+        - in: query
+          name: typeOfTest
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GETTestTypeSchema'
+          description: OK ARRAY
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+        '404':
+          description: Test types not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test types not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get test types
+      tags:
+        - Test Types
+      description: API for retrieving a list of test types
+      servers:
+        - description: Dev URL
+          url: https://your-url
+  /test-types/{id}:
+    get:
+      operationId: TestTypeResource.getTestTypeById
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            pattern: '[^\/#\?]+?'
+            type: string
+        - in: query
+          name: fields
+          required: true
+          schema:
+            items:
+              type: string
+              enum:
+                - testTypeClassification
+                - defaultTestCode
+                - linkedTestCode
+                - name
+                - testTypeName
+            type: array
+            minItems: 1
+        - in: query
+          name: vehicleType
+          required: true
+          schema:
+            enum:
+              - hgv
+              - psv
+              - trl
+              - lgv
+              - car
+              - motorcycle
+            type: string
+        - in: query
+          name: vehicleSize
+          required: false
+          schema:
+            enum:
+              - large
+              - small
+            type: string
+        - in: query
+          name: vehicleConfiguration
+          required: false
+          schema:
+            enum:
+              - rigid
+              - articulated
+              - centre axle drawbar
+              - semi-car transporter
+              - semi-trailer
+              - long semi-trailer
+              - low loader
+              - other
+              - drawbar
+              - four-in-line
+              - dolly
+              - full drawbar
+            type: string
+        - in: query
+          name: euVehicleCategory
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: vehicleClass
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: vehicleSubclass
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - in: query
+          name: vehicleWheels
+          required: false
+          schema:
+            maximum: 99
+            type: number
+            minimum: 0
+        - in: query
+          name: vehicleAxles
+          required: false
+          schema:
+            maximum: 99
+            type: number
+            minimum: 0
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/GetByIdResponseModel'
+          description: OK OBJECT
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Validation error
+        '404':
+          description: Test types not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Test types not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Get test type by id
+      tags:
+        - Test Types
+      description: API for retrieving a test type by ID
+      servers:
+        - description: Dev URL
+          url: https://your-url
+components:
+  schemas:
+    VersionModel:
+      type: object
+      properties:
+        name:
+          type: string
+        buildDateTime:
+          type: string
+        version:
+          type: string
+      required:
+        - name
+        - buildDateTime
+        - version
+      additionalProperties: false
+    GetByIdResponseModel:
+      type: object
+      properties:
+        id:
+          type: string
+        defaultTestCode:
+          type: string
+        linkedTestCode:
+          type: string
+        testTypeClassification:
+          type: string
+        name:
+          type: string
+        testTypeName:
+          type: string
+      additionalProperties: false
+    GETTestTypeSchema:
+      type: object
+      properties:
+        typeOfTest:
+          type: string
+        id:
+          type: string
+        sortId:
+          type: string
+        linkedIds:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        suggestedTestTypeIds:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        testTypeName:
+          type: string
+        suggestedTestTypeDisplayName:
+          type: string
+        suggestedTestTypeDisplayOrder:
+          type: string
+        forVehicleType:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleType'
+        forProvisionalStatus:
+          type: boolean
+        forProvisionalStatusOnly:
+          type: boolean
+        forVehicleSize:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleSize'
+            - type: 'null'
+        forVehicleConfiguration:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleConfiguration'
+            - type: 'null'
+        forVehicleAxles:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        forEuVehicleCategory:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/EUVehicleCategory'
+            - type: 'null'
+        forVehicleClass:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        forVehicleSubclass:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleSubclass'
+            - type: 'null'
+        forVehicleWheels:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        testTypeClassification:
+          $ref: '#/components/schemas/TestTypeClassification'
+        testCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestCodeSchema'
+        nextTestTypesOrCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/NextTestTypesOrCategorySchema'
+      required:
+        - id
+        - sortId
+        - linkedIds
+        - name
+        - forVehicleType
+        - forVehicleSize
+        - forVehicleConfiguration
+        - forVehicleAxles
+        - forEuVehicleCategory
+        - forVehicleClass
+        - forVehicleSubclass
+        - forVehicleWheels
+      additionalProperties: false
+      description: >-
+        This file was automatically generated by json-schema-to-typescript. DO
+        NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file, and
+        run json-schema-to-typescript to regenerate this file.
+    VehicleType:
+      type: string
+      enum:
+        - hgv
+        - psv
+        - trl
+        - lgv
+        - car
+        - motorcycle
+    VehicleSize:
+      type: string
+      enum:
+        - large
+        - small
+    VehicleConfiguration:
+      type: string
+      enum:
+        - rigid
+        - articulated
+        - centre axle drawbar
+        - semi-car transporter
+        - semi-trailer
+        - long semi-trailer
+        - low loader
+        - other
+        - drawbar
+        - four-in-line
+        - dolly
+        - full drawbar
+    EUVehicleCategory:
+      type: string
+      enum:
+        - m1
+        - m2
+        - m3
+        - n1
+        - n2
+        - n3
+        - o1
+        - o2
+        - o3
+        - o4
+        - l1e-a
+        - l1e
+        - l2e
+        - l3e
+        - l4e
+        - l5e
+        - l6e
+        - l7e
+    VehicleSubclass:
+      type: string
+      enum:
+        - a
+        - c
+        - s
+        - l
+        - m
+        - 'n'
+        - p
+        - t
+        - r
+    TestTypeClassification:
+      type: string
+      enum:
+        - Annual NO CERTIFICATE
+        - Annual With Certificate
+        - NON ANNUAL
+        - IVA With Certificate
+        - MSVA With Certificate
+    TestCodeSchema:
+      type: object
+      properties:
+        forVehicleType:
+          anyOf:
+            - $ref: '#/components/schemas/VehicleType'
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleType'
+        forVehicleSize:
+          anyOf:
+            - $ref: '#/components/schemas/VehicleSize'
+            - type: 'null'
+        forVehicleConfiguration:
+          anyOf:
+            - $ref: '#/components/schemas/VehicleConfiguration'
+            - type: 'null'
+        forVehicleAxles:
+          anyOf:
+            - type: number
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        forEuVehicleCategory:
+          anyOf:
+            - $ref: '#/components/schemas/EUVehicleCategory'
+            - type: array
+              items:
+                $ref: '#/components/schemas/EUVehicleCategory'
+            - type: 'null'
+        forVehicleClass:
+          anyOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        forVehicleSubclass:
+          anyOf:
+            - $ref: '#/components/schemas/VehicleSubclass'
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleSubclass'
+            - type: 'null'
+        forVehicleWheels:
+          anyOf:
+            - type: number
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        defaultTestCode:
+          type: string
+        linkedTestCode:
+          type:
+            - string
+            - 'null'
+        forProvisionalStatus:
+          type: boolean
+        forProvisionalStatusOnly:
+          type: boolean
+      required:
+        - forVehicleType
+        - forVehicleSize
+        - forVehicleConfiguration
+        - forVehicleAxles
+        - forEuVehicleCategory
+        - forVehicleClass
+        - forVehicleSubclass
+        - forVehicleWheels
+        - defaultTestCode
+        - linkedTestCode
+      additionalProperties: false
+    NextTestTypesOrCategorySchema:
+      type: object
+      properties:
+        typeOfTest:
+          type: string
+        id:
+          type: string
+        linkedIds:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        name:
+          type: string
+        testTypeName:
+          type: string
+        forVehicleType:
+          anyOf:
+            - $ref: '#/components/schemas/VehicleType'
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleType'
+        forProvisionalStatus:
+          type: boolean
+        forProvisionalStatusOnly:
+          type: boolean
+        forVehicleSize:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleSize'
+            - type: 'null'
+        forVehicleConfiguration:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleConfiguration'
+            - type: 'null'
+        forVehicleAxles:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        forEuVehicleCategory:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/EUVehicleCategory'
+            - type: 'null'
+        forVehicleClass:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: 'null'
+        forVehicleSubclass:
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/VehicleSubclass'
+            - type: 'null'
+        forVehicleWheels:
+          anyOf:
+            - type: array
+              items:
+                type: number
+            - type: 'null'
+        testTypeClassification:
+          $ref: '#/components/schemas/TestTypeClassification'
+        testCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestCodeSchema'
+        nextTestTypesOrCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/NextTestTypesOrCategorySchema'
+      required:
+        - id
+        - linkedIds
+        - name
+        - forVehicleType
+        - forVehicleSize
+        - forVehicleConfiguration
+        - forVehicleAxles
+        - forEuVehicleCategory
+        - forVehicleClass
+        - forVehicleSubclass
+        - forVehicleWheels
+      additionalProperties: false
+    GetTestTypesByIdQueryRequest:
+      properties:
+        fields:
+          items:
+            type: string
+            enum:
+              - testTypeClassification
+              - defaultTestCode
+              - linkedTestCode
+              - name
+              - testTypeName
+          type: array
+          minItems: 1
+        vehicleType:
+          enum:
+            - hgv
+            - psv
+            - trl
+            - lgv
+            - car
+            - motorcycle
+          type: string
+        vehicleSize:
+          enum:
+            - large
+            - small
+          type: string
+        vehicleConfiguration:
+          enum:
+            - rigid
+            - articulated
+            - centre axle drawbar
+            - semi-car transporter
+            - semi-trailer
+            - long semi-trailer
+            - low loader
+            - other
+            - drawbar
+            - four-in-line
+            - dolly
+            - full drawbar
+          type: string
+        euVehicleCategory:
+          type: string
+        vehicleClass:
+          type: string
+        vehicleSubclass:
+          items:
+            type: string
+          type: array
+        vehicleWheels:
+          maximum: 99
+          type: number
+          minimum: 0
+        vehicleAxles:
+          maximum: 99
+          type: number
+          minimum: 0
+      type: object
+      required:
+        - fields
+        - vehicleType
+    GetTestTypesRequest:
+      properties:
+        typeOfTest:
+          type: string
+      type: object
+    GetTypesByIdPathRequest:
+      properties:
+        id:
+          minLength: 1
+          type: string
+      type: object
+      required:
+        - id
