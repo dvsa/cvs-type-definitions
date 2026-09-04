@@ -53,7 +53,7 @@
     "testStatus": {
       "anyOf": [
         {
-          "$ref": "../enums/testStatus.enum.json"
+          "$ref": "../../enums/testStatus.enum.json"
         }
       ]
     },
@@ -231,7 +231,7 @@
     "typeOfTest": {
       "anyOf": [
         {
-          "$ref": "../enums/typeOfTest.enum.json"
+          "$ref": "../../enums/typeOfTest.enum.json"
         }
       ]
     },

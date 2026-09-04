@@ -41,7 +41,7 @@
     "testResult": {
       "anyOf": [
         {
-          "$ref": "../enums/testResult.enum.json"
+          "$ref": "../../enums/testResult.enum.json"
         },
         {
           "type": "null"
