@@ -41,7 +41,7 @@
     "testResult": {
       "anyOf": [
         {
-          "$ref": "../enums/testResult.enum.json"
+          "$ref": "../../enums/testResult.enum.json"
         },
         {
           "type": "null"
@@ -116,13 +116,13 @@
     },
     "emissionStandard": {
       "anyOf": [
-        { "$ref": "../enums/emissionStandard.enum.json" },
+        { "$ref": "../../enums/emissionStandard.enum.json" },
         { "type": "null" }
       ]
     },
     "fuelType": {
       "anyOf": [
-        { "$ref": "../enums/fuelType.enum.json" },
+        { "$ref": "../../enums/fuelType.enum.json" },
         { "type": "null" }
       ]
     },

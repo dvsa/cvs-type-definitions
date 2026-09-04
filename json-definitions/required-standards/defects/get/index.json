@@ -13,7 +13,7 @@
       "items": {
         "anyOf" : [
           {
-            "$ref": "../enums/euVehicleCategory.enum.json"
+            "$ref": "../../../enums/euVehicleCategory.enum.json"
           }
         ]
       }

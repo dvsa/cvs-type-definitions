@@ -122,7 +122,7 @@
     "testTypeClassification": {
       "anyOf": [
         {
-          "$ref": "../test-type/enums/testTypeClassification.enum.json"
+          "$ref": "../enums/testTypeClassification.enum.json"
         }
       ]
     },

@@ -5,8 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type InspectionType = "basic" | "normal";
-
 export interface DefectGETRequiredStandards {
   euVehicleCategories: EUVehicleCategory[];
   basic: RequiredStandardTaxonomySection[];
@@ -44,4 +42,8 @@ export enum EUVehicleCategory {
   L5E = "l5e",
   L6E = "l6e",
   L7E = "l7e"
+}
+export enum InspectionType {
+  BASIC = "basic",
+  NORMAL = "normal"
 }

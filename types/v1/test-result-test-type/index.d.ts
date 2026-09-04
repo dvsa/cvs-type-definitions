@@ -6,7 +6,6 @@
  */
 
 export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
-export type InspectionType = "basic" | "normal";
 
 export interface TestResultTestTypeSchema {
   testTypeName: string | null;
@@ -168,6 +167,10 @@ export enum FuelType {
   PETROL = "petrol",
   FUEL_CELL = "fuel cell",
   FULL_ELECTRIC = "full electric"
+}
+export enum InspectionType {
+  BASIC = "basic",
+  NORMAL = "normal"
 }
 export enum VehicleLoadStatusType {
   UNLADEN = "Unladen",
