@@ -9,7 +9,7 @@
       "type": "string"
     },
     "activityType": {
-      "$ref": "../enums/activityType.enum.json"
+      "$ref": "../../enums/activityType.enum.json"
     },
     "testStationName": {
       "type": "string",
@@ -25,7 +25,7 @@
       "type": "string"
     },
     "testStationType": {
-      "$ref": "../enums/testStationType.enum.json"
+      "$ref": "../../enums/testStationType.enum.json"
     },
     "testerName": {
       "type": "string",
@@ -76,7 +76,7 @@
     "waitReason": {
       "type": "array",
       "items": {
-        "$ref": "../enums/waitReason.enum.json"
+        "$ref": "../../enums/waitReason.enum.json"
       }
     },
     "notes": {
@@ -94,7 +94,7 @@
       "type": "string"
     },
     "closureReason": {
-      "$ref": "../enums/closureReason.enum.json"
+      "$ref": "../../enums/closureReason.enum.json"
     }
   },
   "additionalProperties": false,

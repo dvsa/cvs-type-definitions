@@ -116,13 +116,13 @@
     },
     "emissionStandard": {
       "anyOf": [
-        { "$ref": "../enums/emissionStandard.enum.json" },
+        { "$ref": "../../enums/emissionStandard.enum.json" },
         { "type": "null" }
       ]
     },
     "fuelType": {
       "anyOf": [
-        { "$ref": "../enums/fuelType.enum.json" },
+        { "$ref": "../../enums/fuelType.enum.json" },
         { "type": "null" }
       ]
     },
