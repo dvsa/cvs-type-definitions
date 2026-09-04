@@ -57,7 +57,7 @@
             "items": {
               "anyOf": [
                 {
-                  "$ref": "./enums/inspectionType.ignore.json"
+                  "$ref": "../../enums/inspectionType.enum.json"
                 }
               ]
             }

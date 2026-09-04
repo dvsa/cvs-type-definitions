@@ -7,7 +7,6 @@
 
 export type VehicleType = "psv" | "trl" | "hgv" | "car" | "lgv" | "motorcycle";
 export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
-export type InspectionType = "basic" | "normal";
 
 export interface VehicleSchema {
   systemNumber: string;
@@ -516,6 +515,10 @@ export enum FuelType {
   PETROL = "petrol",
   FUEL_CELL = "fuel cell",
   FULL_ELECTRIC = "full electric"
+}
+export enum InspectionType {
+  BASIC = "basic",
+  NORMAL = "normal"
 }
 export enum VehicleLoadStatusType {
   UNLADEN = "Unladen",

@@ -5,8 +5,6 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type InspectionType = "basic" | "normal";
-
 export interface RequiredStandardTaxonomySection {
   sectionNumber: string;
   sectionDescription: string;
@@ -18,4 +16,9 @@ export interface RequiredStandard {
   refCalculation: string;
   additionalInfo: boolean;
   inspectionTypes: InspectionType[];
+}
+
+export enum InspectionType {
+  BASIC = "basic",
+  NORMAL = "normal"
 }
