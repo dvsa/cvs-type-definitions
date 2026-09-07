@@ -9,7 +9,7 @@ export type MediaSchema = ImageSchema | VideoSchema | FailReasonSchema;
 
 export interface VTG15Schema {
   vtg15Required: boolean;
-  unNumber?: number;
+  unNumber?: string;
   primaryHazardClassification?: HazardClassification;
   secondaryHazardClassification?: HazardClassification;
   media?: MediaSchema[];
