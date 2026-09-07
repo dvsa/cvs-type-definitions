@@ -6,10 +6,8 @@
 			"type": "boolean"
 		},
 		"unNumber": {
-			"type": [
-				"number"
-			],
-			"maxLength": 4
+			"type": "string",
+			"pattern": "^[0-9]{4}$"
 		},
 		"primaryHazardClassification": {
 			"title": "Hazard Classification",
