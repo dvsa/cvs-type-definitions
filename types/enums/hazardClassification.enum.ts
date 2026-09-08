@@ -7,7 +7,7 @@
 
 export const HazardClassification = {
   _1: {code: "1", description: "Explosive"},
-  _2: {code: "2", description: "Compressed Gases"},
+  _2: {code: "2", description: "Compressed gases"},
   _3: {code: "3", description: "Flammable liquids"},
   "_4.1": {code: "4.1", description: "Flammable solids"},
   "_4.2": {code: "4.2", description: "Spontaneously combustible"},
