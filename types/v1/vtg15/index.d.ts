@@ -30,7 +30,7 @@ export interface FailReasonSchema {
 
 export declare const HazardClassification: {
   _1: { readonly code: "1"; readonly description: "Explosive"; };
-  _2: { readonly code: "2"; readonly description: "Compressed Gases"; };
+  _2: { readonly code: "2"; readonly description: "Compressed gases"; };
   _3: { readonly code: "3"; readonly description: "Flammable liquids"; };
   "_4.1": { readonly code: "4.1"; readonly description: "Flammable solids"; };
   "_4.2": { readonly code: "4.2"; readonly description: "Spontaneously combustible"; };
