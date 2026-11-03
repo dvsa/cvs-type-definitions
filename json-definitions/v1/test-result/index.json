@@ -177,6 +177,12 @@
     "vtg15": {
       "$ref": "../vtg15/index.json#"
     },
+    "approvalCertificate": {
+      "type":  "array",
+      "items": {
+        "$ref": "../media/index.json#"
+      }
+    },
     "testTypes": {
       "type": "array",
       "items": {
