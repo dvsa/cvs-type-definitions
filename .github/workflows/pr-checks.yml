@@ -6,6 +6,7 @@ name: PR-checks
 on:
   pull_request:
     branches: ["develop"]
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
   test-and-generate-check:
