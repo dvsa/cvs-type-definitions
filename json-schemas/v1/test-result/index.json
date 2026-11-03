@@ -467,6 +467,12 @@
 				"vtg15Required"
 			]
 		},
+		"approvalCertificate": {
+			"type": "array",
+			"items": {
+				"$ref": "#/properties/media/items"
+			}
+		},
 		"testTypes": {
 			"type": "array",
 			"items": {

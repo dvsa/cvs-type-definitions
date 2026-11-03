@@ -44,6 +44,7 @@ export interface TestResultSchema {
   media?: MediaSchema[];
   weights?: TestResultWeightsSchema;
   vtg15?: VTG15Schema;
+  approvalCertificate?: MediaSchema[];
   testTypes: TestResultTestTypeSchema[];
   reasonForCreation?: string;
   createdAt?: string | null;
