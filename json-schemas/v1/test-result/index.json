@@ -1255,16 +1255,29 @@
 								"type": "boolean"
 							},
 							"part9DocumentationNotes": {
-								"type": "string"
+								"type": [
+									"string",
+									"null"
+								]
 							},
 							"part9DeclarationsNotes": {
-								"type": "string"
+								"type": [
+									"string",
+									"null"
+								]
 							},
 							"part9VehicleNotes": {
-								"type": "string"
+								"type": [
+									"string",
+									"null"
+								]
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": false,
+						"required": [
+							"isRwtStandardFailure",
+							"isPart9Failure"
+						]
 					},
 					"centralDocs": {
 						"properties": {

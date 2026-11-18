@@ -221,11 +221,11 @@ export interface LoadStatusSchema {
   partiallyLadenReason?: string | null;
 }
 export interface ADRFailSchema {
-  isRwtStandardFailure?: boolean;
-  isPart9Failure?: boolean;
-  part9DocumentationNotes?: string;
-  part9DeclarationsNotes?: string;
-  part9VehicleNotes?: string;
+  isRwtStandardFailure: boolean;
+  isPart9Failure: boolean;
+  part9DocumentationNotes?: string | null;
+  part9DeclarationsNotes?: string | null;
+  part9VehicleNotes?: string | null;
 }
 export interface BodyTypeSchema {
   code?: string | null;
