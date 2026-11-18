@@ -224,6 +224,9 @@
         "null"
       ]
     },
+    "adrFail": {
+      "$ref": "../adr-fail/index.json#"
+    },
     "centralDocs": {
       "properties": {
         "issueRequired": {

@@ -44,6 +44,7 @@ export interface TestResultTestTypeSchema {
   testTypeClassification?: string | null;
   loadStatus?: LoadStatusSchema;
   deletionFlag?: string | null;
+  adrFail?: ADRFailSchema;
   centralDocs?: {
     issueRequired: boolean;
     notes?: string;
@@ -141,6 +142,13 @@ export interface LoadStatusSchema {
   reasonForNotLoading?: ReasonForNotLoading;
   otherReasonForNotLoading?: string | null;
   partiallyLadenReason?: string | null;
+}
+export interface ADRFailSchema {
+  isRwtStandardFailure?: boolean;
+  isPart9Failure?: boolean;
+  part9DocumentationNotes?: string;
+  part9DeclarationsNotes?: string;
+  part9VehicleNotes?: string;
 }
 
 export enum TestResults {

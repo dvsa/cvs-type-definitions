@@ -23,6 +23,7 @@ export const schemas = [
   "test-type/nextTestTypesOrCategory.json",
   "test-type/testCode.json",
   "v1/activity/index.json",
+  "v1/adr-fail/index.json",
   "v1/defect-category-reference-data/index.json",
   "v1/defect-details/index.json",
   "v1/defect-location/index.json",
