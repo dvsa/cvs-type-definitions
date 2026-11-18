@@ -826,6 +826,41 @@
 				"null"
 			]
 		},
+		"adrFail": {
+			"title": "ADR Fail Schema",
+			"type": "object",
+			"properties": {
+				"isRwtStandardFailure": {
+					"type": "boolean"
+				},
+				"isPart9Failure": {
+					"type": "boolean"
+				},
+				"part9DocumentationNotes": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"part9DeclarationsNotes": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"part9VehicleNotes": {
+					"type": [
+						"string",
+						"null"
+					]
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"isRwtStandardFailure",
+				"isPart9Failure"
+			]
+		},
 		"centralDocs": {
 			"properties": {
 				"issueRequired": {
